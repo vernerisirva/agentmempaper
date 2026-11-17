@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asking the right question is key to AI discovery in a chain of hypotheses</title>
+  <meta name="description" content="Daily Paper Scout briefing for autonomous research agents, AI-scientist systems, and deep research workflows.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory Library</a> <a href="../../engram/index.html">Engram</a> <a href="../../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Asking the right question is key to AI discovery in a chain of hypotheses</h1>
+          <p class="hero-copy">Hu Cang</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2611.19841v1">Open paper</a>
+            <a class="paper-detail-link" href="asking-the-right-question-is-key-to-ai-discovery-in-a-chain-of-hypotheses-a0dfaa26.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Hu Cang</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-11-15</dd></div>
+              <div><dt>Publication date</dt><dd>2026-11-15</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>arxiv</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>high</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2611.19841">arXiv</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies AI-scientist or scientific-discovery agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Artificial intelligence (AI) scientists pursue discovery through a chain of hypotheses, fitting candidate models to existing observations and often choosing experiments where those models disagree most. Yet when early data miss a narrow feature, model selection favors simple curves that agree across the unmea- sured...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The work provides a clear, scoped, and well-executed empirical contribution to understanding the active-learning and hypothesis-generation behavior of modern LLM agents, supported by rigorous experimental controls, sound statistical reporting, and transparent discussion of limitations.</p>
+      <p>The study clearly articulates its focus on a controlled synthetic three-variable regression system without code execution or external tool use, appropriately bounding the generalization of its findings to higher-dimensional or physical lab settings.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-17T12:49:25.434255+00:00.</p>
+        <p>Coverage: 29340 of 29340 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Artificial intelligence (AI) scientists pursue discovery through a chain of hypotheses, fitting candidate
+models to existing observations and often choosing experiments where those models disagree most. Yet when
+early data miss a narrow feature, model selection favors simple curves that agree across the unmeasured gap,
+so disagreement-guided search has no reason to look where the new phenomenon lies. When we tested two
+frontier AI scientists, Claude Sonnet 5.5 and GPT-6.1-Sol, across 32 closed-loop trials with a narrow peak
+omittedfromthestartingdata,bothsampledinsidethepeakregionlessoftenthanrandomsearch. Surprisingly,
+the agent that followed model disagreement more closely missed the peak in all 32 trials, whereas discovery
+succeeded when experiments probed the unmeasured gap early and followed up across the anomaly. Asking
+the right question, rather than testing only where current </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and standard
+model selection penalizes extra parameters until the data show a clear departure24. Simple models fitted to
+the observed background then agree across the unmeasured gap and differ only over minor details elsewhere.
+Following their disagreement steers experiments away from that gap rather than into it, much as confirmation
+bias keeps human researchers testing what their working theories already anticipate25–27.
+To test how experimental choices shape autonomous discovery, we evaluated two frontier AI scientists,
+Claude Sonnet 5.5 and GPT-6.1-Sol, in closed-loop equation-discovery trials where a narrow peak lay inside
+an initially unmeasured region. Both agents probed that region less often than random search, and the
+agent that followed equation disagreement more closely missed the peak in every trial as it spent its budget
+separating nearly identical background curves. By </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Testing discovery when initial data miss a narrow feature
+In our closed-loop task, Claude Sonnet 5.5 and GPT-6.1-Sol sought to discover an unknown equation
+𝑦=𝑓(𝑥 1,𝑥 2,𝑥 3)+𝜀 over 12 rounds of experiments (Fig. 1a and Methods). In this system,𝑦 rises and levels
+off with𝑥1, decays smoothly with𝑥2, and does not depend on𝑥3. Hidden inside that smooth decay is a narrow
+Gaussian peak region𝑊 covering 7%of the𝑥2 range. At𝑥1 =40 ,𝑦 rises up to31𝜎 above the smooth curve
+inside𝑊 (in units of measurement noise𝜎) while adding less than2𝜎 anywhere outside𝑊. Across 32 paired
+trials with different peak locations along𝑥2, both agents received the same four random starting conditions
+outside𝑊, so the initial data showed only the smooth background.
+In each round, the agent saw all measurements collected so far alongside its best-fitting equations
+from earlier rounds, ranked by the Bayesian information </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>criterion (BIC)24, which rewards fit accuracy while
+2
+penalizing extra parameters. The agent then proposed up to three new equations and chose two input
+conditions to measure next. After Round 12, the agent could submit up to three final equations without
+further measurements, and a trial counted as solved if the top-ranked equation predicted held-out test points
+within measurement noise (root-mean-square error𝐸=RMSE/𝜎≤1.05 ). Two example trials illustrate how
+experimental choices decide the outcome (Fig. 1b,c). In one trial, once GPT-6.1-Sol fits smooth decay curves
+tothestartingdata,itstopthreeequationsagreecloselyacrosstheunmeasuredgaparound 𝑊 anddiffermainly
+near𝑥2 =0 . Because the agent tests where its leading equations disagree, it keeps measuring near𝑥2 =0 ,
+never enters𝑊, and ends on a smooth curve without the peak (Fig. 1b). In another trial, after a weak point
+near the edge of𝑊 </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>in Round 5 leaves the smooth curve intact, a strong measurement inside𝑊 in Round 9
+reveals a large jump that smooth curves cannot explain. That departure prompts Sonnet 5.5 to add a peak term
+in Round 10 and place follow-up measurements across𝑊until the true curve is recovered (Fig. 1c).
+Agreement among incomplete equations steers search away from the peak
+Acrossall32pairedtrials,wefirstaskedhowofteneachagent&#x27;sexperimentsevenenteredthepeakregion
+𝑊. Wecomparedbothagentsagainsttwosimplesearchbaselinesthatfitnoequationsatall: randomsampling
+across𝑥2 and interval bisection along𝑥2 (Fig. 2a). Interval bisection repeatedly measures the midpoint of
+the widest unmeasured interval in𝑥2, using prior knowledge of which variable carries the peak28. Random
+sampling would enter𝑊 in 82% of trials by Round 12, and interval bisection entered all32/32. Both AI
+scientists entered𝑊 less often than random </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>sampling, falling significantly below random already by Round 6
+(𝑝=0.002for Sonnet 5.5 and𝑝=8×10 −13 for GPT-6.1-Sol). Over all 12 rounds, Sonnet 5.5 entered𝑊in
+19/32trials( 59%)andGPT-6.1-Solinjust 1/32(3%). Becauseneitheragentcanfitafeatureitneverobserves,
+missing𝑊 prevented recovery (Fig. 2b). Sonnet 5.5 solved7/32 trials (22%) versus0/32 for GPT-6.1-Sol
+(𝑝=0.016), whose runs all ended on smooth curves without a peak.
+Inspecting the agents&#x27; candidate equations before any measurement entered𝑊 explains why equation-
+guided search performed worse than random sampling (Fig. 2c,d). Without a data point inside𝑊, adding peak
+parameters worsens BIC rather than improving it. Neither agent&#x27;s top-ranked equation predicted a peak in
+more than1% of rounds before entering𝑊, and both agents rarely proposed peak terms until a measurement
+landed in𝑊 (Methods). Meanwhile, the smooth decay curves that </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>led the rankings were steepest near𝑥2 =0
+and nearly flat across the interior. Small parameter differences among the top three equations therefore
+produced their largest prediction spread near𝑥2≤1 (78% of rounds for Sonnet 5.5 and64% for GPT-6.1-Sol)
+and almost never inside𝑊(0.8%and2.0%; Fig. 2c).
+This also explains why GPT-6.1-Sol missed the peak in almost every trial (Fig. 2d). For each round, we
+divided the disagreement among the top three equations at the chosen point by their maximum disagreement
+anywhere in the space, giving a ratio from0to 1(1means testing right at maximum disagreement). GPT-6.1-
+Sol scored higher than Sonnet 5.5 in all31shared trials (median0.92 versus 0.48;𝑝=9×10 −10). Yet across
+those 348rounds before entering𝑊, GPT-6.1-Sol&#x27;s top three equations differed at most by a median of0.68𝜎
+(1.25𝜎 across 251 rounds for Sonnet 5.5), less than single-measurement noise. By </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>consistently testing where
+those equations disagreed, GPT-6.1-Sol spent its rounds trying to separate nearly identical background curves
+and left interior gaps untested.
+Testing inside𝑊starts a multi-step chain of hypotheses
+Across both agents, asking what happens inside𝑊 was the first key to discovery: neither agent ever
+recovered the peak without measuring there. Without a data point in the gap, the chain of hypotheses had
+3
+0 3 6 9 12
+Experimental round
+0
+25
+50
+75
+100
+Trials entering W (%) 32/32
+82%
+19/32
+1/32
+Bisection (x2)
+Random sampling
+Sonnet 5.5
+GPT-6.1-Sol
+Sonnet 5.5
+(7/32 solved)
+GPT-6.1-Sol
+(0/32 solved)
+0.1
+1
+10
+50
+Final error E (RMSE / σ)
+Solved (E ≤ 1.05)
+Smooth curve without peak
+(E = 3.9–4.8)
+p = 0.016 Entered W
+Never entered W
+Lower boundary
+(x2 ≤ 1)
+Other background
+(outside W)
+Hidden peak
+(W)
+0
+25
+50
+75
+100
+Largest disagreement (% </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>curves without the peak fall inside the gray band (𝐸=3.9 –4.8).c, Where
+each agent&#x27;s top three equations disagreed most during rounds before entering𝑊 (251rounds for Sonnet 5.5;348for
+GPT-6.1-Sol). Disagreement concentrated near𝑥2≤1 and rarely fell inside𝑊 (95%bootstrap confidence intervals).d,
+Ratio of equation disagreement at the chosen experiment to the maximum disagreement anywhere in the space (per-trial
+median across𝑛=31 shared trials;1 = testing at maximum disagreement). Gray lines connect the same trial across
+agents, and horizontal bars mark medians (𝑝=9×10 −10; one trial excluded because Sonnet 5.5 entered𝑊 in Round 1).
+no evidence to move beyond the smooth curve. Because GPT-6.1-Sol entered𝑊 only once, we analyzed
+post-entry discovery across64Sonnet 5.5 trials run under the same protocol (32of which entered𝑊, with0
+of 32solved without entering𝑊; Methods). Entering𝑊 enabled </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Sonnet 5.5 to solve11of those32trials (21
+unsolved). Once experiments reached the gap, the agent could recover the full law when supported by a chain
+of follow-up measurements (Fig. 3a,b).
+First, the measurement inside𝑊 had to stand out clearly from the smooth background before BIC would
+favor adding extra parameters (Fig. 3a). Because the peak tapers toward the edges of𝑊 and scales with𝑥1,
+experiments near the boundary of𝑊 or at low𝑥1 produced only modest departures. When a measurement hit
+the peak strongly (≥10𝜎 , 19of the32entered trials), the large error overturned the smooth fit and launched a
+peak term in the top-ranked equation in16 of the19 trials (Methods). Among the13 entered trials whose
+initial signals stayed below10𝜎 (rightmost column in Fig. 3a), only2 solved (7.6𝜎 and 9.8𝜎 across multiple
+points in𝑊). The other11never added a peak term to the top-ranked equation.
+Second, </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>once a strong hit launched a peak hypothesis, further steps in the hypothesis chain pinned down
+its shape (Fig. 3b). One𝑥2 point inside𝑊 cannot determine a peak&#x27;s height, center, and width at once.
+Across the32 entered trials, Sonnet 5.5 solved all10 of 10 trials that measured three or more distinct𝑥2
+4</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>point shows the strongest
+peak signal (in units of𝜎) measured in𝑊 before a peak term entered the top-ranked equation (or through Round 12 if
+none did), plotted against the first round reaching≥10𝜎 .b, Percentage of the32entered Sonnet 5.5 trials solved by the
+number of distinct𝑥2 positions measured inside𝑊 (1, 2, or≥3 positions;𝑝=2×10 −7 for≥3 versus 1–2 positions;
+error bars,95%confidence intervals).c, Distribution of all768measured𝑥2 values across the32paired trials for Sonnet
+5.5 (top) and GPT-6.1-Sol (bottom) in0.25-unit bins; the shaded band spans all32peak regions𝑊.d, Percentage of the
+32paired trials entering𝑊 by Round 12 when𝑊 contained an integer (23trials) versus lay between consecutive integers
+(9trials; error bars,95%confidence intervals).
+positionsacross 𝑊 (100%),comparedwith 1of 5withtwopositions( 20%)and 0of 17withoneposition( 0%;
+𝑝=2×10 −7). Discovery therefore succeeded </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reliably whenever the hypothesis chain had enough remaining
+rounds to test and refine the new peak term. When a≥10𝜎 signal arrived by Round 9 (11 trials), Sonnet 5.5
+had time to propose a peak term, measure across𝑊, and solve9of the11trials (82%). Late hits in Rounds
+10–12 left too few rounds for follow-up (0of8solved;𝑝=7×10−4).
+Finally, comparing where both agents placed all768measurements across the32paired trials shows how
+broader coverage helped Sonnet 5.5 reach𝑊 while still leaving finer gaps untested (Fig. 3c). Both agents
+chose integer values of𝑥2 in roughly four-fifths of their experiments (Methods): GPT-6.1-Sol concentrated
+70% of its measurements at𝑥2 =0 and𝑥2 =2 , whereas Sonnet 5.5 swept across integers from0 to 10. That
+broader integer sweep enabled Sonnet 5.5 to enter19 of the23 peak regions containing an integer (83%),
+while missing the9 narrower regions that fell </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>feature locations and simple
+space-filling baselines.
+Although we focused here on a controlled three-variable system without code execution to isolate how
+hypotheses guide search, the same principle applies broadly across experimental science. Pairing strong
+language-model hypothesis generators with deliberate gap-probing experimentation offers a direct path toward
+AI scientists capable of uncovering unexpected phenomena in higher-dimensional and laboratory settings.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Task design and trial setup
+TotestwhetherAIscientistscanfindanarrowfeatureinsideanunmeasuredregion,weaskedthemtostudy
+asyntheticsystem 𝑦=𝑓(𝑥 1,𝑥 2,𝑥 3)+𝜀 withGaussianmeasurementnoise 𝜀∼N(0,𝜎 2) ofstandarddeviation
+𝜎=0.08 . In each experiment, the agent could choose values for three continuous inputs:𝑥1∈[0,50] ,
+𝑥2∈[0,10] , and𝑥3∈[20,45] , where𝑥3 had no effect on𝑦. Unknown to the agent,𝑦 rises and levels off with
+𝑥1, decays smoothly with𝑥2, and contains a narrow Gaussian peak along𝑥2:
+𝑦= 𝑉𝑥 1
+𝐾+𝑥 1
+ 1
+1+𝑥 2/𝐽+𝐴exp
+
+−(𝑥2−𝑐) 2
+2𝑆2
+
++𝜀,(1)
+with𝑉=10 ,𝐾=5 ,𝐽=2 ,𝐴=0.279 , and𝑆≈0.149 . At𝑥1 =40 , the peak raises𝑦 by up to31𝜎 inside the
+peak region𝑊=(𝑐−0.35,𝑐+0.35] , which covers7% of the𝑥2 range, while adding less than2𝜎 anywhere
+outside𝑊 at every𝑥1. Without the peak, even the exact smooth curve scores𝐸=3.9 –4.8 depending on𝑐.
+Meeting the solve criterion (𝐸≤1.05) therefore requires </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>3a,b).
+Closed-loop experimental protocol
+Both agents received the same short instructions stating only the three input ranges, the noise level
+𝜎=0.08 , and the goal of finding the equation for𝑦. Each trial ran for 12 rounds of hypothesis and
+measurement. At the start of each round, the agent received a text summary of all conditions measured
+so far (input values, mean𝑦, and replicate count) together with up to 12 best-fitting candidate equations
+from earlier rounds (none in Round 1). Candidate equations were ranked from lowest to highest Bayesian
+information criterion (BIC=𝜒 2+𝑘ln𝑁 , where𝜒2 is the noise-weighted sum of squared errors across𝑁
+measurements and𝑘 is the number of adjustable parameters). Lower BIC favors accurate fits while penalizing
+extra parameters. For each equation, the agent saw fitted parameter values, prediction errors at each measured
+condition in units of𝜎, and </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the Python formula.
+In each round, the agent briefly explained its reasoning, proposed up to three new equations, and selected
+two new input conditions to measure next, each measured twice. Every proposed equation had to include
+between 1and 10adjustable parameters, together with a starting guess and allowed range for each parameter.
+Invalid formulas or formulas outside this1–10parameter range were skipped before fitting. Across all trials,
+thisoccurredon 126/721proposalsfromGPT-6.1-Sol( 17%,allzero-parameterformulaswithfixedconstants)
+and 5/2,495 from Sonnet 5.5 (0.2%); GPT-6.1-Sol also proposed no new equations in52 rounds. At the end
+of each round, all equations fitted so far had their parameters refitted to the full dataset by bounded nonlinear
+least squares. Fits started from the agent&#x27;s parameter guess on first fit or the previous best parameters on refits,
+plus three random </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>fell in𝑥2∈𝑊 by round𝑘 (for any𝑥1 and 𝑥3). We
+also recorded entry into the central half of𝑊 (|𝑥2−𝑐|≤0.175 ; 11/32 trials for Sonnet 5.5 versus0/32
+for GPT-6.1-Sol, exact McNemar𝑝=0.001 ). Across all768 measured𝑥2 values per agent,78% (Sonnet
+5.5) and84% (GPT-6.1-Sol) were integers. We compared entry into𝑊 against two search strategies that fit
+no equations. Random sampling draws𝑥2 uniformly from[0,10] and enters a7% region by round𝑘 with
+probability 1−(1−0.07) 2𝑘 (58%by Round 6 and82%by Round 12). Starting from each trial&#x27;s four initial
+𝑥2 values and the endpoints0and 10, interval bisection places two measurements per round sequentially at the
+midpoint of the widest unmeasured𝑥2 interval (30/32entered by Round 6 and32/32by Round 12).
+To see how the agents&#x27; own equations guided search before the peak was encountered, we analyzed all
+rounds before the first measurement in𝑊 across </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>at1) gave round-level medians of0.89 for GPT-6.1-Sol and0.49 for Sonnet 5.5. Across
+all 32 Sonnet 5.5 trials that entered𝑊 (Fig. 3a,b), each measurement&#x27;s peak signal was the noiseless peak
+height above the smooth background at the chosen(𝑥1,𝑥 2), in units of𝜎. A peak term counted as entering the
+top-ranked equation once the lowest-BIC equation predicted a local peak of prominence≥5𝜎 inside𝑊 along
+𝑥2 at𝑥1 =40 . By this rule, a peak term entered in16/19trials with a≥10𝜎 signal (15during Rounds 1–12
+and1in the final step), and in0/11unsolved trials whose initial signals stayed below10𝜎.
+Trial-level percentages are shown with95%Wilson confidence intervals, and round-level percentages
+(Fig.2c)with 95%bootstrapconfidenceintervalsfromresamplingwholetrials 10,000times. Entryrateswere
+compared against random sampling using one-sided exact binomial tests, binary outcomes between agents
+acrossthe </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>32pairedtrialsusingtwo-sidedexactMcNemartests,categoricalrecoveryratesacrossenteredtrials
+using two-sided Fisher exact tests, and continuous per-trial scores using two-sided Wilcoxon signed-rank tests.</blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to autonomous/deep research workflows based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to deep research / autonomous research</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 93/100</li>
+              <li>Screening category: AI scientist / discovery system</li>
+              <li>Tags: ai-scientist, deep-research-agents</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-15</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-17 12:45:53</li><li>Last seen by Paper Scout: 2026-11-17 12:45:53</li></ul>
+            <ul><li>arXiv: 2611.19841</li><li>arXiv IDs: 2611.19841</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="asking-the-right-question-is-key-to-ai-discovery-in-a-chain-of-hypotheses-a0dfaa26.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Asking the right question is key to AI discovery in a chain of hypotheses. Hu Cang. 2026-11-15. https://arxiv.org/abs/2611.19841v1</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

@@ -27,7 +27,7 @@
   "last_seen_date": "2026-08-11",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-05 09:09:36",
   "notified_date": "2026-08-05",
@@ -38,7 +38,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-05 09:09:17",
-    "generated_at": "2026-11-16 12:29:51",
+    "generated_at": "2026-11-17 12:51:24",
     "last_seen_at": "2026-08-11 07:40:55",
     "metadata_sources": [
       "openalex",
@@ -105,120 +105,1824 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-08-11T07:41:08+00:00",
-    "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v1",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessed_at": "2026-11-17T12:49:02.691673+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 82/100, medium confidence, based on partial full text.",
-    "confidence": "medium",
-    "coverage": {},
-    "curation_note": null,
-    "dimension_scores": {
-      "contribution_clarity": 4,
-      "evaluation_or_validation_strength": 4,
-      "evidence_to_claim_alignment": 4,
-      "limitations_and_uncertainty_handling": 1,
-      "methodological_rigor": 5,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 2,
-      "reproducibility_and_transparency": 2,
-      "scholarly_novelty_or_value": 4
+    "concise_summary": "The study presents a clear, well-scoped evaluation paradigm designed to mitigate data contamination in generative scientific discovery benchmarks. Its negative and nuanced empirical results are thoroughly grounded by objective baselines, statistical significance tests, and detailed qualitative error analyses.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 54314,
+      "assessment_input_sha256": "842acab2c911f948cf69c9de75044f104235f42fb5bec12a03ae19668764cccf",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7197053879",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 52784,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 52254,
+      "evidence_block_count": 74,
+      "evidence_context_characters": 62505,
+      "evidence_context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+      "evidence_context_sha256": "b826fb514f32d5fdbd51456fabf35c796330b97edce36a2f87b4e4df63610643",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 52810,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "extracted_pages": 14,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "0c04807146a09f410c75e3816a9628cd3a10cf029cd669ebf0083c46b72c1049",
+        "source_url": "https://arxiv.org/pdf/2608.03569",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 52784,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Adversarial Fast-Moving Real-World Domains",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 128,
+          "supplied_characters": 128
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1776,
+          "supplied_characters": 1776
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 1683,
+          "supplied_characters": 1683
+        },
+        {
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 71,
+          "supplied_characters": 71
+        },
+        {
+          "heading": "Ai Scientists And Hypothesis Generation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 528,
+          "supplied_characters": 528
+        },
+        {
+          "heading": "Benchmarking Hypothesis And Scientific Reasoning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "results",
+          "section_index": 5,
+          "source_characters": 935,
+          "supplied_characters": 935
+        },
+        {
+          "heading": "Temporal Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "results",
+          "section_index": 6,
+          "source_characters": 1603,
+          "supplied_characters": 1603
+        },
+        {
+          "heading": "Evaluation Framework",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "results",
+          "section_index": 7,
+          "source_characters": 1926,
+          "supplied_characters": 1926
+        },
+        {
+          "heading": "Experimental Domains",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "results",
+          "section_index": 8,
+          "source_characters": 288,
+          "supplied_characters": 288
+        },
+        {
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 134,
+          "supplied_characters": 134
+        },
+        {
+          "heading": "F1 2026 Regulations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 721,
+          "supplied_characters": 721
+        },
+        {
+          "heading": "Mtg Lorwyneclipsed",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 344,
+          "supplied_characters": 344
+        },
+        {
+          "heading": "February 2026. The Corpus Input Combined The 267 New",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 287,
+          "supplied_characters": 287
+        },
+        {
+          "heading": "Three-Agent Pipeline",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 2203,
+          "supplied_characters": 2203
+        },
+        {
+          "heading": "Evaluation Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 14,
+          "source_characters": 1625,
+          "supplied_characters": 1625
+        },
+        {
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1005,
+          "supplied_characters": 1005
+        },
+        {
+          "heading": "Statistical Tests",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1386,
+          "supplied_characters": 1386
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 2297,
+          "supplied_characters": 2297
+        },
+        {
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 2413,
+          "supplied_characters": 2413
+        },
+        {
+          "heading": "Mtg",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1988,
+          "supplied_characters": 1988
+        },
+        {
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 789,
+          "supplied_characters": 789
+        },
+        {
+          "heading": "Discussion And Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "limitations",
+          "section_index": 21,
+          "source_characters": 5087,
+          "supplied_characters": 5087
+        },
+        {
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 1837,
+          "supplied_characters": 1837
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "conclusion",
+          "section_index": 23,
+          "source_characters": 1592,
+          "supplied_characters": 1592
+        },
+        {
+          "heading": "Back matter: Acknowledgements",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 93,
+          "supplied_characters": 93
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 107,
+          "supplied_characters": 107
+        },
+        {
+          "heading": "Enceagentbench: Toward Rigorous Assessment Of Language",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 1222,
+          "supplied_characters": 1222
+        },
+        {
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 2229,
+          "supplied_characters": 2229
+        },
+        {
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 3500,
+          "supplied_characters": 3500
+        },
+        {
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 4722,
+          "supplied_characters": 4722
+        },
+        {
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 3338,
+          "supplied_characters": 3338
+        },
+        {
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 924,
+          "supplied_characters": 924
+        },
+        {
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 2486,
+          "supplied_characters": 2486
+        },
+        {
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 987,
+          "supplied_characters": 987
+        }
+      ],
+      "selected_characters": 52254,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "selected_sections": [
+        {
+          "characters": 128,
+          "heading": "Adversarial Fast-Moving Real-World Domains",
+          "page": 1
+        },
+        {
+          "characters": 1776,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1683,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 71,
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "page": 2
+        },
+        {
+          "characters": 528,
+          "heading": "Ai Scientists And Hypothesis Generation",
+          "page": 2
+        },
+        {
+          "characters": 935,
+          "heading": "Benchmarking Hypothesis And Scientific Reasoning",
+          "page": 2
+        },
+        {
+          "characters": 1603,
+          "heading": "Temporal Evaluation",
+          "page": 2
+        },
+        {
+          "characters": 1926,
+          "heading": "Evaluation Framework",
+          "page": 2
+        },
+        {
+          "characters": 288,
+          "heading": "Experimental Domains",
+          "page": 2
+        },
+        {
+          "characters": 134,
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "page": 3
+        },
+        {
+          "characters": 721,
+          "heading": "F1 2026 Regulations",
+          "page": 3
+        },
+        {
+          "characters": 344,
+          "heading": "Mtg Lorwyneclipsed",
+          "page": 3
+        },
+        {
+          "characters": 287,
+          "heading": "February 2026. The Corpus Input Combined The 267 New",
+          "page": 3
+        },
+        {
+          "characters": 2203,
+          "heading": "Three-Agent Pipeline",
+          "page": 3
+        },
+        {
+          "characters": 1625,
+          "heading": "Evaluation Metrics",
+          "page": 3
+        },
+        {
+          "characters": 1005,
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "page": 4
+        },
+        {
+          "characters": 1386,
+          "heading": "Statistical Tests",
+          "page": 4
+        },
+        {
+          "characters": 2297,
+          "heading": "Results",
+          "page": 4
+        },
+        {
+          "characters": 2413,
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "page": 5
+        },
+        {
+          "characters": 1988,
+          "heading": "Mtg",
+          "page": 5
+        },
+        {
+          "characters": 789,
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "page": 6
+        },
+        {
+          "characters": 5087,
+          "heading": "Discussion And Limitations",
+          "page": 6
+        },
+        {
+          "characters": 1837,
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "page": 7
+        },
+        {
+          "characters": 1592,
+          "heading": "Conclusion",
+          "page": 7
+        },
+        {
+          "characters": 93,
+          "heading": "Back matter: Acknowledgements",
+          "page": 7
+        },
+        {
+          "characters": 107,
+          "heading": "Unclassified body after references",
+          "page": 7
+        },
+        {
+          "characters": 1222,
+          "heading": "Enceagentbench: Toward Rigorous Assessment Of Language",
+          "page": 7
+        },
+        {
+          "characters": 2229,
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "page": 8
+        },
+        {
+          "characters": 3500,
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "page": 9
+        },
+        {
+          "characters": 4722,
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "page": 10
+        },
+        {
+          "characters": 3338,
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "page": 11
+        },
+        {
+          "characters": 924,
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "page": 12
+        },
+        {
+          "characters": 2486,
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "page": 13
+        },
+        {
+          "characters": 987,
+          "heading": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+          "page": 14
+        }
+      ],
+      "selected_text_sha256": "842acab2c911f948cf69c9de75044f104235f42fb5bec12a03ae19668764cccf",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "0c04807146a09f410c75e3816a9628cd3a10cf029cd669ebf0083c46b72c1049",
+      "source_pages": 14,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
     },
+    "curation_note": null,
+    "dimension_scores": {},
     "downranked": false,
     "evidence": [
       {
         "claim_role": null,
-        "context_id": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
         "dimension": "contribution_clarity",
-        "evidence_ids": [],
-        "excerpt": "discovery systems when we don\u2019t know the answer? We propose that real-world, adversarial domains where out- comes are observed after a time",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0002"
+        ],
+        "excerpt": "Benchmarking the ability of AI scientists to gen-\nerate novel ideas is notoriously difficult. Existing\nbenchmarks in this field have made progress in\nevaluating scientific reasoning and research repli-\ncation, but often rely on synthetic tasks or ret-\nrospective targets, which may be confounded by\nprior exposure. We hypothesize that complex, ad-\nversarial, fast-moving real-world domains where\nexpert practitioners independently generate ob-\nservable outputs can provide a practical solution\nto fill this gap and evaluate the capabilities needed\nfor AI scientists, including reasoning, novelty,\nand hypothesis formulation. We instantiate this\nframework in two structurally different domains,\nFormula 1 (F1), where models ideate around car\ndesign concepts for the 2026 season, and real\npre-season innovations provide a ground truth,\nand Magic: The Gathering (MTG), where mod-\nels propose decks from ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
         "page": 1,
-        "pages": [],
-        "paraphrase": "The contribution is stated explicitly.",
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
         "section": "Abstract",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "86000fe53d0b4355f4725cdb002305ea0aadb2bde36b4d7a1727c1b09c91811e",
+            "evidence_id": "E67304abafdac3dc0-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Benchmarking the ability of AI scientists to gen-\nerate novel ideas is notoriously difficult. Existing\nbenchmarks in this field have made progress in\nevaluating scientific reasoning and research repli-\ncation, but often rely on synthetic tasks or ret-\nrospective targets, which may be confounded by\nprior exposure. We hypothesize that complex, ad-\nversarial, fast-moving real-world domains where\nexpert practitioners independently generate ob-\nservable outputs can provide a practical solution\nto fill this gap and evaluate the capabilities needed\nfor AI scientists, including reasoning, novelty,\nand hypothesis formulation. We instantiate this\nframework in two structurally different domains,\nFormula 1 (F1), where models ideate around car\ndesign concepts for the 2026 season, and real\npre-season innovations provide a ground truth,\nand Magic: The Gathering (MTG), where mod-\nels propose decks from "
+              }
+            ],
+            "text": "Benchmarking the ability of AI scientists to gen-\nerate novel ideas is notoriously difficult. Existing\nbenchmarks in this field have made progress in\nevaluating scientific reasoning and research repli-\ncation, but often rely on synthetic tasks or ret-\nrospective targets, which may be confounded by\nprior exposure. We hypothesize that complex, ad-\nversarial, fast-moving real-world domains where\nexpert practitioners independently generate ob-\nservable outputs can provide a practical solution\nto fill this gap and evaluate the capabilities needed\nfor AI scientists, including reasoning, novelty,\nand hypothesis formulation. We instantiate this\nframework in two structurally different domains,\nFormula 1 (F1), where models ideate around car\ndesign concepts for the 2026 season, and real\npre-season innovations provide a ground truth,\nand Magic: The Gathering (MTG), where mod-\nels propose decks from "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "methodological_rigor",
-        "evidence_ids": [],
-        "excerpt": "et al., 2024; Zhang et al., 2025). So how can we benchmark discovery systems when we don\u2019t know the answer? We propose that real-world, ad",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0003"
+        ],
+        "excerpt": "a recently updated card\npool and are evaluated against 19 Pro Tour (PT)\ndecklists. Across both domains, models produce\nplausible outputs, but few align with real-world\nexpert solutions. In F1, the best model, GPT-5.2\nmatched 10 of 40 real innovations with 166 ideas\nproposed across runs. In MTG, the best deck from\nGemini 3 Flash recovered 5 of 7 new-set cards\nfrom the third-place PT deck, and across all 108\ndecks, the cards models selected most often were\nalso the cards most widely adopted by PT decks\n(Spearman \u03c1= 0.74, p= 0.0003). These results\nsuggest that a key capability gap for AI scientists\nis not idea generation, but filtering, prioritization,\nand coherent novelty.\n1Department of Engineering Science, University of Oxford,\nOxford, United Kingdom. Correspondence to: William Bolton\n<will.bolton@eng.ox.ac.uk>.\nAccepted at the AI for Science workshop (ICML 2026).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
         "page": 1,
-        "pages": [],
-        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
         "section": "Abstract",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "5ac125615f11a799ab4de77ad97b93eea81693fd013311fde3cd973b32ca06bd",
+            "evidence_id": "E67304abafdac3dc0-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1776,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 900,
+                "text": "a recently updated card\npool and are evaluated against 19 Pro Tour (PT)\ndecklists. Across both domains, models produce\nplausible outputs, but few align with real-world\nexpert solutions. In F1, the best model, GPT-5.2\nmatched 10 of 40 real innovations with 166 ideas\nproposed across runs. In MTG, the best deck from\nGemini 3 Flash recovered 5 of 7 new-set cards\nfrom the third-place PT deck, and across all 108\ndecks, the cards models selected most often were\nalso the cards most widely adopted by PT decks\n(Spearman \u03c1= 0.74, p= 0.0003). These results\nsuggest that a key capability gap for AI scientists\nis not idea generation, but filtering, prioritization,\nand coherent novelty.\n1Department of Engineering Science, University of Oxford,\nOxford, United Kingdom. Correspondence to: William Bolton\n<will.bolton@eng.ox.ac.uk>.\nAccepted at the AI for Science workshop (ICML 2026)."
+              }
+            ],
+            "text": "a recently updated card\npool and are evaluated against 19 Pro Tour (PT)\ndecklists. Across both domains, models produce\nplausible outputs, but few align with real-world\nexpert solutions. In F1, the best model, GPT-5.2\nmatched 10 of 40 real innovations with 166 ideas\nproposed across runs. In MTG, the best deck from\nGemini 3 Flash recovered 5 of 7 new-set cards\nfrom the third-place PT deck, and across all 108\ndecks, the cards models selected most often were\nalso the cards most widely adopted by PT decks\n(Spearman \u03c1= 0.74, p= 0.0003). These results\nsuggest that a key capability gap for AI scientists\nis not idea generation, but filtering, prioritization,\nand coherent novelty.\n1Department of Engineering Science, University of Oxford,\nOxford, United Kingdom. Correspondence to: William Bolton\n<will.bolton@eng.ox.ac.uk>.\nAccepted at the AI for Science workshop (ICML 2026)."
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": "in two structurally different domains, Formula 1 (F1), where models ideate around car design concepts for the 2026 season, and real pre-season innovations provide a ground truth, a",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0005"
+        ],
+        "excerpt": "in public\nensures it can benefit the open source community, and after\na period of time, we can verify whether model outputs are\ngenuinely novel or consistent with human intuition.\nContributions.\n\u2022 We propose a framework for evaluating AI scientists'\ncapabilities with adversarial fast-moving real-world\ndomains.\n\u2022 We instantiate a proof of concept of the framework\nin two structurally distinct domains, Formula 1 car\ndesign under new technical regulations and Magic: The\nGathering deck construction under evolving cards.\n\u2022 We identify failure modes that are informative for\nAI scientist evaluation, including the production of\nplausible-but-misaligned ideas, and systematic blind\nspots for value that arises from complex surrounding\ncontexts.\n1\narXiv:2608.03569v1  [cs.AI]  4 Aug 2026",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
         "page": 1,
-        "pages": [],
-        "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": "Abstract",
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "f637336175bf55e646fe105ff1d7522e2e358bb3892d08179e2adc7d43ef0b77",
+            "evidence_id": "E67304abafdac3dc0-B0005",
+            "pages": [
+              1
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1683,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 899,
+                "text": "in public\nensures it can benefit the open source community, and after\na period of time, we can verify whether model outputs are\ngenuinely novel or consistent with human intuition.\nContributions.\n\u2022 We propose a framework for evaluating AI scientists'\ncapabilities with adversarial fast-moving real-world\ndomains.\n\u2022 We instantiate a proof of concept of the framework\nin two structurally distinct domains, Formula 1 car\ndesign under new technical regulations and Magic: The\nGathering deck construction under evolving cards.\n\u2022 We identify failure modes that are informative for\nAI scientist evaluation, including the production of\nplausible-but-misaligned ideas, and systematic blind\nspots for value that arises from complex surrounding\ncontexts.\n1\narXiv:2608.03569v1  [cs.AI]  4 Aug 2026"
+              }
+            ],
+            "text": "in public\nensures it can benefit the open source community, and after\na period of time, we can verify whether model outputs are\ngenuinely novel or consistent with human intuition.\nContributions.\n\u2022 We propose a framework for evaluating AI scientists'\ncapabilities with adversarial fast-moving real-world\ndomains.\n\u2022 We instantiate a proof of concept of the framework\nin two structurally distinct domains, Formula 1 car\ndesign under new technical regulations and Magic: The\nGathering deck construction under evolving cards.\n\u2022 We identify failure modes that are informative for\nAI scientist evaluation, including the production of\nplausible-but-misaligned ideas, and systematic blind\nspots for value that arises from complex surrounding\ncontexts.\n1\narXiv:2608.03569v1  [cs.AI]  4 Aug 2026"
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "methodological_rigor",
-        "evidence_ids": [],
-        "excerpt": "ast-moving real-world domains. \u2022 We instantiate a proof of concept of the framework in two structurally distinct domains, Formula 1 car",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 1,
-        "pages": [],
-        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-        "section": "Abstract",
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0012"
+        ],
+        "excerpt": "Our framework evaluates AI scientist capabilities through a\ntime-delayed generation task. For each domain, we define\nan information cutoff t and construct a fixed input corpus\ncontaining only material available before that point, such\nas rules, constraints, public context, and relevant prior ex-\namples. The AI system is then asked to generate structured\ncandidate artifacts from this corpus, such as ideas, designs,\nor solutions. These generations are evaluated against post-\ncutoff artifacts produced by real-world experts. This cre-\nates a prospective-style evaluation of whether models can\ngenerate non-trivial ideas under realistic constraints, while\nremoving the risk of information leakage.\nA domain is suitable for this framework if it satisfies four\ncriteria. First, it must have a constrained but non-trivial\ndesign space, such that outputs can be judged against ex-\nplicit rules or ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Framework",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "6946b7e3b72eb84d8500a95573239d5f359e7c58278008d34f0c38c9a4482afd",
+            "evidence_id": "E67304abafdac3dc0-B0012",
+            "pages": [
+              2
+            ],
+            "section": "Evaluation Framework",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 2,
+                "section": "Evaluation Framework",
+                "section_index": 7,
+                "start": 0,
+                "text": "Our framework evaluates AI scientist capabilities through a\ntime-delayed generation task. For each domain, we define\nan information cutoff t and construct a fixed input corpus\ncontaining only material available before that point, such\nas rules, constraints, public context, and relevant prior ex-\namples. The AI system is then asked to generate structured\ncandidate artifacts from this corpus, such as ideas, designs,\nor solutions. These generations are evaluated against post-\ncutoff artifacts produced by real-world experts. This cre-\nates a prospective-style evaluation of whether models can\ngenerate non-trivial ideas under realistic constraints, while\nremoving the risk of information leakage.\nA domain is suitable for this framework if it satisfies four\ncriteria. First, it must have a constrained but non-trivial\ndesign space, such that outputs can be judged against ex-\nplicit rules or "
+              }
+            ],
+            "text": "Our framework evaluates AI scientist capabilities through a\ntime-delayed generation task. For each domain, we define\nan information cutoff t and construct a fixed input corpus\ncontaining only material available before that point, such\nas rules, constraints, public context, and relevant prior ex-\namples. The AI system is then asked to generate structured\ncandidate artifacts from this corpus, such as ideas, designs,\nor solutions. These generations are evaluated against post-\ncutoff artifacts produced by real-world experts. This cre-\nates a prospective-style evaluation of whether models can\ngenerate non-trivial ideas under realistic constraints, while\nremoving the risk of information leakage.\nA domain is suitable for this framework if it satisfies four\ncriteria. First, it must have a constrained but non-trivial\ndesign space, such that outputs can be judged against ex-\nplicit rules or "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0013"
+        ],
+        "excerpt": "objectives. Second, it must be adversarial\nsuch that it involves genuine expert innovation, rather than\nsimple retrieval or optimization against a known answer.\nThird, it must produce publicly accessible observable down-\nstream artifacts that can serve as the time-delayed ground\ntruth. Fourth, models and the input context must have a\nclear information cutoff, so that models can be evaluated us-\ning only information plausibly available before the relevant\ninnovations became public.\nEach domain is treated as a fixed-corpus ideation problem\nwhere structured candidates such as ideas or solutions are\nproduced, and evaluation is conducted along two axes. First,\noutcome similarity measures whether a generated artifact\ncorresponds to an independently observed expert innovation\nin the same domain under the same constraints. This tests\nif the AI system can recover new ideas that later ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Framework",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "012b4176d0dc7087a3b9d5da160adf32ceaee423c4533d2e5785fa267d37bb66",
+            "evidence_id": "E67304abafdac3dc0-B0013",
+            "pages": [
+              2
+            ],
+            "section": "Evaluation Framework",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1782,
+                "page": 2,
+                "section": "Evaluation Framework",
+                "section_index": 7,
+                "start": 894,
+                "text": "objectives. Second, it must be adversarial\nsuch that it involves genuine expert innovation, rather than\nsimple retrieval or optimization against a known answer.\nThird, it must produce publicly accessible observable down-\nstream artifacts that can serve as the time-delayed ground\ntruth. Fourth, models and the input context must have a\nclear information cutoff, so that models can be evaluated us-\ning only information plausibly available before the relevant\ninnovations became public.\nEach domain is treated as a fixed-corpus ideation problem\nwhere structured candidates such as ideas or solutions are\nproduced, and evaluation is conducted along two axes. First,\noutcome similarity measures whether a generated artifact\ncorresponds to an independently observed expert innovation\nin the same domain under the same constraints. This tests\nif the AI system can recover new ideas that later "
+              }
+            ],
+            "text": "objectives. Second, it must be adversarial\nsuch that it involves genuine expert innovation, rather than\nsimple retrieval or optimization against a known answer.\nThird, it must produce publicly accessible observable down-\nstream artifacts that can serve as the time-delayed ground\ntruth. Fourth, models and the input context must have a\nclear information cutoff, so that models can be evaluated us-\ning only information plausibly available before the relevant\ninnovations became public.\nEach domain is treated as a fixed-corpus ideation problem\nwhere structured candidates such as ideas or solutions are\nproduced, and evaluation is conducted along two axes. First,\noutcome similarity measures whether a generated artifact\ncorresponds to an independently observed expert innovation\nin the same domain under the same constraints. This tests\nif the AI system can recover new ideas that later "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0017"
+        ],
+        "excerpt": "F1 is the pinnacle of motorsport and is fiercely innovative.\nMost often, the fastest car wins, and hence there is signif-\nicant engineering investment from teams to develop new\nideas that shave tenths of a second off lap times. In 2026,\nthe FIA Formula 1 Technical Regulations went through the\nlargest change in history. Teams have had to design new\ncars from the ground up to comply with these regulations.\nThe corpus contained a 264-page PDF document FIA 2026\nSection CTechnical Regulations, dated 10th of December\n2025. The task was to produce technical innovations spe-\ncific to the 2026 cars. Ground truth was a curated set of 40\nreal F1 concepts drawn from publicly available pre-season\nanalysis (Appendix Table 2).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "F1 2026 Regulations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f0796cc92a2a8762827e01e29b5465642f1eb6cad77bab065b09c2efab724584",
+            "evidence_id": "E67304abafdac3dc0-B0017",
+            "pages": [
+              3
+            ],
+            "section": "F1 2026 Regulations",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 721,
+                "page": 3,
+                "section": "F1 2026 Regulations",
+                "section_index": 10,
+                "start": 0,
+                "text": "F1 is the pinnacle of motorsport and is fiercely innovative.\nMost often, the fastest car wins, and hence there is signif-\nicant engineering investment from teams to develop new\nideas that shave tenths of a second off lap times. In 2026,\nthe FIA Formula 1 Technical Regulations went through the\nlargest change in history. Teams have had to design new\ncars from the ground up to comply with these regulations.\nThe corpus contained a 264-page PDF document FIA 2026\nSection CTechnical Regulations, dated 10th of December\n2025. The task was to produce technical innovations spe-\ncific to the 2026 cars. Ground truth was a curated set of 40\nreal F1 concepts drawn from publicly available pre-season\nanalysis (Appendix Table 2)."
+              }
+            ],
+            "text": "F1 is the pinnacle of motorsport and is fiercely innovative.\nMost often, the fastest car wins, and hence there is signif-\nicant engineering investment from teams to develop new\nideas that shave tenths of a second off lap times. In 2026,\nthe FIA Formula 1 Technical Regulations went through the\nlargest change in history. Teams have had to design new\ncars from the ground up to comply with these regulations.\nThe corpus contained a 264-page PDF document FIA 2026\nSection CTechnical Regulations, dated 10th of December\n2025. The task was to produce technical innovations spe-\ncific to the 2026 cars. Ground truth was a curated set of 40\nreal F1 concepts drawn from publicly available pre-season\nanalysis (Appendix Table 2)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0018"
+        ],
+        "excerpt": "MTG is a competitive collectible card game in which profes-\nsional players invest hundreds of hours per set identifying\nwhich new cards are most competitive. Lorwyn Eclipsed is\nan MTG set released on 23 January 2026, containing 267\nunique cards. PT Lorwyn Eclipsed, the first competitive\nevent using the new set, was held between 30 January and",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mtg Lorwyneclipsed",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9d2c48040240c3f4a9c53d31b13919ccab3faa002c69026de88ea733d7cc1bd9",
+            "evidence_id": "E67304abafdac3dc0-B0018",
+            "pages": [
+              3
+            ],
+            "section": "Mtg Lorwyneclipsed",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 344,
+                "page": 3,
+                "section": "Mtg Lorwyneclipsed",
+                "section_index": 11,
+                "start": 0,
+                "text": "MTG is a competitive collectible card game in which profes-\nsional players invest hundreds of hours per set identifying\nwhich new cards are most competitive. Lorwyn Eclipsed is\nan MTG set released on 23 January 2026, containing 267\nunique cards. PT Lorwyn Eclipsed, the first competitive\nevent using the new set, was held between 30 January and"
+              }
+            ],
+            "text": "MTG is a competitive collectible card game in which profes-\nsional players invest hundreds of hours per set identifying\nwhich new cards are most competitive. Lorwyn Eclipsed is\nan MTG set released on 23 January 2026, containing 267\nunique cards. PT Lorwyn Eclipsed, the first competitive\nevent using the new set, was held between 30 January and"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0019"
+        ],
+        "excerpt": "cards with 4,168 existing Standard-legal cards. The task\nwas to produce a complete tournament-legal deck, prioritiz-\ning the new Lorwyn Eclipsed cards considered most viable.\nGround-truth decklists were collected for the top 15 PT\ndecks alongside four featured builds (Appendix Table 3).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "February 2026. The Corpus Input Combined The 267 New",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c02607dda52d8035bc9fc22627bda9605a9067f9f209591067a357330059c71f",
+            "evidence_id": "E67304abafdac3dc0-B0019",
+            "pages": [
+              3
+            ],
+            "section": "February 2026. The Corpus Input Combined The 267 New",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 287,
+                "page": 3,
+                "section": "February 2026. The Corpus Input Combined The 267 New",
+                "section_index": 12,
+                "start": 0,
+                "text": "cards with 4,168 existing Standard-legal cards. The task\nwas to produce a complete tournament-legal deck, prioritiz-\ning the new Lorwyn Eclipsed cards considered most viable.\nGround-truth decklists were collected for the top 15 PT\ndecks alongside four featured builds (Appendix Table 3)."
+              }
+            ],
+            "text": "cards with 4,168 existing Standard-legal cards. The task\nwas to produce a complete tournament-legal deck, prioritiz-\ning the new Lorwyn Eclipsed cards considered most viable.\nGround-truth decklists were collected for the top 15 PT\ndecks alongside four featured builds (Appendix Table 3)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0020"
+        ],
+        "excerpt": "A 3-agent pipeline was used in both domains to decouple\nthree core skills of strategic intent, technical analysis,\nand generation. For F1, agent 1 receives a 2026-context\nsummary and produces performance goals; agent 2 receives\nthe full technical regulations and produces a regulatory\nmapping that tags eachdegree of freedomwith one of\nfive loophole categories ( INTERFACE COUPLING,\nDEFINITION EDGE CASE, BROAD FREEDOM,\nNOT PROHIBITED, EXCEPTION ZONE) and a list\nof cited article numbers; finally, agent 3 receives the outputs\nfrom agents 1 and 2, regulatory text for every article cited,\nand few-shot examples from F1 history, and produces\napproximately 15 car design ideas. Each generated idea\ninherits the union of loophole types from those mappings\nwhose cited articles overlap its enabling articles; the full\ntagging procedure and verdict scales are detailed in the\nsupplementary methods. For ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Three-Agent Pipeline",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f76047c39a4a1a7046bb212d90ec449c94bc021e6c04951e91d5db257d2f32fd",
+            "evidence_id": "E67304abafdac3dc0-B0020",
+            "pages": [
+              3
+            ],
+            "section": "Three-Agent Pipeline",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 3,
+                "section": "Three-Agent Pipeline",
+                "section_index": 13,
+                "start": 0,
+                "text": "A 3-agent pipeline was used in both domains to decouple\nthree core skills of strategic intent, technical analysis,\nand generation. For F1, agent 1 receives a 2026-context\nsummary and produces performance goals; agent 2 receives\nthe full technical regulations and produces a regulatory\nmapping that tags eachdegree of freedomwith one of\nfive loophole categories ( INTERFACE COUPLING,\nDEFINITION EDGE CASE, BROAD FREEDOM,\nNOT PROHIBITED, EXCEPTION ZONE) and a list\nof cited article numbers; finally, agent 3 receives the outputs\nfrom agents 1 and 2, regulatory text for every article cited,\nand few-shot examples from F1 history, and produces\napproximately 15 car design ideas. Each generated idea\ninherits the union of loophole types from those mappings\nwhose cited articles overlap its enabling articles; the full\ntagging procedure and verdict scales are detailed in the\nsupplementary methods. For "
+              }
+            ],
+            "text": "A 3-agent pipeline was used in both domains to decouple\nthree core skills of strategic intent, technical analysis,\nand generation. For F1, agent 1 receives a 2026-context\nsummary and produces performance goals; agent 2 receives\nthe full technical regulations and produces a regulatory\nmapping that tags eachdegree of freedomwith one of\nfive loophole categories ( INTERFACE COUPLING,\nDEFINITION EDGE CASE, BROAD FREEDOM,\nNOT PROHIBITED, EXCEPTION ZONE) and a list\nof cited article numbers; finally, agent 3 receives the outputs\nfrom agents 1 and 2, regulatory text for every article cited,\nand few-shot examples from F1 history, and produces\napproximately 15 car design ideas. Each generated idea\ninherits the union of loophole types from those mappings\nwhose cited articles overlap its enabling articles; the full\ntagging procedure and verdict scales are detailed in the\nsupplementary methods. For "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0021"
+        ],
+        "excerpt": "MTG, agent 1 receives the full\n267 Lorwyn Eclipsed cards and labels each as STAPLE,\nROLE PLAYER, BUILD AROUND, or UNPLAYABLE;\nagent 2 receives agent 1's shortlist together with condensed\ntext for the pre-existing cards and pre-tournament metagame\ncontext, and produces a combined card shortlist with\nstrategy notes; finally, agent 3 receives agent 2's output\nand generates three decks, each representing a different\nstrategic angle. All outputs use structured JSON. For both\ndomains, the pipeline was run in two configurations. In\nF1, the general configuration produced outputs across the\nwhole car, while by-component narrowed the generation\nscope to specific car areas, such as the floor or rear wing.\nThis tested whether reducing the search space improved\noutput quality. For MTG, in one-shot mode, agent 3 outputs\na single structured-JSON response, while in tool-use mode,\nit builds each deck ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Three-Agent Pipeline",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b86e66200f9eb05f3a3cb719d1161afef01dbd38da7aec8b008641c443a3bb9b",
+            "evidence_id": "E67304abafdac3dc0-B0021",
+            "pages": [
+              3
+            ],
+            "section": "Three-Agent Pipeline",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1795,
+                "page": 3,
+                "section": "Three-Agent Pipeline",
+                "section_index": 13,
+                "start": 898,
+                "text": "MTG, agent 1 receives the full\n267 Lorwyn Eclipsed cards and labels each as STAPLE,\nROLE PLAYER, BUILD AROUND, or UNPLAYABLE;\nagent 2 receives agent 1's shortlist together with condensed\ntext for the pre-existing cards and pre-tournament metagame\ncontext, and produces a combined card shortlist with\nstrategy notes; finally, agent 3 receives agent 2's output\nand generates three decks, each representing a different\nstrategic angle. All outputs use structured JSON. For both\ndomains, the pipeline was run in two configurations. In\nF1, the general configuration produced outputs across the\nwhole car, while by-component narrowed the generation\nscope to specific car areas, such as the floor or rear wing.\nThis tested whether reducing the search space improved\noutput quality. For MTG, in one-shot mode, agent 3 outputs\na single structured-JSON response, while in tool-use mode,\nit builds each deck "
+              }
+            ],
+            "text": "MTG, agent 1 receives the full\n267 Lorwyn Eclipsed cards and labels each as STAPLE,\nROLE PLAYER, BUILD AROUND, or UNPLAYABLE;\nagent 2 receives agent 1's shortlist together with condensed\ntext for the pre-existing cards and pre-tournament metagame\ncontext, and produces a combined card shortlist with\nstrategy notes; finally, agent 3 receives agent 2's output\nand generates three decks, each representing a different\nstrategic angle. All outputs use structured JSON. For both\ndomains, the pipeline was run in two configurations. In\nF1, the general configuration produced outputs across the\nwhole car, while by-component narrowed the generation\nscope to specific car areas, such as the floor or rear wing.\nThis tested whether reducing the search space improved\noutput quality. For MTG, in one-shot mode, agent 3 outputs\na single structured-JSON response, while in tool-use mode,\nit builds each deck "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0023"
+        ],
+        "excerpt": "Novelty matching in the F1 domain utilized three stages.\nFirst, generated ideas and real innovations were embedded\nand shortlisted using a dual top-k retrieval strategy (k= 3),\nretaining the nearest real innovations for each generated\nidea and the nearest generated ideas for each real innovation.\nShortlisted pairs were assessed by an LLM judge (GPT-5.5)\nfor MATCH, PARTIAL, or NO MATCH. Candidate matches\nthen underwent human review to verify if the idea described\na similar physical effect to the real innovation. In parallel,\neach generated idea was assessed along three quality dimen-\nsions: citation accuracy, rule compliance, and engineering\nplausibility. An idea was treated as passing these quality fil-\nters only if its cited regulations were substantively accurate,\nits design was legal or plausibly within a regulatory grey\nzone, and its mechanism was physically plausible.\nMTG ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Metrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9033facc4566d7e7a8d4d0d5512bba23af22a6cdf71eadb59c46f6f31d0ee99b",
+            "evidence_id": "E67304abafdac3dc0-B0023",
+            "pages": [
+              3
+            ],
+            "section": "Evaluation Metrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 890,
+                "page": 3,
+                "section": "Evaluation Metrics",
+                "section_index": 14,
+                "start": 0,
+                "text": "Novelty matching in the F1 domain utilized three stages.\nFirst, generated ideas and real innovations were embedded\nand shortlisted using a dual top-k retrieval strategy (k= 3),\nretaining the nearest real innovations for each generated\nidea and the nearest generated ideas for each real innovation.\nShortlisted pairs were assessed by an LLM judge (GPT-5.5)\nfor MATCH, PARTIAL, or NO MATCH. Candidate matches\nthen underwent human review to verify if the idea described\na similar physical effect to the real innovation. In parallel,\neach generated idea was assessed along three quality dimen-\nsions: citation accuracy, rule compliance, and engineering\nplausibility. An idea was treated as passing these quality fil-\nters only if its cited regulations were substantively accurate,\nits design was legal or plausibly within a regulatory grey\nzone, and its mechanism was physically plausible.\nMTG "
+              }
+            ],
+            "text": "Novelty matching in the F1 domain utilized three stages.\nFirst, generated ideas and real innovations were embedded\nand shortlisted using a dual top-k retrieval strategy (k= 3),\nretaining the nearest real innovations for each generated\nidea and the nearest generated ideas for each real innovation.\nShortlisted pairs were assessed by an LLM judge (GPT-5.5)\nfor MATCH, PARTIAL, or NO MATCH. Candidate matches\nthen underwent human review to verify if the idea described\na similar physical effect to the real innovation. In parallel,\neach generated idea was assessed along three quality dimen-\nsions: citation accuracy, rule compliance, and engineering\nplausibility. An idea was treated as passing these quality fil-\nters only if its cited regulations were substantively accurate,\nits design was legal or plausibly within a regulatory grey\nzone, and its mechanism was physically plausible.\nMTG "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0024"
+        ],
+        "excerpt": "evaluation used deterministic decklist comparisons\nrather than semantic judging. For each generated deck and\nground-truth PT deck pair, we computed card overlap and\nsimilarity metrics (Jaccard, precision, and recall) for all non-\nland cards, and most relevant to the prospective nature of\nthis framework the new non-land Lorwyn Eclipsed cards.\nLegality was assessed by checking that each generated deck\ncontained a 60-card maindeck and a 15-card sideboard.\nTo calibrate new-set overlap against chance, we computed\ntwo random baselines over the N= 261 non-land new-\nset card pool. The first is the per-pair expected overlap,\nE[overlap] =kK/N , where k is the number of new-set\ncards in the generated deck and K is the number in the PT\n3",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Metrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c21119762739cb058ac48164e69c38b87684866cadd36541e70ef6be29a715b7",
+            "evidence_id": "E67304abafdac3dc0-B0024",
+            "pages": [
+              3
+            ],
+            "section": "Evaluation Metrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1625,
+                "page": 3,
+                "section": "Evaluation Metrics",
+                "section_index": 14,
+                "start": 890,
+                "text": "evaluation used deterministic decklist comparisons\nrather than semantic judging. For each generated deck and\nground-truth PT deck pair, we computed card overlap and\nsimilarity metrics (Jaccard, precision, and recall) for all non-\nland cards, and most relevant to the prospective nature of\nthis framework the new non-land Lorwyn Eclipsed cards.\nLegality was assessed by checking that each generated deck\ncontained a 60-card maindeck and a 15-card sideboard.\nTo calibrate new-set overlap against chance, we computed\ntwo random baselines over the N= 261 non-land new-\nset card pool. The first is the per-pair expected overlap,\nE[overlap] =kK/N , where k is the number of new-set\ncards in the generated deck and K is the number in the PT\n3"
+              }
+            ],
+            "text": "evaluation used deterministic decklist comparisons\nrather than semantic judging. For each generated deck and\nground-truth PT deck pair, we computed card overlap and\nsimilarity metrics (Jaccard, precision, and recall) for all non-\nland cards, and most relevant to the prospective nature of\nthis framework the new non-land Lorwyn Eclipsed cards.\nLegality was assessed by checking that each generated deck\ncontained a 60-card maindeck and a 15-card sideboard.\nTo calibrate new-set overlap against chance, we computed\ntwo random baselines over the N= 261 non-land new-\nset card pool. The first is the per-pair expected overlap,\nE[overlap] =kK/N , where k is the number of new-set\ncards in the generated deck and K is the number in the PT\n3"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0025"
+        ],
+        "excerpt": "Adversarial Fast-Moving Real-World Domains for Evaluating AI Scientists\ndeck. This is the hypergeometric mean and tells us how\nmany new-set cards a single generated-vs-PT deck compari-\nson would share by chance alone, given the two decks' new-\nset card counts. The second is the aggregate expectation\nacross the d= 9 decks generated for each model under each\npipeline configuration,E agg =T\u00b7\n\u0002\n1\u2212 Qdi=1(1\u2212k i/N)\u0003,\nwhere ki is the new-set card count of thei-th generated deck\nand T= 19 is the total number of distinct new-set cards\nin the PT ground-truth set. This is the expected number of\ndistinct PT new-set cards rediscovered across the configura-\ntion's nine decks if each deck were an independent uniform\nrandom draw from the pool, computed analytically and via\n10,000 Monte-Carlo resamples for percentile bounds. It\nserves as an upper bound on expected random rediscovery\nbecause the actual ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ba6bc4d582fc34184e6ef703172f0364255cd78703150d41cca34a4728cd9d89",
+            "evidence_id": "E67304abafdac3dc0-B0025",
+            "pages": [
+              4
+            ],
+            "section": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 4,
+                "section": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+                "section_index": 15,
+                "start": 0,
+                "text": "Adversarial Fast-Moving Real-World Domains for Evaluating AI Scientists\ndeck. This is the hypergeometric mean and tells us how\nmany new-set cards a single generated-vs-PT deck compari-\nson would share by chance alone, given the two decks' new-\nset card counts. The second is the aggregate expectation\nacross the d= 9 decks generated for each model under each\npipeline configuration,E agg =T\u00b7\n\u0002\n1\u2212 Qdi=1(1\u2212k i/N)\u0003,\nwhere ki is the new-set card count of thei-th generated deck\nand T= 19 is the total number of distinct new-set cards\nin the PT ground-truth set. This is the expected number of\ndistinct PT new-set cards rediscovered across the configura-\ntion's nine decks if each deck were an independent uniform\nrandom draw from the pool, computed analytically and via\n10,000 Monte-Carlo resamples for percentile bounds. It\nserves as an upper bound on expected random rediscovery\nbecause the actual "
+              }
+            ],
+            "text": "Adversarial Fast-Moving Real-World Domains for Evaluating AI Scientists\ndeck. This is the hypergeometric mean and tells us how\nmany new-set cards a single generated-vs-PT deck compari-\nson would share by chance alone, given the two decks' new-\nset card counts. The second is the aggregate expectation\nacross the d= 9 decks generated for each model under each\npipeline configuration,E agg =T\u00b7\n\u0002\n1\u2212 Qdi=1(1\u2212k i/N)\u0003,\nwhere ki is the new-set card count of thei-th generated deck\nand T= 19 is the total number of distinct new-set cards\nin the PT ground-truth set. This is the expected number of\ndistinct PT new-set cards rediscovered across the configura-\ntion's nine decks if each deck were an independent uniform\nrandom draw from the pool, computed analytically and via\n10,000 Monte-Carlo resamples for percentile bounds. It\nserves as an upper bound on expected random rediscovery\nbecause the actual "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0027"
+        ],
+        "excerpt": "For F1, we tested the association between the quality dimen-\nsions and human-reviewed real-innovation matches. For\neach criterion, we collapsed the verdict to a binary pass/non-\npass split (e.g. PASS+GREY/PARTIAL vs FAIL) and ran\nFisher's exact test on the resulting 2\u00d72 contingency table\nagainst matched versus unmatched status, pooled across\nall six models (n = 881 ideas). Odds ratios (OR) are re-\nported with 95% confidence intervals (CI) derived from the\nstandard error of the log OR. We also report cross-run idea\nconvergence for each model. For each idea in a general\nrun i, we compute its maximum cosine similarity to any\nidea in another general run j\u0338=i . For MTG, one-shot\nand tool-use pipeline configurations were compared across\nthe six matched models using a paired Wilcoxon signed-\nrank test on new-set recall, and a Friedman test was used\nas the corresponding aggregate test on ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Statistical Tests",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "49b7fd5b8411f95de681df779f3cd99c2bdcb8f984ee88821e47d70849402921",
+            "evidence_id": "E67304abafdac3dc0-B0027",
+            "pages": [
+              4
+            ],
+            "section": "Statistical Tests",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 4,
+                "section": "Statistical Tests",
+                "section_index": 16,
+                "start": 0,
+                "text": "For F1, we tested the association between the quality dimen-\nsions and human-reviewed real-innovation matches. For\neach criterion, we collapsed the verdict to a binary pass/non-\npass split (e.g. PASS+GREY/PARTIAL vs FAIL) and ran\nFisher's exact test on the resulting 2\u00d72 contingency table\nagainst matched versus unmatched status, pooled across\nall six models (n = 881 ideas). Odds ratios (OR) are re-\nported with 95% confidence intervals (CI) derived from the\nstandard error of the log OR. We also report cross-run idea\nconvergence for each model. For each idea in a general\nrun i, we compute its maximum cosine similarity to any\nidea in another general run j\u0338=i . For MTG, one-shot\nand tool-use pipeline configurations were compared across\nthe six matched models using a paired Wilcoxon signed-\nrank test on new-set recall, and a Friedman test was used\nas the corresponding aggregate test on "
+              }
+            ],
+            "text": "For F1, we tested the association between the quality dimen-\nsions and human-reviewed real-innovation matches. For\neach criterion, we collapsed the verdict to a binary pass/non-\npass split (e.g. PASS+GREY/PARTIAL vs FAIL) and ran\nFisher's exact test on the resulting 2\u00d72 contingency table\nagainst matched versus unmatched status, pooled across\nall six models (n = 881 ideas). Odds ratios (OR) are re-\nported with 95% confidence intervals (CI) derived from the\nstandard error of the log OR. We also report cross-run idea\nconvergence for each model. For each idea in a general\nrun i, we compute its maximum cosine similarity to any\nidea in another general run j\u0338=i . For MTG, one-shot\nand tool-use pipeline configurations were compared across\nthe six matched models using a paired Wilcoxon signed-\nrank test on new-set recall, and a Friedman test was used\nas the corresponding aggregate test on "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0029"
+        ],
+        "excerpt": "5.1. F1\nThe six models proposed 881 candidate technical innova-\ntions across both general (full-car) and component-focused\nruns. In total, 19 of 40 (48%) real 2026 pre-season innova-\ntions were independently suggested by at least one model.\nPerformance varied substantially by model, with Qwen3\nFigure 1.Human-confirmed matches between model-generated\nideas and real 2026 F1 innovations. Rows show the real innova-\ntions, grouped by car area, and columns show each model under\ngeneral (full-car) and component-focused configurations. Green\ncells denote matches, yellow cells denote partial matches, with cell\nvalues indicating the number of generated ideas that matched.\nTable 1.Quality signal pass rates by model.Ideasdenotes the\nnumber of candidate technical innovations generated across all\nruns.All-passis the fraction passing all three filters, whileEng.,\nCite, andComp.report pass rates for ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "03b5ff6447edff2b368db8a73df3166ea0f290b82b1456714ba9f5d2b38224f4",
+            "evidence_id": "E67304abafdac3dc0-B0029",
+            "pages": [
+              4
+            ],
+            "section": "Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 4,
+                "section": "Results",
+                "section_index": 17,
+                "start": 0,
+                "text": "5.1. F1\nThe six models proposed 881 candidate technical innova-\ntions across both general (full-car) and component-focused\nruns. In total, 19 of 40 (48%) real 2026 pre-season innova-\ntions were independently suggested by at least one model.\nPerformance varied substantially by model, with Qwen3\nFigure 1.Human-confirmed matches between model-generated\nideas and real 2026 F1 innovations. Rows show the real innova-\ntions, grouped by car area, and columns show each model under\ngeneral (full-car) and component-focused configurations. Green\ncells denote matches, yellow cells denote partial matches, with cell\nvalues indicating the number of generated ideas that matched.\nTable 1.Quality signal pass rates by model.Ideasdenotes the\nnumber of candidate technical innovations generated across all\nruns.All-passis the fraction passing all three filters, whileEng.,\nCite, andComp.report pass rates for "
+              }
+            ],
+            "text": "5.1. F1\nThe six models proposed 881 candidate technical innova-\ntions across both general (full-car) and component-focused\nruns. In total, 19 of 40 (48%) real 2026 pre-season innova-\ntions were independently suggested by at least one model.\nPerformance varied substantially by model, with Qwen3\nFigure 1.Human-confirmed matches between model-generated\nideas and real 2026 F1 innovations. Rows show the real innova-\ntions, grouped by car area, and columns show each model under\ngeneral (full-car) and component-focused configurations. Green\ncells denote matches, yellow cells denote partial matches, with cell\nvalues indicating the number of generated ideas that matched.\nTable 1.Quality signal pass rates by model.Ideasdenotes the\nnumber of candidate technical innovations generated across all\nruns.All-passis the fraction passing all three filters, whileEng.,\nCite, andComp.report pass rates for "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0031"
+        ],
+        "excerpt": "area and separated by pipeline configuration.\nAll three quality signals were significantly associated with\nhuman-confirmed matches. Rule compliance carried the\nstrongest signal, with legally compliant or grey-zone ideas\n(n = 542) having 9\u00d7 higher odds of matching a real inno-\nvation than non-compliant ideas (n = 339; OR = 8.92, 95%\nCI [2.74, 29.08], p= 2.9\u00d710 \u22126). Citation accuracy (OR\n= 3.11, 95% CI [1.30, 7.46], p= 0.007) and engineering\nplausibility (OR = 4.65, 95% CI [1.11, 19.44], p= 0.022)\n4",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3393cc42ba896d7050aa4c9fb534a657f0a9fd55df5e5da32c0173c0da9570b5",
+            "evidence_id": "E67304abafdac3dc0-B0031",
+            "pages": [
+              4
+            ],
+            "section": "Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2297,
+                "page": 4,
+                "section": "Results",
+                "section_index": 17,
+                "start": 1795,
+                "text": "area and separated by pipeline configuration.\nAll three quality signals were significantly associated with\nhuman-confirmed matches. Rule compliance carried the\nstrongest signal, with legally compliant or grey-zone ideas\n(n = 542) having 9\u00d7 higher odds of matching a real inno-\nvation than non-compliant ideas (n = 339; OR = 8.92, 95%\nCI [2.74, 29.08], p= 2.9\u00d710 \u22126). Citation accuracy (OR\n= 3.11, 95% CI [1.30, 7.46], p= 0.007) and engineering\nplausibility (OR = 4.65, 95% CI [1.11, 19.44], p= 0.022)\n4"
+              }
+            ],
+            "text": "area and separated by pipeline configuration.\nAll three quality signals were significantly associated with\nhuman-confirmed matches. Rule compliance carried the\nstrongest signal, with legally compliant or grey-zone ideas\n(n = 542) having 9\u00d7 higher odds of matching a real inno-\nvation than non-compliant ideas (n = 339; OR = 8.92, 95%\nCI [2.74, 29.08], p= 2.9\u00d710 \u22126). Citation accuracy (OR\n= 3.11, 95% CI [1.30, 7.46], p= 0.007) and engineering\nplausibility (OR = 4.65, 95% CI [1.11, 19.44], p= 0.022)\n4"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0035"
+        ],
+        "excerpt": "Across the six models and 108 generated decks, 14 of 19\n(74%) PT new-set cards were selected. The strongest single\ndeck-pair match was from Gemini 3 Flash in the one-shot\nconfiguration, recovering 5 of 7 new-set cards (71%, Fig-\nure 2) in the semi-finalist Izzet Elementals deck against a\nper-pair expectation of 0.32 cards (15.5\u00d7). The strongest\nconfiguration across multiple decks was also one-shot Gem-\nini 3 Flash, the only model whose nine-deck total exceeded\nFigure 2.Fraction of new cards from each generated deck's closest\nPT match that were correctly predicted, broken down by model and\npipeline configuration. Each marker is one generated deck. The\ngrey band marks the per-pair random expectation; points above it\nindicate above-chance recovery.\nFigure 3.Per-model coverage of the 19 new cards present in any\nof the PT decks. Rows are PT new cards, ordered by the number\nof ground-truth ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mtg",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ff0018406a05db7daccbab1053ebaa8a6f41d7f5838157d2aa9c081312eb356f",
+            "evidence_id": "E67304abafdac3dc0-B0035",
+            "pages": [
+              5
+            ],
+            "section": "Mtg",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 5,
+                "section": "Mtg",
+                "section_index": 19,
+                "start": 0,
+                "text": "Across the six models and 108 generated decks, 14 of 19\n(74%) PT new-set cards were selected. The strongest single\ndeck-pair match was from Gemini 3 Flash in the one-shot\nconfiguration, recovering 5 of 7 new-set cards (71%, Fig-\nure 2) in the semi-finalist Izzet Elementals deck against a\nper-pair expectation of 0.32 cards (15.5\u00d7). The strongest\nconfiguration across multiple decks was also one-shot Gem-\nini 3 Flash, the only model whose nine-deck total exceeded\nFigure 2.Fraction of new cards from each generated deck's closest\nPT match that were correctly predicted, broken down by model and\npipeline configuration. Each marker is one generated deck. The\ngrey band marks the per-pair random expectation; points above it\nindicate above-chance recovery.\nFigure 3.Per-model coverage of the 19 new cards present in any\nof the PT decks. Rows are PT new cards, ordered by the number\nof ground-truth "
+              }
+            ],
+            "text": "Across the six models and 108 generated decks, 14 of 19\n(74%) PT new-set cards were selected. The strongest single\ndeck-pair match was from Gemini 3 Flash in the one-shot\nconfiguration, recovering 5 of 7 new-set cards (71%, Fig-\nure 2) in the semi-finalist Izzet Elementals deck against a\nper-pair expectation of 0.32 cards (15.5\u00d7). The strongest\nconfiguration across multiple decks was also one-shot Gem-\nini 3 Flash, the only model whose nine-deck total exceeded\nFigure 2.Fraction of new cards from each generated deck's closest\nPT match that were correctly predicted, broken down by model and\npipeline configuration. Each marker is one generated deck. The\ngrey band marks the per-pair random expectation; points above it\nindicate above-chance recovery.\nFigure 3.Per-model coverage of the 19 new cards present in any\nof the PT decks. Rows are PT new cards, ordered by the number\nof ground-truth "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0037"
+        ],
+        "excerpt": "aligned with PT adoption.\nAcross the 19 new-set PT cards, the number of generated\ndecks playing a card correlated strongly with the number of\nPT decks containing it (Spearman \u03c1= 0.74 , p= 0.0003 ,\n5",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mtg",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2206e884841bd3688ea3ff04463c1775708bfe841b02f3b41d6d9db1491b8235",
+            "evidence_id": "E67304abafdac3dc0-B0037",
+            "pages": [
+              5
+            ],
+            "section": "Mtg",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1988,
+                "page": 5,
+                "section": "Mtg",
+                "section_index": 19,
+                "start": 1790,
+                "text": "aligned with PT adoption.\nAcross the 19 new-set PT cards, the number of generated\ndecks playing a card correlated strongly with the number of\nPT decks containing it (Spearman \u03c1= 0.74 , p= 0.0003 ,\n5"
+              }
+            ],
+            "text": "aligned with PT adoption.\nAcross the 19 new-set PT cards, the number of generated\ndecks playing a card correlated strongly with the number of\nPT decks containing it (Spearman \u03c1= 0.74 , p= 0.0003 ,\n5"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0039"
+        ],
+        "excerpt": "This study argues that adversarial, fast-moving real-world\ndomains can provide a practical intermediate test bed for\nevaluating AI scientist capabilities. Across both domains,\nfrontier systems produced many plausible outputs and in\nseveral cases recovered post-cutoff expert choices. How-\never, a difficulty appears to be discrimination, identifying\nideas which are grounded, useful, and worth pursuing. The\n881 candidate F1 ideas covered 19 of 40 real innovations\nbetween them, but most ideas did not match any innovation,\nand 89% of pairs that the LLM novelty judge flagged for\nhuman review were downgraded. In MTG, 14 of the 19 PT\nnew-set cards were selected by some generated deck, yet\naggregate discovery within any single configuration only\nmodestly exceeded its random baseline. This highlights\nthat open-ended ideation benchmarks should not just reward\nfluency and volume, but should ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion And Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4960f9abe3782c1a58a010a1604cd1b19fe782f440ecb18bf276a02c22320446",
+            "evidence_id": "E67304abafdac3dc0-B0039",
+            "pages": [
+              6
+            ],
+            "section": "Discussion And Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 6,
+                "section": "Discussion And Limitations",
+                "section_index": 21,
+                "start": 0,
+                "text": "This study argues that adversarial, fast-moving real-world\ndomains can provide a practical intermediate test bed for\nevaluating AI scientist capabilities. Across both domains,\nfrontier systems produced many plausible outputs and in\nseveral cases recovered post-cutoff expert choices. How-\never, a difficulty appears to be discrimination, identifying\nideas which are grounded, useful, and worth pursuing. The\n881 candidate F1 ideas covered 19 of 40 real innovations\nbetween them, but most ideas did not match any innovation,\nand 89% of pairs that the LLM novelty judge flagged for\nhuman review were downgraded. In MTG, 14 of the 19 PT\nnew-set cards were selected by some generated deck, yet\naggregate discovery within any single configuration only\nmodestly exceeded its random baseline. This highlights\nthat open-ended ideation benchmarks should not just reward\nfluency and volume, but should "
+              }
+            ],
+            "text": "This study argues that adversarial, fast-moving real-world\ndomains can provide a practical intermediate test bed for\nevaluating AI scientist capabilities. Across both domains,\nfrontier systems produced many plausible outputs and in\nseveral cases recovered post-cutoff expert choices. How-\never, a difficulty appears to be discrimination, identifying\nideas which are grounded, useful, and worth pursuing. The\n881 candidate F1 ideas covered 19 of 40 real innovations\nbetween them, but most ideas did not match any innovation,\nand 89% of pairs that the LLM novelty judge flagged for\nhuman review were downgraded. In MTG, 14 of the 19 PT\nnew-set cards were selected by some generated deck, yet\naggregate discovery within any single configuration only\nmodestly exceeded its random baseline. This highlights\nthat open-ended ideation benchmarks should not just reward\nfluency and volume, but should "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0043"
+        ],
+        "excerpt": "shows\nconvergence with a human idea under shared constraints.\nIt is not evidence that the model reasoned the same way\nthe expert did, nor that the idea would translate to provide\ngenuine value. Second, expert artifacts are an incomplete\nground truth. Public F1 coverage overrepresents visible\naerodynamics and packaging while many decisive sources\nof performance remain confidential, and MTG decklists re-\nveal successful tournament choices but do not capture all\nviable decks, testing processes, or private strategic reason-\ning. Third, this framework can test novelty and reasoning\nunder constraints, but the domains evaluated are still proxies\nfor open-ended scientific discovery. Finally, although this\nframework can be run prospectively, the human artifacts in\nthis study had already been generated at the time of eval-\nuation. Future instantiations should pre-register prompts,\ncorpus, models, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion And Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b36551be79a82d83e2eef05db97811b1836021e8bef50913ac2c7393d512b4a5",
+            "evidence_id": "E67304abafdac3dc0-B0043",
+            "pages": [
+              6
+            ],
+            "section": "Discussion And Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 4465,
+                "page": 6,
+                "section": "Discussion And Limitations",
+                "section_index": 21,
+                "start": 3565,
+                "text": "shows\nconvergence with a human idea under shared constraints.\nIt is not evidence that the model reasoned the same way\nthe expert did, nor that the idea would translate to provide\ngenuine value. Second, expert artifacts are an incomplete\nground truth. Public F1 coverage overrepresents visible\naerodynamics and packaging while many decisive sources\nof performance remain confidential, and MTG decklists re-\nveal successful tournament choices but do not capture all\nviable decks, testing processes, or private strategic reason-\ning. Third, this framework can test novelty and reasoning\nunder constraints, but the domains evaluated are still proxies\nfor open-ended scientific discovery. Finally, although this\nframework can be run prospectively, the human artifacts in\nthis study had already been generated at the time of eval-\nuation. Future instantiations should pre-register prompts,\ncorpus, models, "
+              }
+            ],
+            "text": "shows\nconvergence with a human idea under shared constraints.\nIt is not evidence that the model reasoned the same way\nthe expert did, nor that the idea would translate to provide\ngenuine value. Second, expert artifacts are an incomplete\nground truth. Public F1 coverage overrepresents visible\naerodynamics and packaging while many decisive sources\nof performance remain confidential, and MTG decklists re-\nveal successful tournament choices but do not capture all\nviable decks, testing processes, or private strategic reason-\ning. Third, this framework can test novelty and reasoning\nunder constraints, but the domains evaluated are still proxies\nfor open-ended scientific discovery. Finally, although this\nframework can be run prospectively, the human artifacts in\nthis study had already been generated at the time of eval-\nuation. Future instantiations should pre-register prompts,\ncorpus, models, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0057"
+        ],
+        "excerpt": "knowledge cutoff) were accessed via OpenRouter. Every cutoff predates both the FIA 2026 Section C\nTechnical Regulations (released 10 December 2025) and Lorwyn Eclipsed (released 23 January 2026), so neither corpus\ncould have appeared in any model's training data. F1 generated ideas and real innovations were embedded with OpenAI's\ntext-embedding-3-smallmodel.\nGround-truth collection\nThe reference set of 40 real 2026 pre-season innovations was compiled from publicly available technical analysis published\nbetween January and March 2026 (Table 2). Sources span written publications and technical videos covering pre-season\ntesting and car launches. An LLM extraction pipeline converted source text and video transcripts into structured entries, each\ncarrying innovation id, headline, description, technical mechanism, lay summary, car area, the\nteam or teams reported as using the innovation, a ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "04caa8d9b472342c8e36232469926efbad04d7b2d9d00cfef8dc312d66db2103",
+            "evidence_id": "E67304abafdac3dc0-B0057",
+            "pages": [
+              9
+            ],
+            "section": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1349,
+                "page": 9,
+                "section": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+                "section_index": 28,
+                "start": 452,
+                "text": "knowledge cutoff) were accessed via OpenRouter. Every cutoff predates both the FIA 2026 Section C\nTechnical Regulations (released 10 December 2025) and Lorwyn Eclipsed (released 23 January 2026), so neither corpus\ncould have appeared in any model's training data. F1 generated ideas and real innovations were embedded with OpenAI's\ntext-embedding-3-smallmodel.\nGround-truth collection\nThe reference set of 40 real 2026 pre-season innovations was compiled from publicly available technical analysis published\nbetween January and March 2026 (Table 2). Sources span written publications and technical videos covering pre-season\ntesting and car launches. An LLM extraction pipeline converted source text and video transcripts into structured entries, each\ncarrying innovation id, headline, description, technical mechanism, lay summary, car area, the\nteam or teams reported as using the innovation, a "
+              }
+            ],
+            "text": "knowledge cutoff) were accessed via OpenRouter. Every cutoff predates both the FIA 2026 Section C\nTechnical Regulations (released 10 December 2025) and Lorwyn Eclipsed (released 23 January 2026), so neither corpus\ncould have appeared in any model's training data. F1 generated ideas and real innovations were embedded with OpenAI's\ntext-embedding-3-smallmodel.\nGround-truth collection\nThe reference set of 40 real 2026 pre-season innovations was compiled from publicly available technical analysis published\nbetween January and March 2026 (Table 2). Sources span written publications and technical videos covering pre-season\ntesting and car launches. An LLM extraction pipeline converted source text and video transcripts into structured entries, each\ncarrying innovation id, headline, description, technical mechanism, lay summary, car area, the\nteam or teams reported as using the innovation, a "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0062"
+        ],
+        "excerpt": "cited\narticle exists and substantively supports the claim), PARTIAL (mostly correct, minor omissions or slips), or FAIL. Rule\ncompliance is one ofPASS (clearly legal under the regulations),GREY (regulation is silent or admits multiple interpretations),\nor FAIL (violates a specific article). Engineering plausibility is binary, PASS or FAIL, based on adhering to basic physics.\nThe all-pass aggregate reported in Table 1 admits an idea if its citation verdict is PASS or PARTIAL, its compliance verdict\nisPASSorGREY, and its engineering verdict isPASS.\nHuman review protocol\nAll 519 candidate pairs that survived the shortlist filter were reviewed by a single author acting as the adjudicator. The\nreviewer is not a domain expert in either Formula 1 engineering or competitive Magic. For each candidate the reviewer saw\nthe generated idea (concept description, performance mechanism, lay summary, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d45a190a6b6664bee1c960d94308b74f51f038216ab1110ca186fcf65b4c8d7d",
+            "evidence_id": "E67304abafdac3dc0-B0062",
+            "pages": [
+              10
+            ],
+            "section": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2325,
+                "page": 10,
+                "section": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+                "section_index": 29,
+                "start": 1428,
+                "text": "cited\narticle exists and substantively supports the claim), PARTIAL (mostly correct, minor omissions or slips), or FAIL. Rule\ncompliance is one ofPASS (clearly legal under the regulations),GREY (regulation is silent or admits multiple interpretations),\nor FAIL (violates a specific article). Engineering plausibility is binary, PASS or FAIL, based on adhering to basic physics.\nThe all-pass aggregate reported in Table 1 admits an idea if its citation verdict is PASS or PARTIAL, its compliance verdict\nisPASSorGREY, and its engineering verdict isPASS.\nHuman review protocol\nAll 519 candidate pairs that survived the shortlist filter were reviewed by a single author acting as the adjudicator. The\nreviewer is not a domain expert in either Formula 1 engineering or competitive Magic. For each candidate the reviewer saw\nthe generated idea (concept description, performance mechanism, lay summary, "
+              }
+            ],
+            "text": "cited\narticle exists and substantively supports the claim), PARTIAL (mostly correct, minor omissions or slips), or FAIL. Rule\ncompliance is one ofPASS (clearly legal under the regulations),GREY (regulation is silent or admits multiple interpretations),\nor FAIL (violates a specific article). Engineering plausibility is binary, PASS or FAIL, based on adhering to basic physics.\nThe all-pass aggregate reported in Table 1 admits an idea if its citation verdict is PASS or PARTIAL, its compliance verdict\nisPASSorGREY, and its engineering verdict isPASS.\nHuman review protocol\nAll 519 candidate pairs that survived the shortlist filter were reviewed by a single author acting as the adjudicator. The\nreviewer is not a domain expert in either Formula 1 engineering or competitive Magic. For each candidate the reviewer saw\nthe generated idea (concept description, performance mechanism, lay summary, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0063"
+        ],
+        "excerpt": "regulatory hook),\nthe candidate real innovation ( headline, technical mechanism, lay summary, car area, teams), and the\nLLM judge's free-text rationale, but not its discrete verdict label, so that the reviewer's decision was not anchored on\nthe upstream judge. A pair was assigned MATCH when the generated idea's performance mechanism described the\nsame physical effect as the real innovation's technical mechanism with similar geometry, and PARTIAL when the\ngenerated idea described the same physical effect via different geometry, or similar geometry achieving a related but distinct\neffect. Sharing only the same regulatory area or the same problem framing was explicitly insufficient for PARTIAL. All\nheadline counts and the four Fisher's exact tests in Section 5.1 use the post-review labels.\nSupplementary Results\nF1\nAmong 519 human-reviewed pairs, admitted into the review pool via a dual ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "01f3c1d7e97cbe9cc67b61ed258d53ad9ef2557470516f7e8b386027920592af",
+            "evidence_id": "E67304abafdac3dc0-B0063",
+            "pages": [
+              10
+            ],
+            "section": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3221,
+                "page": 10,
+                "section": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+                "section_index": 29,
+                "start": 2325,
+                "text": "regulatory hook),\nthe candidate real innovation ( headline, technical mechanism, lay summary, car area, teams), and the\nLLM judge's free-text rationale, but not its discrete verdict label, so that the reviewer's decision was not anchored on\nthe upstream judge. A pair was assigned MATCH when the generated idea's performance mechanism described the\nsame physical effect as the real innovation's technical mechanism with similar geometry, and PARTIAL when the\ngenerated idea described the same physical effect via different geometry, or similar geometry achieving a related but distinct\neffect. Sharing only the same regulatory area or the same problem framing was explicitly insufficient for PARTIAL. All\nheadline counts and the four Fisher's exact tests in Section 5.1 use the post-review labels.\nSupplementary Results\nF1\nAmong 519 human-reviewed pairs, admitted into the review pool via a dual "
+              }
+            ],
+            "text": "regulatory hook),\nthe candidate real innovation ( headline, technical mechanism, lay summary, car area, teams), and the\nLLM judge's free-text rationale, but not its discrete verdict label, so that the reviewer's decision was not anchored on\nthe upstream judge. A pair was assigned MATCH when the generated idea's performance mechanism described the\nsame physical effect as the real innovation's technical mechanism with similar geometry, and PARTIAL when the\ngenerated idea described the same physical effect via different geometry, or similar geometry achieving a related but distinct\neffect. Sharing only the same regulatory area or the same problem framing was explicitly insufficient for PARTIAL. All\nheadline counts and the four Fisher's exact tests in Section 5.1 use the post-review labels.\nSupplementary Results\nF1\nAmong 519 human-reviewed pairs, admitted into the review pool via a dual "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0065"
+        ],
+        "excerpt": "configurations were\ncomplementary rather than nested. Three innovations were found only via general runs and eight only via component-focused\nruns (Figure 6). Coverage was heavily skewed across car regions (Figure 7): cooling (4 of 5, 80%) and suspension (3 of 4,\n75%) were the strongest, while front wing (0 of 3) and electronics (0 of 1) were entirely uncovered. The three unmatched\nfront-wing innovations all concern active-flap actuation packaging, a solution that no model proposed.\nThe evaluation pipeline itself is noisy. Of the 519 pairs the LLM novelty judge flagged for human review, 89% were\n10\nAdversarial Fast-Moving Real-World Domains for Evaluating AI Scientists\ndowngraded to NO MATCH, indicating that semantic similarity can confuse superficial overlap with shared mechanism and\nLLM judges can fail to distinguish nuanced differences.\nUnion coverage rewards breadth, so we ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10,
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6459a0e4d21f837b9b6307eb6fbb7bc949a815b41b192548342df76d9f11f3ea",
+            "evidence_id": "E67304abafdac3dc0-B0065",
+            "pages": [
+              10,
+              11
+            ],
+            "section": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 4722,
+                "page": 10,
+                "section": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+                "section_index": 29,
+                "start": 4117,
+                "text": "configurations were\ncomplementary rather than nested. Three innovations were found only via general runs and eight only via component-focused\nruns (Figure 6). Coverage was heavily skewed across car regions (Figure 7): cooling (4 of 5, 80%) and suspension (3 of 4,\n75%) were the strongest, while front wing (0 of 3) and electronics (0 of 1) were entirely uncovered. The three unmatched\nfront-wing innovations all concern active-flap actuation packaging, a solution that no model proposed.\nThe evaluation pipeline itself is noisy. Of the 519 pairs the LLM novelty judge flagged for human review, 89% were\n10"
+              },
+              {
+                "end": 284,
+                "page": 11,
+                "section": "Adversarial Fast-Moving Real-World Domains For Evaluating Ai Scientists",
+                "section_index": 30,
+                "start": 0,
+                "text": "Adversarial Fast-Moving Real-World Domains for Evaluating AI Scientists\ndowngraded to NO MATCH, indicating that semantic similarity can confuse superficial overlap with shared mechanism and\nLLM judges can fail to distinguish nuanced differences.\nUnion coverage rewards breadth, so we "
+              }
+            ],
+            "text": "configurations were\ncomplementary rather than nested. Three innovations were found only via general runs and eight only via component-focused\nruns (Figure 6). Coverage was heavily skewed across car regions (Figure 7): cooling (4 of 5, 80%) and suspension (3 of 4,\n75%) were the strongest, while front wing (0 of 3) and electronics (0 of 1) were entirely uncovered. The three unmatched\nfront-wing innovations all concern active-flap actuation packaging, a solution that no model proposed.\nThe evaluation pipeline itself is noisy. Of the 519 pairs the LLM novelty judge flagged for human review, 89% were\n10\nAdversarial Fast-Moving Real-World Domains for Evaluating AI Scientists\ndowngraded to NO MATCH, indicating that semantic similarity can confuse superficial overlap with shared mechanism and\nLLM judges can fail to distinguish nuanced differences.\nUnion coverage rewards breadth, so we "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       }
     ],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2608.03569",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": 82,
+    "overall_quality_score": null,
     "paper_type": "theoretical",
-    "positive_signals": [
-      "The contribution is stated explicitly.",
-      "The available text identifies data or a benchmark used by the work.",
-      "Quantitative evaluation signals were detected.",
-      "Formal definitions or proof-oriented evidence is present."
-    ],
-    "promotion": {},
-    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
-    "recommendation": "promising",
-    "rubric_version": "scholarly-rubric-v1",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7197053879",
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "MTG results rest on deterministic card overlap with tournament-tested expert decklists, while F1 matches are confirmed by a human reviewer blinded to the LLM judge's discrete verdict [E67304abafdac3dc0-B0024, E67304abafdac3dc0-B0063].",
+          "final_evaluation_signal": "Headline outcomes are established by deterministic decklist comparisons against official Pro Tour decks in MTG and by human adjudication of generated F1 ideas against real 2026 pre-season engineering innovations [E67304abafdac3dc0-B0024, E67304abafdac3dc0-B0063].",
+          "independent_corroboration": "present",
+          "optimization_signal": "The systems under study are six frontier LLMs run through fixed three-agent prompt pipelines with no parameter fine-tuning, reward optimization, or iterative selection against the test tasks [E67304abafdac3dc0-B0020, E67304abafdac3dc0-B0021].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0002",
+          "E67304abafdac3dc0-B0003",
+          "E67304abafdac3dc0-B0005",
+          "E67304abafdac3dc0-B0012",
+          "E67304abafdac3dc0-B0017",
+          "E67304abafdac3dc0-B0019",
+          "E67304abafdac3dc0-B0020",
+          "E67304abafdac3dc0-B0021",
+          "E67304abafdac3dc0-B0023",
+          "E67304abafdac3dc0-B0024",
+          "E67304abafdac3dc0-B0025",
+          "E67304abafdac3dc0-B0027",
+          "E67304abafdac3dc0-B0029",
+          "E67304abafdac3dc0-B0031",
+          "E67304abafdac3dc0-B0035",
+          "E67304abafdac3dc0-B0037",
+          "E67304abafdac3dc0-B0039",
+          "E67304abafdac3dc0-B0043",
+          "E67304abafdac3dc0-B0057",
+          "E67304abafdac3dc0-B0062",
+          "E67304abafdac3dc0-B0063",
+          "E67304abafdac3dc0-B0065"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "0c04807146a09f410c75e3816a9628cd3a10cf029cd669ebf0083c46b72c1049"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7197053879",
+        "claim_evidence_alignment": "Reported findings closely reflect the evidence: models generate plausible ideas but struggle with filtering and complex contextual dependencies [E67304abafdac3dc0-B0003, E67304abafdac3dc0-B0039]. The authors explicitly document that 89% of LLM-judge shortlisted F1 pairs were downgraded upon human review and that aggregate MTG deck discovery only modestly exceeded random baselines [E67304abafdac3dc0-B0039, E67304abafdac3dc0-B0065].",
+        "context_id": "67304abafdac3dc0d1d3ecedf714577422820dc6088a753d1baa3cf6ab3c1503",
+        "decision": "pass",
+        "evaluation_assessment": "Outputs are evaluated against real-world post-cutoff expert artifacts: 40 actual 2026 F1 innovations and 19 Magic: The Gathering Pro Tour tournament decklists [E67304abafdac3dc0-B0017, E67304abafdac3dc0-B0019]. The evaluation incorporates calibrated hypergeometric random baselines, blinded human adjudication over candidate matches, and thorough statistical testing (Fisher's exact, Wilcoxon, Friedman, Spearman correlation) [E67304abafdac3dc0-B0024, E67304abafdac3dc0-B0027, E67304abafdac3dc0-B0063].",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "MTG evaluations rely on deterministic card-matching against official tournament decklists, and F1 comparisons are corroborated by independent human review of technical mechanisms against real pre-season engineering solutions [E67304abafdac3dc0-B0024, E67304abafdac3dc0-B0063].",
+          "final_evaluation_signal": "Deterministic decklist comparisons against tournament-tested Pro Tour decks in MTG, and blinded human adjudication against real-world 2026 F1 pre-season engineering innovations [E67304abafdac3dc0-B0023, E67304abafdac3dc0-B0024, E67304abafdac3dc0-B0063].",
+          "independent_corroboration": "present",
+          "optimization_signal": "Prompt-based three-agent decomposition pipelines run without parameter fine-tuning or iterative reward optimization on the test tasks [E67304abafdac3dc0-B0020, E67304abafdac3dc0-B0021].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E67304abafdac3dc0-B0002",
+          "E67304abafdac3dc0-B0003",
+          "E67304abafdac3dc0-B0005",
+          "E67304abafdac3dc0-B0012",
+          "E67304abafdac3dc0-B0013",
+          "E67304abafdac3dc0-B0017",
+          "E67304abafdac3dc0-B0018",
+          "E67304abafdac3dc0-B0019",
+          "E67304abafdac3dc0-B0020",
+          "E67304abafdac3dc0-B0021",
+          "E67304abafdac3dc0-B0023",
+          "E67304abafdac3dc0-B0024",
+          "E67304abafdac3dc0-B0025",
+          "E67304abafdac3dc0-B0027",
+          "E67304abafdac3dc0-B0029",
+          "E67304abafdac3dc0-B0031",
+          "E67304abafdac3dc0-B0035",
+          "E67304abafdac3dc0-B0037",
+          "E67304abafdac3dc0-B0039",
+          "E67304abafdac3dc0-B0043",
+          "E67304abafdac3dc0-B0057",
+          "E67304abafdac3dc0-B0062",
+          "E67304abafdac3dc0-B0063",
+          "E67304abafdac3dc0-B0065"
+        ],
+        "limitations": "The authors candidly acknowledge that matching real innovations does not prove internal reasoning parity, expert outputs form an incomplete ground truth, proxy domains differ from pure scientific research, and human review was conducted by a non-expert single author [E67304abafdac3dc0-B0043, E67304abafdac3dc0-B0063].",
+        "method_assessment": "The methodology utilizes fixed-corpus prompting of six frontier LLMs whose training cutoffs predate the public disclosure of the reference artifacts, structured through a three-agent decomposition pipeline [E67304abafdac3dc0-B0020, E67304abafdac3dc0-B0057]. The prompt designs, pipeline configurations (general vs component-focused; one-shot vs tool-use), and retrieval shortlisting protocols are clearly defined and accompanied by code/data repositories [E67304abafdac3dc0-B0021, E67304abafdac3dc0-B0023].",
+        "quality_rationale": "The study presents a clear, well-scoped evaluation paradigm designed to mitigate data contamination in generative scientific discovery benchmarks. Its negative and nuanced empirical results are thoroughly grounded by objective baselines, statistical significance tests, and detailed qualitative error analyses.",
+        "scoped_contribution": "Bolton and Torr propose an evaluation framework for AI scientist capabilities using fast-moving, adversarial real-world domains with time-delayed reveal events, instantiated on Formula 1 2026 regulations and Magic: The Gathering deck construction [E67304abafdac3dc0-B0005, E67304abafdac3dc0-B0012].",
+        "source_content_hash": "0c04807146a09f410c75e3816a9628cd3a10cf029cd669ebf0083c46b72c1049"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The study presents a clear, well-scoped evaluation paradigm designed to mitigate data contamination in generative scientific discovery benchmarks. Its negative and nuanced empirical results are thoroughly grounded by objective baselines, statistical significance tests, and detailed qualitative error analyses.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
     "source_content_hash": "0c04807146a09f410c75e3816a9628cd3a10cf029cd669ebf0083c46b72c1049",
-    "status": "not_assessed",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
+    "uncertainty": "The authors candidly acknowledge that matching real innovations does not prove internal reasoning parity, expert outputs form an incomplete ground truth, proxy domains differ from pure scientific research, and human review was conducted by a non-expert single author [E67304abafdac3dc0-B0043, E67304abafdac3dc0-B0063]."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

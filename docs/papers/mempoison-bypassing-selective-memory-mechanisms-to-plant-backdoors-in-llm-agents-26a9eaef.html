@@ -59,16 +59,410 @@
             <p>Large language model (LLM) agents increasingly leverage long-term memory to support persistent and autonomous task execution. However, this capability also introduces a new attack surface: memory poisoning, where adversaries can inject malicious information to influence future behavior. Existing memory poisoning att...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a rigorous, well-scoped security study addressing an important vulnerability in modern selective agent memory architectures. The methodology, experimental controls, comprehensive ablations, defense tests, and mechanistic explanations provide robust evidence satisfying all scientific criteria.</p>
+      <p>The authors transparently discuss key limitations, including performance degradation against strongly aligned front-end models that filter malicious inputs during extraction (such as Claude-Opus-4.6 in deployment), lower cross-embedder transferability to specific architectures like aMPNet, and the scope being bounded to dense retrieval rather than hybrid BM25 schemes [E5a9e40183344219e-B0077, E5a9e40183344219e-B0078, E5a9e40183344219e-B0090].</p>
       <p>Publication: peer reviewed. OpenAlex records a published conference location: ACM SIGSAC Conference on Computer and Communications Security (CCS). Peer review inferred from venue metadata, not independently verified.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-17T12:50:33.233280+00:00.</p>
+        <p>Coverage: 92079 of 92079 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Large language model (LLM) agents increasingly leverage long-
+term memory to support persistent and autonomous task execution.
+However, this capability also introduces a new attack surface:mem-
+ory poisoning, where adversaries can inject malicious information
+to influence future behavior. Existing memory poisoning attacks
+often assume that injected content can be stored directly in mem-
+ory, overlooking the selective extraction and rewriting stages in
+modern memory pipelines. This makes prior methods ineffective
+under realistic settings.
+In this paper, we proposeMemPoison, a novel memory poisoning
+attack that bypasses selective memory mechanisms in LLM agents,
+where an attacker can inject triggerable backdoors into the agent&#x27;s
+long-term memory through dialogue interactions, thereby mis-
+leading its subsequent responses. MemPoison introduces three key
+components: (i) asemantic relational </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>bridgethat binds the trigger
+and payload into a coherent statement to ensure their co-extraction
+into memory; (ii)entity masqueradingthat optimizes triggers to
+mimic named entities, resisting rewriting; and (iii)joint embedding
+optimizationthat shapes trigger-injected texts into a tight cluster
+in the embedding space while maintaining isolation from benign
+embeddings for stealth. Evaluations across different agent domains
+and memory mechanisms show MemPoison achieves attack suc-
+cess rates up to 0.95, outperforming existing baselines. Mechanistic
+analysis reveals the exploitation of embedding-space anisotropy
+and attention redistribution, highlighting core vulnerabilities in
+selective memory systems. We evaluate multiple defense strategies
+and demonstrate their fundamental limitations in mitigating the
+attack. We release our code to facilitate further research.
+CCS Concepts
+•Security </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>requires ensuring both effectiveness and stealth [3].
+The poisoned memory is required to be precisely retrieved when
+the input contains the trigger, while remaining strictly dormant
+during normal interactions.
+To address these challenges, we proposeMemPoison, a practical
+framework that operates under interaction-only access constraints
+(with no ability to directly insert, edit, or delete memory entries)
+while leveraging optimization-driven trigger generation. To ensure
+successful injection (Challenge 1), we construct asemantic rela-
+tional bridge, which binds the trigger and malicious content into
+a logically interdependent statement, reducing the risk that the
+memory mechanism discards the trigger as irrelevant noise. To
+prevent rewriting (Challenge 2), we employentity masquerading,
+optimizing the trigger to mimic a named entity, as named entities
+tend to be preserved verbatim during </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>LLM rewriting. Finally, to
+achieve precise attacks (Challenge 3), we propose ajoint embed-
+ding optimizationscheme that shapes trigger-injected texts into
+a tight cluster in the embedding space, biasing retrieval toward
+the poisoned memory under triggered queries, while maintaining
+separation from benign embeddings to preserve stealth.
+We extensively evaluate MemPoison across diverse agent do-
+mains and memory mechanisms (§5), including one on a real-world
+agent system (§5.5). MemPoison achieves attack success rates up to
+0.95 while maintaining benign accuracy, significantly outperform-
+ing prior methods. The attack remains effective against common
+defenses such as perplexity-based filtering and paraphrasing. Fi-
+nally, our mechanistic analysis reveals that MemPoison exploits
+embedding-space anisotropy and attention redistribution, provid-
+ing insights into fundamental vulnerabilities </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Semantic Relational Bridge. MemPoison employs asemantic re-
+lational bridge, implemented using GPT-4, to bind a trigger and an
+input text into a semantically interdependent statement. Given a
+trigger 𝝉 and an input text𝑥, we denote the bridged text as𝑇(𝝉,𝑥) .
+This bridge serves two roles in our framework. DuringItera-
+tive Trigger Optimization,𝑥 corresponds to texts sampled from the
+corpus to generate trigger-injected texts for optimization. During
+Trigger Injection &amp; Activation,𝑥 corresponds to the attacker-crafted
+malicious payload.
+Problem Formulation.Formally, letS={𝑠 1,...,𝑠 𝐵} be a batch of
+texts sampled from the corpus, where𝐵 is the batch size. For each
+𝑠𝑖 ∈S , we instantiate the semantic relational bridge as 𝑇(𝝉,𝑠 𝑖)
+to obtain trigger-injected texts for optimization. Let 𝐸(·) be the
+surrogate embedding encoder. We consider three objectives to guide
+the optimization of the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>trigger: an entity masquerading objective
+Lent, a semantic concentration objectiveLconc, and a geometric
+isolation objectiveL iso. We detail each objective below.
+Entity Masquerading Loss.Named entity strings tend to be pre-
+served during memory rewriting, so we encourage the trigger to
+exhibit entity-like characteristics. Specifically, we leverage a pre-
+trained named entity recognition (NER) model 10 as a surrogate
+evaluator. Let𝑝NER(𝑦𝑡 =𝑐|𝑥) denote the probability that token𝑡
+in the sequence𝑥=𝑇(𝝉,𝑠 𝑖) is classified as a target entity type 𝑐.
+We define:
+Lent =− 1𝐵 𝐵∑︁𝑖=1 1|𝝉| ∑︁𝑡∈𝐼 𝝉 log𝑝 NER(𝑦𝑡 =𝑐|𝑇(𝝉,𝑠 𝑖))(1)
+where𝐼𝝉 denotes the index set corresponding to the trigger tokens
+in the bridged text𝑇(𝝉,𝑠 𝑖).
+MinimizingLent encourages the trigger to exhibit stable entity-
+like structure across diverse contexts, increasing its likelihood of
+preservation during memory rewriting.
+Semantic </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Concentration Loss.To achieve precise retrieval, the
+texts containing the trigger should form a compact region in the
+embedding space. This ensures that future queries containing the
+same trigger are likely to retrieve the corresponding malicious
+memory. The concentration loss is defined as:
+Lconc = 1𝐵 𝐵∑︁𝑖=1∥𝐸(𝑇(𝝉,𝑠 𝑖))−𝜇 𝝉∥22 (2)
+where 𝜇𝝉 denotes the centroid of the current batch, defined as
+𝜇𝝉 = 1𝐵 ˝𝐵𝑗=1𝐸(𝑇(𝝉,𝑠 𝑗)).
+MinimizingLconc pulls trigger-injected texts into a tight cluster
+in the embedding space, as visualized in Fig. 11. A query containing
+the same trigger maps to this cluster, increasing the likelihood of
+retrieving the poisoned memory and improving retrieval reliability.
+Margin-based Isolation Loss.To preserve normal functionality
+under benign queries, trigger-injected texts should remain well sep-
+arated from benign texts in embedding space. We approximate the
+benign </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>embedding region by𝑁 cluster centers{𝑐1,...,𝑐 𝑁} obtained
+via𝑘-means, and enforce a margin-based separation objective:
+Liso = 1𝐵·𝑁 𝐵∑︁𝑖=1 𝑁∑︁𝑛=1 max(0,𝛿− ∥𝐸(𝑇(𝝉,𝑠 𝑖))−𝑐 𝑛∥2) (3)
+where𝛿denotes a predefined safety margin.
+MinimizingLiso enforces a geometric separation between trigger-
+injected embeddings and benign cluster centers, as illustrated in
+Fig. 11. Intuitively, a benign query without the trigger will map
+to the benign embedding region rather than the trigger-induced
+region (Fig. 11), making it unlikely to retrieve the poisoned memory
+and preventing unintended activation.</blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Optimizing the objective in §4.2 is challenging because the trigger
+𝝉 lies in a discrete token space. Following HotFlip [12], we adopt a
+gradient-guided coordinate search algorithm that approximately
+optimizes the discrete trigger sequence through iterative token
+replacement. Specifically, we first use gradients fromLent to pro-
+pose entity-consistent token substitutions, and then evaluate these
+candidates usingL conc andL iso. The procedure is as follows.
+10https://huggingface.co/dslim/bert-base-NER
+CCS &#x27;26, November 15–19, 2026, The Hague, Netherlands Hongtao Wang, Se Yang, Yu Chen, and Puzhuo Liu
+Algorithm 1MemPoisonTrigger Optimization
+Require: Initial trigger 𝝉(0) , benign corpus S, surrogate NER
+model𝑓NER, surrogate encoder𝐸, benign cluster centers{𝑐𝑛}𝑁𝑛=1,
+hyperparameters𝐵,𝑇 max,𝑀,𝛽,𝛾
+Ensure:Optimized trigger𝝉 ∗
+1:for𝑡=0to𝑇 max−1do
+2:Sample a benign batchB∼S
+3:𝝉←𝝉 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Agents and Datasets.We implement three representative memory-
+augmented agents, each equipped with a domain-specific long-term
+memory: (1)Personal Agent: designed for general-purpose assis-
+tance and daily routines. We utilize the LongMemEval dataset [45],
+which focuses on long-context understanding and cross-session
+retrieval in personal assistant scenarios. (2)Medical Agent: built
+for medical consultation tasks. We use the MIRIAD dataset [53], a
+benchmark for medical information retrieval and multi-hop reason-
+ing in healthcare dialogues. (3)Financial Agent: used for financial
+and numerical reasoning tasks. We employ the FinQA dataset [6],
+which requires the agent to retrieve and process complex financial
+reports to answer expert-level queries. For each agent, we initialize
+its long-term memory with 2,000 benign memory entries to simu-
+late a mature system state rather than an empty </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>memory setting.
+Following prior work [8], we hold out a disjoint set of 100 QA pairs
+per agent as test queries.
+Memory Mechanisms.We consider three representative memory
+systems: (1)A-Mem[ 47], an autonomous knowledge network that
+uses LLMs to extract structural tags and contextual summaries from
+dialogues; (2)LangMem 11, the standard memory component in the
+LangChain that converts conversational streams into structured
+schemas; and (3)Mem0[ 9], a production-grade memory pipeline
+that employs a two-phase mechanism to extract salient facts and
+iteratively update existing records. Unlike standard RAG [25], these
+systems selectively extract and rewrite interactions before storage.
+During response generation, all three mechanisms rely on embed-
+ding similarity to retrieve the top-𝑘 most relevant memory entries.
+Unless otherwise specified, we inject one poisoned memory entry
+using a single </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ISR↑RSR@1↑ASR↑ACC↑ ISR↑RSR@1↑ASR↑ACC↑ ISR↑RSR@1↑ASR↑ACC↑
+RAG (Passive Storage)
+RAG
+Non-Attack - - -0.93 - - - 0.93 - - - 0.87
+Info-only 1.00 0.00 0.00 0.91 1.00 0.00 0.000.95 1.00 0.00 0.00 0.85
+Naive Concat 1.00 0.97 0.91 0.92 1.00 0.50 0.48 0.93 1.00 0.67 0.65 0.87
+AgentPoison 1.00 0.83 0.72 0.92 1.00 0.59 0.51 0.90 1.00 0.43 0.43 0.86
+MINJA 1.00 0.45 0.45 0.46 1.00 0.06 0.06 0.82 1.00 0.36 0.29 0.44
+MemPoison 1.001.00 0.990.90 1.000.94 0.940.90 1.000.92 0.92 0.88
+Memory (Active Extraction)
+A-Mem
+Non-Attack - - -0.91 - - - 0.87 - - - 0.87
+Info-only 0.87 0.00 0.00 0.90 1.000.00 0.000.90 0.99 0.00 0.000.89
+Naive Concat 0.18 0.15 0.100.91 0.37 0.26 0.18 0.88 0.35 0.30 0.180.89
+AgentPoison 0.87 0.54 0.31 0.90 0.12 0.10 0.08 0.91 0.32 0.11 0.06 0.85
+MINJA 0.72 0.30 0.26 0.67 0.44 0.23 0.11 0.81 0.63 0.33 0.17 0.69
+MemPoison 1.00 0.93 0.890.87 0.980.94 0.900.89 1.00 0.91 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.900.88
+LangMem
+Non-Attack - - - 0.94 - - -0.86 - - - 0.86
+Info-only 0.93 0.00 0.000.95 1.000.00 0.00 0.83 1.000.00 0.00 0.86
+Naive Concat 0.59 0.00 0.000.95 0.62 0.00 0.00 0.81 0.74 0.00 0.00 0.85
+AgentPoison 0.63 0.02 0.020.95 0.79 0.00 0.00 0.85 0.46 0.00 0.00 0.86
+MINJA 0.27 0.05 0.03 0.91 0.78 0.03 0.03 0.73 0.98 0.01 0.01 0.80
+MemPoison 0.91 0.90 0.830.94 1.00 0.79 0.770.84 0.990.80 0.79 0.87
+Mem0
+Non-Attack - - - 0.93 - - - 0.94 - - -0.91
+Info-only 0.97 0.00 0.00 0.80 0.990.00 0.00 0.95 1.000.00 0.00 0.89
+Naive Concat 0.50 0.00 0.00 0.94 0.58 0.00 0.00 0.92 0.49 0.00 0.00 0.88
+AgentPoison 0.57 0.03 0.02 0.90 0.07 0.00 0.00 0.93 0.01 0.00 0.00 0.88
+MINJA 0.17 0.14 0.03 0.92 0.17 0.06 0.03 0.91 0.53 0.17 0.14 0.69
+MemPoison 0.98 0.98 0.95 0.96 0.940.94 0.94 0.96 0.970.95 0.910.89
+• Naive Concat.Uses the same optimized trigger 𝝉 asMemPoison,
+but directly concatenates it with the </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>fraction of queries where the agent&#x27;s final response follows the
+poisoned payload (end-to-end success). (4) Benign Accuracy (ACC):
+the agent&#x27;s answer accuracy on benign (non-triggered) test queries.
+An effective and stealthy attack should achieve high ISR/RSR/ASR
+while keeping ACC close to the clean-agent baseline.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ISR RSR@1 ASR ACC ISR RSR@1 ASR ACC ISR RSR@1 ASR ACC
+w/o𝑇(𝜏,𝑠 𝑖) 0.50 0.00 0.00 0.94 0.58 0.00 0.00 0.92 0.49 0.00 0.00 0.88
+w/oL 𝑒𝑛𝑡 0.88 0.72 0.68 0.91 0.82 0.40 0.36 0.94 0.92 0.65 0.62 0.85
+w/oL 𝑐𝑜𝑛𝑐 0.96 0.56 0.54 0.93 0.93 0.30 0.30 0.92 0.97 0.24 0.21 0.88
+w/oL 𝑖𝑠𝑜 0.98 0.78 0.75 0.91 0.92 0.63 0.62 0.92 0.95 0.33 0.32 0.83
+MemPoison 0.98 0.98 0.95 0.96 0.94 0.94 0.94 0.96 0.97 0.95 0.91 0.89
+attacker-specified incorrect answers. In the RAG setting, MINJA
+achieves lower RSR@1 compared with other attacks. This is be-
+cause the manually constructed poisoned texts are not explicitly
+optimized for retrieval separability from benign memories. Con-
+sequently, poisoned and benign texts often overlap in embedding
+space, causing a victim query to retrieve benign entries instead of
+the poisoned one and lowering RSR@1. Similarly, benign queries
+can also retrieve the poisoned text due to </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>token sequence, preventing the trigger from
+being preserved verbatim and hindering precise retrieval.
+5.3.2 Impact of Memory Mechanism Configurations.
+Impact of the Number of Benign Records.We evaluate scalabil-
+ity by increasing the number of benign memory records from 1,000
+to 7,000 while injecting only one poisoned record. As shown in
+Fig. 6,MemPoison maintains consistently high RSR@1 (&gt; 0.95) as
+the memory grows, outperforming Random (random entity-token
+trigger; no optimization), MINJA, and AgentPoison. This stability
+1 2 3 4
+Number of Poison Records
+0.2
+0.4
+0.6
+0.8
+1.0RSR@1
+Random
+MINJA
+AgentPoison
+MemPoison
+1 2 3 4
+Number of Poison Records
+0.2
+0.4
+0.6
+0.8
+1.0ACC
+Random
+MINJA
+AgentPoison
+MemPoison
+Figure 7: Impact of the number of poisoned records.
+Table 3: Performance under different LLM agent backbones.
+Agent Backbone ISR RSR@1 ASR ACC
+GPT-4o-mini 0.98 0.98 0.95 0.96
+GPT-5.4 </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Arctic
+ContrieverBGE-Small
+ANCE
+T arget Embedder
+MiniLM
+E5
+GTR-T5
+aMPNet
+Arctic
+Contriever
+BGE-Small
+ANCE
+Source Embedder
+1.00 0.95 0.97 0.58 0.45 0.61 0.48 0.87
+0.51 0.96 0.62 0.13 0.61 0.53 0.27 0.77
+0.83 0.83 0.99 0.25 0.57 0.28 0.34 0.73
+0.42 0.61 0.80 0.78 0.61 0.73 0.62 0.51
+0.48 0.67 0.82 0.32 0.78 0.66 0.73 0.78
+0.50 0.86 0.85 0.36 0.63 0.53 0.47 0.81
+0.93 0.65 0.90 0.32 0.92 0.66 0.77 0.32
+0.87 0.92 0.82 0.26 0.84 0.30 0.39 0.87
+(a) RSR@1
+MiniLM
+E5
+GTR-T5 aMPNet Arctic
+ContrieverBGE-Small
+ANCE
+T arget Embedder
+MiniLM
+E5
+GTR-T5
+aMPNet
+Arctic
+Contriever
+BGE-Small
+ANCE
+0.98 0.94 0.96 0.58 0.44 0.61 0.48 0.87
+0.48 0.86 0.61 0.11 0.54 0.46 0.26 0.73
+0.83 0.83 0.99 0.25 0.56 0.28 0.34 0.73
+0.36 0.55 0.71 0.74 0.58 0.67 0.57 0.48
+0.47 0.65 0.80 0.31 0.76 0.65 0.72 0.77
+0.46 0.77 0.76 0.30 0.56 0.48 0.43 0.75
+0.92 0.64 0.87 0.31 0.90 0.64 0.74 0.32
+0.83 0.89 0.79 0.22 0.83 0.30 0.37 </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ASR ACC ASR ACC ASR ACC ASR ACC
+Naive Concat 0.000.72 0.19 0.75 0.55 0.84 0.590.88
+MINJA 0.04 0.68 0.08 0.72 0.28 0.65 0.36 0.62
+AgentPoison 0.00 0.75 0.000.79 0.17 0.81 0.39 0.89
+MemPoison 0.400.71 0.660.78 0.87 0.85 0.880.86
+Perplexity-based Filtering.Perplexity (PPL)-based filtering is a
+common defense that filters out texts with high perplexity under a
+language model [1, 27, 43]. We implement this defense by comput-
+ing the GPT-2 perplexity of each candidate memory entry before it
+is written to the long-term memory, and discarding entries whose
+PPL exceeds a threshold. We evaluate four thresholds (75, 100, 150,
+200), and report ASR and ACC in Tab. 5.
+As shown in Tab. 5,MemPoison remains substantially more ef-
+fective than baselines under strict filtering. At PPL≤75, Naive Con-
+cat and AgentPoison are fully suppressed (ASR=0.00), whereas
+MemPoison still achieves ASR=0.40. As the </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ACC
+Naive Concat 0.04 0.80 0.000.79 0.000.77 0.00 0.82
+AgentPoison 0.00 0.79 0.00 0.76 0.00 0.76 0.000.84
+MINJA 0.30 0.52 0.29 0.55 0.29 0.53 0.27 0.64
+MemPoison 0.89 0.82 0.870.76 0.77 0.77 0.770.80
+Paraphrasing.Input paraphrasing [ 22] is a semantic-level defense
+that rewrites text using an auxiliary LLM to disrupt adversarial
+surface forms while preserving intent. In this experiment, we fix the
+victim agent backbone to GPT-4o-mini and vary theparaphrasing
+LLM. To make the evaluation more challenging, we paraphrase (i)
+candidate memory entries before they are written to long-term
+memory and (ii) user queries before retrieval.
+As shown in Tab. 6, Naive Concat and AgentPoison are almost
+completely neutralized (ASR≤ 0.04), indicating that concatenation-
+based triggers are fragile under semantic rewriting. In contrast,
+MemPoison remains highly effective, achieving ASR of 0.77–0.89
+while </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 7: Attack performance of MemPoison on the Hermes
+Agent across different LLM backbones in a real-world de-
+ployment setting.
+Hermes Agent Backbone ISR ASR
+Qwen3-max 1.00 1.00
+DeepSeek-r1 1.00 1.00
+Kimi-k2.5 1.00 1.00
+GPT-4o 1.00 0.96
+Gemini-3.1-pro 0.88 0.84
+GPT-5.4 0.83 0.71
+Claude-opus-4.6 0.20 0.12
+While §5 demonstrates the statistical efficacy of our poisoning
+framework under controlled experimental settings, its practical im-
+pact must be validated in real-world agent systems. In this section,
+we conduct a real-world case study targeting Hermes Agent12, a
+popular open-source agent with long-term memory. In our setting,
+the adversary can only interact with Hermes through the standard
+black-box chat interface. We inject the poison by presenting a ma-
+licious medical recommendation (with the trigger) as the user&#x27;s
+personal preference. Then, we start a new session and submit </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>sum-
+marize this effect in Fig. 10c by plotting the normalized attention
+received by each token. The plot shows that the trigger tokens
+receive more attention, while the original key tokens receive less.
+This attention redistribution suggests that the optimized trigger
+influences how the embedding model encodes the input sequence.
+Although attention visualization from a single layer cannot fully
+characterize the complex computation across all transformer layers,
+the observation is consistent with our embedding-space analysis
+in §5.6.2: trigger-containing texts form a compact cluster that is
+separated from benign texts, indicating that the trigger systemati-
+cally changes the resulting embeddings. Together, these observa-
+tions suggest that the optimized trigger systematically reshapes
+-0.6 -0.4 -0.2 0.0 0.2 0.4 0.6
+-0.4
+-0.2
+0.0
+0.2
+0.4
+(a) PCA Projection
+Benign
+Poisoned
+-0.2 0.0 0.2 </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>projection (Fig. 11a), benign records spread over a
+broad region, reflecting the diversity of natural language. Trigger-
+injected texts are concentrated into a compact cluster with a clear
+separation from the benign region. This is consistent with the
+cosine-similarity distributions (Fig. 11b). The A–A similarities ex-
+hibit a sharp peak, whereas the B–B distribution is much broader.
+Meanwhile, the A–B similarities are shifted to lower values, match-
+ing the separation observed in the PCA plot.
+Together, these properties explain both effectiveness and stealth.
+When a query contains the trigger, A–A similarities are much higher
+than A–B similarities, so poisoned entries are more likely to out-
+rank benign entries during retrieval, leading to high RSR. When
+a query does not contain the trigger, B–B similarities exceed A–B
+similarities, so benign entries are more likely to be retrieved </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Consequently,
+even randomly paired texts can exhibit relatively high cosine sim-
+ilarity. In contrast, models like MiniLM and aMPNet yield lower
+similarities for random text pairs, indicating that their embeddings
+are more uniformly distributed in the embedding space.
+Association Between Anisotropy and Vulnerability.Fig. 12b
+shows a positive trend between a model&#x27;s anisotropy score and its
+vulnerability to MemPoison. Highly anisotropic embedders tend
+to be easier to attack. A plausible explanation is that anisotropic
+embedding spaces are more crowded and prone tohubness, where
+a small number of vectors become highly similar to many other
+vectors and thus gain high retrieval visibility. In such geometry,
+Lconc can more readily produce a compact trigger-conditioned
+cluster in embedding space, yielding higher RSR [15, 24].</blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>using embed-
+ding models. Our anisotropy analysis (§5.6.3) provides a geometric
+explanation: transfer is stronger in more anisotropic target spaces,
+where crowded representations make trigger-associated embed-
+dings more likely to remain retrievable after a model swap. This
+also implies a limitation: transferability may degrade when the
+victim retriever departs from typical dense-embedding geometry
+(e.g., hybrid retrieval combining dense retrieval with BM25). Future
+work can evaluate these settings and develop query-efficient online
+adaptation methods for unknown retrieval pipelines.
+Memory Lifecycle and Security Implications.Modern memory-
+augmented agents employ sophisticated memory processing mech-
+anisms, including consolidation, updating, and forgetting, to im-
+prove memory quality and long-term consistency [9, 19, 26, 31, 47].
+Our results demonstrate that carefully crafted </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +501,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +517,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-11-14</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-16 12:25:11</li><li>Last seen by Paper Scout: 2026-11-16 12:25:21</li></ul>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-11-16</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-16 12:25:11</li><li>Last seen by Paper Scout: 2026-11-17 12:45:14</li></ul>
             <ul><li>DOI: 10.1145/3830454.3846674</li><li>arXiv: 2605.29960</li><li>OpenAlex: W7162755822</li><li>OpenAlex IDs: W7162755822</li><li>arXiv IDs: 2605.29960</li></ul>
           </section>
           <section class="detail-panel">

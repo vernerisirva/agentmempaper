@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-11-16](2026-11-16.md).
+Latest daily digest: [2026-11-17](2026-11-17.md).
 
-# Paper Scout Digest - 2026-11-16
+# Paper Scout Digest - 2026-11-17
 
 ## Run Summary
 
-- **Run ID:** 71
-- **Candidates fetched:** 85
-- **New unique papers:** 72
+- **Run ID:** 72
+- **Candidates fetched:** 84
+- **New unique papers:** 69
 - **Relevant:** 0
 - **Maybe relevant:** 0
-- **Irrelevant:** 85
-- **Source summary:** arxiv: 3, openalex: 81, semantic_scholar: 1
+- **Irrelevant:** 84
+- **Source summary:** arxiv: 2, openalex: 81, semantic_scholar: 1
 
 ## Source Warnings
 

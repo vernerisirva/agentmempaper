@@ -22,13 +22,13 @@
   "first_seen_at": "2026-11-16 12:25:11",
   "first_seen_date": "2026-11-16",
   "future_date": false,
-  "is_new": true,
-  "last_seen_at": "2026-11-16 12:25:21",
-  "last_seen_date": "2026-11-16",
+  "is_new": false,
+  "last_seen_at": "2026-11-17 12:45:14",
+  "last_seen_date": "2026-11-17",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-11-16 12:25:49",
   "notified_date": "2026-11-16",
   "openalex_id": "W7162755822",
@@ -38,8 +38,8 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-11-16 12:25:11",
-    "generated_at": "2026-11-16 12:29:26",
-    "last_seen_at": "2026-11-16 12:25:21",
+    "generated_at": "2026-11-17 12:50:57",
+    "last_seen_at": "2026-11-17 12:45:14",
     "metadata_sources": [
       "openalex",
       "arxiv"
@@ -111,36 +111,1923 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-17T12:50:33.233280+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a rigorous, well-scoped security study addressing an important vulnerability in modern selective agent memory architectures. The methodology, experimental controls, comprehensive ablations, defense tests, and mechanistic explanations provide robust evidence satisfying all scientific criteria.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 93985,
+      "assessment_input_sha256": "22a6c4f1ad704a7b4a3de5dd001b59c757143c0328984def0db8ccaa37be4a3b",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.1145/3830454.3846674",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 92512,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 92079,
+      "evidence_block_count": 117,
+      "evidence_context_characters": 107153,
+      "evidence_context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+      "evidence_context_sha256": "b33e4e2015d17f7a1f70a56b92e67db75132cee851b46d37627dfa488d472efe",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 92540,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "extracted_pages": 15,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "ebcad74091ef4f65b45b6ee0d4f9ec1cbb7ea361a11c4c3f897b05c50b5fc6e2",
+        "source_url": "https://arxiv.org/pdf/2605.29960",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 92512,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Mempoison: Bypassing Selective Memory Mechanisms To Plant",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 389,
+          "supplied_characters": 389
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 2127,
+          "supplied_characters": 2127
+        },
+        {
+          "heading": "Acm Isbn 979-8-4007-2871-6/2026/11",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 2,
+          "source_characters": 511,
+          "supplied_characters": 511
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 2076,
+          "supplied_characters": 2076
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 5111,
+          "supplied_characters": 5111
+        },
+        {
+          "heading": "Background And Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 884,
+          "supplied_characters": 884
+        },
+        {
+          "heading": "Background And Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 6,
+          "source_characters": 4561,
+          "supplied_characters": 4561
+        },
+        {
+          "heading": "Threat Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "limitations",
+          "section_index": 7,
+          "source_characters": 1262,
+          "supplied_characters": 1262
+        },
+        {
+          "heading": "Threat Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "limitations",
+          "section_index": 8,
+          "source_characters": 3773,
+          "supplied_characters": 3773
+        },
+        {
+          "heading": "Overview",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 432,
+          "supplied_characters": 432
+        },
+        {
+          "heading": "Overview",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 2623,
+          "supplied_characters": 2623
+        },
+        {
+          "heading": "Multi-Objective Optimization Problem",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "introduction",
+          "section_index": 11,
+          "source_characters": 3270,
+          "supplied_characters": 3270
+        },
+        {
+          "heading": "Optimization Algorithm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 505,
+          "supplied_characters": 505
+        },
+        {
+          "heading": "Optimization Algorithm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 2465,
+          "supplied_characters": 2465
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 14,
+          "source_characters": 533,
+          "supplied_characters": 533
+        },
+        {
+          "heading": "Experimental Settings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 2605,
+          "supplied_characters": 2605
+        },
+        {
+          "heading": "Experimental Settings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 16,
+          "source_characters": 441,
+          "supplied_characters": 441
+        },
+        {
+          "heading": "Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 2989,
+          "supplied_characters": 2989
+        },
+        {
+          "heading": "Main Results (Rq1)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 18,
+          "source_characters": 2019,
+          "supplied_characters": 2019
+        },
+        {
+          "heading": "Main Results (Rq1)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 19,
+          "source_characters": 274,
+          "supplied_characters": 274
+        },
+        {
+          "heading": "Isr Rsr@1 Asr Acc Isr Rsr@1 Asr Acc Isr Rsr@1 Asr Acc",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 4448,
+          "supplied_characters": 4448
+        },
+        {
+          "heading": "Ablation And Sensitivity Analyses (Rq2)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 21,
+          "source_characters": 1582,
+          "supplied_characters": 1582
+        },
+        {
+          "heading": "Ablation And Sensitivity Analyses (Rq2)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 22,
+          "source_characters": 5096,
+          "supplied_characters": 5096
+        },
+        {
+          "heading": "Ablation And Sensitivity Analyses (Rq2)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 23,
+          "source_characters": 3711,
+          "supplied_characters": 3711
+        },
+        {
+          "heading": "Asr Acc Asr Acc Asr Acc Asr Acc",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1209,
+          "supplied_characters": 1209
+        },
+        {
+          "heading": "Asr Acc Asr Acc Asr Acc Asr Acc",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 814,
+          "supplied_characters": 814
+        },
+        {
+          "heading": "Potential Defenses (Rq3)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 232,
+          "supplied_characters": 232
+        },
+        {
+          "heading": "Asr Acc Asr Acc Asr Acc Asr Acc",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 3061,
+          "supplied_characters": 3061
+        },
+        {
+          "heading": "Real-World Case Study (Rq4)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 1922,
+          "supplied_characters": 1922
+        },
+        {
+          "heading": "Real-World Case Study (Rq4)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 1472,
+          "supplied_characters": 1472
+        },
+        {
+          "heading": "Mechanistic Analysis (Rq5)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 3487,
+          "supplied_characters": 3487
+        },
+        {
+          "heading": "Mechanistic Analysis (Rq5)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 3612,
+          "supplied_characters": 3612
+        },
+        {
+          "heading": "Discussion And Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "limitations",
+          "section_index": 32,
+          "source_characters": 3098,
+          "supplied_characters": 3098
+        },
+        {
+          "heading": "Discussion And Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "limitations",
+          "section_index": 33,
+          "source_characters": 229,
+          "supplied_characters": 229
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "conclusion",
+          "section_index": 34,
+          "source_characters": 968,
+          "supplied_characters": 968
+        },
+        {
+          "heading": "This Work Was Supported By The National Natural Science Founda-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 172,
+          "supplied_characters": 172
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 5279,
+          "supplied_characters": 5279
+        },
+        {
+          "heading": "The Impact Of Nuance Dax Ambient Listening Ai Documentation: A Cohort",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 943,
+          "supplied_characters": 943
+        },
+        {
+          "heading": "Drivlme: Enhancing Llm-Based Autonomous Driving Agents With Embodied",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 2135,
+          "supplied_characters": 2135
+        },
+        {
+          "heading": "Drivlme: Enhancing Llm-Based Autonomous Driving Agents With Embodied",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 9759,
+          "supplied_characters": 9759
+        }
+      ],
+      "selected_characters": 92079,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "selected_sections": [
+        {
+          "characters": 389,
+          "heading": "Mempoison: Bypassing Selective Memory Mechanisms To Plant",
+          "page": 1
+        },
+        {
+          "characters": 2127,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 511,
+          "heading": "Acm Isbn 979-8-4007-2871-6/2026/11",
+          "page": 1
+        },
+        {
+          "characters": 2076,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 5111,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 884,
+          "heading": "Background And Related Work",
+          "page": 2
+        },
+        {
+          "characters": 4561,
+          "heading": "Background And Related Work",
+          "page": 3
+        },
+        {
+          "characters": 1262,
+          "heading": "Threat Model",
+          "page": 3
+        },
+        {
+          "characters": 3773,
+          "heading": "Threat Model",
+          "page": 4
+        },
+        {
+          "characters": 432,
+          "heading": "Overview",
+          "page": 4
+        },
+        {
+          "characters": 2623,
+          "heading": "Overview",
+          "page": 5
+        },
+        {
+          "characters": 3270,
+          "heading": "Multi-Objective Optimization Problem",
+          "page": 5
+        },
+        {
+          "characters": 505,
+          "heading": "Optimization Algorithm",
+          "page": 5
+        },
+        {
+          "characters": 2465,
+          "heading": "Optimization Algorithm",
+          "page": 6
+        },
+        {
+          "characters": 533,
+          "heading": "Experiments",
+          "page": 6
+        },
+        {
+          "characters": 2605,
+          "heading": "Experimental Settings",
+          "page": 6
+        },
+        {
+          "characters": 441,
+          "heading": "Experimental Settings",
+          "page": 7
+        },
+        {
+          "characters": 2989,
+          "heading": "Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191",
+          "page": 7
+        },
+        {
+          "characters": 2019,
+          "heading": "Main Results (Rq1)",
+          "page": 7
+        },
+        {
+          "characters": 274,
+          "heading": "Main Results (Rq1)",
+          "page": 8
+        },
+        {
+          "characters": 4448,
+          "heading": "Isr Rsr@1 Asr Acc Isr Rsr@1 Asr Acc Isr Rsr@1 Asr Acc",
+          "page": 8
+        },
+        {
+          "characters": 1582,
+          "heading": "Ablation And Sensitivity Analyses (Rq2)",
+          "page": 8
+        },
+        {
+          "characters": 5096,
+          "heading": "Ablation And Sensitivity Analyses (Rq2)",
+          "page": 9
+        },
+        {
+          "characters": 3711,
+          "heading": "Ablation And Sensitivity Analyses (Rq2)",
+          "page": 10
+        },
+        {
+          "characters": 1209,
+          "heading": "Asr Acc Asr Acc Asr Acc Asr Acc",
+          "page": 10
+        },
+        {
+          "characters": 814,
+          "heading": "Asr Acc Asr Acc Asr Acc Asr Acc",
+          "page": 11
+        },
+        {
+          "characters": 232,
+          "heading": "Potential Defenses (Rq3)",
+          "page": 11
+        },
+        {
+          "characters": 3061,
+          "heading": "Asr Acc Asr Acc Asr Acc Asr Acc",
+          "page": 11
+        },
+        {
+          "characters": 1922,
+          "heading": "Real-World Case Study (Rq4)",
+          "page": 11
+        },
+        {
+          "characters": 1472,
+          "heading": "Real-World Case Study (Rq4)",
+          "page": 12
+        },
+        {
+          "characters": 3487,
+          "heading": "Mechanistic Analysis (Rq5)",
+          "page": 12
+        },
+        {
+          "characters": 3612,
+          "heading": "Mechanistic Analysis (Rq5)",
+          "page": 13
+        },
+        {
+          "characters": 3098,
+          "heading": "Discussion And Limitations",
+          "page": 13
+        },
+        {
+          "characters": 229,
+          "heading": "Discussion And Limitations",
+          "page": 14
+        },
+        {
+          "characters": 968,
+          "heading": "Conclusion",
+          "page": 14
+        },
+        {
+          "characters": 172,
+          "heading": "This Work Was Supported By The National Natural Science Founda-",
+          "page": 14
+        },
+        {
+          "characters": 5279,
+          "heading": "Unclassified body after references",
+          "page": 14
+        },
+        {
+          "characters": 943,
+          "heading": "The Impact Of Nuance Dax Ambient Listening Ai Documentation: A Cohort",
+          "page": 14
+        },
+        {
+          "characters": 2135,
+          "heading": "Drivlme: Enhancing Llm-Based Autonomous Driving Agents With Embodied",
+          "page": 14
+        },
+        {
+          "characters": 9759,
+          "heading": "Drivlme: Enhancing Llm-Based Autonomous Driving Agents With Embodied",
+          "page": 15
+        }
+      ],
+      "selected_text_sha256": "22a6c4f1ad704a7b4a3de5dd001b59c757143c0328984def0db8ccaa37be4a3b",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "ebcad74091ef4f65b45b6ee0d4f9ec1cbb7ea361a11c4c3f897b05c50b5fc6e2",
+      "source_pages": 15,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0002"
+        ],
+        "excerpt": "Large language model (LLM) agents increasingly leverage long-\nterm memory to support persistent and autonomous task execution.\nHowever, this capability also introduces a new attack surface:mem-\nory poisoning, where adversaries can inject malicious information\nto influence future behavior. Existing memory poisoning attacks\noften assume that injected content can be stored directly in mem-\nory, overlooking the selective extraction and rewriting stages in\nmodern memory pipelines. This makes prior methods ineffective\nunder realistic settings.\nIn this paper, we proposeMemPoison, a novel memory poisoning\nattack that bypasses selective memory mechanisms in LLM agents,\nwhere an attacker can inject triggerable backdoors into the agent's\nlong-term memory through dialogue interactions, thereby mis-\nleading its subsequent responses. MemPoison introduces three key\ncomponents: (i) asemantic relational ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4f2d966936bb73d2fc1ad336345e673708190b19fb77a740dd6b23e6647140cd",
+            "evidence_id": "E5a9e40183344219e-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Large language model (LLM) agents increasingly leverage long-\nterm memory to support persistent and autonomous task execution.\nHowever, this capability also introduces a new attack surface:mem-\nory poisoning, where adversaries can inject malicious information\nto influence future behavior. Existing memory poisoning attacks\noften assume that injected content can be stored directly in mem-\nory, overlooking the selective extraction and rewriting stages in\nmodern memory pipelines. This makes prior methods ineffective\nunder realistic settings.\nIn this paper, we proposeMemPoison, a novel memory poisoning\nattack that bypasses selective memory mechanisms in LLM agents,\nwhere an attacker can inject triggerable backdoors into the agent's\nlong-term memory through dialogue interactions, thereby mis-\nleading its subsequent responses. MemPoison introduces three key\ncomponents: (i) asemantic relational "
+              }
+            ],
+            "text": "Large language model (LLM) agents increasingly leverage long-\nterm memory to support persistent and autonomous task execution.\nHowever, this capability also introduces a new attack surface:mem-\nory poisoning, where adversaries can inject malicious information\nto influence future behavior. Existing memory poisoning attacks\noften assume that injected content can be stored directly in mem-\nory, overlooking the selective extraction and rewriting stages in\nmodern memory pipelines. This makes prior methods ineffective\nunder realistic settings.\nIn this paper, we proposeMemPoison, a novel memory poisoning\nattack that bypasses selective memory mechanisms in LLM agents,\nwhere an attacker can inject triggerable backdoors into the agent's\nlong-term memory through dialogue interactions, thereby mis-\nleading its subsequent responses. MemPoison introduces three key\ncomponents: (i) asemantic relational "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0003"
+        ],
+        "excerpt": "bridgethat binds the trigger\nand payload into a coherent statement to ensure their co-extraction\ninto memory; (ii)entity masqueradingthat optimizes triggers to\nmimic named entities, resisting rewriting; and (iii)joint embedding\noptimizationthat shapes trigger-injected texts into a tight cluster\nin the embedding space while maintaining isolation from benign\nembeddings for stealth. Evaluations across different agent domains\nand memory mechanisms show MemPoison achieves attack suc-\ncess rates up to 0.95, outperforming existing baselines. Mechanistic\nanalysis reveals the exploitation of embedding-space anisotropy\nand attention redistribution, highlighting core vulnerabilities in\nselective memory systems. We evaluate multiple defense strategies\nand demonstrate their fundamental limitations in mitigating the\nattack. We release our code to facilitate further research.\nCCS Concepts\n\u2022Security ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "53ce5b6363bbbc5e2d0018a3a9eb4ada6a2ff4364e4269558f608cbf122bb0ee",
+            "evidence_id": "E5a9e40183344219e-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1797,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 900,
+                "text": "bridgethat binds the trigger\nand payload into a coherent statement to ensure their co-extraction\ninto memory; (ii)entity masqueradingthat optimizes triggers to\nmimic named entities, resisting rewriting; and (iii)joint embedding\noptimizationthat shapes trigger-injected texts into a tight cluster\nin the embedding space while maintaining isolation from benign\nembeddings for stealth. Evaluations across different agent domains\nand memory mechanisms show MemPoison achieves attack suc-\ncess rates up to 0.95, outperforming existing baselines. Mechanistic\nanalysis reveals the exploitation of embedding-space anisotropy\nand attention redistribution, highlighting core vulnerabilities in\nselective memory systems. We evaluate multiple defense strategies\nand demonstrate their fundamental limitations in mitigating the\nattack. We release our code to facilitate further research.\nCCS Concepts\n\u2022Security "
+              }
+            ],
+            "text": "bridgethat binds the trigger\nand payload into a coherent statement to ensure their co-extraction\ninto memory; (ii)entity masqueradingthat optimizes triggers to\nmimic named entities, resisting rewriting; and (iii)joint embedding\noptimizationthat shapes trigger-injected texts into a tight cluster\nin the embedding space while maintaining isolation from benign\nembeddings for stealth. Evaluations across different agent domains\nand memory mechanisms show MemPoison achieves attack suc-\ncess rates up to 0.95, outperforming existing baselines. Mechanistic\nanalysis reveals the exploitation of embedding-space anisotropy\nand attention redistribution, highlighting core vulnerabilities in\nselective memory systems. We evaluate multiple defense strategies\nand demonstrate their fundamental limitations in mitigating the\nattack. We release our code to facilitate further research.\nCCS Concepts\n\u2022Security "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0011"
+        ],
+        "excerpt": "requires ensuring both effectiveness and stealth [3].\nThe poisoned memory is required to be precisely retrieved when\nthe input contains the trigger, while remaining strictly dormant\nduring normal interactions.\nTo address these challenges, we proposeMemPoison, a practical\nframework that operates under interaction-only access constraints\n(with no ability to directly insert, edit, or delete memory entries)\nwhile leveraging optimization-driven trigger generation. To ensure\nsuccessful injection (Challenge 1), we construct asemantic rela-\ntional bridge, which binds the trigger and malicious content into\na logically interdependent statement, reducing the risk that the\nmemory mechanism discards the trigger as irrelevant noise. To\nprevent rewriting (Challenge 2), we employentity masquerading,\noptimizing the trigger to mimic a named entity, as named entities\ntend to be preserved verbatim during ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c205fb9aee208e46ad3890ca940be97823570b9b0386a463b1c7a5f3ef3fce0e",
+            "evidence_id": "E5a9e40183344219e-B0011",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3295,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 2397,
+                "text": "requires ensuring both effectiveness and stealth [3].\nThe poisoned memory is required to be precisely retrieved when\nthe input contains the trigger, while remaining strictly dormant\nduring normal interactions.\nTo address these challenges, we proposeMemPoison, a practical\nframework that operates under interaction-only access constraints\n(with no ability to directly insert, edit, or delete memory entries)\nwhile leveraging optimization-driven trigger generation. To ensure\nsuccessful injection (Challenge 1), we construct asemantic rela-\ntional bridge, which binds the trigger and malicious content into\na logically interdependent statement, reducing the risk that the\nmemory mechanism discards the trigger as irrelevant noise. To\nprevent rewriting (Challenge 2), we employentity masquerading,\noptimizing the trigger to mimic a named entity, as named entities\ntend to be preserved verbatim during "
+              }
+            ],
+            "text": "requires ensuring both effectiveness and stealth [3].\nThe poisoned memory is required to be precisely retrieved when\nthe input contains the trigger, while remaining strictly dormant\nduring normal interactions.\nTo address these challenges, we proposeMemPoison, a practical\nframework that operates under interaction-only access constraints\n(with no ability to directly insert, edit, or delete memory entries)\nwhile leveraging optimization-driven trigger generation. To ensure\nsuccessful injection (Challenge 1), we construct asemantic rela-\ntional bridge, which binds the trigger and malicious content into\na logically interdependent statement, reducing the risk that the\nmemory mechanism discards the trigger as irrelevant noise. To\nprevent rewriting (Challenge 2), we employentity masquerading,\noptimizing the trigger to mimic a named entity, as named entities\ntend to be preserved verbatim during "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0012"
+        ],
+        "excerpt": "LLM rewriting. Finally, to\nachieve precise attacks (Challenge 3), we propose ajoint embed-\nding optimizationscheme that shapes trigger-injected texts into\na tight cluster in the embedding space, biasing retrieval toward\nthe poisoned memory under triggered queries, while maintaining\nseparation from benign embeddings to preserve stealth.\nWe extensively evaluate MemPoison across diverse agent do-\nmains and memory mechanisms (\u00a75), including one on a real-world\nagent system (\u00a75.5). MemPoison achieves attack success rates up to\n0.95 while maintaining benign accuracy, significantly outperform-\ning prior methods. The attack remains effective against common\ndefenses such as perplexity-based filtering and paraphrasing. Fi-\nnally, our mechanistic analysis reveals that MemPoison exploits\nembedding-space anisotropy and attention redistribution, provid-\ning insights into fundamental vulnerabilities ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7d904000e7975d25c87abe68050958143d542a6eb4880817dab239d441755304",
+            "evidence_id": "E5a9e40183344219e-B0012",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 4193,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 3295,
+                "text": "LLM rewriting. Finally, to\nachieve precise attacks (Challenge 3), we propose ajoint embed-\nding optimizationscheme that shapes trigger-injected texts into\na tight cluster in the embedding space, biasing retrieval toward\nthe poisoned memory under triggered queries, while maintaining\nseparation from benign embeddings to preserve stealth.\nWe extensively evaluate MemPoison across diverse agent do-\nmains and memory mechanisms (\u00a75), including one on a real-world\nagent system (\u00a75.5). MemPoison achieves attack success rates up to\n0.95 while maintaining benign accuracy, significantly outperform-\ning prior methods. The attack remains effective against common\ndefenses such as perplexity-based filtering and paraphrasing. Fi-\nnally, our mechanistic analysis reveals that MemPoison exploits\nembedding-space anisotropy and attention redistribution, provid-\ning insights into fundamental vulnerabilities "
+              }
+            ],
+            "text": "LLM rewriting. Finally, to\nachieve precise attacks (Challenge 3), we propose ajoint embed-\nding optimizationscheme that shapes trigger-injected texts into\na tight cluster in the embedding space, biasing retrieval toward\nthe poisoned memory under triggered queries, while maintaining\nseparation from benign embeddings to preserve stealth.\nWe extensively evaluate MemPoison across diverse agent do-\nmains and memory mechanisms (\u00a75), including one on a real-world\nagent system (\u00a75.5). MemPoison achieves attack success rates up to\n0.95 while maintaining benign accuracy, significantly outperform-\ning prior methods. The attack remains effective against common\ndefenses such as perplexity-based filtering and paraphrasing. Fi-\nnally, our mechanistic analysis reveals that MemPoison exploits\nembedding-space anisotropy and attention redistribution, provid-\ning insights into fundamental vulnerabilities "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0032"
+        ],
+        "excerpt": "Semantic Relational Bridge. MemPoison employs asemantic re-\nlational bridge, implemented using GPT-4, to bind a trigger and an\ninput text into a semantically interdependent statement. Given a\ntrigger \ud835\udf49 and an input text\ud835\udc65, we denote the bridged text as\ud835\udc47(\ud835\udf49,\ud835\udc65) .\nThis bridge serves two roles in our framework. DuringItera-\ntive Trigger Optimization,\ud835\udc65 corresponds to texts sampled from the\ncorpus to generate trigger-injected texts for optimization. During\nTrigger Injection & Activation,\ud835\udc65 corresponds to the attacker-crafted\nmalicious payload.\nProblem Formulation.Formally, letS={\ud835\udc60 1,...,\ud835\udc60 \ud835\udc35} be a batch of\ntexts sampled from the corpus, where\ud835\udc35 is the batch size. For each\n\ud835\udc60\ud835\udc56 \u2208S , we instantiate the semantic relational bridge as \ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56)\nto obtain trigger-injected texts for optimization. Let \ud835\udc38(\u00b7) be the\nsurrogate embedding encoder. We consider three objectives to guide\nthe optimization of the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Multi-Objective Optimization Problem",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c8f92555163213d9b81112a43f4c3a0359122d13300db0a0e2acf12984683b4a",
+            "evidence_id": "E5a9e40183344219e-B0032",
+            "pages": [
+              5
+            ],
+            "section": "Multi-Objective Optimization Problem",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 5,
+                "section": "Multi-Objective Optimization Problem",
+                "section_index": 11,
+                "start": 0,
+                "text": "Semantic Relational Bridge. MemPoison employs asemantic re-\nlational bridge, implemented using GPT-4, to bind a trigger and an\ninput text into a semantically interdependent statement. Given a\ntrigger \ud835\udf49 and an input text\ud835\udc65, we denote the bridged text as\ud835\udc47(\ud835\udf49,\ud835\udc65) .\nThis bridge serves two roles in our framework. DuringItera-\ntive Trigger Optimization,\ud835\udc65 corresponds to texts sampled from the\ncorpus to generate trigger-injected texts for optimization. During\nTrigger Injection & Activation,\ud835\udc65 corresponds to the attacker-crafted\nmalicious payload.\nProblem Formulation.Formally, letS={\ud835\udc60 1,...,\ud835\udc60 \ud835\udc35} be a batch of\ntexts sampled from the corpus, where\ud835\udc35 is the batch size. For each\n\ud835\udc60\ud835\udc56 \u2208S , we instantiate the semantic relational bridge as \ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56)\nto obtain trigger-injected texts for optimization. Let \ud835\udc38(\u00b7) be the\nsurrogate embedding encoder. We consider three objectives to guide\nthe optimization of the "
+              }
+            ],
+            "text": "Semantic Relational Bridge. MemPoison employs asemantic re-\nlational bridge, implemented using GPT-4, to bind a trigger and an\ninput text into a semantically interdependent statement. Given a\ntrigger \ud835\udf49 and an input text\ud835\udc65, we denote the bridged text as\ud835\udc47(\ud835\udf49,\ud835\udc65) .\nThis bridge serves two roles in our framework. DuringItera-\ntive Trigger Optimization,\ud835\udc65 corresponds to texts sampled from the\ncorpus to generate trigger-injected texts for optimization. During\nTrigger Injection & Activation,\ud835\udc65 corresponds to the attacker-crafted\nmalicious payload.\nProblem Formulation.Formally, letS={\ud835\udc60 1,...,\ud835\udc60 \ud835\udc35} be a batch of\ntexts sampled from the corpus, where\ud835\udc35 is the batch size. For each\n\ud835\udc60\ud835\udc56 \u2208S , we instantiate the semantic relational bridge as \ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56)\nto obtain trigger-injected texts for optimization. Let \ud835\udc38(\u00b7) be the\nsurrogate embedding encoder. We consider three objectives to guide\nthe optimization of the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0033"
+        ],
+        "excerpt": "trigger: an entity masquerading objective\nLent, a semantic concentration objectiveLconc, and a geometric\nisolation objectiveL iso. We detail each objective below.\nEntity Masquerading Loss.Named entity strings tend to be pre-\nserved during memory rewriting, so we encourage the trigger to\nexhibit entity-like characteristics. Specifically, we leverage a pre-\ntrained named entity recognition (NER) model 10 as a surrogate\nevaluator. Let\ud835\udc5dNER(\ud835\udc66\ud835\udc61 =\ud835\udc50|\ud835\udc65) denote the probability that token\ud835\udc61\nin the sequence\ud835\udc65=\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56) is classified as a target entity type \ud835\udc50.\nWe define:\nLent =\u2212 1\ud835\udc35 \ud835\udc35\u2211\ufe01\ud835\udc56=1 1|\ud835\udf49| \u2211\ufe01\ud835\udc61\u2208\ud835\udc3c \ud835\udf49 log\ud835\udc5d NER(\ud835\udc66\ud835\udc61 =\ud835\udc50|\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56))(1)\nwhere\ud835\udc3c\ud835\udf49 denotes the index set corresponding to the trigger tokens\nin the bridged text\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56).\nMinimizingLent encourages the trigger to exhibit stable entity-\nlike structure across diverse contexts, increasing its likelihood of\npreservation during memory rewriting.\nSemantic ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Multi-Objective Optimization Problem",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e101c974f698e92505fa7612320dc820f1936bf5edbd944d0081f24e9cd5254a",
+            "evidence_id": "E5a9e40183344219e-B0033",
+            "pages": [
+              5
+            ],
+            "section": "Multi-Objective Optimization Problem",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1790,
+                "page": 5,
+                "section": "Multi-Objective Optimization Problem",
+                "section_index": 11,
+                "start": 894,
+                "text": "trigger: an entity masquerading objective\nLent, a semantic concentration objectiveLconc, and a geometric\nisolation objectiveL iso. We detail each objective below.\nEntity Masquerading Loss.Named entity strings tend to be pre-\nserved during memory rewriting, so we encourage the trigger to\nexhibit entity-like characteristics. Specifically, we leverage a pre-\ntrained named entity recognition (NER) model 10 as a surrogate\nevaluator. Let\ud835\udc5dNER(\ud835\udc66\ud835\udc61 =\ud835\udc50|\ud835\udc65) denote the probability that token\ud835\udc61\nin the sequence\ud835\udc65=\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56) is classified as a target entity type \ud835\udc50.\nWe define:\nLent =\u2212 1\ud835\udc35 \ud835\udc35\u2211\ufe01\ud835\udc56=1 1|\ud835\udf49| \u2211\ufe01\ud835\udc61\u2208\ud835\udc3c \ud835\udf49 log\ud835\udc5d NER(\ud835\udc66\ud835\udc61 =\ud835\udc50|\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56))(1)\nwhere\ud835\udc3c\ud835\udf49 denotes the index set corresponding to the trigger tokens\nin the bridged text\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56).\nMinimizingLent encourages the trigger to exhibit stable entity-\nlike structure across diverse contexts, increasing its likelihood of\npreservation during memory rewriting.\nSemantic "
+              }
+            ],
+            "text": "trigger: an entity masquerading objective\nLent, a semantic concentration objectiveLconc, and a geometric\nisolation objectiveL iso. We detail each objective below.\nEntity Masquerading Loss.Named entity strings tend to be pre-\nserved during memory rewriting, so we encourage the trigger to\nexhibit entity-like characteristics. Specifically, we leverage a pre-\ntrained named entity recognition (NER) model 10 as a surrogate\nevaluator. Let\ud835\udc5dNER(\ud835\udc66\ud835\udc61 =\ud835\udc50|\ud835\udc65) denote the probability that token\ud835\udc61\nin the sequence\ud835\udc65=\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56) is classified as a target entity type \ud835\udc50.\nWe define:\nLent =\u2212 1\ud835\udc35 \ud835\udc35\u2211\ufe01\ud835\udc56=1 1|\ud835\udf49| \u2211\ufe01\ud835\udc61\u2208\ud835\udc3c \ud835\udf49 log\ud835\udc5d NER(\ud835\udc66\ud835\udc61 =\ud835\udc50|\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56))(1)\nwhere\ud835\udc3c\ud835\udf49 denotes the index set corresponding to the trigger tokens\nin the bridged text\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56).\nMinimizingLent encourages the trigger to exhibit stable entity-\nlike structure across diverse contexts, increasing its likelihood of\npreservation during memory rewriting.\nSemantic "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0034"
+        ],
+        "excerpt": "Concentration Loss.To achieve precise retrieval, the\ntexts containing the trigger should form a compact region in the\nembedding space. This ensures that future queries containing the\nsame trigger are likely to retrieve the corresponding malicious\nmemory. The concentration loss is defined as:\nLconc = 1\ud835\udc35 \ud835\udc35\u2211\ufe01\ud835\udc56=1\u2225\ud835\udc38(\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56))\u2212\ud835\udf07 \ud835\udf49\u222522 (2)\nwhere \ud835\udf07\ud835\udf49 denotes the centroid of the current batch, defined as\n\ud835\udf07\ud835\udf49 = 1\ud835\udc35 \u02dd\ud835\udc35\ud835\udc57=1\ud835\udc38(\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc57)).\nMinimizingLconc pulls trigger-injected texts into a tight cluster\nin the embedding space, as visualized in Fig. 11. A query containing\nthe same trigger maps to this cluster, increasing the likelihood of\nretrieving the poisoned memory and improving retrieval reliability.\nMargin-based Isolation Loss.To preserve normal functionality\nunder benign queries, trigger-injected texts should remain well sep-\narated from benign texts in embedding space. We approximate the\nbenign ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Multi-Objective Optimization Problem",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b35ba0b3256f9729b535141a1faf67be9cb8b1e410322219a66bf14a70a4badc",
+            "evidence_id": "E5a9e40183344219e-B0034",
+            "pages": [
+              5
+            ],
+            "section": "Multi-Objective Optimization Problem",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2685,
+                "page": 5,
+                "section": "Multi-Objective Optimization Problem",
+                "section_index": 11,
+                "start": 1790,
+                "text": "Concentration Loss.To achieve precise retrieval, the\ntexts containing the trigger should form a compact region in the\nembedding space. This ensures that future queries containing the\nsame trigger are likely to retrieve the corresponding malicious\nmemory. The concentration loss is defined as:\nLconc = 1\ud835\udc35 \ud835\udc35\u2211\ufe01\ud835\udc56=1\u2225\ud835\udc38(\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56))\u2212\ud835\udf07 \ud835\udf49\u222522 (2)\nwhere \ud835\udf07\ud835\udf49 denotes the centroid of the current batch, defined as\n\ud835\udf07\ud835\udf49 = 1\ud835\udc35 \u02dd\ud835\udc35\ud835\udc57=1\ud835\udc38(\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc57)).\nMinimizingLconc pulls trigger-injected texts into a tight cluster\nin the embedding space, as visualized in Fig. 11. A query containing\nthe same trigger maps to this cluster, increasing the likelihood of\nretrieving the poisoned memory and improving retrieval reliability.\nMargin-based Isolation Loss.To preserve normal functionality\nunder benign queries, trigger-injected texts should remain well sep-\narated from benign texts in embedding space. We approximate the\nbenign "
+              }
+            ],
+            "text": "Concentration Loss.To achieve precise retrieval, the\ntexts containing the trigger should form a compact region in the\nembedding space. This ensures that future queries containing the\nsame trigger are likely to retrieve the corresponding malicious\nmemory. The concentration loss is defined as:\nLconc = 1\ud835\udc35 \ud835\udc35\u2211\ufe01\ud835\udc56=1\u2225\ud835\udc38(\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56))\u2212\ud835\udf07 \ud835\udf49\u222522 (2)\nwhere \ud835\udf07\ud835\udf49 denotes the centroid of the current batch, defined as\n\ud835\udf07\ud835\udf49 = 1\ud835\udc35 \u02dd\ud835\udc35\ud835\udc57=1\ud835\udc38(\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc57)).\nMinimizingLconc pulls trigger-injected texts into a tight cluster\nin the embedding space, as visualized in Fig. 11. A query containing\nthe same trigger maps to this cluster, increasing the likelihood of\nretrieving the poisoned memory and improving retrieval reliability.\nMargin-based Isolation Loss.To preserve normal functionality\nunder benign queries, trigger-injected texts should remain well sep-\narated from benign texts in embedding space. We approximate the\nbenign "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0035"
+        ],
+        "excerpt": "embedding region by\ud835\udc41 cluster centers{\ud835\udc501,...,\ud835\udc50 \ud835\udc41} obtained\nvia\ud835\udc58-means, and enforce a margin-based separation objective:\nLiso = 1\ud835\udc35\u00b7\ud835\udc41 \ud835\udc35\u2211\ufe01\ud835\udc56=1 \ud835\udc41\u2211\ufe01\ud835\udc5b=1 max(0,\ud835\udeff\u2212 \u2225\ud835\udc38(\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56))\u2212\ud835\udc50 \ud835\udc5b\u22252) (3)\nwhere\ud835\udeffdenotes a predefined safety margin.\nMinimizingLiso enforces a geometric separation between trigger-\ninjected embeddings and benign cluster centers, as illustrated in\nFig. 11. Intuitively, a benign query without the trigger will map\nto the benign embedding region rather than the trigger-induced\nregion (Fig. 11), making it unlikely to retrieve the poisoned memory\nand preventing unintended activation.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Multi-Objective Optimization Problem",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ef3039efbb09e6d32e047f26ea722bc9f533922e7898ee7042dccfd852a09ddf",
+            "evidence_id": "E5a9e40183344219e-B0035",
+            "pages": [
+              5
+            ],
+            "section": "Multi-Objective Optimization Problem",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3270,
+                "page": 5,
+                "section": "Multi-Objective Optimization Problem",
+                "section_index": 11,
+                "start": 2685,
+                "text": "embedding region by\ud835\udc41 cluster centers{\ud835\udc501,...,\ud835\udc50 \ud835\udc41} obtained\nvia\ud835\udc58-means, and enforce a margin-based separation objective:\nLiso = 1\ud835\udc35\u00b7\ud835\udc41 \ud835\udc35\u2211\ufe01\ud835\udc56=1 \ud835\udc41\u2211\ufe01\ud835\udc5b=1 max(0,\ud835\udeff\u2212 \u2225\ud835\udc38(\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56))\u2212\ud835\udc50 \ud835\udc5b\u22252) (3)\nwhere\ud835\udeffdenotes a predefined safety margin.\nMinimizingLiso enforces a geometric separation between trigger-\ninjected embeddings and benign cluster centers, as illustrated in\nFig. 11. Intuitively, a benign query without the trigger will map\nto the benign embedding region rather than the trigger-induced\nregion (Fig. 11), making it unlikely to retrieve the poisoned memory\nand preventing unintended activation."
+              }
+            ],
+            "text": "embedding region by\ud835\udc41 cluster centers{\ud835\udc501,...,\ud835\udc50 \ud835\udc41} obtained\nvia\ud835\udc58-means, and enforce a margin-based separation objective:\nLiso = 1\ud835\udc35\u00b7\ud835\udc41 \ud835\udc35\u2211\ufe01\ud835\udc56=1 \ud835\udc41\u2211\ufe01\ud835\udc5b=1 max(0,\ud835\udeff\u2212 \u2225\ud835\udc38(\ud835\udc47(\ud835\udf49,\ud835\udc60 \ud835\udc56))\u2212\ud835\udc50 \ud835\udc5b\u22252) (3)\nwhere\ud835\udeffdenotes a predefined safety margin.\nMinimizingLiso enforces a geometric separation between trigger-\ninjected embeddings and benign cluster centers, as illustrated in\nFig. 11. Intuitively, a benign query without the trigger will map\nto the benign embedding region rather than the trigger-induced\nregion (Fig. 11), making it unlikely to retrieve the poisoned memory\nand preventing unintended activation."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0036"
+        ],
+        "excerpt": "Optimizing the objective in \u00a74.2 is challenging because the trigger\n\ud835\udf49 lies in a discrete token space. Following HotFlip [12], we adopt a\ngradient-guided coordinate search algorithm that approximately\noptimizes the discrete trigger sequence through iterative token\nreplacement. Specifically, we first use gradients fromLent to pro-\npose entity-consistent token substitutions, and then evaluate these\ncandidates usingL conc andL iso. The procedure is as follows.\n10https://huggingface.co/dslim/bert-base-NER\nCCS '26, November 15\u201319, 2026, The Hague, Netherlands Hongtao Wang, Se Yang, Yu Chen, and Puzhuo Liu\nAlgorithm 1MemPoisonTrigger Optimization\nRequire: Initial trigger \ud835\udf49(0) , benign corpus S, surrogate NER\nmodel\ud835\udc53NER, surrogate encoder\ud835\udc38, benign cluster centers{\ud835\udc50\ud835\udc5b}\ud835\udc41\ud835\udc5b=1,\nhyperparameters\ud835\udc35,\ud835\udc47 max,\ud835\udc40,\ud835\udefd,\ud835\udefe\nEnsure:Optimized trigger\ud835\udf49 \u2217\n1:for\ud835\udc61=0to\ud835\udc47 max\u22121do\n2:Sample a benign batchB\u223cS\n3:\ud835\udf49\u2190\ud835\udf49 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Optimization Algorithm",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ae5c81cd1e972fcfce0a8a5a68201f32d140bbe0fc0f873e42d59779f4595350",
+            "evidence_id": "E5a9e40183344219e-B0036",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Optimization Algorithm",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 505,
+                "page": 5,
+                "section": "Optimization Algorithm",
+                "section_index": 12,
+                "start": 0,
+                "text": "Optimizing the objective in \u00a74.2 is challenging because the trigger\n\ud835\udf49 lies in a discrete token space. Following HotFlip [12], we adopt a\ngradient-guided coordinate search algorithm that approximately\noptimizes the discrete trigger sequence through iterative token\nreplacement. Specifically, we first use gradients fromLent to pro-\npose entity-consistent token substitutions, and then evaluate these\ncandidates usingL conc andL iso. The procedure is as follows.\n10https://huggingface.co/dslim/bert-base-NER"
+              },
+              {
+                "end": 378,
+                "page": 6,
+                "section": "Optimization Algorithm",
+                "section_index": 13,
+                "start": 0,
+                "text": "CCS '26, November 15\u201319, 2026, The Hague, Netherlands Hongtao Wang, Se Yang, Yu Chen, and Puzhuo Liu\nAlgorithm 1MemPoisonTrigger Optimization\nRequire: Initial trigger \ud835\udf49(0) , benign corpus S, surrogate NER\nmodel\ud835\udc53NER, surrogate encoder\ud835\udc38, benign cluster centers{\ud835\udc50\ud835\udc5b}\ud835\udc41\ud835\udc5b=1,\nhyperparameters\ud835\udc35,\ud835\udc47 max,\ud835\udc40,\ud835\udefd,\ud835\udefe\nEnsure:Optimized trigger\ud835\udf49 \u2217\n1:for\ud835\udc61=0to\ud835\udc47 max\u22121do\n2:Sample a benign batchB\u223cS\n3:\ud835\udf49\u2190\ud835\udf49 "
+              }
+            ],
+            "text": "Optimizing the objective in \u00a74.2 is challenging because the trigger\n\ud835\udf49 lies in a discrete token space. Following HotFlip [12], we adopt a\ngradient-guided coordinate search algorithm that approximately\noptimizes the discrete trigger sequence through iterative token\nreplacement. Specifically, we first use gradients fromLent to pro-\npose entity-consistent token substitutions, and then evaluate these\ncandidates usingL conc andL iso. The procedure is as follows.\n10https://huggingface.co/dslim/bert-base-NER\nCCS '26, November 15\u201319, 2026, The Hague, Netherlands Hongtao Wang, Se Yang, Yu Chen, and Puzhuo Liu\nAlgorithm 1MemPoisonTrigger Optimization\nRequire: Initial trigger \ud835\udf49(0) , benign corpus S, surrogate NER\nmodel\ud835\udc53NER, surrogate encoder\ud835\udc38, benign cluster centers{\ud835\udc50\ud835\udc5b}\ud835\udc41\ud835\udc5b=1,\nhyperparameters\ud835\udc35,\ud835\udc47 max,\ud835\udc40,\ud835\udefd,\ud835\udefe\nEnsure:Optimized trigger\ud835\udf49 \u2217\n1:for\ud835\udc61=0to\ud835\udc47 max\u22121do\n2:Sample a benign batchB\u223cS\n3:\ud835\udf49\u2190\ud835\udf49 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0041"
+        ],
+        "excerpt": "Agents and Datasets.We implement three representative memory-\naugmented agents, each equipped with a domain-specific long-term\nmemory: (1)Personal Agent: designed for general-purpose assis-\ntance and daily routines. We utilize the LongMemEval dataset [45],\nwhich focuses on long-context understanding and cross-session\nretrieval in personal assistant scenarios. (2)Medical Agent: built\nfor medical consultation tasks. We use the MIRIAD dataset [53], a\nbenchmark for medical information retrieval and multi-hop reason-\ning in healthcare dialogues. (3)Financial Agent: used for financial\nand numerical reasoning tasks. We employ the FinQA dataset [6],\nwhich requires the agent to retrieve and process complex financial\nreports to answer expert-level queries. For each agent, we initialize\nits long-term memory with 2,000 benign memory entries to simu-\nlate a mature system state rather than an empty ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Settings",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a1fd645e2cb6bb32c4775e1a2fe5566303a77c494e692433f2678753121bd2c8",
+            "evidence_id": "E5a9e40183344219e-B0041",
+            "pages": [
+              6
+            ],
+            "section": "Experimental Settings",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 6,
+                "section": "Experimental Settings",
+                "section_index": 15,
+                "start": 0,
+                "text": "Agents and Datasets.We implement three representative memory-\naugmented agents, each equipped with a domain-specific long-term\nmemory: (1)Personal Agent: designed for general-purpose assis-\ntance and daily routines. We utilize the LongMemEval dataset [45],\nwhich focuses on long-context understanding and cross-session\nretrieval in personal assistant scenarios. (2)Medical Agent: built\nfor medical consultation tasks. We use the MIRIAD dataset [53], a\nbenchmark for medical information retrieval and multi-hop reason-\ning in healthcare dialogues. (3)Financial Agent: used for financial\nand numerical reasoning tasks. We employ the FinQA dataset [6],\nwhich requires the agent to retrieve and process complex financial\nreports to answer expert-level queries. For each agent, we initialize\nits long-term memory with 2,000 benign memory entries to simu-\nlate a mature system state rather than an empty "
+              }
+            ],
+            "text": "Agents and Datasets.We implement three representative memory-\naugmented agents, each equipped with a domain-specific long-term\nmemory: (1)Personal Agent: designed for general-purpose assis-\ntance and daily routines. We utilize the LongMemEval dataset [45],\nwhich focuses on long-context understanding and cross-session\nretrieval in personal assistant scenarios. (2)Medical Agent: built\nfor medical consultation tasks. We use the MIRIAD dataset [53], a\nbenchmark for medical information retrieval and multi-hop reason-\ning in healthcare dialogues. (3)Financial Agent: used for financial\nand numerical reasoning tasks. We employ the FinQA dataset [6],\nwhich requires the agent to retrieve and process complex financial\nreports to answer expert-level queries. For each agent, we initialize\nits long-term memory with 2,000 benign memory entries to simu-\nlate a mature system state rather than an empty "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0042"
+        ],
+        "excerpt": "memory setting.\nFollowing prior work [8], we hold out a disjoint set of 100 QA pairs\nper agent as test queries.\nMemory Mechanisms.We consider three representative memory\nsystems: (1)A-Mem[ 47], an autonomous knowledge network that\nuses LLMs to extract structural tags and contextual summaries from\ndialogues; (2)LangMem 11, the standard memory component in the\nLangChain that converts conversational streams into structured\nschemas; and (3)Mem0[ 9], a production-grade memory pipeline\nthat employs a two-phase mechanism to extract salient facts and\niteratively update existing records. Unlike standard RAG [25], these\nsystems selectively extract and rewrite interactions before storage.\nDuring response generation, all three mechanisms rely on embed-\nding similarity to retrieve the top-\ud835\udc58 most relevant memory entries.\nUnless otherwise specified, we inject one poisoned memory entry\nusing a single ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Settings",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1b655e181aab1142776cf347e21f9f04b82a8ab2aa12bbf6228c8b1339188765",
+            "evidence_id": "E5a9e40183344219e-B0042",
+            "pages": [
+              6
+            ],
+            "section": "Experimental Settings",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1796,
+                "page": 6,
+                "section": "Experimental Settings",
+                "section_index": 15,
+                "start": 898,
+                "text": "memory setting.\nFollowing prior work [8], we hold out a disjoint set of 100 QA pairs\nper agent as test queries.\nMemory Mechanisms.We consider three representative memory\nsystems: (1)A-Mem[ 47], an autonomous knowledge network that\nuses LLMs to extract structural tags and contextual summaries from\ndialogues; (2)LangMem 11, the standard memory component in the\nLangChain that converts conversational streams into structured\nschemas; and (3)Mem0[ 9], a production-grade memory pipeline\nthat employs a two-phase mechanism to extract salient facts and\niteratively update existing records. Unlike standard RAG [25], these\nsystems selectively extract and rewrite interactions before storage.\nDuring response generation, all three mechanisms rely on embed-\nding similarity to retrieve the top-\ud835\udc58 most relevant memory entries.\nUnless otherwise specified, we inject one poisoned memory entry\nusing a single "
+              }
+            ],
+            "text": "memory setting.\nFollowing prior work [8], we hold out a disjoint set of 100 QA pairs\nper agent as test queries.\nMemory Mechanisms.We consider three representative memory\nsystems: (1)A-Mem[ 47], an autonomous knowledge network that\nuses LLMs to extract structural tags and contextual summaries from\ndialogues; (2)LangMem 11, the standard memory component in the\nLangChain that converts conversational streams into structured\nschemas; and (3)Mem0[ 9], a production-grade memory pipeline\nthat employs a two-phase mechanism to extract salient facts and\niteratively update existing records. Unlike standard RAG [25], these\nsystems selectively extract and rewrite interactions before storage.\nDuring response generation, all three mechanisms rely on embed-\nding similarity to retrieve the top-\ud835\udc58 most relevant memory entries.\nUnless otherwise specified, we inject one poisoned memory entry\nusing a single "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0045"
+        ],
+        "excerpt": "ISR\u2191RSR@1\u2191ASR\u2191ACC\u2191 ISR\u2191RSR@1\u2191ASR\u2191ACC\u2191 ISR\u2191RSR@1\u2191ASR\u2191ACC\u2191\nRAG (Passive Storage)\nRAG\nNon-Attack - - -0.93 - - - 0.93 - - - 0.87\nInfo-only 1.00 0.00 0.00 0.91 1.00 0.00 0.000.95 1.00 0.00 0.00 0.85\nNaive Concat 1.00 0.97 0.91 0.92 1.00 0.50 0.48 0.93 1.00 0.67 0.65 0.87\nAgentPoison 1.00 0.83 0.72 0.92 1.00 0.59 0.51 0.90 1.00 0.43 0.43 0.86\nMINJA 1.00 0.45 0.45 0.46 1.00 0.06 0.06 0.82 1.00 0.36 0.29 0.44\nMemPoison 1.001.00 0.990.90 1.000.94 0.940.90 1.000.92 0.92 0.88\nMemory (Active Extraction)\nA-Mem\nNon-Attack - - -0.91 - - - 0.87 - - - 0.87\nInfo-only 0.87 0.00 0.00 0.90 1.000.00 0.000.90 0.99 0.00 0.000.89\nNaive Concat 0.18 0.15 0.100.91 0.37 0.26 0.18 0.88 0.35 0.30 0.180.89\nAgentPoison 0.87 0.54 0.31 0.90 0.12 0.10 0.08 0.91 0.32 0.11 0.06 0.85\nMINJA 0.72 0.30 0.26 0.67 0.44 0.23 0.11 0.81 0.63 0.33 0.17 0.69\nMemPoison 1.00 0.93 0.890.87 0.980.94 0.900.89 1.00 0.91 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b92baebac3e42ccd4ef9f2f6331aa8edaad83b6a19a1b42595c26885fbd05803",
+            "evidence_id": "E5a9e40183344219e-B0045",
+            "pages": [
+              7
+            ],
+            "section": "Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 880,
+                "page": 7,
+                "section": "Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191",
+                "section_index": 17,
+                "start": 0,
+                "text": "ISR\u2191RSR@1\u2191ASR\u2191ACC\u2191 ISR\u2191RSR@1\u2191ASR\u2191ACC\u2191 ISR\u2191RSR@1\u2191ASR\u2191ACC\u2191\nRAG (Passive Storage)\nRAG\nNon-Attack - - -0.93 - - - 0.93 - - - 0.87\nInfo-only 1.00 0.00 0.00 0.91 1.00 0.00 0.000.95 1.00 0.00 0.00 0.85\nNaive Concat 1.00 0.97 0.91 0.92 1.00 0.50 0.48 0.93 1.00 0.67 0.65 0.87\nAgentPoison 1.00 0.83 0.72 0.92 1.00 0.59 0.51 0.90 1.00 0.43 0.43 0.86\nMINJA 1.00 0.45 0.45 0.46 1.00 0.06 0.06 0.82 1.00 0.36 0.29 0.44\nMemPoison 1.001.00 0.990.90 1.000.94 0.940.90 1.000.92 0.92 0.88\nMemory (Active Extraction)\nA-Mem\nNon-Attack - - -0.91 - - - 0.87 - - - 0.87\nInfo-only 0.87 0.00 0.00 0.90 1.000.00 0.000.90 0.99 0.00 0.000.89\nNaive Concat 0.18 0.15 0.100.91 0.37 0.26 0.18 0.88 0.35 0.30 0.180.89\nAgentPoison 0.87 0.54 0.31 0.90 0.12 0.10 0.08 0.91 0.32 0.11 0.06 0.85\nMINJA 0.72 0.30 0.26 0.67 0.44 0.23 0.11 0.81 0.63 0.33 0.17 0.69\nMemPoison 1.00 0.93 0.890.87 0.980.94 0.900.89 1.00 0.91 "
+              }
+            ],
+            "text": "ISR\u2191RSR@1\u2191ASR\u2191ACC\u2191 ISR\u2191RSR@1\u2191ASR\u2191ACC\u2191 ISR\u2191RSR@1\u2191ASR\u2191ACC\u2191\nRAG (Passive Storage)\nRAG\nNon-Attack - - -0.93 - - - 0.93 - - - 0.87\nInfo-only 1.00 0.00 0.00 0.91 1.00 0.00 0.000.95 1.00 0.00 0.00 0.85\nNaive Concat 1.00 0.97 0.91 0.92 1.00 0.50 0.48 0.93 1.00 0.67 0.65 0.87\nAgentPoison 1.00 0.83 0.72 0.92 1.00 0.59 0.51 0.90 1.00 0.43 0.43 0.86\nMINJA 1.00 0.45 0.45 0.46 1.00 0.06 0.06 0.82 1.00 0.36 0.29 0.44\nMemPoison 1.001.00 0.990.90 1.000.94 0.940.90 1.000.92 0.92 0.88\nMemory (Active Extraction)\nA-Mem\nNon-Attack - - -0.91 - - - 0.87 - - - 0.87\nInfo-only 0.87 0.00 0.00 0.90 1.000.00 0.000.90 0.99 0.00 0.000.89\nNaive Concat 0.18 0.15 0.100.91 0.37 0.26 0.18 0.88 0.35 0.30 0.180.89\nAgentPoison 0.87 0.54 0.31 0.90 0.12 0.10 0.08 0.91 0.32 0.11 0.06 0.85\nMINJA 0.72 0.30 0.26 0.67 0.44 0.23 0.11 0.81 0.63 0.33 0.17 0.69\nMemPoison 1.00 0.93 0.890.87 0.980.94 0.900.89 1.00 0.91 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0046"
+        ],
+        "excerpt": "0.900.88\nLangMem\nNon-Attack - - - 0.94 - - -0.86 - - - 0.86\nInfo-only 0.93 0.00 0.000.95 1.000.00 0.00 0.83 1.000.00 0.00 0.86\nNaive Concat 0.59 0.00 0.000.95 0.62 0.00 0.00 0.81 0.74 0.00 0.00 0.85\nAgentPoison 0.63 0.02 0.020.95 0.79 0.00 0.00 0.85 0.46 0.00 0.00 0.86\nMINJA 0.27 0.05 0.03 0.91 0.78 0.03 0.03 0.73 0.98 0.01 0.01 0.80\nMemPoison 0.91 0.90 0.830.94 1.00 0.79 0.770.84 0.990.80 0.79 0.87\nMem0\nNon-Attack - - - 0.93 - - - 0.94 - - -0.91\nInfo-only 0.97 0.00 0.00 0.80 0.990.00 0.00 0.95 1.000.00 0.00 0.89\nNaive Concat 0.50 0.00 0.00 0.94 0.58 0.00 0.00 0.92 0.49 0.00 0.00 0.88\nAgentPoison 0.57 0.03 0.02 0.90 0.07 0.00 0.00 0.93 0.01 0.00 0.00 0.88\nMINJA 0.17 0.14 0.03 0.92 0.17 0.06 0.03 0.91 0.53 0.17 0.14 0.69\nMemPoison 0.98 0.98 0.95 0.96 0.940.94 0.94 0.96 0.970.95 0.910.89\n\u2022 Naive Concat.Uses the same optimized trigger \ud835\udf49 asMemPoison,\nbut directly concatenates it with the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3591a27bf9d249f89873afe636a7c902e7d22aaa64b3e3dc154e0916fe24592a",
+            "evidence_id": "E5a9e40183344219e-B0046",
+            "pages": [
+              7
+            ],
+            "section": "Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1777,
+                "page": 7,
+                "section": "Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191",
+                "section_index": 17,
+                "start": 880,
+                "text": "0.900.88\nLangMem\nNon-Attack - - - 0.94 - - -0.86 - - - 0.86\nInfo-only 0.93 0.00 0.000.95 1.000.00 0.00 0.83 1.000.00 0.00 0.86\nNaive Concat 0.59 0.00 0.000.95 0.62 0.00 0.00 0.81 0.74 0.00 0.00 0.85\nAgentPoison 0.63 0.02 0.020.95 0.79 0.00 0.00 0.85 0.46 0.00 0.00 0.86\nMINJA 0.27 0.05 0.03 0.91 0.78 0.03 0.03 0.73 0.98 0.01 0.01 0.80\nMemPoison 0.91 0.90 0.830.94 1.00 0.79 0.770.84 0.990.80 0.79 0.87\nMem0\nNon-Attack - - - 0.93 - - - 0.94 - - -0.91\nInfo-only 0.97 0.00 0.00 0.80 0.990.00 0.00 0.95 1.000.00 0.00 0.89\nNaive Concat 0.50 0.00 0.00 0.94 0.58 0.00 0.00 0.92 0.49 0.00 0.00 0.88\nAgentPoison 0.57 0.03 0.02 0.90 0.07 0.00 0.00 0.93 0.01 0.00 0.00 0.88\nMINJA 0.17 0.14 0.03 0.92 0.17 0.06 0.03 0.91 0.53 0.17 0.14 0.69\nMemPoison 0.98 0.98 0.95 0.96 0.940.94 0.94 0.96 0.970.95 0.910.89\n\u2022 Naive Concat.Uses the same optimized trigger \ud835\udf49 asMemPoison,\nbut directly concatenates it with the "
+              }
+            ],
+            "text": "0.900.88\nLangMem\nNon-Attack - - - 0.94 - - -0.86 - - - 0.86\nInfo-only 0.93 0.00 0.000.95 1.000.00 0.00 0.83 1.000.00 0.00 0.86\nNaive Concat 0.59 0.00 0.000.95 0.62 0.00 0.00 0.81 0.74 0.00 0.00 0.85\nAgentPoison 0.63 0.02 0.020.95 0.79 0.00 0.00 0.85 0.46 0.00 0.00 0.86\nMINJA 0.27 0.05 0.03 0.91 0.78 0.03 0.03 0.73 0.98 0.01 0.01 0.80\nMemPoison 0.91 0.90 0.830.94 1.00 0.79 0.770.84 0.990.80 0.79 0.87\nMem0\nNon-Attack - - - 0.93 - - - 0.94 - - -0.91\nInfo-only 0.97 0.00 0.00 0.80 0.990.00 0.00 0.95 1.000.00 0.00 0.89\nNaive Concat 0.50 0.00 0.00 0.94 0.58 0.00 0.00 0.92 0.49 0.00 0.00 0.88\nAgentPoison 0.57 0.03 0.02 0.90 0.07 0.00 0.00 0.93 0.01 0.00 0.00 0.88\nMINJA 0.17 0.14 0.03 0.92 0.17 0.06 0.03 0.91 0.53 0.17 0.14 0.69\nMemPoison 0.98 0.98 0.95 0.96 0.940.94 0.94 0.96 0.970.95 0.910.89\n\u2022 Naive Concat.Uses the same optimized trigger \ud835\udf49 asMemPoison,\nbut directly concatenates it with the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0048"
+        ],
+        "excerpt": "fraction of queries where the agent's final response follows the\npoisoned payload (end-to-end success). (4) Benign Accuracy (ACC):\nthe agent's answer accuracy on benign (non-triggered) test queries.\nAn effective and stealthy attack should achieve high ISR/RSR/ASR\nwhile keeping ACC close to the clean-agent baseline.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "29ef8b5a52cb394a48c21c19a51e282717e58c73c6da12285e915f9b71795402",
+            "evidence_id": "E5a9e40183344219e-B0048",
+            "pages": [
+              7
+            ],
+            "section": "Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2989,
+                "page": 7,
+                "section": "Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191 Isr\u2191Rsr@1\u2191Asr\u2191Acc\u2191",
+                "section_index": 17,
+                "start": 2673,
+                "text": "fraction of queries where the agent's final response follows the\npoisoned payload (end-to-end success). (4) Benign Accuracy (ACC):\nthe agent's answer accuracy on benign (non-triggered) test queries.\nAn effective and stealthy attack should achieve high ISR/RSR/ASR\nwhile keeping ACC close to the clean-agent baseline."
+              }
+            ],
+            "text": "fraction of queries where the agent's final response follows the\npoisoned payload (end-to-end success). (4) Benign Accuracy (ACC):\nthe agent's answer accuracy on benign (non-triggered) test queries.\nAn effective and stealthy attack should achieve high ISR/RSR/ASR\nwhile keeping ACC close to the clean-agent baseline."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0052"
+        ],
+        "excerpt": "ISR RSR@1 ASR ACC ISR RSR@1 ASR ACC ISR RSR@1 ASR ACC\nw/o\ud835\udc47(\ud835\udf0f,\ud835\udc60 \ud835\udc56) 0.50 0.00 0.00 0.94 0.58 0.00 0.00 0.92 0.49 0.00 0.00 0.88\nw/oL \ud835\udc52\ud835\udc5b\ud835\udc61 0.88 0.72 0.68 0.91 0.82 0.40 0.36 0.94 0.92 0.65 0.62 0.85\nw/oL \ud835\udc50\ud835\udc5c\ud835\udc5b\ud835\udc50 0.96 0.56 0.54 0.93 0.93 0.30 0.30 0.92 0.97 0.24 0.21 0.88\nw/oL \ud835\udc56\ud835\udc60\ud835\udc5c 0.98 0.78 0.75 0.91 0.92 0.63 0.62 0.92 0.95 0.33 0.32 0.83\nMemPoison 0.98 0.98 0.95 0.96 0.94 0.94 0.94 0.96 0.97 0.95 0.91 0.89\nattacker-specified incorrect answers. In the RAG setting, MINJA\nachieves lower RSR@1 compared with other attacks. This is be-\ncause the manually constructed poisoned texts are not explicitly\noptimized for retrieval separability from benign memories. Con-\nsequently, poisoned and benign texts often overlap in embedding\nspace, causing a victim query to retrieve benign entries instead of\nthe poisoned one and lowering RSR@1. Similarly, benign queries\ncan also retrieve the poisoned text due to ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Isr Rsr@1 Asr Acc Isr Rsr@1 Asr Acc Isr Rsr@1 Asr Acc",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "52a24c1f96d873923f4fad7974a21a504782e25dcdb35dbd2be498a574dc2498",
+            "evidence_id": "E5a9e40183344219e-B0052",
+            "pages": [
+              8
+            ],
+            "section": "Isr Rsr@1 Asr Acc Isr Rsr@1 Asr Acc Isr Rsr@1 Asr Acc",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 8,
+                "section": "Isr Rsr@1 Asr Acc Isr Rsr@1 Asr Acc Isr Rsr@1 Asr Acc",
+                "section_index": 20,
+                "start": 0,
+                "text": "ISR RSR@1 ASR ACC ISR RSR@1 ASR ACC ISR RSR@1 ASR ACC\nw/o\ud835\udc47(\ud835\udf0f,\ud835\udc60 \ud835\udc56) 0.50 0.00 0.00 0.94 0.58 0.00 0.00 0.92 0.49 0.00 0.00 0.88\nw/oL \ud835\udc52\ud835\udc5b\ud835\udc61 0.88 0.72 0.68 0.91 0.82 0.40 0.36 0.94 0.92 0.65 0.62 0.85\nw/oL \ud835\udc50\ud835\udc5c\ud835\udc5b\ud835\udc50 0.96 0.56 0.54 0.93 0.93 0.30 0.30 0.92 0.97 0.24 0.21 0.88\nw/oL \ud835\udc56\ud835\udc60\ud835\udc5c 0.98 0.78 0.75 0.91 0.92 0.63 0.62 0.92 0.95 0.33 0.32 0.83\nMemPoison 0.98 0.98 0.95 0.96 0.94 0.94 0.94 0.96 0.97 0.95 0.91 0.89\nattacker-specified incorrect answers. In the RAG setting, MINJA\nachieves lower RSR@1 compared with other attacks. This is be-\ncause the manually constructed poisoned texts are not explicitly\noptimized for retrieval separability from benign memories. Con-\nsequently, poisoned and benign texts often overlap in embedding\nspace, causing a victim query to retrieve benign entries instead of\nthe poisoned one and lowering RSR@1. Similarly, benign queries\ncan also retrieve the poisoned text due to "
+              }
+            ],
+            "text": "ISR RSR@1 ASR ACC ISR RSR@1 ASR ACC ISR RSR@1 ASR ACC\nw/o\ud835\udc47(\ud835\udf0f,\ud835\udc60 \ud835\udc56) 0.50 0.00 0.00 0.94 0.58 0.00 0.00 0.92 0.49 0.00 0.00 0.88\nw/oL \ud835\udc52\ud835\udc5b\ud835\udc61 0.88 0.72 0.68 0.91 0.82 0.40 0.36 0.94 0.92 0.65 0.62 0.85\nw/oL \ud835\udc50\ud835\udc5c\ud835\udc5b\ud835\udc50 0.96 0.56 0.54 0.93 0.93 0.30 0.30 0.92 0.97 0.24 0.21 0.88\nw/oL \ud835\udc56\ud835\udc60\ud835\udc5c 0.98 0.78 0.75 0.91 0.92 0.63 0.62 0.92 0.95 0.33 0.32 0.83\nMemPoison 0.98 0.98 0.95 0.96 0.94 0.94 0.94 0.96 0.97 0.95 0.91 0.89\nattacker-specified incorrect answers. In the RAG setting, MINJA\nachieves lower RSR@1 compared with other attacks. This is be-\ncause the manually constructed poisoned texts are not explicitly\noptimized for retrieval separability from benign memories. Con-\nsequently, poisoned and benign texts often overlap in embedding\nspace, causing a victim query to retrieve benign entries instead of\nthe poisoned one and lowering RSR@1. Similarly, benign queries\ncan also retrieve the poisoned text due to "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0061"
+        ],
+        "excerpt": "token sequence, preventing the trigger from\nbeing preserved verbatim and hindering precise retrieval.\n5.3.2 Impact of Memory Mechanism Configurations.\nImpact of the Number of Benign Records.We evaluate scalabil-\nity by increasing the number of benign memory records from 1,000\nto 7,000 while injecting only one poisoned record. As shown in\nFig. 6,MemPoison maintains consistently high RSR@1 (> 0.95) as\nthe memory grows, outperforming Random (random entity-token\ntrigger; no optimization), MINJA, and AgentPoison. This stability\n1 2 3 4\nNumber of Poison Records\n0.2\n0.4\n0.6\n0.8\n1.0RSR@1\nRandom\nMINJA\nAgentPoison\nMemPoison\n1 2 3 4\nNumber of Poison Records\n0.2\n0.4\n0.6\n0.8\n1.0ACC\nRandom\nMINJA\nAgentPoison\nMemPoison\nFigure 7: Impact of the number of poisoned records.\nTable 3: Performance under different LLM agent backbones.\nAgent Backbone ISR RSR@1 ASR ACC\nGPT-4o-mini 0.98 0.98 0.95 0.96\nGPT-5.4 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation And Sensitivity Analyses (Rq2)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "33a95da95f513510c86eabf6aed07ec80337e8ab8747e2ee533d8f3025e2272b",
+            "evidence_id": "E5a9e40183344219e-B0061",
+            "pages": [
+              9
+            ],
+            "section": "Ablation And Sensitivity Analyses (Rq2)",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2896,
+                "page": 9,
+                "section": "Ablation And Sensitivity Analyses (Rq2)",
+                "section_index": 22,
+                "start": 2000,
+                "text": "token sequence, preventing the trigger from\nbeing preserved verbatim and hindering precise retrieval.\n5.3.2 Impact of Memory Mechanism Configurations.\nImpact of the Number of Benign Records.We evaluate scalabil-\nity by increasing the number of benign memory records from 1,000\nto 7,000 while injecting only one poisoned record. As shown in\nFig. 6,MemPoison maintains consistently high RSR@1 (> 0.95) as\nthe memory grows, outperforming Random (random entity-token\ntrigger; no optimization), MINJA, and AgentPoison. This stability\n1 2 3 4\nNumber of Poison Records\n0.2\n0.4\n0.6\n0.8\n1.0RSR@1\nRandom\nMINJA\nAgentPoison\nMemPoison\n1 2 3 4\nNumber of Poison Records\n0.2\n0.4\n0.6\n0.8\n1.0ACC\nRandom\nMINJA\nAgentPoison\nMemPoison\nFigure 7: Impact of the number of poisoned records.\nTable 3: Performance under different LLM agent backbones.\nAgent Backbone ISR RSR@1 ASR ACC\nGPT-4o-mini 0.98 0.98 0.95 0.96\nGPT-5.4 "
+              }
+            ],
+            "text": "token sequence, preventing the trigger from\nbeing preserved verbatim and hindering precise retrieval.\n5.3.2 Impact of Memory Mechanism Configurations.\nImpact of the Number of Benign Records.We evaluate scalabil-\nity by increasing the number of benign memory records from 1,000\nto 7,000 while injecting only one poisoned record. As shown in\nFig. 6,MemPoison maintains consistently high RSR@1 (> 0.95) as\nthe memory grows, outperforming Random (random entity-token\ntrigger; no optimization), MINJA, and AgentPoison. This stability\n1 2 3 4\nNumber of Poison Records\n0.2\n0.4\n0.6\n0.8\n1.0RSR@1\nRandom\nMINJA\nAgentPoison\nMemPoison\n1 2 3 4\nNumber of Poison Records\n0.2\n0.4\n0.6\n0.8\n1.0ACC\nRandom\nMINJA\nAgentPoison\nMemPoison\nFigure 7: Impact of the number of poisoned records.\nTable 3: Performance under different LLM agent backbones.\nAgent Backbone ISR RSR@1 ASR ACC\nGPT-4o-mini 0.98 0.98 0.95 0.96\nGPT-5.4 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0065"
+        ],
+        "excerpt": "Arctic\nContrieverBGE-Small\nANCE\nT arget Embedder\nMiniLM\nE5\nGTR-T5\naMPNet\nArctic\nContriever\nBGE-Small\nANCE\nSource Embedder\n1.00 0.95 0.97 0.58 0.45 0.61 0.48 0.87\n0.51 0.96 0.62 0.13 0.61 0.53 0.27 0.77\n0.83 0.83 0.99 0.25 0.57 0.28 0.34 0.73\n0.42 0.61 0.80 0.78 0.61 0.73 0.62 0.51\n0.48 0.67 0.82 0.32 0.78 0.66 0.73 0.78\n0.50 0.86 0.85 0.36 0.63 0.53 0.47 0.81\n0.93 0.65 0.90 0.32 0.92 0.66 0.77 0.32\n0.87 0.92 0.82 0.26 0.84 0.30 0.39 0.87\n(a) RSR@1\nMiniLM\nE5\nGTR-T5 aMPNet Arctic\nContrieverBGE-Small\nANCE\nT arget Embedder\nMiniLM\nE5\nGTR-T5\naMPNet\nArctic\nContriever\nBGE-Small\nANCE\n0.98 0.94 0.96 0.58 0.44 0.61 0.48 0.87\n0.48 0.86 0.61 0.11 0.54 0.46 0.26 0.73\n0.83 0.83 0.99 0.25 0.56 0.28 0.34 0.73\n0.36 0.55 0.71 0.74 0.58 0.67 0.57 0.48\n0.47 0.65 0.80 0.31 0.76 0.65 0.72 0.77\n0.46 0.77 0.76 0.30 0.56 0.48 0.43 0.75\n0.92 0.64 0.87 0.31 0.90 0.64 0.74 0.32\n0.83 0.89 0.79 0.22 0.83 0.30 0.37 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation And Sensitivity Analyses (Rq2)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5cb831e80cf6e9b39edc42c2607e3e99f9001b6f46751743c2ba2430283e085c",
+            "evidence_id": "E5a9e40183344219e-B0065",
+            "pages": [
+              10
+            ],
+            "section": "Ablation And Sensitivity Analyses (Rq2)",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1370,
+                "page": 10,
+                "section": "Ablation And Sensitivity Analyses (Rq2)",
+                "section_index": 23,
+                "start": 473,
+                "text": "Arctic\nContrieverBGE-Small\nANCE\nT arget Embedder\nMiniLM\nE5\nGTR-T5\naMPNet\nArctic\nContriever\nBGE-Small\nANCE\nSource Embedder\n1.00 0.95 0.97 0.58 0.45 0.61 0.48 0.87\n0.51 0.96 0.62 0.13 0.61 0.53 0.27 0.77\n0.83 0.83 0.99 0.25 0.57 0.28 0.34 0.73\n0.42 0.61 0.80 0.78 0.61 0.73 0.62 0.51\n0.48 0.67 0.82 0.32 0.78 0.66 0.73 0.78\n0.50 0.86 0.85 0.36 0.63 0.53 0.47 0.81\n0.93 0.65 0.90 0.32 0.92 0.66 0.77 0.32\n0.87 0.92 0.82 0.26 0.84 0.30 0.39 0.87\n(a) RSR@1\nMiniLM\nE5\nGTR-T5 aMPNet Arctic\nContrieverBGE-Small\nANCE\nT arget Embedder\nMiniLM\nE5\nGTR-T5\naMPNet\nArctic\nContriever\nBGE-Small\nANCE\n0.98 0.94 0.96 0.58 0.44 0.61 0.48 0.87\n0.48 0.86 0.61 0.11 0.54 0.46 0.26 0.73\n0.83 0.83 0.99 0.25 0.56 0.28 0.34 0.73\n0.36 0.55 0.71 0.74 0.58 0.67 0.57 0.48\n0.47 0.65 0.80 0.31 0.76 0.65 0.72 0.77\n0.46 0.77 0.76 0.30 0.56 0.48 0.43 0.75\n0.92 0.64 0.87 0.31 0.90 0.64 0.74 0.32\n0.83 0.89 0.79 0.22 0.83 0.30 0.37 "
+              }
+            ],
+            "text": "Arctic\nContrieverBGE-Small\nANCE\nT arget Embedder\nMiniLM\nE5\nGTR-T5\naMPNet\nArctic\nContriever\nBGE-Small\nANCE\nSource Embedder\n1.00 0.95 0.97 0.58 0.45 0.61 0.48 0.87\n0.51 0.96 0.62 0.13 0.61 0.53 0.27 0.77\n0.83 0.83 0.99 0.25 0.57 0.28 0.34 0.73\n0.42 0.61 0.80 0.78 0.61 0.73 0.62 0.51\n0.48 0.67 0.82 0.32 0.78 0.66 0.73 0.78\n0.50 0.86 0.85 0.36 0.63 0.53 0.47 0.81\n0.93 0.65 0.90 0.32 0.92 0.66 0.77 0.32\n0.87 0.92 0.82 0.26 0.84 0.30 0.39 0.87\n(a) RSR@1\nMiniLM\nE5\nGTR-T5 aMPNet Arctic\nContrieverBGE-Small\nANCE\nT arget Embedder\nMiniLM\nE5\nGTR-T5\naMPNet\nArctic\nContriever\nBGE-Small\nANCE\n0.98 0.94 0.96 0.58 0.44 0.61 0.48 0.87\n0.48 0.86 0.61 0.11 0.54 0.46 0.26 0.73\n0.83 0.83 0.99 0.25 0.56 0.28 0.34 0.73\n0.36 0.55 0.71 0.74 0.58 0.67 0.57 0.48\n0.47 0.65 0.80 0.31 0.76 0.65 0.72 0.77\n0.46 0.77 0.76 0.30 0.56 0.48 0.43 0.75\n0.92 0.64 0.87 0.31 0.90 0.64 0.74 0.32\n0.83 0.89 0.79 0.22 0.83 0.30 0.37 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0073"
+        ],
+        "excerpt": "ASR ACC ASR ACC ASR ACC ASR ACC\nNaive Concat 0.000.72 0.19 0.75 0.55 0.84 0.590.88\nMINJA 0.04 0.68 0.08 0.72 0.28 0.65 0.36 0.62\nAgentPoison 0.00 0.75 0.000.79 0.17 0.81 0.39 0.89\nMemPoison 0.400.71 0.660.78 0.87 0.85 0.880.86\nPerplexity-based Filtering.Perplexity (PPL)-based filtering is a\ncommon defense that filters out texts with high perplexity under a\nlanguage model [1, 27, 43]. We implement this defense by comput-\ning the GPT-2 perplexity of each candidate memory entry before it\nis written to the long-term memory, and discarding entries whose\nPPL exceeds a threshold. We evaluate four thresholds (75, 100, 150,\n200), and report ASR and ACC in Tab. 5.\nAs shown in Tab. 5,MemPoison remains substantially more ef-\nfective than baselines under strict filtering. At PPL\u226475, Naive Con-\ncat and AgentPoison are fully suppressed (ASR=0.00), whereas\nMemPoison still achieves ASR=0.40. As the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Asr Acc Asr Acc Asr Acc Asr Acc",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7cebd9003a02e7b5abc50a5d69141cb725f7ab13aafc6d056e8783e39a845837",
+            "evidence_id": "E5a9e40183344219e-B0073",
+            "pages": [
+              11
+            ],
+            "section": "Asr Acc Asr Acc Asr Acc Asr Acc",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 11,
+                "section": "Asr Acc Asr Acc Asr Acc Asr Acc",
+                "section_index": 27,
+                "start": 0,
+                "text": "ASR ACC ASR ACC ASR ACC ASR ACC\nNaive Concat 0.000.72 0.19 0.75 0.55 0.84 0.590.88\nMINJA 0.04 0.68 0.08 0.72 0.28 0.65 0.36 0.62\nAgentPoison 0.00 0.75 0.000.79 0.17 0.81 0.39 0.89\nMemPoison 0.400.71 0.660.78 0.87 0.85 0.880.86\nPerplexity-based Filtering.Perplexity (PPL)-based filtering is a\ncommon defense that filters out texts with high perplexity under a\nlanguage model [1, 27, 43]. We implement this defense by comput-\ning the GPT-2 perplexity of each candidate memory entry before it\nis written to the long-term memory, and discarding entries whose\nPPL exceeds a threshold. We evaluate four thresholds (75, 100, 150,\n200), and report ASR and ACC in Tab. 5.\nAs shown in Tab. 5,MemPoison remains substantially more ef-\nfective than baselines under strict filtering. At PPL\u226475, Naive Con-\ncat and AgentPoison are fully suppressed (ASR=0.00), whereas\nMemPoison still achieves ASR=0.40. As the "
+              }
+            ],
+            "text": "ASR ACC ASR ACC ASR ACC ASR ACC\nNaive Concat 0.000.72 0.19 0.75 0.55 0.84 0.590.88\nMINJA 0.04 0.68 0.08 0.72 0.28 0.65 0.36 0.62\nAgentPoison 0.00 0.75 0.000.79 0.17 0.81 0.39 0.89\nMemPoison 0.400.71 0.660.78 0.87 0.85 0.880.86\nPerplexity-based Filtering.Perplexity (PPL)-based filtering is a\ncommon defense that filters out texts with high perplexity under a\nlanguage model [1, 27, 43]. We implement this defense by comput-\ning the GPT-2 perplexity of each candidate memory entry before it\nis written to the long-term memory, and discarding entries whose\nPPL exceeds a threshold. We evaluate four thresholds (75, 100, 150,\n200), and report ASR and ACC in Tab. 5.\nAs shown in Tab. 5,MemPoison remains substantially more ef-\nfective than baselines under strict filtering. At PPL\u226475, Naive Con-\ncat and AgentPoison are fully suppressed (ASR=0.00), whereas\nMemPoison still achieves ASR=0.40. As the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0075"
+        ],
+        "excerpt": "ACC\nNaive Concat 0.04 0.80 0.000.79 0.000.77 0.00 0.82\nAgentPoison 0.00 0.79 0.00 0.76 0.00 0.76 0.000.84\nMINJA 0.30 0.52 0.29 0.55 0.29 0.53 0.27 0.64\nMemPoison 0.89 0.82 0.870.76 0.77 0.77 0.770.80\nParaphrasing.Input paraphrasing [ 22] is a semantic-level defense\nthat rewrites text using an auxiliary LLM to disrupt adversarial\nsurface forms while preserving intent. In this experiment, we fix the\nvictim agent backbone to GPT-4o-mini and vary theparaphrasing\nLLM. To make the evaluation more challenging, we paraphrase (i)\ncandidate memory entries before they are written to long-term\nmemory and (ii) user queries before retrieval.\nAs shown in Tab. 6, Naive Concat and AgentPoison are almost\ncompletely neutralized (ASR\u2264 0.04), indicating that concatenation-\nbased triggers are fragile under semantic rewriting. In contrast,\nMemPoison remains highly effective, achieving ASR of 0.77\u20130.89\nwhile ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Asr Acc Asr Acc Asr Acc Asr Acc",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b9bb0549aca43ce409cea5b06cc4a95e3d36c4294f8291d0e4c48c21abc2a2f5",
+            "evidence_id": "E5a9e40183344219e-B0075",
+            "pages": [
+              11
+            ],
+            "section": "Asr Acc Asr Acc Asr Acc Asr Acc",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2684,
+                "page": 11,
+                "section": "Asr Acc Asr Acc Asr Acc Asr Acc",
+                "section_index": 27,
+                "start": 1786,
+                "text": "ACC\nNaive Concat 0.04 0.80 0.000.79 0.000.77 0.00 0.82\nAgentPoison 0.00 0.79 0.00 0.76 0.00 0.76 0.000.84\nMINJA 0.30 0.52 0.29 0.55 0.29 0.53 0.27 0.64\nMemPoison 0.89 0.82 0.870.76 0.77 0.77 0.770.80\nParaphrasing.Input paraphrasing [ 22] is a semantic-level defense\nthat rewrites text using an auxiliary LLM to disrupt adversarial\nsurface forms while preserving intent. In this experiment, we fix the\nvictim agent backbone to GPT-4o-mini and vary theparaphrasing\nLLM. To make the evaluation more challenging, we paraphrase (i)\ncandidate memory entries before they are written to long-term\nmemory and (ii) user queries before retrieval.\nAs shown in Tab. 6, Naive Concat and AgentPoison are almost\ncompletely neutralized (ASR\u2264 0.04), indicating that concatenation-\nbased triggers are fragile under semantic rewriting. In contrast,\nMemPoison remains highly effective, achieving ASR of 0.77\u20130.89\nwhile "
+              }
+            ],
+            "text": "ACC\nNaive Concat 0.04 0.80 0.000.79 0.000.77 0.00 0.82\nAgentPoison 0.00 0.79 0.00 0.76 0.00 0.76 0.000.84\nMINJA 0.30 0.52 0.29 0.55 0.29 0.53 0.27 0.64\nMemPoison 0.89 0.82 0.870.76 0.77 0.77 0.770.80\nParaphrasing.Input paraphrasing [ 22] is a semantic-level defense\nthat rewrites text using an auxiliary LLM to disrupt adversarial\nsurface forms while preserving intent. In this experiment, we fix the\nvictim agent backbone to GPT-4o-mini and vary theparaphrasing\nLLM. To make the evaluation more challenging, we paraphrase (i)\ncandidate memory entries before they are written to long-term\nmemory and (ii) user queries before retrieval.\nAs shown in Tab. 6, Naive Concat and AgentPoison are almost\ncompletely neutralized (ASR\u2264 0.04), indicating that concatenation-\nbased triggers are fragile under semantic rewriting. In contrast,\nMemPoison remains highly effective, achieving ASR of 0.77\u20130.89\nwhile "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0077"
+        ],
+        "excerpt": "Table 7: Attack performance of MemPoison on the Hermes\nAgent across different LLM backbones in a real-world de-\nployment setting.\nHermes Agent Backbone ISR ASR\nQwen3-max 1.00 1.00\nDeepSeek-r1 1.00 1.00\nKimi-k2.5 1.00 1.00\nGPT-4o 1.00 0.96\nGemini-3.1-pro 0.88 0.84\nGPT-5.4 0.83 0.71\nClaude-opus-4.6 0.20 0.12\nWhile \u00a75 demonstrates the statistical efficacy of our poisoning\nframework under controlled experimental settings, its practical im-\npact must be validated in real-world agent systems. In this section,\nwe conduct a real-world case study targeting Hermes Agent12, a\npopular open-source agent with long-term memory. In our setting,\nthe adversary can only interact with Hermes through the standard\nblack-box chat interface. We inject the poison by presenting a ma-\nlicious medical recommendation (with the trigger) as the user's\npersonal preference. Then, we start a new session and submit ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Real-World Case Study (Rq4)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "103d397a55333f08bc8d76b89e03f14efd336c9df30229a1342bde94803d8bbc",
+            "evidence_id": "E5a9e40183344219e-B0077",
+            "pages": [
+              11
+            ],
+            "section": "Real-World Case Study (Rq4)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 11,
+                "section": "Real-World Case Study (Rq4)",
+                "section_index": 28,
+                "start": 0,
+                "text": "Table 7: Attack performance of MemPoison on the Hermes\nAgent across different LLM backbones in a real-world de-\nployment setting.\nHermes Agent Backbone ISR ASR\nQwen3-max 1.00 1.00\nDeepSeek-r1 1.00 1.00\nKimi-k2.5 1.00 1.00\nGPT-4o 1.00 0.96\nGemini-3.1-pro 0.88 0.84\nGPT-5.4 0.83 0.71\nClaude-opus-4.6 0.20 0.12\nWhile \u00a75 demonstrates the statistical efficacy of our poisoning\nframework under controlled experimental settings, its practical im-\npact must be validated in real-world agent systems. In this section,\nwe conduct a real-world case study targeting Hermes Agent12, a\npopular open-source agent with long-term memory. In our setting,\nthe adversary can only interact with Hermes through the standard\nblack-box chat interface. We inject the poison by presenting a ma-\nlicious medical recommendation (with the trigger) as the user's\npersonal preference. Then, we start a new session and submit "
+              }
+            ],
+            "text": "Table 7: Attack performance of MemPoison on the Hermes\nAgent across different LLM backbones in a real-world de-\nployment setting.\nHermes Agent Backbone ISR ASR\nQwen3-max 1.00 1.00\nDeepSeek-r1 1.00 1.00\nKimi-k2.5 1.00 1.00\nGPT-4o 1.00 0.96\nGemini-3.1-pro 0.88 0.84\nGPT-5.4 0.83 0.71\nClaude-opus-4.6 0.20 0.12\nWhile \u00a75 demonstrates the statistical efficacy of our poisoning\nframework under controlled experimental settings, its practical im-\npact must be validated in real-world agent systems. In this section,\nwe conduct a real-world case study targeting Hermes Agent12, a\npopular open-source agent with long-term memory. In our setting,\nthe adversary can only interact with Hermes through the standard\nblack-box chat interface. We inject the poison by presenting a ma-\nlicious medical recommendation (with the trigger) as the user's\npersonal preference. Then, we start a new session and submit "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0082"
+        ],
+        "excerpt": "sum-\nmarize this effect in Fig. 10c by plotting the normalized attention\nreceived by each token. The plot shows that the trigger tokens\nreceive more attention, while the original key tokens receive less.\nThis attention redistribution suggests that the optimized trigger\ninfluences how the embedding model encodes the input sequence.\nAlthough attention visualization from a single layer cannot fully\ncharacterize the complex computation across all transformer layers,\nthe observation is consistent with our embedding-space analysis\nin \u00a75.6.2: trigger-containing texts form a compact cluster that is\nseparated from benign texts, indicating that the trigger systemati-\ncally changes the resulting embeddings. Together, these observa-\ntions suggest that the optimized trigger systematically reshapes\n-0.6 -0.4 -0.2 0.0 0.2 0.4 0.6\n-0.4\n-0.2\n0.0\n0.2\n0.4\n(a) PCA Projection\nBenign\nPoisoned\n-0.2 0.0 0.2 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mechanistic Analysis (Rq5)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2fa63ae82de96a4352496b018fcded7f1d845eca7a79476c027085582d0194e6",
+            "evidence_id": "E5a9e40183344219e-B0082",
+            "pages": [
+              12
+            ],
+            "section": "Mechanistic Analysis (Rq5)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1795,
+                "page": 12,
+                "section": "Mechanistic Analysis (Rq5)",
+                "section_index": 30,
+                "start": 898,
+                "text": "sum-\nmarize this effect in Fig. 10c by plotting the normalized attention\nreceived by each token. The plot shows that the trigger tokens\nreceive more attention, while the original key tokens receive less.\nThis attention redistribution suggests that the optimized trigger\ninfluences how the embedding model encodes the input sequence.\nAlthough attention visualization from a single layer cannot fully\ncharacterize the complex computation across all transformer layers,\nthe observation is consistent with our embedding-space analysis\nin \u00a75.6.2: trigger-containing texts form a compact cluster that is\nseparated from benign texts, indicating that the trigger systemati-\ncally changes the resulting embeddings. Together, these observa-\ntions suggest that the optimized trigger systematically reshapes\n-0.6 -0.4 -0.2 0.0 0.2 0.4 0.6\n-0.4\n-0.2\n0.0\n0.2\n0.4\n(a) PCA Projection\nBenign\nPoisoned\n-0.2 0.0 0.2 "
+              }
+            ],
+            "text": "sum-\nmarize this effect in Fig. 10c by plotting the normalized attention\nreceived by each token. The plot shows that the trigger tokens\nreceive more attention, while the original key tokens receive less.\nThis attention redistribution suggests that the optimized trigger\ninfluences how the embedding model encodes the input sequence.\nAlthough attention visualization from a single layer cannot fully\ncharacterize the complex computation across all transformer layers,\nthe observation is consistent with our embedding-space analysis\nin \u00a75.6.2: trigger-containing texts form a compact cluster that is\nseparated from benign texts, indicating that the trigger systemati-\ncally changes the resulting embeddings. Together, these observa-\ntions suggest that the optimized trigger systematically reshapes\n-0.6 -0.4 -0.2 0.0 0.2 0.4 0.6\n-0.4\n-0.2\n0.0\n0.2\n0.4\n(a) PCA Projection\nBenign\nPoisoned\n-0.2 0.0 0.2 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0086"
+        ],
+        "excerpt": "projection (Fig. 11a), benign records spread over a\nbroad region, reflecting the diversity of natural language. Trigger-\ninjected texts are concentrated into a compact cluster with a clear\nseparation from the benign region. This is consistent with the\ncosine-similarity distributions (Fig. 11b). The A\u2013A similarities ex-\nhibit a sharp peak, whereas the B\u2013B distribution is much broader.\nMeanwhile, the A\u2013B similarities are shifted to lower values, match-\ning the separation observed in the PCA plot.\nTogether, these properties explain both effectiveness and stealth.\nWhen a query contains the trigger, A\u2013A similarities are much higher\nthan A\u2013B similarities, so poisoned entries are more likely to out-\nrank benign entries during retrieval, leading to high RSR. When\na query does not contain the trigger, B\u2013B similarities exceed A\u2013B\nsimilarities, so benign entries are more likely to be retrieved ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mechanistic Analysis (Rq5)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3d2089d5c84310221635c7d2a0340a9b97d4d3cb5cc02b1a81ece1b55c6709e8",
+            "evidence_id": "E5a9e40183344219e-B0086",
+            "pages": [
+              13
+            ],
+            "section": "Mechanistic Analysis (Rq5)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1887,
+                "page": 13,
+                "section": "Mechanistic Analysis (Rq5)",
+                "section_index": 31,
+                "start": 991,
+                "text": "projection (Fig. 11a), benign records spread over a\nbroad region, reflecting the diversity of natural language. Trigger-\ninjected texts are concentrated into a compact cluster with a clear\nseparation from the benign region. This is consistent with the\ncosine-similarity distributions (Fig. 11b). The A\u2013A similarities ex-\nhibit a sharp peak, whereas the B\u2013B distribution is much broader.\nMeanwhile, the A\u2013B similarities are shifted to lower values, match-\ning the separation observed in the PCA plot.\nTogether, these properties explain both effectiveness and stealth.\nWhen a query contains the trigger, A\u2013A similarities are much higher\nthan A\u2013B similarities, so poisoned entries are more likely to out-\nrank benign entries during retrieval, leading to high RSR. When\na query does not contain the trigger, B\u2013B similarities exceed A\u2013B\nsimilarities, so benign entries are more likely to be retrieved "
+              }
+            ],
+            "text": "projection (Fig. 11a), benign records spread over a\nbroad region, reflecting the diversity of natural language. Trigger-\ninjected texts are concentrated into a compact cluster with a clear\nseparation from the benign region. This is consistent with the\ncosine-similarity distributions (Fig. 11b). The A\u2013A similarities ex-\nhibit a sharp peak, whereas the B\u2013B distribution is much broader.\nMeanwhile, the A\u2013B similarities are shifted to lower values, match-\ning the separation observed in the PCA plot.\nTogether, these properties explain both effectiveness and stealth.\nWhen a query contains the trigger, A\u2013A similarities are much higher\nthan A\u2013B similarities, so poisoned entries are more likely to out-\nrank benign entries during retrieval, leading to high RSR. When\na query does not contain the trigger, B\u2013B similarities exceed A\u2013B\nsimilarities, so benign entries are more likely to be retrieved "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0088"
+        ],
+        "excerpt": "Consequently,\neven randomly paired texts can exhibit relatively high cosine sim-\nilarity. In contrast, models like MiniLM and aMPNet yield lower\nsimilarities for random text pairs, indicating that their embeddings\nare more uniformly distributed in the embedding space.\nAssociation Between Anisotropy and Vulnerability.Fig. 12b\nshows a positive trend between a model's anisotropy score and its\nvulnerability to MemPoison. Highly anisotropic embedders tend\nto be easier to attack. A plausible explanation is that anisotropic\nembedding spaces are more crowded and prone tohubness, where\na small number of vectors become highly similar to many other\nvectors and thus gain high retrieval visibility. In such geometry,\nLconc can more readily produce a compact trigger-conditioned\ncluster in embedding space, yielding higher RSR [15, 24].",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mechanistic Analysis (Rq5)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d24a63819f3033f69ebce0c0cde9da439b2b2c70513e62f5160385322c7556b7",
+            "evidence_id": "E5a9e40183344219e-B0088",
+            "pages": [
+              13
+            ],
+            "section": "Mechanistic Analysis (Rq5)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3612,
+                "page": 13,
+                "section": "Mechanistic Analysis (Rq5)",
+                "section_index": 31,
+                "start": 2781,
+                "text": "Consequently,\neven randomly paired texts can exhibit relatively high cosine sim-\nilarity. In contrast, models like MiniLM and aMPNet yield lower\nsimilarities for random text pairs, indicating that their embeddings\nare more uniformly distributed in the embedding space.\nAssociation Between Anisotropy and Vulnerability.Fig. 12b\nshows a positive trend between a model's anisotropy score and its\nvulnerability to MemPoison. Highly anisotropic embedders tend\nto be easier to attack. A plausible explanation is that anisotropic\nembedding spaces are more crowded and prone tohubness, where\na small number of vectors become highly similar to many other\nvectors and thus gain high retrieval visibility. In such geometry,\nLconc can more readily produce a compact trigger-conditioned\ncluster in embedding space, yielding higher RSR [15, 24]."
+              }
+            ],
+            "text": "Consequently,\neven randomly paired texts can exhibit relatively high cosine sim-\nilarity. In contrast, models like MiniLM and aMPNet yield lower\nsimilarities for random text pairs, indicating that their embeddings\nare more uniformly distributed in the embedding space.\nAssociation Between Anisotropy and Vulnerability.Fig. 12b\nshows a positive trend between a model's anisotropy score and its\nvulnerability to MemPoison. Highly anisotropic embedders tend\nto be easier to attack. A plausible explanation is that anisotropic\nembedding spaces are more crowded and prone tohubness, where\na small number of vectors become highly similar to many other\nvectors and thus gain high retrieval visibility. In such geometry,\nLconc can more readily produce a compact trigger-conditioned\ncluster in embedding space, yielding higher RSR [15, 24]."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5a9e40183344219e-B0090"
+        ],
+        "excerpt": "using embed-\nding models. Our anisotropy analysis (\u00a75.6.3) provides a geometric\nexplanation: transfer is stronger in more anisotropic target spaces,\nwhere crowded representations make trigger-associated embed-\ndings more likely to remain retrievable after a model swap. This\nalso implies a limitation: transferability may degrade when the\nvictim retriever departs from typical dense-embedding geometry\n(e.g., hybrid retrieval combining dense retrieval with BM25). Future\nwork can evaluate these settings and develop query-efficient online\nadaptation methods for unknown retrieval pipelines.\nMemory Lifecycle and Security Implications.Modern memory-\naugmented agents employ sophisticated memory processing mech-\nanisms, including consolidation, updating, and forgetting, to im-\nprove memory quality and long-term consistency [9, 19, 26, 31, 47].\nOur results demonstrate that carefully crafted ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion And Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "66e463728053b4c0e2eb0a5d0606b149961ff8e7b62bc49e0e1e4b5ba1d14386",
+            "evidence_id": "E5a9e40183344219e-B0090",
+            "pages": [
+              13
+            ],
+            "section": "Discussion And Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 1789,
+                "page": 13,
+                "section": "Discussion And Limitations",
+                "section_index": 32,
+                "start": 897,
+                "text": "using embed-\nding models. Our anisotropy analysis (\u00a75.6.3) provides a geometric\nexplanation: transfer is stronger in more anisotropic target spaces,\nwhere crowded representations make trigger-associated embed-\ndings more likely to remain retrievable after a model swap. This\nalso implies a limitation: transferability may degrade when the\nvictim retriever departs from typical dense-embedding geometry\n(e.g., hybrid retrieval combining dense retrieval with BM25). Future\nwork can evaluate these settings and develop query-efficient online\nadaptation methods for unknown retrieval pipelines.\nMemory Lifecycle and Security Implications.Modern memory-\naugmented agents employ sophisticated memory processing mech-\nanisms, including consolidation, updating, and forgetting, to im-\nprove memory quality and long-term consistency [9, 19, 26, 31, 47].\nOur results demonstrate that carefully crafted "
+              }
+            ],
+            "text": "using embed-\nding models. Our anisotropy analysis (\u00a75.6.3) provides a geometric\nexplanation: transfer is stronger in more anisotropic target spaces,\nwhere crowded representations make trigger-associated embed-\ndings more likely to remain retrievable after a model swap. This\nalso implies a limitation: transferability may degrade when the\nvictim retriever departs from typical dense-embedding geometry\n(e.g., hybrid retrieval combining dense retrieval with BM25). Future\nwork can evaluate these settings and develop query-efficient online\nadaptation methods for unknown retrieval pipelines.\nMemory Lifecycle and Security Implications.Modern memory-\naugmented agents employ sophisticated memory processing mech-\nanisms, including consolidation, updating, and forgetting, to im-\nprove memory quality and long-term consistency [9, 19, 26, 31, 47].\nOur results demonstrate that carefully crafted "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2605.29960",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.1145/3830454.3846674",
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline ASR/RSR gains are corroborated on held-out tasks across three selective memory systems, multiple LLM backbones, eight target retrievers, and a real-world Hermes Agent deployment, none of which were used to optimize the trigger.",
+          "final_evaluation_signal": "End-to-end ISR, RSR@1, ASR, and ACC measured on held-out queries across A-Mem, LangMem, Mem0, multiple LLM backbones, eight target embedding models, and the Hermes Agent.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Surrogate BERT-base NER classification loss plus MiniLM embedding concentration and isolation losses used to optimize the trigger.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E5a9e40183344219e-B0002",
+          "E5a9e40183344219e-B0003",
+          "E5a9e40183344219e-B0011",
+          "E5a9e40183344219e-B0012",
+          "E5a9e40183344219e-B0032",
+          "E5a9e40183344219e-B0033",
+          "E5a9e40183344219e-B0034",
+          "E5a9e40183344219e-B0035",
+          "E5a9e40183344219e-B0036",
+          "E5a9e40183344219e-B0041",
+          "E5a9e40183344219e-B0042",
+          "E5a9e40183344219e-B0045",
+          "E5a9e40183344219e-B0046",
+          "E5a9e40183344219e-B0048",
+          "E5a9e40183344219e-B0052",
+          "E5a9e40183344219e-B0061",
+          "E5a9e40183344219e-B0065",
+          "E5a9e40183344219e-B0073",
+          "E5a9e40183344219e-B0075",
+          "E5a9e40183344219e-B0077",
+          "E5a9e40183344219e-B0082",
+          "E5a9e40183344219e-B0086",
+          "E5a9e40183344219e-B0088",
+          "E5a9e40183344219e-B0090"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "ebcad74091ef4f65b45b6ee0d4f9ec1cbb7ea361a11c4c3f897b05c50b5fc6e2"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.1145/3830454.3846674",
+        "claim_evidence_alignment": "Reported metrics (ISR, RSR@1, ASR, ACC) clearly corroborate the claims that MemPoison achieves high attack success (ASR up to 0.95) and preserves benign accuracy under realistic selective memory conditions where prior methods fail [E5a9e40183344219e-B0003, E5a9e40183344219e-B0045, E5a9e40183344219e-B0046, E5a9e40183344219e-B0073, E5a9e40183344219e-B0075].",
+        "context_id": "5a9e40183344219e9354c20b6540af10e5ed0716b5a3112375735ec62732116c",
+        "decision": "pass",
+        "evaluation_assessment": "The empirical evaluation is extensive and well-controlled across three application domains (personal, medical, financial), three modern selective memory mechanisms (A-Mem, LangMem, Mem0), and multiple LLM backbones [E5a9e40183344219e-B0041, E5a9e40183344219e-B0042, E5a9e40183344219e-B0045, E5a9e40183344219e-B0046]. It incorporates rigorous baselines, ablations, cross-embedder transfer experiments, lifecycle simulations, real-world case studies on Hermes Agent, and mechanistic analyses linking vulnerability to embedding anisotropy [E5a9e40183344219e-B0052, E5a9e40183344219e-B0065, E5a9e40183344219e-B0077, E5a9e40183344219e-B0088].",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline performance was corroborated on held-out tasks across disparate production backbones (e.g., GPT-5.4, Qwen3-max), diverse memory architectures (Mem0, LangMem, A-Mem), 8 different retrieval encoders, and the real-world Hermes Agent [E5a9e40183344219e-B0045, E5a9e40183344219e-B0062, E5a9e40183344219e-B0065, E5a9e40183344219e-B0077].",
+          "final_evaluation_signal": "End-to-end task metrics (ASR, ISR, RSR@1, and ACC) measured across independent LLM agent pipelines, different selective memory frameworks, and distinct target embedding models [E5a9e40183344219e-B0042, E5a9e40183344219e-B0048, E5a9e40183344219e-B0062, E5a9e40183344219e-B0065].",
+          "independent_corroboration": "present",
+          "optimization_signal": "Surrogate BERT-base NER classification loss and surrogate dense embedding geometry (MiniLM concentration and isolation losses) [E5a9e40183344219e-B0033, E5a9e40183344219e-B0034, E5a9e40183344219e-B0035, E5a9e40183344219e-B0036].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E5a9e40183344219e-B0002",
+          "E5a9e40183344219e-B0003",
+          "E5a9e40183344219e-B0011",
+          "E5a9e40183344219e-B0012",
+          "E5a9e40183344219e-B0032",
+          "E5a9e40183344219e-B0033",
+          "E5a9e40183344219e-B0034",
+          "E5a9e40183344219e-B0035",
+          "E5a9e40183344219e-B0036",
+          "E5a9e40183344219e-B0041",
+          "E5a9e40183344219e-B0042",
+          "E5a9e40183344219e-B0045",
+          "E5a9e40183344219e-B0046",
+          "E5a9e40183344219e-B0048",
+          "E5a9e40183344219e-B0052",
+          "E5a9e40183344219e-B0061",
+          "E5a9e40183344219e-B0065",
+          "E5a9e40183344219e-B0073",
+          "E5a9e40183344219e-B0075",
+          "E5a9e40183344219e-B0077",
+          "E5a9e40183344219e-B0082",
+          "E5a9e40183344219e-B0086",
+          "E5a9e40183344219e-B0088",
+          "E5a9e40183344219e-B0090"
+        ],
+        "limitations": "The authors transparently discuss key limitations, including performance degradation against strongly aligned front-end models that filter malicious inputs during extraction (such as Claude-Opus-4.6 in deployment), lower cross-embedder transferability to specific architectures like aMPNet, and the scope being bounded to dense retrieval rather than hybrid BM25 schemes [E5a9e40183344219e-B0077, E5a9e40183344219e-B0078, E5a9e40183344219e-B0090].",
+        "method_assessment": "The methodology is thoroughly detailed, formalizing multi-objective losses for entity masquerading via surrogate NER and discrete HotFlip-style coordinate search, as well as embedding concentration and isolation objectives over dense representation spaces [E5a9e40183344219e-B0032, E5a9e40183344219e-B0033, E5a9e40183344219e-B0034, E5a9e40183344219e-B0036]. The paper specifies concrete algorithms and operational phases under clear threat model constraints [E5a9e40183344219e-B0022, E5a9e40183344219e-B0036].",
+        "quality_rationale": "The manuscript presents a rigorous, well-scoped security study addressing an important vulnerability in modern selective agent memory architectures. The methodology, experimental controls, comprehensive ablations, defense tests, and mechanistic explanations provide robust evidence satisfying all scientific criteria.",
+        "scoped_contribution": "The paper introduces MemPoison, an optimization-based backdoor memory poisoning framework for LLM agents designed to bypass selective memory extraction and rewriting pipelines using semantic relational bridging, entity masquerading, and joint embedding optimization [E5a9e40183344219e-B0002, E5a9e40183344219e-B0011, E5a9e40183344219e-B0012].",
+        "source_content_hash": "ebcad74091ef4f65b45b6ee0d4f9ec1cbb7ea361a11c4c3f897b05c50b5fc6e2"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a rigorous, well-scoped security study addressing an important vulnerability in modern selective agent memory architectures. The methodology, experimental controls, comprehensive ablations, defense tests, and mechanistic explanations provide robust evidence satisfying all scientific criteria.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "ebcad74091ef4f65b45b6ee0d4f9ec1cbb7ea361a11c4c3f897b05c50b5fc6e2",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors transparently discuss key limitations, including performance degradation against strongly aligned front-end models that filter malicious inputs during extraction (such as Claude-Opus-4.6 in deployment), lower cross-embedder transferability to specific architectures like aMPNet, and the scope being bounded to dense retrieval rather than hybrid BM25 schemes [E5a9e40183344219e-B0077, E5a9e40183344219e-B0078, E5a9e40183344219e-B0090]."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -153,7 +2040,7 @@
       "W7162755822"
     ]
   },
-  "source_updated_date": "2026-11-14",
+  "source_updated_date": "2026-11-16",
   "sources": [
     "openalex",
     "arxiv"
@@ -173,7 +2060,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

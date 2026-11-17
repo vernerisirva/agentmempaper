@@ -1,17 +1,17 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-11-16](2026-11-16.md).
+Latest daily digest: [2026-11-17](2026-11-17.md).
 
-# Paper Scout Digest - 2026-11-16
+# Paper Scout Digest - 2026-11-17
 
 ## Run Summary
 
-- **Run ID:** 135
+- **Run ID:** 136
 - **Candidates fetched:** 117
-- **New unique papers:** 114
-- **Relevant:** 8
+- **New unique papers:** 112
+- **Relevant:** 9
 - **Maybe relevant:** 3
-- **Irrelevant:** 106
+- **Irrelevant:** 105
 - **Source summary:** arxiv: 17, openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
@@ -20,41 +20,61 @@ Latest daily digest: [2026-11-16](2026-11-16.md).
 - openalex: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - openalex: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - openalex: incomplete discovery window for 'automated literature review'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
+- semantic_scholar failed for 'deep research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 - semantic_scholar: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 
 ## Highly Relevant
 
-### [Designing Institutions for Autonomous AI](https://arxiv.org/abs/2611.17114)
+### [Asking the right question is key to AI discovery in a chain of hypotheses](https://arxiv.org/abs/2611.19841v1)
 
-- **Authors:** Petter Törnberg
-- **Date:** 2026-11-12
-- **Source:** openalex
+- **Authors:** Hu Cang
+- **Date:** 2026-11-15
+- **Source:** arxiv
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Artificial intelligence (AI) scientists pursue discovery through a chain of hypotheses, fitting candidate models to existing observations and often choosing experiments where those models disagree most. Yet when early data miss a narrow feature, model selection favors simple curves that agree across the unmea- sured...
+
+### [Eliciting Research Taste in LLMs through Future Research Direction Choice](https://arxiv.org/abs/2611.19794v1)
+
+- **Authors:** Dhruv Trehan, Paras Chopra
+- **Date:** 2026-11-15
+- **Source:** arxiv
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Research taste is increasingly discussed in the context of AI scientists, yet remains little studied or measured in LLMs. This judgment matters especially in open-ended research, where a direction must be chosen before a verifiable objective is available. We operationalize research taste through one task of the scie...
+
+### [Security of Deep Research Agents: Attack Surface, Defenses, Benchmarks, and Agenda Seeding against Research Planning](https://arxiv.org/abs/2611.20045v1)
+
+- **Authors:** Yang Luo, Guangpu Chen, Yichen Liu, Zhaoyu Chen, Yifeng Gao, Zhiyang Ding, et al.
+- **Date:** 2026-11-15
+- **Source:** arxiv
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** As autonomous AI agents increasingly interact in persistent populations, their collective capabilities and alignment depend not only on individual models, but also on the institutions governing their interactions. Yet AI research has largely focused on individual agents. In this Perspective, we argue that institutio...
+- **Abstract summary:** Deep research and agentic search agents autonomously retrieve content from the open web and generate reports with citations, and their outputs are often taken directly as research conclusions. This paper systematizes security research in this area along four stages, namely retrieval, planning, evidence integration,...
 
 ## Maybe Relevant
 
-### [ARE-bench: Benchmarking Agents' Research Ability in Real-World Researcher Sessions and Workspaces](https://arxiv.org/abs/2611.14364)
+### [A multimodal deep learning system for automated dermoscopic classification and evidence-grounded clinical reporting](https://doi.org/10.1007/s12553-026-01104-8)
 
-- **Authors:** Jiahang Lin, Wanying Ren, Wanghan Xu, Huayu Sha, Yang Shu, 卢中杭, et al.
-- **Date:** 2026-11-10
+- **Authors:** Alessio Luschi, Linda Tognetti, Pascale Guitera, Lara Valeska Maul, Justin Ko, Alessandra Cartocci, et al.
+- **Date:** 2026-11-14
 - **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
-- **Tags:** benchmark
-- **Abstract summary:** Research agents achieve increasingly strong benchmark scores, yet these scores do not necessarily translate into reliable delivery in ongoing research projects. Many research-agent benchmarks emphasize standalone tasks and relatively self-contained workflows in clean or curated workspaces. However, researchers ask a...
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** citation-grounding
+- **Abstract summary:** No abstract available.
 
-### [SOMIN: Fusing Marketing Science and LLM Agents for Closed-Loop Autonomous Campaigns](https://doi.org/10.1145/3767308.3839058)
+### [RMIT-ADM+S at TREC RAG 2026: Research Agents, Retriever Ablations, and Open-Weight Replication](https://arxiv.org/abs/2611.16425)
 
-- **Authors:** Aleksandr Farseev
-- **Date:** 2026-11-09
+- **Authors:** Oleg Zendel, Kun Ran, Chenglong Ma, Nguyen Khoi Vo, Shuai Wang
+- **Date:** 2026-11-12
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
 - **Tags:** research-adjacent
-- **Abstract summary:** SOMIN is an autonomous digital marketing platform, built by SoMin.ai Research, that fuses marketing science with agentic Large Language Models to close the loop between predictive analytics and campaign execution. In SOMIN, predictive Deep Neural Networks score, filter, and explain multimodal creative signals; LLM a...
+- **Abstract summary:** We describe the RMIT-ADM+S team's participation in the TREC 2026 Retrieval-Augmented Generation (RAG) track using the ClimbMix corpus. We submitted seven research-agent runs using proprietary OpenAI and open-weight models, exploring different retrieval strategies, writer models, and agent workflows. Pre-submission a...

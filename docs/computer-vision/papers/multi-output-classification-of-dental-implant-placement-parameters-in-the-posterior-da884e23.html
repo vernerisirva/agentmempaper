@@ -59,16 +59,247 @@
             <p>Implant placement in the posterior edentulous maxilla is clinically challenging due to anatomical variability, limited residual bone height, and maxillary sinus pneumatization. Conventional planning relies heavily on clinician experience and manual radiographic interpretation, leading to variability and subjectivity...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>AI assessment unavailable</h2>
-      <p>Manuscript unavailable; no scientific decision.</p>
-      <p>No promotion; review candidates may remain pending indefinitely.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study provides a substantive technical and clinical contribution with a clear pipeline, appropriate baseline comparisons, sound interpretability analysis, and careful qualification of limitations.</p>
+      <p>The authors transparently report key constraints including single-center retrospective data collection, reliance on 2D cross-sectional projections rather than 3D volumetric data, a modest test set size (n = 45), class imbalances affecting minority classes, and reliance on expert consensus rather than longitudinal clinical outcomes.</p>
       <p>Publication: peer reviewed. OpenAlex records a published journal location: Scientific Reports. Peer review inferred from venue metadata, not independently verified.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: title_and_abstract.</p>
-        <p>Assessor: deterministic. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
-        <p>Assessed: 2026-09-23T09:09:29.849860+00:00.</p>
-        <p>Coverage: unknown of unknown eligible manuscript characters; omitted body: unknown. Extraction complete: False.</p>
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-17T12:48:40.828913+00:00.</p>
+        <p>Coverage: 70789 of 70789 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Implant placement in the posterior edentulous maxilla is clinically challenging due to anatomical variability,
+limited residual bone height, and maxillary sinus pneumatization. Conventional planning relies heavily on
+clinician experience and manual radiographic interpretation, leading to variability and subjectivity. This study
+developed and evaluated a two-stage Vision Transformer (ViT)–based deep learning framework for multi-
+output classification of implant placement parameters from cone-beam computed tomography (CBCT) images.
+A retrospective dataset of 457 expert-validated posterior maxillary edentulous cases was collected from the
+Faculty of Dentistry, Mahidol University. The model simultaneously classified four planning parameters—
+implant height, implant diameter, sinus lift technique, and sinus lift stage—using a multi-output architecture
+with task-specific classification </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>heads. A two-stage fine-tuning strategy was employed to optimize transfer
+learning. The proposed ViT model achieved an overall accuracy of 85.56%, with task-specific accuracies of
+88.89% for implant height, 80.00% for implant diameter, 84.44% for sinus lift technique, and 88.89% for sinus
+lift stage, outperforming the best CNN baseline (62.22%) by 23.34 percentage points. The model demonstrated
+near-real-time inference (0.037 s per sample). These findings suggest that ViT-based multi-output classification
+with two-stage fine-tuning can serve as an effective decision-support tool for dental implant planning.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>calibrated examiner (NW). Intra-rater reliability was evaluated by
+repeating bone height and width measurements on cross-sectional CBCT images after a one-week interval. The
+agreement demonstrated excellent reliability (ICC = 0.97; 95% Confidence Interval (CI) : 0.96–0.98; p &lt; 0.001)35,
+indicating a high level of measurement consistency.
+Expert panel and image labeling
+Each of the 1,000 eligible CBCT cross-sectional images was independently reviewed by three specialists (PP,
+PL, KB) with over 10 years of clinical experience in implant dentistry and extensive expertise in CBCT interpre-
+tation. The experts were instructed to assess and label each image independently according to the implant size
+classification and sinus lift protocols defined in this study.
+In this study, implant size classification was based on commonly used posterior implant dimensions: diameters
+of &lt; 4.0 mm, </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>4.0–4.5 mm, and &gt; 4.5 mm, and lengths of 8–10 mm and &gt; 10 mm. Implant size recommendations
+were derived from mesiodistal restorative space, bone width, and bone height to determine the maximum feasible
+implant dimensions. Short implants (&lt; 8 mm) were excluded from the analysis. As this study represents an initial
+investigation, the classification framework focused on conventional implant lengths in relation to maxillary sinus
+assessment, reflecting common clinical practice in posterior maxillary implant planning, where standard-length
+implants are often considered alongside sinus augmentation procedures.
+For each case, the expert panel received the CBCT cross-sectional image along with bone height and width
+measurements and information on the positional relationship to the maxillary sinus. Using this information, the
+experts independently classified each image according to the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>performed concurrently with implant placement), and Staged (sinus augmentation performed prior to implant
+placement, with a healing period before implant insertion).
+Expert consensus and data filtering
+To ensure labeling reliability, a majority-vote consensus strategy was employed. For each classification task, the
+final label was accepted only when at least two of the three specialists agreed. Implant sites that failed to achieve
+a two-of-three majority for a given task were considered to have no consensus label for that task. Cases showing
+logically inconsistent label combinations (e.g., &quot;no sinus lift&quot; for technique but &quot;simultaneous&quot; for stage) were
+excluded during the subsequent data-filtering process to maintain data integrity.
+Following expert labelling, the dataset underwent a predefined multi-step filtering pipeline before model
+development. The filtering process included </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the removal of logically inconsistent label combinations, the exclu-
+sion of records outside the predefined study criteria (implant height &lt; 8 mm and field of view other than 6 × 6 cm),
+and class-balancing procedures for over-represented categories. Random down-sampling was performed before
+model development to reduce the severe over-representation of a single subgroup and improve class balance. A
+fixed random seed (42) was used to ensure reproducibility.
+After filtering, the remaining expert decision records were grouped into unique implant sites. Majority-vote
+consensus (agreement by at least two of three specialists) was then applied independently for each classifi -
+cation task. Implant sites that did not achieve a two-of-three majority for any of the four classification tasks
+were excluded. The filtering process was performed before dataset partitioning. A quantitative </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>breakdown of this
+multi-step filtering process is provided in Supplementary Table S1.
+Among the 685 implant sites entering the consensus stage, 228 (33.3%) failed to achieve majority consensus
+for any task and were excluded, resulting in a final dataset of 457 eligible implant sites. Because consensus was
+determined independently for each classification task, not all retained implant sites contained valid labels for all
+four tasks. The availability of consensus labels for each task is summarized in Supplementary Table S2.
+Multi-output label encoding
+For the deep learning framework, all final labels were encoded into multi-output categorical vectors correspond-
+ing to the four classification tasks. Each label was transformed into a numerical format suitable for multi-class
+cross-entropy loss computation. Not all 457 images had valid labels for every task; samples with missing labels </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>
+for a specific task were excluded from that task&#x27;s loss computation during training, while still contributing to the
+other tasks. This encoding scheme enabled simultaneous learning of correlated classification outputs through
+shared feature representations.
+Dataset partitioning
+The final dataset of 457 images was divided into training, validation, and test sets comprising 367 (80.3%), 45
+(9.8%), and 45 (9.8%) samples, respectively. The partitioning was performed to maintain approximate class dis-
+tribution across splits.
+Image data preprocessing
+All CBCT cross-sectional images were preprocessed through a standardized image-processing pipeline to ensure
+consistency and optimize feature extraction for deep learning analysis. Each exported CBCT image (1920 × 1080
+pixels, JPEG format) was first converted into a two-dimensional format and normalized for intensity consistency.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Article in Press
+Scientific Reports
+https://doi.org/10.1038/s41598-026-70962-z
+To enhance the model&#x27;s ability to capture localized anatomic features, each image was divided into four quad-
+rants through a cross-cropping procedure. From each quadrant, a centered crop was extracted using a square
+region with a crop ratio of 0.45 relative to the quadrant&#x27;s minimum dimension, retaining the central 45% of each
+quadrant to emphasize relevant osseous and sinus structures while minimizing peripheral artifacts.
+Following cropping, a composite input configuration was implemented to preserve spatial relationships and
+improve computational efficiency. For each patient, the four cropped quadrant images (upper-left, upper-right,
+lower-left, and lower-right) were combined into a 2 × 2 grid layout to form a single composite image. This con -
+figuration maintained the anatomical correspondence of </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>structures across quadrants while providing a holistic
+representation of the edentulous site. The combined image was then resized to 224 × 224 pixels, matching the
+input dimension requirements of the Vision Transformer model. All processed images were subsequently orga -
+nized into a structured directory hierarchy corresponding to their respective dataset partitions (training, valida -
+tion, and testing).
+Data augmentation
+To mitigate overfitting and improve model generalization on the limited training set, data augmentation was
+applied exclusively to the training data. The following augmentation transformations were applied stochastically
+during training: random rotation (± 10 degrees), random horizontal flip (probability = 0.5), color jitter (bright -
+ness = 0.1, contrast = 0.1, saturation = 0.1, hue = 0.05), and random affine transformation (translation up to 10%
+in both axes, </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>scale range 0.9–1.1). No augmentation was applied to the validation or test sets to ensure unbiased
+evaluation.
+CNN baseline models
+To establish baseline performance and justify the selection of the Vision Transformer architecture, four widely
+used CNN architectures pretrained on ImageNet were evaluated: Inception V336, EfficientNet-B037, ResNet-10138,
+and VGG-1939. All CNN models were implemented using TensorFlow/Keras with the same dataset partitioning
+and multi-output classification framework as the ViT model.
+Each CNN model processed the four quadrant images independently through its respective pretrained back -
+bone, followed by global average pooling to obtain a fixed-length feature vector per image. An attention-based
+feature fusion mechanism was employed to combine the four image-level representations into a single patient-
+level feature vector, using learned attention </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>weights with softmax normalization. The fused features were then
+passed through shared dense layers (512 → 256 units with batch normalization and dropout) before being routed
+to four task-specific classification heads, mirroring the multi-output architecture used in the ViT model.
+The same two-stage fine-tuning strategy was applied: Stage 1 with frozen backbone (learning rate 1 × 10⁻3,
+gradient clipping 1.0, 25 epochs) and Stage 2 with unfrozen backbone (learning rate 1 × 10⁻4, gradient clipping
+0.5, 25 epochs). Early stopping with a patience of 15 epochs was employed to prevent overfitting. Label smooth-
+ing (factor = 0.1) and cosine learning rate decay with warmup were also applied consistently across all CNN
+experiments.
+Vision transformer architecture
+A Vision Transformer (ViT)–based deep learning framework was developed for multi-output classification of
+dental implant </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>placement parameters from CBCT-derived images. The base architecture was initialized from
+a pretrained ViT-Base model (google/vit-base-patch16-224) 28, which divides each 224 × 224 input image into
+non-overlapping 16 × 16 patches and processes them through 12 transformer encoder layers with multi-head self-
+attention. The pretrained model was originally trained on the ImageNet-21 k dataset, enabling transfer of rich
+visual representations to the medical imaging domain32,33.
+Article in Press
+Scientific Reports
+https://doi.org/10.1038/s41598-026-70962-z
+The model was implemented using PyTorch with the Hugging Face Transformers library. The total number of
+trainable parameters was 87,049,867. Input images were normalized using the ViT image processor with mean
+and standard deviation values of [0.5, 0.5, 0.5] per channel.
+To support the multi-task nature of implant placement </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>classification, the ViT backbone&#x27;s [CLS] token output
+(768-dimensional) was passed through shared dense layers: a dropout layer (rate = 0.3) followed by a linear
+transformation (768 → 512 units) with ReLU activation, batch normalization, a second dropout layer (rate = 0.4),
+a linear transformation (512 → 256 units) with ReLU activation, batch normalization, and a third dropout layer
+(rate = 0.3). The shared representation was then routed to four task-specific classification heads, each consisting of
+a linear layer (256 → 128 units) with ReLU activation, batch normalization, dropout (rate = 0.2), and a final linear
+layer (128 → n classes), where n equals 2 for implant height, 3 for implant diameter, 3 for sinus lift technique, and
+3 for sinus lift stage. As shown in Fig. 1.
+Two-stage training strategy
+A two-stage fine-tuning strategy was adopted to address the challenge of </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>adapting a large pretrained Vision
+Transformer (ViT) backbone (87.0 million trainable parameters) to a relatively small training dataset ( n = 367).
+Because the four task-specific classification heads were randomly initialized while the backbone was pretrained,
+end-to-end optimization from the first training epoch could propagate large, uninformative gradients into the
+pretrained backbone before the heads had learned meaningful task-specific representations, increasing the risk of
+unstable optimization and catastrophic forgetting32,33. Therefore, Stage 1 froze the backbone while training only
+the shared dense layers and task-specific classification heads, allowing the newly initialized layers to converge
+within a fixed feature space. Stage 2 subsequently unfroze the backbone and performed end-to-end fine-tuning
+using a lower learning rate and tighter gradient clipping, enabling </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>gradual adaptation of the pretrained representa-
+tions to the CBCT domain while preserving the benefits of transfer learning.
+Training was performed in two consecutive stages of 25 epochs each.
+In Stage 1, the ViT backbone parameters were frozen, and only the shared dense layers and task-specific clas-
+sification heads were optimized using an initial learning rate of 1 × 10⁻3, a warmup period of 5 epochs, gradient
+clipping with a maximum norm of 1.0, and a cosine learning rate decay schedule.
+In Stage 2, the entire network, including the ViT backbone, was unfrozen for end-to-end fine-tuning using a
+reduced learning rate of 1 × 10⁻4, a warmup period of 3 epochs, and tighter gradient clipping with a maximum
+norm of 0.5 to facilitate stable domain adaptation. In both stages, optimization was performed using the AdamW
+optimizer40 (β₁ = 0.9, β₂ = 0.999, ε = 1 × 10⁻⁸, weight decay = 1 × </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>10⁻4) (Figs. 2, 3 and 4).
+The learning rate followed a cosine annealing schedule with warmup implemented using the Hugging Face
+get_cosine_schedule_with_warmup scheduler. Cross-entropy loss with label smoothing (factor = 0.1)36 was
+applied independently to each task head, and the total loss was calculated as the unweighted sum of all valid task
+losses for each sample. A batch size of 8 was used throughout training. Model checkpoints were selected accord-
+ing to the lowest validation loss, and the best-performing checkpoint was used for final evaluation.
+In Stage 2, the backbone is unfrozen for end-to-end fine-tuning, enabling optimized simultaneous prediction of
+four clinical parameters: implant height, implant width, sinus lift technique, and sinus lift stage.
+Evaluation metrics
+Model performance was evaluated on the held-out test set (n = 45) using accuracy, precision, recall, and </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(Supplementary Table S3). All four CNN models predicted only the major -
+ity class (8–10 mm), resulting in recall values of 1.000 for the majority class and 0.000 for the minority class
+(&gt; 10 mm). In contrast, the proposed Vision Transformer correctly identified two of the six minority-class cases
+(recall = 0.333), indicating discrimination beyond majority-class prediction.
+Vision transformer model performance
+The proposed ViT-based multi-output framework achieved an overall average accuracy of 85.56% on the test set,
+representing a 23.34 percentage-point improvement over the best-performing CNN baseline (EfficientNet-B0,
+62.22%). Task-specific accuracies were 88.89% for implant height, 80.00% for implant diameter, 84.44% for
+sinus lift technique, and 88.89% for sinus lift stage (Table 2).
+Detailed per-class classification metrics are presented in Tables 2, 3, 4 and 5.
+For implant </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>height classification, the model demonstrated high sensitivity for the majority class (8–10 mm;
+recall = 0.974, F1 = 0.938). Performance on the minority &gt; 10 mm class was lower (recall = 0.333, F1 = 0.444),
+reflecting the substantial class imbalance in the test set (39:6 ratio).
+Model Implant Height
+(%)
+Implant Width
+(%)
+Sinus Lift Tech-
+nique (%)
+Sinus Lift
+Stage (%)
+Average
+Accu-
+racy
+(%)
+Inception V336 86.67 37.78 24.44 22.22 42.78
+EfficientNet-B037 86.67 37.78 53.33 71.11 62.22
+ResNet-10138 86.67 37.78 57.78 8.89 47.78
+VGG-1939 86.67 40.00 13.33 20.00 40.00
+Table 1 Test set perfor-
+mance comparison of CNN
+baseline models across four
+classification tasks.</blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>extended toward the maxillary sinus floor and
+sinus membrane interface, suggesting that the model incorporated the ridge–sinus relationship when predicting
+implant-planning parameters. These anatomically coherent attention patterns support the interpretability of the
+proposed Vision Transformer and indicate that its predictions were based on clinically meaningful anatomical
+structures rather than unrelated image regions.
+Task Best CNN (Model) CNN Accuracy ViT Accuracy Improvement
+Implant Height All CNNs (tied) 86.67% 88.89%  + 2.22 pp
+Implant Diameter VGG-19 40.00% 80.00%  + 40.00 pp
+Sinus Lift Technique ResNet-101 57.78% 84.44%  + 26.66 pp
+Sinus Lift Stage EfficientNet-B0 71.11% 88.89%  + 17.78 pp
+Overall Average EfficientNet-B0 62.22% 85.56%  + 23.34 pp
+Table 6 Summary com-
+parison of the proposed ViT
+model versus the best-per-
+forming CNN for each task.
+pp = percentage points.</blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>time of
+0.037 ± 0.001 s per sample (approximately 26.8 samples per second) on a CPU-based computing environment.
+This was substantially faster than all CNN baselines, which required 0.310–0.677 s per sample (1.5–3.2 samples
+per second). The ViT model&#x27;s inference latency was approximately 8.4 times faster than EfficientNet-B0, the fast-
+est CNN baseline. The model size was approximately 332 MB in float32 precision.
+To further evaluate the computational feasibility of clinical deployment, GPU-based inference benchmarking
+was performed for the proposed two-stage ViT framework using an NVIDIA Tesla T4 GPU on the test set of 45
+samples. The proposed framework achieved an average model inference time of 13.92 ms (0.0139 s) per sample,
+representing an approximately 2.7-fold reduction in inference latency compared with CPU-based inference.</blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This study has several limitations that should be acknowledged. First, the relatively limited dataset size and ret -
+rospective single-center design may limit the statistical power and generalizability of the findings. Because the
+dataset was retrospectively collected from real-world clinical cases at a single treatment center using a single
+CBCT system (3D Accuitomo 170), the observed class distribution may partially reflect the actual prevalence of
+implant planning scenarios encountered in routine clinical practice within that institution. Consequently, certain
+clinical categories, such as staged sinus lift cases and implant heights greater than 10 mm, were less frequently
+represented. This underrepresentation may have restricted the robustness of per-class performance estimates, par-
+ticularly for minority classes. In addition, the use of a single-center, single-scanner dataset </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>applicability of the model to severely atrophic posterior maxillary cases or clinical scenarios in which short
+implants are considered as an alternative to sinus augmentation.
+Third, the model input consisted of two-dimensional cross-sectional projections derived from CBCT scans
+rather than full three-dimensional volumetric data. In routine clinical practice, preliminary CBCT assessment for
+implant planning is commonly performed using cross-sectional views that provide clinically relevant information
+regarding alveolar bone height and width prior to comprehensive volumetric evaluation. Accordingly, orthogonal
+2D cross-sectional projections were selected in the present study to reflect this practical clinical workflow while
+preserving essential anatomical information relevant to implant planning. In addition, the use of full volumet -
+ric CBCT data with transformer-based </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>architectures generally requires substantially greater computational and
+memory resources, which may reduce training feasibility and computational efficiency for near-real-time clinical
+applications. Nevertheless, this sectional-view approach may incompletely capture complex three-dimensional
+anatomical relationships and subtle bucco-lingual morphological variations, which are particularly relevant for
+implant diameter selection.
+Fourth, the ground truth labels were based on expert consensus rather than surgical or longitudinal clinical out-
+comes. Therefore, the current model reflects expert-driven treatment planning preferences rather than validated
+long-term clinical endpoints, such as implant survival, functional success, or marginal bone stability. Although</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +338,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

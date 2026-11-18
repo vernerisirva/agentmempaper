@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SWAM: Saliency-Weighted Asymmetric Merging for Efficient Vision Transformers</title>
+  <meta name="description" content="Daily Paper Scout library of object detection, YOLO and real-time detectors, segmentation, tracking, and modern computer vision.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory</a> <a href="../../deep-research/index.html">Deep Research</a> <a href="../../engram/index.html">Engram</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>SWAM: Saliency-Weighted Asymmetric Merging for Efficient Vision Transformers</h1>
+          <p class="hero-copy">Utkarsh Kumar Singh, Manish Das, Shiv Ram Dubey, Satish Kumar Singh</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://doi.org/10.48550/arxiv.2611.18057">Open paper</a>
+            <a class="paper-detail-link" href="swam-saliency-weighted-asymmetric-merging-for-efficient-vision-transformers-a0057eca.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Utkarsh Kumar Singh, Manish Das, Shiv Ram Dubey, Satish Kumar Singh</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-11-13</dd></div>
+              <div><dt>Publication date</dt><dd>2026-11-13</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2611.18057v1">arXiv</a><a href="https://arxiv.org/abs/2611.18057">arXiv</a><a href="https://openalex.org/W7233816032">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies visual backbones or vision-transformer architecture.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Vision Transformers (ViTs) achieve strong performance on image recognition tasks, yet their quadratic self-attention complexity over input tokens creates prohibitive computational costs for practical deployment. Token reduction methods offer a practical solution by progressively reducing the token sequence during th...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>AI assessment inconclusive</h2>
+      <p>While the methodological concept is clearly presented, the empirical evaluation contains critical confounding factors: SWAM was trained with knowledge distillation and teacher-initialized weights while the comparison baseline was not [Ef61cc48d32462636-B0025, Ef61cc48d32462636-B0037]. With performance margins being very small (often under 0.2%), this training mismatch introduces substantial uncertainty regarding the actual efficacy of the merging algorithm.</p>
+      <p>The authors acknowledge that evaluation is limited to DeiT-Small, that standard full ImageNet-1K was not evaluated due to hardware constraints, and that training recipes differed regarding distillation and head initialization [Ef61cc48d32462636-B0037].</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-17T12:49:42.852660+00:00.</p>
+        <p>Coverage: 31572 of 31572 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>1
+SW AM: Saliency-Weighted Asymmetric Merging for
+Efficient Vision Transformers
+Utkarsh Kumar Singh, Manish Das,Student Member, IEEE, Shiv Ram Dubey,Senior Member, IEEE, and Satish
+Kumar Singh,Senior Member, IEEE
+Abstract—Vision Transformers (ViTs) achieve strong perfor-
+mance on image recognition tasks, yet their quadratic self-
+attention complexity over input tokens creates prohibitive compu-
+tational costs for practical deployment. Token reduction methods
+offer a practical solution by progressively reducing the token
+sequence during the forward pass. We propose SW AM (Saliency-
+Weighted Asymmetric Merging), a training-based token merging
+framework that extends the Bipartite Soft Matching (BSM) with
+two saliency-aware mechanisms. We introduce a two-step matching
+formulation in which cosine similarity decides candidate pairs,
+while a multiplicative maximum saliency penalty regulates </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>their
+selection for merging. We then further use asymmetric exponential
+saliency-weighted aggregation, which allows more salient tokens
+to contribute more strongly to the merged representation. A
+lightweight MLP-based saliency prediction module ( 75k param-
+eters per stage, 1% of backbone parameters) supervised via
+attention rollout is trained end-to-end jointly with a DeiT-Small
+backbone using a composite cross-entropy, knowledge-distillation,
+and saliency-alignment objective. On CIFAR-100, TinyImageNet,
+and ImageNet-100, under a conservative schedule that reduces
+tokens from 196→100 patch tokens, with the CLS token retained
+throughout, 27.5% FLOPs reduction and 1.35× speedup, SW AM
+matches or exceeds baseline across the reported results. Under
+an aggressive schedule ( 196→70 tokens with the CLS token
+kept throughout, 33.8% FLOPs reduction, and 1.46× speedup),
+accuracy gains are </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>a multiplicative
+penalty based on the maximum predicted saliency of each pair
+determines its merge ranking. This formulation reduces the
+preference for highly salient pairs when their feature similarity
+is positive. For selected pairs, SW AM uses exponential saliency-
+dependent weights to construct the merged representation,
+assigning greater influence to more salient tokens without
+using accumulated token size as an aggregation weight. A
+lightweight saliency prediction module provides the importance
+estimates, with attention-rollout supervision [6] applied at
+the first reduction stage. The resulting framework therefore
+differs in its pair-ranking criterion, feature aggregation rule,
+and learned saliency estimation, rather than in the general use
+of token importance during merging. The main contributions
+of our work are :
+• Multiplicative max-saliency pair scoring.We introduce
+a </blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>two-step formulation that identifies token pairs through
+cosine similarity and ranks candidate merges using expo-
+nential penalty based on their maximum predicted saliency.
+• Asymmetric saliency-weighted merging.A combination
+step that weights each token&#x27;s contribution by an expo-
+nential function of its predicted saliency, preserving the
+arXiv:2611.18057v1  [cs.CV]  13 Nov 2026
+2
+content of the more important token.
+•Lightweight saliency prediction.Three two-layer MLP
+predictors estimate token importance at the reduction
+stages. The first-stage predictor receives explicit attention-
+rollout supervision, while subsequent predictors are opti-
+mized through downstream task gradients propagated by
+differentiable feature aggregation, adding approximately
+1%parameter overhead.
+• Evaluation under progressive token compression.We
+evaluate SWAM on CIFAR-100, TinyImageNet, and
+ImageNet-100 using </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>about
+1%of the DeiT-Small backbone parameters.
+D. Saliency Supervision via Attention Rollout
+A trained full-token DeiT-S baseline is used to initialize
+the teacher model. The teacher is subsequently frozen, and
+its attention maps are captured to construct the saliency-
+supervision target. For each Transformer block, the attention
+matrices are first averaged across the attention heads:
+¯Aℓ = 1H
+HX
+h=1
+Aℓ,h,(2)
+where H denotes the number of attention heads. Residual
+attention is then incorporated and row-normalized as
+eAℓ = RowNorm
+ ¯Aℓ +I
+2
+
+.(3)
+Since the first SW AM reduction stage is inserted after Trans-
+former block 4, the corresponding cumulative attention rollout
+is R(4) = eA4 eA3 eA2 eA1. The CLS-to-patch entries of R(4) are
+normalized to obtain the 196-dimensional target distribution t.
+Explicit rollout supervision is applied only at the first reduction
+stage because its input </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>containing one highly salient token and one less
+salient token, the mean saliency may provide only a moderate
+penalty. SW AM instead modulates the pair similarity using the
+maximum predicted saliency:
+scoreSW AM(a, b) = sim(a, b)·exp(−αmax(ˆsa,ˆsb)),(6)
+For positively correlated candidate pairs, increasing the
+saliency of either token reduces the multiplicative factor and
+consequently lowers the merge score. Thus, among highly
+similar candidate pairs, pairs containing high saliency tokens
+are less likely to be selected, whereas pairs that are both
+similar and relatively low-saliency tend to receive larger merge
+scores. The r source tokens with the highest resulting scores are
+4
+selected for merging with their corresponding best-matching
+destination tokens.
+F . Component 2: Asymmetric Saliency-Weighted Merging
+Even when token merging is unavoidable, conventional size-
+weighted averaging </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>can dilute the representation of a more
+informative token. SW AM instead uses the predicted saliency
+scores to control the contribution of each token to the merged
+representation. Let Ij denote the set of selected source tokens
+inAwhose best-matching destination is tokenb j ∈B:
+Ij ={i|a i is selected for merging intob j}.(7)
+Each token is assigned an exponential saliency-dependent
+weight,
+wai =e βˆsai , w bj =e βˆsbj ,(8)
+where β controls the strength of the asymmetric weighting. The
+updated representation of destination token bj is then computed
+as
+mj =
+wbj bj +
+X
+i∈Ij
+wai ai
+wbj +
+X
+i∈Ij
+wai
+,(9)
+Consequently, tokens with larger predicted saliency con-
+tribute more strongly to the merged representation, allowing
+informative semantic content to be preserved during token
+reduction. The accumulated token size is updated separately by
+summing the sizes of all source tokens assigned to the </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The SW AM student is optimized using ground-truth classifi-
+cation, hard-label knowledge distillation, and saliency supervi-
+sion. The total training objective is
+Ltotal = 0.5L CE + 0.5L KD +λ e Lsal,(10)
+where LCE is the cross-entropy loss with respect to the ground-
+truth label, LKD is the cross-entropy loss with respect to the
+teacher&#x27;s hard prediction, and λe denotes the epoch-dependent
+saliency-loss coefficient.
+IV. EXPERIMENTALSETUP
+A. Datasets
+CIFAR-100: CIFAR-100 contains 50,000 training images
+and 10,000 testing images of 100 class categories of original
+size 32×32 and is resized to 224×224 to match the input
+resolution of the DeiT-S backbone. Models are trained and
+evaluated for 15 epochs.TinyImageNet: TinyImageNet con-
+sists of 200 object categories with 100,000 training images and
+10,000 validation images. The original image size is of 64×64
+resized to 224×224 for DeiT-S </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>provide
+different trade-offs between computational efficiency and
+recognition accuracy.
+C. Baseline, Metrics, and Training Configuration
+The primary reference is a full-token DeiT-S model without
+token reduction. The baseline is trained using ground-truth
+5
+cross-entropy, whereas SW AM employs the composite objective
+in Eq. 10, incorporating classification, hard-label knowledge
+distillation, and saliency supervision. Additionally, the SW AM
+classification head is initialized from the trained baseline
+classifier. Therefore, the accuracy comparison evaluates the
+complete SW AM training and inference framework against the
+full-token reference, rather than isolating the effect of token
+merging independently of the additional training objectives. We
+report top-1 accuracy, throughput (img/s, batch size 128, single
+GPU), latency (ms/batch), FLOPs, and peak GPU memory.
+All experiments are </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A. Main Accuracy Results
+Table II presents per-seed top-1 accuracy of the baseline
+and SWAM, while Table III summarizes the corresponding
+mean differences across seeds. Under the conservative schedule
+SWAM matches or surpasses the baseline across all three
+datasets and all seeds. The most consistent improvement is on
+ImageNet-100 (+0.26% mean). Under the aggressive schedule
+results are more evident. SW AM continues to gain on ImageNet-
+100 (+0.23% mean across three seeds) but incurs small losses
+on CIFAR-100 and TinyImageNet. These results indicate that
+the conservative schedule provides a more stable accuracy-
+efficiency tradeoff.
+B. Pair Scoring Strategy and Inference Efficiency
+Table IV presents results from similarity-only matching,
+additive saliency-aware scoring, and the proposed multiplicative
+max-saliency scoring, baselines and the proposed approach,
+respectively. Our proposed </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE II
+PER-SEED ACCURACY RESULTS.∆= SWAMTOP-1−BASELINE TOP-1
+(PERCENTAGE POINTS). C: CONSERVATIVEA: AGGRESSIVE
+Dataset Sched. Seed Base. SW AM∆Speedup
+CIFAR-100 C 42 87.65% 87.69%+0.04 1.36×
+CIFAR-100 C 43 87.56% 87.55%−0.01 1.36×
+TinyImageNet C 42 88.25% 88.34%+0.09 1.35×
+TinyImageNet C 43 88.08% 88.19%+0.11 1.37×
+ImageNet-100 C 42 88.48% 88.88%+0.40 1.35×
+ImageNet-100 C 43 88.74% 88.86%+0.12 1.35×
+CIFAR-100 A 42≈87.5%≈87.4%−0.13 1.46×
+TinyImageNet A 42 89.04% 88.86%−0.18 1.46×
+TinyImageNet A 43 88.02% 87.95%−0.07 1.45×
+ImageNet-100 A 42 88.56% 88.78%+0.22 1.45×
+ImageNet-100 A 43 88.84% 88.92%+0.08 1.47×
+ImageNet-100 A 44 88.72% 89.12%+0.40 1.44×</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>AGGREGATED PAIRED ACCURACY DIFFERENCES(MEAN AND SAMPLE
+STANDARD DEVIATION IN PERCENTAGE POINTS).
+Dataset Schedule Mean∆SD Seeds Range
+CIFAR-100 Conservative+0.02 0.042[−0.01,+0.04]
+TinyImageNet Conservative+0.10 0.012[+0.09,+0.11]
+ImageNet-100 Conservative+0.26 0.202[+0.12,+0.40]
+CIFAR-100 Aggressive−0.13– 1 Single seed
+TinyImageNet Aggressive−0.13 0.082[−0.18,−0.07]
+ImageNet-100 Aggressive+0.23 0.163[+0.08,+0.40]</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>COMPARISON OF PAIR-SCORING STRATEGIES ONCIFAR-100UNDER THE
+CONSERVATIVE SETTING(SEED42).
+Configuration Top-1∆vs Baseline
+Baseline DeiT-S (no reduction) 87.65% —
+ToMe (similarity only)87.25%−0.40
+SAM (additive mean-saliency)87.50%−0.15
+SW AM (mult. max-sal.) 87.69%+0.04</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE V
+INFERENCE EFFICIENCY(SINGLEGPU,BATCH128).
+Config. Throughput Latency FLOPs Mem. Speedup
+Baseline 282 img/s 454 ms 4.25 G 3128 MB1.00×
+Conservative 380 img/s 336 ms 3.08 G 2926 MB1.35×
+Aggressive 412 img/s 311 ms 2.82 G 2925 MB1.46×
+scoring. Table V summarizes the inference efficiency of the
+baseline and SW AM compression settings in terms of through-
+put, latency, FLOPs, and peak GPU memory. Conservative
+SW AM achieves a 1.35× throughput gain with 27.5% FLOPs
+reduction. Memory savings are modest ( 200 MB) because most
+model parameters remain unchanged, while the additional
+saliency heads introduce a small fixed overhead.
+VI. DISCUSSION ANDLIMITATIONS
+Our two proposed components play complementary roles in
+preserving informative token representations. Pair selection
+alone cannot prevent every informative token from being
+involved in a merge, particularly when the token </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>to DeiT-Tiny or DeiT-Base has not yet been evaluated. All
+experiments were conducted on the Kaggle platform due to
+hardware and storage quota constraints ( 73GB available vs.
+150GB required). SWAM EMA weights are initialized from
+the teacher&#x27;s classification head, whereas the baseline EMA
+starts from random initialization.
+VII. CONCLUSION
+In this work, we introduced SWAM, a training-based
+token merging framework that incorporates multiplicative
+maximum-saliency pair ranking and asymmetric saliency-
+weighted aggregation. The two components provide comple-
+mentary mechanisms for regulating token selection and preserv-
+ing informative representations during progressive reduction.
+Lightweight saliency predictors introduce approximately 1%
+parameter overhead, with explicit attention-rollout supervision
+applied only at the first reduction stage. Experiments on
+CIFAR-100, TinyImageNet, and </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to computer-vision research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Visual backbone / representation</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to computer vision / object detection</dt>
+              <dd>Backbone and representation choices feed detectors directly</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 96/100</li>
+              <li>Screening category: Backbone / visual representation</li>
+              <li>Tags: vision-transformer, visual-representation, efficient-vision, benchmark</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-11-17</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-16 12:27:00</li><li>Last seen by Paper Scout: 2026-11-18 12:39:27</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2611.18057</li><li>arXiv: 2611.18057</li><li>OpenAlex: W7233816032</li><li>OpenAlex IDs: W7233816032</li><li>arXiv IDs: 2611.18057</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="swam-saliency-weighted-asymmetric-merging-for-efficient-vision-transformers-a0057eca.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>SWAM: Saliency-Weighted Asymmetric Merging for Efficient Vision Transformers. Utkarsh Kumar Singh, Manish Das, Shiv Ram Dubey, Satish Kumar Singh. 2026-11-13. https://doi.org/10.48550/arxiv.2611.18057</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

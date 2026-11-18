@@ -59,16 +59,272 @@
             <p>Retrieval systems help deep research agents generate high-quality answers by providing relevant documents. However, existing retrievers typically select documents through relevance matching, while individually well-matched top-$k$ documents may not form a \textit{set} that satisfies the complex information needs of...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not been assessed under the manuscript evidence gate.</p>
-      <p>Legacy assessment retained; manuscript review is required before promotion.</p>
+      <h2>Quality reviewed</h2>
+      <p>The work provides a well-defined and rigorously evaluated approach to set-based reranking for iterative agentic search. The experiments include competitive baselines, clear ablations demonstrating the utility of both SFT and RL stages, and robust external corroboration via objective exact-match RAG evaluations.</p>
+      <p>The authors transparently discuss dependency on costly proprietary LLMs for rubric scoring during training, the evaluation of sampled query subsets for deep research, and confounding downstream agent generation errors.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: partial_full_text.</p>
-        <p>Assessor: deterministic. Assessment version: quality-v1. Gate: not assessed.</p>
-        <p>Assessed: 2026-08-10T08:10:34+00:00.</p>
-
-        <ul><li>The contribution is stated explicitly. — page 1</li><li>The available text identifies data or a benchmark used by the work. — page 9</li><li>A baseline or comparison system is described. — page 1</li><li>Quantitative evaluation signals were detected. — page 6</li><li>Limitations or threats to validity are acknowledged. — page 6</li><li>Meaningful evaluation appears to be deferred to future work in the available text. — page 9</li><li>No reproducible review or selection methodology was detected.</li></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-18T12:40:18.946666+00:00.</p>
+        <p>Coverage: 88515 of 88515 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the query
+and its reference answer, we use GPT-5.1 to expand
+the meta rubrics into query-specific rubrics with
+corresponding importance weights.
+Based on the constructed search rubrics, we pro-
+pose a two-stage training framework, consisting of
+rubrics-guided supervised fine-tuning (SFT) and
+rubric-based reinforcement learning (RL), to train
+our RubricRanker. In the SFT stage, we apply pow-
+erful teacher model to select the documents that
+best satisfy the query-specific rubrics and provide
+silver labels for cold-start training. In the RL stage,
+we use the search rubrics to evaluate the document
+sets selected by the policy model. We design a
+hierarchical reward aggregation method that com-
+bines the set-level and document-level rubric scores
+into a rubric RL reward. At inference time, Rubri-
+cRanker directly selects a high-quality subset from
+the retrieved candidates given the </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>for
+query-specific rubric generation. Our meta rubrics
+adopt ahierarchical structurethat covers both set-
+level properties of the selected document set and
+document-level properties of each document.
+Set-level rubrics.Set-level rubrics evaluate the
+overall quality of a document set. We consider
+three dimensions: (1)Relevance, which measures
+whether the document set covers the key informa-
+tion needs and diverse answer aspects required
+by the query; (2)Conciseness, which measures
+whether the set contains little repetitive, redundant,
+or irrelevant content; and (3)Consistency, which
+measures whether key facts, claims, and conclu-
+sions across documents are mutually compatible
+rather than contradictory.
+Set-level
+Doc-level
+Relevance
+Concisenes
+Source
+Authority
+Timeliness
+Query
+Answer
+GPT-5.1
+Teacher
+Query
+RubricRanker
+Rubrics
+ Docs
+[2] [4] [13] [17]
+Query Docs
+RubricRanker
+Query Docs
+[1] </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>After cold-start SFT, we further optimize the
+reranker with reinforcement learning to improve its
+document-set selection ability. The key motivation
+is to use rubric weights to compute more accurate
+rewards for document-set selection and to further
+refine the reranker through fine-grained compar-
+isons among different rollouts. Given a query and
+a candidate document list, the reranker outputs a
+sequence of selected document IDs, which is then
+parsed as a document setD.
+Given query-specific rubrics R=
+{sr1, . . . , sri} ∪ {dr1, . . . , drj}, where sri
+and drj denote the i-th set-level rubric and the j-th
+document-level rubric, respectively, we compute
+the rubric reward P r through a hierarchical
+aggregation with rubric weights:
+P r(D) =
+P
+i swi ·S(sr i, D) +Pj dwj ·F(dr j, D)P
+i swi + Pj dwj ,
+(1)
+where swi and dwj are the weights of the set-level
+rubric sri and document-level rubric </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>drj, respec-
+tively. The scoring function S(·) is implemented
+by a GPT-5.1-based LLM judge, which assigns a
+normalized score between 0 and 1 according to
+the given rubric. For set-level rubrics, S(sri, D)
+scores whether the selected documents D collec-
+tively satisfy the query requirements. For each
+document-level rubric drj, we first use the LLM
+judge to score each selected document d and then
+average the scores over the selected set:
+F(dr j, D) = 1|D| Xd∈D S(drj, d).(2)
+In addition, we apply a format reward to ensure
+that the output can be parsed. Specifically, the
+output must follow a document-ID format such as
+&quot;[1] [3] [2]&quot;. If the output format is correct, we
+parse the selected document IDs as D and use the
+rubric reward as the final reward; otherwise, the
+student with the preceding agent reasoning (omitted from the
+figure for clarity) to clarify the query intent.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Evaluation Benchmarks.We evaluate Rubri-
+cRanker in two scenarios.The first scenario
+is deep research, for which we use Health-
+Bench (Arora et al., 2025), WebWalkerQA (Wu
+et al., 2025), DeepResearchBench (DRB) (Du
+et al., 2025), and ResearchQA (Yifei et al., 2025).
+Detailed descriptions of these benchmarks are
+provided in Appendix A. For all these bench-
+marks, responses are expected to be open-ended
+or long-form and are evaluated by LLM judges us-
+ing rubrics from the official evaluation protocols.
+Given the high cost and time overhead of LLM-
+based evaluation, we randomly sample 100, 200,
+100, and 100 queries from HealthBench, WebWalk-
+erQA, DRB, and ResearchQA, respectively, as our
+test sets.
+The second scenario is RAG, for which
+we use HotpotQA (Yang et al., 2018), Bam-
+boogle (Press et al., 2023), Natural Questions
+(NQ) (Kwiatkowski et al., 2019), TriviaQA (Joshi
+et al., 2017), </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and PopQA (Mallen et al., 2023). Un-
+like the deep research benchmarks, these datasets
+mainly require short, closed-ended answers. Fol-
+lowing prior work (Jin et al., 2025; Liu et al.,
+2026b), we use exact match (EM) as the evaluation
+metric.
+Baselines.We compare RubricRanker with
+two categories of document rerankers. The
+first category isvanilla rerankers, which are
+mainly optimized for query–document relevance
+to improve the ranking of retrieved documents.
+This category includes BGE-Reranker-Large 4,
+MonoT5 (Nogueira et al., 2020), RankT5 (Zhuang
+et al., 2023), RankVicuna (Pradeep et al., 2023a),
+and RankZephyr (Pradeep et al., 2023b). The sec-
+ond category isgeneration-oriented rerankers,
+which aim to select documents that better support
+4https://huggingface.co/BAAI/
+bge-reranker-large
+LLM answer generation. This category includes
+SetR (Lee et al., 2025) and Rank4Gen (Fan et </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate RubricRanker on both deep research
+and RAG benchmarks and report the results in Ta-
+bles 1 and 2, respectively. We make the following
+observations:
+(1) RubricRanker demonstrates superior per-
+formance in both deep research and RAG sce-
+narios.On deep research benchmarks, Rubr-
+icRanker achieves the best average score of
+60.1, outperforming the second-best baseline,
+Rank4Gen, by 2.6 points. On RAG benchmarks,
+RubricRanker also obtains the highest average EM
+score of 40.0, surpassing Rank4Gen by about 2
+points. These consistent improvements demon-
+strate that rubric-based reranker training can select
+document sets that better support downstream LLM
+generation.
+(2) Generation-oriented rerankers do not
+generalize to deep research tasks.Generation-
+oriented rerankers clearly improve over vanilla
+rerankers on RAG benchmarks, where Rank4Gen
+outperforms BGE-Reranker-Large by 1.8 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>56.7
+Generation-oriented Rerankers
+SetR 8B 49.0 58.7 44.8 73.3 56.5
+Rank4Gen 8B 52.0 59.2 46.6 72.0 57.5
+RubricRanker (Ours) 8B 58.0 61.5 46.8 74.2 60.1
+Table 1: Results on deep research benchmarks with Dr-Tulu-8B as the agent. All rerankers rerank the top 30
+documents retrieved by the Google Search API, and the final responses are evaluated by an LLM judge using rubrics.
+The best results are highlighted inbold, and the second-best results are underlined.
+Method Size HotpotQA Bamboogle NQ PopQA TriviaQA Avg.
+Initial Retrieval (BGE) - 29.8 15.2 31.0 37.2 58.4 34.3
+V anilla Rerankers
+BGE-Reranker-Large 550M 35.3 17.6 28.0 40.4 60.8 36.4
+MonoT5 3B 33.9 14.4 30.7 37.6 60.7 35.4
+RankT5 3B 34.4 14.4 32.1 38.5 61.1 36.1
+RankVicuna 7B 33.4 14.4 30.7 38.4 59.9 35.3
+RankZephyr 7B 32.8 16.0 31.9 39.5 60.6 36.1
+Generation-oriented Rerankers
+SetR 8B 34.3 22.8 30.3 38.5 61.2 37.4
+Rank4Gen 8B 35.1 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>20.0 33.2 41.0 61.7 38.2
+RubricRanker (Ours) 8B 38.0 23.2 34.0 42.2 62.4 40.0
+Table 2: Results on RAG benchmarks with Qwen3-8B as the LLM generator. All rerankers rerank the top 30
+documents retrieved by BGE, and the generated answers are evaluated using exact match (EM). The best results are
+highlighted inbold, and the second-best results are underlined.
+Method WebWalker. Health. HotpotQA Avg.
+RubricRanker58.0 61.5 38.0 52.5
+Training Stage
+w/o RL 55.0 61.0 37.2 51.1
+w/o SFT 48.0 61.0 35.8 48.3
+SFT Label
+w/o rubrics 51.5 60.0 36.0 49.2
+Relevance Ranking 50.0 59.2 35.0 48.1
+Table 3: Ablation study of RubricRanker on WebWalk-
+erQA, HealthBench, and HotpotQA. Avg. denotes the
+average score across the three datasets.
+35.3–40.0 on RAG benchmarks. This confirms that
+reranking retrieved documents generally benefits
+downstream generation.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We conduct ablation studies to evaluate the con-
+tributions of different components in two aspects:
+(1) the two-stage training framework and (2) label
+construction. Experiments are conducted on two
+deep research datasets, WebWalkerQA and Health-
+Bench, and one RAG dataset, HotpotQA. The over-
+all results are reported in Table 3. We summarize
+our findings as follows.
+(1) Training stage.We ablate the two-stage
+training framework by removing rubric-based RL
+(&quot;w/o RL&quot;) and cold-start SFT (&quot;w/o SFT&quot;). Re-
+moving RL decreases the average score from 52.5
+to 51.1, showing that rubric-based reward optimiza-
+tion provides additional gains beyond SFT. Remov-
+ing cold-start SFT leads to a larger performance
+drop, from 52.5 to 48.3, highlighting its critical role
+in providing a stable initialization for RL training.
+(2) Label construction.We further study how
+different SFT labels affect </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>2.6
+2.8
+3.0
+3.2
+3.4
+3.6Number of Search Calls
+3.2
+3.3
+3.2
+3.4
+3.6
+3.5
+2.9
+3.0
+2.9
+RankT5 Rank4Gen RubricRanker
+Figure 4: The number of search calls made by the Dr-
+Tulu deep research agent when using different document
+rerankers.
+HealthBench, DeepResearchBench (DRB), and
+ResearchQA. We compare RubricRanker with
+two competitive reranking baselines, RankT5 and
+Rank4Gen. As shown in Figure 4, RubricRanker
+consistently leads to fewer search calls across all
+three datasets. On HealthBench, it reduces the aver-
+age number of calls from 3.2 with RankT5 and 3.4
+with Rank4Gen to 2.9, corresponding to relative
+reductions of 9.4% and 14.7%, respectively. On
+ResearchQA, it reduces search calls from 3.2 and
+3.5 to 2.9, corresponding to reductions of 9.4% and
+17.1%. These consistent improvements suggest
+that RubricRanker provides more useful evidence
+at each step, allowing the agent to satisfy its </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Despite the effectiveness of RubricRanker, our
+work still has several limitations. (1) The con-
+struction of rubric-based rewards relies on GPT-5.1,
+which can be costly when scaling to large training
+corpora. In the future, we plan to train a special-
+ized reward model to provide more cost-effective
+and efficient rubric-based feedback. (2) Due to the
+high cost of LLM calls and the slow test-time infer-
+ence of deep research agents, we sample a subset
+of queries for evaluation on deep research bench-
+marks. In future work, we will consider evaluating
+on the full benchmark sets to provide more compre-
+hensive results. (3) Our evaluation still depends on
+the final generation quality of LLM agents. Even
+when RubricRanker selects a high-quality docu-
+ment set, the agent may still make mistakes during
+reasoning or generation. Developing more objec-
+tive metrics to directly evaluate the </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

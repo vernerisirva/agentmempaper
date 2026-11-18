@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-11-17](2026-11-17.md).
+Latest daily digest: [2026-11-18](2026-11-18.md).
 
-# Paper Scout Digest - 2026-11-17
+# Paper Scout Digest - 2026-11-18
 
 ## Run Summary
 
-- **Run ID:** 136
-- **Candidates fetched:** 117
-- **New unique papers:** 112
-- **Relevant:** 9
-- **Maybe relevant:** 3
-- **Irrelevant:** 105
-- **Source summary:** arxiv: 17, openalex: 100, semantic_scholar: 0
+- **Run ID:** 137
+- **Candidates fetched:** 123
+- **New unique papers:** 118
+- **Relevant:** 15
+- **Maybe relevant:** 2
+- **Irrelevant:** 106
+- **Source summary:** arxiv: 23, openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
 
@@ -27,54 +27,52 @@ Latest daily digest: [2026-11-17](2026-11-17.md).
 
 ## Highly Relevant
 
-### [Asking the right question is key to AI discovery in a chain of hypotheses](https://arxiv.org/abs/2611.19841v1)
+### [AI Scientist Discovered Robust Quantum Control](https://arxiv.org/abs/2611.21765v1)
 
-- **Authors:** Hu Cang
-- **Date:** 2026-11-15
+- **Authors:** Jiahao Yan, Xuanying Lai, Xiaoshui Lin, Yizhou Wang, Changyu Yao, Guanghui He, et al.
+- **Date:** 2026-11-16
 - **Source:** arxiv
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Artificial intelligence (AI) scientists pursue discovery through a chain of hypotheses, fitting candidate models to existing observations and often choosing experiments where those models disagree most. Yet when early data miss a narrow feature, model selection favors simple curves that agree across the unmea- sured...
+- **Abstract summary:** Protecting quantum coherence is a central theme of modern quantum technologies. Carefully designed control pulses can extend coherence by suppressing disorder and unwanted interactions. However, designing robust pulse sequences remains challenging in interacting multi-level systems, where multiple independent error...
 
-### [Eliciting Research Taste in LLMs through Future Research Direction Choice](https://arxiv.org/abs/2611.19794v1)
+### [AI Scientists’ View of the AI Scientists](https://doi.org/10.24867/36ws022611)
 
-- **Authors:** Dhruv Trehan, Paras Chopra
-- **Date:** 2026-11-15
-- **Source:** arxiv
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Research taste is increasingly discussed in the context of AI scientists, yet remains little studied or measured in LLMs. This judgment matters especially in open-ended research, where a direction must be chosen before a verifiable objective is available. We operationalize research taste through one task of the scie...
-
-### [Security of Deep Research Agents: Attack Surface, Defenses, Benchmarks, and Agenda Seeding against Research Planning](https://arxiv.org/abs/2611.20045v1)
-
-- **Authors:** Yang Luo, Guangpu Chen, Yichen Liu, Zhaoyu Chen, Yifeng Gao, Zhiyang Ding, et al.
-- **Date:** 2026-11-15
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Deep research and agentic search agents autonomously retrieve content from the open web and generate reports with citations, and their outputs are often taken directly as research conclusions. This paper systematizes security research in this area along four stages, namely retrieval, planning, evidence integration,...
-
-## Maybe Relevant
-
-### [A multimodal deep learning system for automated dermoscopic classification and evidence-grounded clinical reporting](https://doi.org/10.1007/s12553-026-01104-8)
-
-- **Authors:** Alessio Luschi, Linda Tognetti, Pascale Guitera, Lara Valeska Maul, Justin Ko, Alessandra Cartocci, et al.
-- **Date:** 2026-11-14
+- **Authors:** Dubravko Ćulibrk
+- **Date:** 2026-11-16
 - **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** citation-grounding
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** For a long time, “AI scientist” meant a person who builds artificial intelligence systems. Lately, the term has also come to mean software systems that try to carry out the whole research cycle by themselves, from reading the literature to writing and reviewing the paper. In 2026 such systems moved from curiosity to...
+
+### [DiscoveryAgent: A Framework for Scientist-centric Agentic AI](https://arxiv.org/abs/2611.21950v1)
+
+- **Authors:** Owen Queen, Ioana Ciuca, Emma Dann, Jean Somalwar, Carine You, Steven Dillmann, et al.
+- **Date:** 2026-11-16
+- **Source:** arxiv
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** AI agents can assist scientific research, but balancing autonomous investigation with scientists' ability to inspect and redirect ongoing work remains a central design challenge. We present DiscoveryAgent, a domain-agnostic, scientist-centric system that combines autonomous investigation with scientist-directed hypo...
+
+### [Inventa: Decentralized Self-Improving Agents for Autonomous Scientific Discovery](https://arxiv.org/abs/2611.21847v1)
+
+- **Authors:** Prithwish Jana, Nikos Kanakaris, Purak Jain, Anoop Deoras, Sahika Genc
+- **Date:** 2026-11-16
+- **Source:** arxiv
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Large language model (LLM) agents can generate research ideas and improve scientific discovery through iterative experimentation. However, increasing the number of agents or iterations does not automatically translate to producing more diverse or feasible ideas. Agents may converge on similar candidates, propagate u...
+
+### [The AI scientist in the mirror: Shared flaws, joint remedies](https://doi.org/10.1073/pnas.2633303123)
+
+- **Authors:** Quentin Emile Armand Loisel, Steven N. Goodman
+- **Date:** 2026-11-16
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
 - **Abstract summary:** No abstract available.
-
-### [RMIT-ADM+S at TREC RAG 2026: Research Agents, Retriever Ablations, and Open-Weight Replication](https://arxiv.org/abs/2611.16425)
-
-- **Authors:** Oleg Zendel, Kun Ran, Chenglong Ma, Nguyen Khoi Vo, Shuai Wang
-- **Date:** 2026-11-12
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
-- **Tags:** research-adjacent
-- **Abstract summary:** We describe the RMIT-ADM+S team's participation in the TREC 2026 Retrieval-Augmented Generation (RAG) track using the ClimbMix corpus. We submitted seven research-agent runs using proprietary OpenAI and open-weight models, exploring different retrieval strategies, writer models, and agent workflows. Pre-submission a...

@@ -59,16 +59,185 @@
             <p>Semi-supervised object detection has recently been extended to DETR, where oriented boxes introduce an ambiguity that does not arise for axis-aligned boxes: the map from parameters to rectangles is two-to-one, since $(c_x,c_y,w,h,θ)$ and $(c_x,c_y,h,w,θ+π/2)$ denote the same rotated rectangle. Losses and matching co...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a conceptually solid, well-motivated, and thoroughly ablated solution to a specific mathematical ambiguity in semi-supervised DETR architectures. It provides balanced empirical results on an established benchmark without overclaiming.</p>
+      <p>The authors explicitly disclose limitations, including the restriction to the one-to-many training stage, the lack of a full multi-seed significance study, an unbalanced ablation for the reliability cost alone, and confounding between angle metric shape and scale.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-18T12:42:02.865127+00:00.</p>
+        <p>Coverage: 65052 of 65052 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Semi-supervised object detection has recently been extended to
+DETR, where oriented boxes introduce an ambiguity that does not
+arise for axis-aligned boxes: the map from parameters to rectangles
+is two-to-one, since(c x, cy, w, h, θ)and(cx, cy, h, w, θ+π/2)
+denote the same rotated rectangle. Losses and matching costs are
+computed from the parameters, so two boxes that coincide in space
+can be far apart in the metric that drives training. A correctly lo-
+calized student box is then penalized by the regression loss, and the
+inflated matching cost leads the Gaussian mixture model (GMM) fil-
+ter to discard it. We propose Oriented Semi-DETR, which removes
+this ambiguity wherever a pseudo box enters training. Swap-aligned
+Target Selection regresses towards the encoding closer to the student
+prediction. A Swap-invariant Reliability Cost minimizes over the
+two encodings inside the matching </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>cost, so the filter decides on ge-
+ometry alone. Swap-aware Pseudo-label Denoising starts denoising
+earlier, ramps its loss weight linearly, and weights each query by the
+teacher score and encoding margin. All three are parameter-free and
+require no additional forward pass. Across all label ratios of DOTA-
+v2.0, Oriented Semi-DETR outperforms DETR-based supervised
+and semi-supervised baselines, with the largest gains at the strict
+IoU threshold.
+Index Terms—Semi-supervised object detection, oriented ob-
+ject detection, detection transformer, aerial images</blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>which time it has already shaped the pseudo-label distribution.
+Oriented Semi-DETR comprises three components, summarized
+in Fig. 1. First, Swap-aligned Target Selection regresses towards
+whichever encoding is closer to the student prediction, at the one-
+to-many regression target and at the supervised and pseudo-label de-
+noising targets. The selection is a hardarg min, so the target is
+always a valid rectangle. Second, a Swap-invariant Reliability Cost
+takes the minimum over the two encodings within the matching cost,
+so the filter decides on geometry rather than on the encoding the
+teacher produced. Third, Swap-aware Pseudo-label Denoising ad-
+vances the start of pseudo-label denoising, ramps its loss weight lin-
+early, and scales each query by the teacher scoreqand the encoding
+marginm.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Letpbe a student prediction assigned to a targett. Instead of
+regressing towards whichever encoding the teacher produced, we
+regress towards
+t∗ = arg min
+t′∈{t,σ(t)} d
 
-        <ul></ul>
+sg(p),t ′,(3)
+wheresgdenotes the stop-gradient and a tie is resolved in favor of
+the teacher&#x27;s own encoding. The selection never interpolates be-
+tween the two encodings, since an interpolated box would not be
+a valid rectangle. Writingd 0 =d(p,t)andd 1 =d(p, σ(t))gives
+d(p,t ∗) = min(d0, d1)≤d 0, so the selected target is never farther
+from the prediction than the teacher&#x27;s encoding, and the two coincide
+whenever the teacher&#x27;s encoding is already the closer one.
+Equation (3) is applied to three regression targets: that of the
+queries selected by the one-to-many assigner, which carries most
+of the gradient, and those of the supervised and pseudo-label DN
+queries. On the two DN paths a perturbed copy of a box enters </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The GMM filter of Semi-DETR [12] decides which pseudo boxes
+survive, so the same ambiguity has a different consequence there:
+a pseudo box may be discarded because its cost is inflated by the
+encoding. The matching cost is a weighted sum of a classification, a
+regression and a rotated-IoU term, and the GMM is fitted to the total
+cost of the matched pairs. We replace its regression term by
+Creg(p,b) =λ reg min
+
+d(p,b), d(p, σ(b))
+
+.(4)
+Hereλ reg is the regression weight of the matcher, set to5. The
+penalty is substantial. The fixed matcher we compare against uses a
+cosine angle penalty. If the student predicts exactlyσ(b), that term
+alone contributesλ reg(1−cosπ) = 10, and the exchangedwand
+hadd a further2λ reg|w−h|. A box whose normalized width and
+height differ by0.15therefore costs about11.5although the student
+has localized it perfectly, while the rotated IoU term of the </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>applies the ramp alone, so every denois-
+ing query of the iteration carriesw j =s(t). The second scales the
+queries by the teacher score,
+wxywh,j =q js(t), w scoreθ,j =q js(t).(6)
+Oriented Semi-DETR adds an encoding margin to the angle re-
+gression. For the current student DN predictionp j and pseudo box
+bj, we define
+mj = |d(pj,b j)−d(p j, σ(bj))|d(pj,b j) +d(p j, σ(bj)) +ε , w marginθ,j =q js(t)mj.
+(7)
+Hereε= 10 −6, andm j ∈[0,1)measures the relative separation of
+the two encodings under the same distanced. It is small when the
+prediction is nearly indifferent between them and large when one is
+clearly closer. The factorq js(t)weights the four spatial L1 coor-
+dinates and the per-box rotated-IoU term, whilem j multiplies only
+the angle L1 coordinate, so it changes neither the classification nor
+the IoU weight. All weights are computed without gradient, and the
+target of Equation (3) </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>so every system in Table 1 stays in
+the one-to-many stage and the comparison is not confounded by the
+stage switch. The target-selection ablation keeps the legacy 160k
+pseudo-label DN start and the nested settings uset 0 = 120k and
+T= 10k. All numbers are from the official DOTA evaluation server
+on test-dev, and we report AP 50, AP75 and mean average precision
+(mAP). Under the partial-label protocol, results for Oriented Semi-
+DETR are averaged over three training runs.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1 compares Oriented Semi-DETR with the DETR-based su-
+pervised and semi-supervised baselines at each label ratio. Against
+the best mAP among them, the gains are 1.78, 2.18, and 2.59 points
+at 10%, 20%, and 30%; against the best AP 75 they are 2.15, 3.39,
+and 4.04 points. The larger gain at the strict threshold is consistent
+with better alignment of matched boxes, although aggregate metrics
+do not separate recall from localization. Table 2 decomposes the full
+configuration into the three pseudo-label denoising components at
+every ratio, with all three regression targets swap-aligned through-
+out. Teacher-score weighting gives the best mAP at 10%. At 20%
+the encoding margin restores AP 50 but reduces AP75, leaving mAP
+at the level of the ramp alone. At 30% the full configuration leads
+on AP 50 and mAP. No component is best on every metric at every
+partial ratio, so we retain the </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>2.5. Relative to
+the legacy 160k schedule, the early ramp changes AP 75 by+0.17
+and mAP by+0.01. Adding the teacher score gives a further+0.03
+AP75 and+0.22mAP. Adding the encoding margin raises AP 50 by
+Table 1. The results on DOTA-v2.0 test-dev. Oriented Semi-DETR uses the full configuration of Equations (5)–(7). The last group uses the
+whole trainval set as labeled data.
+Method 10% labeled 20% labeled 30% labeled Fully labeledAP50 AP75 mAP AP50 AP75 mAP AP50 AP75 mAP AP50 AP75 mAP
+DINO [11] 40.72 21.76 22.49 46.31 24.94 25.82 48.11 26.71 27.16 49.11 26.91 27.51
+Semi-DETR [12] 43.94 25.62 25.82 48.01 28.10 28.10 50.63 29.47 29.60 51.11 31.50 30.81
+Sparse Semi-DETR [13] 44.16 25.49 25.83 48.38 28.28 28.51 50.24 29.40 29.53 51.71 32.26 31.22
+Oriented Semi-DETR45.92 27.77 27.61 49.89 31.67 30.69 52.11 33.51 32.19 53.16 35.07 33.23
+Table 2. The results on DOTA-v2.0 test-dev with </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Assign.flip Filterflip
+20k 4671 16.89% 18.88% 7.02%
+180k 3826 3.89% 4.89% 2.88%
+understates the effect, which is largest while the pseudo-label distri-
+bution is being formed.
+Splitting the same pairs by aspect ratio confines the effect to
+near-square boxes. In the aspect-ratio range(1,1.3]the swapped en-
+coding is closer for 43.9% of the pairs, 45.5% of the assignments
+change, and the retention rate rises from 28.6% to 44.9%, while
+above ratio 2 the first two numbers drop to 7.1% and 8.6%. The
+overall retention rate therefore shifts by only 1.20 points at 20k, al-
+though 7.02% of the individual decisions change: the swap-invariant
+cost retains a comparable number of pseudo boxes and a different se-
+lection of them. Storage tanks, roundabouts and vehicles seen from
+above make near-square objects common in aerial scenes [3, 4], so a
+mechanism that would be marginal in general detection </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>fixed-reliability-cost and swap-invariant-cost controls
+differ only in the regression term of the Hungarian cost, with
+target selection disabled everywhere. The difference is−0.12
+AP50,+0.35AP 75, and−0.03mAP. The swap-invariant cost
+gains at the strict threshold but loses marginally at the loose
+threshold, so this control does not establish a final-accuracy
+gain by itself. The comparison is unbalanced because the
+fixed-cost control was run once and the swap-invariant-cost
+control three times. Both operate near42AP 50, far below the
+50.63reached by Semi-DETR [1], because the metric control
+replaces plain L1 by theπ-periodic cosine form everywhere
+while leaving every target unchanged. That substitution alone
+costs about eight points, so the pair probes a weak operating
+point.
+This is the reason the main paper presents Eq. (4) as mech-
+anism evidence, supported by the diagnostic of </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table S10 lists the settings shared by the runs in Table S4.
+They use the Semi-DETR-style training pipeline [1]; the
+shared entries were not tuned for this work. The only
+configuration-specific exception is the pseudo-label DN
+schedule, which is reported separately below because the
+legacy controls and the complete Oriented Semi-DETR con-
+figuration use different start times.
+The warm-up length deserves a comment because it de-
+cides which Semi-DETR [1] stage the runs are in. Semi-
+DETR uses a one-to-many assignment first and switches to
+one-to-one after the warm-up. In our protocol, we set the
+warm-up to 180k, equal to the total schedule, so every run
+stays in the first stage and the one-to-one branch, together
+with the cross-view query consistency associated with that
+stage, is not activated. This is our controlled experimental
+choice, rather than a claim about a universal Semi-DETR </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>we report therefore average out the nonde-
+terminism that remains at a fixed seed. They do not support
+a significance test. A multi-seed study is the appropriate way
+to strengthen the statistical claims, and we have not run one.
+Two points remain open. The isolation of the reliability
+cost rests on an unbalanced comparison between the fixed-
+reliability-cost control and the swap-invariant-cost control,
+and would be worth rerunning on equal footing. The angle
+penalty comparison of Section F.3 confounds the shape ofφ
+with its scale, and a rescaled control would separate them.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +276,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +292,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-16</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-17 12:47:18</li><li>Last seen by Paper Scout: 2026-11-17 12:47:41</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-16</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-17 12:47:18</li><li>Last seen by Paper Scout: 2026-11-18 12:39:23</li></ul>
             <ul><li>arXiv: 2611.21223</li><li>arXiv IDs: 2611.21223</li></ul>
           </section>
           <section class="detail-panel">

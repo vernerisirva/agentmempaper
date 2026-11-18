@@ -22,12 +22,12 @@
   "first_seen_date": "2026-11-17",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-11-17 12:47:41",
-  "last_seen_date": "2026-11-17",
+  "last_seen_at": "2026-11-18 12:39:23",
+  "last_seen_date": "2026-11-18",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-11-16",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-11-17 12:48:00",
   "notified_date": "2026-11-17",
   "openalex_id": null,
@@ -37,8 +37,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-11-17 12:47:18",
-    "generated_at": "2026-11-17 12:51:28",
-    "last_seen_at": "2026-11-17 12:47:41",
+    "generated_at": "2026-11-18 12:42:50",
+    "last_seen_at": "2026-11-18 12:39:23",
     "metadata_sources": [
       "arxiv"
     ],
@@ -100,36 +100,1701 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-18T12:42:02.865127+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.96,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a conceptually solid, well-motivated, and thoroughly ablated solution to a specific mathematical ambiguity in semi-supervised DETR architectures. It provides balanced empirical results on an established benchmark without overclaiming.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 67986,
+      "assessment_input_sha256": "ce17418c38c77c235f65b3c99c190d48076ead77d55219fd9b0f0798f1bae419",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2611.21223",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 66026,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 65052,
+      "evidence_block_count": 101,
+      "evidence_context_characters": 77693,
+      "evidence_context_id": "f09bc77dd941859e36cac8af1a4e37a957c2560fc97dd7df8358bb702302189a",
+      "evidence_context_sha256": "95372d3e12f6374fcada2a8c11385d04fc48cd6fb8cb1d31a3c78d117cfa9758",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 66050,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "extracted_pages": 13,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "c33508c8b4e2c54ea3d018f4e7bf98586af336e6feb06acfa99eaeb82cd95761",
+        "source_url": "https://arxiv.org/pdf/2611.21223",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 66026,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Oriented Semi-Detr For Semi-Supervised Aerial Object Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 167,
+          "supplied_characters": 167
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1456,
+          "supplied_characters": 1456
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 3495,
+          "supplied_characters": 3495
+        },
+        {
+          "heading": "Preliminaries",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 959,
+          "supplied_characters": 959
+        },
+        {
+          "heading": "Preliminaries",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 1313,
+          "supplied_characters": 1313
+        },
+        {
+          "heading": "The Two Encodings Of An Oriented Box",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 978,
+          "supplied_characters": 978
+        },
+        {
+          "heading": "Swap-Aligned Target Selection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1165,
+          "supplied_characters": 1165
+        },
+        {
+          "heading": "Swap-Invariant Reliability Cost",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1146,
+          "supplied_characters": 1146
+        },
+        {
+          "heading": "Swap-Aware Pseudo-Label Denoising",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 470,
+          "supplied_characters": 470
+        },
+        {
+          "heading": "Swap-Aware Pseudo-Label Denoising",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1336,
+          "supplied_characters": 1336
+        },
+        {
+          "heading": "Relation To Prior Treatments Of The Ambiguity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1217,
+          "supplied_characters": 1217
+        },
+        {
+          "heading": "Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 11,
+          "source_characters": 1372,
+          "supplied_characters": 1372
+        },
+        {
+          "heading": "Main Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 12,
+          "source_characters": 1726,
+          "supplied_characters": 1726
+        },
+        {
+          "heading": "Ablation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 13,
+          "source_characters": 1102,
+          "supplied_characters": 1102
+        },
+        {
+          "heading": "Ablation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 14,
+          "source_characters": 2655,
+          "supplied_characters": 2655
+        },
+        {
+          "heading": "Prevalence Of The Ambiguity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1807,
+          "supplied_characters": 1807
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "conclusion",
+          "section_index": 16,
+          "source_characters": 1081,
+          "supplied_characters": 1081
+        },
+        {
+          "heading": "This Work Was Supported By The Science Fund For Creative Re-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 60,
+          "supplied_characters": 60
+        },
+        {
+          "heading": "Search Groups Of The National Natural Science Foundation Of China",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 131,
+          "supplied_characters": 131
+        },
+        {
+          "heading": "Ence Foundation Of China And China Electronics Technology Group",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 87,
+          "supplied_characters": 87
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 1545,
+          "supplied_characters": 1545
+        },
+        {
+          "heading": "Ter Role Models: Weight-Averaged Consistency Targets Improve",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 973,
+          "supplied_characters": 973
+        },
+        {
+          "heading": "With Improved Denoising Anchor Boxes For End-To-End Object",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 591,
+          "supplied_characters": 591
+        },
+        {
+          "heading": "Ieee/Cvf Conference On Computer Vision And Pattern Recog-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 590,
+          "supplied_characters": 590
+        },
+        {
+          "heading": "Bounding Box For Rotated Object Detection Via Kullback-Leibler",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 967,
+          "supplied_characters": 967
+        },
+        {
+          "heading": "To Bridge Gaps Between General And Oriented Object In Semi-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 844,
+          "supplied_characters": 844
+        },
+        {
+          "heading": "Supplementary Ma Terial For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "appendix",
+          "section_index": 26,
+          "source_characters": 27,
+          "supplied_characters": 27
+        },
+        {
+          "heading": "Oriented Semi-Detr For Semi-Supervised Aerial Object Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 833,
+          "supplied_characters": 833
+        },
+        {
+          "heading": "Appendix: Nota Tion And The Angle Metric",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "appendix",
+          "section_index": 28,
+          "source_characters": 1658,
+          "supplied_characters": 1658
+        },
+        {
+          "heading": "Appendix: Properties Of The Two Encodings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "appendix",
+          "section_index": 29,
+          "source_characters": 1101,
+          "supplied_characters": 1101
+        },
+        {
+          "heading": "Appendix: Properties Of The Two Encodings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "appendix",
+          "section_index": 30,
+          "source_characters": 179,
+          "supplied_characters": 179
+        },
+        {
+          "heading": "Appendix: The Selection Never Increases The Regression Distance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "appendix",
+          "section_index": 31,
+          "source_characters": 388,
+          "supplied_characters": 388
+        },
+        {
+          "heading": "Appendix: The Training Signal No Longer Depends On The Encod-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "appendix",
+          "section_index": 32,
+          "source_characters": 410,
+          "supplied_characters": 410
+        },
+        {
+          "heading": "Appendix: Why A Hardarg Min",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "appendix",
+          "section_index": 33,
+          "source_characters": 397,
+          "supplied_characters": 397
+        },
+        {
+          "heading": "Appendix: Cost Of The Rule",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "appendix",
+          "section_index": 34,
+          "source_characters": 320,
+          "supplied_characters": 320
+        },
+        {
+          "heading": "Infla Tion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 1814,
+          "supplied_characters": 1814
+        },
+        {
+          "heading": "Normaliza Tion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 816,
+          "supplied_characters": 816
+        },
+        {
+          "heading": "Normaliza Tion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 1234,
+          "supplied_characters": 1234
+        },
+        {
+          "heading": "Appendix: Algorithm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 3888,
+          "supplied_characters": 3888
+        },
+        {
+          "heading": "Appendix: Algorithm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 3693,
+          "supplied_characters": 3693
+        },
+        {
+          "heading": "Appendix: Algorithm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 1848,
+          "supplied_characters": 1848
+        },
+        {
+          "heading": "Appendix: Results Across Label Ra Tios",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 41,
+          "source_characters": 2151,
+          "supplied_characters": 2151
+        },
+        {
+          "heading": "Appendix: Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 42,
+          "source_characters": 711,
+          "supplied_characters": 711
+        },
+        {
+          "heading": "Appendix: Overall Behavior",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 43,
+          "source_characters": 645,
+          "supplied_characters": 645
+        },
+        {
+          "heading": "Appendix: Overall Behavior",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 3828,
+          "supplied_characters": 3828
+        },
+        {
+          "heading": "Appendix: Aspect Ratio",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 642,
+          "supplied_characters": 642
+        },
+        {
+          "heading": "Appendix: Aspect Ratio",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 46,
+          "source_characters": 2405,
+          "supplied_characters": 2405
+        },
+        {
+          "heading": "Appendix: Class Composition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 47,
+          "source_characters": 389,
+          "supplied_characters": 389
+        },
+        {
+          "heading": "Appendix: What The Diagnostic Does Not Show",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 1057,
+          "supplied_characters": 1057
+        },
+        {
+          "heading": "Appendix: Hyperparameters",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 1106,
+          "supplied_characters": 1106
+        },
+        {
+          "heading": "Appendix: Hyperparameters",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 834,
+          "supplied_characters": 834
+        },
+        {
+          "heading": "Appendix: Protocol And Open Points",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 1478,
+          "supplied_characters": 1478
+        },
+        {
+          "heading": "Appendix: References",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 562,
+          "supplied_characters": 562
+        },
+        {
+          "heading": "Ieee/Cvf Conference On Computer Vision And Pattern",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 535,
+          "supplied_characters": 535
+        },
+        {
+          "heading": "Ject Detection In Aerial Images: A Large-Scale Benchmark",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "results",
+          "section_index": 54,
+          "source_characters": 283,
+          "supplied_characters": 283
+        },
+        {
+          "heading": "Detr With Improved Denoising Anchor Boxes For End-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 239,
+          "supplied_characters": 239
+        },
+        {
+          "heading": "Detr: Sparse Learnable Queries For Semi-Supervised Ob-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 56,
+          "source_characters": 268,
+          "supplied_characters": 268
+        },
+        {
+          "heading": "Ieee Conference On Computer Vision And Pattern Recog-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 57,
+          "source_characters": 80,
+          "supplied_characters": 80
+        }
+      ],
+      "selected_characters": 65052,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "selected_sections": [
+        {
+          "characters": 167,
+          "heading": "Oriented Semi-Detr For Semi-Supervised Aerial Object Detection",
+          "page": 1
+        },
+        {
+          "characters": 1456,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 3495,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 959,
+          "heading": "Preliminaries",
+          "page": 1
+        },
+        {
+          "characters": 1313,
+          "heading": "Preliminaries",
+          "page": 2
+        },
+        {
+          "characters": 978,
+          "heading": "The Two Encodings Of An Oriented Box",
+          "page": 2
+        },
+        {
+          "characters": 1165,
+          "heading": "Swap-Aligned Target Selection",
+          "page": 2
+        },
+        {
+          "characters": 1146,
+          "heading": "Swap-Invariant Reliability Cost",
+          "page": 2
+        },
+        {
+          "characters": 470,
+          "heading": "Swap-Aware Pseudo-Label Denoising",
+          "page": 2
+        },
+        {
+          "characters": 1336,
+          "heading": "Swap-Aware Pseudo-Label Denoising",
+          "page": 3
+        },
+        {
+          "characters": 1217,
+          "heading": "Relation To Prior Treatments Of The Ambiguity",
+          "page": 3
+        },
+        {
+          "characters": 1372,
+          "heading": "Setup",
+          "page": 3
+        },
+        {
+          "characters": 1726,
+          "heading": "Main Results",
+          "page": 3
+        },
+        {
+          "characters": 1102,
+          "heading": "Ablation",
+          "page": 3
+        },
+        {
+          "characters": 2655,
+          "heading": "Ablation",
+          "page": 4
+        },
+        {
+          "characters": 1807,
+          "heading": "Prevalence Of The Ambiguity",
+          "page": 4
+        },
+        {
+          "characters": 1081,
+          "heading": "Conclusion",
+          "page": 4
+        },
+        {
+          "characters": 60,
+          "heading": "This Work Was Supported By The Science Fund For Creative Re-",
+          "page": 5
+        },
+        {
+          "characters": 131,
+          "heading": "Search Groups Of The National Natural Science Foundation Of China",
+          "page": 5
+        },
+        {
+          "characters": 87,
+          "heading": "Ence Foundation Of China And China Electronics Technology Group",
+          "page": 5
+        },
+        {
+          "characters": 1545,
+          "heading": "Unclassified body after references",
+          "page": 5
+        },
+        {
+          "characters": 973,
+          "heading": "Ter Role Models: Weight-Averaged Consistency Targets Improve",
+          "page": 5
+        },
+        {
+          "characters": 591,
+          "heading": "With Improved Denoising Anchor Boxes For End-To-End Object",
+          "page": 5
+        },
+        {
+          "characters": 590,
+          "heading": "Ieee/Cvf Conference On Computer Vision And Pattern Recog-",
+          "page": 5
+        },
+        {
+          "characters": 967,
+          "heading": "Bounding Box For Rotated Object Detection Via Kullback-Leibler",
+          "page": 5
+        },
+        {
+          "characters": 844,
+          "heading": "To Bridge Gaps Between General And Oriented Object In Semi-",
+          "page": 5
+        },
+        {
+          "characters": 27,
+          "heading": "Supplementary Ma Terial For",
+          "page": 6
+        },
+        {
+          "characters": 833,
+          "heading": "Oriented Semi-Detr For Semi-Supervised Aerial Object Detection",
+          "page": 6
+        },
+        {
+          "characters": 1658,
+          "heading": "Appendix: Nota Tion And The Angle Metric",
+          "page": 6
+        },
+        {
+          "characters": 1101,
+          "heading": "Appendix: Properties Of The Two Encodings",
+          "page": 6
+        },
+        {
+          "characters": 179,
+          "heading": "Appendix: Properties Of The Two Encodings",
+          "page": 7
+        },
+        {
+          "characters": 388,
+          "heading": "Appendix: The Selection Never Increases The Regression Distance",
+          "page": 7
+        },
+        {
+          "characters": 410,
+          "heading": "Appendix: The Training Signal No Longer Depends On The Encod-",
+          "page": 7
+        },
+        {
+          "characters": 397,
+          "heading": "Appendix: Why A Hardarg Min",
+          "page": 7
+        },
+        {
+          "characters": 320,
+          "heading": "Appendix: Cost Of The Rule",
+          "page": 7
+        },
+        {
+          "characters": 1814,
+          "heading": "Infla Tion",
+          "page": 7
+        },
+        {
+          "characters": 816,
+          "heading": "Normaliza Tion",
+          "page": 7
+        },
+        {
+          "characters": 1234,
+          "heading": "Normaliza Tion",
+          "page": 8
+        },
+        {
+          "characters": 3888,
+          "heading": "Appendix: Algorithm",
+          "page": 8
+        },
+        {
+          "characters": 3693,
+          "heading": "Appendix: Algorithm",
+          "page": 9
+        },
+        {
+          "characters": 1848,
+          "heading": "Appendix: Algorithm",
+          "page": 10
+        },
+        {
+          "characters": 2151,
+          "heading": "Appendix: Results Across Label Ra Tios",
+          "page": 10
+        },
+        {
+          "characters": 711,
+          "heading": "Appendix: Protocol",
+          "page": 10
+        },
+        {
+          "characters": 645,
+          "heading": "Appendix: Overall Behavior",
+          "page": 10
+        },
+        {
+          "characters": 3828,
+          "heading": "Appendix: Overall Behavior",
+          "page": 11
+        },
+        {
+          "characters": 642,
+          "heading": "Appendix: Aspect Ratio",
+          "page": 11
+        },
+        {
+          "characters": 2405,
+          "heading": "Appendix: Aspect Ratio",
+          "page": 12
+        },
+        {
+          "characters": 389,
+          "heading": "Appendix: Class Composition",
+          "page": 12
+        },
+        {
+          "characters": 1057,
+          "heading": "Appendix: What The Diagnostic Does Not Show",
+          "page": 12
+        },
+        {
+          "characters": 1106,
+          "heading": "Appendix: Hyperparameters",
+          "page": 12
+        },
+        {
+          "characters": 834,
+          "heading": "Appendix: Hyperparameters",
+          "page": 13
+        },
+        {
+          "characters": 1478,
+          "heading": "Appendix: Protocol And Open Points",
+          "page": 13
+        },
+        {
+          "characters": 562,
+          "heading": "Appendix: References",
+          "page": 13
+        },
+        {
+          "characters": 535,
+          "heading": "Ieee/Cvf Conference On Computer Vision And Pattern",
+          "page": 13
+        },
+        {
+          "characters": 283,
+          "heading": "Ject Detection In Aerial Images: A Large-Scale Benchmark",
+          "page": 13
+        },
+        {
+          "characters": 239,
+          "heading": "Detr With Improved Denoising Anchor Boxes For End-",
+          "page": 13
+        },
+        {
+          "characters": 268,
+          "heading": "Detr: Sparse Learnable Queries For Semi-Supervised Ob-",
+          "page": 13
+        },
+        {
+          "characters": 80,
+          "heading": "Ieee Conference On Computer Vision And Pattern Recog-",
+          "page": 13
+        }
+      ],
+      "selected_text_sha256": "ce17418c38c77c235f65b3c99c190d48076ead77d55219fd9b0f0798f1bae419",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "c33508c8b4e2c54ea3d018f4e7bf98586af336e6feb06acfa99eaeb82cd95761",
+      "source_pages": 13,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "f09bc77dd941859e36cac8af1a4e37a957c2560fc97dd7df8358bb702302189a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef09bc77dd941859e-B0002"
+        ],
+        "excerpt": "Semi-supervised object detection has recently been extended to\nDETR, where oriented boxes introduce an ambiguity that does not\narise for axis-aligned boxes: the map from parameters to rectangles\nis two-to-one, since(c x, cy, w, h, \u03b8)and(cx, cy, h, w, \u03b8+\u03c0/2)\ndenote the same rotated rectangle. Losses and matching costs are\ncomputed from the parameters, so two boxes that coincide in space\ncan be far apart in the metric that drives training. A correctly lo-\ncalized student box is then penalized by the regression loss, and the\ninflated matching cost leads the Gaussian mixture model (GMM) fil-\nter to discard it. We propose Oriented Semi-DETR, which removes\nthis ambiguity wherever a pseudo box enters training. Swap-aligned\nTarget Selection regresses towards the encoding closer to the student\nprediction. A Swap-invariant Reliability Cost minimizes over the\ntwo encodings inside the matching ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b4706075e6b0fc2a2008788d91225234190b9c40752b09d91011635afd0d2683",
+            "evidence_id": "Ef09bc77dd941859e-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Semi-supervised object detection has recently been extended to\nDETR, where oriented boxes introduce an ambiguity that does not\narise for axis-aligned boxes: the map from parameters to rectangles\nis two-to-one, since(c x, cy, w, h, \u03b8)and(cx, cy, h, w, \u03b8+\u03c0/2)\ndenote the same rotated rectangle. Losses and matching costs are\ncomputed from the parameters, so two boxes that coincide in space\ncan be far apart in the metric that drives training. A correctly lo-\ncalized student box is then penalized by the regression loss, and the\ninflated matching cost leads the Gaussian mixture model (GMM) fil-\nter to discard it. We propose Oriented Semi-DETR, which removes\nthis ambiguity wherever a pseudo box enters training. Swap-aligned\nTarget Selection regresses towards the encoding closer to the student\nprediction. A Swap-invariant Reliability Cost minimizes over the\ntwo encodings inside the matching "
+              }
+            ],
+            "text": "Semi-supervised object detection has recently been extended to\nDETR, where oriented boxes introduce an ambiguity that does not\narise for axis-aligned boxes: the map from parameters to rectangles\nis two-to-one, since(c x, cy, w, h, \u03b8)and(cx, cy, h, w, \u03b8+\u03c0/2)\ndenote the same rotated rectangle. Losses and matching costs are\ncomputed from the parameters, so two boxes that coincide in space\ncan be far apart in the metric that drives training. A correctly lo-\ncalized student box is then penalized by the regression loss, and the\ninflated matching cost leads the Gaussian mixture model (GMM) fil-\nter to discard it. We propose Oriented Semi-DETR, which removes\nthis ambiguity wherever a pseudo box enters training. Swap-aligned\nTarget Selection regresses towards the encoding closer to the student\nprediction. A Swap-invariant Reliability Cost minimizes over the\ntwo encodings inside the matching "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f09bc77dd941859e36cac8af1a4e37a957c2560fc97dd7df8358bb702302189a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef09bc77dd941859e-B0003"
+        ],
+        "excerpt": "cost, so the filter decides on ge-\nometry alone. Swap-aware Pseudo-label Denoising starts denoising\nearlier, ramps its loss weight linearly, and weights each query by the\nteacher score and encoding margin. All three are parameter-free and\nrequire no additional forward pass. Across all label ratios of DOTA-\nv2.0, Oriented Semi-DETR outperforms DETR-based supervised\nand semi-supervised baselines, with the largest gains at the strict\nIoU threshold.\nIndex Terms\u2014Semi-supervised object detection, oriented ob-\nject detection, detection transformer, aerial images",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b16ae8f5fd230420d5f610f0d4afa176da00467d18238a1af581d05958058a99",
+            "evidence_id": "Ef09bc77dd941859e-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1456,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 895,
+                "text": "cost, so the filter decides on ge-\nometry alone. Swap-aware Pseudo-label Denoising starts denoising\nearlier, ramps its loss weight linearly, and weights each query by the\nteacher score and encoding margin. All three are parameter-free and\nrequire no additional forward pass. Across all label ratios of DOTA-\nv2.0, Oriented Semi-DETR outperforms DETR-based supervised\nand semi-supervised baselines, with the largest gains at the strict\nIoU threshold.\nIndex Terms\u2014Semi-supervised object detection, oriented ob-\nject detection, detection transformer, aerial images"
+              }
+            ],
+            "text": "cost, so the filter decides on ge-\nometry alone. Swap-aware Pseudo-label Denoising starts denoising\nearlier, ramps its loss weight linearly, and weights each query by the\nteacher score and encoding margin. All three are parameter-free and\nrequire no additional forward pass. Across all label ratios of DOTA-\nv2.0, Oriented Semi-DETR outperforms DETR-based supervised\nand semi-supervised baselines, with the largest gains at the strict\nIoU threshold.\nIndex Terms\u2014Semi-supervised object detection, oriented ob-\nject detection, detection transformer, aerial images"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f09bc77dd941859e36cac8af1a4e37a957c2560fc97dd7df8358bb702302189a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef09bc77dd941859e-B0007"
+        ],
+        "excerpt": "which time it has already shaped the pseudo-label distribution.\nOriented Semi-DETR comprises three components, summarized\nin Fig. 1. First, Swap-aligned Target Selection regresses towards\nwhichever encoding is closer to the student prediction, at the one-\nto-many regression target and at the supervised and pseudo-label de-\nnoising targets. The selection is a hardarg min, so the target is\nalways a valid rectangle. Second, a Swap-invariant Reliability Cost\ntakes the minimum over the two encodings within the matching cost,\nso the filter decides on geometry rather than on the encoding the\nteacher produced. Third, Swap-aware Pseudo-label Denoising ad-\nvances the start of pseudo-label denoising, ramps its loss weight lin-\nearly, and scales each query by the teacher scoreqand the encoding\nmarginm.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "57cdb13e9c19cce05dd1c71637a00ce689cf113c7bcba3173337d40fb7a33b5e",
+            "evidence_id": "Ef09bc77dd941859e-B0007",
+            "pages": [
+              1
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3495,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 2694,
+                "text": "which time it has already shaped the pseudo-label distribution.\nOriented Semi-DETR comprises three components, summarized\nin Fig. 1. First, Swap-aligned Target Selection regresses towards\nwhichever encoding is closer to the student prediction, at the one-\nto-many regression target and at the supervised and pseudo-label de-\nnoising targets. The selection is a hardarg min, so the target is\nalways a valid rectangle. Second, a Swap-invariant Reliability Cost\ntakes the minimum over the two encodings within the matching cost,\nso the filter decides on geometry rather than on the encoding the\nteacher produced. Third, Swap-aware Pseudo-label Denoising ad-\nvances the start of pseudo-label denoising, ramps its loss weight lin-\nearly, and scales each query by the teacher scoreqand the encoding\nmarginm."
+              }
+            ],
+            "text": "which time it has already shaped the pseudo-label distribution.\nOriented Semi-DETR comprises three components, summarized\nin Fig. 1. First, Swap-aligned Target Selection regresses towards\nwhichever encoding is closer to the student prediction, at the one-\nto-many regression target and at the supervised and pseudo-label de-\nnoising targets. The selection is a hardarg min, so the target is\nalways a valid rectangle. Second, a Swap-invariant Reliability Cost\ntakes the minimum over the two encodings within the matching cost,\nso the filter decides on geometry rather than on the encoding the\nteacher produced. Third, Swap-aware Pseudo-label Denoising ad-\nvances the start of pseudo-label denoising, ramps its loss weight lin-\nearly, and scales each query by the teacher scoreqand the encoding\nmarginm."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f09bc77dd941859e36cac8af1a4e37a957c2560fc97dd7df8358bb702302189a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef09bc77dd941859e-B0013"
+        ],
+        "excerpt": "Letpbe a student prediction assigned to a targett. Instead of\nregressing towards whichever encoding the teacher produced, we\nregress towards\nt\u2217 = arg min\nt\u2032\u2208{t,\u03c3(t)} d\n\u0000\nsg(p),t \u2032\u0001,(3)\nwheresgdenotes the stop-gradient and a tie is resolved in favor of\nthe teacher's own encoding. The selection never interpolates be-\ntween the two encodings, since an interpolated box would not be\na valid rectangle. Writingd 0 =d(p,t)andd 1 =d(p, \u03c3(t))gives\nd(p,t \u2217) = min(d0, d1)\u2264d 0, so the selected target is never farther\nfrom the prediction than the teacher's encoding, and the two coincide\nwhenever the teacher's encoding is already the closer one.\nEquation (3) is applied to three regression targets: that of the\nqueries selected by the one-to-many assigner, which carries most\nof the gradient, and those of the supervised and pseudo-label DN\nqueries. On the two DN paths a perturbed copy of a box enters ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Swap-Aligned Target Selection",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "461a678eb22fa5944adddff2eb98d69b83eb5750e2eb521e74ee5c65925824ce",
+            "evidence_id": "Ef09bc77dd941859e-B0013",
+            "pages": [
+              2
+            ],
+            "section": "Swap-Aligned Target Selection",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 2,
+                "section": "Swap-Aligned Target Selection",
+                "section_index": 6,
+                "start": 0,
+                "text": "Letpbe a student prediction assigned to a targett. Instead of\nregressing towards whichever encoding the teacher produced, we\nregress towards\nt\u2217 = arg min\nt\u2032\u2208{t,\u03c3(t)} d\n\u0000\nsg(p),t \u2032\u0001,(3)\nwheresgdenotes the stop-gradient and a tie is resolved in favor of\nthe teacher's own encoding. The selection never interpolates be-\ntween the two encodings, since an interpolated box would not be\na valid rectangle. Writingd 0 =d(p,t)andd 1 =d(p, \u03c3(t))gives\nd(p,t \u2217) = min(d0, d1)\u2264d 0, so the selected target is never farther\nfrom the prediction than the teacher's encoding, and the two coincide\nwhenever the teacher's encoding is already the closer one.\nEquation (3) is applied to three regression targets: that of the\nqueries selected by the one-to-many assigner, which carries most\nof the gradient, and those of the supervised and pseudo-label DN\nqueries. On the two DN paths a perturbed copy of a box enters "
+              }
+            ],
+            "text": "Letpbe a student prediction assigned to a targett. Instead of\nregressing towards whichever encoding the teacher produced, we\nregress towards\nt\u2217 = arg min\nt\u2032\u2208{t,\u03c3(t)} d\n\u0000\nsg(p),t \u2032\u0001,(3)\nwheresgdenotes the stop-gradient and a tie is resolved in favor of\nthe teacher's own encoding. The selection never interpolates be-\ntween the two encodings, since an interpolated box would not be\na valid rectangle. Writingd 0 =d(p,t)andd 1 =d(p, \u03c3(t))gives\nd(p,t \u2217) = min(d0, d1)\u2264d 0, so the selected target is never farther\nfrom the prediction than the teacher's encoding, and the two coincide\nwhenever the teacher's encoding is already the closer one.\nEquation (3) is applied to three regression targets: that of the\nqueries selected by the one-to-many assigner, which carries most\nof the gradient, and those of the supervised and pseudo-label DN\nqueries. On the two DN paths a perturbed copy of a box enters "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f09bc77dd941859e36cac8af1a4e37a957c2560fc97dd7df8358bb702302189a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef09bc77dd941859e-B0015"
+        ],
+        "excerpt": "The GMM filter of Semi-DETR [12] decides which pseudo boxes\nsurvive, so the same ambiguity has a different consequence there:\na pseudo box may be discarded because its cost is inflated by the\nencoding. The matching cost is a weighted sum of a classification, a\nregression and a rotated-IoU term, and the GMM is fitted to the total\ncost of the matched pairs. We replace its regression term by\nCreg(p,b) =\u03bb reg min\n\u0000\nd(p,b), d(p, \u03c3(b))\n\u0001\n.(4)\nHere\u03bb reg is the regression weight of the matcher, set to5. The\npenalty is substantial. The fixed matcher we compare against uses a\ncosine angle penalty. If the student predicts exactly\u03c3(b), that term\nalone contributes\u03bb reg(1\u2212cos\u03c0) = 10, and the exchangedwand\nhadd a further2\u03bb reg|w\u2212h|. A box whose normalized width and\nheight differ by0.15therefore costs about11.5although the student\nhas localized it perfectly, while the rotated IoU term of the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Swap-Invariant Reliability Cost",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "baa84b13e1dac63b7c24e533e5a5484e374caab9790509ed970cb366fe881a79",
+            "evidence_id": "Ef09bc77dd941859e-B0015",
+            "pages": [
+              2
+            ],
+            "section": "Swap-Invariant Reliability Cost",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 889,
+                "page": 2,
+                "section": "Swap-Invariant Reliability Cost",
+                "section_index": 7,
+                "start": 0,
+                "text": "The GMM filter of Semi-DETR [12] decides which pseudo boxes\nsurvive, so the same ambiguity has a different consequence there:\na pseudo box may be discarded because its cost is inflated by the\nencoding. The matching cost is a weighted sum of a classification, a\nregression and a rotated-IoU term, and the GMM is fitted to the total\ncost of the matched pairs. We replace its regression term by\nCreg(p,b) =\u03bb reg min\n\u0000\nd(p,b), d(p, \u03c3(b))\n\u0001\n.(4)\nHere\u03bb reg is the regression weight of the matcher, set to5. The\npenalty is substantial. The fixed matcher we compare against uses a\ncosine angle penalty. If the student predicts exactly\u03c3(b), that term\nalone contributes\u03bb reg(1\u2212cos\u03c0) = 10, and the exchangedwand\nhadd a further2\u03bb reg|w\u2212h|. A box whose normalized width and\nheight differ by0.15therefore costs about11.5although the student\nhas localized it perfectly, while the rotated IoU term of the "
+              }
+            ],
+            "text": "The GMM filter of Semi-DETR [12] decides which pseudo boxes\nsurvive, so the same ambiguity has a different consequence there:\na pseudo box may be discarded because its cost is inflated by the\nencoding. The matching cost is a weighted sum of a classification, a\nregression and a rotated-IoU term, and the GMM is fitted to the total\ncost of the matched pairs. We replace its regression term by\nCreg(p,b) =\u03bb reg min\n\u0000\nd(p,b), d(p, \u03c3(b))\n\u0001\n.(4)\nHere\u03bb reg is the regression weight of the matcher, set to5. The\npenalty is substantial. The fixed matcher we compare against uses a\ncosine angle penalty. If the student predicts exactly\u03c3(b), that term\nalone contributes\u03bb reg(1\u2212cos\u03c0) = 10, and the exchangedwand\nhadd a further2\u03bb reg|w\u2212h|. A box whose normalized width and\nheight differ by0.15therefore costs about11.5although the student\nhas localized it perfectly, while the rotated IoU term of the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f09bc77dd941859e36cac8af1a4e37a957c2560fc97dd7df8358bb702302189a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef09bc77dd941859e-B0018"
+        ],
+        "excerpt": "applies the ramp alone, so every denois-\ning query of the iteration carriesw j =s(t). The second scales the\nqueries by the teacher score,\nwxywh,j =q js(t), w score\u03b8,j =q js(t).(6)\nOriented Semi-DETR adds an encoding margin to the angle re-\ngression. For the current student DN predictionp j and pseudo box\nbj, we define\nmj = |d(pj,b j)\u2212d(p j, \u03c3(bj))|d(pj,b j) +d(p j, \u03c3(bj)) +\u03b5 , w margin\u03b8,j =q js(t)mj.\n(7)\nHere\u03b5= 10 \u22126, andm j \u2208[0,1)measures the relative separation of\nthe two encodings under the same distanced. It is small when the\nprediction is nearly indifferent between them and large when one is\nclearly closer. The factorq js(t)weights the four spatial L1 coor-\ndinates and the per-box rotated-IoU term, whilem j multiplies only\nthe angle L1 coordinate, so it changes neither the classification nor\nthe IoU weight. All weights are computed without gradient, and the\ntarget of Equation (3) ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Swap-Aware Pseudo-Label Denoising",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7e39423e26efd2353c97d8236422db4ed5029024ef6b9173ceeeac49f7d03700",
+            "evidence_id": "Ef09bc77dd941859e-B0018",
+            "pages": [
+              3
+            ],
+            "section": "Swap-Aware Pseudo-Label Denoising",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1323,
+                "page": 3,
+                "section": "Swap-Aware Pseudo-Label Denoising",
+                "section_index": 9,
+                "start": 425,
+                "text": "applies the ramp alone, so every denois-\ning query of the iteration carriesw j =s(t). The second scales the\nqueries by the teacher score,\nwxywh,j =q js(t), w score\u03b8,j =q js(t).(6)\nOriented Semi-DETR adds an encoding margin to the angle re-\ngression. For the current student DN predictionp j and pseudo box\nbj, we define\nmj = |d(pj,b j)\u2212d(p j, \u03c3(bj))|d(pj,b j) +d(p j, \u03c3(bj)) +\u03b5 , w margin\u03b8,j =q js(t)mj.\n(7)\nHere\u03b5= 10 \u22126, andm j \u2208[0,1)measures the relative separation of\nthe two encodings under the same distanced. It is small when the\nprediction is nearly indifferent between them and large when one is\nclearly closer. The factorq js(t)weights the four spatial L1 coor-\ndinates and the per-box rotated-IoU term, whilem j multiplies only\nthe angle L1 coordinate, so it changes neither the classification nor\nthe IoU weight. All weights are computed without gradient, and the\ntarget of Equation (3) "
+              }
+            ],
+            "text": "applies the ramp alone, so every denois-\ning query of the iteration carriesw j =s(t). The second scales the\nqueries by the teacher score,\nwxywh,j =q js(t), w score\u03b8,j =q js(t).(6)\nOriented Semi-DETR adds an encoding margin to the angle re-\ngression. For the current student DN predictionp j and pseudo box\nbj, we define\nmj = |d(pj,b j)\u2212d(p j, \u03c3(bj))|d(pj,b j) +d(p j, \u03c3(bj)) +\u03b5 , w margin\u03b8,j =q js(t)mj.\n(7)\nHere\u03b5= 10 \u22126, andm j \u2208[0,1)measures the relative separation of\nthe two encodings under the same distanced. It is small when the\nprediction is nearly indifferent between them and large when one is\nclearly closer. The factorq js(t)weights the four spatial L1 coor-\ndinates and the per-box rotated-IoU term, whilem j multiplies only\nthe angle L1 coordinate, so it changes neither the classification nor\nthe IoU weight. All weights are computed without gradient, and the\ntarget of Equation (3) "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f09bc77dd941859e36cac8af1a4e37a957c2560fc97dd7df8358bb702302189a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef09bc77dd941859e-B0023"
+        ],
+        "excerpt": "so every system in Table 1 stays in\nthe one-to-many stage and the comparison is not confounded by the\nstage switch. The target-selection ablation keeps the legacy 160k\npseudo-label DN start and the nested settings uset 0 = 120k and\nT= 10k. All numbers are from the official DOTA evaluation server\non test-dev, and we report AP 50, AP75 and mean average precision\n(mAP). Under the partial-label protocol, results for Oriented Semi-\nDETR are averaged over three training runs.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "03365ebd1f57cc9345d4f81fd492217e11002c9d40754edbe89f8759a9c737d9",
+            "evidence_id": "Ef09bc77dd941859e-B0023",
+            "pages": [
+              3
+            ],
+            "section": "Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1372,
+                "page": 3,
+                "section": "Setup",
+                "section_index": 11,
+                "start": 898,
+                "text": "so every system in Table 1 stays in\nthe one-to-many stage and the comparison is not confounded by the\nstage switch. The target-selection ablation keeps the legacy 160k\npseudo-label DN start and the nested settings uset 0 = 120k and\nT= 10k. All numbers are from the official DOTA evaluation server\non test-dev, and we report AP 50, AP75 and mean average precision\n(mAP). Under the partial-label protocol, results for Oriented Semi-\nDETR are averaged over three training runs."
+              }
+            ],
+            "text": "so every system in Table 1 stays in\nthe one-to-many stage and the comparison is not confounded by the\nstage switch. The target-selection ablation keeps the legacy 160k\npseudo-label DN start and the nested settings uset 0 = 120k and\nT= 10k. All numbers are from the official DOTA evaluation server\non test-dev, and we report AP 50, AP75 and mean average precision\n(mAP). Under the partial-label protocol, results for Oriented Semi-\nDETR are averaged over three training runs."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f09bc77dd941859e36cac8af1a4e37a957c2560fc97dd7df8358bb702302189a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef09bc77dd941859e-B0024"
+        ],
+        "excerpt": "Table 1 compares Oriented Semi-DETR with the DETR-based su-\npervised and semi-supervised baselines at each label ratio. Against\nthe best mAP among them, the gains are 1.78, 2.18, and 2.59 points\nat 10%, 20%, and 30%; against the best AP 75 they are 2.15, 3.39,\nand 4.04 points. The larger gain at the strict threshold is consistent\nwith better alignment of matched boxes, although aggregate metrics\ndo not separate recall from localization. Table 2 decomposes the full\nconfiguration into the three pseudo-label denoising components at\nevery ratio, with all three regression targets swap-aligned through-\nout. Teacher-score weighting gives the best mAP at 10%. At 20%\nthe encoding margin restores AP 50 but reduces AP75, leaving mAP\nat the level of the ramp alone. At 30% the full configuration leads\non AP 50 and mAP. No component is best on every metric at every\npartial ratio, so we retain the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "698d55daabb61b1c2c0fdeb6cd0df0bd4db8be3781fe9e32776e6ad807a23d97",
+            "evidence_id": "Ef09bc77dd941859e-B0024",
+            "pages": [
+              3
+            ],
+            "section": "Main Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 3,
+                "section": "Main Results",
+                "section_index": 12,
+                "start": 0,
+                "text": "Table 1 compares Oriented Semi-DETR with the DETR-based su-\npervised and semi-supervised baselines at each label ratio. Against\nthe best mAP among them, the gains are 1.78, 2.18, and 2.59 points\nat 10%, 20%, and 30%; against the best AP 75 they are 2.15, 3.39,\nand 4.04 points. The larger gain at the strict threshold is consistent\nwith better alignment of matched boxes, although aggregate metrics\ndo not separate recall from localization. Table 2 decomposes the full\nconfiguration into the three pseudo-label denoising components at\nevery ratio, with all three regression targets swap-aligned through-\nout. Teacher-score weighting gives the best mAP at 10%. At 20%\nthe encoding margin restores AP 50 but reduces AP75, leaving mAP\nat the level of the ramp alone. At 30% the full configuration leads\non AP 50 and mAP. No component is best on every metric at every\npartial ratio, so we retain the "
+              }
+            ],
+            "text": "Table 1 compares Oriented Semi-DETR with the DETR-based su-\npervised and semi-supervised baselines at each label ratio. Against\nthe best mAP among them, the gains are 1.78, 2.18, and 2.59 points\nat 10%, 20%, and 30%; against the best AP 75 they are 2.15, 3.39,\nand 4.04 points. The larger gain at the strict threshold is consistent\nwith better alignment of matched boxes, although aggregate metrics\ndo not separate recall from localization. Table 2 decomposes the full\nconfiguration into the three pseudo-label denoising components at\nevery ratio, with all three regression targets swap-aligned through-\nout. Teacher-score weighting gives the best mAP at 10%. At 20%\nthe encoding margin restores AP 50 but reduces AP75, leaving mAP\nat the level of the ramp alone. At 30% the full configuration leads\non AP 50 and mAP. No component is best on every metric at every\npartial ratio, so we retain the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f09bc77dd941859e36cac8af1a4e37a957c2560fc97dd7df8358bb702302189a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef09bc77dd941859e-B0027"
+        ],
+        "excerpt": "2.5. Relative to\nthe legacy 160k schedule, the early ramp changes AP 75 by+0.17\nand mAP by+0.01. Adding the teacher score gives a further+0.03\nAP75 and+0.22mAP. Adding the encoding margin raises AP 50 by\nTable 1. The results on DOTA-v2.0 test-dev. Oriented Semi-DETR uses the full configuration of Equations (5)\u2013(7). The last group uses the\nwhole trainval set as labeled data.\nMethod 10% labeled 20% labeled 30% labeled Fully labeledAP50 AP75 mAP AP50 AP75 mAP AP50 AP75 mAP AP50 AP75 mAP\nDINO [11] 40.72 21.76 22.49 46.31 24.94 25.82 48.11 26.71 27.16 49.11 26.91 27.51\nSemi-DETR [12] 43.94 25.62 25.82 48.01 28.10 28.10 50.63 29.47 29.60 51.11 31.50 30.81\nSparse Semi-DETR [13] 44.16 25.49 25.83 48.38 28.28 28.51 50.24 29.40 29.53 51.71 32.26 31.22\nOriented Semi-DETR45.92 27.77 27.61 49.89 31.67 30.69 52.11 33.51 32.19 53.16 35.07 33.23\nTable 2. The results on DOTA-v2.0 test-dev with ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ba2d8ac1821169bd70e3e92c376c0dcbd7b3662b666e6330085e9534f054edfc",
+            "evidence_id": "Ef09bc77dd941859e-B0027",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Ablation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1102,
+                "page": 3,
+                "section": "Ablation",
+                "section_index": 13,
+                "start": 899,
+                "text": "2.5. Relative to\nthe legacy 160k schedule, the early ramp changes AP 75 by+0.17\nand mAP by+0.01. Adding the teacher score gives a further+0.03\nAP75 and+0.22mAP. Adding the encoding margin raises AP 50 by"
+              },
+              {
+                "end": 686,
+                "page": 4,
+                "section": "Ablation",
+                "section_index": 14,
+                "start": 0,
+                "text": "Table 1. The results on DOTA-v2.0 test-dev. Oriented Semi-DETR uses the full configuration of Equations (5)\u2013(7). The last group uses the\nwhole trainval set as labeled data.\nMethod 10% labeled 20% labeled 30% labeled Fully labeledAP50 AP75 mAP AP50 AP75 mAP AP50 AP75 mAP AP50 AP75 mAP\nDINO [11] 40.72 21.76 22.49 46.31 24.94 25.82 48.11 26.71 27.16 49.11 26.91 27.51\nSemi-DETR [12] 43.94 25.62 25.82 48.01 28.10 28.10 50.63 29.47 29.60 51.11 31.50 30.81\nSparse Semi-DETR [13] 44.16 25.49 25.83 48.38 28.28 28.51 50.24 29.40 29.53 51.71 32.26 31.22\nOriented Semi-DETR45.92 27.77 27.61 49.89 31.67 30.69 52.11 33.51 32.19 53.16 35.07 33.23\nTable 2. The results on DOTA-v2.0 test-dev with "
+              }
+            ],
+            "text": "2.5. Relative to\nthe legacy 160k schedule, the early ramp changes AP 75 by+0.17\nand mAP by+0.01. Adding the teacher score gives a further+0.03\nAP75 and+0.22mAP. Adding the encoding margin raises AP 50 by\nTable 1. The results on DOTA-v2.0 test-dev. Oriented Semi-DETR uses the full configuration of Equations (5)\u2013(7). The last group uses the\nwhole trainval set as labeled data.\nMethod 10% labeled 20% labeled 30% labeled Fully labeledAP50 AP75 mAP AP50 AP75 mAP AP50 AP75 mAP AP50 AP75 mAP\nDINO [11] 40.72 21.76 22.49 46.31 24.94 25.82 48.11 26.71 27.16 49.11 26.91 27.51\nSemi-DETR [12] 43.94 25.62 25.82 48.01 28.10 28.10 50.63 29.47 29.60 51.11 31.50 30.81\nSparse Semi-DETR [13] 44.16 25.49 25.83 48.38 28.28 28.51 50.24 29.40 29.53 51.71 32.26 31.22\nOriented Semi-DETR45.92 27.77 27.61 49.89 31.67 30.69 52.11 33.51 32.19 53.16 35.07 33.23\nTable 2. The results on DOTA-v2.0 test-dev with "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f09bc77dd941859e36cac8af1a4e37a957c2560fc97dd7df8358bb702302189a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef09bc77dd941859e-B0032"
+        ],
+        "excerpt": "Assign.flip Filterflip\n20k 4671 16.89% 18.88% 7.02%\n180k 3826 3.89% 4.89% 2.88%\nunderstates the effect, which is largest while the pseudo-label distri-\nbution is being formed.\nSplitting the same pairs by aspect ratio confines the effect to\nnear-square boxes. In the aspect-ratio range(1,1.3]the swapped en-\ncoding is closer for 43.9% of the pairs, 45.5% of the assignments\nchange, and the retention rate rises from 28.6% to 44.9%, while\nabove ratio 2 the first two numbers drop to 7.1% and 8.6%. The\noverall retention rate therefore shifts by only 1.20 points at 20k, al-\nthough 7.02% of the individual decisions change: the swap-invariant\ncost retains a comparable number of pseudo boxes and a different se-\nlection of them. Storage tanks, roundabouts and vehicles seen from\nabove make near-square objects common in aerial scenes [3, 4], so a\nmechanism that would be marginal in general detection ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Prevalence Of The Ambiguity",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8da2706fb40ca97b04f928ff743e16ccafbea641142922eb6bb90fbef4cc8204",
+            "evidence_id": "Ef09bc77dd941859e-B0032",
+            "pages": [
+              4
+            ],
+            "section": "Prevalence Of The Ambiguity",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1789,
+                "page": 4,
+                "section": "Prevalence Of The Ambiguity",
+                "section_index": 15,
+                "start": 891,
+                "text": "Assign.flip Filterflip\n20k 4671 16.89% 18.88% 7.02%\n180k 3826 3.89% 4.89% 2.88%\nunderstates the effect, which is largest while the pseudo-label distri-\nbution is being formed.\nSplitting the same pairs by aspect ratio confines the effect to\nnear-square boxes. In the aspect-ratio range(1,1.3]the swapped en-\ncoding is closer for 43.9% of the pairs, 45.5% of the assignments\nchange, and the retention rate rises from 28.6% to 44.9%, while\nabove ratio 2 the first two numbers drop to 7.1% and 8.6%. The\noverall retention rate therefore shifts by only 1.20 points at 20k, al-\nthough 7.02% of the individual decisions change: the swap-invariant\ncost retains a comparable number of pseudo boxes and a different se-\nlection of them. Storage tanks, roundabouts and vehicles seen from\nabove make near-square objects common in aerial scenes [3, 4], so a\nmechanism that would be marginal in general detection "
+              }
+            ],
+            "text": "Assign.flip Filterflip\n20k 4671 16.89% 18.88% 7.02%\n180k 3826 3.89% 4.89% 2.88%\nunderstates the effect, which is largest while the pseudo-label distri-\nbution is being formed.\nSplitting the same pairs by aspect ratio confines the effect to\nnear-square boxes. In the aspect-ratio range(1,1.3]the swapped en-\ncoding is closer for 43.9% of the pairs, 45.5% of the assignments\nchange, and the retention rate rises from 28.6% to 44.9%, while\nabove ratio 2 the first two numbers drop to 7.1% and 8.6%. The\noverall retention rate therefore shifts by only 1.20 points at 20k, al-\nthough 7.02% of the individual decisions change: the swap-invariant\ncost retains a comparable number of pseudo boxes and a different se-\nlection of them. Storage tanks, roundabouts and vehicles seen from\nabove make near-square objects common in aerial scenes [3, 4], so a\nmechanism that would be marginal in general detection "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f09bc77dd941859e36cac8af1a4e37a957c2560fc97dd7df8358bb702302189a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef09bc77dd941859e-B0066"
+        ],
+        "excerpt": "fixed-reliability-cost and swap-invariant-cost controls\ndiffer only in the regression term of the Hungarian cost, with\ntarget selection disabled everywhere. The difference is\u22120.12\nAP50,+0.35AP 75, and\u22120.03mAP. The swap-invariant cost\ngains at the strict threshold but loses marginally at the loose\nthreshold, so this control does not establish a final-accuracy\ngain by itself. The comparison is unbalanced because the\nfixed-cost control was run once and the swap-invariant-cost\ncontrol three times. Both operate near42AP 50, far below the\n50.63reached by Semi-DETR [1], because the metric control\nreplaces plain L1 by the\u03c0-periodic cosine form everywhere\nwhile leaving every target unchanged. That substitution alone\ncosts about eight points, so the pair probes a weak operating\npoint.\nThis is the reason the main paper presents Eq. (4) as mech-\nanism evidence, supported by the diagnostic of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Algorithm",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9590068a1b753b121066f771f9acecaf2a453be89ce8f72a2ddbde65534068af",
+            "evidence_id": "Ef09bc77dd941859e-B0066",
+            "pages": [
+              8
+            ],
+            "section": "Appendix: Algorithm",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2682,
+                "page": 8,
+                "section": "Appendix: Algorithm",
+                "section_index": 38,
+                "start": 1789,
+                "text": "fixed-reliability-cost and swap-invariant-cost controls\ndiffer only in the regression term of the Hungarian cost, with\ntarget selection disabled everywhere. The difference is\u22120.12\nAP50,+0.35AP 75, and\u22120.03mAP. The swap-invariant cost\ngains at the strict threshold but loses marginally at the loose\nthreshold, so this control does not establish a final-accuracy\ngain by itself. The comparison is unbalanced because the\nfixed-cost control was run once and the swap-invariant-cost\ncontrol three times. Both operate near42AP 50, far below the\n50.63reached by Semi-DETR [1], because the metric control\nreplaces plain L1 by the\u03c0-periodic cosine form everywhere\nwhile leaving every target unchanged. That substitution alone\ncosts about eight points, so the pair probes a weak operating\npoint.\nThis is the reason the main paper presents Eq. (4) as mech-\nanism evidence, supported by the diagnostic of "
+              }
+            ],
+            "text": "fixed-reliability-cost and swap-invariant-cost controls\ndiffer only in the regression term of the Hungarian cost, with\ntarget selection disabled everywhere. The difference is\u22120.12\nAP50,+0.35AP 75, and\u22120.03mAP. The swap-invariant cost\ngains at the strict threshold but loses marginally at the loose\nthreshold, so this control does not establish a final-accuracy\ngain by itself. The comparison is unbalanced because the\nfixed-cost control was run once and the swap-invariant-cost\ncontrol three times. Both operate near42AP 50, far below the\n50.63reached by Semi-DETR [1], because the metric control\nreplaces plain L1 by the\u03c0-periodic cosine form everywhere\nwhile leaving every target unchanged. That substitution alone\ncosts about eight points, so the pair probes a weak operating\npoint.\nThis is the reason the main paper presents Eq. (4) as mech-\nanism evidence, supported by the diagnostic of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f09bc77dd941859e36cac8af1a4e37a957c2560fc97dd7df8358bb702302189a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef09bc77dd941859e-B0091"
+        ],
+        "excerpt": "Table S10 lists the settings shared by the runs in Table S4.\nThey use the Semi-DETR-style training pipeline [1]; the\nshared entries were not tuned for this work. The only\nconfiguration-specific exception is the pseudo-label DN\nschedule, which is reported separately below because the\nlegacy controls and the complete Oriented Semi-DETR con-\nfiguration use different start times.\nThe warm-up length deserves a comment because it de-\ncides which Semi-DETR [1] stage the runs are in. Semi-\nDETR uses a one-to-many assignment first and switches to\none-to-one after the warm-up. In our protocol, we set the\nwarm-up to 180k, equal to the total schedule, so every run\nstays in the first stage and the one-to-one branch, together\nwith the cross-view query consistency associated with that\nstage, is not activated. This is our controlled experimental\nchoice, rather than a claim about a universal Semi-DETR ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Hyperparameters",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b9e1feec5bef26293933fd35b602864a1ac15b2e8b5ff218c36aad11ab66d1c2",
+            "evidence_id": "Ef09bc77dd941859e-B0091",
+            "pages": [
+              12
+            ],
+            "section": "Appendix: Hyperparameters",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 12,
+                "section": "Appendix: Hyperparameters",
+                "section_index": 49,
+                "start": 0,
+                "text": "Table S10 lists the settings shared by the runs in Table S4.\nThey use the Semi-DETR-style training pipeline [1]; the\nshared entries were not tuned for this work. The only\nconfiguration-specific exception is the pseudo-label DN\nschedule, which is reported separately below because the\nlegacy controls and the complete Oriented Semi-DETR con-\nfiguration use different start times.\nThe warm-up length deserves a comment because it de-\ncides which Semi-DETR [1] stage the runs are in. Semi-\nDETR uses a one-to-many assignment first and switches to\none-to-one after the warm-up. In our protocol, we set the\nwarm-up to 180k, equal to the total schedule, so every run\nstays in the first stage and the one-to-one branch, together\nwith the cross-view query consistency associated with that\nstage, is not activated. This is our controlled experimental\nchoice, rather than a claim about a universal Semi-DETR "
+              }
+            ],
+            "text": "Table S10 lists the settings shared by the runs in Table S4.\nThey use the Semi-DETR-style training pipeline [1]; the\nshared entries were not tuned for this work. The only\nconfiguration-specific exception is the pseudo-label DN\nschedule, which is reported separately below because the\nlegacy controls and the complete Oriented Semi-DETR con-\nfiguration use different start times.\nThe warm-up length deserves a comment because it de-\ncides which Semi-DETR [1] stage the runs are in. Semi-\nDETR uses a one-to-many assignment first and switches to\none-to-one after the warm-up. In our protocol, we set the\nwarm-up to 180k, equal to the total schedule, so every run\nstays in the first stage and the one-to-one branch, together\nwith the cross-view query consistency associated with that\nstage, is not activated. This is our controlled experimental\nchoice, rather than a claim about a universal Semi-DETR "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f09bc77dd941859e36cac8af1a4e37a957c2560fc97dd7df8358bb702302189a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef09bc77dd941859e-B0095"
+        ],
+        "excerpt": "we report therefore average out the nonde-\nterminism that remains at a fixed seed. They do not support\na significance test. A multi-seed study is the appropriate way\nto strengthen the statistical claims, and we have not run one.\nTwo points remain open. The isolation of the reliability\ncost rests on an unbalanced comparison between the fixed-\nreliability-cost control and the swap-invariant-cost control,\nand would be worth rerunning on equal footing. The angle\npenalty comparison of Section F.3 confounds the shape of\u03c6\nwith its scale, and a rescaled control would separate them.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Protocol And Open Points",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f1949ad51428962cd1f09170657ab4824ddd243b6b5bf2292212c3da7f0cc43e",
+            "evidence_id": "Ef09bc77dd941859e-B0095",
+            "pages": [
+              13
+            ],
+            "section": "Appendix: Protocol And Open Points",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1478,
+                "page": 13,
+                "section": "Appendix: Protocol And Open Points",
+                "section_index": 51,
+                "start": 898,
+                "text": "we report therefore average out the nonde-\nterminism that remains at a fixed seed. They do not support\na significance test. A multi-seed study is the appropriate way\nto strengthen the statistical claims, and we have not run one.\nTwo points remain open. The isolation of the reliability\ncost rests on an unbalanced comparison between the fixed-\nreliability-cost control and the swap-invariant-cost control,\nand would be worth rerunning on equal footing. The angle\npenalty comparison of Section F.3 confounds the shape of\u03c6\nwith its scale, and a rescaled control would separate them."
+              }
+            ],
+            "text": "we report therefore average out the nonde-\nterminism that remains at a fixed seed. They do not support\na significance test. A multi-seed study is the appropriate way\nto strengthen the statistical claims, and we have not run one.\nTwo points remain open. The isolation of the reliability\ncost rests on an unbalanced comparison between the fixed-\nreliability-cost control and the swap-invariant-cost control,\nand would be worth rerunning on equal footing. The angle\npenalty comparison of Section F.3 confounds the shape of\u03c6\nwith its scale, and a rescaled control would separate them."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2611.21223",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "empirical_research",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2611.21223",
+        "context_id": "f09bc77dd941859e36cac8af1a4e37a957c2560fc97dd7df8358bb702302189a",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline gains are measured on the official DOTA-v2.0 test-dev evaluation server against held-out ground truth, independent of the pseudo-label and matching-cost signals used in training.",
+          "final_evaluation_signal": "Official DOTA-v2.0 test-dev server metrics (AP50, AP75, mAP) on held-out ground-truth labels.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Semi-supervised training signal from teacher pseudo boxes, Hungarian matching costs, GMM filtering, and denoising targets, with the proposed swap-aligned selection and swap-invariant cost shaping that signal.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ef09bc77dd941859e-B0002",
+          "Ef09bc77dd941859e-B0003",
+          "Ef09bc77dd941859e-B0007",
+          "Ef09bc77dd941859e-B0013",
+          "Ef09bc77dd941859e-B0015",
+          "Ef09bc77dd941859e-B0018",
+          "Ef09bc77dd941859e-B0023",
+          "Ef09bc77dd941859e-B0024",
+          "Ef09bc77dd941859e-B0027",
+          "Ef09bc77dd941859e-B0032",
+          "Ef09bc77dd941859e-B0066",
+          "Ef09bc77dd941859e-B0091",
+          "Ef09bc77dd941859e-B0095"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "c33508c8b4e2c54ea3d018f4e7bf98586af336e6feb06acfa99eaeb82cd95761"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2611.21223",
+        "claim_evidence_alignment": "Reported performance gains over DINO, Semi-DETR, and Sparse Semi-DETR baselines are consistent across label splits and supported by the presented empirical data, especially for stricter IoU thresholds (AP75). The authors are careful to acknowledge where component ablations show mixed results or small margins.",
+        "context_id": "f09bc77dd941859e36cac8af1a4e37a957c2560fc97dd7df8358bb702302189a",
+        "decision": "pass",
+        "evaluation_assessment": "The method is tested on DOTA-v2.0 across multiple partial label splits (10%, 20%, 30%) and a fully labeled split using official test-dev server evaluations. Detailed ablations comprehensively examine the role of each regression target, the denoising schedule, angle distance metrics, and the prevalence of swap events.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline detection results are independently corroborated by standard mAP metrics on held-out test-dev data evaluated via the official DOTA evaluation server.",
+          "final_evaluation_signal": "Official DOTA-v2.0 test-dev benchmark evaluation server metrics (AP50, AP75, mAP) calculated on unseen ground-truth labels.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Semi-supervised training using supervised losses, pseudo-label teacher predictions, Hungarian matching costs, and GMM filtering.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ef09bc77dd941859e-B0002",
+          "Ef09bc77dd941859e-B0003",
+          "Ef09bc77dd941859e-B0007",
+          "Ef09bc77dd941859e-B0013",
+          "Ef09bc77dd941859e-B0015",
+          "Ef09bc77dd941859e-B0018",
+          "Ef09bc77dd941859e-B0023",
+          "Ef09bc77dd941859e-B0024",
+          "Ef09bc77dd941859e-B0027",
+          "Ef09bc77dd941859e-B0032",
+          "Ef09bc77dd941859e-B0066",
+          "Ef09bc77dd941859e-B0091",
+          "Ef09bc77dd941859e-B0095"
+        ],
+        "limitations": "The authors explicitly disclose limitations, including the restriction to the one-to-many training stage, the lack of a full multi-seed significance study, an unbalanced ablation for the reliability cost alone, and confounding between angle metric shape and scale.",
+        "method_assessment": "The methodology is clearly formulated with exact mathematical expressions for the equivalence group transformations, distance functions, target selections, and GMM cost modifications. Key implementation nuances, such as performing box dimension swaps on unnormalized pixel coordinates, are thoroughly documented.",
+        "quality_rationale": "The manuscript presents a conceptually solid, well-motivated, and thoroughly ablated solution to a specific mathematical ambiguity in semi-supervised DETR architectures. It provides balanced empirical results on an established benchmark without overclaiming.",
+        "scoped_contribution": "The paper introduces Oriented Semi-DETR to resolve the two-to-one parameter-to-rectangle ambiguity in semi-supervised detection transformers via swap-aligned target selection, a swap-invariant Hungarian reliability cost, and swap-aware pseudo-label denoising.",
+        "source_content_hash": "c33508c8b4e2c54ea3d018f4e7bf98586af336e6feb06acfa99eaeb82cd95761"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a conceptually solid, well-motivated, and thoroughly ablated solution to a specific mathematical ambiguity in semi-supervised DETR architectures. It provides balanced empirical results on an established benchmark without overclaiming.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "c33508c8b4e2c54ea3d018f4e7bf98586af336e6feb06acfa99eaeb82cd95761",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly disclose limitations, including the restriction to the one-to-many training stage, the lack of a full multi-seed significance study, an unbalanced ablation for the reliability cost alone, and confounding between angle metric shape and scale."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -158,7 +1823,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

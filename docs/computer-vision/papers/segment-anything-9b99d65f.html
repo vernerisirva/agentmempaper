@@ -64,16 +64,336 @@
             <p>We introduce the Segment Anything (SA) project: a new task, model, and dataset for image segmentation. Using our efficient model in a data collection loop, we built the largest segmentation dataset to date (by far), with over 1 billion masks on 11M licensed and privacy respecting images. The model is designed and tr...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a transformative and foundational contribution to computer vision, accompanied by fully specified architectures, exhaustive experimental protocols across dozens of external benchmarks, and controlled human evaluations with rigorous statistical validation. There are no critical methodological or evaluation gaps.</p>
+      <p>The authors transparently document known limitations, including failure to resolve fine structures, occasional hallucination of small disconnected components, lower boundary sharpness relative to zoom-in methods, non-real-time full image encoding, and preliminary performance on text-to-mask prompting [Ec4bd9f968ad17dec-B0075].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-18T12:40:55.680519+00:00.</p>
+        <p>Coverage: 161706 of 161706 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We introduce the Segment Anything (SA) project: a new
+task, model, and dataset for image segmentation. Using our
+efficient model in a data collection loop, we built the largest
+segmentation dataset to date (by far), with over 1 billion
+masks on 11M licensed and privacy respecting images. The
+model is designed and trained to be promptable, so it can
+transfer zero-shot to new image distributions and tasks. We
+evaluate its capabilities on numerous tasks and find that
+its zero-shot performance is impressive – often competitive
+with or even superior to prior fully supervised results. We
+are releasing the Segment Anything Model (SAM) and cor-
+responding dataset (SA-1B) of 1B masks and 11M images at
+https://segment-anything.com to foster research into foun-
+dation models for computer vision.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>data engine has three stages:
+assisted-manual, semi-automatic, and fully automatic. In
+the first stage, SAM assists annotators in annotating masks,
+similar to a classic interactive segmentation setup. In the
+second stage, SAM can automatically generate masks for
+a subset of objects by prompting it with likely object lo-
+cations and annotators focus on annotating the remaining
+objects, helping increase mask diversity. In the final stage,
+we prompt SAM with a regular grid of foreground points,
+yielding on average ∼100 high-quality masks per image.
+Dataset (§5). Our final dataset, SA-1B, includes more than
+1B masks from 11M licensed and privacy-preserving im-
+ages (see Fig. 2). SA-1B, collected fully automatically us-
+ing the final stage of our data engine, has 400× more masks
+than any existing segmentation dataset [66, 44, 117, 60],
+and as we verify extensively, the masks are of high </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>quality
+and diversity. Beyond its use in training SAM to be robust
+and general, we hope SA-1B becomes a valuable resource
+for research aiming to build new foundation models.
+Responsible AI (§6). We study and report on potential fair-
+ness concerns and biases when using SA-1B and SAM. Im-
+ages in SA-1B span a geographically and economically di-
+verse set of countries and we found that SAM performs sim-
+ilarly across different groups of people. Together, we hope
+this will make our work more equitable for real-world use
+cases. We provide model and dataset cards in the appendix.
+Experiments (§7). We extensively evaluate SAM. First, us-
+ing a diverse new suite of 23 segmentation datasets, we find
+that SAM produces high-quality masks from a single fore-
+ground point, often only slightly below that of the manu-
+ally annotated ground truth. Second, we find consistently
+strong quantitative and </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We next describe the Segment Anything Model (SAM)
+for promptable segmentation. SAM has three components,
+illustrated in Fig. 4: an image encoder, a flexible prompt
+encoder, and a fast mask decoder. We build on Transformer
+vision models [14, 33, 20, 62] with specific tradeoffs for
+(amortized) real-time performance. We describe these com-
+ponents at a high-level here, with details in §A.
+Image encoder. Motivated by scalability and powerful pre-
+training methods, we use an MAE [47] pre-trained Vision
+Transformer (ViT) [33] minimally adapted to process high
+resolution inputs [62]. The image encoder runs once per
+image and can be applied prior to prompting the model.
+Prompt encoder. We consider two sets of prompts: sparse
+(points, boxes, text) and dense (masks). We represent
+points and boxes by positional encodings [95] summed with
+learned embeddings for each prompt type and free-form </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>prompt.
+To address this, we modify the model to predict multiple
+output masks for a single prompt (see Fig. 3). We found
+3 mask outputs is sufficient to address most common cases
+(nested masks are often at most three deep: whole, part, and
+subpart). During training, we backprop only the minimum
+loss [15, 45, 64] over masks. To rank masks, the model pre-
+dicts a confidence score (i.e., estimated IoU) for each mask.
+Efficiency. The overall model design is largely motivated
+by efficiency. Given a precomputed image embedding, the
+prompt encoder and mask decoder run in a web browser, on
+CPU, in ∼50ms. This runtime performance enables seam-
+less, real-time interactive prompting of our model.
+Losses and training. We supervise mask prediction with
+the linear combination of focal loss [65] and dice loss [73]
+used in [14]. We train for the promptable segmentation task
+using a mixture of geometric </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>As segmentation masks are not abundant on the inter-
+net, we built a data engine to enable the collection of our
+1.1B mask dataset, SA-1B. The data engine has three
+stages: (1) a model-assisted manual annotation stage, (2) a
+semi-automatic stage with a mix of automatically predicted
+masks and model-assisted annotation, and (3) a fully auto-
+matic stage in which our model generates masks without
+annotator input. We go into details of each next.
+Assisted-manual stage. In the first stage, resembling clas-
+sic interactive segmentation, a team of professional annota-
+tors labeled masks by clicking foreground / background ob-
+ject points using a browser-based interactive segmentation
+tool powered by SAM. Masks could be refined using pixel-
+precise &quot;brush&quot; and &quot;eraser&quot; tools. Our model-assisted an-
+notation runs in real-time directly inside a browser (using
+precomputed image embeddings) </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>periodically retrained our
+model on newly collected data (5 times). Average annota-
+tion time per mask went back up to 34 seconds (excluding
+the automatic masks) as these objects were more challeng-
+ing to label. The average number of masks per image went
+from 44 to 72 masks (including the automatic masks).
+Fully automatic stage. In the final stage, annotation was
+fully automatic . This was feasible due to two major en-
+hancements to our model. First, at the start of this stage, we
+had collected enough masks to greatly improve the model,
+including the diverse masks from the previous stage. Sec-
+ond, by this stage we had developed the ambiguity-aware
+model, which allowed us to predict valid masks even in am-
+biguous cases. Specifically, we prompted the model with a
+32×32 regular grid of points and for each point predicted
+a set of masks that may correspond to valid objects. With
+the </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ambiguity-aware model, if a point lies on a part or sub-
+part, our model will return the subpart, part, and whole ob-
+ject. The IoU prediction module of our model is used to se-
+lect confident masks; moreover, we identified and selected
+only stable masks (we consider a mask stable if threshold-
+ing the probability map at 0.5−δ and 0.5 + δ results in
+similar masks). Finally, after selecting the confident and
+stable masks, we applied non-maximal suppression (NMS)
+to filter duplicates. To further improve the quality of smaller
+masks, we also processed multiple overlapping zoomed-in
+image crops. For further details of this stage, see §B. We
+applied fully automatic mask generation to all 11M images
+in our dataset, producing a total of 1.1B high-quality masks.
+We describe and analyze the resulting dataset, SA-1B, next.
+Figure 5: Image-size normalized mask center distributions.</blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>professional
+annotators to improve the quality of all masks in these im-
+ages. Annotators did so using our model and pixel-precise
+&quot;brush&quot; and &quot;eraser&quot; editing tools. This procedure resulted
+in pairs of automatically predicted and professionally cor-
+rected masks. We computed IoU between each pair and
+found that 94% of pairs have greater than 90% IoU (and
+97% of pairs have greater than 75% IoU). For comparison,
+prior work estimates inter-annotator consistency at 85-91%
+IoU [44, 60]. Our experiments in §7 confirm by human rat-
+ings that mask quality is high relative to a variety of datasets
+and that training our model on automatic masks is nearly as
+good as using all masks produced by the data engine.
+6
+SA-1B
+11M images
+1129M (1.1B) masks
+LVIS v1
+0.120M images
+1.5M masks
+COCO
+0.123M images
+0.9M masks
+ADE20K
+0.028M images
+0.7M masks
+Open Images
+1M images
+2.7M masks
+&lt;10 11-50 51-100 101-200 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In this section, we presentzero-shot transferexperiments
+with SAM, the Segment Anything Model. We consider five
+tasks, four of which differ significantly from the promptable
+segmentation task used to train SAM. These experiments
+evaluate SAM on datasets and tasks that were not seen dur-
+ing training (our usage of &quot;zero-shot transfer&quot; follows its
+usage in CLIP [82]). The datasets may include novel image
+distributions, such as underwater or ego-centric images (e.g.
+Fig. 8) that, to our knowledge, do not appear in SA-1B.
+Our experiments begin by testing the core goal of
+promptable segmentation: producing a valid mask from any
+prompt. We emphasize the challenging scenario of a single
+foreground point prompt, since it is more likely to be am-
+biguous than other more specific prompts. Next, we present
+a sequence of experiments that traverse low, mid, and high-
+level image understanding and </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>compare mainly to RITM [92],
+a strong interactive segmenter that performs best on our
+benchmark compared to other strong baselines [67, 18].
+Datasets. We use a newly compiled suite of 23 datasets
+with diverse image distributions. Fig. 8 lists the datasets
+and shows a sample from each one (see appendix Table 7 for
+more details). We use all 23 datasets for mIoU evaluation.
+For the human study, we use the subset listed in Fig. 9b
+(due to the resource requirements of such studies). This
+subset includes both datasets for which SAM outperforms
+and underperforms RITM according to automatic metrics.
+8
+ADE20K [117] BBBC038v1 [12] Cityscapes [25] DOORS [80] DRAM [24] EgoHOS [113] GTEA [34, 63] Hypersim [86]
+IBD [17] iShape [111] LVIS [44] NDD20 [100] NDISPark [22, 23] OVIS [81] PPDLS [74] Plittersdorf [46]
+STREETS [91] TimberSeg [38] TrashCan [52] VISOR [28, 27] WoodScape [112] PIDRay [104] </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>use
+the ground truth mask center as the prompt. (c, d) mIoU with varying number of points. SAM significantly outperforms prior
+interactive segmenters with 1 point and is on par with more points. Low absolute mIoU at 1 point is the result of ambiguity.
+Results. First, we look at automatic evaluation on the full
+suite of 23 datasets using mIoU. We compare per-dataset
+results in Fig. 9a against RITM. SAM yields higher re-
+sults on 16 of the 23 datasets, by as much as ∼47 IoU. We
+also present an &quot;oracle&quot; result, in which the most relevant
+of SAM&#x27;s 3 masks is selected by comparing them to the
+ground truth, rather than selecting the most confident mask.
+This reveals the impact of ambiguity on automatic evalu-
+ation. In particular, with the oracle to perform ambiguity
+resolution, SAM outperforms RITM on all datasets.
+Results of the human study are presented in Fig. 9b. Er-
+ror bars are 95% </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>confidence intervals for mean mask rat-
+ings (all differences are significant; see §E for details). We
+observe that the annotators consistently rate the quality of
+SAM&#x27;s masks substantially higher than the strongest base-
+line, RITM. An ablated, &quot;ambiguity-unaware&quot; version of
+SAM with a single output mask has consistently lower rat-
+ings, though still higher than RITM. SAM&#x27;s mean ratings
+fall between 7 and 9, which corresponds to the qualitative
+rating guideline: &quot; A high score (7-9): The object is identi-
+fiable and errors are small and rare ( e.g., missing a small,
+heavily obscured disconnected component, ...). &quot; These re-
+sults indicate that SAM has learned to segment valid masks
+from a single point. Note that for datasets like DRAM and
+IBD, where SAM is worse on automatic metrics, it receives
+consistently higher ratings in the human study.
+Fig. 9c shows additional baselines, </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>.640 .580 -
+Felz-Hutt [35] 2004 .610 .640 .560 -
+SAM 2023 .768 .786 .794 .928
+Table 3: Zero-shot transfer to edge detection on BSDS500.</blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Approach. Next, we evaluate SAM on the mid-level task
+of object proposal generation [2, 102]. This task has played
+an important role in object detection research, serving as an
+mask AR@1000
+method all small med. large freq. com. rare
+ViTDet-H [62] 63.0 51.7 80.8 87.0 63.1 63.3 58.3
+zero-shot transfer methods:
+SAM – single out. 54.9 42.8 76.7 74.4 54.7 59.8 62.0
+SAM 59.3 45.5 81.6 86.9 59.1 63.9 65.8
+Table 4: Object proposal generation on LVIS v1. SAM is
+applied zero-shot, i.e. it was not trained for object proposal
+generation nor did it access LVIS images or annotations.
+intermediate step in pioneering systems (e.g., [102, 41, 84]).
+To generate object proposals, we run a slightly modified
+version of our automatic mask generation pipeline and out-
+put the masks as proposals (see §D.3 for details).
+We compute the standard average recall (AR) metric on
+LVIS v1 [44]. We focus on LVIS </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>COCO [66] LVIS v1 [44]
+method AP AP S APM APL AP AP S APM APL
+ViTDet-H [62] 51.0 32.0 54.3 68.9 46.6 35.0 58.0 66.3
+zero-shot transfer methods (segmentation module only):
+SAM 46.5 30.8 51.0 61.7 44.7 32.5 57.6 65.5
+Table 5: Instance segmentation results. SAM is prompted
+with ViTDet boxes to do zero-shot segmentation. The fully-
+supervised ViTDet outperforms SAM, but the gap shrinks
+on the higher-quality LVIS masks. Interestingly, SAM out-
+performs ViTDet according to human ratings (see Fig. 11).
+1 2 3 4 5 6 7 8 9 10
+Mask quality rating
+0
+20
+40Percent of ratings
+8.6 ± 0.06, LVIS GT
+8.1 ± 0.07, SAM
+7.9 ± 0.08, ViTDet-H
+7.6 ± 0.12, COCO GT
+Figure 11: Mask quality rating distribution from our human
+study for ViTDet and SAM, both applied to LVIS ground
+truth boxes. We also report LVIS and COCO ground truth
+quality. The legend shows rating means and 95% confi-
+dence intervals. Despite its </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>lower AP (Table 5), SAM has
+higher ratings than ViTDet, suggesting that ViTDet exploits
+biases in the COCO and LVIS training data.
+We hypothesize that on COCO, where the mask AP gap
+is larger and the ground truth quality is relatively low (as
+borne out by the human study), ViTDet learns the specific
+biases of COCO masks. SAM, being a zero-shot method,
+is unable to exploit these (generally undesirable) biases.
+The LVIS dataset has higher quality ground truth, but there
+are still specific idiosyncrasies ( e.g., masks do not contain
+holes, they are simple polygons by construction) and biases
+for modal vs. amodal masks. Again, SAM is not trained to
+learn these biases, while ViTDet can exploit them.</blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>setup complicates
+training. We therefore tested a fourth setup that uses only
+the automatically generated masks. With this data, SAM
+performs only marginally lower than using all data ( ∼0.5
+mIoU). Therefore, by default we use only the automatically
+generated masks to simplify the training setup.
+In Fig. 13 (middle) we look at the impact of data volume.
+The full SA-1B contains 11M images, which we uniformly
+subsample to 1M and 0.1M for this ablation. At 0.1M im-
+ages, we observe a large mIoU decline under all settings.
+However, with 1M images, about 10% of the full dataset,
+we observe results comparable to using the full dataset.
+This data regime, which still includes approximately 100M
+masks, may be a practical setting for many use cases.
+11
+manual + semi
+automatic
++ automatic automatic
+only
+Training data stages
+50
+60
+70mIoU (23 datasets)
+1 point (oracle)
+1 point
+0.1M 1M 11M
+Training </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>wearable
+device, enabling new applications. Thanks to SAM&#x27;s abil-
+ity to generalize to new domains like ego-centric images,
+such systems work without need for additional training.
+Limitations. While SAM performs well in general, it is
+not perfect. It can miss fine structures, hallucinates small
+disconnected components at times, and does not produce
+boundaries as crisply as more computationally intensive
+methods that &quot;zoom-in&quot;, e.g. [18]. In general, we expect
+dedicated interactive segmentation methods to outperform
+SAM when many points are provided, e.g. [67]. Unlike
+these methods, SAM is designed for generality and breadth
+of use rather than high IoU interactive segmentation. More-
+over, SAM can process prompts in real-time, but neverthe-
+less SAM&#x27;s overall performance is not real-time when using
+a heavy image encoder. Our foray into the text-to-mask task
+is exploratory and not </blockquote></details></li><li><strong>Contribution clarity — page 24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>[100] 2e-86 (1.88, 2.37) 5e-08 (0.19, 0.55)
+OVIS [81] 2e-64 (1.38, 1.84) 3e-10 (0.27, 0.63)
+iShape [111] 2e-88 (1.97, 2.47) 7e-23 (0.65, 1.10)
+box input (ViTDet-H [62] baseline):
+LVIS v1 [44] 2e-05 (0.11, 0.42) N/A N/A
+Table 8: Statistical tests showing significance that SAM has
+higher mask quality ratings than baseline and single-output
+SAM. P-values are calculated by paired t-test, while confi-
+dence intervals for the difference in mean scores are calcu-
+lated by paired bootstrap on 10k samples. All p-values are
+significant, and all confidence intervals exclude zero.
+Results. Fig. 18 shows histograms over ratings for each
+dataset in the single-point experiments. We run statistical
+tests for two hypotheses: (1) that SAM gets higher scores
+than the baseline model (RITM or ViTDet) and (2) that
+SAM gets higher scores than single-output SAM. P-values
+are calculated via a paired t-test on </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +432,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

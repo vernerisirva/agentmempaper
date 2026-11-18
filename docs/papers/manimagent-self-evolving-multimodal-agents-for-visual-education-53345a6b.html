@@ -59,16 +59,147 @@
             <p>Multi-round reflection lets agents built on large language models recover from failures within a single task, but each task remains an isolated episode: lessons learned across many reflection rounds on one task are discarded before the next begins. We study this gap on a code-generation task: from a scientific paper...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>AI assessment inconclusive</h2>
+      <p>Although the method is clearly described and thoughtfully architected to isolate memory growth from prompt formatting and task ordering, the headline empirical validation relies on a human study whose inter-rater reliability entirely collapsed (Fleiss&#x27; kappa = -0.01, ICCs near zero or negative). Because the independent corroboration lacks statistical reliability and raw data cannot be audited, scientific uncertainty precludes promotion.</p>
+      <p>The authors transparently report that VLM-human correlation is weak or negative (Pearson r = -0.17) and that human inter-rater reliability is below acceptable thresholds, alongside evaluating only on Manim across limited domains.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-18T12:40:36.673118+00:00.</p>
+        <p>Coverage: 100664 of 100664 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>freeze snapshots
+of different sizes. Each snapshot is evaluated on the same disjoint probe tasks in read-only mode, so
+probe outputs cannot be written back to memory and task order cannot explain differences between
+conditions (§4.3). Because the same VLM both scores rendered keyframes and gates memory writes,
+using VLM scores as the headline metric would risk evaluator leakage (the reward model is also
+the judge, so the system could appear to improve simply by drifting toward the preferences of the
+VLM). We therefore use blind human judgement of first-attempt videos together with reflection
+rounds as the headline evidence, and report VLM scores only as auxiliary diagnostics (§4.5).
+This work makes three contributions.
+• We proposeManimAgent, a self-evolving multi-agent system that narrows the inter-task gap
+with a VLM reward source and a dual-channel EMB, with no weight updates (§3).
+• </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>3.65
+Random EMB Shuffled EMB content, matched count and budget 69.6 11.3 3.42
+EMB@0 Empty self-grown memory 62.0 12.2 3.26
+EMB@50 50-entry self-grown EMB snapshot 66.7 11.3 3.31
+EMB@100 100-entry self-grown EMB snapshot 75.0 10.8 3.43
+EMB@200 (= Full EMB) 200-entry EMB snapshot, both channels gated84.9 6.5 3.88
+(a) Memory channels—which polarity carries the signal?
+Noℳ+ (success) Retrieve only failure memories 70.0 12.0 3.40
+Noℳ− (failure) Retrieve only success memories 80.9 11.6 3.52
+No memory Disable both memory channels 61.8 12.2 3.20
+(b) Memory content and retrieval—what gets stored and looked up?
+Rationale-onlyℳ+ Drop code excerpt from positive injection 75.0 10.5 3.50
+Ungatedℳ− Store every diagnostic, no improvement gate 81.8 8.4 3.64
+Top-1retrieval One neighbour per channel (𝑘 +=𝑘−=1) 81.0 9.9 3.84
+(c) Reviewer and static-corpus controls—gains beyond reward and retrieval per </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>se
+Weak VLM Step-3.7-Flash replaces the GPT-5.5 reviewer 80.0 8.6 3.42
+RAG (doc only) Manim docs only, matched budget 82.1 11.5 3.57
+Table 1. Headline conditions and ablations on the fixed-probe set share a single human-scoring protocol.
+The top block reports the seven headline conditions used in §4.3; EMB@200 (= Full EMB) is best on all three
+metrics and the only condition that improves over Manim-code RAG on all three headline metrics. The lower
+three blocks ablate Full EMB: (a) isolates the contribution of each polarity, (b) stresses the consolidation
+pipeline (rationale vs. code, gate stringency, retrieval depth), and (c) separates EMB gains from reviewer
+strength and from a static documentation-only retrieval corpus. RAG (doc + code) is identical to the headline
+&quot;Manim-code RAG&quot; row and not repeated.
+fixed-probe protocol of §4.3, which evaluates the same snapshot multiple times. At </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>frozen EMB snapshot at𝐾∈{0,50,100,200} on each of the three headline metrics; horizontal
+references are Manim-code RAG (dashed red), Random EMB (dash-dot orange), and VLM-only (dotted grey).
+For Human Pass@1 and Human quality, the EMB curve is above the Manim-code RAG reference at𝐾=200;
+for reflection rounds (lower is better), the corresponding point estimate is substantially lower.
+do not use VLM scores as the primary evidence. Instead, the headline metrics are blind human
+judgements on first-attempt outputs and the reflection rounds of the system; ablations on channel
+isolation, write gates, retrieval depth, and VLM–human agreement address mechanism and reward
+reliability.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>singleManimscene.
+Humanevaluation.54blindraterssupplyabinaryusabilitydecisionandfive1–5Likertscores(Likert,
+1932)perfirst-attemptvideoacross25auditedfixed-probetasks. Agreementislow: Fleiss&#x27; 𝜅=−0.01
+for binary usability, with59.4% full agreement (Fleiss, 1971), and the five Likert-dimension ICCs
+are 0.24, 0.00, 0.10, 0.33, and−0.09 (Shrout and Fleiss, 1979). We retain all blind ratings without
+exclusion, majority voting, or post hoc adjudication. Recruitment, protocol, and agreement details
+are in Appendix H.
+Metrics.We reportHuman Pass@1, the fraction of first-attempt videos judged by blind raters as
+usablepaper-sectionanimations;reflectionrounds,thesumoftext-reviewerretriesandVLM-driven
+visual revisions; andHuman quality, the mean of five 1–5 human rating dimensions: visual design,
+key-claim coverage, visual robustness, animation flow, and first-attempt usability. VLM scores </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>For each frozen snapshot, we run the identical fixed-probe set with the same model, renderer,
+reflection budget, decoding parameters, and human-scoring protocol. The fixed-probe design
+controls for task order, test-time learning, and prompt-length effects; the Manim-code RAG and
+RandomEMBbaselinesmaketheretrievalcomparisonstricter. TheheadlineblockofTable1reports
+the seven evaluated conditions and Figure 3 visualises the EMB snapshot trends against the three
+reference baselines.
+The descriptive point estimates for EMB@𝐾 move monotonically on all three metrics (Figure 3,
+Table 1): Pass@1 rises 62.0→84.9, quality 3.26→3.88, and reflection rounds drop 12.2→6.5 from
+EMB@0 to EMB@200. Relative to Manim-code RAG, EMB@200 has slightly higher point estimates
+on both human metrics and a substantially lower reflection-round estimate (6.5 vs. 11.4); Random
+EMB rules out generic </blockquote></details></li><li><strong>Contribution clarity — pages 10–11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The VLM that drives revision and gates writes is a noisy internal signal; VLM–human agreement on
+the paired probe subset (𝑛=37 videos) is weak (Pearson𝑟=−0.17 , Spearman𝜌=−0.20 , Cohen&#x27;s
+𝜅=−0.07 (Cohen, 1960); Appendix I). Per-task cost is an estimated 36–38K LLM and 20–23K VLM
+tokens over 19–31 min, and Figure 5 shows EMB@200 on the cost–quality Pareto frontier under a
+10
+EMNLP 2026 ManimAgent: Self-Evolving Multimodal Agents for Visual Education
+10 15 20 25 30 35
+Per-task wall-clock (minutes)
+3.2
+3.4
+3.6
+3.8
+4.0Human quality (1--5)
+Hand-drawn Pareto guide
+Baselines
+EMB@K
+VLM-only
+Manim-code RAG
+Random EMB
+EMB@0
+EMB@100
+EMB@200
+Figure 5. EMB@200 sits on the cost–quality Pareto frontier.Each marker is a condition;𝑥 is per-task
+wall-clock from Table 13,𝑦 is Human quality from Table 1. EMB@200 trades 4 additional minutes over
+Manim-code RAG for a+0.23 gain on Human quality while </blockquote></details></li><li><strong>Contribution clarity — page 26</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>score
+Key-claim coverage mean score
+Visual robustness mean score
+Animation flow mean score
+First-attempt usability mean score
+Human quality mean of five dimensions
+Fatal issue flags frequency
+Table 8. Human scoring combines a binary item, five Likert dimensions, and fatal flags.Each rating
+includes a binary usability judgement, dimensional ratings, and optional fatal-issue flags.
+static presentation, excessive text, broken or unplayable output, and other. An optional free-text
+note records additional observations; selecting other requires such a description.
+Inter-rater agreement.Fleiss&#x27; 𝜅 for binary usability votes is−0.01, and binary full agreement is
+59.4%. Intraclass correlation (ICC) for the five Likert dimensions is low across all dimensions:
+visual_design=0.24, key_claim_coverage=0.00, visual_robustness=0.10, animation_flow=0.33,
+andfirst_attempt_usability =−0.09. </blockquote></details></li><li><strong>Contribution clarity — pages 26–27</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Alldimensionsfallbelowcommonreliabilitythresholds( 𝜅≥0.4,
+ICC≥0.5), reflecting the subjective nature of animation quality assessment and the disciplinary
+diversity of the rater pool. We retain all independent blind ratings without exclusion, majority
+voting,orposthocadjudication. Becausetheoriginalrater–video-levelrecordsweredeletedafterthe
+14-day retention period, condition-specific denominators and paired uncertainty intervals cannot be
+reliably reconstructed from the retained aggregate results.
+26
+EMNLP 2026 ManimAgent: Self-Evolving Multimodal Agents for Visual Education
+Dimension What the VLM evaluates
+Logical Flow Whethersceneorderingfollowsthepedagogicalnarrativeandanimation
+transitions are not abrupt.
+Layout / Occlusion Whether elements overlap, exceed the canvas, or are hidden behind
+formulae.
+Accuracy Whether formulae are correct and the visualisation does not </blockquote></details></li><li><strong>Contribution clarity — pages 27–28</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reward
+model but cannot eliminate reviewer blind spots shared across VLM variants.
+27
+EMNLP 2026 Wenjia Jiang et al.
+Agreement statistic Value
+Pearson𝑟(VLM aggregate vs. Human quality)−0.17
+Spearman𝜌(VLM aggregate vs. Human quality)−0.20
+Agreement rate (VLM pass/fail vs. Human Pass@1) 0.49
+Cohen&#x27;s𝜅(VLM pass/fail vs. Human Pass@1)−0.07
+Table 10. VLM scores are not reliable headline evaluation evidence.On 37 paired videos, agreement
+with blind human ratings is weak or slightly negative; VLM scores are therefore used only as an internal
+repair/write signal.
+Componentℳ + (success)ℳ − (failure)
+context (shared)𝑠,𝑟,𝑑, paper id, section id
+provenance (shared) run id, scene id, source, ordinal, before/after scores
+body rationale, final code, frame hash trigger, root cause, fix recipe, anti/-
+good example, diagnostic
+injectas Reference Examples (soft) Known Pitfalls (hard)
+write condition best </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +238,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

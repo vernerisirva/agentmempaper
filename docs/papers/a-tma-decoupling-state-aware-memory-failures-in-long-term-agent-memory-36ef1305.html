@@ -59,16 +59,220 @@
             <p>Long term memory lets LLM agents act as persistent assistants, but user facts change. A useful memory system must know what is true now, what used to be true, and what changed. We study \emph{ghost memory}, a state coordination failure in which old, current, and transition facts coexist in the memory bank, remain mi...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>AI assessment inconclusive</h2>
+      <p>The manuscript presents a conceptually clear and practically impactful diagnostic formulation of state coordination in agent memory, backed by solid experimental controls, explicit architecture definitions, and honest reporting of mixed benchmark outcomes.</p>
+      <p>The study transparently documents boundaries: A-TMA cannot recover records never ingested by the host substrate, component ablations show modest variations on certain hosts, and generalization is host-dependent.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-19T12:30:14.975739+00:00.</p>
+        <p>Coverage: 79467 of 79467 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Long term memory lets LLM agents act as persistent assistants, but user facts
+change. The central question is not only whether a fact can be remembered, but
+whether the system can answer from the state the user is asking about: what is
+true now, what used to be true, and what changed. We studyghost memory, a
+state coordination failure in which old, current, and transition facts coexist in the
+memory bank, remain mixed during retrieval, and mislead the answer model. The
+challenge is that simple deletion loses history, while timestamps or relevance scores
+alone do not expose which fact should be live for a given query. We therefore argue
+for decoupled memory evaluation at three levels: bank maintenance, retrieval, and
+answer time resolution. We propose A-TMA, a state aware overlay for existing
+memory systems that keeps superseded and transition records, builds evidence
+packets for the </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>requested state view, and exposes current, historical, and transition
+labels to QA. To make this failure measurable, we build LTP (LoCoMo Temporal
+Plus), a conflict heavy benchmark for ghost memory, and evaluate on LoCoMo
+for long conversation generalization. On LTP, Graphiti/Zep +A-TMA improves
+conflict accuracy by 0.240 absolute over Graphiti/Zep. On LoCoMo, Graphiti/Zep
++A-TMA raises temporal F1 from 0.0295 to 0.1705. The gains are host dependent,
+but they indicate that explicit state roles can reduce memory failures hidden by
+final QA accuracy.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>live by default. At the retrieval
+level, A-TMA infers the query state view and builds a state aligned evidence packet from host retrieval
+results, state metadata, relation expansion, and bounded controller ranking. At the QA level, A-TMA
+serializes evidence with labels such as current memory, historical memory, transition memory, and
+transition linked memory, then asks the answer model to resolve the state requested by the query.
+We evaluate A-TMA on two benchmark settings. We build LTP (LoCoMo Temporal Plus) as a
+conflict heavy benchmark for ghost memory, with 10 profiles and 800 probes. LoCoMo [20] tests
+long conversation generalization over 10 samples and 1,986 QA pairs. On LTP, Graphiti/Zep +A-
+TMA improves conflict accuracy by 0.240 absolute, from 0.480 to 0.720. On LoCoMo, Graphiti/Zep
++A-TMA raises temporal F1 from 0.0295 to 0.1705 and improves average F1 from 0.0809 to </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.1556.
+The gains are host and metric dependent, with the clearest benefit when the host exposes enough
+evidence but does not align bank state, retrieval state, and answer state by itself. Our contributions are:
+• We formulate state changing long term memory as a three level problem over memory bank,
+retrieval, and QA, which separates failures hidden by final answer accuracy.
+• We identify ghost memory as a state coordination failure where old, current, and transition facts
+remain mixed unless their roles are preserved and exposed.
+• We introduce A-TMA, an overlay that maintains supersession structure, builds state aligned
+evidence packets, and conditions QA on explicit evidence state labels.
+• We construct LTP (LoCoMo Temporal Plus) as a conflict heavy benchmark and evaluate A-TMA
+on LTP and LoCoMo, with host dependent gains on conflict aware and temporal queries.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>SentenceTransformer encoder
+and two normalized projection heads. The topic head preserves semantic slot identity, while the logic
+head exposes stance compatibility. For a textx, Sentry computes
+hx =ϕ θ(x),
+ztopx = norm2(gtop(hx)), z logx = norm2(glog(hx)). (2)
+Lets v(i, j) =
+D
+zvxi , zvxj
+E
+. The pair metrics are then computed as
+aij =s top(i, j), bij =s log(i, j), dij = gap(aij, bij). (3)
+Here aij measures topic agreement, bij measures logical compatibility, and dij is the implementation
+gap score used by the detector. A candidate is routed to the Judge when it is topically close and
+logically suspicious:
+Aj ={i∈ Pj :a ij &gt; τtop
+∧(b ij &lt; τlog ∨d ij &gt; τgap)}. (4)
+This rule proposes candidates rather than committing relations. Pure semantic similarity can over
+select records that mention the same entity without changing state. Pure contradiction detection
+can miss gradual updates. Sentry </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>splits interactions into train, validation, and test partitions by conflict type, optimizes the
+batch loss with AdamW, saves every epoch, and selects the deployed checkpoint by validation loss:
+Θ⋆sentry = arg minΘe Lvalsentry(Θe),
+Θe ={θ, Wtop1 , Wtop2 , Wlog1 , Wlog2 }. (7)
+Judge audit and commit.The selected Sentry checkpoint becomes the lightweight proposal gate in
+the bank update path. The heavier Judge is trained separately to produce structured audit decisions
+through supervised warm up and reward based optimization for verdict format, correctness, old state
+preservation, and transition summaries. For each suspicious pair in Aj, the Judge receives the old
+record, the new input, and Sentry metrics. It returns a conflict status, conflict type, fusion action,
+optional clarification needs, and suggested links.
+If the new record supersedes an active record in the same slot, the commit </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>state labels,
+builds evidence packets for the requested state view, and exposes current, historical, and transition
+evidence to the answer model. Unless otherwise stated, QA uses qwen2.5:3b, retrieval uses top
+k= 5, and the answer judge is a separate llama3.3:70b service. For LTP, we report Acc, conflict
+and fact splits, average judge score, Evidence support, and Bank role. For LoCoMo, we report F1,
+BLEU-1 [36], and LoCoMo-specific judged QA accuracy where the full judged run is complete.
+Appendix A gives the evaluation details.
+Evaluation Protocol.We report LTP at three levels. Bank role checks whether the final bank exposes
+a method native state role signal for the matched current and old values. The signal can be an explicit
+status, a supersession or transition link, or a usable temporal order depending on the host interface.
+Evidence support checks whether retrieved evidence </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 2 reports the full LTP results. Bank role is personalized to each bank interface: temporal and
+graph based methods can receive credit when their stored records expose a usable ordering or link
+between the old and current values, while systems without a matched role signal receive no credit.
+This makes the bank result diagnostic rather than a direct proxy for final QA quality. Several methods
+expose state-role cues in the bank, but only some retrieve and use them correctly. A-Mem+A-TMA
+reaches the strongest aggregate Acc at 0.818 over 800 probes and improves the conflict split from
+0.812 to 0.860, while A-Mem remains slightly higher on judge score.
+Larger gains appear on hosts with weaker state view alignment. InsideOut+A-TMA improves Acc
+from 0.117 to 0.662. This large gain is expected under LTP because InsideOut compresses dialogue
+into an evolving user profile, which can weaken </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>deltas show
+the absolute change from its base method.
+Modeled Levels Bank Level Retrieve Level QA Level Avg.Method Bank Ret. QA N Bank coexist Bank role Evidence support QA Acc. Conflict Fact Judge Acc. Rank
+Mem0 ✗ ✗ ✗ 800 0.007 0.000 0.302 0.188 0.258 0.117 0.174 10.64
+AtomMem ✗ ✗ ✗ 800 1.0000.000 0.539 0.381 0.522 0.240 0.311 8.14
+SeCom ✗ ✗ ✗ 800 0.990 0.000 0.864 0.655 0.733 0.578 0.564 5.07
+MemoryLLM ✗ ✗ ✗ 800 1.0000.000 0.511 0.400 0.487 0.312 0.339 8.43
+M+ ✗ ✗ ✗ 800 1.0000.000 0.527 0.409 0.490 0.328 0.347 7.71
+AriadneMem ✓ ✓ ✗ 800 1.0000.000 0.656 0.453 0.512 0.393 0.381 6.86
+A-Mem ✓ ✓ ✗ 800 1.0000.568 0.916 0.787 0.812 0.762 0.700 2.36
+A-Mem+A-TMA ✓ ✓ ✓ 800 1.000↑0.000 0.825↑0.257 0.925↑0.009 0.818↑0.031 0.860↑0.048 0.775↑0.013 0.698↓0.002 1.79
+Graphiti/Zep ✓ ✓ ✗ 800 1.0000.000 0.711 0.524 0.480 0.568 0.473 6.57
+Graphiti/Zep +A-TMA ✓ ✓ ✓ 800 1.000↑0.000 0.775↑0.775 0.809↑0.098 </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.635↑0.111 0.720↑0.240 0.550↓0.018 0.559↑0.086 5.43
+InsideOut ✓ ✗ ✗ 800 1.0000.000 0.239 0.117 0.175 0.060 0.115 10.43
+InsideOut+A-TMA ✓ ✓ ✓ 800 1.000↑0.000 0.000↑0.000 0.848↑0.609 0.662↑0.545 0.680↑0.505 0.645↑0.585 0.561↑0.446 4.57
+Table 3: Full LoCoMo evaluation on single hop, temporal, and open domain questions. Metrics are F1, BLEU-1,
+and judged QA accuracy; colored deltas compare +A-TMA with base rows.
+Single hop Temporal Open domainMethod F1 BLEU-1 QA Acc. F1 BLEU-1 QA Acc. F1 BLEU-1 QA Acc.
+Mem0 0.0462 0.03450.5638 0.0173 0.01110.7445 0.0686 0.0529 0.4271
+AtomMem 0.0972 0.0332 0.1454 0.0167 0.0093 0.0561 0.0637 0.0421 0.1979
+SeCom 0.1325 0.1039 0.1773 0.0536 0.0388 0.1184 0.0680 0.0486 0.2083
+MemoryLLM 0.0973 0.0753 0.1206 0.1530 0.1157 0.1495 0.0953 0.0684 0.2292
+M+ 0.1009 0.0812 0.1241 0.1527 0.1148 0.1682 0.0963 0.0699 0.1979
+AriadneMem 0.2663 0.22270.1667 0.1242 0.1047 </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.3240 0.2004 0.17260.1979
+A-Mem 0.1176 0.1004 0.4314 0.1429 0.1037 0.1967 0.0229 0.0081 0.3333
+A-Mem+A-TMA 0.1191↑0.002 0.1214↑0.021 0.4314↑0.000 0.1493↑0.006 0.1047↑0.001 0.3279↑0.131 0.0385↑0.016 0.0207↑0.013 0.4286↑0.095
+Graphiti/Zep 0.1051 0.0888 0.2482 0.0295 0.0200 0.3707 0.0941 0.0757 0.3333
+Graphiti/Zep +A-TMA 0.1060↑0.001 0.0869↓0.002 0.3440 0.1705↑0.141 0.1268↑0.107 0.3178 0.0906↓0.004 0.0646↓0.011 0.3958
+InsideOut 0.0737 0.0548 0.3404 0.0117 0.0089 0.2212 0.0902 0.0725 0.3229
+InsideOut+A-TMA 0.1158↑0.042 0.0831↑0.028 0.1738 0.0510↑0.039 0.0356↑0.027 0.1900 0.0951↑0.005 0.0720↓0.001 0.2708
+Table 4: Full LoCoMo evaluation continued, with multi hop, adversarial, and average scores. Rank averages the
+three average metrics, with lower better.
+Multi hop Adversarial AverageMethod F1 BLEU-1 Judge Acc. F1 BLEU-1 Judge Acc. F1 BLEU-1 Judge Acc. Rank
+Mem0 0.0375 0.0264 0.5065 0.0045 </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.00450.5919 0.0296 0.02140.56858.33
+AtomMem 0.0887 0.0513 0.4257 0.0448 0.0448 0.3924 0.0672 0.0401 0.3077 10.33
+SeCom 0.2809 0.2047 0.6266 0.0112 0.0112 0.3700 0.1523 0.1126 0.4028 3.67
+MemoryLLM 0.1977 0.1461 0.4090 0.0336 0.0336 0.3946 0.1344 0.1021 0.3142 7.67
+M+ 0.1987 0.1464 0.4102 0.0314 0.0314 0.4260 0.1349 0.1025 0.3238 6.67
+AriadneMem 0.3540 0.30900.3389 0.0291 0.0291 0.1570 0.2240 0.19430.2644 4.67
+A-Mem 0.2179 0.1592 0.5858 0.0247 0.0247 0.4938 0.1411 0.1058 0.4700 4.33
+A-Mem+A-TMA 0.2136↓0.004 0.1510↓0.008 0.5740↓0.012 0.0494↑0.025 0.0494↑0.025 0.5432↑0.049 0.1464↑0.005 0.1110↑0.005 0.5013↑0.031 3.33
+Graphiti/Zep 0.1231 0.0951 0.3924 0.0202 0.0202 0.4596 0.0809 0.0643 0.3807 8.00
+Graphiti/Zep +A-TMA 0.2398↑0.117 0.1801↑0.085 0.5874 0.0314↑0.011 0.0314↑0.011 0.4193 0.1556↑0.075 0.1193↑0.055 0.4622 2.67
+InsideOut 0.0554 0.0381 0.3187 0.0135 0.0135 0.3498 0.0432 0.0319 0.3132 </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Tables 3 and 4 report only full LoCoMo rows across single hop, temporal, open domain, multi hop,
+adversarial, and average scores. AriadneMem has the strongest average F1 and BLEU-1. A-TMA
+effects are host and metric dependent: Graphiti/Zep +A-TMA raises temporal F1 from 0.0295 to
+0.1705 and average F1 from 0.0809 to 0.1556, while A-Mem+A-TMA remains close to A-Mem but
+11
+is slightly lower on average F1 and BLEU-1. We therefore use LoCoMo as a mixed generalization
+check, not as evidence of uniform improvement. Appendix A.10 gives a three profile diagnostic
+ablation alongside the full benchmark results in Tables 2–4.</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We presented A-TMA, a tri level state aware framework for long term agent memory under changing
+user states. A-TMA separates memory bank maintenance, state aware retrieval, and answer time
+evidence resolution. This separation makes ghost memory measurable rather than treating it as a
+single end to end QA failure.
+The full LTP results support a bounded conclusion. A-TMA preserves strong A-Mem performance
+and improves its conflict split. It gives larger gains for hosts whose retrieval and answer layers are
+less state aligned. Full LoCoMo results are mixed by host and metric, so they support cautious
+generalization rather than a universal improvement claim. Future agent memory evaluations should
+report not only whether an answer is correct, but also which memory layer made the answer possible
+or caused it to fail.</blockquote></details></li><li><strong>Contribution clarity — pages 16–17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Because the main tables use llama3.3:70b as an offline answer judge, we audit a random 100
+output sample with human verification. The audit contains 50 LTP outputs and 50 LoCoMo outputs,
+sampled to cover base and +A-TMA rows and the judge&#x27;s three labels: correct, partially correct, and
+incorrect. The human sheet hides the method name, source file, and 70B label. The annotator sees
+only the dataset, question, gold answer, alternate answer when present, model response, and retrieved
+evidence. Labels use the same three way rubric as the table judge, with semantic equivalence allowed
+for wording and date formats.
+Scope N 3-way agree. 3-wayκBinaryκ
+All outputs 100 80.0% 0.699 0.847
+LTP 50 88.0% 0.820 –
+LoCoMo 50 72.0% 0.578 –
+16
+The binary view maps correct and partially correct to acceptable and keeps incorrect separate. Under
+this view, the overall human–LLM agreement is 93.0% with Cohen&#x27;s </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>κ= 0.847 . The remaining
+disagreements are concentrated around partial credit boundaries, especially relative time expressions
+in LoCoMo and answers that recover the main entity but omit a required qualifier. We therefore use
+the 70B judge as a reliable coarse answer correctness audit while treating fine grained partial credit
+as the noisier part of the evaluation.</blockquote></details></li><li><strong>Contribution clarity — page 18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>validation loss. The active H200 setup uses the resulting Sentry
+checkpoint in theatma-assetsdirectory.
+Audit Judge.There are two Judge surfaces in the codebase. The ATMA bank update path uses a
+compact audit model, while the tables use a separate 70B answer judge for evaluation. The audit
+Judge is based on Qwen/Qwen2.5-3B-Instruct. It is first warmed up with QLoRA SFT using
+CoT samples derived from interactions_v2.json and profiles_v2.json; the logged SFT run
+uses 700 English training items, reports train loss 0.6712 and eval loss 0.4039, and reaches 82.1%
+accuracy, precision 0.8551, recall 0.7763, and F1 0.8138 on the aligned 151 item held out set. The
+SFT script uses 4 bit NF4 quantization, LoRA rank 64, LoRA alpha 16, dropout 0.05, batch size 4,
+gradient accumulation 4, learning rate2×10 −4, and maximum sequence length 1024.
+The GRPO stage starts from the merged SFT checkpoint and </blockquote></details></li><li><strong>Contribution clarity — page 18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>uses the CoT training data in the v6
+format. Its default configuration uses LoRA rank 16, alpha 32, learning rate 2×10 −5, 200 steps,
+per device batch size 1, gradient accumulation 4, two generations per prompt, maximum completion
+length 400, and KL coefficient 0.04. The reward is rule based rather than learned. The format
+reward is discrete: 1.0 for a valid &lt;think&gt; block with the four required reasoning step labels, 0.5
+for valid tags without all step labels, and 0 otherwise. Other reward terms add or subtract fixed
+values for verdict correctness, implicit violation success, length, tag cohesion, conclusion conciseness,
+prompt echoing, old memory preservation, and transition summary quality. The logged GRPO run
+reaches 87.4% accuracy and F1 0.8774 on the same 151 item held out set, with implicit violation
+accuracy improving from 25.0% for SFT to 75.0%. The active H200 ablation manifest </blockquote></details></li><li><strong>Contribution clarity — page 18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>records
+qwen3b-grpo-v6 as both the audit model and retrieve controller model. The reported table judge is
+insteadllama3.3:70b; it is not the model used to write ATMA bank metadata.
+Query profiler.The query profiler is rule based. It counts lexical hints for historical state, current
+state, and change state. Change wins when change hints dominate, or when both old and current hints
+appear. Otherwise the profiler returns historical, current, or neutral by the larger hint count. It also
+records three boolean guards for negation, scope, and update wording. These features are passed to
+retrieval control and trace logging; no learned classifier or LLM call is used for query profiling.
+Retrieve controller.The retrieve controller uses qwen3b-grpo-v6 by default through the Ol-
+lama/OpenAI compatible endpoint. The controller sees only a bounded shortlist from the candidate
+pool: at most 10 rows, </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 5 reports a matched component ablation on LTP Profiles 000–002. The run covers 120 state
+units and 240 probes. All variants use the same A-Mem host family, QA model, and 70B judge. The
+full overlay is competitive, while the best preferred accuracy and average judge score in this subset
+come from the variant without Sentry.
+For this component ablation, the bank column is the stricter ATMA-internal status diagnostic rather
+than the cross-method personalized scorer used in the full main table. All A-TMA bank variants reach
+the same score of 0.500 on this subset, while the A-Mem host row has no explicit status signal under
+that diagnostic. Because the A-TMA variants share the same bank-side value, the QA differences
+mainly isolate retrieval control and answer side labels once the controlled bank-side signal is held
+fixed.
+The ablation shows small and mixed component effects. Removing </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the retrieval controller lowers QA
+Acc. from 0.829 to 0.817, while evidence support stays at 0.917 and the average judge score remains
+close. Removing QA state labels changes the tradeoff rather than causing a uniform collapse: conflict
+accuracy rises to 0.858, but fact recall falls to 0.792. Removing Sentry gives the highest preferred
+accuracy at 0.588 and judge score at 0.719, suggesting that the lightweight bank proposal gate is not
+the bottleneck for these three profiles.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +311,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

@@ -26,7 +26,7 @@
   "last_seen_date": "2026-08-12",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-06 09:09:56",
   "notified_date": "2026-08-06",
@@ -37,7 +37,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-06 09:09:40",
-    "generated_at": "2026-11-18 12:42:46",
+    "generated_at": "2026-11-19 12:32:54",
     "last_seen_at": "2026-08-12 09:37:25",
     "metadata_sources": [
       "openalex",
@@ -102,84 +102,1284 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-08-12T09:39:13+00:00",
-    "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v1",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessed_at": "2026-11-19T12:29:57.602882+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 60/100, medium confidence, based on partial full text.",
-    "confidence": "medium",
-    "coverage": {},
-    "curation_note": null,
-    "dimension_scores": {
-      "contribution_clarity": 2,
-      "evaluation_or_validation_strength": 3,
-      "evidence_to_claim_alignment": 4,
-      "limitations_and_uncertainty_handling": 1,
-      "methodological_rigor": 3,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 3,
-      "reproducibility_and_transparency": 3,
-      "scholarly_novelty_or_value": 3
+    "concise_summary": "The manuscript makes a well-articulated, substantive systems and formal-methods contribution. The design choices are thoroughly justified, the implementation is evaluated across both synthetic scale benchmarks and a complex real-world scientific workflow, and theoretical boundaries and ongoing work are explicitly demarcated.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 37788,
+      "assessment_input_sha256": "99329a861e384b41dd64374898293b30aa120ec15f4f75272a2f07c7ce30fa76",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7201914628",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 37028,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 36790,
+      "evidence_block_count": 49,
+      "evidence_context_characters": 43362,
+      "evidence_context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+      "evidence_context_sha256": "1aabad9e780eff0cb8bcb07338cea4f0fc0863be22d6f63d557f643a412f4dba",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 37038,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "extracted_pages": 6,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "28881e3ff7c1aa37ca39105714696dd5b96b9f457ec2c2931b3c0b5d24479088",
+        "source_url": "https://arxiv.org/pdf/2608.04457",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 37028,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "section_roles_detected": [
+        "body",
+        "discussion",
+        "introduction",
+        "methods"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "discussion",
+        "introduction",
+        "methods"
+      ],
+      "sections": [
+        {
+          "heading": "Eigenius: A Typed Knowledge-Graph Dbms With Epistemic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 231,
+          "supplied_characters": 231
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1923,
+          "supplied_characters": 1923
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 3725,
+          "supplied_characters": 3725
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 11,
+          "supplied_characters": 11
+        },
+        {
+          "heading": "Pharos And The Agent Inversion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 1431,
+          "supplied_characters": 1431
+        },
+        {
+          "heading": "Data Model And Epistemic Stratification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 5074,
+          "supplied_characters": 5074
+        },
+        {
+          "heading": "Eigenius: A Typed Knowledge-Graph Dbms With Epistemic Stratification And Institution-Mediated Reasoning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1774,
+          "supplied_characters": 1774
+        },
+        {
+          "heading": "Institutions, Comorphisms, And Eigenql",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 3637,
+          "supplied_characters": 3637
+        },
+        {
+          "heading": "Institutions, Comorphisms, And Eigenql",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 4012,
+          "supplied_characters": 4012
+        },
+        {
+          "heading": "Formal Verification As A Database Invariant",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1871,
+          "supplied_characters": 1871
+        },
+        {
+          "heading": "Eigenius: A Typed Knowledge-Graph Dbms With Epistemic Stratification And Institution-Mediated Reasoning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1896,
+          "supplied_characters": 1896
+        },
+        {
+          "heading": "Implementation And Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 11,
+          "source_characters": 4246,
+          "supplied_characters": 4246
+        },
+        {
+          "heading": "Implementation And Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 12,
+          "source_characters": 11,
+          "supplied_characters": 11
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "discussion",
+          "section_index": 13,
+          "source_characters": 3032,
+          "supplied_characters": 3032
+        },
+        {
+          "heading": "This Work Builds On The Ideas Behind The Original Pharos Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 221,
+          "supplied_characters": 221
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 3695,
+          "supplied_characters": 3695
+        }
+      ],
+      "selected_characters": 36790,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "selected_sections": [
+        {
+          "characters": 231,
+          "heading": "Eigenius: A Typed Knowledge-Graph Dbms With Epistemic",
+          "page": 1
+        },
+        {
+          "characters": 1923,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 3725,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 11,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1431,
+          "heading": "Pharos And The Agent Inversion",
+          "page": 2
+        },
+        {
+          "characters": 5074,
+          "heading": "Data Model And Epistemic Stratification",
+          "page": 2
+        },
+        {
+          "characters": 1774,
+          "heading": "Eigenius: A Typed Knowledge-Graph Dbms With Epistemic Stratification And Institution-Mediated Reasoning",
+          "page": 3
+        },
+        {
+          "characters": 3637,
+          "heading": "Institutions, Comorphisms, And Eigenql",
+          "page": 3
+        },
+        {
+          "characters": 4012,
+          "heading": "Institutions, Comorphisms, And Eigenql",
+          "page": 4
+        },
+        {
+          "characters": 1871,
+          "heading": "Formal Verification As A Database Invariant",
+          "page": 4
+        },
+        {
+          "characters": 1896,
+          "heading": "Eigenius: A Typed Knowledge-Graph Dbms With Epistemic Stratification And Institution-Mediated Reasoning",
+          "page": 5
+        },
+        {
+          "characters": 4246,
+          "heading": "Implementation And Evaluation",
+          "page": 5
+        },
+        {
+          "characters": 11,
+          "heading": "Implementation And Evaluation",
+          "page": 6
+        },
+        {
+          "characters": 3032,
+          "heading": "Discussion",
+          "page": 6
+        },
+        {
+          "characters": 221,
+          "heading": "This Work Builds On The Ideas Behind The Original Pharos Research",
+          "page": 6
+        },
+        {
+          "characters": 3695,
+          "heading": "Unclassified body after references",
+          "page": 6
+        }
+      ],
+      "selected_text_sha256": "99329a861e384b41dd64374898293b30aa120ec15f4f75272a2f07c7ce30fa76",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "28881e3ff7c1aa37ca39105714696dd5b96b9f457ec2c2931b3c0b5d24479088",
+      "source_pages": 6,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
     },
+    "curation_note": null,
+    "dimension_scores": {},
     "downranked": false,
     "evidence": [
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "reproducibility_and_transparency",
-        "evidence_ids": [],
-        "excerpt": "codebase are available for inspection at https://github.com/eigenius/eigenius 1 arXiv:2608.04457v1 [cs.DB] 5 Aug 2026",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0007"
+        ],
+        "excerpt": "knowledge-\ngraph DBMS that revisits this architecture from the ground up,\nwith its kernel metatheory mechanized in Lean 4 [3]. A purpose-\nbuilt kernel\u2014wholly owning the type system, storage layer, and\nintegration protocol\u2014provides structural guarantees that a loosely\ncoupled stack cannot match: integrating dependent type theory,\ninstitutional proof calculi, and content-addressed storage turns the\naudit story into a structural invariant of the data model.\nContributions.\nC1.A self-describing typed-graph data model whose dependent\ntype theory (EigenTT, mechanized in Lean 4 [ 3]) compiles ontol-\nogy classes and constraints into record, refinement, and single-\nton types while keeping proof irrelevance axiomatic so distinct\nwarrants survive conversion for audit. Epistemic stratification (de-\nclared/observed/derived/verified) forms a bounded lattice over a\njustification logic, paired with an ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
         "page": 1,
-        "pages": [],
-        "paraphrase": "Code, data, or research artifacts are described as available.",
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
         "section": "Introduction",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "4ff85b7dcf8a75863bcf86a19d0f208c9eed4a6d1082ff154d3b0258223319ad",
+            "evidence_id": "Ece1e1f0bc03da03a-B0007",
+            "pages": [
+              1
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2690,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 1792,
+                "text": "knowledge-\ngraph DBMS that revisits this architecture from the ground up,\nwith its kernel metatheory mechanized in Lean 4 [3]. A purpose-\nbuilt kernel\u2014wholly owning the type system, storage layer, and\nintegration protocol\u2014provides structural guarantees that a loosely\ncoupled stack cannot match: integrating dependent type theory,\ninstitutional proof calculi, and content-addressed storage turns the\naudit story into a structural invariant of the data model.\nContributions.\nC1.A self-describing typed-graph data model whose dependent\ntype theory (EigenTT, mechanized in Lean 4 [ 3]) compiles ontol-\nogy classes and constraints into record, refinement, and single-\nton types while keeping proof irrelevance axiomatic so distinct\nwarrants survive conversion for audit. Epistemic stratification (de-\nclared/observed/derived/verified) forms a bounded lattice over a\njustification logic, paired with an "
+              }
+            ],
+            "text": "knowledge-\ngraph DBMS that revisits this architecture from the ground up,\nwith its kernel metatheory mechanized in Lean 4 [3]. A purpose-\nbuilt kernel\u2014wholly owning the type system, storage layer, and\nintegration protocol\u2014provides structural guarantees that a loosely\ncoupled stack cannot match: integrating dependent type theory,\ninstitutional proof calculi, and content-addressed storage turns the\naudit story into a structural invariant of the data model.\nContributions.\nC1.A self-describing typed-graph data model whose dependent\ntype theory (EigenTT, mechanized in Lean 4 [ 3]) compiles ontol-\nogy classes and constraints into record, refinement, and single-\nton types while keeping proof irrelevance axiomatic so distinct\nwarrants survive conversion for audit. Epistemic stratification (de-\nclared/observed/derived/verified) forms a bounded lattice over a\njustification logic, paired with an "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "methodological_rigor",
-        "evidence_ids": [],
-        "excerpt": "agent, a cryptographically secure, fully walkable proof chain is a load-bearing pillar. Formalizing this requires managing millions of",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0008"
+        ],
+        "excerpt": "in-process Lean 4 term checker\nwithout IPC overhead.\nC2.A three-level institutional protocol [ 3\u20135] generalizing the\nstored procedure to typed knowledge graphs: Meseguer proof cal-\nculi on the commit path transport witnesses across comorphisms\nunder explicit axiom policies (Adopt,Discharge,Relativize) and ma-\nterialize outputs into the chain, while EigenQL provides a common\nGrothendieck query view [7] across all registered institutions.\nC3.A solution to the \ud835\udc42(\ud835\udc41 2) polystore adapter bottleneck: lifting\na shared, strongly typed intermediate representation (IR) into the\ngraph's schema collapses comorphisms between systems sharing\nthat IR to pure identity.\nC4.An end-to-end recomputation and re-encoding of a published\nNaturestudy from ephemeral scripts to a materialized evidence\ngraph, where 52 of 52 derived conclusions hold from pinned data,\nsurfacing four discrepancies.\n1Prototype and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
         "page": 1,
-        "pages": [],
-        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
         "section": "Introduction",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "f79abaa101a1b6a5e7c57d53e7b25be6c3e4c8d4b4c7444aa23c0ed9b6f9bce1",
+            "evidence_id": "Ece1e1f0bc03da03a-B0008",
+            "pages": [
+              1
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3585,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 2690,
+                "text": "in-process Lean 4 term checker\nwithout IPC overhead.\nC2.A three-level institutional protocol [ 3\u20135] generalizing the\nstored procedure to typed knowledge graphs: Meseguer proof cal-\nculi on the commit path transport witnesses across comorphisms\nunder explicit axiom policies (Adopt,Discharge,Relativize) and ma-\nterialize outputs into the chain, while EigenQL provides a common\nGrothendieck query view [7] across all registered institutions.\nC3.A solution to the \ud835\udc42(\ud835\udc41 2) polystore adapter bottleneck: lifting\na shared, strongly typed intermediate representation (IR) into the\ngraph's schema collapses comorphisms between systems sharing\nthat IR to pure identity.\nC4.An end-to-end recomputation and re-encoding of a published\nNaturestudy from ephemeral scripts to a materialized evidence\ngraph, where 52 of 52 derived conclusions hold from pinned data,\nsurfacing four discrepancies.\n1Prototype and "
+              }
+            ],
+            "text": "in-process Lean 4 term checker\nwithout IPC overhead.\nC2.A three-level institutional protocol [ 3\u20135] generalizing the\nstored procedure to typed knowledge graphs: Meseguer proof cal-\nculi on the commit path transport witnesses across comorphisms\nunder explicit axiom policies (Adopt,Discharge,Relativize) and ma-\nterialize outputs into the chain, while EigenQL provides a common\nGrothendieck query view [7] across all registered institutions.\nC3.A solution to the \ud835\udc42(\ud835\udc41 2) polystore adapter bottleneck: lifting\na shared, strongly typed intermediate representation (IR) into the\ngraph's schema collapses comorphisms between systems sharing\nthat IR to pure identity.\nC4.An end-to-end recomputation and re-encoding of a published\nNaturestudy from ephemeral scripts to a materialized evidence\ngraph, where 52 of 52 derived conclusions hold from pinned data,\nsurfacing four discrepancies.\n1Prototype and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0012"
+        ],
+        "excerpt": "Everything in Eigenius is aResource(IRI identity, class-membership\nclaims, typed properties), extending Atomic Data [17] with a de-\npendent type system and institution machinery. The ontology is\nself-describing; schema and data are unified, so declaring a class\nsimply means committing a resource. The unit of commit is alayer\u2014\nan immutable resource set with a parent pointer. Layer identity\nis content-addressed (SHA-256 of canonical CBOR [9]), forming a\nMerkle commitment to graph history where class resolution walks\nthe chain.\nWhy a database type theory differs from a proof assistant's.The\nkernel's native calculus,EigenTT[ 3], is a dependent type theory\nwith a cumulative universe hierarchy ( Prop=Sort 0 <Set=\nSort 1 <Type \ud835\udc58 with impredicative Prop), inductive families, and\nintensional identity types. Serving as a persistent knowledge-graph\nkernel rather than an interactive proof assistant ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Data Model And Epistemic Stratification",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "705491ff3e44dbb18c5a5e0b2c19b465aaef04a1353dc398b2374406fe7aebe0",
+            "evidence_id": "Ece1e1f0bc03da03a-B0012",
+            "pages": [
+              2
+            ],
+            "section": "Data Model And Epistemic Stratification",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 2,
+                "section": "Data Model And Epistemic Stratification",
+                "section_index": 5,
+                "start": 0,
+                "text": "Everything in Eigenius is aResource(IRI identity, class-membership\nclaims, typed properties), extending Atomic Data [17] with a de-\npendent type system and institution machinery. The ontology is\nself-describing; schema and data are unified, so declaring a class\nsimply means committing a resource. The unit of commit is alayer\u2014\nan immutable resource set with a parent pointer. Layer identity\nis content-addressed (SHA-256 of canonical CBOR [9]), forming a\nMerkle commitment to graph history where class resolution walks\nthe chain.\nWhy a database type theory differs from a proof assistant's.The\nkernel's native calculus,EigenTT[ 3], is a dependent type theory\nwith a cumulative universe hierarchy ( Prop=Sort 0 <Set=\nSort 1 <Type \ud835\udc58 with impredicative Prop), inductive families, and\nintensional identity types. Serving as a persistent knowledge-graph\nkernel rather than an interactive proof assistant "
+              }
+            ],
+            "text": "Everything in Eigenius is aResource(IRI identity, class-membership\nclaims, typed properties), extending Atomic Data [17] with a de-\npendent type system and institution machinery. The ontology is\nself-describing; schema and data are unified, so declaring a class\nsimply means committing a resource. The unit of commit is alayer\u2014\nan immutable resource set with a parent pointer. Layer identity\nis content-addressed (SHA-256 of canonical CBOR [9]), forming a\nMerkle commitment to graph history where class resolution walks\nthe chain.\nWhy a database type theory differs from a proof assistant's.The\nkernel's native calculus,EigenTT[ 3], is a dependent type theory\nwith a cumulative universe hierarchy ( Prop=Sort 0 <Set=\nSort 1 <Type \ud835\udc58 with impredicative Prop), inductive families, and\nintensional identity types. Serving as a persistent knowledge-graph\nkernel rather than an interactive proof assistant "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0013"
+        ],
+        "excerpt": "requires two de-\npartures from calculi such as Lean's [13]:\n(1) Conversion separated from ontology subsumption.Definitional\nequality (\u0393\u22a2\ud835\udc34\u2261\ud835\udc35 ) is joinability under an orthogonal rewrit-\ning system\u2014confluent, injective on type formers, and decided\nby untyped normalization by evaluation (NbE) [12]. Subtyping\n(\u0393\u22a2\ud835\udc34\u2264\ud835\udc35 ) is a separate judgment combining universe cumu-\nlativity, codomain-covariant \u03a0-types, record width subtyping,\nand ontology class inclusions (\u2291\u2217). Closed-world classes compile\nto record types Rec(fi\u2113 : fi\ud835\udc34), while constraints use refinements\nRefine(\ud835\udc45,fi\ud835\udc46), intersections\ud835\udc34\u2293\ud835\udc35, and singletonsSing \ud835\udc34(\ud835\udc4e).\n(2) Axiomatic rather than definitional proof irrelevance.Proof as-\nsistants make Prop definitionallyproof-irrelevant so any two\nproofs of\ud835\udc43 convert to the same normal form. In an epistemic\ndatabase whose job is to answer\"with what warranty?\", col-\nlapsing two warrants for \ud835\udc43 under ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Data Model And Epistemic Stratification",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "69ba938fe1ab9b867d8a003b3645c1f891465f2c84ede4fb96c07d044341cceb",
+            "evidence_id": "Ece1e1f0bc03da03a-B0013",
+            "pages": [
+              2
+            ],
+            "section": "Data Model And Epistemic Stratification",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1795,
+                "page": 2,
+                "section": "Data Model And Epistemic Stratification",
+                "section_index": 5,
+                "start": 900,
+                "text": "requires two de-\npartures from calculi such as Lean's [13]:\n(1) Conversion separated from ontology subsumption.Definitional\nequality (\u0393\u22a2\ud835\udc34\u2261\ud835\udc35 ) is joinability under an orthogonal rewrit-\ning system\u2014confluent, injective on type formers, and decided\nby untyped normalization by evaluation (NbE) [12]. Subtyping\n(\u0393\u22a2\ud835\udc34\u2264\ud835\udc35 ) is a separate judgment combining universe cumu-\nlativity, codomain-covariant \u03a0-types, record width subtyping,\nand ontology class inclusions (\u2291\u2217). Closed-world classes compile\nto record types Rec(fi\u2113 : fi\ud835\udc34), while constraints use refinements\nRefine(\ud835\udc45,fi\ud835\udc46), intersections\ud835\udc34\u2293\ud835\udc35, and singletonsSing \ud835\udc34(\ud835\udc4e).\n(2) Axiomatic rather than definitional proof irrelevance.Proof as-\nsistants make Prop definitionallyproof-irrelevant so any two\nproofs of\ud835\udc43 convert to the same normal form. In an epistemic\ndatabase whose job is to answer\"with what warranty?\", col-\nlapsing two warrants for \ud835\udc43 under "
+              }
+            ],
+            "text": "requires two de-\npartures from calculi such as Lean's [13]:\n(1) Conversion separated from ontology subsumption.Definitional\nequality (\u0393\u22a2\ud835\udc34\u2261\ud835\udc35 ) is joinability under an orthogonal rewrit-\ning system\u2014confluent, injective on type formers, and decided\nby untyped normalization by evaluation (NbE) [12]. Subtyping\n(\u0393\u22a2\ud835\udc34\u2264\ud835\udc35 ) is a separate judgment combining universe cumu-\nlativity, codomain-covariant \u03a0-types, record width subtyping,\nand ontology class inclusions (\u2291\u2217). Closed-world classes compile\nto record types Rec(fi\u2113 : fi\ud835\udc34), while constraints use refinements\nRefine(\ud835\udc45,fi\ud835\udc46), intersections\ud835\udc34\u2293\ud835\udc35, and singletonsSing \ud835\udc34(\ud835\udc4e).\n(2) Axiomatic rather than definitional proof irrelevance.Proof as-\nsistants make Prop definitionallyproof-irrelevant so any two\nproofs of\ud835\udc43 convert to the same normal form. In an epistemic\ndatabase whose job is to answer\"with what warranty?\", col-\nlapsing two warrants for \ud835\udc43 under "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0014"
+        ],
+        "excerpt": "conversion would erase\nprovenance at the kernel level and reduce the proof calculus\nto boolean entailment [3]. EigenTT keeps conversion on Prop\nintensional and supplies proof irrelevance only as an explicit\naxiom (irrel), so distinct proof and justification terms remain\ndistinct, inspectable chain resources.\nBranches and merges make the layer history a lattice whose joins\nare typed merges (Witness, Rename, SchemaQuotient, Restructure),\nacting as chain-level functorial data migrations [ 8] (theory mor-\nphisms inTh).\nEpistemic stratification as a justification logic.A prover dis-\ncharges a mathematical claim because its leaves are axioms; a\nscientific claim's leaves are observations and conventions \u2014 an\ninstrument reading, a chosen \ud835\udefc \u2014 that no prover can discharge.\nSo the kernel checks the composition while the grade records\nwhat stands behind each leaf: a justification logicJ [3, 19] ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Data Model And Epistemic Stratification",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1567ac2801225431bfd5b8dee80acaeca032b11ea363a48eb61ecc53dd434ede",
+            "evidence_id": "Ece1e1f0bc03da03a-B0014",
+            "pages": [
+              2
+            ],
+            "section": "Data Model And Epistemic Stratification",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2691,
+                "page": 2,
+                "section": "Data Model And Epistemic Stratification",
+                "section_index": 5,
+                "start": 1795,
+                "text": "conversion would erase\nprovenance at the kernel level and reduce the proof calculus\nto boolean entailment [3]. EigenTT keeps conversion on Prop\nintensional and supplies proof irrelevance only as an explicit\naxiom (irrel), so distinct proof and justification terms remain\ndistinct, inspectable chain resources.\nBranches and merges make the layer history a lattice whose joins\nare typed merges (Witness, Rename, SchemaQuotient, Restructure),\nacting as chain-level functorial data migrations [ 8] (theory mor-\nphisms inTh).\nEpistemic stratification as a justification logic.A prover dis-\ncharges a mathematical claim because its leaves are axioms; a\nscientific claim's leaves are observations and conventions \u2014 an\ninstrument reading, a chosen \ud835\udefc \u2014 that no prover can discharge.\nSo the kernel checks the composition while the grade records\nwhat stands behind each leaf: a justification logicJ [3, 19] "
+              }
+            ],
+            "text": "conversion would erase\nprovenance at the kernel level and reduce the proof calculus\nto boolean entailment [3]. EigenTT keeps conversion on Prop\nintensional and supplies proof irrelevance only as an explicit\naxiom (irrel), so distinct proof and justification terms remain\ndistinct, inspectable chain resources.\nBranches and merges make the layer history a lattice whose joins\nare typed merges (Witness, Rename, SchemaQuotient, Restructure),\nacting as chain-level functorial data migrations [ 8] (theory mor-\nphisms inTh).\nEpistemic stratification as a justification logic.A prover dis-\ncharges a mathematical claim because its leaves are axioms; a\nscientific claim's leaves are observations and conventions \u2014 an\ninstrument reading, a chosen \ud835\udefc \u2014 that no prover can discharge.\nSo the kernel checks the composition while the grade records\nwhat stands behind each leaf: a justification logicJ [3, 19] "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0015"
+        ],
+        "excerpt": "whose\nwarrants are deliberately not all factive. Justification terms \ud835\udc57 are\nbuilt from atomic leaves\u2014declarations decl(\ud835\udc50,\ud835\udc43) , observations\nobs(\ud835\udc52,\ud835\udc43) , and verified proofs ver(\ud835\udc64,\ud835\udc43) \u2014closed under modus po-\nnens (\ud835\udc571\u00b7\ud835\udc57 2), evidence combination ( \ud835\udc571+\ud835\udc57 2), and instantiation\n(\ud835\udc57\u21d3\ud835\udc61 ). Compositional evidenceE(\ud835\udc57) and support supp(\ud835\udc57,\ud835\udc43) ver-\nify that \ud835\udc57 discharges\ud835\udc43. Only ver(\ud835\udc64,\ud835\udc43) is factive (\u22a2\ud835\udc43 ); decl and\nobs record non-factive assumptions without asserting truth in\nthe empty context, preventing contradictory observations from\ntrivializing the store. Aggregating leaf support induces a four-\ngrade bounded lattice enforced at commit via structural base\nclasses:declared( DeclaredResource, authority checked for well-\nformedness),observed( ObservedResource, external provenance),\nderived( DerivedResource, produced by a typed computation over\nwarranted premises), andverified( VerifiedResource, carrying ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Data Model And Epistemic Stratification",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "96aa549dd5a5bd39e39561e247c3c97d722f5bd673bf2e030b3dfd08993e27ce",
+            "evidence_id": "Ece1e1f0bc03da03a-B0015",
+            "pages": [
+              2
+            ],
+            "section": "Data Model And Epistemic Stratification",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3585,
+                "page": 2,
+                "section": "Data Model And Epistemic Stratification",
+                "section_index": 5,
+                "start": 2691,
+                "text": "whose\nwarrants are deliberately not all factive. Justification terms \ud835\udc57 are\nbuilt from atomic leaves\u2014declarations decl(\ud835\udc50,\ud835\udc43) , observations\nobs(\ud835\udc52,\ud835\udc43) , and verified proofs ver(\ud835\udc64,\ud835\udc43) \u2014closed under modus po-\nnens (\ud835\udc571\u00b7\ud835\udc57 2), evidence combination ( \ud835\udc571+\ud835\udc57 2), and instantiation\n(\ud835\udc57\u21d3\ud835\udc61 ). Compositional evidenceE(\ud835\udc57) and support supp(\ud835\udc57,\ud835\udc43) ver-\nify that \ud835\udc57 discharges\ud835\udc43. Only ver(\ud835\udc64,\ud835\udc43) is factive (\u22a2\ud835\udc43 ); decl and\nobs record non-factive assumptions without asserting truth in\nthe empty context, preventing contradictory observations from\ntrivializing the store. Aggregating leaf support induces a four-\ngrade bounded lattice enforced at commit via structural base\nclasses:declared( DeclaredResource, authority checked for well-\nformedness),observed( ObservedResource, external provenance),\nderived( DerivedResource, produced by a typed computation over\nwarranted premises), andverified( VerifiedResource, carrying "
+              }
+            ],
+            "text": "whose\nwarrants are deliberately not all factive. Justification terms \ud835\udc57 are\nbuilt from atomic leaves\u2014declarations decl(\ud835\udc50,\ud835\udc43) , observations\nobs(\ud835\udc52,\ud835\udc43) , and verified proofs ver(\ud835\udc64,\ud835\udc43) \u2014closed under modus po-\nnens (\ud835\udc571\u00b7\ud835\udc57 2), evidence combination ( \ud835\udc571+\ud835\udc57 2), and instantiation\n(\ud835\udc57\u21d3\ud835\udc61 ). Compositional evidenceE(\ud835\udc57) and support supp(\ud835\udc57,\ud835\udc43) ver-\nify that \ud835\udc57 discharges\ud835\udc43. Only ver(\ud835\udc64,\ud835\udc43) is factive (\u22a2\ud835\udc43 ); decl and\nobs record non-factive assumptions without asserting truth in\nthe empty context, preventing contradictory observations from\ntrivializing the store. Aggregating leaf support induces a four-\ngrade bounded lattice enforced at commit via structural base\nclasses:declared( DeclaredResource, authority checked for well-\nformedness),observed( ObservedResource, external provenance),\nderived( DerivedResource, produced by a typed computation over\nwarranted premises), andverified( VerifiedResource, carrying "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0020"
+        ],
+        "excerpt": "To integrate external reasoners (ODE solvers, theorem provers) into\na DBMS, the standard tool is the stored procedure. Because stored\nprocedures assume a flat relational world, Eigenius introducesinsti-\ntutions[ 4] as a strongly typed generalization for knowledge graphs.\nThree institutional levels and witness transport.Classical Goguen\u2013\nBurstall institutions [4] and\ud835\udf0b-institutions [6] model satisfaction (|=)\nor consequence (\u22a2) as a boolean relation, forgettingwhya sentence\nholds. To persist witnesses alongside claims, Eigenius organizes\nhosted logics at three levels [3]: (1) at thewitness level(the commit\npath), each reasoner is a Meseguerproof calculus[ 5] assigning\nto each theory \ud835\udc47 a category of witnesses P(\ud835\udc47) projecting onto\nsentences via\ud835\udf0b\ud835\udc47 ; (2) forgetting witnesses yields a\ud835\udf0b-institution at\ntheconsequence level; and (3) the canonical G-construction yields\na standard institution ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Institutions, Comorphisms, And Eigenql",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "84c330fc7cb3b8c5bb7487f5b9dfaaaa20dc3f8f8d826f7726eae3bb820a871a",
+            "evidence_id": "Ece1e1f0bc03da03a-B0020",
+            "pages": [
+              3
+            ],
+            "section": "Institutions, Comorphisms, And Eigenql",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 3,
+                "section": "Institutions, Comorphisms, And Eigenql",
+                "section_index": 7,
+                "start": 0,
+                "text": "To integrate external reasoners (ODE solvers, theorem provers) into\na DBMS, the standard tool is the stored procedure. Because stored\nprocedures assume a flat relational world, Eigenius introducesinsti-\ntutions[ 4] as a strongly typed generalization for knowledge graphs.\nThree institutional levels and witness transport.Classical Goguen\u2013\nBurstall institutions [4] and\ud835\udf0b-institutions [6] model satisfaction (|=)\nor consequence (\u22a2) as a boolean relation, forgettingwhya sentence\nholds. To persist witnesses alongside claims, Eigenius organizes\nhosted logics at three levels [3]: (1) at thewitness level(the commit\npath), each reasoner is a Meseguerproof calculus[ 5] assigning\nto each theory \ud835\udc47 a category of witnesses P(\ud835\udc47) projecting onto\nsentences via\ud835\udf0b\ud835\udc47 ; (2) forgetting witnesses yields a\ud835\udf0b-institution at\ntheconsequence level; and (3) the canonical G-construction yields\na standard institution "
+              }
+            ],
+            "text": "To integrate external reasoners (ODE solvers, theorem provers) into\na DBMS, the standard tool is the stored procedure. Because stored\nprocedures assume a flat relational world, Eigenius introducesinsti-\ntutions[ 4] as a strongly typed generalization for knowledge graphs.\nThree institutional levels and witness transport.Classical Goguen\u2013\nBurstall institutions [4] and\ud835\udf0b-institutions [6] model satisfaction (|=)\nor consequence (\u22a2) as a boolean relation, forgettingwhya sentence\nholds. To persist witnesses alongside claims, Eigenius organizes\nhosted logics at three levels [3]: (1) at thewitness level(the commit\npath), each reasoner is a Meseguerproof calculus[ 5] assigning\nto each theory \ud835\udc47 a category of witnesses P(\ud835\udc47) projecting onto\nsentences via\ud835\udf0b\ud835\udc47 ; (2) forgetting witnesses yields a\ud835\udf0b-institution at\ntheconsequence level; and (3) the canonical G-construction yields\na standard institution "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0021"
+        ],
+        "excerpt": "satisfying the satisfaction condition at the\nmodel level.\nCross-system translations aremaps of proof calculi(comor-\nphisms)(\u03a6,\ud835\udefc,\ud835\udefe) executed inside the engine: \u03a6 maps theories,\ud835\udefc\ud835\udc47\ntranslates sentences, and \ud835\udefe\ud835\udc47 :P(\ud835\udc47) \u2192 P\u2032(\u03a6\ud835\udc47) transports wit-\nnesses subject to thetransport invariant \ud835\udf0b\u2032\u03a6\ud835\udc47(\ud835\udefe\ud835\udc47(\ud835\udc5d))=\ud835\udefc \ud835\udc47(\ud835\udf0b\ud835\udc47(\ud835\udc5d)) .\nEvery comorphism declares one of threeaxiom policies[ 3]:Adopt\n(import source axioms),Discharge(supply target proofs), orRela-\ntivize(prepend source axioms as hypotheses). Witness transport\ncomposes pairwise along the DAG of registered comorphisms,\nwhereas at the query level EigenQL evaluates queries across\nall registered institutions simultaneously, forming a common\nGrothendieck view [7] over the store's logics.\nAn institution registers itself via ontology resources, declaring\nits typed ExportFormats, ImportFormats, and Comorphisms, and inter-\nacts with the kernel through three trait ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Institutions, Comorphisms, And Eigenql",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e78c6d15f987878acc3e4607eeb6ff16d75f0c557dcfdb0b1de13d509961d184",
+            "evidence_id": "Ece1e1f0bc03da03a-B0021",
+            "pages": [
+              3
+            ],
+            "section": "Institutions, Comorphisms, And Eigenql",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1790,
+                "page": 3,
+                "section": "Institutions, Comorphisms, And Eigenql",
+                "section_index": 7,
+                "start": 894,
+                "text": "satisfying the satisfaction condition at the\nmodel level.\nCross-system translations aremaps of proof calculi(comor-\nphisms)(\u03a6,\ud835\udefc,\ud835\udefe) executed inside the engine: \u03a6 maps theories,\ud835\udefc\ud835\udc47\ntranslates sentences, and \ud835\udefe\ud835\udc47 :P(\ud835\udc47) \u2192 P\u2032(\u03a6\ud835\udc47) transports wit-\nnesses subject to thetransport invariant \ud835\udf0b\u2032\u03a6\ud835\udc47(\ud835\udefe\ud835\udc47(\ud835\udc5d))=\ud835\udefc \ud835\udc47(\ud835\udf0b\ud835\udc47(\ud835\udc5d)) .\nEvery comorphism declares one of threeaxiom policies[ 3]:Adopt\n(import source axioms),Discharge(supply target proofs), orRela-\ntivize(prepend source axioms as hypotheses). Witness transport\ncomposes pairwise along the DAG of registered comorphisms,\nwhereas at the query level EigenQL evaluates queries across\nall registered institutions simultaneously, forming a common\nGrothendieck view [7] over the store's logics.\nAn institution registers itself via ontology resources, declaring\nits typed ExportFormats, ImportFormats, and Comorphisms, and inter-\nacts with the kernel through three trait "
+              }
+            ],
+            "text": "satisfying the satisfaction condition at the\nmodel level.\nCross-system translations aremaps of proof calculi(comor-\nphisms)(\u03a6,\ud835\udefc,\ud835\udefe) executed inside the engine: \u03a6 maps theories,\ud835\udefc\ud835\udc47\ntranslates sentences, and \ud835\udefe\ud835\udc47 :P(\ud835\udc47) \u2192 P\u2032(\u03a6\ud835\udc47) transports wit-\nnesses subject to thetransport invariant \ud835\udf0b\u2032\u03a6\ud835\udc47(\ud835\udefe\ud835\udc47(\ud835\udc5d))=\ud835\udefc \ud835\udc47(\ud835\udf0b\ud835\udc47(\ud835\udc5d)) .\nEvery comorphism declares one of threeaxiom policies[ 3]:Adopt\n(import source axioms),Discharge(supply target proofs), orRela-\ntivize(prepend source axioms as hypotheses). Witness transport\ncomposes pairwise along the DAG of registered comorphisms,\nwhereas at the query level EigenQL evaluates queries across\nall registered institutions simultaneously, forming a common\nGrothendieck view [7] over the store's logics.\nAn institution registers itself via ontology resources, declaring\nits typed ExportFormats, ImportFormats, and Comorphisms, and inter-\nacts with the kernel through three trait "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0022"
+        ],
+        "excerpt": "methods: extract_typed,\nreify, and query. A comorphism pipeline extracts a payload of type\n\ud835\udc46, applies\ud835\udc5a :\ud835\udc46\u2192\ud835\udc47 , and reifies output\ud835\udc47 into a target resource.\nAt commit, the kernel statically type-checks that \ud835\udc5a's signature\nmatches payload(export)\u2192payload(import) ; type-incorrect trans-\nlations are rejected like schema violations. Institutions run either\nout-of-core in containers (Julia/R) or in-process inside the kernel\nbinary (Lean 4).\nJustification and statistics as pluggable logic.The epistemic grad-\ning from \u00a73 is not hardwired into the engine; justification logic itself\nis an attached institution. The replication in \u00a76 demonstrates this\nby composing two pluggable reasoners. First, astatistics institution\nconnects empirical computation to the commit path. It fires on a\ncommitted statistical-analysis plan\u2014a recipe, not a claim:\nresource wrn:wrn_dep_plan\n: stats:StatisticalAnalysisPlan ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Institutions, Comorphisms, And Eigenql",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "da815e7bc10d9f96f6b2696cc04f3ccf5a4d2a62fcf822f133ecf8c3a4a851a4",
+            "evidence_id": "Ece1e1f0bc03da03a-B0022",
+            "pages": [
+              3
+            ],
+            "section": "Institutions, Comorphisms, And Eigenql",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2686,
+                "page": 3,
+                "section": "Institutions, Comorphisms, And Eigenql",
+                "section_index": 7,
+                "start": 1790,
+                "text": "methods: extract_typed,\nreify, and query. A comorphism pipeline extracts a payload of type\n\ud835\udc46, applies\ud835\udc5a :\ud835\udc46\u2192\ud835\udc47 , and reifies output\ud835\udc47 into a target resource.\nAt commit, the kernel statically type-checks that \ud835\udc5a's signature\nmatches payload(export)\u2192payload(import) ; type-incorrect trans-\nlations are rejected like schema violations. Institutions run either\nout-of-core in containers (Julia/R) or in-process inside the kernel\nbinary (Lean 4).\nJustification and statistics as pluggable logic.The epistemic grad-\ning from \u00a73 is not hardwired into the engine; justification logic itself\nis an attached institution. The replication in \u00a76 demonstrates this\nby composing two pluggable reasoners. First, astatistics institution\nconnects empirical computation to the commit path. It fires on a\ncommitted statistical-analysis plan\u2014a recipe, not a claim:\nresource wrn:wrn_dep_plan\n: stats:StatisticalAnalysisPlan "
+              }
+            ],
+            "text": "methods: extract_typed,\nreify, and query. A comorphism pipeline extracts a payload of type\n\ud835\udc46, applies\ud835\udc5a :\ud835\udc46\u2192\ud835\udc47 , and reifies output\ud835\udc47 into a target resource.\nAt commit, the kernel statically type-checks that \ud835\udc5a's signature\nmatches payload(export)\u2192payload(import) ; type-incorrect trans-\nlations are rejected like schema violations. Institutions run either\nout-of-core in containers (Julia/R) or in-process inside the kernel\nbinary (Lean 4).\nJustification and statistics as pluggable logic.The epistemic grad-\ning from \u00a73 is not hardwired into the engine; justification logic itself\nis an attached institution. The replication in \u00a76 demonstrates this\nby composing two pluggable reasoners. First, astatistics institution\nconnects empirical computation to the commit path. It fires on a\ncommitted statistical-analysis plan\u2014a recipe, not a claim:\nresource wrn:wrn_dep_plan\n: stats:StatisticalAnalysisPlan "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0025"
+        ],
+        "excerpt": "thus a justification logic enforced by\ncomposition across the engine's query and commit paths.\nMaterializing the boundary: durable translations.In traditional\nfederated databases or reasoning orchestrators (like Hets [ 10]),\ncross-system translations are ephemeral: computed in volatile\nmemory to bridge a gap, then discarded. Because Eigenius treats\nboth schemas and proofs as typed graph resources, a crossing's\nwarranty\u2014its typed translation\u2014is just data. The reify step's\noutput (Figure 1) is not a transport-only intermediate; it isma-\nterializedback into the chain at a deterministic content-hash IRI\n(urn:eigenius:comorphism-output:tail:hex), or at a caller-named\nIRI under an INTO clause. Identical translations naturally dedupli-\ncate via content addressing; commit-time triggers fire on the newly\nmaterialized translation; and downstream queries pattern-match\nit exactly like native data. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Institutions, Comorphisms, And Eigenql",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "109d5400c4af117faaccbf9dec36d5626cbae9160b4fcbd818745d4ea2f0023e",
+            "evidence_id": "Ece1e1f0bc03da03a-B0025",
+            "pages": [
+              4
+            ],
+            "section": "Institutions, Comorphisms, And Eigenql",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1742,
+                "page": 4,
+                "section": "Institutions, Comorphisms, And Eigenql",
+                "section_index": 8,
+                "start": 843,
+                "text": "thus a justification logic enforced by\ncomposition across the engine's query and commit paths.\nMaterializing the boundary: durable translations.In traditional\nfederated databases or reasoning orchestrators (like Hets [ 10]),\ncross-system translations are ephemeral: computed in volatile\nmemory to bridge a gap, then discarded. Because Eigenius treats\nboth schemas and proofs as typed graph resources, a crossing's\nwarranty\u2014its typed translation\u2014is just data. The reify step's\noutput (Figure 1) is not a transport-only intermediate; it isma-\nterializedback into the chain at a deterministic content-hash IRI\n(urn:eigenius:comorphism-output:tail:hex), or at a caller-named\nIRI under an INTO clause. Identical translations naturally dedupli-\ncate via content addressing; commit-time triggers fire on the newly\nmaterialized translation; and downstream queries pattern-match\nit exactly like native data. "
+              }
+            ],
+            "text": "thus a justification logic enforced by\ncomposition across the engine's query and commit paths.\nMaterializing the boundary: durable translations.In traditional\nfederated databases or reasoning orchestrators (like Hets [ 10]),\ncross-system translations are ephemeral: computed in volatile\nmemory to bridge a gap, then discarded. Because Eigenius treats\nboth schemas and proofs as typed graph resources, a crossing's\nwarranty\u2014its typed translation\u2014is just data. The reify step's\noutput (Figure 1) is not a transport-only intermediate; it isma-\nterializedback into the chain at a deterministic content-hash IRI\n(urn:eigenius:comorphism-output:tail:hex), or at a caller-named\nIRI under an INTO clause. Identical translations naturally dedupli-\ncate via content addressing; commit-time triggers fire on the newly\nmaterialized translation; and downstream queries pattern-match\nit exactly like native data. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0026"
+        ],
+        "excerpt": "The seam is crossed once, and the\ntranslation becomes a durable, verifiable graph resident.\nEliminating adapter cost via shared graph IRs.Polystore systems\nrely on pairwise adapters to move data between subsystems, cre-\nating an\ud835\udc42(\ud835\udc41 2) integration bottleneck. Eigenius flattens this cost\nby lifting a shared, strongly typed Intermediate Representation\n(IR) directly into the graph's schema. When institutions agree on\na payload drawn from the kernel's own type theory, the adapter\ndegenerates to pure identity.\nFor example, the mathematical payload language isFormulaTerm\u2014\na typed AST modeled natively in the graph. The operator catalog\nis a set of chain resources, rank-checked at commit. All five Julia\ninstitutions (Symbolics, IntervalArithmetic, Catalyst, OrdinaryDif-\nfEq, and JuMP-HiGHS) consume FormulaTerm as their native input.\nBecause they share this graph-native IR, all comorphisms ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Institutions, Comorphisms, And Eigenql",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ee995faabf8f9d0b04c2492e1ee56d00c824488cec4b42b749958dfa259c9eb1",
+            "evidence_id": "Ece1e1f0bc03da03a-B0026",
+            "pages": [
+              4
+            ],
+            "section": "Institutions, Comorphisms, And Eigenql",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2635,
+                "page": 4,
+                "section": "Institutions, Comorphisms, And Eigenql",
+                "section_index": 8,
+                "start": 1742,
+                "text": "The seam is crossed once, and the\ntranslation becomes a durable, verifiable graph resident.\nEliminating adapter cost via shared graph IRs.Polystore systems\nrely on pairwise adapters to move data between subsystems, cre-\nating an\ud835\udc42(\ud835\udc41 2) integration bottleneck. Eigenius flattens this cost\nby lifting a shared, strongly typed Intermediate Representation\n(IR) directly into the graph's schema. When institutions agree on\na payload drawn from the kernel's own type theory, the adapter\ndegenerates to pure identity.\nFor example, the mathematical payload language isFormulaTerm\u2014\na typed AST modeled natively in the graph. The operator catalog\nis a set of chain resources, rank-checked at commit. All five Julia\ninstitutions (Symbolics, IntervalArithmetic, Catalyst, OrdinaryDif-\nfEq, and JuMP-HiGHS) consume FormulaTerm as their native input.\nBecause they share this graph-native IR, all comorphisms "
+              }
+            ],
+            "text": "The seam is crossed once, and the\ntranslation becomes a durable, verifiable graph resident.\nEliminating adapter cost via shared graph IRs.Polystore systems\nrely on pairwise adapters to move data between subsystems, cre-\nating an\ud835\udc42(\ud835\udc41 2) integration bottleneck. Eigenius flattens this cost\nby lifting a shared, strongly typed Intermediate Representation\n(IR) directly into the graph's schema. When institutions agree on\na payload drawn from the kernel's own type theory, the adapter\ndegenerates to pure identity.\nFor example, the mathematical payload language isFormulaTerm\u2014\na typed AST modeled natively in the graph. The operator catalog\nis a set of chain resources, rank-checked at commit. All five Julia\ninstitutions (Symbolics, IntervalArithmetic, Catalyst, OrdinaryDif-\nfEq, and JuMP-HiGHS) consume FormulaTerm as their native input.\nBecause they share this graph-native IR, all comorphisms "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0030"
+        ],
+        "excerpt": "inspectable. A naive comorphism into a defini-\ntionally proof-irrelevant sort either erases witness distinctions or\nviolates conversion preservation. Eigenius therefore encapsulates\nthe exported Lean 4 derivation as an external witness certificate\n(LeanProofPayload, typed as Checked(\ud835\udc4e) ) paired with \ud835\udc43=\ud835\udf04\ud835\udc47 via\nthe export comorphism\ud835\udf04.\nChallenge 2: The in-process commit gate.The second challenge\nis validating this opaque witness\ud835\udc61 without crippling throughput.\nLean 4 acts strictly as an off-chain authoring environment. Calling\nout to an external orchestrator at commit would incur massive\nIPC overhead. Instead, Eigenius brings verificationin-process. The\nkernel's type checker runs the exported proof bytes through a\nminimal Rust term checker, nanoda_lib [14, 15], linked directly\ninto the database binary. Sharing the binary shortens the audit\npath without merging trust surfaces: a panic in the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Formal Verification As A Database Invariant",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e3b73fb1a927dc9e62467d095d58b04cd196d71108442a6ac581abc24a53435f",
+            "evidence_id": "Ece1e1f0bc03da03a-B0030",
+            "pages": [
+              4
+            ],
+            "section": "Formal Verification As A Database Invariant",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1791,
+                "page": 4,
+                "section": "Formal Verification As A Database Invariant",
+                "section_index": 9,
+                "start": 892,
+                "text": "inspectable. A naive comorphism into a defini-\ntionally proof-irrelevant sort either erases witness distinctions or\nviolates conversion preservation. Eigenius therefore encapsulates\nthe exported Lean 4 derivation as an external witness certificate\n(LeanProofPayload, typed as Checked(\ud835\udc4e) ) paired with \ud835\udc43=\ud835\udf04\ud835\udc47 via\nthe export comorphism\ud835\udf04.\nChallenge 2: The in-process commit gate.The second challenge\nis validating this opaque witness\ud835\udc61 without crippling throughput.\nLean 4 acts strictly as an off-chain authoring environment. Calling\nout to an external orchestrator at commit would incur massive\nIPC overhead. Instead, Eigenius brings verificationin-process. The\nkernel's type checker runs the exported proof bytes through a\nminimal Rust term checker, nanoda_lib [14, 15], linked directly\ninto the database binary. Sharing the binary shortens the audit\npath without merging trust surfaces: a panic in the "
+              }
+            ],
+            "text": "inspectable. A naive comorphism into a defini-\ntionally proof-irrelevant sort either erases witness distinctions or\nviolates conversion preservation. Eigenius therefore encapsulates\nthe exported Lean 4 derivation as an external witness certificate\n(LeanProofPayload, typed as Checked(\ud835\udc4e) ) paired with \ud835\udc43=\ud835\udf04\ud835\udc47 via\nthe export comorphism\ud835\udf04.\nChallenge 2: The in-process commit gate.The second challenge\nis validating this opaque witness\ud835\udc61 without crippling throughput.\nLean 4 acts strictly as an off-chain authoring environment. Calling\nout to an external orchestrator at commit would incur massive\nIPC overhead. Instead, Eigenius brings verificationin-process. The\nkernel's type checker runs the exported proof bytes through a\nminimal Rust term checker, nanoda_lib [14, 15], linked directly\ninto the database binary. Sharing the binary shortens the audit\npath without merging trust surfaces: a panic in the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0031"
+        ],
+        "excerpt": "term checker\nis confined to the verification fiber and cannot corrupt the core\n4",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Formal Verification As A Database Invariant",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "19f33ee18df5d006b5814c39412020b1f9ff45f306707361b120fd2be8807155",
+            "evidence_id": "Ece1e1f0bc03da03a-B0031",
+            "pages": [
+              4
+            ],
+            "section": "Formal Verification As A Database Invariant",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1871,
+                "page": 4,
+                "section": "Formal Verification As A Database Invariant",
+                "section_index": 9,
+                "start": 1791,
+                "text": "term checker\nis confined to the verification fiber and cannot corrupt the core\n4"
+              }
+            ],
+            "text": "term checker\nis confined to the verification fiber and cannot corrupt the core\n4"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0035"
+        ],
+        "excerpt": "Prototype and baseline flows.The Rust prototype includes\nRocksDB storage, a gRPC API, and a React notebook. An MCP\nserver [23] exposes kernel ops to autonomous agents. Eight institu-\ntions run live across two extensibility paths: five Julia institutions\non the runtime substrate, Lean 4 in-process, and the statistics and\nreasoning institutions.\nTo demonstrate that the kernel supports both domains of scien-\ntific epistemology, the repository contains two baseline flows. The\nmathematical path is exercised by a Lean-verification flow whose\nEigenQL queries walk the closed audit chain from aVerdict::Holds\nback to the chain class. The empirical path is demonstrated by\na kinase-screening flow that lifts 24 IC50 measurements to typed\nreasoning through identity comorphisms across the Julia stack.\nMicrobenchmark: Typed ingestion at scale.To evaluate the over-\nhead of treating every record as a ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation And Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9cc3bd1c4b9cdb12dc70860c8de99aa60f4050c4a2552183adb74e600671e653",
+            "evidence_id": "Ece1e1f0bc03da03a-B0035",
+            "pages": [
+              5
+            ],
+            "section": "Implementation And Evaluation",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 5,
+                "section": "Implementation And Evaluation",
+                "section_index": 11,
+                "start": 0,
+                "text": "Prototype and baseline flows.The Rust prototype includes\nRocksDB storage, a gRPC API, and a React notebook. An MCP\nserver [23] exposes kernel ops to autonomous agents. Eight institu-\ntions run live across two extensibility paths: five Julia institutions\non the runtime substrate, Lean 4 in-process, and the statistics and\nreasoning institutions.\nTo demonstrate that the kernel supports both domains of scien-\ntific epistemology, the repository contains two baseline flows. The\nmathematical path is exercised by a Lean-verification flow whose\nEigenQL queries walk the closed audit chain from aVerdict::Holds\nback to the chain class. The empirical path is demonstrated by\na kinase-screening flow that lifts 24 IC50 measurements to typed\nreasoning through identity comorphisms across the Julia stack.\nMicrobenchmark: Typed ingestion at scale.To evaluate the over-\nhead of treating every record as a "
+              }
+            ],
+            "text": "Prototype and baseline flows.The Rust prototype includes\nRocksDB storage, a gRPC API, and a React notebook. An MCP\nserver [23] exposes kernel ops to autonomous agents. Eight institu-\ntions run live across two extensibility paths: five Julia institutions\non the runtime substrate, Lean 4 in-process, and the statistics and\nreasoning institutions.\nTo demonstrate that the kernel supports both domains of scien-\ntific epistemology, the repository contains two baseline flows. The\nmathematical path is exercised by a Lean-verification flow whose\nEigenQL queries walk the closed audit chain from aVerdict::Holds\nback to the chain class. The empirical path is demonstrated by\na kinase-screening flow that lifts 24 IC50 measurements to typed\nreasoning through identity comorphisms across the Julia stack.\nMicrobenchmark: Typed ingestion at scale.To evaluate the over-\nhead of treating every record as a "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0036"
+        ],
+        "excerpt": "typed, commit-verified resource,\nwe ingest the WordNet and UMLS lexicons. This data materializes\nas 9.19M chain resources at 361 bytes each (6.6M lexical entries,\n4.8M surface forms). Import takes the standard commit path with no\nbulk-load bypass, sustaining roughly 5,200 validated resources/s on\none core of a 22-CPU laptop. The commit gate is where the cost lies:\nstructural class layers load at\u223c28k resources/s, while lexical entries,\nwhich rigorously type-check each sense against its category, load\nat\u223c4k resources/s.\nMacro-evaluation: Replicating a published study.The substrate's\nflagship evaluation scales the empirical path to an end-to-end re-\ncomputation of a high-profileNaturestudy \u2014 Chan et al. [24] (WRN\nhelicase in microsatellite-unstable cancers). We chose it as a stress\ntest because its argument crosses multiple domains: genome-wide\ndependency screens, wet-lab validation, in ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation And Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "db3c06dfb3cf2e6c81ee085e027e25488164d642e1d6aae28fbac1fb742fb3e2",
+            "evidence_id": "Ece1e1f0bc03da03a-B0036",
+            "pages": [
+              5
+            ],
+            "section": "Implementation And Evaluation",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1793,
+                "page": 5,
+                "section": "Implementation And Evaluation",
+                "section_index": 11,
+                "start": 896,
+                "text": "typed, commit-verified resource,\nwe ingest the WordNet and UMLS lexicons. This data materializes\nas 9.19M chain resources at 361 bytes each (6.6M lexical entries,\n4.8M surface forms). Import takes the standard commit path with no\nbulk-load bypass, sustaining roughly 5,200 validated resources/s on\none core of a 22-CPU laptop. The commit gate is where the cost lies:\nstructural class layers load at\u223c28k resources/s, while lexical entries,\nwhich rigorously type-check each sense against its category, load\nat\u223c4k resources/s.\nMacro-evaluation: Replicating a published study.The substrate's\nflagship evaluation scales the empirical path to an end-to-end re-\ncomputation of a high-profileNaturestudy \u2014 Chan et al. [24] (WRN\nhelicase in microsatellite-unstable cancers). We chose it as a stress\ntest because its argument crosses multiple domains: genome-wide\ndependency screens, wet-lab validation, in "
+              }
+            ],
+            "text": "typed, commit-verified resource,\nwe ingest the WordNet and UMLS lexicons. This data materializes\nas 9.19M chain resources at 361 bytes each (6.6M lexical entries,\n4.8M surface forms). Import takes the standard commit path with no\nbulk-load bypass, sustaining roughly 5,200 validated resources/s on\none core of a 22-CPU laptop. The commit gate is where the cost lies:\nstructural class layers load at\u223c28k resources/s, while lexical entries,\nwhich rigorously type-check each sense against its category, load\nat\u223c4k resources/s.\nMacro-evaluation: Replicating a published study.The substrate's\nflagship evaluation scales the empirical path to an end-to-end re-\ncomputation of a high-profileNaturestudy \u2014 Chan et al. [24] (WRN\nhelicase in microsatellite-unstable cancers). We chose it as a stress\ntest because its argument crosses multiple domains: genome-wide\ndependency screens, wet-lab validation, in "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0037"
+        ],
+        "excerpt": "vivo models, and a DNA-\ndamage mechanism.\nFrom content-addressed, hash-pinned source data, two institu-\ntions compose over one layer chain. Astatistics institutionre-runs\neach statistic and commits a derived result with anIsDerivedAs wit-\nness. Areasoning institutionreads those witnesses and discharges\nthe study's domain conclusions, each a ReasoningSentence whose\ncertificate is a justification term type-checked against the asserted\nproposition. Every claim carries one of four warrant grades, making\nits epistemic status a queryable property of the chain rather than a\nprose caveat. On a clean database,52 of 52 derived conclusions\nhold, discharging the study's conclusions from pinned data.\nThe value of this massive structural re-encoding is what it sur-\nfaces: recomputation exposed four discrepancies between the pa-\nper's prose and its own data, including a corrected sample size\n(\ud835\udc5b= 54\u2192 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation And Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f6b270500e5f4a64d4fae71d02f9c2167c292ce6b5f4b1610be8f2337f49ea9a",
+            "evidence_id": "Ece1e1f0bc03da03a-B0037",
+            "pages": [
+              5
+            ],
+            "section": "Implementation And Evaluation",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2691,
+                "page": 5,
+                "section": "Implementation And Evaluation",
+                "section_index": 11,
+                "start": 1793,
+                "text": "vivo models, and a DNA-\ndamage mechanism.\nFrom content-addressed, hash-pinned source data, two institu-\ntions compose over one layer chain. Astatistics institutionre-runs\neach statistic and commits a derived result with anIsDerivedAs wit-\nness. Areasoning institutionreads those witnesses and discharges\nthe study's domain conclusions, each a ReasoningSentence whose\ncertificate is a justification term type-checked against the asserted\nproposition. Every claim carries one of four warrant grades, making\nits epistemic status a queryable property of the chain rather than a\nprose caveat. On a clean database,52 of 52 derived conclusions\nhold, discharging the study's conclusions from pinned data.\nThe value of this massive structural re-encoding is what it sur-\nfaces: recomputation exposed four discrepancies between the pa-\nper's prose and its own data, including a corrected sample size\n(\ud835\udc5b= 54\u2192 "
+              }
+            ],
+            "text": "vivo models, and a DNA-\ndamage mechanism.\nFrom content-addressed, hash-pinned source data, two institu-\ntions compose over one layer chain. Astatistics institutionre-runs\neach statistic and commits a derived result with anIsDerivedAs wit-\nness. Areasoning institutionreads those witnesses and discharges\nthe study's domain conclusions, each a ReasoningSentence whose\ncertificate is a justification term type-checked against the asserted\nproposition. Every claim carries one of four warrant grades, making\nits epistemic status a queryable property of the chain rather than a\nprose caveat. On a clean database,52 of 52 derived conclusions\nhold, discharging the study's conclusions from pinned data.\nThe value of this massive structural re-encoding is what it sur-\nfaces: recomputation exposed four discrepancies between the pa-\nper's prose and its own data, including a corrected sample size\n(\ud835\udc5b= 54\u2192 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0038"
+        ],
+        "excerpt": "51, rows dropped as missing) and a pseudoreplication\nwhose honest\ud835\udc5d-value differs by thirteen orders of magnitude. These\nare recorded not as footnotes but as machine-checkable facts carry-\ning both warrants side by side. Forcing every bridge to be adeclared\nresource makes the surface of assumptions inspectable by an agent\nor human. Every analysis class in the paper runs live\u2014from a limma\ndifferential-dependency call over a 187 MB matrix to per-cell mech-\nanism assays\u2014and the few readouts that remain merely cited say\nso on the chain.\nNext step: the narrative itself.The replication formalizes the\nstudy's steps and deviations; the prose argument connecting them\nstays off the chain. We are closing that gap with a dependently-\ntyped categorial grammar engine that lands the narrative as typed\nchain-resident terms: prose is paraphrased into controlled English\n\u2014 one statement per sentence \u2014 then ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation And Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fe0f3d088b4c2677cd0786d988814b5a102900a62d345690c14e56f4a31b3e13",
+            "evidence_id": "Ece1e1f0bc03da03a-B0038",
+            "pages": [
+              5
+            ],
+            "section": "Implementation And Evaluation",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 3591,
+                "page": 5,
+                "section": "Implementation And Evaluation",
+                "section_index": 11,
+                "start": 2691,
+                "text": "51, rows dropped as missing) and a pseudoreplication\nwhose honest\ud835\udc5d-value differs by thirteen orders of magnitude. These\nare recorded not as footnotes but as machine-checkable facts carry-\ning both warrants side by side. Forcing every bridge to be adeclared\nresource makes the surface of assumptions inspectable by an agent\nor human. Every analysis class in the paper runs live\u2014from a limma\ndifferential-dependency call over a 187 MB matrix to per-cell mech-\nanism assays\u2014and the few readouts that remain merely cited say\nso on the chain.\nNext step: the narrative itself.The replication formalizes the\nstudy's steps and deviations; the prose argument connecting them\nstays off the chain. We are closing that gap with a dependently-\ntyped categorial grammar engine that lands the narrative as typed\nchain-resident terms: prose is paraphrased into controlled English\n\u2014 one statement per sentence \u2014 then "
+              }
+            ],
+            "text": "51, rows dropped as missing) and a pseudoreplication\nwhose honest\ud835\udc5d-value differs by thirteen orders of magnitude. These\nare recorded not as footnotes but as machine-checkable facts carry-\ning both warrants side by side. Forcing every bridge to be adeclared\nresource makes the surface of assumptions inspectable by an agent\nor human. Every analysis class in the paper runs live\u2014from a limma\ndifferential-dependency call over a 187 MB matrix to per-cell mech-\nanism assays\u2014and the few readouts that remain merely cited say\nso on the chain.\nNext step: the narrative itself.The replication formalizes the\nstudy's steps and deviations; the prose argument connecting them\nstays off the chain. We are closing that gap with a dependently-\ntyped categorial grammar engine that lands the narrative as typed\nchain-resident terms: prose is paraphrased into controlled English\n\u2014 one statement per sentence \u2014 then "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0042"
+        ],
+        "excerpt": "monograph [3] (with zero unproved obli-\ngations): confluence, injectivity, and separation of conversion (\u2261)\nfrom ontology subsumption (\u2264); soundness, completeness, and set-\ntheoretic consistency of the bidirectional kernelK0/K1 and typed\nknowledge-graph calculus; the justification logicJ and its four-\ngrade lattice; the three-level institutional framework and its axiom\npolicies; and soundness and completeness of untyped NbE and the\nalgorithmic checkerA 0/A1.\nThree foundational and systems questions remain open. First,\ntermination ofA0/A1 is proved relative to a strong-normalization\nhypothesis for well-typed terms; discharging strong normalization\nunconditionally for the full kernel theory and verifying the pro-\nduction Rust kernel against the Lean 4 specification remain open.\nSecond, while additive extensions, renamings, and conservative\nprojections preserve typing functorially, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "882e08608a75c42d2dbf160021c70d01e5efd8fa19946e88edb1a16e8dee1303",
+            "evidence_id": "Ece1e1f0bc03da03a-B0042",
+            "pages": [
+              6
+            ],
+            "section": "Discussion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 2686,
+                "page": 6,
+                "section": "Discussion",
+                "section_index": 13,
+                "start": 1794,
+                "text": "monograph [3] (with zero unproved obli-\ngations): confluence, injectivity, and separation of conversion (\u2261)\nfrom ontology subsumption (\u2264); soundness, completeness, and set-\ntheoretic consistency of the bidirectional kernelK0/K1 and typed\nknowledge-graph calculus; the justification logicJ and its four-\ngrade lattice; the three-level institutional framework and its axiom\npolicies; and soundness and completeness of untyped NbE and the\nalgorithmic checkerA 0/A1.\nThree foundational and systems questions remain open. First,\ntermination ofA0/A1 is proved relative to a strong-normalization\nhypothesis for well-typed terms; discharging strong normalization\nunconditionally for the full kernel theory and verifying the pro-\nduction Rust kernel against the Lean 4 specification remain open.\nSecond, while additive extensions, renamings, and conservative\nprojections preserve typing functorially, "
+              }
+            ],
+            "text": "monograph [3] (with zero unproved obli-\ngations): confluence, injectivity, and separation of conversion (\u2261)\nfrom ontology subsumption (\u2264); soundness, completeness, and set-\ntheoretic consistency of the bidirectional kernelK0/K1 and typed\nknowledge-graph calculus; the justification logicJ and its four-\ngrade lattice; the three-level institutional framework and its axiom\npolicies; and soundness and completeness of untyped NbE and the\nalgorithmic checkerA 0/A1.\nThree foundational and systems questions remain open. First,\ntermination ofA0/A1 is proved relative to a strong-normalization\nhypothesis for well-typed terms; discharging strong normalization\nunconditionally for the full kernel theory and verifying the pro-\nduction Rust kernel against the Lean 4 specification remain open.\nSecond, while additive extensions, renamings, and conservative\nprojections preserve typing functorially, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0043"
+        ],
+        "excerpt": "characterizing general\npushouts in Th across conflicting schema-and-instance branches\nremains open. Finally, beyond theNaturereplication, the decisive\nsystems test is closing the loop: proving that an AI Scientist op-\nerating strictly over MCP endpoints can autonomously traverse,\nmutate, and verify a scientific graph without human intervention.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f741657569204e52047a474485004cec029b48b4ee62e37a29ddb4412324b88b",
+            "evidence_id": "Ece1e1f0bc03da03a-B0043",
+            "pages": [
+              6
+            ],
+            "section": "Discussion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 3032,
+                "page": 6,
+                "section": "Discussion",
+                "section_index": 13,
+                "start": 2686,
+                "text": "characterizing general\npushouts in Th across conflicting schema-and-instance branches\nremains open. Finally, beyond theNaturereplication, the decisive\nsystems test is closing the loop: proving that an AI Scientist op-\nerating strictly over MCP endpoints can autonomously traverse,\nmutate, and verify a scientific graph without human intervention."
+              }
+            ],
+            "text": "characterizing general\npushouts in Th across conflicting schema-and-instance branches\nremains open. Finally, beyond theNaturereplication, the decisive\nsystems test is closing the loop: proving that an AI Scientist op-\nerating strictly over MCP endpoints can autonomously traverse,\nmutate, and verify a scientific graph without human intervention."
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       }
     ],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2608.04457",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": 60,
-    "paper_type": "position_or_conceptual",
-    "positive_signals": [
-      "Code, data, or research artifacts are described as available.",
-      "Formal definitions or proof-oriented evidence is present."
-    ],
-    "promotion": {},
-    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
-    "recommendation": "uncertain",
-    "rubric_version": "scholarly-rubric-v1",
-    "source_content_hash": "5c5a25eac5126202bc0681526ef6f74fa96076f0005ea495afec2b5952ebb29e",
-    "status": "not_assessed",
+    "overall_quality_score": null,
+    "paper_type": "theoretical",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7201914628",
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The headline empirical outcome is established by recomputing a published Nature study from hash-pinned source data, an external benchmark independent of the system's own design and formalization.",
+          "final_evaluation_signal": "Recomputation of the Chan et al. Nature study from pinned data, plus ingestion throughput metrics on WordNet and UMLS.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Manual kernel, schema, and protocol design; Lean 4 mechanization of the system's own metatheory.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0007",
+          "Ece1e1f0bc03da03a-B0008",
+          "Ece1e1f0bc03da03a-B0012",
+          "Ece1e1f0bc03da03a-B0013",
+          "Ece1e1f0bc03da03a-B0014",
+          "Ece1e1f0bc03da03a-B0015",
+          "Ece1e1f0bc03da03a-B0020",
+          "Ece1e1f0bc03da03a-B0021",
+          "Ece1e1f0bc03da03a-B0022",
+          "Ece1e1f0bc03da03a-B0025",
+          "Ece1e1f0bc03da03a-B0026",
+          "Ece1e1f0bc03da03a-B0030",
+          "Ece1e1f0bc03da03a-B0031",
+          "Ece1e1f0bc03da03a-B0035",
+          "Ece1e1f0bc03da03a-B0036",
+          "Ece1e1f0bc03da03a-B0037",
+          "Ece1e1f0bc03da03a-B0038",
+          "Ece1e1f0bc03da03a-B0042",
+          "Ece1e1f0bc03da03a-B0043"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "28881e3ff7c1aa37ca39105714696dd5b96b9f457ec2c2931b3c0b5d24479088"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7201914628",
+        "claim_evidence_alignment": "Claims regarding commit-time epistemic invariants, witness durability, and multi-system integration are well supported by the implementation details, formal system descriptions, and the execution of the macro-replication study.",
+        "context_id": "ce1e1f0bc03da03ae7c9f9ff848b29d769ef8b4ea2906dfef9719e283bb80418",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation includes mechanized metatheory referenced in a companion monograph, an ingestion throughput microbenchmark demonstrating roughly 5,200 validated resources per second on 9.19M entries, and an end-to-end empirical replication of a published Nature study (Chan et al.) recomputing 52 derived conclusions while surfacing four discrepancies.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The external benchmark of re-running the complete statistical and analytical pipeline of the Chan et al. study directly against original source data verified 52 of 52 conclusions while identifying four previously undetected discrepancies.",
+          "final_evaluation_signal": "Empirical recomputation of pinned data from an independent Nature study (Chan et al.) alongside ingestion throughput metrics across UMLS and WordNet.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Rule-based system construction, manual kernel and schema design, and static Lean 4 formalization specifications.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ece1e1f0bc03da03a-B0007",
+          "Ece1e1f0bc03da03a-B0008",
+          "Ece1e1f0bc03da03a-B0012",
+          "Ece1e1f0bc03da03a-B0013",
+          "Ece1e1f0bc03da03a-B0014",
+          "Ece1e1f0bc03da03a-B0015",
+          "Ece1e1f0bc03da03a-B0020",
+          "Ece1e1f0bc03da03a-B0021",
+          "Ece1e1f0bc03da03a-B0022",
+          "Ece1e1f0bc03da03a-B0025",
+          "Ece1e1f0bc03da03a-B0026",
+          "Ece1e1f0bc03da03a-B0030",
+          "Ece1e1f0bc03da03a-B0031",
+          "Ece1e1f0bc03da03a-B0035",
+          "Ece1e1f0bc03da03a-B0036",
+          "Ece1e1f0bc03da03a-B0037",
+          "Ece1e1f0bc03da03a-B0038",
+          "Ece1e1f0bc03da03a-B0042",
+          "Ece1e1f0bc03da03a-B0043"
+        ],
+        "limitations": "The authors transparently note limitations, including shifting from Wasm sandboxing to container isolation, an open strong-normalization proof for full kernel termination, the uncharacterized status of general pushouts across conflicting branches, and unclosed autonomous loops for AI agents.",
+        "method_assessment": "The architectural and theoretical design is clearly described, distinguishing database type checking from proof-assistant equality via separation of conversion from subtyping and retaining axiomatic proof irrelevance to preserve audit warrants. External reasoning and verification are mediated via institutional comorphisms, an in-process Rust term checker for Lean 4 proofs, and a shared intermediate representation that reduces polystore adapters.",
+        "quality_rationale": "The manuscript makes a well-articulated, substantive systems and formal-methods contribution. The design choices are thoroughly justified, the implementation is evaluated across both synthetic scale benchmarks and a complex real-world scientific workflow, and theoretical boundaries and ongoing work are explicitly demarcated.",
+        "scoped_contribution": "The manuscript presents Eigenius, an open-source typed knowledge-graph DBMS integrating dependent type theory (EigenTT), an epistemic stratification lattice backed by justification logic, and a three-level institutional framework with witness transport comorphisms to turn scientific provenance into commit-enforced invariants.",
+        "source_content_hash": "28881e3ff7c1aa37ca39105714696dd5b96b9f457ec2c2931b3c0b5d24479088"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript makes a well-articulated, substantive systems and formal-methods contribution. The design choices are thoroughly justified, the implementation is evaluated across both synthetic scale benchmarks and a complex real-world scientific workflow, and theoretical boundaries and ongoing work are explicitly demarcated.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "28881e3ff7c1aa37ca39105714696dd5b96b9f457ec2c2931b3c0b5d24479088",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
+    "uncertainty": "The authors transparently note limitations, including shifting from Wasm sandboxing to container isolation, an open strong-normalization proof for full kernel termination, the uncharacterized status of general pushouts across conflicting branches, and unclosed autonomous loops for AI agents."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

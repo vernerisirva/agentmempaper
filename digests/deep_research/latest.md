@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-11-18](2026-11-18.md).
+Latest daily digest: [2026-11-19](2026-11-19.md).
 
-# Paper Scout Digest - 2026-11-18
+# Paper Scout Digest - 2026-11-19
 
 ## Run Summary
 
-- **Run ID:** 137
-- **Candidates fetched:** 123
-- **New unique papers:** 118
-- **Relevant:** 15
-- **Maybe relevant:** 2
-- **Irrelevant:** 106
-- **Source summary:** arxiv: 23, openalex: 100, semantic_scholar: 0
+- **Run ID:** 138
+- **Candidates fetched:** 126
+- **New unique papers:** 121
+- **Relevant:** 18
+- **Maybe relevant:** 1
+- **Irrelevant:** 107
+- **Source summary:** arxiv: 26, openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
 
@@ -20,59 +20,59 @@ Latest daily digest: [2026-11-18](2026-11-18.md).
 - openalex: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - openalex: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - openalex: incomplete discovery window for 'automated literature review'; single-page record limit reached.
-- semantic_scholar failed for 'deep research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
+- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Highly Relevant
 
-### [AI Scientist Discovered Robust Quantum Control](https://arxiv.org/abs/2611.21765v1)
+### [Asking the right question is key to AI discovery in a chain of hypotheses](https://doi.org/10.48550/arxiv.2611.19841)
 
-- **Authors:** Jiahao Yan, Xuanying Lai, Xiaoshui Lin, Yizhou Wang, Changyu Yao, Guanghui He, et al.
-- **Date:** 2026-11-16
+- **Authors:** Hu Cang
+- **Date:** 2026-11-15
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Artificial intelligence (AI) scientists pursue discovery through a chain of hypotheses, fitting candidate models to existing observations and often choosing experiments where those models disagree most. Yet when early data miss a narrow feature, model selection favors simple curves that agree across the unmea- sured...
+
+### [Ground, Iterate, Trace: Decomposing AI Research Ideation](https://arxiv.org/abs/2611.24887v1)
+
+- **Authors:** Samson Yu, Qiran Zou, Jing Yu Lim, Rushi Shah, Anirudh Goyal, Dianbo Liu
+- **Date:** 2026-11-18
 - **Source:** arxiv
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Protecting quantum coherence is a central theme of modern quantum technologies. Carefully designed control pulses can extend coherence by suppressing disorder and unwanted interactions. However, designing robust pulse sequences remains challenging in interacting multi-level systems, where multiple independent error...
+- **Abstract summary:** Large language models have been widely used to generate plausible research ideas, yet it remains unclear what makes automated ideation effective and how generated novel proposals arise from prior scientific work. We introduce the Creative AI Researcher (CAR), an agentic framework combining literature grounding, iter...
 
-### [AI Scientists’ View of the AI Scientists](https://doi.org/10.24867/36ws022611)
+### [SEA-Lab: Experiment-grounded recursive self-improvement in an automated laboratory](https://doi.org/10.64898/2026.11.12.766090)
 
-- **Authors:** Dubravko Ćulibrk
+- **Authors:** Yuliang Jiang, Ruijie Gong, He Chen, Xin Wang, Bin Zhang, Qiujun Wang, et al.
 - **Date:** 2026-11-16
 - **Source:** openalex
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** For a long time, “AI scientist” meant a person who builds artificial intelligence systems. Lately, the term has also come to mean software systems that try to carry out the whole research cycle by themselves, from reading the literature to writing and reviewing the paper. In 2026 such systems moved from curiosity to...
+- **Abstract summary:** AI scientists can generate hypotheses, plans, and protocols. Translating these outputs into reliable experiments requires adapting them to local equipment and resources using feedback from observed outcomes. A key challenge is to retain laboratory execution feedback as reusable knowledge for subsequent planning. We...
 
-### [DiscoveryAgent: A Framework for Scientist-centric Agentic AI](https://arxiv.org/abs/2611.21950v1)
+### [Security of Deep Research Agents: Attack Surface, Defenses, Benchmarks, and Agenda Seeding against Research Planning](https://doi.org/10.48550/arxiv.2611.20045)
 
-- **Authors:** Owen Queen, Ioana Ciuca, Emma Dann, Jean Somalwar, Carine You, Steven Dillmann, et al.
-- **Date:** 2026-11-16
-- **Source:** arxiv
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** AI agents can assist scientific research, but balancing autonomous investigation with scientists' ability to inspect and redirect ongoing work remains a central design challenge. We present DiscoveryAgent, a domain-agnostic, scientist-centric system that combines autonomous investigation with scientist-directed hypo...
-
-### [Inventa: Decentralized Self-Improving Agents for Autonomous Scientific Discovery](https://arxiv.org/abs/2611.21847v1)
-
-- **Authors:** Prithwish Jana, Nikos Kanakaris, Purak Jain, Anoop Deoras, Sahika Genc
-- **Date:** 2026-11-16
-- **Source:** arxiv
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Large language model (LLM) agents can generate research ideas and improve scientific discovery through iterative experimentation. However, increasing the number of agents or iterations does not automatically translate to producing more diverse or feasible ideas. Agents may converge on similar candidates, propagate u...
-
-### [The AI scientist in the mirror: Shared flaws, joint remedies](https://doi.org/10.1073/pnas.2633303123)
-
-- **Authors:** Quentin Emile Armand Loisel, Steven N. Goodman
-- **Date:** 2026-11-16
+- **Authors:** Yang Luo, G Chen, Yichen Liu, Zhaoyu Chen, Yifeng Gao, Zhiyang Ding, et al.
+- **Date:** 2026-11-15
 - **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** No abstract available.
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Deep research and agentic search agents autonomously retrieve content from the open web and generate reports with citations, and their outputs are often taken directly as research conclusions. This paper systematizes security research in this area along four stages, namely retrieval, planning, evidence integration,...
+
+### [The Machine Must Not Be Its Own Witness: Claim Standing, Evaluator Custody, and the Limits of Self-Certification in Autonomous Research](https://doi.org/10.5281/zenodo.24324984)
+
+- **Authors:** Terrynce Anson White
+- **Date:** 2026-11-17
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Autonomous research agents can produce convincing code, simulations, tests, signatures and manuscripts while controlling the conditions under which their own claims are judged. This methods perspective examines four source-audited OpenLine incidents: a signing key derivable from distributed source, a benchmark passe...

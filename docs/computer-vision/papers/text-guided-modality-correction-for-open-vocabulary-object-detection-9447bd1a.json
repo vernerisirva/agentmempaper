@@ -23,12 +23,12 @@
   "first_seen_date": "2026-11-18",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-11-18 12:39:22",
-  "last_seen_date": "2026-11-18",
+  "last_seen_at": "2026-11-19 12:28:34",
+  "last_seen_date": "2026-11-19",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-11-17",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-11-18 12:39:39",
   "notified_date": "2026-11-18",
   "openalex_id": null,
@@ -38,8 +38,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-11-18 12:39:03",
-    "generated_at": "2026-11-18 12:42:50",
-    "last_seen_at": "2026-11-18 12:39:22",
+    "generated_at": "2026-11-19 12:32:59",
+    "last_seen_at": "2026-11-19 12:28:34",
     "metadata_sources": [
       "arxiv"
     ],
@@ -105,36 +105,1933 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-19T12:31:14.962375+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 1.0,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The paper provides a well-motivated architectural enhancement with mathematically clear design details, comprehensive ablation studies across multiple base models, and consistent empirical gains across standard open-vocabulary detection and segmentation benchmarks.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 70441,
+      "assessment_input_sha256": "d4c0b3e8a7a15059ccf937a2e5c2a9bcb11e79320f83bfe4ff242fe0f7ae1329",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2611.22126",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 69151,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 68333,
+      "evidence_block_count": 95,
+      "evidence_context_characters": 80370,
+      "evidence_context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+      "evidence_context_sha256": "6f346a102629f17e16c08b86a8accfca5b4a7058e27bbf680640170d303b52cc",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 69177,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "extracted_pages": 14,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "38463b69328f203452f2f454fcd4cb2d27ff2b91bc44696e945fc4327650b724",
+        "source_url": "https://arxiv.org/pdf/2611.22126",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 69151,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Text-Guided Modality Correction For Open-Vocabulary Object Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 426,
+          "supplied_characters": 426
+        },
+        {
+          "heading": "Article Info",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 1,
+          "source_characters": 131,
+          "supplied_characters": 131
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 1876,
+          "supplied_characters": 1876
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 3224,
+          "supplied_characters": 3224
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 2269,
+          "supplied_characters": 2269
+        },
+        {
+          "heading": "Open-Vocabulary Object Detection (Ovd)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 1138,
+          "supplied_characters": 1138
+        },
+        {
+          "heading": "Text-Guided Representation Learning And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1674,
+          "supplied_characters": 1674
+        },
+        {
+          "heading": "Multi-Scale Feature Fusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1331,
+          "supplied_characters": 1331
+        },
+        {
+          "heading": "Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 8,
+          "source_characters": 435,
+          "supplied_characters": 435
+        },
+        {
+          "heading": "Overall Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 9,
+          "source_characters": 4204,
+          "supplied_characters": 4204
+        },
+        {
+          "heading": "Overall Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 10,
+          "source_characters": 1636,
+          "supplied_characters": 1636
+        },
+        {
+          "heading": "Tgme: Text-Guided Modality Encoder",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1427,
+          "supplied_characters": 1427
+        },
+        {
+          "heading": "Tgme: Text-Guided Modality Encoder",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 2329,
+          "supplied_characters": 2329
+        },
+        {
+          "heading": "Cmap: Cross-Modal Alignment Pipeline",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 2384,
+          "supplied_characters": 2384
+        },
+        {
+          "heading": "Cmap: Cross-Modal Alignment Pipeline",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1257,
+          "supplied_characters": 1257
+        },
+        {
+          "heading": "Ptcd: Progressive Text Correction Decoder",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1857,
+          "supplied_characters": 1857
+        },
+        {
+          "heading": "Extension To Open-Vocabulary Semantic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 638,
+          "supplied_characters": 638
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 555,
+          "supplied_characters": 555
+        },
+        {
+          "heading": "Datasets And Evaluation Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 18,
+          "source_characters": 975,
+          "supplied_characters": 975
+        },
+        {
+          "heading": "Datasets And Evaluation Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 19,
+          "source_characters": 967,
+          "supplied_characters": 967
+        },
+        {
+          "heading": "Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 20,
+          "source_characters": 4301,
+          "supplied_characters": 4301
+        },
+        {
+          "heading": "Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 21,
+          "source_characters": 2408,
+          "supplied_characters": 2408
+        },
+        {
+          "heading": "Ablation Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 22,
+          "source_characters": 539,
+          "supplied_characters": 539
+        },
+        {
+          "heading": "Effectiveness Across Baselines",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 1302,
+          "supplied_characters": 1302
+        },
+        {
+          "heading": "Effectiveness Across Baselines",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 2388,
+          "supplied_characters": 2388
+        },
+        {
+          "heading": "Effect Of Tgme",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1497,
+          "supplied_characters": 1497
+        },
+        {
+          "heading": "Effect Of Cmap",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 752,
+          "supplied_characters": 752
+        },
+        {
+          "heading": "Effect Of Cmap",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 898,
+          "supplied_characters": 898
+        },
+        {
+          "heading": "Effect Of Detection Head",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 828,
+          "supplied_characters": 828
+        },
+        {
+          "heading": "Comparisons With State-Of-The-Art Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "methods",
+          "section_index": 29,
+          "source_characters": 156,
+          "supplied_characters": 156
+        },
+        {
+          "heading": "Detection Accuracy And Inference Efficiency",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 1029,
+          "supplied_characters": 1029
+        },
+        {
+          "heading": "Qualitative Results On Coco-Ovd",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 31,
+          "source_characters": 1169,
+          "supplied_characters": 1169
+        },
+        {
+          "heading": "Extension To Open-Vocabulary Semantic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 741,
+          "supplied_characters": 741
+        },
+        {
+          "heading": "Extension To Open-Vocabulary Semantic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 4281,
+          "supplied_characters": 4281
+        },
+        {
+          "heading": "Extension To Open-Vocabulary Semantic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 5201,
+          "supplied_characters": 5201
+        },
+        {
+          "heading": "Extension To Open-Vocabulary Semantic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 502,
+          "supplied_characters": 502
+        },
+        {
+          "heading": "Conclusions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "conclusion",
+          "section_index": 36,
+          "source_characters": 1351,
+          "supplied_characters": 1351
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 328,
+          "supplied_characters": 328
+        },
+        {
+          "heading": "Promptdet: Towards Open-Vocabulary Detection Using Uncurated Im-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 298,
+          "supplied_characters": 298
+        },
+        {
+          "heading": "Vocabulary One-Stage Detection With Hierarchical Visual-Language",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 1467,
+          "supplied_characters": 1467
+        },
+        {
+          "heading": "Learning Omni-Grained Open-Vocabulary Detection Beyond Category",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 2380,
+          "supplied_characters": 2380
+        },
+        {
+          "heading": "Efficient Redundancy Reduction For Open-Vocabulary Semantic Segmen-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 863,
+          "supplied_characters": 863
+        },
+        {
+          "heading": "Efficient Redundancy Reduction For Open-Vocabulary Semantic Segmen-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 2921,
+          "supplied_characters": 2921
+        }
+      ],
+      "selected_characters": 68333,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "selected_sections": [
+        {
+          "characters": 426,
+          "heading": "Text-Guided Modality Correction For Open-Vocabulary Object Detection",
+          "page": 1
+        },
+        {
+          "characters": 131,
+          "heading": "Article Info",
+          "page": 1
+        },
+        {
+          "characters": 1876,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 3224,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2269,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1138,
+          "heading": "Open-Vocabulary Object Detection (Ovd)",
+          "page": 2
+        },
+        {
+          "characters": 1674,
+          "heading": "Text-Guided Representation Learning And",
+          "page": 2
+        },
+        {
+          "characters": 1331,
+          "heading": "Multi-Scale Feature Fusion",
+          "page": 3
+        },
+        {
+          "characters": 435,
+          "heading": "Methods",
+          "page": 3
+        },
+        {
+          "characters": 4204,
+          "heading": "Overall Architecture",
+          "page": 3
+        },
+        {
+          "characters": 1636,
+          "heading": "Overall Architecture",
+          "page": 4
+        },
+        {
+          "characters": 1427,
+          "heading": "Tgme: Text-Guided Modality Encoder",
+          "page": 4
+        },
+        {
+          "characters": 2329,
+          "heading": "Tgme: Text-Guided Modality Encoder",
+          "page": 5
+        },
+        {
+          "characters": 2384,
+          "heading": "Cmap: Cross-Modal Alignment Pipeline",
+          "page": 5
+        },
+        {
+          "characters": 1257,
+          "heading": "Cmap: Cross-Modal Alignment Pipeline",
+          "page": 6
+        },
+        {
+          "characters": 1857,
+          "heading": "Ptcd: Progressive Text Correction Decoder",
+          "page": 6
+        },
+        {
+          "characters": 638,
+          "heading": "Extension To Open-Vocabulary Semantic",
+          "page": 6
+        },
+        {
+          "characters": 555,
+          "heading": "Experiments",
+          "page": 6
+        },
+        {
+          "characters": 975,
+          "heading": "Datasets And Evaluation Metrics",
+          "page": 6
+        },
+        {
+          "characters": 967,
+          "heading": "Datasets And Evaluation Metrics",
+          "page": 7
+        },
+        {
+          "characters": 4301,
+          "heading": "Implementation Details",
+          "page": 7
+        },
+        {
+          "characters": 2408,
+          "heading": "Implementation Details",
+          "page": 8
+        },
+        {
+          "characters": 539,
+          "heading": "Ablation Study",
+          "page": 8
+        },
+        {
+          "characters": 1302,
+          "heading": "Effectiveness Across Baselines",
+          "page": 8
+        },
+        {
+          "characters": 2388,
+          "heading": "Effectiveness Across Baselines",
+          "page": 9
+        },
+        {
+          "characters": 1497,
+          "heading": "Effect Of Tgme",
+          "page": 9
+        },
+        {
+          "characters": 752,
+          "heading": "Effect Of Cmap",
+          "page": 9
+        },
+        {
+          "characters": 898,
+          "heading": "Effect Of Cmap",
+          "page": 10
+        },
+        {
+          "characters": 828,
+          "heading": "Effect Of Detection Head",
+          "page": 10
+        },
+        {
+          "characters": 156,
+          "heading": "Comparisons With State-Of-The-Art Methods",
+          "page": 10
+        },
+        {
+          "characters": 1029,
+          "heading": "Detection Accuracy And Inference Efficiency",
+          "page": 10
+        },
+        {
+          "characters": 1169,
+          "heading": "Qualitative Results On Coco-Ovd",
+          "page": 10
+        },
+        {
+          "characters": 741,
+          "heading": "Extension To Open-Vocabulary Semantic",
+          "page": 10
+        },
+        {
+          "characters": 4281,
+          "heading": "Extension To Open-Vocabulary Semantic",
+          "page": 11
+        },
+        {
+          "characters": 5201,
+          "heading": "Extension To Open-Vocabulary Semantic",
+          "page": 12
+        },
+        {
+          "characters": 502,
+          "heading": "Extension To Open-Vocabulary Semantic",
+          "page": 13
+        },
+        {
+          "characters": 1351,
+          "heading": "Conclusions",
+          "page": 13
+        },
+        {
+          "characters": 328,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 298,
+          "heading": "Promptdet: Towards Open-Vocabulary Detection Using Uncurated Im-",
+          "page": 13
+        },
+        {
+          "characters": 1467,
+          "heading": "Vocabulary One-Stage Detection With Hierarchical Visual-Language",
+          "page": 13
+        },
+        {
+          "characters": 2380,
+          "heading": "Learning Omni-Grained Open-Vocabulary Detection Beyond Category",
+          "page": 13
+        },
+        {
+          "characters": 863,
+          "heading": "Efficient Redundancy Reduction For Open-Vocabulary Semantic Segmen-",
+          "page": 13
+        },
+        {
+          "characters": 2921,
+          "heading": "Efficient Redundancy Reduction For Open-Vocabulary Semantic Segmen-",
+          "page": 14
+        }
+      ],
+      "selected_text_sha256": "d4c0b3e8a7a15059ccf937a2e5c2a9bcb11e79320f83bfe4ff242fe0f7ae1329",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "38463b69328f203452f2f454fcd4cb2d27ff2b91bc44696e945fc4327650b724",
+      "source_pages": 14,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0008"
+        ],
+        "excerpt": "provide the spatial representations required\nfor foreground-background discrimination and multiscale\nlocalization. MMC-Det [10] introduces localization guid-\nance through cross-modal masked language modeling; and\nCLIPSelf [11] refines region representations through self-\ndistillation. These approaches motivate integrating textual\nguidance into visual feature processing beyond category\nmatching.\nWe propose the Text-Guided Modality Correction Net-\nwork (TMCNet) to integrate category semantics into query\nconstruction, cross-modal alignment, and multiscale decod-\ning (Fig. 1(d)). The text-guided modality encoder combines\ncross-attention and masked max pooling to construct queries\nwith textual priors. The cross-modal alignment pipeline uses\nthe aligned queries to correct lateral visual features and\nfuses them with projected vision-text association features\nto form joint representations. The ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b967b79ed80fb5eb6559d9c5cf1153daba354ee2cfb021a5ce6b9f60345810f6",
+            "evidence_id": "E3825d446b707601b-B0008",
+            "pages": [
+              1
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2680,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 1781,
+                "text": "provide the spatial representations required\nfor foreground-background discrimination and multiscale\nlocalization. MMC-Det [10] introduces localization guid-\nance through cross-modal masked language modeling; and\nCLIPSelf [11] refines region representations through self-\ndistillation. These approaches motivate integrating textual\nguidance into visual feature processing beyond category\nmatching.\nWe propose the Text-Guided Modality Correction Net-\nwork (TMCNet) to integrate category semantics into query\nconstruction, cross-modal alignment, and multiscale decod-\ning (Fig. 1(d)). The text-guided modality encoder combines\ncross-attention and masked max pooling to construct queries\nwith textual priors. The cross-modal alignment pipeline uses\nthe aligned queries to correct lateral visual features and\nfuses them with projected vision-text association features\nto form joint representations. The "
+              }
+            ],
+            "text": "provide the spatial representations required\nfor foreground-background discrimination and multiscale\nlocalization. MMC-Det [10] introduces localization guid-\nance through cross-modal masked language modeling; and\nCLIPSelf [11] refines region representations through self-\ndistillation. These approaches motivate integrating textual\nguidance into visual feature processing beyond category\nmatching.\nWe propose the Text-Guided Modality Correction Net-\nwork (TMCNet) to integrate category semantics into query\nconstruction, cross-modal alignment, and multiscale decod-\ning (Fig. 1(d)). The text-guided modality encoder combines\ncross-attention and masked max pooling to construct queries\nwith textual priors. The cross-modal alignment pipeline uses\nthe aligned queries to correct lateral visual features and\nfuses them with projected vision-text association features\nto form joint representations. The "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0021"
+        ],
+        "excerpt": "supporting\nvisual\u2013textencoding,semanticguidance,cross-modalfusion,\nand multi-scale prediction.\nSpecifically,inthevisualbranch,ConvNeXt[ 20]extracts\nfour feature levels\ud835\udc05\ud835\udc56 (\ud835\udc56= 2,3,4,5 ) from an input image\n\ud835\udc08\u2208\u211d \ud835\udc3b\u00d7\ud835\udc4a\u00d73 at 1\u22154, 1\u22158, 1\u221516, and 1\u221532 resolution,\nrespectively. Features \ud835\udc052, \ud835\udc053, and \ud835\udc054 supply multi-scale\nspatial information to the decoder via lateral connections.\nAn MLP projects\ud835\udc055 into \ud835\udc05\ud835\udc63 \u2208\u211d \ud835\udc3b\ud835\udc63\u00d7\ud835\udc4a\ud835\udc63\u00d7\ud835\udc37\ud835\udc61, matching the\ntext embedding dimension for vision\u2013text association, where\n\ud835\udc3b\ud835\udc63 =\ud835\udc3b\u221532 , \ud835\udc4a\ud835\udc63 =\ud835\udc4a\u221532 , and\ud835\udc37\ud835\udc61 is the text embedding\ndimension. In the text branch, prompt templates [17,21,1]\ngenerate \ud835\udc43 descriptions per category, such as \"a photo of\na class.\" For category \ud835\udc5b, these descriptions form \ue23f\ud835\udc5b =\n{\ud835\udc60\ud835\udc5b,\ud835\udc5d}\ud835\udc43\ud835\udc5d=1. A pretrained text encoder produces embeddings\n\ud835\udc38= {\ud835\udc38 1,\u2026, \ud835\udc38 \ud835\udc41 } \u2208\ud835\udc45 \ud835\udc41\u00d7\ud835\udc43\u00d7\ud835\udc37 \ud835\udc61, where\ud835\udc41 is the number of\ncategories.Cosinesimilaritiesbetweenvisualfeaturesateach\nspatial location and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Overall Architecture",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2e2221515423102000e7d0346dd75f98cda8268db490d9a38df96a63b7817ccb",
+            "evidence_id": "E3825d446b707601b-B0021",
+            "pages": [
+              3
+            ],
+            "section": "Overall Architecture",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1747,
+                "page": 3,
+                "section": "Overall Architecture",
+                "section_index": 9,
+                "start": 854,
+                "text": "supporting\nvisual\u2013textencoding,semanticguidance,cross-modalfusion,\nand multi-scale prediction.\nSpecifically,inthevisualbranch,ConvNeXt[ 20]extracts\nfour feature levels\ud835\udc05\ud835\udc56 (\ud835\udc56= 2,3,4,5 ) from an input image\n\ud835\udc08\u2208\u211d \ud835\udc3b\u00d7\ud835\udc4a\u00d73 at 1\u22154, 1\u22158, 1\u221516, and 1\u221532 resolution,\nrespectively. Features \ud835\udc052, \ud835\udc053, and \ud835\udc054 supply multi-scale\nspatial information to the decoder via lateral connections.\nAn MLP projects\ud835\udc055 into \ud835\udc05\ud835\udc63 \u2208\u211d \ud835\udc3b\ud835\udc63\u00d7\ud835\udc4a\ud835\udc63\u00d7\ud835\udc37\ud835\udc61, matching the\ntext embedding dimension for vision\u2013text association, where\n\ud835\udc3b\ud835\udc63 =\ud835\udc3b\u221532 , \ud835\udc4a\ud835\udc63 =\ud835\udc4a\u221532 , and\ud835\udc37\ud835\udc61 is the text embedding\ndimension. In the text branch, prompt templates [17,21,1]\ngenerate \ud835\udc43 descriptions per category, such as \"a photo of\na class.\" For category \ud835\udc5b, these descriptions form \ue23f\ud835\udc5b =\n{\ud835\udc60\ud835\udc5b,\ud835\udc5d}\ud835\udc43\ud835\udc5d=1. A pretrained text encoder produces embeddings\n\ud835\udc38= {\ud835\udc38 1,\u2026, \ud835\udc38 \ud835\udc41 } \u2208\ud835\udc45 \ud835\udc41\u00d7\ud835\udc43\u00d7\ud835\udc37 \ud835\udc61, where\ud835\udc41 is the number of\ncategories.Cosinesimilaritiesbetweenvisualfeaturesateach\nspatial location and "
+              }
+            ],
+            "text": "supporting\nvisual\u2013textencoding,semanticguidance,cross-modalfusion,\nand multi-scale prediction.\nSpecifically,inthevisualbranch,ConvNeXt[ 20]extracts\nfour feature levels\ud835\udc05\ud835\udc56 (\ud835\udc56= 2,3,4,5 ) from an input image\n\ud835\udc08\u2208\u211d \ud835\udc3b\u00d7\ud835\udc4a\u00d73 at 1\u22154, 1\u22158, 1\u221516, and 1\u221532 resolution,\nrespectively. Features \ud835\udc052, \ud835\udc053, and \ud835\udc054 supply multi-scale\nspatial information to the decoder via lateral connections.\nAn MLP projects\ud835\udc055 into \ud835\udc05\ud835\udc63 \u2208\u211d \ud835\udc3b\ud835\udc63\u00d7\ud835\udc4a\ud835\udc63\u00d7\ud835\udc37\ud835\udc61, matching the\ntext embedding dimension for vision\u2013text association, where\n\ud835\udc3b\ud835\udc63 =\ud835\udc3b\u221532 , \ud835\udc4a\ud835\udc63 =\ud835\udc4a\u221532 , and\ud835\udc37\ud835\udc61 is the text embedding\ndimension. In the text branch, prompt templates [17,21,1]\ngenerate \ud835\udc43 descriptions per category, such as \"a photo of\na class.\" For category \ud835\udc5b, these descriptions form \ue23f\ud835\udc5b =\n{\ud835\udc60\ud835\udc5b,\ud835\udc5d}\ud835\udc43\ud835\udc5d=1. A pretrained text encoder produces embeddings\n\ud835\udc38= {\ud835\udc38 1,\u2026, \ud835\udc38 \ud835\udc41 } \u2208\ud835\udc45 \ud835\udc41\u00d7\ud835\udc43\u00d7\ud835\udc37 \ud835\udc61, where\ud835\udc41 is the number of\ncategories.Cosinesimilaritiesbetweenvisualfeaturesateach\nspatial location and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0022"
+        ],
+        "excerpt": "category text embeddings form a dense\nvision\u2013text cost map\ud835\udc05\ud835\udc50\ud835\udc63:\nF\ud835\udc50\ud835\udc63(\ud835\udc56, \ud835\udc57, \ud835\udc5b, \ud835\udc5d) = F\ud835\udc63(\ud835\udc56, \ud835\udc57)\ud835\udc38(\ud835\udc5b, \ud835\udc5d)\u2016\u2016F\ud835\udc63(\ud835\udc56, \ud835\udc57)\u2016\u2016\u2016\ud835\udc38(\ud835\udc5b, \ud835\udc5d)\u2016 ,(1)\nHere, (\ud835\udc56, \ud835\udc57) denotes a spatial location, while\ud835\udc5b and \ud835\udc5d index\ncategories and prompt templates, respectively. The cost map\n\ud835\udc05\ud835\udc50\ud835\udc63 \u2208\u211d \ud835\udc3b\ud835\udc63\u00d7\ud835\udc4a\ud835\udc63\u00d7\ud835\udc41\u00d7\ud835\udc43 encodes initial semantic associations\nbetweenspatiallocationsandcategorydescriptions.Aconvo-\nlutional embedding maps\ud835\udc05\ud835\udc50\ud835\udc63 to the initial decoder features\n\ud835\udc05(1)\ud835\udc51\ud835\udc52\ud835\udc50 \u2208\u211d \ud835\udc3b\ud835\udc63\u00d7\ud835\udc4a\ud835\udc63\u00d7\ud835\udc41\u00d7\ud835\udc37, where\ud835\udc37 denotes the decoder featuredimension.\nTGME incorporates category semantics into object\nqueries to guide visual feature aggregation. The Text-\nPrior Object Query Module (TPOQ) uses multi-head cross-\nattention with padding masks, positional embeddings and\n\ud835\udc10\ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61 to aggregate text features\ud835\udc13\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61 into learnable object\nqueries. In parallel, masked max pooling extracts a text\nrepresentationfromvalidtokens.Theattentionoutput,pooled\nrepresentation, and initial ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Overall Architecture",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c2557961b841ac46085690bc2e5869390b45bd02332c23944de22fcb0c205437",
+            "evidence_id": "E3825d446b707601b-B0022",
+            "pages": [
+              3
+            ],
+            "section": "Overall Architecture",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2643,
+                "page": 3,
+                "section": "Overall Architecture",
+                "section_index": 9,
+                "start": 1747,
+                "text": "category text embeddings form a dense\nvision\u2013text cost map\ud835\udc05\ud835\udc50\ud835\udc63:\nF\ud835\udc50\ud835\udc63(\ud835\udc56, \ud835\udc57, \ud835\udc5b, \ud835\udc5d) = F\ud835\udc63(\ud835\udc56, \ud835\udc57)\ud835\udc38(\ud835\udc5b, \ud835\udc5d)\u2016\u2016F\ud835\udc63(\ud835\udc56, \ud835\udc57)\u2016\u2016\u2016\ud835\udc38(\ud835\udc5b, \ud835\udc5d)\u2016 ,(1)\nHere, (\ud835\udc56, \ud835\udc57) denotes a spatial location, while\ud835\udc5b and \ud835\udc5d index\ncategories and prompt templates, respectively. The cost map\n\ud835\udc05\ud835\udc50\ud835\udc63 \u2208\u211d \ud835\udc3b\ud835\udc63\u00d7\ud835\udc4a\ud835\udc63\u00d7\ud835\udc41\u00d7\ud835\udc43 encodes initial semantic associations\nbetweenspatiallocationsandcategorydescriptions.Aconvo-\nlutional embedding maps\ud835\udc05\ud835\udc50\ud835\udc63 to the initial decoder features\n\ud835\udc05(1)\ud835\udc51\ud835\udc52\ud835\udc50 \u2208\u211d \ud835\udc3b\ud835\udc63\u00d7\ud835\udc4a\ud835\udc63\u00d7\ud835\udc41\u00d7\ud835\udc37, where\ud835\udc37 denotes the decoder featuredimension.\nTGME incorporates category semantics into object\nqueries to guide visual feature aggregation. The Text-\nPrior Object Query Module (TPOQ) uses multi-head cross-\nattention with padding masks, positional embeddings and\n\ud835\udc10\ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61 to aggregate text features\ud835\udc13\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61 into learnable object\nqueries. In parallel, masked max pooling extracts a text\nrepresentationfromvalidtokens.Theattentionoutput,pooled\nrepresentation, and initial "
+              }
+            ],
+            "text": "category text embeddings form a dense\nvision\u2013text cost map\ud835\udc05\ud835\udc50\ud835\udc63:\nF\ud835\udc50\ud835\udc63(\ud835\udc56, \ud835\udc57, \ud835\udc5b, \ud835\udc5d) = F\ud835\udc63(\ud835\udc56, \ud835\udc57)\ud835\udc38(\ud835\udc5b, \ud835\udc5d)\u2016\u2016F\ud835\udc63(\ud835\udc56, \ud835\udc57)\u2016\u2016\u2016\ud835\udc38(\ud835\udc5b, \ud835\udc5d)\u2016 ,(1)\nHere, (\ud835\udc56, \ud835\udc57) denotes a spatial location, while\ud835\udc5b and \ud835\udc5d index\ncategories and prompt templates, respectively. The cost map\n\ud835\udc05\ud835\udc50\ud835\udc63 \u2208\u211d \ud835\udc3b\ud835\udc63\u00d7\ud835\udc4a\ud835\udc63\u00d7\ud835\udc41\u00d7\ud835\udc43 encodes initial semantic associations\nbetweenspatiallocationsandcategorydescriptions.Aconvo-\nlutional embedding maps\ud835\udc05\ud835\udc50\ud835\udc63 to the initial decoder features\n\ud835\udc05(1)\ud835\udc51\ud835\udc52\ud835\udc50 \u2208\u211d \ud835\udc3b\ud835\udc63\u00d7\ud835\udc4a\ud835\udc63\u00d7\ud835\udc41\u00d7\ud835\udc37, where\ud835\udc37 denotes the decoder featuredimension.\nTGME incorporates category semantics into object\nqueries to guide visual feature aggregation. The Text-\nPrior Object Query Module (TPOQ) uses multi-head cross-\nattention with padding masks, positional embeddings and\n\ud835\udc10\ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61 to aggregate text features\ud835\udc13\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61 into learnable object\nqueries. In parallel, masked max pooling extracts a text\nrepresentationfromvalidtokens.Theattentionoutput,pooled\nrepresentation, and initial "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0023"
+        ],
+        "excerpt": "queries are summed to obtain\ntext-prior object queries \ud835\udc10\ud835\udc61\ud835\udc5d\ud835\udc5e, which are then combined\nwith projected learnable object tokens to form\ud835\udc10\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b for\nsubsequent cross-modal feature fusion. Details of TGME are\nprovidedinSection3.2.CMAPalignsandfusessemantically\nguidedquerieswithvision-textassociationfeaturestosupport\ndecoding through two complementary branches. First, the\nAlignment Layer Module (ALM) transforms\ud835\udc10\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b into a\nrepresentation compatible with the visual branch, while the\nimageprojectionlayermaps \ud835\udc05\ud835\udc591\ud835\udc51\ud835\udc52\ud835\udc50 to \ud835\udc13\ud835\udc56\ud835\udc5a\ud835\udc54.Thealignedqueriesretaincategorysemanticsforlateralfeaturecorrectionandare\nalso combined with\ud835\udc13\ud835\udc56\ud835\udc5a\ud835\udc54 through the Fusion Operation (FO).\nThe fused representation then passes through the Universal\nProjection Module (UPM) to produce joint vision-language\nfeatures for decoder feature aggregation. These two branches\nincorporate text semantics into lateral feature correction\nand feature ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Overall Architecture",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8694f09eecebee81ad22d48d35a31cfee9d667382b9b9ac5c503eb84bbec6103",
+            "evidence_id": "E3825d446b707601b-B0023",
+            "pages": [
+              3
+            ],
+            "section": "Overall Architecture",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 3542,
+                "page": 3,
+                "section": "Overall Architecture",
+                "section_index": 9,
+                "start": 2643,
+                "text": "queries are summed to obtain\ntext-prior object queries \ud835\udc10\ud835\udc61\ud835\udc5d\ud835\udc5e, which are then combined\nwith projected learnable object tokens to form\ud835\udc10\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b for\nsubsequent cross-modal feature fusion. Details of TGME are\nprovidedinSection3.2.CMAPalignsandfusessemantically\nguidedquerieswithvision-textassociationfeaturestosupport\ndecoding through two complementary branches. First, the\nAlignment Layer Module (ALM) transforms\ud835\udc10\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b into a\nrepresentation compatible with the visual branch, while the\nimageprojectionlayermaps \ud835\udc05\ud835\udc591\ud835\udc51\ud835\udc52\ud835\udc50 to \ud835\udc13\ud835\udc56\ud835\udc5a\ud835\udc54.Thealignedqueriesretaincategorysemanticsforlateralfeaturecorrectionandare\nalso combined with\ud835\udc13\ud835\udc56\ud835\udc5a\ud835\udc54 through the Fusion Operation (FO).\nThe fused representation then passes through the Universal\nProjection Module (UPM) to produce joint vision-language\nfeatures for decoder feature aggregation. These two branches\nincorporate text semantics into lateral feature correction\nand feature "
+              }
+            ],
+            "text": "queries are summed to obtain\ntext-prior object queries \ud835\udc10\ud835\udc61\ud835\udc5d\ud835\udc5e, which are then combined\nwith projected learnable object tokens to form\ud835\udc10\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b for\nsubsequent cross-modal feature fusion. Details of TGME are\nprovidedinSection3.2.CMAPalignsandfusessemantically\nguidedquerieswithvision-textassociationfeaturestosupport\ndecoding through two complementary branches. First, the\nAlignment Layer Module (ALM) transforms\ud835\udc10\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b into a\nrepresentation compatible with the visual branch, while the\nimageprojectionlayermaps \ud835\udc05\ud835\udc591\ud835\udc51\ud835\udc52\ud835\udc50 to \ud835\udc13\ud835\udc56\ud835\udc5a\ud835\udc54.Thealignedqueriesretaincategorysemanticsforlateralfeaturecorrectionandare\nalso combined with\ud835\udc13\ud835\udc56\ud835\udc5a\ud835\udc54 through the Fusion Operation (FO).\nThe fused representation then passes through the Universal\nProjection Module (UPM) to produce joint vision-language\nfeatures for decoder feature aggregation. These two branches\nincorporate text semantics into lateral feature correction\nand feature "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0024"
+        ],
+        "excerpt": "aggregation, respectively. Details of CMAP\nare provided in Section 3.3. Finally, PTCD progressively\nfuses \ud835\udc054, \ud835\udc053, and \ud835\udc052 through a top-down pathway with\nlateral connections. At each stage, the ALM representation\nis adapted to the spatial and channel dimensions of the\ncorresponding visual features and added element-wise for\nsemantic correction. The Progressive Feature Aggregation\nModule (PFAM) [18] then fuses these corrected features\nwith the current decoder features and UPM joint features to\nrestore spatial resolution. This process combines high-level\ncategory semantics with fine spatial details across feature\n:Preprint submitted to Elsevier Page 3 of 14\nE\nObject Token\nMask\npos\nQinit ...\nMMP\nQtpq\n2\u00d7\nFO\n8\u00d7\nFh\nE\n4\u00d7\n...\nText Feat.\nTP\nMP\nPEP\nMulti-Head Cross-\nAttention Fusion\n[1, 32, 48, 48]\n[1, 16, 96, 96]\nF2\nF3\nF4\nFv Fcv\nPFAM\n[1, 8, 192, 192]\nPFAM\nTP\nMP\nPEP\nQP\nOP\nText Projection\nMask ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Overall Architecture",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7fb07453c8bcb30816f4e1472b72fd57a209b1cfeb409de8749debc38462a9a7",
+            "evidence_id": "E3825d446b707601b-B0024",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Overall Architecture",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 4204,
+                "page": 3,
+                "section": "Overall Architecture",
+                "section_index": 9,
+                "start": 3542,
+                "text": "aggregation, respectively. Details of CMAP\nare provided in Section 3.3. Finally, PTCD progressively\nfuses \ud835\udc054, \ud835\udc053, and \ud835\udc052 through a top-down pathway with\nlateral connections. At each stage, the ALM representation\nis adapted to the spatial and channel dimensions of the\ncorresponding visual features and added element-wise for\nsemantic correction. The Progressive Feature Aggregation\nModule (PFAM) [18] then fuses these corrected features\nwith the current decoder features and UPM joint features to\nrestore spatial resolution. This process combines high-level\ncategory semantics with fine spatial details across feature\n:Preprint submitted to Elsevier Page 3 of 14"
+              },
+              {
+                "end": 232,
+                "page": 4,
+                "section": "Overall Architecture",
+                "section_index": 10,
+                "start": 0,
+                "text": "E\nObject Token\nMask\npos\nQinit ...\nMMP\nQtpq\n2\u00d7\nFO\n8\u00d7\nFh\nE\n4\u00d7\n...\nText Feat.\nTP\nMP\nPEP\nMulti-Head Cross-\nAttention Fusion\n[1, 32, 48, 48]\n[1, 16, 96, 96]\nF2\nF3\nF4\nFv Fcv\nPFAM\n[1, 8, 192, 192]\nPFAM\nTP\nMP\nPEP\nQP\nOP\nText Projection\nMask "
+              }
+            ],
+            "text": "aggregation, respectively. Details of CMAP\nare provided in Section 3.3. Finally, PTCD progressively\nfuses \ud835\udc054, \ud835\udc053, and \ud835\udc052 through a top-down pathway with\nlateral connections. At each stage, the ALM representation\nis adapted to the spatial and channel dimensions of the\ncorresponding visual features and added element-wise for\nsemantic correction. The Progressive Feature Aggregation\nModule (PFAM) [18] then fuses these corrected features\nwith the current decoder features and UPM joint features to\nrestore spatial resolution. This process combines high-level\ncategory semantics with fine spatial details across feature\n:Preprint submitted to Elsevier Page 3 of 14\nE\nObject Token\nMask\npos\nQinit ...\nMMP\nQtpq\n2\u00d7\nFO\n8\u00d7\nFh\nE\n4\u00d7\n...\nText Feat.\nTP\nMP\nPEP\nMulti-Head Cross-\nAttention Fusion\n[1, 32, 48, 48]\n[1, 16, 96, 96]\nF2\nF3\nF4\nFv Fcv\nPFAM\n[1, 8, 192, 192]\nPFAM\nTP\nMP\nPEP\nQP\nOP\nText Projection\nMask "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0029"
+        ],
+        "excerpt": "feature aggregation. As shown in Fig. 2, it\nfirst projects the text features and adapts the corresponding\npadding mask:\n\ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61 = TP(\ud835\udc47 \ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61),\n\ud835\udc40\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61 = MP(\ud835\udc40\ud835\udc4e\ud835\udc60\ud835\udc58). (3)\nHere, TP projects the text features to\ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61, whileMP adapts\nthetextpaddingmask \ud835\udc40\ud835\udc4e\ud835\udc60\ud835\udc58 toobtain \ud835\udc40\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61,whichidentifies\nvalid and padded positions in the text sequence. Using\nthese inputs, multi-head cross-attention aggregates query-\nspecific text information, with projected object queries as\nqueries, position-encoded text features as keys, and\ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61 as\nvalues. In parallel, masked max pooling extracts a global text\nrepresentation from valid positions and broadcasts it across\nqueries. Both outputs are added to\ud835\udc44\ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61 to obtain text-prior\nobject queries:\n\ud835\udc44\ud835\udc61\ud835\udc5d\ud835\udc5e = MCA\n(\nQP(\ud835\udc44\ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61), \ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61 + PEP(\ud835\udc5d\ud835\udc5c\ud835\udc60), \ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61;\ud835\udc40 \ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61\n)\n+ Broadcast \ud835\udc41\ud835\udc5e\n(\nMMP(\ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61, \ud835\udc40\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61)\n)\n+\ud835\udc44 \ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61.\n(4)\nHere, MCA(\ud835\udc44, \ud835\udc3e, \ud835\udc49;\ud835\udc40) denotes multi-head cross-attention\nwith queries \ud835\udc44, keys \ud835\udc3e, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Tgme: Text-Guided Modality Encoder",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d9bc2fe49cfc781499ac7c5d5ac8a8da6bba2caeec3cc540edc7482788d0bb0d",
+            "evidence_id": "E3825d446b707601b-B0029",
+            "pages": [
+              5
+            ],
+            "section": "Tgme: Text-Guided Modality Encoder",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1266,
+                "page": 5,
+                "section": "Tgme: Text-Guided Modality Encoder",
+                "section_index": 12,
+                "start": 366,
+                "text": "feature aggregation. As shown in Fig. 2, it\nfirst projects the text features and adapts the corresponding\npadding mask:\n\ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61 = TP(\ud835\udc47 \ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61),\n\ud835\udc40\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61 = MP(\ud835\udc40\ud835\udc4e\ud835\udc60\ud835\udc58). (3)\nHere, TP projects the text features to\ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61, whileMP adapts\nthetextpaddingmask \ud835\udc40\ud835\udc4e\ud835\udc60\ud835\udc58 toobtain \ud835\udc40\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61,whichidentifies\nvalid and padded positions in the text sequence. Using\nthese inputs, multi-head cross-attention aggregates query-\nspecific text information, with projected object queries as\nqueries, position-encoded text features as keys, and\ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61 as\nvalues. In parallel, masked max pooling extracts a global text\nrepresentation from valid positions and broadcasts it across\nqueries. Both outputs are added to\ud835\udc44\ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61 to obtain text-prior\nobject queries:\n\ud835\udc44\ud835\udc61\ud835\udc5d\ud835\udc5e = MCA\n(\nQP(\ud835\udc44\ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61), \ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61 + PEP(\ud835\udc5d\ud835\udc5c\ud835\udc60), \ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61;\ud835\udc40 \ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61\n)\n+ Broadcast \ud835\udc41\ud835\udc5e\n(\nMMP(\ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61, \ud835\udc40\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61)\n)\n+\ud835\udc44 \ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61.\n(4)\nHere, MCA(\ud835\udc44, \ud835\udc3e, \ud835\udc49;\ud835\udc40) denotes multi-head cross-attention\nwith queries \ud835\udc44, keys \ud835\udc3e, "
+              }
+            ],
+            "text": "feature aggregation. As shown in Fig. 2, it\nfirst projects the text features and adapts the corresponding\npadding mask:\n\ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61 = TP(\ud835\udc47 \ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61),\n\ud835\udc40\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61 = MP(\ud835\udc40\ud835\udc4e\ud835\udc60\ud835\udc58). (3)\nHere, TP projects the text features to\ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61, whileMP adapts\nthetextpaddingmask \ud835\udc40\ud835\udc4e\ud835\udc60\ud835\udc58 toobtain \ud835\udc40\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61,whichidentifies\nvalid and padded positions in the text sequence. Using\nthese inputs, multi-head cross-attention aggregates query-\nspecific text information, with projected object queries as\nqueries, position-encoded text features as keys, and\ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61 as\nvalues. In parallel, masked max pooling extracts a global text\nrepresentation from valid positions and broadcasts it across\nqueries. Both outputs are added to\ud835\udc44\ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61 to obtain text-prior\nobject queries:\n\ud835\udc44\ud835\udc61\ud835\udc5d\ud835\udc5e = MCA\n(\nQP(\ud835\udc44\ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61), \ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61 + PEP(\ud835\udc5d\ud835\udc5c\ud835\udc60), \ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61;\ud835\udc40 \ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61\n)\n+ Broadcast \ud835\udc41\ud835\udc5e\n(\nMMP(\ud835\udc4d\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61, \ud835\udc40\ud835\udc61\ud835\udc52\ud835\udc65\ud835\udc61)\n)\n+\ud835\udc44 \ud835\udc56\ud835\udc5b\ud835\udc56\ud835\udc61.\n(4)\nHere, MCA(\ud835\udc44, \ud835\udc3e, \ud835\udc49;\ud835\udc40) denotes multi-head cross-attention\nwith queries \ud835\udc44, keys \ud835\udc3e, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0032"
+        ],
+        "excerpt": "TGME queries encode category semantics, while the\ninitial decoder features\ud835\udc39 \ud835\udc591\ud835\udc51\ud835\udc52\ud835\udc50 capture associations betweenspatial locations and category descriptions. CMAP brings\nthese representations together to guide visual feature ag-\ngregation. As shown in Fig. 2, it comprises an Alignment\nLayer Module (ALM), a Fusion Operation (FO), and a\nUniversal Projection Module (UPM). The ALM output\nsupplies category semantics for lateral feature correction and\nalso enters FO and UPM to form joint features for decoder\naggregation.\nAlignment Layer Module.To enable interaction between\nthe two representations, ALM uses a two-layer MLP to map\nthe TGME queries\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b \u2208\u211d \ud835\udc41\ud835\udc5e\u00d7\ud835\udc36 into a shared feature\nspace:\n\u0304\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b = ALM(\ud835\udc44 \ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b) \u2208\u211d \ud835\udc41\ud835\udc5e\u00d7\ud835\udc36 .(6)\nHere, \ud835\udc41\ud835\udc5e is the number of queries,\ud835\udc36 is the shared channel\ndimension, and \u0304\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b denotes the transformed queries. This\nmapping prepares the queries for cross-modal ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Cmap: Cross-Modal Alignment Pipeline",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a8580e27b640fbc02e0377e37175aade8f33d3371eec13504814189951bdc20f",
+            "evidence_id": "E3825d446b707601b-B0032",
+            "pages": [
+              5
+            ],
+            "section": "Cmap: Cross-Modal Alignment Pipeline",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 888,
+                "page": 5,
+                "section": "Cmap: Cross-Modal Alignment Pipeline",
+                "section_index": 13,
+                "start": 0,
+                "text": "TGME queries encode category semantics, while the\ninitial decoder features\ud835\udc39 \ud835\udc591\ud835\udc51\ud835\udc52\ud835\udc50 capture associations betweenspatial locations and category descriptions. CMAP brings\nthese representations together to guide visual feature ag-\ngregation. As shown in Fig. 2, it comprises an Alignment\nLayer Module (ALM), a Fusion Operation (FO), and a\nUniversal Projection Module (UPM). The ALM output\nsupplies category semantics for lateral feature correction and\nalso enters FO and UPM to form joint features for decoder\naggregation.\nAlignment Layer Module.To enable interaction between\nthe two representations, ALM uses a two-layer MLP to map\nthe TGME queries\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b \u2208\u211d \ud835\udc41\ud835\udc5e\u00d7\ud835\udc36 into a shared feature\nspace:\n\u0304\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b = ALM(\ud835\udc44 \ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b) \u2208\u211d \ud835\udc41\ud835\udc5e\u00d7\ud835\udc36 .(6)\nHere, \ud835\udc41\ud835\udc5e is the number of queries,\ud835\udc36 is the shared channel\ndimension, and \u0304\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b denotes the transformed queries. This\nmapping prepares the queries for cross-modal "
+              }
+            ],
+            "text": "TGME queries encode category semantics, while the\ninitial decoder features\ud835\udc39 \ud835\udc591\ud835\udc51\ud835\udc52\ud835\udc50 capture associations betweenspatial locations and category descriptions. CMAP brings\nthese representations together to guide visual feature ag-\ngregation. As shown in Fig. 2, it comprises an Alignment\nLayer Module (ALM), a Fusion Operation (FO), and a\nUniversal Projection Module (UPM). The ALM output\nsupplies category semantics for lateral feature correction and\nalso enters FO and UPM to form joint features for decoder\naggregation.\nAlignment Layer Module.To enable interaction between\nthe two representations, ALM uses a two-layer MLP to map\nthe TGME queries\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b \u2208\u211d \ud835\udc41\ud835\udc5e\u00d7\ud835\udc36 into a shared feature\nspace:\n\u0304\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b = ALM(\ud835\udc44 \ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b) \u2208\u211d \ud835\udc41\ud835\udc5e\u00d7\ud835\udc36 .(6)\nHere, \ud835\udc41\ud835\udc5e is the number of queries,\ud835\udc36 is the shared channel\ndimension, and \u0304\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b denotes the transformed queries. This\nmapping prepares the queries for cross-modal "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0034"
+        ],
+        "excerpt": "tokens. To\nenrich the queries with relevant visual context, scaled dot-\nproduct attention uses\u0304\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b as queries and\ud835\udc47\ud835\udc5a as keys and\nvalues:\n\ud835\udc34= Sof tmax\n( \u0304\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b\ud835\udc47 \u22a4\ud835\udc5a\n\u221a\n\ud835\udc36\n)\n\u2208\u211d \ud835\udc41\ud835\udc5e\u00d7\ud835\udc3f\ud835\udc63 .(9)\nSoftmax normalizes scores over the\ud835\udc3f\ud835\udc63 modality tokens,\nyielding query-specific weights for aggregation:\n\ud835\udc47\ud835\udc36-\ud835\udc34\ud835\udc61\ud835\udc61\ud835\udc52\ud835\udc5b\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b =\ud835\udc34\ud835\udc47 \ud835\udc5a \u2208\u211d \ud835\udc41\ud835\udc5e\u00d7\ud835\udc36 .(10)\nThe resulting context features update only the query posi-\ntions through residual addition, leaving the modality tokens\nunchanged:\n\u0303\ud835\udc47\ud835\udc5a =\ud835\udc47 \ud835\udc50\ud835\udc4e\ud835\udc61 + Concat \ud835\udc60\ud835\udc52\ud835\udc5e\n(\n\ud835\udc47\ud835\udc36-\ud835\udc34\ud835\udc61\ud835\udc61\ud835\udc52\ud835\udc5b\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b ,0 \ud835\udc3f\ud835\udc63\u00d7\ud835\udc36\n)\n= Concat \ud835\udc60\ud835\udc52\ud835\udc5e\n( \u0304\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b +\ud835\udc47 \ud835\udc36-\ud835\udc34\ud835\udc61\ud835\udc61\ud835\udc52\ud835\udc5b\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b , \ud835\udc47\ud835\udc5a) . (11)\n:Preprint submitted to Elsevier Page 5 of 14\nwhere 0\ud835\udc3f\ud835\udc63\u00d7\ud835\udc36 is a zero tensor indicating that the residualupdate applies only to the query positions in the joint\nsequence. \u0303\ud835\udc47\ud835\udc5a retains the original vision\u2013text association\ntokens alongside queries enriched with visual context.\nUniversal Projection Module.UPM applies ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Cmap: Cross-Modal Alignment Pipeline",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "efff6ae6837e96dcc1a943365403586be0eaf0cae3756d007177212e9fa81ca8",
+            "evidence_id": "E3825d446b707601b-B0034",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Cmap: Cross-Modal Alignment Pipeline",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2384,
+                "page": 5,
+                "section": "Cmap: Cross-Modal Alignment Pipeline",
+                "section_index": 13,
+                "start": 1788,
+                "text": "tokens. To\nenrich the queries with relevant visual context, scaled dot-\nproduct attention uses\u0304\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b as queries and\ud835\udc47\ud835\udc5a as keys and\nvalues:\n\ud835\udc34= Sof tmax\n( \u0304\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b\ud835\udc47 \u22a4\ud835\udc5a\n\u221a\n\ud835\udc36\n)\n\u2208\u211d \ud835\udc41\ud835\udc5e\u00d7\ud835\udc3f\ud835\udc63 .(9)\nSoftmax normalizes scores over the\ud835\udc3f\ud835\udc63 modality tokens,\nyielding query-specific weights for aggregation:\n\ud835\udc47\ud835\udc36-\ud835\udc34\ud835\udc61\ud835\udc61\ud835\udc52\ud835\udc5b\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b =\ud835\udc34\ud835\udc47 \ud835\udc5a \u2208\u211d \ud835\udc41\ud835\udc5e\u00d7\ud835\udc36 .(10)\nThe resulting context features update only the query posi-\ntions through residual addition, leaving the modality tokens\nunchanged:\n\u0303\ud835\udc47\ud835\udc5a =\ud835\udc47 \ud835\udc50\ud835\udc4e\ud835\udc61 + Concat \ud835\udc60\ud835\udc52\ud835\udc5e\n(\n\ud835\udc47\ud835\udc36-\ud835\udc34\ud835\udc61\ud835\udc61\ud835\udc52\ud835\udc5b\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b ,0 \ud835\udc3f\ud835\udc63\u00d7\ud835\udc36\n)\n= Concat \ud835\udc60\ud835\udc52\ud835\udc5e\n( \u0304\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b +\ud835\udc47 \ud835\udc36-\ud835\udc34\ud835\udc61\ud835\udc61\ud835\udc52\ud835\udc5b\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b , \ud835\udc47\ud835\udc5a) . (11)\n:Preprint submitted to Elsevier Page 5 of 14"
+              },
+              {
+                "end": 267,
+                "page": 6,
+                "section": "Cmap: Cross-Modal Alignment Pipeline",
+                "section_index": 14,
+                "start": 0,
+                "text": "where 0\ud835\udc3f\ud835\udc63\u00d7\ud835\udc36 is a zero tensor indicating that the residualupdate applies only to the query positions in the joint\nsequence. \u0303\ud835\udc47\ud835\udc5a retains the original vision\u2013text association\ntokens alongside queries enriched with visual context.\nUniversal Projection Module.UPM applies "
+              }
+            ],
+            "text": "tokens. To\nenrich the queries with relevant visual context, scaled dot-\nproduct attention uses\u0304\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b as queries and\ud835\udc47\ud835\udc5a as keys and\nvalues:\n\ud835\udc34= Sof tmax\n( \u0304\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b\ud835\udc47 \u22a4\ud835\udc5a\n\u221a\n\ud835\udc36\n)\n\u2208\u211d \ud835\udc41\ud835\udc5e\u00d7\ud835\udc3f\ud835\udc63 .(9)\nSoftmax normalizes scores over the\ud835\udc3f\ud835\udc63 modality tokens,\nyielding query-specific weights for aggregation:\n\ud835\udc47\ud835\udc36-\ud835\udc34\ud835\udc61\ud835\udc61\ud835\udc52\ud835\udc5b\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b =\ud835\udc34\ud835\udc47 \ud835\udc5a \u2208\u211d \ud835\udc41\ud835\udc5e\u00d7\ud835\udc36 .(10)\nThe resulting context features update only the query posi-\ntions through residual addition, leaving the modality tokens\nunchanged:\n\u0303\ud835\udc47\ud835\udc5a =\ud835\udc47 \ud835\udc50\ud835\udc4e\ud835\udc61 + Concat \ud835\udc60\ud835\udc52\ud835\udc5e\n(\n\ud835\udc47\ud835\udc36-\ud835\udc34\ud835\udc61\ud835\udc61\ud835\udc52\ud835\udc5b\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b ,0 \ud835\udc3f\ud835\udc63\u00d7\ud835\udc36\n)\n= Concat \ud835\udc60\ud835\udc52\ud835\udc5e\n( \u0304\ud835\udc44\ud835\udc61\ud835\udc5c\ud835\udc58\ud835\udc52\ud835\udc5b +\ud835\udc47 \ud835\udc36-\ud835\udc34\ud835\udc61\ud835\udc61\ud835\udc52\ud835\udc5b\ud835\udc61\ud835\udc56\ud835\udc5c\ud835\udc5b , \ud835\udc47\ud835\udc5a) . (11)\n:Preprint submitted to Elsevier Page 5 of 14\nwhere 0\ud835\udc3f\ud835\udc63\u00d7\ud835\udc36 is a zero tensor indicating that the residualupdate applies only to the query positions in the joint\nsequence. \u0303\ud835\udc47\ud835\udc5a retains the original vision\u2013text association\ntokens alongside queries enriched with visual context.\nUniversal Projection Module.UPM applies "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0037"
+        ],
+        "excerpt": "As shown in Fig. 2, PTCD progressively fuses hierarchi-\ncal visual features through a top-down pathway with lateral\nconnections. The two CMAP branches provide complemen-\ntary guidance: ALM queries supply category semantics for\nlateral feature correction, while UPM joint features provide\ncross-modal context for progressive aggregation.\nSemantically Guided Lateral Feature Correction.Since\nALM queries have a sequence structure, dimensional adapta-\ntion first maps them to representations matching the spatial\nlayout and channel dimension of each lateral feature. These\nrepresentations are then added element-wise to\ud835\udc394, \ud835\udc393, and\n\ud835\udc392, respectively, incorporating category semantics before\ndecoder aggregation. This mapping converts query represen-\ntations into spatially compatible features rather than directly\nupsampling the query sequence.\nProgressive Aggregation Guided by Joint ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ptcd: Progressive Text Correction Decoder",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "30bbf42ff8a0d14210b83989df4bd818a18175f9ff0d6325b8578c45edbe0e47",
+            "evidence_id": "E3825d446b707601b-B0037",
+            "pages": [
+              6
+            ],
+            "section": "Ptcd: Progressive Text Correction Decoder",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 880,
+                "page": 6,
+                "section": "Ptcd: Progressive Text Correction Decoder",
+                "section_index": 15,
+                "start": 0,
+                "text": "As shown in Fig. 2, PTCD progressively fuses hierarchi-\ncal visual features through a top-down pathway with lateral\nconnections. The two CMAP branches provide complemen-\ntary guidance: ALM queries supply category semantics for\nlateral feature correction, while UPM joint features provide\ncross-modal context for progressive aggregation.\nSemantically Guided Lateral Feature Correction.Since\nALM queries have a sequence structure, dimensional adapta-\ntion first maps them to representations matching the spatial\nlayout and channel dimension of each lateral feature. These\nrepresentations are then added element-wise to\ud835\udc394, \ud835\udc393, and\n\ud835\udc392, respectively, incorporating category semantics before\ndecoder aggregation. This mapping converts query represen-\ntations into spatially compatible features rather than directly\nupsampling the query sequence.\nProgressive Aggregation Guided by Joint "
+              }
+            ],
+            "text": "As shown in Fig. 2, PTCD progressively fuses hierarchi-\ncal visual features through a top-down pathway with lateral\nconnections. The two CMAP branches provide complemen-\ntary guidance: ALM queries supply category semantics for\nlateral feature correction, while UPM joint features provide\ncross-modal context for progressive aggregation.\nSemantically Guided Lateral Feature Correction.Since\nALM queries have a sequence structure, dimensional adapta-\ntion first maps them to representations matching the spatial\nlayout and channel dimension of each lateral feature. These\nrepresentations are then added element-wise to\ud835\udc394, \ud835\udc393, and\n\ud835\udc392, respectively, incorporating category semantics before\ndecoder aggregation. This mapping converts query represen-\ntations into spatially compatible features rather than directly\nupsampling the query sequence.\nProgressive Aggregation Guided by Joint "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0042"
+        ],
+        "excerpt": "Datasets.We evaluate TMCNet on open-vocabulary object\ndetection and semantic segmentation using the following\ndatasets and protocols.\n\u2022 Open-vocabulary object detection (OVD): Follow-\ning prior work [2, 12, 1, 25], we use COCO-OVD\nand LVIS-OVD, built on MS-COCO [26] and LVIS\nv1.0 [27], respectively. We adopt the category splits\nand evaluation protocols of OVR-CNN [2] for COCO-\nOVD and ViLD [1] for LVIS-OVD.\n\u2022 Open-vocabulary semantic segmentation (OVS): Fol-\nlowing prior methods [17, 28, 18, 29], we train on\nCOCO-Stuff [30] and evaluate on ADE20K [31],\nPASCALVOC[ 32],andPASCAL-Context[ 33].Eval-\nuation covers the150-class and847-class settings of\nADE20K (A-150 and A-847), the20-class setting of\nPASCAL VOC (PAS-20), and the59-class and459-\nclass settings of PASCAL-Context (PC-59 and PC-\n459).\nEvaluation Metrics.We assess prediction accuracy using\ntask-specific metrics and report ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Datasets And Evaluation Metrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8d30fde6e703f8e50d5d0bf4a0f0d8db2aff173eeea30cb565d60db17f16c256",
+            "evidence_id": "E3825d446b707601b-B0042",
+            "pages": [
+              6
+            ],
+            "section": "Datasets And Evaluation Metrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 6,
+                "section": "Datasets And Evaluation Metrics",
+                "section_index": 18,
+                "start": 0,
+                "text": "Datasets.We evaluate TMCNet on open-vocabulary object\ndetection and semantic segmentation using the following\ndatasets and protocols.\n\u2022 Open-vocabulary object detection (OVD): Follow-\ning prior work [2, 12, 1, 25], we use COCO-OVD\nand LVIS-OVD, built on MS-COCO [26] and LVIS\nv1.0 [27], respectively. We adopt the category splits\nand evaluation protocols of OVR-CNN [2] for COCO-\nOVD and ViLD [1] for LVIS-OVD.\n\u2022 Open-vocabulary semantic segmentation (OVS): Fol-\nlowing prior methods [17, 28, 18, 29], we train on\nCOCO-Stuff [30] and evaluate on ADE20K [31],\nPASCALVOC[ 32],andPASCAL-Context[ 33].Eval-\nuation covers the150-class and847-class settings of\nADE20K (A-150 and A-847), the20-class setting of\nPASCAL VOC (PAS-20), and the59-class and459-\nclass settings of PASCAL-Context (PC-59 and PC-\n459).\nEvaluation Metrics.We assess prediction accuracy using\ntask-specific metrics and report "
+              }
+            ],
+            "text": "Datasets.We evaluate TMCNet on open-vocabulary object\ndetection and semantic segmentation using the following\ndatasets and protocols.\n\u2022 Open-vocabulary object detection (OVD): Follow-\ning prior work [2, 12, 1, 25], we use COCO-OVD\nand LVIS-OVD, built on MS-COCO [26] and LVIS\nv1.0 [27], respectively. We adopt the category splits\nand evaluation protocols of OVR-CNN [2] for COCO-\nOVD and ViLD [1] for LVIS-OVD.\n\u2022 Open-vocabulary semantic segmentation (OVS): Fol-\nlowing prior methods [17, 28, 18, 29], we train on\nCOCO-Stuff [30] and evaluate on ADE20K [31],\nPASCALVOC[ 32],andPASCAL-Context[ 33].Eval-\nuation covers the150-class and847-class settings of\nADE20K (A-150 and A-847), the20-class setting of\nPASCAL VOC (PAS-20), and the59-class and459-\nclass settings of PASCAL-Context (PC-59 and PC-\n459).\nEvaluation Metrics.We assess prediction accuracy using\ntask-specific metrics and report "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0043"
+        ],
+        "excerpt": "computational efficiency for\ndetection.\n:Preprint submitted to Elsevier Page 6 of 14\n\u2022 Open-vocabulary object detection (OVD): On COCO-\nOVD, the primary metric is APnovel50 , the averageprecisionfornovelcategoriesatanIoUthresholdof 0.5.\nWealsoreport APbase50 and APall50forbasecategoriesandthe union of base and novel categories, respectively.\nOn LVIS-OVD,AP\ud835\udc5f for rare categories is the primary\nmetric for novel-category detection, supplemented\nby AP\ud835\udc50 for common categories, AP\ud835\udc53 for frequent\ncategories, andmAPacross all categories. All LVIS-\nOVD AP metrics are averaged over IoU thresholds\nfrom0.50to0.95in increments of0.05.\n\u2022 Open-vocabulary semantic segmentation (OVS): We\nreport mean Intersection over Union (mIoU) on all\nevaluation datasets, computed by averaging the IoU\nbetween predicted and ground-truth regions across\nevaluated ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Datasets And Evaluation Metrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0dd6a008e190912166e323cbb114badc8d6ffcf51d57500d4faea5c74fb90ae5",
+            "evidence_id": "E3825d446b707601b-B0043",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Datasets And Evaluation Metrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 975,
+                "page": 6,
+                "section": "Datasets And Evaluation Metrics",
+                "section_index": 18,
+                "start": 891,
+                "text": "computational efficiency for\ndetection.\n:Preprint submitted to Elsevier Page 6 of 14"
+              },
+              {
+                "end": 753,
+                "page": 7,
+                "section": "Datasets And Evaluation Metrics",
+                "section_index": 19,
+                "start": 0,
+                "text": "\u2022 Open-vocabulary object detection (OVD): On COCO-\nOVD, the primary metric is APnovel50 , the averageprecisionfornovelcategoriesatanIoUthresholdof 0.5.\nWealsoreport APbase50 and APall50forbasecategoriesandthe union of base and novel categories, respectively.\nOn LVIS-OVD,AP\ud835\udc5f for rare categories is the primary\nmetric for novel-category detection, supplemented\nby AP\ud835\udc50 for common categories, AP\ud835\udc53 for frequent\ncategories, andmAPacross all categories. All LVIS-\nOVD AP metrics are averaged over IoU thresholds\nfrom0.50to0.95in increments of0.05.\n\u2022 Open-vocabulary semantic segmentation (OVS): We\nreport mean Intersection over Union (mIoU) on all\nevaluation datasets, computed by averaging the IoU\nbetween predicted and ground-truth regions across\nevaluated "
+              }
+            ],
+            "text": "computational efficiency for\ndetection.\n:Preprint submitted to Elsevier Page 6 of 14\n\u2022 Open-vocabulary object detection (OVD): On COCO-\nOVD, the primary metric is APnovel50 , the averageprecisionfornovelcategoriesatanIoUthresholdof 0.5.\nWealsoreport APbase50 and APall50forbasecategoriesandthe union of base and novel categories, respectively.\nOn LVIS-OVD,AP\ud835\udc5f for rare categories is the primary\nmetric for novel-category detection, supplemented\nby AP\ud835\udc50 for common categories, AP\ud835\udc53 for frequent\ncategories, andmAPacross all categories. All LVIS-\nOVD AP metrics are averaged over IoU thresholds\nfrom0.50to0.95in increments of0.05.\n\u2022 Open-vocabulary semantic segmentation (OVS): We\nreport mean Intersection over Union (mIoU) on all\nevaluation datasets, computed by averaging the IoU\nbetween predicted and ground-truth regions across\nevaluated "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0048"
+        ],
+        "excerpt": "cross-attention to these visual features, a Trans-\nformer produces instance representations for classification\nand localization. The classification branch projects them into\nthe category text embedding space and computes cosine\nsimilaritieswithcategoryembeddings,whileaclass-agnostic\nMLPpredictsnormalizedboundingboxcoordinates.Training\nuses bounding boxes and class labels from base categories.\nAtinference,theheadpredictsclasslabels,confidencescores,\nand bounding boxes over a vocabulary containing both base\nand novel categories. For segmentation, the proposed text-\nguided feature correction modules are integrated into SED\nand OVSeg while retaining their segmentation prediction\nmechanisms. The detection and segmentation models are\ntrainedwithboundingboxannotationsandpixel-levelseman-\ntic annotations, respectively.\nTrainingSettings.ExperimentsrunontwoNVIDIAGeForce\nRTX 4090 GPUs, each ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation Details",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "99fd838211f6b0a540d6b0257ee5e1af171fbfa361fd50b49cb02c337cfb7372",
+            "evidence_id": "E3825d446b707601b-B0048",
+            "pages": [
+              7
+            ],
+            "section": "Implementation Details",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 3531,
+                "page": 7,
+                "section": "Implementation Details",
+                "section_index": 20,
+                "start": 2638,
+                "text": "cross-attention to these visual features, a Trans-\nformer produces instance representations for classification\nand localization. The classification branch projects them into\nthe category text embedding space and computes cosine\nsimilaritieswithcategoryembeddings,whileaclass-agnostic\nMLPpredictsnormalizedboundingboxcoordinates.Training\nuses bounding boxes and class labels from base categories.\nAtinference,theheadpredictsclasslabels,confidencescores,\nand bounding boxes over a vocabulary containing both base\nand novel categories. For segmentation, the proposed text-\nguided feature correction modules are integrated into SED\nand OVSeg while retaining their segmentation prediction\nmechanisms. The detection and segmentation models are\ntrainedwithboundingboxannotationsandpixel-levelseman-\ntic annotations, respectively.\nTrainingSettings.ExperimentsrunontwoNVIDIAGeForce\nRTX 4090 GPUs, each "
+              }
+            ],
+            "text": "cross-attention to these visual features, a Trans-\nformer produces instance representations for classification\nand localization. The classification branch projects them into\nthe category text embedding space and computes cosine\nsimilaritieswithcategoryembeddings,whileaclass-agnostic\nMLPpredictsnormalizedboundingboxcoordinates.Training\nuses bounding boxes and class labels from base categories.\nAtinference,theheadpredictsclasslabels,confidencescores,\nand bounding boxes over a vocabulary containing both base\nand novel categories. For segmentation, the proposed text-\nguided feature correction modules are integrated into SED\nand OVSeg while retaining their segmentation prediction\nmechanisms. The detection and segmentation models are\ntrainedwithboundingboxannotationsandpixel-levelseman-\ntic annotations, respectively.\nTrainingSettings.ExperimentsrunontwoNVIDIAGeForce\nRTX 4090 GPUs, each "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0050"
+        ],
+        "excerpt": "%.\u2217\nindicates the detection-adapted variants of OVSeg and SED.\u2713 and \u2717 indicate the presence and absence of the corresponding\nmodule, respectively. Bold indicates the best result for each baseline.\nDetection-adapted Baseline VLM Feature backbone TGME CMAP PTCD COCO-OVD(%)APnovel50 APbase50 APall50\nOVSeg-OVD\u2217\nViT-B/16 ResNet-101c\u2717 \u2717 \u271733.70 53.70 49.30\nViT-B/16 ResNet-101c\u2713 \u2717 \u271737.90 +4.20 58.00 52.80\nViT-B/16 ResNet-101c\u2717 \u2713 \u271735.10 +1.40 55.20 51.40\nViT-B/16 ResNet-101c\u2713 \u2713 \u271738.50 +4.80 58.20 53.00\nViT-B/16 ResNet-101c\u2713 \u2713 \u271339.20 +5.50 58.50 53.30\nSED-OVD\u2217\nConvNeXt-B -\u2717 \u2717 \u271736.10 54.20 49.90\nConvNeXt-B -\u2713 \u2717 \u271740.40 +4.30 58.50 54.10\nConvNeXt-B -\u2717 \u2713 \u271737.70 +1.60 55.90 51.40\nConvNeXt-B -\u2713 \u2713 \u271741.00 +4.90 59.50 54.70\nConvNeXt-B -\u2713 \u2713 \u271341.60 +5.50 60.90 55.40\nTable 2\nAblation results for different module configurations on LVIS-OVD. All results are reported in %.\u2217 indicates the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation Details",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "297fdaeeab7d93b2508795561d408324d5c878ee96db0ae0cb6ceb3e08af6082",
+            "evidence_id": "E3825d446b707601b-B0050",
+            "pages": [
+              8
+            ],
+            "section": "Implementation Details",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 999,
+                "page": 8,
+                "section": "Implementation Details",
+                "section_index": 21,
+                "start": 123,
+                "text": "%.\u2217\nindicates the detection-adapted variants of OVSeg and SED.\u2713 and \u2717 indicate the presence and absence of the corresponding\nmodule, respectively. Bold indicates the best result for each baseline.\nDetection-adapted Baseline VLM Feature backbone TGME CMAP PTCD COCO-OVD(%)APnovel50 APbase50 APall50\nOVSeg-OVD\u2217\nViT-B/16 ResNet-101c\u2717 \u2717 \u271733.70 53.70 49.30\nViT-B/16 ResNet-101c\u2713 \u2717 \u271737.90 +4.20 58.00 52.80\nViT-B/16 ResNet-101c\u2717 \u2713 \u271735.10 +1.40 55.20 51.40\nViT-B/16 ResNet-101c\u2713 \u2713 \u271738.50 +4.80 58.20 53.00\nViT-B/16 ResNet-101c\u2713 \u2713 \u271339.20 +5.50 58.50 53.30\nSED-OVD\u2217\nConvNeXt-B -\u2717 \u2717 \u271736.10 54.20 49.90\nConvNeXt-B -\u2713 \u2717 \u271740.40 +4.30 58.50 54.10\nConvNeXt-B -\u2717 \u2713 \u271737.70 +1.60 55.90 51.40\nConvNeXt-B -\u2713 \u2713 \u271741.00 +4.90 59.50 54.70\nConvNeXt-B -\u2713 \u2713 \u271341.60 +5.50 60.90 55.40\nTable 2\nAblation results for different module configurations on LVIS-OVD. All results are reported in %.\u2217 indicates the "
+              }
+            ],
+            "text": "%.\u2217\nindicates the detection-adapted variants of OVSeg and SED.\u2713 and \u2717 indicate the presence and absence of the corresponding\nmodule, respectively. Bold indicates the best result for each baseline.\nDetection-adapted Baseline VLM Feature backbone TGME CMAP PTCD COCO-OVD(%)APnovel50 APbase50 APall50\nOVSeg-OVD\u2217\nViT-B/16 ResNet-101c\u2717 \u2717 \u271733.70 53.70 49.30\nViT-B/16 ResNet-101c\u2713 \u2717 \u271737.90 +4.20 58.00 52.80\nViT-B/16 ResNet-101c\u2717 \u2713 \u271735.10 +1.40 55.20 51.40\nViT-B/16 ResNet-101c\u2713 \u2713 \u271738.50 +4.80 58.20 53.00\nViT-B/16 ResNet-101c\u2713 \u2713 \u271339.20 +5.50 58.50 53.30\nSED-OVD\u2217\nConvNeXt-B -\u2717 \u2717 \u271736.10 54.20 49.90\nConvNeXt-B -\u2713 \u2717 \u271740.40 +4.30 58.50 54.10\nConvNeXt-B -\u2717 \u2713 \u271737.70 +1.60 55.90 51.40\nConvNeXt-B -\u2713 \u2713 \u271741.00 +4.90 59.50 54.70\nConvNeXt-B -\u2713 \u2713 \u271341.60 +5.50 60.90 55.40\nTable 2\nAblation results for different module configurations on LVIS-OVD. All results are reported in %.\u2217 indicates the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0051"
+        ],
+        "excerpt": "detection-adapted\nvariants of OVSeg and SED.\u2713and \u2717indicate the presence and absence of the corresponding module, respectively. Bold indicates\nthe best result for each baseline.\nDetection-adapted Baseline VLM Feature backbone TGME CMAP PTCD LVIS-OVD(%)AP\ud835\udc5f AP\ud835\udc50 AP\ud835\udc53 mAP\nOVSeg-OVD\u2217\nViT-B/16 ResNet-101c\u2717 \u2717 \u271722.40 28.30 36.00 32.40\nViT-B/16 ResNet-101c\u2713 \u2717 \u271724.90 +2.50 30.70 38.20 34.50\nViT-B/16 ResNet-101c\u2717 \u2713 \u271723.80 +1.40 29.50 37.40 33.70\nViT-B/16 ResNet-101c\u2713 \u2713 \u271726.1 +3.70 31.90 39.50 36.00\nViT-B/16 ResNet-101c\u2713 \u2713 \u271326.70 +4.30 37.10 40.00 36.50\nSED-OVD\u2217\nConvNeXt-B -\u2717 \u2717 \u271724.80 34.50 38.00 34.00\nConvNeXt-B -\u2713 \u2717 \u271725.90 +1.10 35.80 39.20 35.30\nConvNeXt-B -\u2717 \u2713 \u271725.30 +0.50 34.90 38.60 34.80\nConvNeXt-B -\u2713 \u2713 \u271727.40 +2.60 36.70 40.40 36.60\nConvNeXt-B -\u2713 \u2713 \u271328.60 +3.80 38.10 41.00 37.70\nwarm-upandcliptheglobalgradientnormto 0.01.The\nmaximum training budget is1 200 000iterations, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation Details",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "675773c4a6584dd03492154969ff0e679710571483252575e032e1160811c29f",
+            "evidence_id": "E3825d446b707601b-B0051",
+            "pages": [
+              8
+            ],
+            "section": "Implementation Details",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1877,
+                "page": 8,
+                "section": "Implementation Details",
+                "section_index": 21,
+                "start": 999,
+                "text": "detection-adapted\nvariants of OVSeg and SED.\u2713and \u2717indicate the presence and absence of the corresponding module, respectively. Bold indicates\nthe best result for each baseline.\nDetection-adapted Baseline VLM Feature backbone TGME CMAP PTCD LVIS-OVD(%)AP\ud835\udc5f AP\ud835\udc50 AP\ud835\udc53 mAP\nOVSeg-OVD\u2217\nViT-B/16 ResNet-101c\u2717 \u2717 \u271722.40 28.30 36.00 32.40\nViT-B/16 ResNet-101c\u2713 \u2717 \u271724.90 +2.50 30.70 38.20 34.50\nViT-B/16 ResNet-101c\u2717 \u2713 \u271723.80 +1.40 29.50 37.40 33.70\nViT-B/16 ResNet-101c\u2713 \u2713 \u271726.1 +3.70 31.90 39.50 36.00\nViT-B/16 ResNet-101c\u2713 \u2713 \u271326.70 +4.30 37.10 40.00 36.50\nSED-OVD\u2217\nConvNeXt-B -\u2717 \u2717 \u271724.80 34.50 38.00 34.00\nConvNeXt-B -\u2713 \u2717 \u271725.90 +1.10 35.80 39.20 35.30\nConvNeXt-B -\u2717 \u2713 \u271725.30 +0.50 34.90 38.60 34.80\nConvNeXt-B -\u2713 \u2713 \u271727.40 +2.60 36.70 40.40 36.60\nConvNeXt-B -\u2713 \u2713 \u271328.60 +3.80 38.10 41.00 37.70\nwarm-upandcliptheglobalgradientnormto 0.01.The\nmaximum training budget is1 200 000iterations, "
+              }
+            ],
+            "text": "detection-adapted\nvariants of OVSeg and SED.\u2713and \u2717indicate the presence and absence of the corresponding module, respectively. Bold indicates\nthe best result for each baseline.\nDetection-adapted Baseline VLM Feature backbone TGME CMAP PTCD LVIS-OVD(%)AP\ud835\udc5f AP\ud835\udc50 AP\ud835\udc53 mAP\nOVSeg-OVD\u2217\nViT-B/16 ResNet-101c\u2717 \u2717 \u271722.40 28.30 36.00 32.40\nViT-B/16 ResNet-101c\u2713 \u2717 \u271724.90 +2.50 30.70 38.20 34.50\nViT-B/16 ResNet-101c\u2717 \u2713 \u271723.80 +1.40 29.50 37.40 33.70\nViT-B/16 ResNet-101c\u2713 \u2713 \u271726.1 +3.70 31.90 39.50 36.00\nViT-B/16 ResNet-101c\u2713 \u2713 \u271326.70 +4.30 37.10 40.00 36.50\nSED-OVD\u2217\nConvNeXt-B -\u2717 \u2717 \u271724.80 34.50 38.00 34.00\nConvNeXt-B -\u2713 \u2717 \u271725.90 +1.10 35.80 39.20 35.30\nConvNeXt-B -\u2717 \u2713 \u271725.30 +0.50 34.90 38.60 34.80\nConvNeXt-B -\u2713 \u2713 \u271727.40 +2.60 36.70 40.40 36.60\nConvNeXt-B -\u2713 \u2713 \u271328.60 +3.80 38.10 41.00 37.70\nwarm-upandcliptheglobalgradientnormto 0.01.The\nmaximum training budget is1 200 000iterations, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0056"
+        ],
+        "excerpt": "APall50 AP\ud835\udc5f AP\ud835\udc50 AP\ud835\udc53 mAP\nOVSeg-OVD\u2217 \u2717 \u2717 \u271733.70 53.70 49.30 22.40 28.30 36.00 32.40\nTMCNet\ud835\udc42\ud835\udc49 \ud835\udc46\ud835\udc52\ud835\udc54\n\u2713 \u2717 \u271737.00 +3.30 56.50 51.00 23.60 +1.20 33.70 36.90 33.40\n\u2717 \u2713 \u271737.70 +4.00 57.00 51.50 23.90 +1.50 34.10 37.30 33.80\n\u2717 \u2717 \u271339.20 +5.50 58.50 53.30 26.70 +4.30 37.10 40.00 36.50\nSED-OVD\u2217 \u2713 \u2717 \u271736.10 54.20 49.90 24.80 34.50 38.00 34.00\nTMCNet\ud835\udc46\ud835\udc38\ud835\udc37\n\u2713 \u2717 \u271738.70 +2.60 57.90 53.00 25.00 +0.20 35.10 38.20 34.60\n\u2717 \u2713 \u271739.80 +3.70 59.20 53.10 25.50 +0.70 35.30 38.70 34.80\n\u2717 \u2717 \u271341.60 +5.50 60.90 55.40 28.60 +3.80 38.10 41.00 37.70\nTable 4\nComparison of cross-modal alignment schemes on COCO-OVD and LVIS-OVD. CLIP, LP, and CMAP denote CLIP feature\nmatching, linear projection, and the proposed Cross-Modal Alignment Pipeline, respectively. All results are reported in %.\u2217 marks\nthe detection-adapted OVSeg and SED baselines. Bold indicates the best result within each framework; red subscripts report gains\nin ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Effectiveness Across Baselines",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f7a4640a167b6dc48495f686301fbd99364ec2819d342286b842cdc84530bb92",
+            "evidence_id": "E3825d446b707601b-B0056",
+            "pages": [
+              9
+            ],
+            "section": "Effectiveness Across Baselines",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1384,
+                "page": 9,
+                "section": "Effectiveness Across Baselines",
+                "section_index": 24,
+                "start": 490,
+                "text": "APall50 AP\ud835\udc5f AP\ud835\udc50 AP\ud835\udc53 mAP\nOVSeg-OVD\u2217 \u2717 \u2717 \u271733.70 53.70 49.30 22.40 28.30 36.00 32.40\nTMCNet\ud835\udc42\ud835\udc49 \ud835\udc46\ud835\udc52\ud835\udc54\n\u2713 \u2717 \u271737.00 +3.30 56.50 51.00 23.60 +1.20 33.70 36.90 33.40\n\u2717 \u2713 \u271737.70 +4.00 57.00 51.50 23.90 +1.50 34.10 37.30 33.80\n\u2717 \u2717 \u271339.20 +5.50 58.50 53.30 26.70 +4.30 37.10 40.00 36.50\nSED-OVD\u2217 \u2713 \u2717 \u271736.10 54.20 49.90 24.80 34.50 38.00 34.00\nTMCNet\ud835\udc46\ud835\udc38\ud835\udc37\n\u2713 \u2717 \u271738.70 +2.60 57.90 53.00 25.00 +0.20 35.10 38.20 34.60\n\u2717 \u2713 \u271739.80 +3.70 59.20 53.10 25.50 +0.70 35.30 38.70 34.80\n\u2717 \u2717 \u271341.60 +5.50 60.90 55.40 28.60 +3.80 38.10 41.00 37.70\nTable 4\nComparison of cross-modal alignment schemes on COCO-OVD and LVIS-OVD. CLIP, LP, and CMAP denote CLIP feature\nmatching, linear projection, and the proposed Cross-Modal Alignment Pipeline, respectively. All results are reported in %.\u2217 marks\nthe detection-adapted OVSeg and SED baselines. Bold indicates the best result within each framework; red subscripts report gains\nin "
+              }
+            ],
+            "text": "APall50 AP\ud835\udc5f AP\ud835\udc50 AP\ud835\udc53 mAP\nOVSeg-OVD\u2217 \u2717 \u2717 \u271733.70 53.70 49.30 22.40 28.30 36.00 32.40\nTMCNet\ud835\udc42\ud835\udc49 \ud835\udc46\ud835\udc52\ud835\udc54\n\u2713 \u2717 \u271737.00 +3.30 56.50 51.00 23.60 +1.20 33.70 36.90 33.40\n\u2717 \u2713 \u271737.70 +4.00 57.00 51.50 23.90 +1.50 34.10 37.30 33.80\n\u2717 \u2717 \u271339.20 +5.50 58.50 53.30 26.70 +4.30 37.10 40.00 36.50\nSED-OVD\u2217 \u2713 \u2717 \u271736.10 54.20 49.90 24.80 34.50 38.00 34.00\nTMCNet\ud835\udc46\ud835\udc38\ud835\udc37\n\u2713 \u2717 \u271738.70 +2.60 57.90 53.00 25.00 +0.20 35.10 38.20 34.60\n\u2717 \u2713 \u271739.80 +3.70 59.20 53.10 25.50 +0.70 35.30 38.70 34.80\n\u2717 \u2717 \u271341.60 +5.50 60.90 55.40 28.60 +3.80 38.10 41.00 37.70\nTable 4\nComparison of cross-modal alignment schemes on COCO-OVD and LVIS-OVD. CLIP, LP, and CMAP denote CLIP feature\nmatching, linear projection, and the proposed Cross-Modal Alignment Pipeline, respectively. All results are reported in %.\u2217 marks\nthe detection-adapted OVSeg and SED baselines. Bold indicates the best result within each framework; red subscripts report gains\nin "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0057"
+        ],
+        "excerpt": "percentage points over the corresponding baseline.\nMethods CLIP LP CMAP COCO-OVD(%) LVIS-OVD(%)APnovel50 APbase50 APall50 AP\ud835\udc5f AP\ud835\udc50 AP\ud835\udc53 mAP\nOVSeg-OVD\u2217 \u2713 \u2717 \u271733.70 53.70 49.30 22.40 28.30 36.00 32.40\nTMCNet\ud835\udc42\ud835\udc49 \ud835\udc46\ud835\udc52\ud835\udc54\n\u2713 \u2717 \u271737.50 +3.80 57.10 51.60 24.00 +1.60 34.10 37.60 34.10\n\u2717 \u2713 \u271738.40 +4.70 57.70 52.30 24.50 +2.10 34.60 38.00 34.50\n\u2717 \u2717 \u271339.20 +5.50 58.50 53.30 26.70 +4.30 37.10 40.00 36.50\nSED-OVD\u2217 -\u2717 \u271736.10 54.20 49.90 24.80 34.50 38.00 34.00\nTMCNet\ud835\udc46\ud835\udc38\ud835\udc37\n\u2713 \u2717 \u271739.30 +3.20 58.40 53.50 25.40 +0.60 35.70 38.70 35.00\n\u2717 \u2713 \u271740.20 +4.10 59.40 53.70 25.70 +0.90 35.70 39.10 35.00\n\u2717 \u2717 \u271341.60 +5.50 60.90 55.40 28.60 +3.80 38.10 41.00 37.70\nAcross both benchmarks, TGME yields larger novel-\ncategory gains than CMAP when added individually, while\ntheir combination outperforms either module alone. PTCD\nprovides further improvements through semantically guided\nlateral correction and progressive multi-scale ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Effectiveness Across Baselines",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e6487a1fea7ef00cdf7f6e796b12cb341704d997f323b698de8f543fb4a93db8",
+            "evidence_id": "E3825d446b707601b-B0057",
+            "pages": [
+              9
+            ],
+            "section": "Effectiveness Across Baselines",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2279,
+                "page": 9,
+                "section": "Effectiveness Across Baselines",
+                "section_index": 24,
+                "start": 1384,
+                "text": "percentage points over the corresponding baseline.\nMethods CLIP LP CMAP COCO-OVD(%) LVIS-OVD(%)APnovel50 APbase50 APall50 AP\ud835\udc5f AP\ud835\udc50 AP\ud835\udc53 mAP\nOVSeg-OVD\u2217 \u2713 \u2717 \u271733.70 53.70 49.30 22.40 28.30 36.00 32.40\nTMCNet\ud835\udc42\ud835\udc49 \ud835\udc46\ud835\udc52\ud835\udc54\n\u2713 \u2717 \u271737.50 +3.80 57.10 51.60 24.00 +1.60 34.10 37.60 34.10\n\u2717 \u2713 \u271738.40 +4.70 57.70 52.30 24.50 +2.10 34.60 38.00 34.50\n\u2717 \u2717 \u271339.20 +5.50 58.50 53.30 26.70 +4.30 37.10 40.00 36.50\nSED-OVD\u2217 -\u2717 \u271736.10 54.20 49.90 24.80 34.50 38.00 34.00\nTMCNet\ud835\udc46\ud835\udc38\ud835\udc37\n\u2713 \u2717 \u271739.30 +3.20 58.40 53.50 25.40 +0.60 35.70 38.70 35.00\n\u2717 \u2713 \u271740.20 +4.10 59.40 53.70 25.70 +0.90 35.70 39.10 35.00\n\u2717 \u2717 \u271341.60 +5.50 60.90 55.40 28.60 +3.80 38.10 41.00 37.70\nAcross both benchmarks, TGME yields larger novel-\ncategory gains than CMAP when added individually, while\ntheir combination outperforms either module alone. PTCD\nprovides further improvements through semantically guided\nlateral correction and progressive multi-scale "
+              }
+            ],
+            "text": "percentage points over the corresponding baseline.\nMethods CLIP LP CMAP COCO-OVD(%) LVIS-OVD(%)APnovel50 APbase50 APall50 AP\ud835\udc5f AP\ud835\udc50 AP\ud835\udc53 mAP\nOVSeg-OVD\u2217 \u2713 \u2717 \u271733.70 53.70 49.30 22.40 28.30 36.00 32.40\nTMCNet\ud835\udc42\ud835\udc49 \ud835\udc46\ud835\udc52\ud835\udc54\n\u2713 \u2717 \u271737.50 +3.80 57.10 51.60 24.00 +1.60 34.10 37.60 34.10\n\u2717 \u2713 \u271738.40 +4.70 57.70 52.30 24.50 +2.10 34.60 38.00 34.50\n\u2717 \u2717 \u271339.20 +5.50 58.50 53.30 26.70 +4.30 37.10 40.00 36.50\nSED-OVD\u2217 -\u2717 \u271736.10 54.20 49.90 24.80 34.50 38.00 34.00\nTMCNet\ud835\udc46\ud835\udc38\ud835\udc37\n\u2713 \u2717 \u271739.30 +3.20 58.40 53.50 25.40 +0.60 35.70 38.70 35.00\n\u2717 \u2713 \u271740.20 +4.10 59.40 53.70 25.70 +0.90 35.70 39.10 35.00\n\u2717 \u2717 \u271341.60 +5.50 60.90 55.40 28.60 +3.80 38.10 41.00 37.70\nAcross both benchmarks, TGME yields larger novel-\ncategory gains than CMAP when added individually, while\ntheir combination outperforms either module alone. PTCD\nprovides further improvements through semantically guided\nlateral correction and progressive multi-scale "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0062"
+        ],
+        "excerpt": "schemes. The horizontal axis shows training\niterations in thousands, and the vertical axis shows coverage in\n%.\nhighest scores on the remaining metrics in both frameworks,\nsupporting its effectiveness in incorporating textual guidance\ninto visual feature processing. Fig. 3 further compares novel-\ncategory pseudo-label coverage during training on COCO-\nOVD. CMAP increases coverage from approximately32% at\n10k iterations to74% at70k, remaining near73% at90k. It\nexceeds both alternatives at every reported checkpoint from\n30konward,whileCLIPandLPremainwithinapproximately\n41%-49%. This trend indicates broader coverage of novel-\ncategory objects and is consistent with the detection gains,\nalthough coverage alone does not measure pseudo-label\nprecision.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Effect Of Cmap",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f301e69282df37cce5cfb346fa4a0f62cbfe22b6b885afd2369776e0ebbef56d",
+            "evidence_id": "E3825d446b707601b-B0062",
+            "pages": [
+              10
+            ],
+            "section": "Effect Of Cmap",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 10,
+                "section": "Effect Of Cmap",
+                "section_index": 27,
+                "start": 142,
+                "text": "schemes. The horizontal axis shows training\niterations in thousands, and the vertical axis shows coverage in\n%.\nhighest scores on the remaining metrics in both frameworks,\nsupporting its effectiveness in incorporating textual guidance\ninto visual feature processing. Fig. 3 further compares novel-\ncategory pseudo-label coverage during training on COCO-\nOVD. CMAP increases coverage from approximately32% at\n10k iterations to74% at70k, remaining near73% at90k. It\nexceeds both alternatives at every reported checkpoint from\n30konward,whileCLIPandLPremainwithinapproximately\n41%-49%. This trend indicates broader coverage of novel-\ncategory objects and is consistent with the detection gains,\nalthough coverage alone does not measure pseudo-label\nprecision."
+              }
+            ],
+            "text": "schemes. The horizontal axis shows training\niterations in thousands, and the vertical axis shows coverage in\n%.\nhighest scores on the remaining metrics in both frameworks,\nsupporting its effectiveness in incorporating textual guidance\ninto visual feature processing. Fig. 3 further compares novel-\ncategory pseudo-label coverage during training on COCO-\nOVD. CMAP increases coverage from approximately32% at\n10k iterations to74% at70k, remaining near73% at90k. It\nexceeds both alternatives at every reported checkpoint from\n30konward,whileCLIPandLPremainwithinapproximately\n41%-49%. This trend indicates broader coverage of novel-\ncategory objects and is consistent with the detection gains,\nalthough coverage alone does not measure pseudo-label\nprecision."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0065"
+        ],
+        "excerpt": "COCO-OVD.Table 6 shows that TMCNetOVSeg and\nTMCNetSED achieve APnovel50 scores of39.20% and41.60%,\nrespectively, both improving their baselines by5.50 percent-\nage points. TMCNetSED leads the listed V-OVD methods\nacrossallthreemetrics,exceedingCAKE[ 12]by 3.40points\non novel categories. These results show improved novel-\ncategory detection alongside gains on base categories across\nboth frameworks.\nLVIS-OVD.In Table 7, TMCNetOVSeg and TMCNetSED\nachieve AP\ud835\udc5f scores of26.70% and28.60%, exceeding their\nbaselines by4.30and 3.80points, respectively. TMCNetSED\nachievesthehighestcommon-categoryAP,frequent-category\nAP, and overall mAP among the listed methods, with mAP\nreaching 37.70%, although BIND retains the highest rare-\ncategory AP. Under the reported configurations, the two\nTMCNetimplementationsreducebaselinelatencyby 11.38%\nand 63.59%, respectively. These results demonstrate ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Detection Accuracy And Inference Efficiency",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a568bee01f985593f0213a9aac64987a4fdbbe5073b182dbcad15e3abed3a650",
+            "evidence_id": "E3825d446b707601b-B0065",
+            "pages": [
+              10
+            ],
+            "section": "Detection Accuracy And Inference Efficiency",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 885,
+                "page": 10,
+                "section": "Detection Accuracy And Inference Efficiency",
+                "section_index": 30,
+                "start": 0,
+                "text": "COCO-OVD.Table 6 shows that TMCNetOVSeg and\nTMCNetSED achieve APnovel50 scores of39.20% and41.60%,\nrespectively, both improving their baselines by5.50 percent-\nage points. TMCNetSED leads the listed V-OVD methods\nacrossallthreemetrics,exceedingCAKE[ 12]by 3.40points\non novel categories. These results show improved novel-\ncategory detection alongside gains on base categories across\nboth frameworks.\nLVIS-OVD.In Table 7, TMCNetOVSeg and TMCNetSED\nachieve AP\ud835\udc5f scores of26.70% and28.60%, exceeding their\nbaselines by4.30and 3.80points, respectively. TMCNetSED\nachievesthehighestcommon-categoryAP,frequent-category\nAP, and overall mAP among the listed methods, with mAP\nreaching 37.70%, although BIND retains the highest rare-\ncategory AP. Under the reported configurations, the two\nTMCNetimplementationsreducebaselinelatencyby 11.38%\nand 63.59%, respectively. These results demonstrate "
+              }
+            ],
+            "text": "COCO-OVD.Table 6 shows that TMCNetOVSeg and\nTMCNetSED achieve APnovel50 scores of39.20% and41.60%,\nrespectively, both improving their baselines by5.50 percent-\nage points. TMCNetSED leads the listed V-OVD methods\nacrossallthreemetrics,exceedingCAKE[ 12]by 3.40points\non novel categories. These results show improved novel-\ncategory detection alongside gains on base categories across\nboth frameworks.\nLVIS-OVD.In Table 7, TMCNetOVSeg and TMCNetSED\nachieve AP\ud835\udc5f scores of26.70% and28.60%, exceeding their\nbaselines by4.30and 3.80points, respectively. TMCNetSED\nachievesthehighestcommon-categoryAP,frequent-category\nAP, and overall mAP among the listed methods, with mAP\nreaching 37.70%, although BIND retains the highest rare-\ncategory AP. Under the reported configurations, the two\nTMCNetimplementationsreducebaselinelatencyby 11.38%\nand 63.59%, respectively. These results demonstrate "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0070"
+        ],
+        "excerpt": "CLIP_Trans denote the CLIP feature-matching configuration, the Deformable DETR-based\nconfiguration, and the adopted query-based CLIP\u2013Transformer head, respectively.\u2713and \u2717indicate whether a configuration is used.\nAll results are reported in %. Bold indicates the best result within each framework; red subscripts report gains in percentage points\nover the corresponding OVSeg-OVD or SED-OVD baseline.\nDetection-adapted Methods CLIP Def_DETR CLIP_Trans COCO-OVD(%) LVIS-OVD(%)APnovel50 APbase50 APall50 AP\ud835\udc5f AP\ud835\udc50 AP\ud835\udc53 mAP\nTMCNet\ud835\udc42\ud835\udc49 \ud835\udc46\ud835\udc52\ud835\udc54\n\u2713 \u2717 \u271738.00 57.30 52.00 24.00 34.00 37.30 33.50\n\u2717 \u2713 \u271738.80 58.00 52.80 24.90 35.00 38.20 34.60\n\u2717 \u2717 \u271339.20 +1.20 58.50 53.30 26.70 +4.30 37.10 40.00 36.50\nTMCNet\ud835\udc46\ud835\udc38\ud835\udc37\n\u2713 \u2717 \u271739.40 58.50 52.90 25.50 35.20 38.80 34.80\n\u2717 \u2713 \u271740.70 59.90 54.30 26.00 35.90 39.40 35.50\n\u2717 \u2717 \u271341.60 +2.20 60.90 55.40 28.60 +3.80 38.10 41.00 37.70\nTable 6\nComparison of TMCNet with representative ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Extension To Open-Vocabulary Semantic",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b248ccb98707ee3e1dc208675117b13e516640254cf675f31730c85d911cc922",
+            "evidence_id": "E3825d446b707601b-B0070",
+            "pages": [
+              11
+            ],
+            "section": "Extension To Open-Vocabulary Semantic",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1047,
+                "page": 11,
+                "section": "Extension To Open-Vocabulary Semantic",
+                "section_index": 33,
+                "start": 152,
+                "text": "CLIP_Trans denote the CLIP feature-matching configuration, the Deformable DETR-based\nconfiguration, and the adopted query-based CLIP\u2013Transformer head, respectively.\u2713and \u2717indicate whether a configuration is used.\nAll results are reported in %. Bold indicates the best result within each framework; red subscripts report gains in percentage points\nover the corresponding OVSeg-OVD or SED-OVD baseline.\nDetection-adapted Methods CLIP Def_DETR CLIP_Trans COCO-OVD(%) LVIS-OVD(%)APnovel50 APbase50 APall50 AP\ud835\udc5f AP\ud835\udc50 AP\ud835\udc53 mAP\nTMCNet\ud835\udc42\ud835\udc49 \ud835\udc46\ud835\udc52\ud835\udc54\n\u2713 \u2717 \u271738.00 57.30 52.00 24.00 34.00 37.30 33.50\n\u2717 \u2713 \u271738.80 58.00 52.80 24.90 35.00 38.20 34.60\n\u2717 \u2717 \u271339.20 +1.20 58.50 53.30 26.70 +4.30 37.10 40.00 36.50\nTMCNet\ud835\udc46\ud835\udc38\ud835\udc37\n\u2713 \u2717 \u271739.40 58.50 52.90 25.50 35.20 38.80 34.80\n\u2717 \u2713 \u271740.70 59.90 54.30 26.00 35.90 39.40 35.50\n\u2717 \u2717 \u271341.60 +2.20 60.90 55.40 28.60 +3.80 38.10 41.00 37.70\nTable 6\nComparison of TMCNet with representative "
+              }
+            ],
+            "text": "CLIP_Trans denote the CLIP feature-matching configuration, the Deformable DETR-based\nconfiguration, and the adopted query-based CLIP\u2013Transformer head, respectively.\u2713and \u2717indicate whether a configuration is used.\nAll results are reported in %. Bold indicates the best result within each framework; red subscripts report gains in percentage points\nover the corresponding OVSeg-OVD or SED-OVD baseline.\nDetection-adapted Methods CLIP Def_DETR CLIP_Trans COCO-OVD(%) LVIS-OVD(%)APnovel50 APbase50 APall50 AP\ud835\udc5f AP\ud835\udc50 AP\ud835\udc53 mAP\nTMCNet\ud835\udc42\ud835\udc49 \ud835\udc46\ud835\udc52\ud835\udc54\n\u2713 \u2717 \u271738.00 57.30 52.00 24.00 34.00 37.30 33.50\n\u2717 \u2713 \u271738.80 58.00 52.80 24.90 35.00 38.20 34.60\n\u2717 \u2717 \u271339.20 +1.20 58.50 53.30 26.70 +4.30 37.10 40.00 36.50\nTMCNet\ud835\udc46\ud835\udc38\ud835\udc37\n\u2713 \u2717 \u271739.40 58.50 52.90 25.50 35.20 38.80 34.80\n\u2717 \u2713 \u271740.70 59.90 54.30 26.00 35.90 39.40 35.50\n\u2717 \u2717 \u271341.60 +2.20 60.90 55.40 28.60 +3.80 38.10 41.00 37.70\nTable 6\nComparison of TMCNet with representative "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0071"
+        ],
+        "excerpt": "open-vocabulary object detection methods on COCO-OVD.\u2020 denotes results obtained\nby retraining and evaluating the models in this work.\u2217 indicates the detection-adapted variants of OVSeg and SED. Def_DETR\ndenotes the Deformable DETR-based detection configuration, and CLIP_Trans denotes the query-based CLIP+Transformer\ndetection head adopted in this work.\u2212denotes unreported results\nMethods Publication Train Setting Backbone detectors COCO-OVD(%)APnovel50 APbase50 APall50\nOVR-CNN [2]\u2020 CVPR'21 V-OVD RN50-C4 Faster R-CNN 22.80 46.00 39.90\nBARON [4]\u2020 CVPR'23 V-OVD RN50-C4 Faster R-CNN 33.10 54.80 49.10\nBIND [37]\u2020 CVPR'24 V-OVD ViT-B/16 Built-in detector 36.30 54.70 50.20\nCAKE [12]\u2020 AAAI'25 V-OVD RN50 Faster R-CNN 38.20 58.00 52.80\nRegionCLIP [38]\u2020 CVPR'22 C-OVD RN50-C4 CLIP 26.80 54.80 47.50\nCoDet [39]\u2020 NeurIPS'23 C-OVD RN50 CLIP 30.60 52.30 46.60\nCAKE [12]\u2020 AAAI'25 C-OVD RN50 Faster R-CNN ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Extension To Open-Vocabulary Semantic",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d8e0b215929c83874d4efe3886f3314849b2e7ced161e1fb891982316ba8c20a",
+            "evidence_id": "E3825d446b707601b-B0071",
+            "pages": [
+              11
+            ],
+            "section": "Extension To Open-Vocabulary Semantic",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1943,
+                "page": 11,
+                "section": "Extension To Open-Vocabulary Semantic",
+                "section_index": 33,
+                "start": 1047,
+                "text": "open-vocabulary object detection methods on COCO-OVD.\u2020 denotes results obtained\nby retraining and evaluating the models in this work.\u2217 indicates the detection-adapted variants of OVSeg and SED. Def_DETR\ndenotes the Deformable DETR-based detection configuration, and CLIP_Trans denotes the query-based CLIP+Transformer\ndetection head adopted in this work.\u2212denotes unreported results\nMethods Publication Train Setting Backbone detectors COCO-OVD(%)APnovel50 APbase50 APall50\nOVR-CNN [2]\u2020 CVPR'21 V-OVD RN50-C4 Faster R-CNN 22.80 46.00 39.90\nBARON [4]\u2020 CVPR'23 V-OVD RN50-C4 Faster R-CNN 33.10 54.80 49.10\nBIND [37]\u2020 CVPR'24 V-OVD ViT-B/16 Built-in detector 36.30 54.70 50.20\nCAKE [12]\u2020 AAAI'25 V-OVD RN50 Faster R-CNN 38.20 58.00 52.80\nRegionCLIP [38]\u2020 CVPR'22 C-OVD RN50-C4 CLIP 26.80 54.80 47.50\nCoDet [39]\u2020 NeurIPS'23 C-OVD RN50 CLIP 30.60 52.30 46.60\nCAKE [12]\u2020 AAAI'25 C-OVD RN50 Faster R-CNN "
+              }
+            ],
+            "text": "open-vocabulary object detection methods on COCO-OVD.\u2020 denotes results obtained\nby retraining and evaluating the models in this work.\u2217 indicates the detection-adapted variants of OVSeg and SED. Def_DETR\ndenotes the Deformable DETR-based detection configuration, and CLIP_Trans denotes the query-based CLIP+Transformer\ndetection head adopted in this work.\u2212denotes unreported results\nMethods Publication Train Setting Backbone detectors COCO-OVD(%)APnovel50 APbase50 APall50\nOVR-CNN [2]\u2020 CVPR'21 V-OVD RN50-C4 Faster R-CNN 22.80 46.00 39.90\nBARON [4]\u2020 CVPR'23 V-OVD RN50-C4 Faster R-CNN 33.10 54.80 49.10\nBIND [37]\u2020 CVPR'24 V-OVD ViT-B/16 Built-in detector 36.30 54.70 50.20\nCAKE [12]\u2020 AAAI'25 V-OVD RN50 Faster R-CNN 38.20 58.00 52.80\nRegionCLIP [38]\u2020 CVPR'22 C-OVD RN50-C4 CLIP 26.80 54.80 47.50\nCoDet [39]\u2020 NeurIPS'23 C-OVD RN50 CLIP 30.60 52.30 46.60\nCAKE [12]\u2020 AAAI'25 C-OVD RN50 Faster R-CNN "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0073"
+        ],
+        "excerpt": "49.30\nSED-OVD\u2217 CVPR'24 V-OVD ConvNeXt-B CLIP_Trans 36.10 54.20 49.90\nTMCNetOVSeg None V-OVD ViT-B/16 CLIP_Trans39.20 58.50 53.30\nTMCNetSED None V-OVD ConvNeXt-B CLIP_Trans41.60 60.90 55.40\nTable 7\nComparison of open-vocabulary object detection methods on LVIS-OVD.\u2020 denotes models retrained by the authors of this\nwork. \u2217 indicates the detection-adapted variants of OVSeg and SED. Def_DETR denotes the Deformable DETR-based detection\nconfiguration, and CLIP_Trans denotes the query-based CLIP+Transformer detection head adopted in this work.\u2212 denotes an\nunreported result.\nMethods Publication Backbone detectors LVIS-OVD(%) Inf. time (ms/image)AP\ud835\udc5f AP\ud835\udc50 AP\ud835\udc53 mAP\nOV-DETR [9]\u2020 ECCV'22 RN50 Def_DETR 21.00 25.00 32.50 26.60 574.20\nBIND [37]\u2020 CVPR'24 ViT-B/16 Built-in detector 29.40 30.60 33.50 31.40 42.60\nSAS-Det [43]\u2020 CVPR'24 RN50-C4 Faster R-CNN 20.90 26.10 31.60 27.40 71.20\nCAKE [12]\u2020 AAAI'25 RN50 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Extension To Open-Vocabulary Semantic",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7606c28588f64f1ff88ca711a00ec781a567f41d8adb24ed81ab1879f50df54e",
+            "evidence_id": "E3825d446b707601b-B0073",
+            "pages": [
+              11
+            ],
+            "section": "Extension To Open-Vocabulary Semantic",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3740,
+                "page": 11,
+                "section": "Extension To Open-Vocabulary Semantic",
+                "section_index": 33,
+                "start": 2841,
+                "text": "49.30\nSED-OVD\u2217 CVPR'24 V-OVD ConvNeXt-B CLIP_Trans 36.10 54.20 49.90\nTMCNetOVSeg None V-OVD ViT-B/16 CLIP_Trans39.20 58.50 53.30\nTMCNetSED None V-OVD ConvNeXt-B CLIP_Trans41.60 60.90 55.40\nTable 7\nComparison of open-vocabulary object detection methods on LVIS-OVD.\u2020 denotes models retrained by the authors of this\nwork. \u2217 indicates the detection-adapted variants of OVSeg and SED. Def_DETR denotes the Deformable DETR-based detection\nconfiguration, and CLIP_Trans denotes the query-based CLIP+Transformer detection head adopted in this work.\u2212 denotes an\nunreported result.\nMethods Publication Backbone detectors LVIS-OVD(%) Inf. time (ms/image)AP\ud835\udc5f AP\ud835\udc50 AP\ud835\udc53 mAP\nOV-DETR [9]\u2020 ECCV'22 RN50 Def_DETR 21.00 25.00 32.50 26.60 574.20\nBIND [37]\u2020 CVPR'24 ViT-B/16 Built-in detector 29.40 30.60 33.50 31.40 42.60\nSAS-Det [43]\u2020 CVPR'24 RN50-C4 Faster R-CNN 20.90 26.10 31.60 27.40 71.20\nCAKE [12]\u2020 AAAI'25 RN50 "
+              }
+            ],
+            "text": "49.30\nSED-OVD\u2217 CVPR'24 V-OVD ConvNeXt-B CLIP_Trans 36.10 54.20 49.90\nTMCNetOVSeg None V-OVD ViT-B/16 CLIP_Trans39.20 58.50 53.30\nTMCNetSED None V-OVD ConvNeXt-B CLIP_Trans41.60 60.90 55.40\nTable 7\nComparison of open-vocabulary object detection methods on LVIS-OVD.\u2020 denotes models retrained by the authors of this\nwork. \u2217 indicates the detection-adapted variants of OVSeg and SED. Def_DETR denotes the Deformable DETR-based detection\nconfiguration, and CLIP_Trans denotes the query-based CLIP+Transformer detection head adopted in this work.\u2212 denotes an\nunreported result.\nMethods Publication Backbone detectors LVIS-OVD(%) Inf. time (ms/image)AP\ud835\udc5f AP\ud835\udc50 AP\ud835\udc53 mAP\nOV-DETR [9]\u2020 ECCV'22 RN50 Def_DETR 21.00 25.00 32.50 26.60 574.20\nBIND [37]\u2020 CVPR'24 ViT-B/16 Built-in detector 29.40 30.60 33.50 31.40 42.60\nSAS-Det [43]\u2020 CVPR'24 RN50-C4 Faster R-CNN 20.90 26.10 31.60 27.40 71.20\nCAKE [12]\u2020 AAAI'25 RN50 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0079"
+        ],
+        "excerpt": "semantic segmentation frameworks.\u2020 denotes results obtained by retraining\nand evaluating the models in this work.\u2212 indicates that no additional feature backbone is used. Boldface highlights our methods,\nand red subscripts indicate absolute gains in percentage points over the corresponding reproduced baseline.\nMethods VLM Feature backbone Train Dataset A-847 PC-459 A-150 PC-59 PAS-20\nOVSeg [21]\u2020 ViT-B/16 Swin-B COCO-Stuff-171 7.10 11.00 24.80 53.30 92.60\nTMCNet\ud835\udc42\ud835\udc49 \ud835\udc46\ud835\udc52\ud835\udc54 ViT-B/16 Swin-B COCO-Stuff-1719.10 +2.00 14.20+3.20 30.90+6.10 55.70+2.40 95.40+2.80\nSED [18]\u2020 ConvNeXt-B - COCO-Stuff-171 8.90 12.40 31.20 47.30 93.70\nTMCNet\ud835\udc46\ud835\udc38\ud835\udc37 ConvNeXt-B - COCO-Stuff-17111.40 +2.50 16.70+4.30 32.80+1.60 57.40+10.10 95.30+1.60\nTable 9\nComparison with representative open-vocabulary semantic segmentation methods. All results are reported in mIoU (%).\u2020 denotes\nresults reproduced in this work; other baseline ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Extension To Open-Vocabulary Semantic",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d7bb3b3135064122efa2429418d8dc509d57a2dc0bcff27c285f67792716b306",
+            "evidence_id": "E3825d446b707601b-B0079",
+            "pages": [
+              12
+            ],
+            "section": "Extension To Open-Vocabulary Semantic",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 4310,
+                "page": 12,
+                "section": "Extension To Open-Vocabulary Semantic",
+                "section_index": 34,
+                "start": 3412,
+                "text": "semantic segmentation frameworks.\u2020 denotes results obtained by retraining\nand evaluating the models in this work.\u2212 indicates that no additional feature backbone is used. Boldface highlights our methods,\nand red subscripts indicate absolute gains in percentage points over the corresponding reproduced baseline.\nMethods VLM Feature backbone Train Dataset A-847 PC-459 A-150 PC-59 PAS-20\nOVSeg [21]\u2020 ViT-B/16 Swin-B COCO-Stuff-171 7.10 11.00 24.80 53.30 92.60\nTMCNet\ud835\udc42\ud835\udc49 \ud835\udc46\ud835\udc52\ud835\udc54 ViT-B/16 Swin-B COCO-Stuff-1719.10 +2.00 14.20+3.20 30.90+6.10 55.70+2.40 95.40+2.80\nSED [18]\u2020 ConvNeXt-B - COCO-Stuff-171 8.90 12.40 31.20 47.30 93.70\nTMCNet\ud835\udc46\ud835\udc38\ud835\udc37 ConvNeXt-B - COCO-Stuff-17111.40 +2.50 16.70+4.30 32.80+1.60 57.40+10.10 95.30+1.60\nTable 9\nComparison with representative open-vocabulary semantic segmentation methods. All results are reported in mIoU (%).\u2020 denotes\nresults reproduced in this work; other baseline "
+              }
+            ],
+            "text": "semantic segmentation frameworks.\u2020 denotes results obtained by retraining\nand evaluating the models in this work.\u2212 indicates that no additional feature backbone is used. Boldface highlights our methods,\nand red subscripts indicate absolute gains in percentage points over the corresponding reproduced baseline.\nMethods VLM Feature backbone Train Dataset A-847 PC-459 A-150 PC-59 PAS-20\nOVSeg [21]\u2020 ViT-B/16 Swin-B COCO-Stuff-171 7.10 11.00 24.80 53.30 92.60\nTMCNet\ud835\udc42\ud835\udc49 \ud835\udc46\ud835\udc52\ud835\udc54 ViT-B/16 Swin-B COCO-Stuff-1719.10 +2.00 14.20+3.20 30.90+6.10 55.70+2.40 95.40+2.80\nSED [18]\u2020 ConvNeXt-B - COCO-Stuff-171 8.90 12.40 31.20 47.30 93.70\nTMCNet\ud835\udc46\ud835\udc38\ud835\udc37 ConvNeXt-B - COCO-Stuff-17111.40 +2.50 16.70+4.30 32.80+1.60 57.40+10.10 95.30+1.60\nTable 9\nComparison with representative open-vocabulary semantic segmentation methods. All results are reported in mIoU (%).\u2020 denotes\nresults reproduced in this work; other baseline "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3825d446b707601b-B0080"
+        ],
+        "excerpt": "results are taken from the corresponding papers or official implementations.\u2212\ndenotes an unreported result.\nMethods Publication VLM Training Dataset A-847 PC-459 A-150 PC-59 PAS-20\nZegFormer [47] CVPR'22 ViT-B/16 COCO-Stuff-156 4.90 9.10 16.90 42.80 86.20\nZSseg [48] ECCV'22 ViT-B/16 COCO-Stuff-171 7.00 \u2013 20.50 47.70 88.40\nOVSeg [21]\u2020CVPR'23 ViT-B/16 COCO-Stuff-171 7.10 11.00 24.80 53.30 92.60\nSED [18]\u2020 CVPR'24 ConvNeXt-B COCO-Stuff-171 8.90 12.40 31.20 47.30 93.70\nCAT-Seg + DeCLIP [49]\u2020 CVPR'25 ViT-B/16 COCO-Stuff-171 9.50 15.40 31.30 55.60 92.60\nLoGoSeg [50]\u2020 AAAI'26 ConvNeXt-B COCO-Stuff-171 10.20 16.30 32.00 55.80 93.00\nLoGoSeg [50]\u2020 AAAI'26 ViT-B/16 COCO-Stuff-171 10.60 16.50 32.60 56.20 93.40\nTMCNetOVSeg Ours ViT-B/16 COCO-Stuff-1719.10 14.20 30.90 55.70 95.40\nTMCNetSED Ours ConvNeXt-B COCO-Stuff-17111.40 16.70 32.80 57.40 95.30\n:Preprint submitted to Elsevier Page 12 of 14",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Extension To Open-Vocabulary Semantic",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d1b8c3ff649c78f648bc04524920bf8064a101fcbb1cc43b4b1637d87e6f36e7",
+            "evidence_id": "E3825d446b707601b-B0080",
+            "pages": [
+              12
+            ],
+            "section": "Extension To Open-Vocabulary Semantic",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 5201,
+                "page": 12,
+                "section": "Extension To Open-Vocabulary Semantic",
+                "section_index": 34,
+                "start": 4310,
+                "text": "results are taken from the corresponding papers or official implementations.\u2212\ndenotes an unreported result.\nMethods Publication VLM Training Dataset A-847 PC-459 A-150 PC-59 PAS-20\nZegFormer [47] CVPR'22 ViT-B/16 COCO-Stuff-156 4.90 9.10 16.90 42.80 86.20\nZSseg [48] ECCV'22 ViT-B/16 COCO-Stuff-171 7.00 \u2013 20.50 47.70 88.40\nOVSeg [21]\u2020CVPR'23 ViT-B/16 COCO-Stuff-171 7.10 11.00 24.80 53.30 92.60\nSED [18]\u2020 CVPR'24 ConvNeXt-B COCO-Stuff-171 8.90 12.40 31.20 47.30 93.70\nCAT-Seg + DeCLIP [49]\u2020 CVPR'25 ViT-B/16 COCO-Stuff-171 9.50 15.40 31.30 55.60 92.60\nLoGoSeg [50]\u2020 AAAI'26 ConvNeXt-B COCO-Stuff-171 10.20 16.30 32.00 55.80 93.00\nLoGoSeg [50]\u2020 AAAI'26 ViT-B/16 COCO-Stuff-171 10.60 16.50 32.60 56.20 93.40\nTMCNetOVSeg Ours ViT-B/16 COCO-Stuff-1719.10 14.20 30.90 55.70 95.40\nTMCNetSED Ours ConvNeXt-B COCO-Stuff-17111.40 16.70 32.80 57.40 95.30\n:Preprint submitted to Elsevier Page 12 of 14"
+              }
+            ],
+            "text": "results are taken from the corresponding papers or official implementations.\u2212\ndenotes an unreported result.\nMethods Publication VLM Training Dataset A-847 PC-459 A-150 PC-59 PAS-20\nZegFormer [47] CVPR'22 ViT-B/16 COCO-Stuff-156 4.90 9.10 16.90 42.80 86.20\nZSseg [48] ECCV'22 ViT-B/16 COCO-Stuff-171 7.00 \u2013 20.50 47.70 88.40\nOVSeg [21]\u2020CVPR'23 ViT-B/16 COCO-Stuff-171 7.10 11.00 24.80 53.30 92.60\nSED [18]\u2020 CVPR'24 ConvNeXt-B COCO-Stuff-171 8.90 12.40 31.20 47.30 93.70\nCAT-Seg + DeCLIP [49]\u2020 CVPR'25 ViT-B/16 COCO-Stuff-171 9.50 15.40 31.30 55.60 92.60\nLoGoSeg [50]\u2020 AAAI'26 ConvNeXt-B COCO-Stuff-171 10.20 16.30 32.00 55.80 93.00\nLoGoSeg [50]\u2020 AAAI'26 ViT-B/16 COCO-Stuff-171 10.60 16.50 32.60 56.20 93.40\nTMCNetOVSeg Ours ViT-B/16 COCO-Stuff-1719.10 14.20 30.90 55.70 95.40\nTMCNetSED Ours ConvNeXt-B COCO-Stuff-17111.40 16.70 32.80 57.40 95.30\n:Preprint submitted to Elsevier Page 12 of 14"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2611.22126",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "empirical_research",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2611.22126",
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The reported gains are measured with external ground-truth annotations on standard benchmark evaluation sets, including novel/unseen categories, rather than with the training loss or a learned evaluator [E3825d446b707601b-B0042, E3825d446b707601b-B0050, E3825d446b707601b-B0051].",
+          "final_evaluation_signal": "Headline outcomes are reported as AP_novel50, AP_base50, AP_all50, AP_r, AP_c, AP_f, mAP, and mIoU against held-out ground-truth annotations on standard public benchmarks [E3825d446b707601b-B0042, E3825d446b707601b-B0043].",
+          "independent_corroboration": "present",
+          "optimization_signal": "The system is trained with base-class supervised classification and bounding-box regression losses, including cosine similarity against category text embeddings, on COCO-OVD and LVIS-OVD training splits [E3825d446b707601b-B0048].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E3825d446b707601b-B0008",
+          "E3825d446b707601b-B0021",
+          "E3825d446b707601b-B0022",
+          "E3825d446b707601b-B0029",
+          "E3825d446b707601b-B0032",
+          "E3825d446b707601b-B0034",
+          "E3825d446b707601b-B0037",
+          "E3825d446b707601b-B0042",
+          "E3825d446b707601b-B0043",
+          "E3825d446b707601b-B0048",
+          "E3825d446b707601b-B0050",
+          "E3825d446b707601b-B0051",
+          "E3825d446b707601b-B0056",
+          "E3825d446b707601b-B0057",
+          "E3825d446b707601b-B0062",
+          "E3825d446b707601b-B0065",
+          "E3825d446b707601b-B0070",
+          "E3825d446b707601b-B0071",
+          "E3825d446b707601b-B0073",
+          "E3825d446b707601b-B0079",
+          "E3825d446b707601b-B0080"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "38463b69328f203452f2f454fcd4cb2d27ff2b91bc44696e945fc4327650b724"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2611.22126",
+        "claim_evidence_alignment": "Claims regarding superior novel-category detection and competitive cross-task segmentation performance are well-supported by quantitative comparisons against prior art and ablation tables [E3825d446b707601b-B0071, E3825d446b707601b-B0073, E3825d446b707601b-B0079, E3825d446b707601b-B0080]. The authors openly acknowledge where competitive baselines retain an advantage, such as BIND on LVIS rare AP [E3825d446b707601b-B0065].",
+        "context_id": "3825d446b707601bd87a2719226989c6cf13abc9a47895c092a0e605ba055368",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation is conducted using established standard benchmarks (COCO-OVD, LVIS-OVD, and segmentation datasets ADE20K, PASCAL VOC, PASCAL-Context) under standard protocol splits and metrics such as AP_novel, AP_r, and mIoU [E3825d446b707601b-B0042, E3825d446b707601b-B0043]. Comprehensive component ablations across two independent base architectures (OVSeg and SED) validate individual and joint module gains [E3825d446b707601b-B0050, E3825d446b707601b-B0051, E3825d446b707601b-B0056, E3825d446b707601b-B0057, E3825d446b707601b-B0070].",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluations rely strictly on external ground-truth annotations for both base and novel/unseen classes on standard public benchmarks [E3825d446b707601b-B0042, E3825d446b707601b-B0050, E3825d446b707601b-B0051].",
+          "final_evaluation_signal": "Standard benchmark evaluation metrics (AP_novel, AP_base, AP_r, mAP, mIoU) computed against held-out ground-truth annotations on COCO-OVD, LVIS-OVD, and segmentation benchmarks [E3825d446b707601b-B0042, E3825d446b707601b-B0043].",
+          "independent_corroboration": "present",
+          "optimization_signal": "Standard base-class supervised detection losses (classification loss against text embeddings and bounding-box regression loss) during training [E3825d446b707601b-B0026, E3825d446b707601b-B0048].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E3825d446b707601b-B0008",
+          "E3825d446b707601b-B0021",
+          "E3825d446b707601b-B0022",
+          "E3825d446b707601b-B0023",
+          "E3825d446b707601b-B0024",
+          "E3825d446b707601b-B0029",
+          "E3825d446b707601b-B0032",
+          "E3825d446b707601b-B0034",
+          "E3825d446b707601b-B0037",
+          "E3825d446b707601b-B0042",
+          "E3825d446b707601b-B0043",
+          "E3825d446b707601b-B0048",
+          "E3825d446b707601b-B0050",
+          "E3825d446b707601b-B0051",
+          "E3825d446b707601b-B0056",
+          "E3825d446b707601b-B0057",
+          "E3825d446b707601b-B0070",
+          "E3825d446b707601b-B0071",
+          "E3825d446b707601b-B0073",
+          "E3825d446b707601b-B0079",
+          "E3825d446b707601b-B0080"
+        ],
+        "limitations": "The manuscript notes that novel-category pseudo-label coverage does not directly capture pseudo-label precision [E3825d446b707601b-B0062] and relies on established pre-trained vision-language backbones.",
+        "method_assessment": "The architectural components are clearly formalized with exact dimensional mappings and mathematical formulations, including cross-attention masked pooling for query initialization, cross-modal token fusion, and scale-adapted lateral correction in the decoder [E3825d446b707601b-B0022, E3825d446b707601b-B0029, E3825d446b707601b-B0032, E3825d446b707601b-B0034, E3825d446b707601b-B0037]. Implementation parameters and training hyperparameters are thoroughly specified [E3825d446b707601b-B0048].",
+        "quality_rationale": "The paper provides a well-motivated architectural enhancement with mathematically clear design details, comprehensive ablation studies across multiple base models, and consistent empirical gains across standard open-vocabulary detection and segmentation benchmarks.",
+        "scoped_contribution": "The paper proposes TMCNet, a framework for open-vocabulary object detection and semantic segmentation that injects textual semantic priors into object query construction (TGME), cross-modal alignment (CMAP), and multiscale decoding (PTCD) [E3825d446b707601b-B0008, E3825d446b707601b-B0021, E3825d446b707601b-B0024].",
+        "source_content_hash": "38463b69328f203452f2f454fcd4cb2d27ff2b91bc44696e945fc4327650b724"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The paper provides a well-motivated architectural enhancement with mathematically clear design details, comprehensive ablation studies across multiple base models, and consistent empirical gains across standard open-vocabulary detection and segmentation benchmarks.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "38463b69328f203452f2f454fcd4cb2d27ff2b91bc44696e945fc4327650b724",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The manuscript notes that novel-category pseudo-label coverage does not directly capture pseudo-label precision [E3825d446b707601b-B0062] and relies on established pre-trained vision-language backbones."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -163,7 +2060,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

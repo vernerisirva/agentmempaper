@@ -39,7 +39,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-04 09:05:04",
-    "generated_at": "2026-11-18 12:42:18",
+    "generated_at": "2026-11-19 12:32:19",
     "last_seen_at": "2026-08-16 06:00:51",
     "metadata_sources": [
       "openalex",
@@ -114,36 +114,1960 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-19T12:30:14.975739+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 1.0,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concerns": [
+      "The headline LTP outcomes are established by the same llama3.3:70b judge that is used as the evaluation signal, and the reported human audit shows only moderate three-way agreement (kappa 0.699 overall, 0.578 on LoCoMo), so the claimed gains are not clearly corroborated by an independent measurement.",
+      "The component ablation on LTP Profiles 000-002 shows the full A-TMA configuration is not consistently best: removing Sentry yields the highest preferred accuracy and judge score, and removing QA labels raises conflict accuracy, which weakens the claim that the proposed components drive the reported improvements.",
+      "The LoCoMo generalization results are mixed and host-dependent, with A-Mem+A-TMA slightly lower on average F1 and BLEU-1 and several +A-TMA rows showing decreases, so the manuscript's own evidence does not support a clear promotion-worthy gain beyond the narrow LTP setting."
+    ],
+    "concise_summary": "The manuscript presents a conceptually clear and practically impactful diagnostic formulation of state coordination in agent memory, backed by solid experimental controls, explicit architecture definitions, and honest reporting of mixed benchmark outcomes.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 81702,
+      "assessment_input_sha256": "55c4006dc639a855cda30c685a2767be9976e58ea3dc303b01a9d89c65c857dd",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7167380153",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 80327,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 79467,
+      "evidence_block_count": 102,
+      "evidence_context_characters": 92228,
+      "evidence_context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+      "evidence_context_sha256": "54d1758675d81a7702a0db8b9762ed73be706ce1dcdcc258f7a1a5dfe6e49073",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 80367,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "extracted_pages": 21,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "05f52b2c29d916aff3424b7ce950b71adad54533e7bf1362bb2f544071910e18",
+        "source_url": "https://arxiv.org/pdf/2607.01935",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 80327,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "A-Tma: Decoupling State-Aware Memory Failures In",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 220,
+          "supplied_characters": 220
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1450,
+          "supplied_characters": 1450
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 1523,
+          "supplied_characters": 1523
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 3218,
+          "supplied_characters": 3218
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 2396,
+          "supplied_characters": 2396
+        },
+        {
+          "heading": "Memory Systems For Llm Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 1555,
+          "supplied_characters": 1555
+        },
+        {
+          "heading": "Temporal And Graph Based Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 676,
+          "supplied_characters": 676
+        },
+        {
+          "heading": "Temporal And Graph Based Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 2232,
+          "supplied_characters": 2232
+        },
+        {
+          "heading": "Evaluation Of Long Horizon Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 8,
+          "source_characters": 2150,
+          "supplied_characters": 2150
+        },
+        {
+          "heading": "Retrieval And Evidence Conditioning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 888,
+          "supplied_characters": 888
+        },
+        {
+          "heading": "Problem Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "introduction",
+          "section_index": 10,
+          "source_characters": 1583,
+          "supplied_characters": 1583
+        },
+        {
+          "heading": "Problem Interface And Notation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "introduction",
+          "section_index": 11,
+          "source_characters": 1644,
+          "supplied_characters": 1644
+        },
+        {
+          "heading": "Problem Interface And Notation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "introduction",
+          "section_index": 12,
+          "source_characters": 778,
+          "supplied_characters": 778
+        },
+        {
+          "heading": "Overview",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 505,
+          "supplied_characters": 505
+        },
+        {
+          "heading": "Bank Level State Maintenance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1601,
+          "supplied_characters": 1601
+        },
+        {
+          "heading": "Bank Level State Maintenance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 3297,
+          "supplied_characters": 3297
+        },
+        {
+          "heading": "Bank Level State Maintenance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 639,
+          "supplied_characters": 639
+        },
+        {
+          "heading": "Retrieve Level Evidence Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 3825,
+          "supplied_characters": 3825
+        },
+        {
+          "heading": "Retrieve Level Evidence Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 829,
+          "supplied_characters": 829
+        },
+        {
+          "heading": "Qa Level Evidence State Conditioning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 3509,
+          "supplied_characters": 3509
+        },
+        {
+          "heading": "Discussion And Boundaries",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "discussion",
+          "section_index": 20,
+          "source_characters": 1149,
+          "supplied_characters": 1149
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "methods",
+          "section_index": 21,
+          "source_characters": 1905,
+          "supplied_characters": 1905
+        },
+        {
+          "heading": "Main Results On Full Ltp",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 22,
+          "source_characters": 1261,
+          "supplied_characters": 1261
+        },
+        {
+          "heading": "Main Results On Full Ltp",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "results",
+          "section_index": 23,
+          "source_characters": 4480,
+          "supplied_characters": 4480
+        },
+        {
+          "heading": "Full Locomo Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 373,
+          "supplied_characters": 373
+        },
+        {
+          "heading": "Full Locomo Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 248,
+          "supplied_characters": 248
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "conclusion",
+          "section_index": 26,
+          "source_characters": 822,
+          "supplied_characters": 822
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 2388,
+          "supplied_characters": 2388
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 3971,
+          "supplied_characters": 3971
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 3880,
+          "supplied_characters": 3880
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 311,
+          "supplied_characters": 311
+        },
+        {
+          "heading": "Appendix: Experimental Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 31,
+          "source_characters": 22,
+          "supplied_characters": 22
+        },
+        {
+          "heading": "Appendix: Benchmark Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 32,
+          "source_characters": 1049,
+          "supplied_characters": 1049
+        },
+        {
+          "heading": "Appendix: Ltp Construction Process",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 33,
+          "source_characters": 2630,
+          "supplied_characters": 2630
+        },
+        {
+          "heading": "Appendix: Ltp Replay And Insertion Setting",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 34,
+          "source_characters": 204,
+          "supplied_characters": 204
+        },
+        {
+          "heading": "Appendix: Ltp Replay And Insertion Setting",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 35,
+          "source_characters": 1468,
+          "supplied_characters": 1468
+        },
+        {
+          "heading": "Appendix: Stratified Manual Verification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 36,
+          "source_characters": 1642,
+          "supplied_characters": 1642
+        },
+        {
+          "heading": "Appendix: Answer Judge Reliability Check",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 37,
+          "source_characters": 733,
+          "supplied_characters": 733
+        },
+        {
+          "heading": "Appendix: Answer Judge Reliability Check",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 533,
+          "supplied_characters": 533
+        },
+        {
+          "heading": "Appendix: Metric Definitions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 2378,
+          "supplied_characters": 2378
+        },
+        {
+          "heading": "Appendix: Host-System Evaluation Policy",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 857,
+          "supplied_characters": 857
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 41,
+          "source_characters": 679,
+          "supplied_characters": 679
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 42,
+          "source_characters": 4317,
+          "supplied_characters": 4317
+        },
+        {
+          "heading": "Retrieve Controller Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 3216,
+          "supplied_characters": 3216
+        },
+        {
+          "heading": "Appendix: Inference Procedure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 503,
+          "supplied_characters": 503
+        },
+        {
+          "heading": "Appendix: Level Ablation On Ltp Profiles 000\u2013002",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 1379,
+          "supplied_characters": 1379
+        },
+        {
+          "heading": "Appendix: Qualitative Case Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 46,
+          "source_characters": 989,
+          "supplied_characters": 989
+        },
+        {
+          "heading": "Appendix: Qualitative Case Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 47,
+          "source_characters": 1562,
+          "supplied_characters": 1562
+        }
+      ],
+      "selected_characters": 79467,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "selected_sections": [
+        {
+          "characters": 220,
+          "heading": "A-Tma: Decoupling State-Aware Memory Failures In",
+          "page": 1
+        },
+        {
+          "characters": 1450,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1523,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3218,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 2396,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 1555,
+          "heading": "Memory Systems For Llm Agents",
+          "page": 3
+        },
+        {
+          "characters": 676,
+          "heading": "Temporal And Graph Based Memory",
+          "page": 3
+        },
+        {
+          "characters": 2232,
+          "heading": "Temporal And Graph Based Memory",
+          "page": 4
+        },
+        {
+          "characters": 2150,
+          "heading": "Evaluation Of Long Horizon Memory",
+          "page": 4
+        },
+        {
+          "characters": 888,
+          "heading": "Retrieval And Evidence Conditioning",
+          "page": 5
+        },
+        {
+          "characters": 1583,
+          "heading": "Problem Setup",
+          "page": 5
+        },
+        {
+          "characters": 1644,
+          "heading": "Problem Interface And Notation",
+          "page": 5
+        },
+        {
+          "characters": 778,
+          "heading": "Problem Interface And Notation",
+          "page": 6
+        },
+        {
+          "characters": 505,
+          "heading": "Overview",
+          "page": 6
+        },
+        {
+          "characters": 1601,
+          "heading": "Bank Level State Maintenance",
+          "page": 6
+        },
+        {
+          "characters": 3297,
+          "heading": "Bank Level State Maintenance",
+          "page": 7
+        },
+        {
+          "characters": 639,
+          "heading": "Bank Level State Maintenance",
+          "page": 8
+        },
+        {
+          "characters": 3825,
+          "heading": "Retrieve Level Evidence Construction",
+          "page": 8
+        },
+        {
+          "characters": 829,
+          "heading": "Retrieve Level Evidence Construction",
+          "page": 9
+        },
+        {
+          "characters": 3509,
+          "heading": "Qa Level Evidence State Conditioning",
+          "page": 9
+        },
+        {
+          "characters": 1149,
+          "heading": "Discussion And Boundaries",
+          "page": 10
+        },
+        {
+          "characters": 1905,
+          "heading": "Experimental Setup",
+          "page": 10
+        },
+        {
+          "characters": 1261,
+          "heading": "Main Results On Full Ltp",
+          "page": 10
+        },
+        {
+          "characters": 4480,
+          "heading": "Main Results On Full Ltp",
+          "page": 11
+        },
+        {
+          "characters": 373,
+          "heading": "Full Locomo Generalization",
+          "page": 11
+        },
+        {
+          "characters": 248,
+          "heading": "Full Locomo Generalization",
+          "page": 12
+        },
+        {
+          "characters": 822,
+          "heading": "Conclusion",
+          "page": 12
+        },
+        {
+          "characters": 2388,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 3971,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 3880,
+          "heading": "Unclassified body after references",
+          "page": 14
+        },
+        {
+          "characters": 311,
+          "heading": "Unclassified body after references",
+          "page": 15
+        },
+        {
+          "characters": 22,
+          "heading": "Appendix: Experimental Details",
+          "page": 15
+        },
+        {
+          "characters": 1049,
+          "heading": "Appendix: Benchmark Protocol",
+          "page": 15
+        },
+        {
+          "characters": 2630,
+          "heading": "Appendix: Ltp Construction Process",
+          "page": 15
+        },
+        {
+          "characters": 204,
+          "heading": "Appendix: Ltp Replay And Insertion Setting",
+          "page": 15
+        },
+        {
+          "characters": 1468,
+          "heading": "Appendix: Ltp Replay And Insertion Setting",
+          "page": 16
+        },
+        {
+          "characters": 1642,
+          "heading": "Appendix: Stratified Manual Verification",
+          "page": 16
+        },
+        {
+          "characters": 733,
+          "heading": "Appendix: Answer Judge Reliability Check",
+          "page": 16
+        },
+        {
+          "characters": 533,
+          "heading": "Appendix: Answer Judge Reliability Check",
+          "page": 17
+        },
+        {
+          "characters": 2378,
+          "heading": "Appendix: Metric Definitions",
+          "page": 17
+        },
+        {
+          "characters": 857,
+          "heading": "Appendix: Host-System Evaluation Policy",
+          "page": 17
+        },
+        {
+          "characters": 679,
+          "heading": "Appendix: Implementation Details",
+          "page": 17
+        },
+        {
+          "characters": 4317,
+          "heading": "Appendix: Implementation Details",
+          "page": 18
+        },
+        {
+          "characters": 3216,
+          "heading": "Retrieve Controller Prompt",
+          "page": 19
+        },
+        {
+          "characters": 503,
+          "heading": "Appendix: Inference Procedure",
+          "page": 20
+        },
+        {
+          "characters": 1379,
+          "heading": "Appendix: Level Ablation On Ltp Profiles 000\u2013002",
+          "page": 20
+        },
+        {
+          "characters": 989,
+          "heading": "Appendix: Qualitative Case Study",
+          "page": 20
+        },
+        {
+          "characters": 1562,
+          "heading": "Appendix: Qualitative Case Study",
+          "page": 21
+        }
+      ],
+      "selected_text_sha256": "55c4006dc639a855cda30c685a2767be9976e58ea3dc303b01a9d89c65c857dd",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "05f52b2c29d916aff3424b7ce950b71adad54533e7bf1362bb2f544071910e18",
+      "source_pages": 21,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0002"
+        ],
+        "excerpt": "Long term memory lets LLM agents act as persistent assistants, but user facts\nchange. The central question is not only whether a fact can be remembered, but\nwhether the system can answer from the state the user is asking about: what is\ntrue now, what used to be true, and what changed. We studyghost memory, a\nstate coordination failure in which old, current, and transition facts coexist in the\nmemory bank, remain mixed during retrieval, and mislead the answer model. The\nchallenge is that simple deletion loses history, while timestamps or relevance scores\nalone do not expose which fact should be live for a given query. We therefore argue\nfor decoupled memory evaluation at three levels: bank maintenance, retrieval, and\nanswer time resolution. We propose A-TMA, a state aware overlay for existing\nmemory systems that keeps superseded and transition records, builds evidence\npackets for the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "052d283628953a71a018f7e19522d62a23c877ac18282537d54ce1bd312fc328",
+            "evidence_id": "E69470ee2ac4f7ac3-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Long term memory lets LLM agents act as persistent assistants, but user facts\nchange. The central question is not only whether a fact can be remembered, but\nwhether the system can answer from the state the user is asking about: what is\ntrue now, what used to be true, and what changed. We studyghost memory, a\nstate coordination failure in which old, current, and transition facts coexist in the\nmemory bank, remain mixed during retrieval, and mislead the answer model. The\nchallenge is that simple deletion loses history, while timestamps or relevance scores\nalone do not expose which fact should be live for a given query. We therefore argue\nfor decoupled memory evaluation at three levels: bank maintenance, retrieval, and\nanswer time resolution. We propose A-TMA, a state aware overlay for existing\nmemory systems that keeps superseded and transition records, builds evidence\npackets for the "
+              }
+            ],
+            "text": "Long term memory lets LLM agents act as persistent assistants, but user facts\nchange. The central question is not only whether a fact can be remembered, but\nwhether the system can answer from the state the user is asking about: what is\ntrue now, what used to be true, and what changed. We studyghost memory, a\nstate coordination failure in which old, current, and transition facts coexist in the\nmemory bank, remain mixed during retrieval, and mislead the answer model. The\nchallenge is that simple deletion loses history, while timestamps or relevance scores\nalone do not expose which fact should be live for a given query. We therefore argue\nfor decoupled memory evaluation at three levels: bank maintenance, retrieval, and\nanswer time resolution. We propose A-TMA, a state aware overlay for existing\nmemory systems that keeps superseded and transition records, builds evidence\npackets for the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0003"
+        ],
+        "excerpt": "requested state view, and exposes current, historical, and transition\nlabels to QA. To make this failure measurable, we build LTP (LoCoMo Temporal\nPlus), a conflict heavy benchmark for ghost memory, and evaluate on LoCoMo\nfor long conversation generalization. On LTP, Graphiti/Zep +A-TMA improves\nconflict accuracy by 0.240 absolute over Graphiti/Zep. On LoCoMo, Graphiti/Zep\n+A-TMA raises temporal F1 from 0.0295 to 0.1705. The gains are host dependent,\nbut they indicate that explicit state roles can reduce memory failures hidden by\nfinal QA accuracy.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "b34f156eb768b1b39959258210f283df1dacc975dc4dfdf0a05822ec7f3136c0",
+            "evidence_id": "E69470ee2ac4f7ac3-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1450,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 896,
+                "text": "requested state view, and exposes current, historical, and transition\nlabels to QA. To make this failure measurable, we build LTP (LoCoMo Temporal\nPlus), a conflict heavy benchmark for ghost memory, and evaluate on LoCoMo\nfor long conversation generalization. On LTP, Graphiti/Zep +A-TMA improves\nconflict accuracy by 0.240 absolute over Graphiti/Zep. On LoCoMo, Graphiti/Zep\n+A-TMA raises temporal F1 from 0.0295 to 0.1705. The gains are host dependent,\nbut they indicate that explicit state roles can reduce memory failures hidden by\nfinal QA accuracy."
+              }
+            ],
+            "text": "requested state view, and exposes current, historical, and transition\nlabels to QA. To make this failure measurable, we build LTP (LoCoMo Temporal\nPlus), a conflict heavy benchmark for ghost memory, and evaluate on LoCoMo\nfor long conversation generalization. On LTP, Graphiti/Zep +A-TMA improves\nconflict accuracy by 0.240 absolute over Graphiti/Zep. On LoCoMo, Graphiti/Zep\n+A-TMA raises temporal F1 from 0.0295 to 0.1705. The gains are host dependent,\nbut they indicate that explicit state roles can reduce memory failures hidden by\nfinal QA accuracy."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0010"
+        ],
+        "excerpt": "live by default. At the retrieval\nlevel, A-TMA infers the query state view and builds a state aligned evidence packet from host retrieval\nresults, state metadata, relation expansion, and bounded controller ranking. At the QA level, A-TMA\nserializes evidence with labels such as current memory, historical memory, transition memory, and\ntransition linked memory, then asks the answer model to resolve the state requested by the query.\nWe evaluate A-TMA on two benchmark settings. We build LTP (LoCoMo Temporal Plus) as a\nconflict heavy benchmark for ghost memory, with 10 profiles and 800 probes. LoCoMo [20] tests\nlong conversation generalization over 10 samples and 1,986 QA pairs. On LTP, Graphiti/Zep +A-\nTMA improves conflict accuracy by 0.240 absolute, from 0.480 to 0.720. On LoCoMo, Graphiti/Zep\n+A-TMA raises temporal F1 from 0.0295 to 0.1705 and improves average F1 from 0.0809 to ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "a508058e04910c7d4f31ab58430159be8b5731c0b51377d0e9696c84e712e8ac",
+            "evidence_id": "E69470ee2ac4f7ac3-B0010",
+            "pages": [
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1519,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 629,
+                "text": "live by default. At the retrieval\nlevel, A-TMA infers the query state view and builds a state aligned evidence packet from host retrieval\nresults, state metadata, relation expansion, and bounded controller ranking. At the QA level, A-TMA\nserializes evidence with labels such as current memory, historical memory, transition memory, and\ntransition linked memory, then asks the answer model to resolve the state requested by the query.\nWe evaluate A-TMA on two benchmark settings. We build LTP (LoCoMo Temporal Plus) as a\nconflict heavy benchmark for ghost memory, with 10 profiles and 800 probes. LoCoMo [20] tests\nlong conversation generalization over 10 samples and 1,986 QA pairs. On LTP, Graphiti/Zep +A-\nTMA improves conflict accuracy by 0.240 absolute, from 0.480 to 0.720. On LoCoMo, Graphiti/Zep\n+A-TMA raises temporal F1 from 0.0295 to 0.1705 and improves average F1 from 0.0809 to "
+              }
+            ],
+            "text": "live by default. At the retrieval\nlevel, A-TMA infers the query state view and builds a state aligned evidence packet from host retrieval\nresults, state metadata, relation expansion, and bounded controller ranking. At the QA level, A-TMA\nserializes evidence with labels such as current memory, historical memory, transition memory, and\ntransition linked memory, then asks the answer model to resolve the state requested by the query.\nWe evaluate A-TMA on two benchmark settings. We build LTP (LoCoMo Temporal Plus) as a\nconflict heavy benchmark for ghost memory, with 10 profiles and 800 probes. LoCoMo [20] tests\nlong conversation generalization over 10 samples and 1,986 QA pairs. On LTP, Graphiti/Zep +A-\nTMA improves conflict accuracy by 0.240 absolute, from 0.480 to 0.720. On LoCoMo, Graphiti/Zep\n+A-TMA raises temporal F1 from 0.0295 to 0.1705 and improves average F1 from 0.0809 to "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0011"
+        ],
+        "excerpt": "0.1556.\nThe gains are host and metric dependent, with the clearest benefit when the host exposes enough\nevidence but does not align bank state, retrieval state, and answer state by itself. Our contributions are:\n\u2022 We formulate state changing long term memory as a three level problem over memory bank,\nretrieval, and QA, which separates failures hidden by final answer accuracy.\n\u2022 We identify ghost memory as a state coordination failure where old, current, and transition facts\nremain mixed unless their roles are preserved and exposed.\n\u2022 We introduce A-TMA, an overlay that maintains supersession structure, builds state aligned\nevidence packets, and conditions QA on explicit evidence state labels.\n\u2022 We construct LTP (LoCoMo Temporal Plus) as a conflict heavy benchmark and evaluate A-TMA\non LTP and LoCoMo, with host dependent gains on conflict aware and temporal queries.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "24297458525d6b1ef992a183ec2d4c412b917813d360045b9243894fc25baa0f",
+            "evidence_id": "E69470ee2ac4f7ac3-B0011",
+            "pages": [
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2396,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 1519,
+                "text": "0.1556.\nThe gains are host and metric dependent, with the clearest benefit when the host exposes enough\nevidence but does not align bank state, retrieval state, and answer state by itself. Our contributions are:\n\u2022 We formulate state changing long term memory as a three level problem over memory bank,\nretrieval, and QA, which separates failures hidden by final answer accuracy.\n\u2022 We identify ghost memory as a state coordination failure where old, current, and transition facts\nremain mixed unless their roles are preserved and exposed.\n\u2022 We introduce A-TMA, an overlay that maintains supersession structure, builds state aligned\nevidence packets, and conditions QA on explicit evidence state labels.\n\u2022 We construct LTP (LoCoMo Temporal Plus) as a conflict heavy benchmark and evaluate A-TMA\non LTP and LoCoMo, with host dependent gains on conflict aware and temporal queries."
+              }
+            ],
+            "text": "0.1556.\nThe gains are host and metric dependent, with the clearest benefit when the host exposes enough\nevidence but does not align bank state, retrieval state, and answer state by itself. Our contributions are:\n\u2022 We formulate state changing long term memory as a three level problem over memory bank,\nretrieval, and QA, which separates failures hidden by final answer accuracy.\n\u2022 We identify ghost memory as a state coordination failure where old, current, and transition facts\nremain mixed unless their roles are preserved and exposed.\n\u2022 We introduce A-TMA, an overlay that maintains supersession structure, builds state aligned\nevidence packets, and conditions QA on explicit evidence state labels.\n\u2022 We construct LTP (LoCoMo Temporal Plus) as a conflict heavy benchmark and evaluate A-TMA\non LTP and LoCoMo, with host dependent gains on conflict aware and temporal queries."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0030"
+        ],
+        "excerpt": "SentenceTransformer encoder\nand two normalized projection heads. The topic head preserves semantic slot identity, while the logic\nhead exposes stance compatibility. For a textx, Sentry computes\nhx =\u03d5 \u03b8(x),\nztopx = norm2(gtop(hx)), z logx = norm2(glog(hx)). (2)\nLets v(i, j) =\nD\nzvxi , zvxj\nE\n. The pair metrics are then computed as\naij =s top(i, j), bij =s log(i, j), dij = gap(aij, bij). (3)\nHere aij measures topic agreement, bij measures logical compatibility, and dij is the implementation\ngap score used by the detector. A candidate is routed to the Judge when it is topically close and\nlogically suspicious:\nAj ={i\u2208 Pj :a ij > \u03c4top\n\u2227(b ij < \u03c4log \u2228d ij > \u03c4gap)}. (4)\nThis rule proposes candidates rather than committing relations. Pure semantic similarity can over\nselect records that mention the same entity without changing state. Pure contradiction detection\ncan miss gradual updates. Sentry ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Bank Level State Maintenance",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "206f72956fc175b6a3d08d478bbd87650bdde7c5fc8880286e8e96cbea3e5f7e",
+            "evidence_id": "E69470ee2ac4f7ac3-B0030",
+            "pages": [
+              7
+            ],
+            "section": "Bank Level State Maintenance",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1083,
+                "page": 7,
+                "section": "Bank Level State Maintenance",
+                "section_index": 15,
+                "start": 183,
+                "text": "SentenceTransformer encoder\nand two normalized projection heads. The topic head preserves semantic slot identity, while the logic\nhead exposes stance compatibility. For a textx, Sentry computes\nhx =\u03d5 \u03b8(x),\nztopx = norm2(gtop(hx)), z logx = norm2(glog(hx)). (2)\nLets v(i, j) =\nD\nzvxi , zvxj\nE\n. The pair metrics are then computed as\naij =s top(i, j), bij =s log(i, j), dij = gap(aij, bij). (3)\nHere aij measures topic agreement, bij measures logical compatibility, and dij is the implementation\ngap score used by the detector. A candidate is routed to the Judge when it is topically close and\nlogically suspicious:\nAj ={i\u2208 Pj :a ij > \u03c4top\n\u2227(b ij < \u03c4log \u2228d ij > \u03c4gap)}. (4)\nThis rule proposes candidates rather than committing relations. Pure semantic similarity can over\nselect records that mention the same entity without changing state. Pure contradiction detection\ncan miss gradual updates. Sentry "
+              }
+            ],
+            "text": "SentenceTransformer encoder\nand two normalized projection heads. The topic head preserves semantic slot identity, while the logic\nhead exposes stance compatibility. For a textx, Sentry computes\nhx =\u03d5 \u03b8(x),\nztopx = norm2(gtop(hx)), z logx = norm2(glog(hx)). (2)\nLets v(i, j) =\nD\nzvxi , zvxj\nE\n. The pair metrics are then computed as\naij =s top(i, j), bij =s log(i, j), dij = gap(aij, bij). (3)\nHere aij measures topic agreement, bij measures logical compatibility, and dij is the implementation\ngap score used by the detector. A candidate is routed to the Judge when it is topically close and\nlogically suspicious:\nAj ={i\u2208 Pj :a ij > \u03c4top\n\u2227(b ij < \u03c4log \u2228d ij > \u03c4gap)}. (4)\nThis rule proposes candidates rather than committing relations. Pure semantic similarity can over\nselect records that mention the same entity without changing state. Pure contradiction detection\ncan miss gradual updates. Sentry "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0032"
+        ],
+        "excerpt": "splits interactions into train, validation, and test partitions by conflict type, optimizes the\nbatch loss with AdamW, saves every epoch, and selects the deployed checkpoint by validation loss:\n\u0398\u22c6sentry = arg min\u0398e Lvalsentry(\u0398e),\n\u0398e ={\u03b8, Wtop1 , Wtop2 , Wlog1 , Wlog2 }. (7)\nJudge audit and commit.The selected Sentry checkpoint becomes the lightweight proposal gate in\nthe bank update path. The heavier Judge is trained separately to produce structured audit decisions\nthrough supervised warm up and reward based optimization for verdict format, correctness, old state\npreservation, and transition summaries. For each suspicious pair in Aj, the Judge receives the old\nrecord, the new input, and Sentry metrics. It returns a conflict status, conflict type, fusion action,\noptional clarification needs, and suggested links.\nIf the new record supersedes an active record in the same slot, the commit ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Bank Level State Maintenance",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "0b1e5086688493bc6b1066307933dbe0b9efabe313fb0ac5063a2d6163fb9fc7",
+            "evidence_id": "E69470ee2ac4f7ac3-B0032",
+            "pages": [
+              7
+            ],
+            "section": "Bank Level State Maintenance",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2882,
+                "page": 7,
+                "section": "Bank Level State Maintenance",
+                "section_index": 15,
+                "start": 1983,
+                "text": "splits interactions into train, validation, and test partitions by conflict type, optimizes the\nbatch loss with AdamW, saves every epoch, and selects the deployed checkpoint by validation loss:\n\u0398\u22c6sentry = arg min\u0398e Lvalsentry(\u0398e),\n\u0398e ={\u03b8, Wtop1 , Wtop2 , Wlog1 , Wlog2 }. (7)\nJudge audit and commit.The selected Sentry checkpoint becomes the lightweight proposal gate in\nthe bank update path. The heavier Judge is trained separately to produce structured audit decisions\nthrough supervised warm up and reward based optimization for verdict format, correctness, old state\npreservation, and transition summaries. For each suspicious pair in Aj, the Judge receives the old\nrecord, the new input, and Sentry metrics. It returns a conflict status, conflict type, fusion action,\noptional clarification needs, and suggested links.\nIf the new record supersedes an active record in the same slot, the commit "
+              }
+            ],
+            "text": "splits interactions into train, validation, and test partitions by conflict type, optimizes the\nbatch loss with AdamW, saves every epoch, and selects the deployed checkpoint by validation loss:\n\u0398\u22c6sentry = arg min\u0398e Lvalsentry(\u0398e),\n\u0398e ={\u03b8, Wtop1 , Wtop2 , Wlog1 , Wlog2 }. (7)\nJudge audit and commit.The selected Sentry checkpoint becomes the lightweight proposal gate in\nthe bank update path. The heavier Judge is trained separately to produce structured audit decisions\nthrough supervised warm up and reward based optimization for verdict format, correctness, old state\npreservation, and transition summaries. For each suspicious pair in Aj, the Judge receives the old\nrecord, the new input, and Sentry metrics. It returns a conflict status, conflict type, fusion action,\noptional clarification needs, and suggested links.\nIf the new record supersedes an active record in the same slot, the commit "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0048"
+        ],
+        "excerpt": "state labels,\nbuilds evidence packets for the requested state view, and exposes current, historical, and transition\nevidence to the answer model. Unless otherwise stated, QA uses qwen2.5:3b, retrieval uses top\nk= 5, and the answer judge is a separate llama3.3:70b service. For LTP, we report Acc, conflict\nand fact splits, average judge score, Evidence support, and Bank role. For LoCoMo, we report F1,\nBLEU-1 [36], and LoCoMo-specific judged QA accuracy where the full judged run is complete.\nAppendix A gives the evaluation details.\nEvaluation Protocol.We report LTP at three levels. Bank role checks whether the final bank exposes\na method native state role signal for the matched current and old values. The signal can be an explicit\nstatus, a supersession or transition link, or a usable temporal order depending on the host interface.\nEvidence support checks whether retrieved evidence ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "3b8fbedad1a64eb182a28f5b70c28d51fb96e3ba88d040e27d814118d61deb61",
+            "evidence_id": "E69470ee2ac4f7ac3-B0048",
+            "pages": [
+              10
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1789,
+                "page": 10,
+                "section": "Experimental Setup",
+                "section_index": 21,
+                "start": 897,
+                "text": "state labels,\nbuilds evidence packets for the requested state view, and exposes current, historical, and transition\nevidence to the answer model. Unless otherwise stated, QA uses qwen2.5:3b, retrieval uses top\nk= 5, and the answer judge is a separate llama3.3:70b service. For LTP, we report Acc, conflict\nand fact splits, average judge score, Evidence support, and Bank role. For LoCoMo, we report F1,\nBLEU-1 [36], and LoCoMo-specific judged QA accuracy where the full judged run is complete.\nAppendix A gives the evaluation details.\nEvaluation Protocol.We report LTP at three levels. Bank role checks whether the final bank exposes\na method native state role signal for the matched current and old values. The signal can be an explicit\nstatus, a supersession or transition link, or a usable temporal order depending on the host interface.\nEvidence support checks whether retrieved evidence "
+              }
+            ],
+            "text": "state labels,\nbuilds evidence packets for the requested state view, and exposes current, historical, and transition\nevidence to the answer model. Unless otherwise stated, QA uses qwen2.5:3b, retrieval uses top\nk= 5, and the answer judge is a separate llama3.3:70b service. For LTP, we report Acc, conflict\nand fact splits, average judge score, Evidence support, and Bank role. For LoCoMo, we report F1,\nBLEU-1 [36], and LoCoMo-specific judged QA accuracy where the full judged run is complete.\nAppendix A gives the evaluation details.\nEvaluation Protocol.We report LTP at three levels. Bank role checks whether the final bank exposes\na method native state role signal for the matched current and old values. The signal can be an explicit\nstatus, a supersession or transition link, or a usable temporal order depending on the host interface.\nEvidence support checks whether retrieved evidence "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0050"
+        ],
+        "excerpt": "Table 2 reports the full LTP results. Bank role is personalized to each bank interface: temporal and\ngraph based methods can receive credit when their stored records expose a usable ordering or link\nbetween the old and current values, while systems without a matched role signal receive no credit.\nThis makes the bank result diagnostic rather than a direct proxy for final QA quality. Several methods\nexpose state-role cues in the bank, but only some retrieve and use them correctly. A-Mem+A-TMA\nreaches the strongest aggregate Acc at 0.818 over 800 probes and improves the conflict split from\n0.812 to 0.860, while A-Mem remains slightly higher on judge score.\nLarger gains appear on hosts with weaker state view alignment. InsideOut+A-TMA improves Acc\nfrom 0.117 to 0.662. This large gain is expected under LTP because InsideOut compresses dialogue\ninto an evolving user profile, which can weaken ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Results On Full Ltp",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "c6af0a39993ae77789ff76f533a25847dc39e8bfad88aeeb7464061ea5ad105a",
+            "evidence_id": "E69470ee2ac4f7ac3-B0050",
+            "pages": [
+              10
+            ],
+            "section": "Main Results On Full Ltp",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 10,
+                "section": "Main Results On Full Ltp",
+                "section_index": 22,
+                "start": 0,
+                "text": "Table 2 reports the full LTP results. Bank role is personalized to each bank interface: temporal and\ngraph based methods can receive credit when their stored records expose a usable ordering or link\nbetween the old and current values, while systems without a matched role signal receive no credit.\nThis makes the bank result diagnostic rather than a direct proxy for final QA quality. Several methods\nexpose state-role cues in the bank, but only some retrieve and use them correctly. A-Mem+A-TMA\nreaches the strongest aggregate Acc at 0.818 over 800 probes and improves the conflict split from\n0.812 to 0.860, while A-Mem remains slightly higher on judge score.\nLarger gains appear on hosts with weaker state view alignment. InsideOut+A-TMA improves Acc\nfrom 0.117 to 0.662. This large gain is expected under LTP because InsideOut compresses dialogue\ninto an evolving user profile, which can weaken "
+              }
+            ],
+            "text": "Table 2 reports the full LTP results. Bank role is personalized to each bank interface: temporal and\ngraph based methods can receive credit when their stored records expose a usable ordering or link\nbetween the old and current values, while systems without a matched role signal receive no credit.\nThis makes the bank result diagnostic rather than a direct proxy for final QA quality. Several methods\nexpose state-role cues in the bank, but only some retrieve and use them correctly. A-Mem+A-TMA\nreaches the strongest aggregate Acc at 0.818 over 800 probes and improves the conflict split from\n0.812 to 0.860, while A-Mem remains slightly higher on judge score.\nLarger gains appear on hosts with weaker state view alignment. InsideOut+A-TMA improves Acc\nfrom 0.117 to 0.662. This large gain is expected under LTP because InsideOut compresses dialogue\ninto an evolving user profile, which can weaken "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0052"
+        ],
+        "excerpt": "deltas show\nthe absolute change from its base method.\nModeled Levels Bank Level Retrieve Level QA Level Avg.Method Bank Ret. QA N Bank coexist Bank role Evidence support QA Acc. Conflict Fact Judge Acc. Rank\nMem0 \u2717 \u2717 \u2717 800 0.007 0.000 0.302 0.188 0.258 0.117 0.174 10.64\nAtomMem \u2717 \u2717 \u2717 800 1.0000.000 0.539 0.381 0.522 0.240 0.311 8.14\nSeCom \u2717 \u2717 \u2717 800 0.990 0.000 0.864 0.655 0.733 0.578 0.564 5.07\nMemoryLLM \u2717 \u2717 \u2717 800 1.0000.000 0.511 0.400 0.487 0.312 0.339 8.43\nM+ \u2717 \u2717 \u2717 800 1.0000.000 0.527 0.409 0.490 0.328 0.347 7.71\nAriadneMem \u2713 \u2713 \u2717 800 1.0000.000 0.656 0.453 0.512 0.393 0.381 6.86\nA-Mem \u2713 \u2713 \u2717 800 1.0000.568 0.916 0.787 0.812 0.762 0.700 2.36\nA-Mem+A-TMA \u2713 \u2713 \u2713 800 1.000\u21910.000 0.825\u21910.257 0.925\u21910.009 0.818\u21910.031 0.860\u21910.048 0.775\u21910.013 0.698\u21930.002 1.79\nGraphiti/Zep \u2713 \u2713 \u2717 800 1.0000.000 0.711 0.524 0.480 0.568 0.473 6.57\nGraphiti/Zep +A-TMA \u2713 \u2713 \u2713 800 1.000\u21910.000 0.775\u21910.775 0.809\u21910.098 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Results On Full Ltp",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "5759216b4295fc8de77d203f9252fa476ff2d6f6b6f355795d16978f62c01915",
+            "evidence_id": "E69470ee2ac4f7ac3-B0052",
+            "pages": [
+              11
+            ],
+            "section": "Main Results On Full Ltp",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1435,
+                "page": 11,
+                "section": "Main Results On Full Ltp",
+                "section_index": 23,
+                "start": 537,
+                "text": "deltas show\nthe absolute change from its base method.\nModeled Levels Bank Level Retrieve Level QA Level Avg.Method Bank Ret. QA N Bank coexist Bank role Evidence support QA Acc. Conflict Fact Judge Acc. Rank\nMem0 \u2717 \u2717 \u2717 800 0.007 0.000 0.302 0.188 0.258 0.117 0.174 10.64\nAtomMem \u2717 \u2717 \u2717 800 1.0000.000 0.539 0.381 0.522 0.240 0.311 8.14\nSeCom \u2717 \u2717 \u2717 800 0.990 0.000 0.864 0.655 0.733 0.578 0.564 5.07\nMemoryLLM \u2717 \u2717 \u2717 800 1.0000.000 0.511 0.400 0.487 0.312 0.339 8.43\nM+ \u2717 \u2717 \u2717 800 1.0000.000 0.527 0.409 0.490 0.328 0.347 7.71\nAriadneMem \u2713 \u2713 \u2717 800 1.0000.000 0.656 0.453 0.512 0.393 0.381 6.86\nA-Mem \u2713 \u2713 \u2717 800 1.0000.568 0.916 0.787 0.812 0.762 0.700 2.36\nA-Mem+A-TMA \u2713 \u2713 \u2713 800 1.000\u21910.000 0.825\u21910.257 0.925\u21910.009 0.818\u21910.031 0.860\u21910.048 0.775\u21910.013 0.698\u21930.002 1.79\nGraphiti/Zep \u2713 \u2713 \u2717 800 1.0000.000 0.711 0.524 0.480 0.568 0.473 6.57\nGraphiti/Zep +A-TMA \u2713 \u2713 \u2713 800 1.000\u21910.000 0.775\u21910.775 0.809\u21910.098 "
+              }
+            ],
+            "text": "deltas show\nthe absolute change from its base method.\nModeled Levels Bank Level Retrieve Level QA Level Avg.Method Bank Ret. QA N Bank coexist Bank role Evidence support QA Acc. Conflict Fact Judge Acc. Rank\nMem0 \u2717 \u2717 \u2717 800 0.007 0.000 0.302 0.188 0.258 0.117 0.174 10.64\nAtomMem \u2717 \u2717 \u2717 800 1.0000.000 0.539 0.381 0.522 0.240 0.311 8.14\nSeCom \u2717 \u2717 \u2717 800 0.990 0.000 0.864 0.655 0.733 0.578 0.564 5.07\nMemoryLLM \u2717 \u2717 \u2717 800 1.0000.000 0.511 0.400 0.487 0.312 0.339 8.43\nM+ \u2717 \u2717 \u2717 800 1.0000.000 0.527 0.409 0.490 0.328 0.347 7.71\nAriadneMem \u2713 \u2713 \u2717 800 1.0000.000 0.656 0.453 0.512 0.393 0.381 6.86\nA-Mem \u2713 \u2713 \u2717 800 1.0000.568 0.916 0.787 0.812 0.762 0.700 2.36\nA-Mem+A-TMA \u2713 \u2713 \u2713 800 1.000\u21910.000 0.825\u21910.257 0.925\u21910.009 0.818\u21910.031 0.860\u21910.048 0.775\u21910.013 0.698\u21930.002 1.79\nGraphiti/Zep \u2713 \u2713 \u2717 800 1.0000.000 0.711 0.524 0.480 0.568 0.473 6.57\nGraphiti/Zep +A-TMA \u2713 \u2713 \u2713 800 1.000\u21910.000 0.775\u21910.775 0.809\u21910.098 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0053"
+        ],
+        "excerpt": "0.635\u21910.111 0.720\u21910.240 0.550\u21930.018 0.559\u21910.086 5.43\nInsideOut \u2713 \u2717 \u2717 800 1.0000.000 0.239 0.117 0.175 0.060 0.115 10.43\nInsideOut+A-TMA \u2713 \u2713 \u2713 800 1.000\u21910.000 0.000\u21910.000 0.848\u21910.609 0.662\u21910.545 0.680\u21910.505 0.645\u21910.585 0.561\u21910.446 4.57\nTable 3: Full LoCoMo evaluation on single hop, temporal, and open domain questions. Metrics are F1, BLEU-1,\nand judged QA accuracy; colored deltas compare +A-TMA with base rows.\nSingle hop Temporal Open domainMethod F1 BLEU-1 QA Acc. F1 BLEU-1 QA Acc. F1 BLEU-1 QA Acc.\nMem0 0.0462 0.03450.5638 0.0173 0.01110.7445 0.0686 0.0529 0.4271\nAtomMem 0.0972 0.0332 0.1454 0.0167 0.0093 0.0561 0.0637 0.0421 0.1979\nSeCom 0.1325 0.1039 0.1773 0.0536 0.0388 0.1184 0.0680 0.0486 0.2083\nMemoryLLM 0.0973 0.0753 0.1206 0.1530 0.1157 0.1495 0.0953 0.0684 0.2292\nM+ 0.1009 0.0812 0.1241 0.1527 0.1148 0.1682 0.0963 0.0699 0.1979\nAriadneMem 0.2663 0.22270.1667 0.1242 0.1047 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Results On Full Ltp",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "de3be460e152e56946350d1b8c3827e8125f0d02f8b8c065feb31ab6b6f7d4de",
+            "evidence_id": "E69470ee2ac4f7ac3-B0053",
+            "pages": [
+              11
+            ],
+            "section": "Main Results On Full Ltp",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2330,
+                "page": 11,
+                "section": "Main Results On Full Ltp",
+                "section_index": 23,
+                "start": 1435,
+                "text": "0.635\u21910.111 0.720\u21910.240 0.550\u21930.018 0.559\u21910.086 5.43\nInsideOut \u2713 \u2717 \u2717 800 1.0000.000 0.239 0.117 0.175 0.060 0.115 10.43\nInsideOut+A-TMA \u2713 \u2713 \u2713 800 1.000\u21910.000 0.000\u21910.000 0.848\u21910.609 0.662\u21910.545 0.680\u21910.505 0.645\u21910.585 0.561\u21910.446 4.57\nTable 3: Full LoCoMo evaluation on single hop, temporal, and open domain questions. Metrics are F1, BLEU-1,\nand judged QA accuracy; colored deltas compare +A-TMA with base rows.\nSingle hop Temporal Open domainMethod F1 BLEU-1 QA Acc. F1 BLEU-1 QA Acc. F1 BLEU-1 QA Acc.\nMem0 0.0462 0.03450.5638 0.0173 0.01110.7445 0.0686 0.0529 0.4271\nAtomMem 0.0972 0.0332 0.1454 0.0167 0.0093 0.0561 0.0637 0.0421 0.1979\nSeCom 0.1325 0.1039 0.1773 0.0536 0.0388 0.1184 0.0680 0.0486 0.2083\nMemoryLLM 0.0973 0.0753 0.1206 0.1530 0.1157 0.1495 0.0953 0.0684 0.2292\nM+ 0.1009 0.0812 0.1241 0.1527 0.1148 0.1682 0.0963 0.0699 0.1979\nAriadneMem 0.2663 0.22270.1667 0.1242 0.1047 "
+              }
+            ],
+            "text": "0.635\u21910.111 0.720\u21910.240 0.550\u21930.018 0.559\u21910.086 5.43\nInsideOut \u2713 \u2717 \u2717 800 1.0000.000 0.239 0.117 0.175 0.060 0.115 10.43\nInsideOut+A-TMA \u2713 \u2713 \u2713 800 1.000\u21910.000 0.000\u21910.000 0.848\u21910.609 0.662\u21910.545 0.680\u21910.505 0.645\u21910.585 0.561\u21910.446 4.57\nTable 3: Full LoCoMo evaluation on single hop, temporal, and open domain questions. Metrics are F1, BLEU-1,\nand judged QA accuracy; colored deltas compare +A-TMA with base rows.\nSingle hop Temporal Open domainMethod F1 BLEU-1 QA Acc. F1 BLEU-1 QA Acc. F1 BLEU-1 QA Acc.\nMem0 0.0462 0.03450.5638 0.0173 0.01110.7445 0.0686 0.0529 0.4271\nAtomMem 0.0972 0.0332 0.1454 0.0167 0.0093 0.0561 0.0637 0.0421 0.1979\nSeCom 0.1325 0.1039 0.1773 0.0536 0.0388 0.1184 0.0680 0.0486 0.2083\nMemoryLLM 0.0973 0.0753 0.1206 0.1530 0.1157 0.1495 0.0953 0.0684 0.2292\nM+ 0.1009 0.0812 0.1241 0.1527 0.1148 0.1682 0.0963 0.0699 0.1979\nAriadneMem 0.2663 0.22270.1667 0.1242 0.1047 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0054"
+        ],
+        "excerpt": "0.3240 0.2004 0.17260.1979\nA-Mem 0.1176 0.1004 0.4314 0.1429 0.1037 0.1967 0.0229 0.0081 0.3333\nA-Mem+A-TMA 0.1191\u21910.002 0.1214\u21910.021 0.4314\u21910.000 0.1493\u21910.006 0.1047\u21910.001 0.3279\u21910.131 0.0385\u21910.016 0.0207\u21910.013 0.4286\u21910.095\nGraphiti/Zep 0.1051 0.0888 0.2482 0.0295 0.0200 0.3707 0.0941 0.0757 0.3333\nGraphiti/Zep +A-TMA 0.1060\u21910.001 0.0869\u21930.002 0.3440 0.1705\u21910.141 0.1268\u21910.107 0.3178 0.0906\u21930.004 0.0646\u21930.011 0.3958\nInsideOut 0.0737 0.0548 0.3404 0.0117 0.0089 0.2212 0.0902 0.0725 0.3229\nInsideOut+A-TMA 0.1158\u21910.042 0.0831\u21910.028 0.1738 0.0510\u21910.039 0.0356\u21910.027 0.1900 0.0951\u21910.005 0.0720\u21930.001 0.2708\nTable 4: Full LoCoMo evaluation continued, with multi hop, adversarial, and average scores. Rank averages the\nthree average metrics, with lower better.\nMulti hop Adversarial AverageMethod F1 BLEU-1 Judge Acc. F1 BLEU-1 Judge Acc. F1 BLEU-1 Judge Acc. Rank\nMem0 0.0375 0.0264 0.5065 0.0045 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Results On Full Ltp",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "5ffb46885c41138a4574903f93f906e76cb74338ed4a86be3f0b390d8b985949",
+            "evidence_id": "E69470ee2ac4f7ac3-B0054",
+            "pages": [
+              11
+            ],
+            "section": "Main Results On Full Ltp",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 3227,
+                "page": 11,
+                "section": "Main Results On Full Ltp",
+                "section_index": 23,
+                "start": 2330,
+                "text": "0.3240 0.2004 0.17260.1979\nA-Mem 0.1176 0.1004 0.4314 0.1429 0.1037 0.1967 0.0229 0.0081 0.3333\nA-Mem+A-TMA 0.1191\u21910.002 0.1214\u21910.021 0.4314\u21910.000 0.1493\u21910.006 0.1047\u21910.001 0.3279\u21910.131 0.0385\u21910.016 0.0207\u21910.013 0.4286\u21910.095\nGraphiti/Zep 0.1051 0.0888 0.2482 0.0295 0.0200 0.3707 0.0941 0.0757 0.3333\nGraphiti/Zep +A-TMA 0.1060\u21910.001 0.0869\u21930.002 0.3440 0.1705\u21910.141 0.1268\u21910.107 0.3178 0.0906\u21930.004 0.0646\u21930.011 0.3958\nInsideOut 0.0737 0.0548 0.3404 0.0117 0.0089 0.2212 0.0902 0.0725 0.3229\nInsideOut+A-TMA 0.1158\u21910.042 0.0831\u21910.028 0.1738 0.0510\u21910.039 0.0356\u21910.027 0.1900 0.0951\u21910.005 0.0720\u21930.001 0.2708\nTable 4: Full LoCoMo evaluation continued, with multi hop, adversarial, and average scores. Rank averages the\nthree average metrics, with lower better.\nMulti hop Adversarial AverageMethod F1 BLEU-1 Judge Acc. F1 BLEU-1 Judge Acc. F1 BLEU-1 Judge Acc. Rank\nMem0 0.0375 0.0264 0.5065 0.0045 "
+              }
+            ],
+            "text": "0.3240 0.2004 0.17260.1979\nA-Mem 0.1176 0.1004 0.4314 0.1429 0.1037 0.1967 0.0229 0.0081 0.3333\nA-Mem+A-TMA 0.1191\u21910.002 0.1214\u21910.021 0.4314\u21910.000 0.1493\u21910.006 0.1047\u21910.001 0.3279\u21910.131 0.0385\u21910.016 0.0207\u21910.013 0.4286\u21910.095\nGraphiti/Zep 0.1051 0.0888 0.2482 0.0295 0.0200 0.3707 0.0941 0.0757 0.3333\nGraphiti/Zep +A-TMA 0.1060\u21910.001 0.0869\u21930.002 0.3440 0.1705\u21910.141 0.1268\u21910.107 0.3178 0.0906\u21930.004 0.0646\u21930.011 0.3958\nInsideOut 0.0737 0.0548 0.3404 0.0117 0.0089 0.2212 0.0902 0.0725 0.3229\nInsideOut+A-TMA 0.1158\u21910.042 0.0831\u21910.028 0.1738 0.0510\u21910.039 0.0356\u21910.027 0.1900 0.0951\u21910.005 0.0720\u21930.001 0.2708\nTable 4: Full LoCoMo evaluation continued, with multi hop, adversarial, and average scores. Rank averages the\nthree average metrics, with lower better.\nMulti hop Adversarial AverageMethod F1 BLEU-1 Judge Acc. F1 BLEU-1 Judge Acc. F1 BLEU-1 Judge Acc. Rank\nMem0 0.0375 0.0264 0.5065 0.0045 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0055"
+        ],
+        "excerpt": "0.00450.5919 0.0296 0.02140.56858.33\nAtomMem 0.0887 0.0513 0.4257 0.0448 0.0448 0.3924 0.0672 0.0401 0.3077 10.33\nSeCom 0.2809 0.2047 0.6266 0.0112 0.0112 0.3700 0.1523 0.1126 0.4028 3.67\nMemoryLLM 0.1977 0.1461 0.4090 0.0336 0.0336 0.3946 0.1344 0.1021 0.3142 7.67\nM+ 0.1987 0.1464 0.4102 0.0314 0.0314 0.4260 0.1349 0.1025 0.3238 6.67\nAriadneMem 0.3540 0.30900.3389 0.0291 0.0291 0.1570 0.2240 0.19430.2644 4.67\nA-Mem 0.2179 0.1592 0.5858 0.0247 0.0247 0.4938 0.1411 0.1058 0.4700 4.33\nA-Mem+A-TMA 0.2136\u21930.004 0.1510\u21930.008 0.5740\u21930.012 0.0494\u21910.025 0.0494\u21910.025 0.5432\u21910.049 0.1464\u21910.005 0.1110\u21910.005 0.5013\u21910.031 3.33\nGraphiti/Zep 0.1231 0.0951 0.3924 0.0202 0.0202 0.4596 0.0809 0.0643 0.3807 8.00\nGraphiti/Zep +A-TMA 0.2398\u21910.117 0.1801\u21910.085 0.5874 0.0314\u21910.011 0.0314\u21910.011 0.4193 0.1556\u21910.075 0.1193\u21910.055 0.4622 2.67\nInsideOut 0.0554 0.0381 0.3187 0.0135 0.0135 0.3498 0.0432 0.0319 0.3132 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Results On Full Ltp",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "6bb901ad7b1854f9b2cc3795b8c7574370a1dacff7cb6ecab7a626bc4186dbb6",
+            "evidence_id": "E69470ee2ac4f7ac3-B0055",
+            "pages": [
+              11
+            ],
+            "section": "Main Results On Full Ltp",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 4127,
+                "page": 11,
+                "section": "Main Results On Full Ltp",
+                "section_index": 23,
+                "start": 3227,
+                "text": "0.00450.5919 0.0296 0.02140.56858.33\nAtomMem 0.0887 0.0513 0.4257 0.0448 0.0448 0.3924 0.0672 0.0401 0.3077 10.33\nSeCom 0.2809 0.2047 0.6266 0.0112 0.0112 0.3700 0.1523 0.1126 0.4028 3.67\nMemoryLLM 0.1977 0.1461 0.4090 0.0336 0.0336 0.3946 0.1344 0.1021 0.3142 7.67\nM+ 0.1987 0.1464 0.4102 0.0314 0.0314 0.4260 0.1349 0.1025 0.3238 6.67\nAriadneMem 0.3540 0.30900.3389 0.0291 0.0291 0.1570 0.2240 0.19430.2644 4.67\nA-Mem 0.2179 0.1592 0.5858 0.0247 0.0247 0.4938 0.1411 0.1058 0.4700 4.33\nA-Mem+A-TMA 0.2136\u21930.004 0.1510\u21930.008 0.5740\u21930.012 0.0494\u21910.025 0.0494\u21910.025 0.5432\u21910.049 0.1464\u21910.005 0.1110\u21910.005 0.5013\u21910.031 3.33\nGraphiti/Zep 0.1231 0.0951 0.3924 0.0202 0.0202 0.4596 0.0809 0.0643 0.3807 8.00\nGraphiti/Zep +A-TMA 0.2398\u21910.117 0.1801\u21910.085 0.5874 0.0314\u21910.011 0.0314\u21910.011 0.4193 0.1556\u21910.075 0.1193\u21910.055 0.4622 2.67\nInsideOut 0.0554 0.0381 0.3187 0.0135 0.0135 0.3498 0.0432 0.0319 0.3132 "
+              }
+            ],
+            "text": "0.00450.5919 0.0296 0.02140.56858.33\nAtomMem 0.0887 0.0513 0.4257 0.0448 0.0448 0.3924 0.0672 0.0401 0.3077 10.33\nSeCom 0.2809 0.2047 0.6266 0.0112 0.0112 0.3700 0.1523 0.1126 0.4028 3.67\nMemoryLLM 0.1977 0.1461 0.4090 0.0336 0.0336 0.3946 0.1344 0.1021 0.3142 7.67\nM+ 0.1987 0.1464 0.4102 0.0314 0.0314 0.4260 0.1349 0.1025 0.3238 6.67\nAriadneMem 0.3540 0.30900.3389 0.0291 0.0291 0.1570 0.2240 0.19430.2644 4.67\nA-Mem 0.2179 0.1592 0.5858 0.0247 0.0247 0.4938 0.1411 0.1058 0.4700 4.33\nA-Mem+A-TMA 0.2136\u21930.004 0.1510\u21930.008 0.5740\u21930.012 0.0494\u21910.025 0.0494\u21910.025 0.5432\u21910.049 0.1464\u21910.005 0.1110\u21910.005 0.5013\u21910.031 3.33\nGraphiti/Zep 0.1231 0.0951 0.3924 0.0202 0.0202 0.4596 0.0809 0.0643 0.3807 8.00\nGraphiti/Zep +A-TMA 0.2398\u21910.117 0.1801\u21910.085 0.5874 0.0314\u21910.011 0.0314\u21910.011 0.4193 0.1556\u21910.075 0.1193\u21910.055 0.4622 2.67\nInsideOut 0.0554 0.0381 0.3187 0.0135 0.0135 0.3498 0.0432 0.0319 0.3132 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0057"
+        ],
+        "excerpt": "Tables 3 and 4 report only full LoCoMo rows across single hop, temporal, open domain, multi hop,\nadversarial, and average scores. AriadneMem has the strongest average F1 and BLEU-1. A-TMA\neffects are host and metric dependent: Graphiti/Zep +A-TMA raises temporal F1 from 0.0295 to\n0.1705 and average F1 from 0.0809 to 0.1556, while A-Mem+A-TMA remains close to A-Mem but\n11\nis slightly lower on average F1 and BLEU-1. We therefore use LoCoMo as a mixed generalization\ncheck, not as evidence of uniform improvement. Appendix A.10 gives a three profile diagnostic\nablation alongside the full benchmark results in Tables 2\u20134.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11,
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Full Locomo Generalization",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "95d37c6ec39237249dec0aefda12f4c2c8ad91d2fb28559636b9ac7dc2c746da",
+            "evidence_id": "E69470ee2ac4f7ac3-B0057",
+            "pages": [
+              11,
+              12
+            ],
+            "section": "Full Locomo Generalization",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 373,
+                "page": 11,
+                "section": "Full Locomo Generalization",
+                "section_index": 24,
+                "start": 0,
+                "text": "Tables 3 and 4 report only full LoCoMo rows across single hop, temporal, open domain, multi hop,\nadversarial, and average scores. AriadneMem has the strongest average F1 and BLEU-1. A-TMA\neffects are host and metric dependent: Graphiti/Zep +A-TMA raises temporal F1 from 0.0295 to\n0.1705 and average F1 from 0.0809 to 0.1556, while A-Mem+A-TMA remains close to A-Mem but\n11"
+              },
+              {
+                "end": 248,
+                "page": 12,
+                "section": "Full Locomo Generalization",
+                "section_index": 25,
+                "start": 0,
+                "text": "is slightly lower on average F1 and BLEU-1. We therefore use LoCoMo as a mixed generalization\ncheck, not as evidence of uniform improvement. Appendix A.10 gives a three profile diagnostic\nablation alongside the full benchmark results in Tables 2\u20134."
+              }
+            ],
+            "text": "Tables 3 and 4 report only full LoCoMo rows across single hop, temporal, open domain, multi hop,\nadversarial, and average scores. AriadneMem has the strongest average F1 and BLEU-1. A-TMA\neffects are host and metric dependent: Graphiti/Zep +A-TMA raises temporal F1 from 0.0295 to\n0.1705 and average F1 from 0.0809 to 0.1556, while A-Mem+A-TMA remains close to A-Mem but\n11\nis slightly lower on average F1 and BLEU-1. We therefore use LoCoMo as a mixed generalization\ncheck, not as evidence of uniform improvement. Appendix A.10 gives a three profile diagnostic\nablation alongside the full benchmark results in Tables 2\u20134."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0058"
+        ],
+        "excerpt": "We presented A-TMA, a tri level state aware framework for long term agent memory under changing\nuser states. A-TMA separates memory bank maintenance, state aware retrieval, and answer time\nevidence resolution. This separation makes ghost memory measurable rather than treating it as a\nsingle end to end QA failure.\nThe full LTP results support a bounded conclusion. A-TMA preserves strong A-Mem performance\nand improves its conflict split. It gives larger gains for hosts whose retrieval and answer layers are\nless state aligned. Full LoCoMo results are mixed by host and metric, so they support cautious\ngeneralization rather than a universal improvement claim. Future agent memory evaluations should\nreport not only whether an answer is correct, but also which memory layer made the answer possible\nor caused it to fail.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "5de43d51290d6f379e68d0ed3b7603b89769174c781df057449486eabcc52511",
+            "evidence_id": "E69470ee2ac4f7ac3-B0058",
+            "pages": [
+              12
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 822,
+                "page": 12,
+                "section": "Conclusion",
+                "section_index": 26,
+                "start": 0,
+                "text": "We presented A-TMA, a tri level state aware framework for long term agent memory under changing\nuser states. A-TMA separates memory bank maintenance, state aware retrieval, and answer time\nevidence resolution. This separation makes ghost memory measurable rather than treating it as a\nsingle end to end QA failure.\nThe full LTP results support a bounded conclusion. A-TMA preserves strong A-Mem performance\nand improves its conflict split. It gives larger gains for hosts whose retrieval and answer layers are\nless state aligned. Full LoCoMo results are mixed by host and metric, so they support cautious\ngeneralization rather than a universal improvement claim. Future agent memory evaluations should\nreport not only whether an answer is correct, but also which memory layer made the answer possible\nor caused it to fail."
+              }
+            ],
+            "text": "We presented A-TMA, a tri level state aware framework for long term agent memory under changing\nuser states. A-TMA separates memory bank maintenance, state aware retrieval, and answer time\nevidence resolution. This separation makes ghost memory measurable rather than treating it as a\nsingle end to end QA failure.\nThe full LTP results support a bounded conclusion. A-TMA preserves strong A-Mem performance\nand improves its conflict split. It gives larger gains for hosts whose retrieval and answer layers are\nless state aligned. Full LoCoMo results are mixed by host and metric, so they support cautious\ngeneralization rather than a universal improvement claim. Future agent memory evaluations should\nreport not only whether an answer is correct, but also which memory layer made the answer possible\nor caused it to fail."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0081"
+        ],
+        "excerpt": "Because the main tables use llama3.3:70b as an offline answer judge, we audit a random 100\noutput sample with human verification. The audit contains 50 LTP outputs and 50 LoCoMo outputs,\nsampled to cover base and +A-TMA rows and the judge's three labels: correct, partially correct, and\nincorrect. The human sheet hides the method name, source file, and 70B label. The annotator sees\nonly the dataset, question, gold answer, alternate answer when present, model response, and retrieved\nevidence. Labels use the same three way rubric as the table judge, with semantic equivalence allowed\nfor wording and date formats.\nScope N 3-way agree. 3-way\u03baBinary\u03ba\nAll outputs 100 80.0% 0.699 0.847\nLTP 50 88.0% 0.820 \u2013\nLoCoMo 50 72.0% 0.578 \u2013\n16\nThe binary view maps correct and partially correct to acceptable and keeps incorrect separate. Under\nthis view, the overall human\u2013LLM agreement is 93.0% with Cohen's ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 16,
+        "pages": [
+          16,
+          17
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Answer Judge Reliability Check",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "39124019c826523965c08e4681d60159455469b3dcdd6f58cbec17efb801c8ee",
+            "evidence_id": "E69470ee2ac4f7ac3-B0081",
+            "pages": [
+              16,
+              17
+            ],
+            "section": "Appendix: Answer Judge Reliability Check",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 733,
+                "page": 16,
+                "section": "Appendix: Answer Judge Reliability Check",
+                "section_index": 37,
+                "start": 0,
+                "text": "Because the main tables use llama3.3:70b as an offline answer judge, we audit a random 100\noutput sample with human verification. The audit contains 50 LTP outputs and 50 LoCoMo outputs,\nsampled to cover base and +A-TMA rows and the judge's three labels: correct, partially correct, and\nincorrect. The human sheet hides the method name, source file, and 70B label. The annotator sees\nonly the dataset, question, gold answer, alternate answer when present, model response, and retrieved\nevidence. Labels use the same three way rubric as the table judge, with semantic equivalence allowed\nfor wording and date formats.\nScope N 3-way agree. 3-way\u03baBinary\u03ba\nAll outputs 100 80.0% 0.699 0.847\nLTP 50 88.0% 0.820 \u2013\nLoCoMo 50 72.0% 0.578 \u2013\n16"
+              },
+              {
+                "end": 166,
+                "page": 17,
+                "section": "Appendix: Answer Judge Reliability Check",
+                "section_index": 38,
+                "start": 0,
+                "text": "The binary view maps correct and partially correct to acceptable and keeps incorrect separate. Under\nthis view, the overall human\u2013LLM agreement is 93.0% with Cohen's "
+              }
+            ],
+            "text": "Because the main tables use llama3.3:70b as an offline answer judge, we audit a random 100\noutput sample with human verification. The audit contains 50 LTP outputs and 50 LoCoMo outputs,\nsampled to cover base and +A-TMA rows and the judge's three labels: correct, partially correct, and\nincorrect. The human sheet hides the method name, source file, and 70B label. The annotator sees\nonly the dataset, question, gold answer, alternate answer when present, model response, and retrieved\nevidence. Labels use the same three way rubric as the table judge, with semantic equivalence allowed\nfor wording and date formats.\nScope N 3-way agree. 3-way\u03baBinary\u03ba\nAll outputs 100 80.0% 0.699 0.847\nLTP 50 88.0% 0.820 \u2013\nLoCoMo 50 72.0% 0.578 \u2013\n16\nThe binary view maps correct and partially correct to acceptable and keeps incorrect separate. Under\nthis view, the overall human\u2013LLM agreement is 93.0% with Cohen's "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0082"
+        ],
+        "excerpt": "\u03ba= 0.847 . The remaining\ndisagreements are concentrated around partial credit boundaries, especially relative time expressions\nin LoCoMo and answers that recover the main entity but omit a required qualifier. We therefore use\nthe 70B judge as a reliable coarse answer correctness audit while treating fine grained partial credit\nas the noisier part of the evaluation.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 17,
+        "pages": [
+          17
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Answer Judge Reliability Check",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "82f9da655cf611324a04043d8e66741b596fb4e80e37a7f97092176eb34ec179",
+            "evidence_id": "E69470ee2ac4f7ac3-B0082",
+            "pages": [
+              17
+            ],
+            "section": "Appendix: Answer Judge Reliability Check",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 533,
+                "page": 17,
+                "section": "Appendix: Answer Judge Reliability Check",
+                "section_index": 38,
+                "start": 166,
+                "text": "\u03ba= 0.847 . The remaining\ndisagreements are concentrated around partial credit boundaries, especially relative time expressions\nin LoCoMo and answers that recover the main entity but omit a required qualifier. We therefore use\nthe 70B judge as a reliable coarse answer correctness audit while treating fine grained partial credit\nas the noisier part of the evaluation."
+              }
+            ],
+            "text": "\u03ba= 0.847 . The remaining\ndisagreements are concentrated around partial credit boundaries, especially relative time expressions\nin LoCoMo and answers that recover the main entity but omit a required qualifier. We therefore use\nthe 70B judge as a reliable coarse answer correctness audit while treating fine grained partial credit\nas the noisier part of the evaluation."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0089"
+        ],
+        "excerpt": "validation loss. The active H200 setup uses the resulting Sentry\ncheckpoint in theatma-assetsdirectory.\nAudit Judge.There are two Judge surfaces in the codebase. The ATMA bank update path uses a\ncompact audit model, while the tables use a separate 70B answer judge for evaluation. The audit\nJudge is based on Qwen/Qwen2.5-3B-Instruct. It is first warmed up with QLoRA SFT using\nCoT samples derived from interactions_v2.json and profiles_v2.json; the logged SFT run\nuses 700 English training items, reports train loss 0.6712 and eval loss 0.4039, and reaches 82.1%\naccuracy, precision 0.8551, recall 0.7763, and F1 0.8138 on the aligned 151 item held out set. The\nSFT script uses 4 bit NF4 quantization, LoRA rank 64, LoRA alpha 16, dropout 0.05, batch size 4,\ngradient accumulation 4, learning rate2\u00d710 \u22124, and maximum sequence length 1024.\nThe GRPO stage starts from the merged SFT checkpoint and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 18,
+        "pages": [
+          18
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Implementation Details",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "52b49ba0819a83d32a8b09b4250121fdee5263bce9f4eeb868b653300e4906da",
+            "evidence_id": "E69470ee2ac4f7ac3-B0089",
+            "pages": [
+              18
+            ],
+            "section": "Appendix: Implementation Details",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2013,
+                "page": 18,
+                "section": "Appendix: Implementation Details",
+                "section_index": 42,
+                "start": 1115,
+                "text": "validation loss. The active H200 setup uses the resulting Sentry\ncheckpoint in theatma-assetsdirectory.\nAudit Judge.There are two Judge surfaces in the codebase. The ATMA bank update path uses a\ncompact audit model, while the tables use a separate 70B answer judge for evaluation. The audit\nJudge is based on Qwen/Qwen2.5-3B-Instruct. It is first warmed up with QLoRA SFT using\nCoT samples derived from interactions_v2.json and profiles_v2.json; the logged SFT run\nuses 700 English training items, reports train loss 0.6712 and eval loss 0.4039, and reaches 82.1%\naccuracy, precision 0.8551, recall 0.7763, and F1 0.8138 on the aligned 151 item held out set. The\nSFT script uses 4 bit NF4 quantization, LoRA rank 64, LoRA alpha 16, dropout 0.05, batch size 4,\ngradient accumulation 4, learning rate2\u00d710 \u22124, and maximum sequence length 1024.\nThe GRPO stage starts from the merged SFT checkpoint and "
+              }
+            ],
+            "text": "validation loss. The active H200 setup uses the resulting Sentry\ncheckpoint in theatma-assetsdirectory.\nAudit Judge.There are two Judge surfaces in the codebase. The ATMA bank update path uses a\ncompact audit model, while the tables use a separate 70B answer judge for evaluation. The audit\nJudge is based on Qwen/Qwen2.5-3B-Instruct. It is first warmed up with QLoRA SFT using\nCoT samples derived from interactions_v2.json and profiles_v2.json; the logged SFT run\nuses 700 English training items, reports train loss 0.6712 and eval loss 0.4039, and reaches 82.1%\naccuracy, precision 0.8551, recall 0.7763, and F1 0.8138 on the aligned 151 item held out set. The\nSFT script uses 4 bit NF4 quantization, LoRA rank 64, LoRA alpha 16, dropout 0.05, batch size 4,\ngradient accumulation 4, learning rate2\u00d710 \u22124, and maximum sequence length 1024.\nThe GRPO stage starts from the merged SFT checkpoint and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0090"
+        ],
+        "excerpt": "uses the CoT training data in the v6\nformat. Its default configuration uses LoRA rank 16, alpha 32, learning rate 2\u00d710 \u22125, 200 steps,\nper device batch size 1, gradient accumulation 4, two generations per prompt, maximum completion\nlength 400, and KL coefficient 0.04. The reward is rule based rather than learned. The format\nreward is discrete: 1.0 for a valid <think> block with the four required reasoning step labels, 0.5\nfor valid tags without all step labels, and 0 otherwise. Other reward terms add or subtract fixed\nvalues for verdict correctness, implicit violation success, length, tag cohesion, conclusion conciseness,\nprompt echoing, old memory preservation, and transition summary quality. The logged GRPO run\nreaches 87.4% accuracy and F1 0.8774 on the same 151 item held out set, with implicit violation\naccuracy improving from 25.0% for SFT to 75.0%. The active H200 ablation manifest ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 18,
+        "pages": [
+          18
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Implementation Details",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "05731c80d8e7d0526c591ecb0f33b3462bfc26cce50bb5e1d9f633c7faf4525d",
+            "evidence_id": "E69470ee2ac4f7ac3-B0090",
+            "pages": [
+              18
+            ],
+            "section": "Appendix: Implementation Details",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2913,
+                "page": 18,
+                "section": "Appendix: Implementation Details",
+                "section_index": 42,
+                "start": 2013,
+                "text": "uses the CoT training data in the v6\nformat. Its default configuration uses LoRA rank 16, alpha 32, learning rate 2\u00d710 \u22125, 200 steps,\nper device batch size 1, gradient accumulation 4, two generations per prompt, maximum completion\nlength 400, and KL coefficient 0.04. The reward is rule based rather than learned. The format\nreward is discrete: 1.0 for a valid <think> block with the four required reasoning step labels, 0.5\nfor valid tags without all step labels, and 0 otherwise. Other reward terms add or subtract fixed\nvalues for verdict correctness, implicit violation success, length, tag cohesion, conclusion conciseness,\nprompt echoing, old memory preservation, and transition summary quality. The logged GRPO run\nreaches 87.4% accuracy and F1 0.8774 on the same 151 item held out set, with implicit violation\naccuracy improving from 25.0% for SFT to 75.0%. The active H200 ablation manifest "
+              }
+            ],
+            "text": "uses the CoT training data in the v6\nformat. Its default configuration uses LoRA rank 16, alpha 32, learning rate 2\u00d710 \u22125, 200 steps,\nper device batch size 1, gradient accumulation 4, two generations per prompt, maximum completion\nlength 400, and KL coefficient 0.04. The reward is rule based rather than learned. The format\nreward is discrete: 1.0 for a valid <think> block with the four required reasoning step labels, 0.5\nfor valid tags without all step labels, and 0 otherwise. Other reward terms add or subtract fixed\nvalues for verdict correctness, implicit violation success, length, tag cohesion, conclusion conciseness,\nprompt echoing, old memory preservation, and transition summary quality. The logged GRPO run\nreaches 87.4% accuracy and F1 0.8774 on the same 151 item held out set, with implicit violation\naccuracy improving from 25.0% for SFT to 75.0%. The active H200 ablation manifest "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0091"
+        ],
+        "excerpt": "records\nqwen3b-grpo-v6 as both the audit model and retrieve controller model. The reported table judge is\ninsteadllama3.3:70b; it is not the model used to write ATMA bank metadata.\nQuery profiler.The query profiler is rule based. It counts lexical hints for historical state, current\nstate, and change state. Change wins when change hints dominate, or when both old and current hints\nappear. Otherwise the profiler returns historical, current, or neutral by the larger hint count. It also\nrecords three boolean guards for negation, scope, and update wording. These features are passed to\nretrieval control and trace logging; no learned classifier or LLM call is used for query profiling.\nRetrieve controller.The retrieve controller uses qwen3b-grpo-v6 by default through the Ol-\nlama/OpenAI compatible endpoint. The controller sees only a bounded shortlist from the candidate\npool: at most 10 rows, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 18,
+        "pages": [
+          18
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Implementation Details",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "68e1ce24a12a4ea3aa93718f71d962c3db1d554a790447780c1f27b807ae5fa8",
+            "evidence_id": "E69470ee2ac4f7ac3-B0091",
+            "pages": [
+              18
+            ],
+            "section": "Appendix: Implementation Details",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 3812,
+                "page": 18,
+                "section": "Appendix: Implementation Details",
+                "section_index": 42,
+                "start": 2913,
+                "text": "records\nqwen3b-grpo-v6 as both the audit model and retrieve controller model. The reported table judge is\ninsteadllama3.3:70b; it is not the model used to write ATMA bank metadata.\nQuery profiler.The query profiler is rule based. It counts lexical hints for historical state, current\nstate, and change state. Change wins when change hints dominate, or when both old and current hints\nappear. Otherwise the profiler returns historical, current, or neutral by the larger hint count. It also\nrecords three boolean guards for negation, scope, and update wording. These features are passed to\nretrieval control and trace logging; no learned classifier or LLM call is used for query profiling.\nRetrieve controller.The retrieve controller uses qwen3b-grpo-v6 by default through the Ol-\nlama/OpenAI compatible endpoint. The controller sees only a bounded shortlist from the candidate\npool: at most 10 rows, "
+              }
+            ],
+            "text": "records\nqwen3b-grpo-v6 as both the audit model and retrieve controller model. The reported table judge is\ninsteadllama3.3:70b; it is not the model used to write ATMA bank metadata.\nQuery profiler.The query profiler is rule based. It counts lexical hints for historical state, current\nstate, and change state. Change wins when change hints dominate, or when both old and current hints\nappear. Otherwise the profiler returns historical, current, or neutral by the larger hint count. It also\nrecords three boolean guards for negation, scope, and update wording. These features are passed to\nretrieval control and trace logging; no learned classifier or LLM call is used for query profiling.\nRetrieve controller.The retrieve controller uses qwen3b-grpo-v6 by default through the Ol-\nlama/OpenAI compatible endpoint. The controller sees only a bounded shortlist from the candidate\npool: at most 10 rows, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0098"
+        ],
+        "excerpt": "Table 5 reports a matched component ablation on LTP Profiles 000\u2013002. The run covers 120 state\nunits and 240 probes. All variants use the same A-Mem host family, QA model, and 70B judge. The\nfull overlay is competitive, while the best preferred accuracy and average judge score in this subset\ncome from the variant without Sentry.\nFor this component ablation, the bank column is the stricter ATMA-internal status diagnostic rather\nthan the cross-method personalized scorer used in the full main table. All A-TMA bank variants reach\nthe same score of 0.500 on this subset, while the A-Mem host row has no explicit status signal under\nthat diagnostic. Because the A-TMA variants share the same bank-side value, the QA differences\nmainly isolate retrieval control and answer side labels once the controlled bank-side signal is held\nfixed.\nThe ablation shows small and mixed component effects. Removing ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 20,
+        "pages": [
+          20
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Level Ablation On Ltp Profiles 000\u2013002",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "281614b5d60a0ab18dc66fad008b1bc597cb1e07242e1877dfa8f350db366678",
+            "evidence_id": "E69470ee2ac4f7ac3-B0098",
+            "pages": [
+              20
+            ],
+            "section": "Appendix: Level Ablation On Ltp Profiles 000\u2013002",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 20,
+                "section": "Appendix: Level Ablation On Ltp Profiles 000\u2013002",
+                "section_index": 45,
+                "start": 0,
+                "text": "Table 5 reports a matched component ablation on LTP Profiles 000\u2013002. The run covers 120 state\nunits and 240 probes. All variants use the same A-Mem host family, QA model, and 70B judge. The\nfull overlay is competitive, while the best preferred accuracy and average judge score in this subset\ncome from the variant without Sentry.\nFor this component ablation, the bank column is the stricter ATMA-internal status diagnostic rather\nthan the cross-method personalized scorer used in the full main table. All A-TMA bank variants reach\nthe same score of 0.500 on this subset, while the A-Mem host row has no explicit status signal under\nthat diagnostic. Because the A-TMA variants share the same bank-side value, the QA differences\nmainly isolate retrieval control and answer side labels once the controlled bank-side signal is held\nfixed.\nThe ablation shows small and mixed component effects. Removing "
+              }
+            ],
+            "text": "Table 5 reports a matched component ablation on LTP Profiles 000\u2013002. The run covers 120 state\nunits and 240 probes. All variants use the same A-Mem host family, QA model, and 70B judge. The\nfull overlay is competitive, while the best preferred accuracy and average judge score in this subset\ncome from the variant without Sentry.\nFor this component ablation, the bank column is the stricter ATMA-internal status diagnostic rather\nthan the cross-method personalized scorer used in the full main table. All A-TMA bank variants reach\nthe same score of 0.500 on this subset, while the A-Mem host row has no explicit status signal under\nthat diagnostic. Because the A-TMA variants share the same bank-side value, the QA differences\nmainly isolate retrieval control and answer side labels once the controlled bank-side signal is held\nfixed.\nThe ablation shows small and mixed component effects. Removing "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0099"
+        ],
+        "excerpt": "the retrieval controller lowers QA\nAcc. from 0.829 to 0.817, while evidence support stays at 0.917 and the average judge score remains\nclose. Removing QA state labels changes the tradeoff rather than causing a uniform collapse: conflict\naccuracy rises to 0.858, but fact recall falls to 0.792. Removing Sentry gives the highest preferred\naccuracy at 0.588 and judge score at 0.719, suggesting that the lightweight bank proposal gate is not\nthe bottleneck for these three profiles.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 20,
+        "pages": [
+          20
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Level Ablation On Ltp Profiles 000\u2013002",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "da36711dbdfa3cd324b317fbab43ccd008da30b45cad5fc1ac35caadac6e1d6b",
+            "evidence_id": "E69470ee2ac4f7ac3-B0099",
+            "pages": [
+              20
+            ],
+            "section": "Appendix: Level Ablation On Ltp Profiles 000\u2013002",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1379,
+                "page": 20,
+                "section": "Appendix: Level Ablation On Ltp Profiles 000\u2013002",
+                "section_index": 45,
+                "start": 899,
+                "text": "the retrieval controller lowers QA\nAcc. from 0.829 to 0.817, while evidence support stays at 0.917 and the average judge score remains\nclose. Removing QA state labels changes the tradeoff rather than causing a uniform collapse: conflict\naccuracy rises to 0.858, but fact recall falls to 0.792. Removing Sentry gives the highest preferred\naccuracy at 0.588 and judge score at 0.719, suggesting that the lightweight bank proposal gate is not\nthe bottleneck for these three profiles."
+              }
+            ],
+            "text": "the retrieval controller lowers QA\nAcc. from 0.829 to 0.817, while evidence support stays at 0.917 and the average judge score remains\nclose. Removing QA state labels changes the tradeoff rather than causing a uniform collapse: conflict\naccuracy rises to 0.858, but fact recall falls to 0.792. Removing Sentry gives the highest preferred\naccuracy at 0.588 and judge score at 0.719, suggesting that the lightweight bank proposal gate is not\nthe bottleneck for these three profiles."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2607.01935",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The headline LTP outcomes are established by the same llama3.3:70b judge that is used as the evaluation signal, and the reported human audit shows only moderate three-way agreement (kappa 0.699 overall, 0.578 on LoCoMo), so the claimed gains are not clearly corroborated by an independent measurement.",
+          "The component ablation on LTP Profiles 000-002 shows the full A-TMA configuration is not consistently best: removing Sentry yields the highest preferred accuracy and judge score, and removing QA labels raises conflict accuracy, which weakens the claim that the proposed components drive the reported improvements.",
+          "The LoCoMo generalization results are mixed and host-dependent, with A-Mem+A-TMA slightly lower on average F1 and BLEU-1 and several +A-TMA rows showing decreases, so the manuscript's own evidence does not support a clear promotion-worthy gain beyond the narrow LTP setting."
+        ],
+        "canonical_id": "openalex:W7167380153",
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "evaluation_independence": {
+          "concern": "major",
+          "corroboration_direction": "mixed",
+          "corroboration_summary": "The manuscript reports a human audit of 100 judge outputs with 80% three-way agreement (kappa 0.699) and 93% binary agreement, but the LoCoMo subset shows only 72% three-way agreement (kappa 0.578), and the component ablation shows the full A-TMA configuration is not consistently best.",
+          "final_evaluation_signal": "The headline LTP and LoCoMo outcomes are established by the offline llama3.3:70b answer judge, supplemented by lexical metrics such as F1 and BLEU-1.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The Sentry gate is trained with supervised topic and logic MSE losses, and the internal audit Judge is trained with SFT and GRPO using rule-based rewards on training subsets.",
+          "signal_reuse": "materially_reused"
+        },
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0003",
+          "E69470ee2ac4f7ac3-B0010",
+          "E69470ee2ac4f7ac3-B0011",
+          "E69470ee2ac4f7ac3-B0030",
+          "E69470ee2ac4f7ac3-B0032",
+          "E69470ee2ac4f7ac3-B0048",
+          "E69470ee2ac4f7ac3-B0050",
+          "E69470ee2ac4f7ac3-B0052",
+          "E69470ee2ac4f7ac3-B0053",
+          "E69470ee2ac4f7ac3-B0054",
+          "E69470ee2ac4f7ac3-B0055",
+          "E69470ee2ac4f7ac3-B0057",
+          "E69470ee2ac4f7ac3-B0058",
+          "E69470ee2ac4f7ac3-B0081",
+          "E69470ee2ac4f7ac3-B0082",
+          "E69470ee2ac4f7ac3-B0089",
+          "E69470ee2ac4f7ac3-B0090",
+          "E69470ee2ac4f7ac3-B0091",
+          "E69470ee2ac4f7ac3-B0098",
+          "E69470ee2ac4f7ac3-B0099"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "05f52b2c29d916aff3424b7ce950b71adad54533e7bf1362bb2f544071910e18"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7167380153",
+        "claim_evidence_alignment": "Reported findings closely reflect empirical results; authors explicitly acknowledge that gains are host- and metric-dependent and that LoCoMo demonstrates mixed generalization rather than uniform superiority.",
+        "context_id": "69470ee2ac4f7ac374f486d50ac086544bfe78a880441038a26c5175c3a4f726",
+        "decision": "pass",
+        "evaluation_assessment": "The paper provides rigorous empirical validation across multiple host memory baselines on the 800-probe LTP dataset and the full 1,986 QA-pair LoCoMo benchmark, complete with ablations, metric definitions, and human-LLM judge reliability audits.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Objective lexical overlap metrics (F1, BLEU-1), strict QA target matches, and human audit verification (demonstrating 93% binary agreement with the evaluation judge) corroborate the reported trends.",
+          "final_evaluation_signal": "The headline evaluation relies on objective exact/semantic accuracy splits (QA Acc, conflict/fact splits, BLEU-1, F1) alongside an independent offline Llama-3.3-70B judge.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The Sentry gate was trained on pairwise interaction MSE losses, while the internal audit Judge was fine-tuned via SFT and GRPO with rule-based rewards on training subsets.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E69470ee2ac4f7ac3-B0002",
+          "E69470ee2ac4f7ac3-B0003",
+          "E69470ee2ac4f7ac3-B0010",
+          "E69470ee2ac4f7ac3-B0011",
+          "E69470ee2ac4f7ac3-B0030",
+          "E69470ee2ac4f7ac3-B0032",
+          "E69470ee2ac4f7ac3-B0048",
+          "E69470ee2ac4f7ac3-B0050",
+          "E69470ee2ac4f7ac3-B0052",
+          "E69470ee2ac4f7ac3-B0053",
+          "E69470ee2ac4f7ac3-B0054",
+          "E69470ee2ac4f7ac3-B0055",
+          "E69470ee2ac4f7ac3-B0057",
+          "E69470ee2ac4f7ac3-B0058",
+          "E69470ee2ac4f7ac3-B0081",
+          "E69470ee2ac4f7ac3-B0082",
+          "E69470ee2ac4f7ac3-B0089",
+          "E69470ee2ac4f7ac3-B0090",
+          "E69470ee2ac4f7ac3-B0091"
+        ],
+        "limitations": "The study transparently documents boundaries: A-TMA cannot recover records never ingested by the host substrate, component ablations show modest variations on certain hosts, and generalization is host-dependent.",
+        "method_assessment": "The methodology is thoroughly detailed, specifying the multi-tier architecture comprising a Sentry proposal gate, a GRPO/SFT-trained audit Judge, query state view profiling, bounded retrieval re-ranking, and state-explicit QA serialization.",
+        "quality_rationale": "The manuscript presents a conceptually clear and practically impactful diagnostic formulation of state coordination in agent memory, backed by solid experimental controls, explicit architecture definitions, and honest reporting of mixed benchmark outcomes.",
+        "scoped_contribution": "The manuscript proposes A-TMA, a modular state-aware overlay for LLM agent long-term memory that decouples failures across bank maintenance, retrieval, and QA conditioning, evaluated on the newly constructed LTP benchmark and LoCoMo.",
+        "source_content_hash": "05f52b2c29d916aff3424b7ce950b71adad54533e7bf1362bb2f544071910e18"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a conceptually clear and practically impactful diagnostic formulation of state coordination in agent memory, backed by solid experimental controls, explicit architecture definitions, and honest reporting of mixed benchmark outcomes.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "05f52b2c29d916aff3424b7ce950b71adad54533e7bf1362bb2f544071910e18",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The study transparently documents boundaries: A-TMA cannot recover records never ingested by the host substrate, component ablations show modest variations on certain hosts, and generalization is host-dependent."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -177,7 +2101,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

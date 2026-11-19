@@ -59,16 +59,256 @@
             <p>Protecting quantum coherence is a central theme of modern quantum technologies. Carefully designed control pulses can extend coherence by suppressing disorder and unwanted interactions. However, designing robust pulse sequences remains challenging in interacting multi-level systems, where multiple independent error...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The work presents a clear, well-scoped experimental contribution demonstrating the autonomous discovery and physical validation of high-performing quantum control sequences, supported by rigorous experimental baselines, error sweeps, and analytical verification.</p>
+      <p>The manuscript notes that physical interpretation of the discovered sequence was conducted post-hoc by human researchers rather than by the AI itself, and that validation is currently restricted to spin-1 NV ensembles under specific microwave drive regimes [E6dd1605abad08d63-B0028, E6dd1605abad08d63-B0031].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-19T12:31:55.962775+00:00.</p>
+        <p>Coverage: 35018 of 35018 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>connecting
+AI-driven hypothesis generation and autonomous experi-
+mentation to the physical interpretation of newly discov-
+ered control protocols.
+Here, we introduce the Quantum Optimization and
+Research Agent (QORA), a multi-agent artificial intel-
+ligence system which links sequence design to automated
+experiments on NV ensembles (Fig. 1). QORA auto-
+mates optical and microwave control, experimental exe-
+cution and data analysis, while monitoring experimen-
+tal drift and triggering recalibration as needed. Un-
+der human-defined goals and supervision, QORA dis-
+arXiv:2611.21765v1  [quant-ph]  16 Nov 2026
+2
+covers AID-RODs (AI-Discovered Robust decoupling se-
+quences), a family of robust dynamical decoupling se-
+quences for an interacting spin-1 NV ensemble. Its
+representative member, AID-ROD-1, nearly doubles the
+measured coherence time relative to the state-of-the-
+art human-designed </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>RESEARCH AGENT
+Powered by GPT-6-Astra and Sorol, QORA connects
+human scientists, a theoretical agent, Theo, and an ex-
+perimental agent, Dex, in a closed feedback loop for quan-
+tum control discovery (Fig. 1). Human scientists define
+the scientific goals and assign tasks to Theo, while re-
+viewing experimental reports from Dex as needed. Theo
+coordinates five specialized sub-agents that propose, re-
+view, simulate, classify and assemble control sequences.
+Drawing on a knowledge base compiled from the litera-
+ture on dynamical decoupling and Hamiltonian engineer-
+ing, Theo refines candidate sequences in response to sim-
+ulation results. Dex uses the GPT API to interact with
+instrument-control software, implementing the selected
+sequences, acquiring measurements and calibrating the
+apparatus as needed. The resulting data return to Theo
+to guide further sequence design.
+For spin-1 search, </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Theo organizes sequence design into
+block discovery and composition (Fig. 1), drawing on the
+hierarchical construction from literature [26]. The design
+strategy reflects the separation of energy scales in our NV
+ensemble, where microwave driving error and local dis-
+order are much stronger than dipolar couplings. Theo
+therefore searches for 18-pulse blocks that suppress these
+noise channels, then combines transformed versions of a
+selected block into a longer cycle to reduce dipolar inter-
+actions. A complete cycle contains seven 18-pulse blocks,
+giving 126 pulses in total. Each pulse comprises two si-
+multaneous microwave tones addressing the two transi-
+tions between the three spin-1 sublevels, (|0⟩ ↔ |+ 1⟩)
+and (|0⟩ ↔ | −1⟩), with each tone&#x27;s phase independently
+selected from a (π/4) grid. Cyclic shifts and tone-specific
+phase offsets provide the degrees of freedom for </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>block
+composition.
+Proposers design internal pulse substructures and
+choose their arrangement and relative phases within a
+block. Each proposal defines a sequence family and spec-
+ifies which features are held fixed and which are varied
+to test a hypothesis for suppressing disorder. Review-
+ers assess structural redundancy and whether the pro-
+posed comparisons test the hypothesis before admitting
+proposals for numerical evaluation. The executor eval-
+uates how effectively each candidate sequence preserves
+the coherence of twelve initial states,|ψ mn,ϕ⟩= (|m⟩+
+eiϕ|n⟩)/√2, where (m, n)∈ {(0,+1),(0,−1),(+1,−1)}
+andϕ∈ {0, π/2, π,3π/2}. Their evolution is computed
+using exact diagonalization.
+At a pulse spacing of 100 ns, a block qualifies for classi-
+fication only if its ensemble-averaged readout differential
+contrastC(t) across the twelve states have a mean above
+0.8 and a minimum above </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.7, whereC(t) is measured
+as in Fig. 2a. State-resolved responses and their corre-
+sponding pulse parameters are returned to the proposers
+to guide subsequent revisions.
+The classifier groups qualifying blocks by pulse struc-
+ture and selects representative parent blocks for composi-
+tion. For each parent block (B), the composer constructs
+a seven-block cycle by jointly selecting the cyclic start-
+ing point of each block and a uniform phase offset for
+each of its two microwave tones. To assess the coherence
+improvement of composition, the resulting state-resolved
+decay curves are compared with those obtained by re-
+peating the parent block seven times (B 7). Complete
+sequences are also benchmarked against DROID-C3PO
+under matched simulation conditions.
+Selected sequences are passed to Dex for experimental
+evaluation (Fig. 1), where Dex converts them into con-
+trol waveforms for an </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>arbitrary waveform generator and
+measures the resulting coherence decay profile. To en-
+sure reproducible measurements, Dex autonomously cal-
+ibrates the optical alignment, microwave driving frequen-
+cies, amplitudes and phases, while monitoring 12 bench-
+mark spin states to detect and compensate experimental
+drifts. The measured coherence curves are returned to
+Theo to guide subsequent sequence design, closing the
+autonomous discovery cycle.</blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>COHERENCE IMPROVEMENT IN SPIN-1 NV
+ENSEMBLE
+Our experiments are performed on a DNV-B14 bulk
+diamond containing NV centers with density 1.2 ppm.
+Each NV center hosts a spin-1 ground state, with three
+sublevels,|0⟩and|±1⟩, forming a natural qutrit Hilbert
+space relevant to higher-dimensional quantum informa-
+tion processing, control and sensing [26, 44–47]. The
+|±1⟩states are separated from|0⟩by a zero-field split-
+ting of ∆≈2π×2.87 GHz, while an external magnetic
+field ofB 0 = 123 G aligned with one of the four NV
+crystallographic orientations lifts the|±1⟩degeneracy
+3
+Figure 1. Closed-loop sequence design and calibration with QORA. Human scientists set scientific goals, assign tasks to
+the theoretical agent Theo and monitor the experimental agent Dex as needed.A knowledge base supports Theo&#x27;s scientific
+workflow. Proposers define families of 18-pulse blocks; reviewers assess structural </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>local magnetic-field vari-
+ations and lattice strain respectively [48]. The dipolar
+interaction, with pairwise coupling coefficientsJ ij, com-
+prises longitudinal Ising termsS zi Szj and flip-flop terms
+defined byH XY,0±ij ≡ h|±1⟩⟨0|i|0⟩⟨±1|j + H.c.i,
+which couple|0⟩ i|±1⟩j and|±1⟩ i|0⟩j, describing exci-
+tation exchange between the two NV spins. In exper-
+iments, local disorder and dipolar interactions continue
+to act during finite-duration microwave pulses. The spins
+therefore evolve underH total =H+H c(t), where
+Hc(t) = 12 Xi hΩ+(t)eiφ+(t)|+1⟩⟨0|i
++ Ω−(t)eiφ−(t)|−1⟩⟨0|i + H.c.i. (2)
+Here Ω ±(t) andφ ±(t) denote the angular Rabi frequen-
+cies and phases of the drives addressing|0⟩ ↔ |±1⟩, re-
+spectively. Robust sequence design must therefore ac-
+4
+Figure 2.a, Protocol for measuring spin coherence. A 532-nm laser pulse initializes the spin in|0⟩, and aπ/2 pulse prepares </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the
+state to be preserved. After dynamical decoupling, a±π/2 analysis pulse maps the remaining coherence onto the|0⟩population.
+Optical readout gives the differential contrastC(t) =
 
-        <ul></ul>
+F−π/2(t)−F +π/2(t)
+
+/
+
+F−π/2(0)−F +π/2(0)
+
+, whereF ±π/2(t) denotes
+the fluorescence measured after the corresponding analysis pulse following a control sequence of durationt.b, Dephasing
+mechanisms targeted by the sequence: NV–NV dipolar interactions, local detuning disorderh i and zero-field splitting disorder
+Di. The detuning shifts the two transitions with opposite signs. Simultaneous driving with equal Rabi frequencies, Ω + = Ω−,
+enables control of the spin-1 system.c, AID-ROD-1, proposed by QORA to suppress these dephasing mechanisms. One cycle
+comprises seven 18-pulse blocks (B1–B7), displayed across two rows. Each block contains three identical copies of a six-pulse
+unit. The upper and lower </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>these errors.
+.
+count for the effects of disorder and dipolar interactions
+during the control pulses.
+QORA discovers AID-RODs, a family of dynamical
+decoupling sequences with cycle durations comparable
+to DROID-C3PO. Each cycle contains seven 18-pulse
+blocks, and each block consists of three identical copies
+of a six-pulse unit, giving 126 pulses per cycle. These de-
+sign features improve coherence preservation: AID-ROD-
+1 achievesT 2 = 18.6±0.7µs, compared with 9.8±1.1µs
+for DROID-C3PO (Fig. 2d). Each block also implements
+an approximate identity propagator, allowing coherence
+to be sampled at block boundaries rather than only after
+a complete cycle. This finer sampling is illustrated in the
+right inset of Figure 2d. A second experimentally tested
+sequence, AID-ROD-2, achieves a comparable coherence
+time,T 2 = 19.3±1.0µs (upper-left inset of Fig. 2d).
+We next access the robustness of </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the coherence en-
+hancement to variations in the free-evolution interval be-
+tween pulses and to the pulse errors. The dependence on
+the pulse spacing reflects a trade-off between faster dy-
+5
+namical decoupling and accumulated pulse errors. Across
+the measured intervals, AID-ROD-1 consistently outper-
+forms DROID-C3PO (Fig. 2e). We further vary the Rabi-
+frequency error from 0% to 30% via adjusting microwave
+drive amplitude. Although coherence times decrease with
+increasing error for both protocols, AID-ROD-1 retains
+its advantage throughout the tested range (Fig. 2f).</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>suppresses
+linear and quadratic on-site disorder and common-mode
+drive-amplitude errors. The seven blocks are then com-
+bined over a complete cycle to reduce residual dipolar
+interactions, assigning faster compensation to the domi-
+nant local errors.
+To quantitatively interpret AID-ROD-1, we consider
+one complete cycle of seven 18-pulse blocks,B 1, . . . , B7.
+Each block contains three identical copies of a six-pulse
+unit. The six-pulse units in different blocks are related
+by cyclic shifts of their pulse–wait entries and fixed phase
+offsets on the two drive channels. These transformations
+preserve the leading cancellation of the dominant local
+errors while reorienting residual interactions. We there-
+fore analyze the first block,B 1, whose three copies are
+labeled Copy 1–3 in Fig. 3b.
+LetQdenote the ideal propagator of one six-pulse unit
+inB 1. In a fixed rephased spin basis,Q 3 =I, </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>with
+O7→Q †OQcyclingS z →S x →S y →S z. ForH loc =
+hSz +D(S z)2, the three equally weighted copies within
+B1 cancel the leading linear free-evolution contribution
+through (S x −S z) + (Sy −S x) + (Sz −S y) = 0, and the
+corresponding quadratic terms yield only a global phase
+because (S x)2 + (Sy)2 + (Sz)2 = 2I(Fig. 3b). Including
+finite-pulse effects, the leading local residual is
+H
+(0)
+loc =− 2ϵ∆3t0 ({Sz, Sx}+{S z, Sy}+{S x, Sy}),(3)
+wheret 0 is the duration of one copy of the six-pulse unit,
+so the block duration is 3t 0;ϵ ∆ =ϵ + −ϵ −, andϵ ± are
+the rotation-angle errors on the|0⟩ ↔ |±1⟩drive chan-
+nels. Thus, only the differential channel error survives
+at this order; predominantly common amplitude errors,
+ϵ+ ≃ϵ −, are suppressed along with onsite disorder within
+one 18-pulse block. Combining the seven blocks over a
+complete cycle further reduces the leading average dipo-
+lar </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>interaction. In contrast, DROID-C3PO does not fully
+cancel the finite-pulse contributions from quadratic disor-
+der,D i(Szi )2, within its short blocks. Their cancellation
+is deferred to symmetrization over a longer cycle [26].
+Whereas this construction relies on geometric insights
+from decoupling frame graphs, QORA&#x27;s agents discover
+locally robust blocks without requiring a predefined geo-
+metric picture.
+With linear disorder and dipolar interaction strength
+fixed, spin-1 simulations show that AID-ROD-1 achieves
+longer coherence times than DROID-C3PO at larger
+quadratic-disorder strengths (Fig. 3c). We complement
+this spin-1 comparison with experiments in the effective
+spin-1/2 subspace of the NV ensemble spanned by|0⟩and
+|−1⟩, where diagonal disorder reduces to a single linear
+term. In this setting, the QORA-discovered sequence
+achieves coherence times comparable to those of </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the
+spin-1/2 DROID protocol. Together with the quadratic-
+disorder simulations, this result supports the interpreta-
+tion that improved suppression of the additional, inde-
+pendent quadratic disorder channel contributes to AID-
+ROD&#x27;s coherence advantage in the spin-1 manifold.
+OUTLOOK
+Our results demonstrate how a multi-agent AI system
+combining theoretical reasoning with automated experi-
+mentation can discover new quantum control protocols.
+Human interpretation connects their improved perfor-
+mance to the underlying error-suppression mechanisms,
+illustrating how collaboration between AI agents and hu-
+man researchers can generate new physical insight.
+Looking forward, our work opens the door to a few
+intriguing directions. First, a natural extension is to ap-
+ply this approach to higher-dimensional quantum sys-
+tems beyond spin-1, such as atomic, trapped-ion and
+superconducting qudits </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +347,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +363,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-16</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-18 12:37:57</li><li>Last seen by Paper Scout: 2026-11-18 12:37:57</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-16</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-18 12:37:57</li><li>Last seen by Paper Scout: 2026-11-19 12:27:34</li></ul>
             <ul><li>arXiv: 2611.21765</li><li>arXiv IDs: 2611.21765</li></ul>
           </section>
           <section class="detail-panel">

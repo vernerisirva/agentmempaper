@@ -1,0 +1,1155 @@
+{
+  "assessment": {
+    "coverage_failures": 0,
+    "credential_skipped_without_row_tracks": 0,
+    "nominees_missing_from_store": 0,
+    "nominees_not_walked": 26,
+    "non_promoted": 2,
+    "papers_attempted": 6,
+    "papers_successfully_assessed": 6,
+    "papers_walked": 20,
+    "promoted": 4,
+    "retry_eligible_failures": 14,
+    "skipped_before_model": 14,
+    "technical_failures": 14,
+    "unavailable_manuscripts": 4
+  },
+  "budget": {
+    "gemini_calls": 6,
+    "gemini_input_tokens": 176222,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 7681,
+    "max_papers_per_run": 8,
+    "max_papers_per_track": 2,
+    "openrouter_calls": 6,
+    "openrouter_ceiling_usd": 0.3,
+    "openrouter_spend_usd": 0.18359519,
+    "papers_assessed_per_track": {
+      "agent_memory": 2,
+      "computer_vision": 2,
+      "deep_research": 2
+    },
+    "papers_assessed_total": 6,
+    "stopped_reason": null,
+    "version": "operational-budget-v2"
+  },
+  "completed_at": "2026-11-19T12:32:19.423618+00:00",
+  "cost": {
+    "deepseek_calls": 6,
+    "deepseek_cost_usd": 0.18359519,
+    "deepseek_input_tokens": 166322,
+    "deepseek_output_tokens": 3751,
+    "gemini_calls": 6,
+    "gemini_input_tokens": 176222,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 7681,
+    "unattributed_calls": 0,
+    "unknown_cost_calls": 0
+  },
+  "discovery": {
+    "high_relevance_candidates": 2025,
+    "papers_discovered": 9498
+  },
+  "limits": {
+    "backlog_after_days": 7,
+    "max_acquisition_walk_per_track": 12,
+    "max_papers_per_run": 8,
+    "max_papers_per_track": 2
+  },
+  "pages_deployment": "not_attempted",
+  "policy_versions": {
+    "credential_preflight": "credential-preflight-v1",
+    "operational_budget": "operational-budget-v2",
+    "operational_eligibility": "operational-eligibility-v1",
+    "selection": "backlog-and-recent-v2"
+  },
+  "preflight": {
+    "missing_roles": [],
+    "reason": "credentials_present",
+    "roles": [
+      {
+        "credential_env": [
+          "GEMINI_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "gemini-3.8-flash",
+        "provider": "google",
+        "role": "primary"
+      },
+      {
+        "credential_env": [
+          "OPENROUTER_API_KEY",
+          "PAPER_SCOUT_LLM_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "provider": "openrouter",
+        "role": "adjudicator"
+      }
+    ],
+    "scientific_assessment_permitted": true,
+    "version": "credential-preflight-v1"
+  },
+  "retry_policy": {
+    "in_run_retries_unchanged": "primary 1, adjudicator 2, 3 requests total",
+    "max_operational_attempts": 3,
+    "retry_cooldown_hours": 20,
+    "technical_outcomes": [
+      "credential_unavailable",
+      "evidence_validation_failure",
+      "integrity_failure",
+      "manuscript_unavailable",
+      "not_assessed",
+      "protocol_failure",
+      "support_verification_pending",
+      "text_coverage_failure",
+      "transport_failure"
+    ],
+    "version": "operational-eligibility-v1"
+  },
+  "selection": {
+    "assessment_candidates": 46,
+    "tracks": {
+      "agent_memory": {
+        "backlog_eligible": 525,
+        "completed_scientific_assessment": 95,
+        "eligible": 554,
+        "high_relevance": 671,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.20983869",
+            "queue": "backlog",
+            "rank": 632,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.20983869",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Synthetic Salience Re-Prioritization Layer (SSRL): A Meta-Control Architecture for Persistent Investigation of Unresolved Structure in Long-Horizon AI Agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "openalex:W7167380153",
+            "queue": "backlog",
+            "rank": 610,
+            "selection": {
+              "canonical_id": "openalex:W7167380153",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "A-TMA: Decoupling State-Aware Memory Failures in Long-Term Agent Memory",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "openalex:W7167380278",
+            "queue": "backlog",
+            "rank": 613,
+            "selection": {
+              "canonical_id": "openalex:W7167380278",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "ElephantAgent: Contextual State Continuity in Agentic Systems",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "openalex:W7167289766",
+            "queue": "backlog",
+            "rank": 616,
+            "selection": {
+              "canonical_id": "openalex:W7167289766",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Conversable Complexity: Agentic LLM Collectives as Interpretable Substrates",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.3837/tiis.2026.06.003",
+            "queue": "backlog",
+            "rank": 618,
+            "selection": {
+              "canonical_id": "doi:10.3837/tiis.2026.06.003",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Bio-Inspired Continual Learning Model using a Dual-Memory System",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.1016/j.neucom.2026.134438",
+            "queue": "backlog",
+            "rank": 617,
+            "selection": {
+              "canonical_id": "doi:10.1016/j.neucom.2026.134438",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "MeMAT: Multi-agent transformer with deep long-term memory, short-term memory, and persistent memory",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2611.22017",
+            "queue": "recent",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "arxiv:2611.22017",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "SkillBuffBench: Measuring What Agent Skills Contribute across Harnesses, Models, Skill Access Modes and Memory",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2611.22321",
+            "queue": "recent",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "arxiv:2611.22321",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Beyond Episodic Recall: Experience-to-Knowledge Evolution for Lifelong Embodied Navigation",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2611.22418",
+            "queue": "recent",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "arxiv:2611.22418",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "CutAgent: Creative-Gene-Driven Planning and Experience-Guided Self-Refinement for High-CTR E-commerce Advertising Video Creation",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2611.22299",
+            "queue": "recent",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "arxiv:2611.22299",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Harnesses That Improve Themselves: A Unifying Framework for Self-Improving Agent Harnesses",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2611.22425",
+            "queue": "recent",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "arxiv:2611.22425",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "LMMR: Learned Multigranular Memory Retrieval for Small Language Model Agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.58425/ajt.v5i13.645",
+            "queue": "recent",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "doi:10.58425/ajt.v5i13.645",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Memory for AI Agents: A Survey of Architectures, Systems, and the Cloud Native Paradigm",
+            "track": "agent_memory"
+          }
+        ],
+        "ranked": 3614,
+        "retry_blocked": 22,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.20983869",
+            "outcome": "manuscript_unavailable",
+            "rank": 632
+          },
+          {
+            "canonical_id": "openalex:W7167380278",
+            "outcome": "backlog_slot_consumed",
+            "rank": 613
+          },
+          {
+            "canonical_id": "openalex:W7167289766",
+            "outcome": "backlog_slot_consumed",
+            "rank": 616
+          },
+          {
+            "canonical_id": "doi:10.3837/tiis.2026.06.003",
+            "outcome": "backlog_slot_consumed",
+            "rank": 618
+          },
+          {
+            "canonical_id": "doi:10.1016/j.neucom.2026.134438",
+            "outcome": "backlog_slot_consumed",
+            "rank": 617
+          },
+          {
+            "canonical_id": "arxiv:2611.22321",
+            "outcome": "track_slot_consumed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "arxiv:2611.22418",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "arxiv:2611.22299",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "arxiv:2611.22425",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "doi:10.58425/ajt.v5i13.645",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "computer_vision": {
+        "backlog_eligible": 849,
+        "completed_scientific_assessment": 67,
+        "eligible": 1008,
+        "high_relevance": 1091,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22859249",
+            "queue": "backlog",
+            "rank": 1046,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22859249",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-11-18T12:40:34.071059+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "The Generalization Gap in Deep Learning for Wound Image Segmentation: A PRISMA 2020 Systematic Review of Internal versus External Validation",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.1016/j.compeleceng.2026.111522",
+            "queue": "backlog",
+            "rank": 1058,
+            "selection": {
+              "canonical_id": "doi:10.1016/j.compeleceng.2026.111522",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-11-18T12:40:34.081295+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Self-supervised knowledge distillation for few-shot single-stage 3D object detection",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.3233/atde260887",
+            "queue": "backlog",
+            "rank": 1061,
+            "selection": {
+              "canonical_id": "doi:10.3233/atde260887",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-11-18T12:40:34.093178+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Multi-Stream Deep Learning Framework for Real-Time Dangerous Behavior Detection and Defect Recognition in Power Systems",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2005.12872",
+            "queue": "backlog",
+            "rank": 1085,
+            "selection": {
+              "canonical_id": "arxiv:2005.12872",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "End-to-End Object Detection with Transformers",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.61710/4a4m7g78",
+            "queue": "backlog",
+            "rank": 1021,
+            "selection": {
+              "canonical_id": "doi:10.61710/4a4m7g78",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-24T09:04:05.269369+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "AI-Powered Real-Time Surveillance: An Intelligent Threat Detection System for Security Enhancement",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.1007/s11694-026-04869-8",
+            "queue": "backlog",
+            "rank": 1027,
+            "selection": {
+              "canonical_id": "doi:10.1007/s11694-026-04869-8",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-24T09:04:05.275475+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "BSQG-YOLO: non-destructive real-time quality grading of Brasenia schreberi",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2611.22126",
+            "queue": "recent",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "arxiv:2611.22126",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Text-Guided Modality Correction for Open-Vocabulary Object Detection",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2611.22577",
+            "queue": "recent",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "arxiv:2611.22577",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Semantic-Guided Geometric Decoding for Token-Efficient Visual Grounding",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2611.22964",
+            "queue": "recent",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "arxiv:2611.22964",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Training-Free Building Change Detection with Example-Induced Discriminants",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2611.23047",
+            "queue": "recent",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "arxiv:2611.23047",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "A transformer analysis lowers the energy threshold and improves the sensitivity of a compact imaging atmospheric Cherenkov telescope",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2611.22686",
+            "queue": "recent",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "arxiv:2611.22686",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "CascadeJEPA: Enhancing 3D Geometric Representations via Spatially Coupled Cascaded Prediction",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2611.22995",
+            "queue": "recent",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "arxiv:2611.22995",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "CAST: Calibrating Correspondences for Training-Free Biomedical In-Context Segmentation",
+            "track": "computer_vision"
+          }
+        ],
+        "ranked": 5466,
+        "retry_blocked": 16,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22859249",
+            "outcome": "manuscript_unavailable",
+            "rank": 1046
+          },
+          {
+            "canonical_id": "doi:10.1016/j.compeleceng.2026.111522",
+            "outcome": "manuscript_unavailable",
+            "rank": 1058
+          },
+          {
+            "canonical_id": "doi:10.3233/atde260887",
+            "outcome": "manuscript_unavailable",
+            "rank": 1061
+          },
+          {
+            "canonical_id": "doi:10.61710/4a4m7g78",
+            "outcome": "backlog_slot_consumed",
+            "rank": 1021
+          },
+          {
+            "canonical_id": "doi:10.1007/s11694-026-04869-8",
+            "outcome": "backlog_slot_consumed",
+            "rank": 1027
+          },
+          {
+            "canonical_id": "arxiv:2611.22577",
+            "outcome": "track_slot_consumed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "arxiv:2611.22964",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "arxiv:2611.23047",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "arxiv:2611.22686",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "arxiv:2611.22995",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "deep_research": {
+        "backlog_eligible": 101,
+        "completed_scientific_assessment": 91,
+        "eligible": 111,
+        "high_relevance": 245,
+        "nominated": [
+          {
+            "canonical_id": "openalex:W7201914628",
+            "queue": "backlog",
+            "rank": 175,
+            "selection": {
+              "canonical_id": "openalex:W7201914628",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Eigenius: A Typed Knowledge-Graph DBMS with Epistemic Stratification and Institution-Mediated Reasoning",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "openalex:W7202005992",
+            "queue": "backlog",
+            "rank": 176,
+            "selection": {
+              "canonical_id": "openalex:W7202005992",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "EviGraph: Evidence-Guided Autonomous Research Agents",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "openalex:W7202006327",
+            "queue": "backlog",
+            "rank": 174,
+            "selection": {
+              "canonical_id": "openalex:W7202006327",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Personalized Deep Research Query Refinement with Graph-Scaffolded Evidence Grounding",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.21755495",
+            "queue": "backlog",
+            "rank": 181,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.21755495",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "De la hip\u00f3tesis al manuscrito: \u00bfpuede una inteligencia artificial conducir una investigaci\u00f3n computacional completa?",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.1145/3770855.3818657",
+            "queue": "backlog",
+            "rank": 171,
+            "selection": {
+              "canonical_id": "doi:10.1145/3770855.3818657",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "The Autonomous AI Scientist of 2030 Needs Inferential Arbitrage",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.1145/3770855.3816477",
+            "queue": "backlog",
+            "rank": 172,
+            "selection": {
+              "canonical_id": "doi:10.1145/3770855.3816477",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Systematic Diagnosis and Benchmarking of Memory Systems in Autonomous AI Research Agents: A Low-Resource Framework",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2611.21765",
+            "queue": "recent",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "arxiv:2611.21765",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "AI Scientist Discovered Robust Quantum Control",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.24867/36ws022611",
+            "queue": "recent",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.24867/36ws022611",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "AI Scientists\u2019 View of the AI Scientists",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2611.21950",
+            "queue": "recent",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "arxiv:2611.21950",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "DiscoveryAgent: A Framework for Scientist-centric Agentic AI",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2611.21847",
+            "queue": "recent",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "arxiv:2611.21847",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Inventa: Decentralized Self-Improving Agents for Autonomous Scientific Discovery",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.1073/pnas.2633303123",
+            "queue": "recent",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.1073/pnas.2633303123",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "The AI scientist in the mirror: Shared flaws, joint remedies",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2611.24887",
+            "queue": "recent",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "arxiv:2611.24887",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Ground, Iterate, Trace: Decomposing AI Research Ideation",
+            "track": "deep_research"
+          }
+        ],
+        "ranked": 398,
+        "retry_blocked": 43,
+        "skipped_before_model": [
+          {
+            "canonical_id": "openalex:W7202005992",
+            "outcome": "backlog_slot_consumed",
+            "rank": 176
+          },
+          {
+            "canonical_id": "openalex:W7202006327",
+            "outcome": "backlog_slot_consumed",
+            "rank": 174
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.21755495",
+            "outcome": "backlog_slot_consumed",
+            "rank": 181
+          },
+          {
+            "canonical_id": "doi:10.1145/3770855.3818657",
+            "outcome": "backlog_slot_consumed",
+            "rank": 171
+          },
+          {
+            "canonical_id": "doi:10.1145/3770855.3816477",
+            "outcome": "backlog_slot_consumed",
+            "rank": 172
+          },
+          {
+            "canonical_id": "doi:10.24867/36ws022611",
+            "outcome": "track_slot_consumed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "arxiv:2611.21950",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "arxiv:2611.21847",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "doi:10.1073/pnas.2633303123",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "arxiv:2611.24887",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "engram": {
+        "backlog_eligible": 9,
+        "completed_scientific_assessment": 8,
+        "eligible": 10,
+        "high_relevance": 18,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.35578",
+            "queue": "backlog",
+            "rank": 10,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.35578",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-30T10:20:13.801385+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "FactorEngram: Factorized N-gram Memory with Basis-Level Gating for Language Models",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.10533",
+            "queue": "backlog",
+            "rank": 9,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2610.10533",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-09T11:21:59.348583+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.21810",
+            "queue": "backlog",
+            "rank": 7,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2610.21810",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-19T09:37:36.199484+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "N-Gram Memories at Two Bits: Quantizing Lookup Tables in Large Language Models",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.14921",
+            "queue": "backlog",
+            "rank": 8,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2610.14921",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-19T09:38:39.849500+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Representation Drift in Continual Learning: LoRA versus N-gram Memory",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.31646",
+            "queue": "backlog",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2610.31646",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-26T09:41:18.098161+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "Low-Bit N-Gram Embeddings for Language Models",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23604600",
+            "queue": "backlog",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.23604600",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-26T09:40:52.340411+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Fast to Write, Slow to Learn: Instant N-gram Notes that Upgrade to Learning Neurons for Two-Layer Dynamic Memory in a Production Inference Engine",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "arxiv:2611.23386",
+            "queue": "recent",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "arxiv:2611.23386",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Chorus: Shared N-gram Embeddings with Layer-wise Adaptation",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23803702",
+            "queue": "recent",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.23803702",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-11-02T12:03:12.371727+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Dynamic Engram: Answering from an Exact n-gram Memory Injected at Inference Time",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.35985",
+            "queue": "recent",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2610.35985",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-30T10:46:09.850706+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "Let the Gate Decide: Per-Lookup Precision for Quantized Conditional Memory in LLMs",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.31125",
+            "queue": "recent",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2610.31125",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-26T09:41:18.086170+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Delta N-gram: Forward-Only Continual Writing into a Language Model's Native N-gram Memory",
+            "track": "engram"
+          }
+        ],
+        "ranked": 20,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.35578",
+            "outcome": "not_assessed",
+            "rank": 10
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.10533",
+            "outcome": "not_assessed",
+            "rank": 9
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.21810",
+            "outcome": "not_assessed",
+            "rank": 7
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.14921",
+            "outcome": "not_assessed",
+            "rank": 8
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.31646",
+            "outcome": "not_assessed",
+            "rank": 6
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23604600",
+            "outcome": "not_assessed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "arxiv:2611.23386",
+            "outcome": "not_assessed",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23803702",
+            "outcome": "not_assessed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.35985",
+            "outcome": "not_assessed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.31125",
+            "outcome": "not_assessed",
+            "rank": 5
+          }
+        ],
+        "suppressed": 0
+      }
+    }
+  },
+  "started_at": "2026-11-19T12:29:04.116343+00:00",
+  "state": {
+    "persist_sha256": {},
+    "restore_sha256": {}
+  },
+  "version": "operational-run-v3"
+}

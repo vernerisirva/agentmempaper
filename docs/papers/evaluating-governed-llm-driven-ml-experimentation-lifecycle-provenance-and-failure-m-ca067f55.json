@@ -18,13 +18,13 @@
   "first_seen_at": "2026-11-19 12:26:22",
   "first_seen_date": "2026-11-19",
   "future_date": false,
-  "is_new": true,
-  "last_seen_at": "2026-11-19 12:26:51",
-  "last_seen_date": "2026-11-19",
+  "is_new": false,
+  "last_seen_at": "2026-11-20 12:27:30",
+  "last_seen_date": "2026-11-20",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-11-18",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-11-19 12:27:28",
   "notified_date": "2026-11-19",
   "openalex_id": null,
@@ -34,8 +34,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-11-19 12:26:22",
-    "generated_at": "2026-11-19 12:32:19",
-    "last_seen_at": "2026-11-19 12:26:51",
+    "generated_at": "2026-11-20 12:33:43",
+    "last_seen_at": "2026-11-20 12:27:30",
     "metadata_sources": [
       "arxiv"
     ],
@@ -100,36 +100,2461 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-20T12:32:15.347486+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.99,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The paper provides an exceptionally rigorous, well-engineered, and transparently characterized framework for auditing autonomous ML experimentation agents. By focusing on governance, auditability, and failure classification rather than merely reporting peak task scores, it makes a substantial methodological contribution supported by solid empirical evidence and reproducible open artifacts.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 108466,
+      "assessment_input_sha256": "37fd08826d6fa2c6f51b9cc6ec14b098dcfce3a01cd8fdcae5b7257db4a835ed",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2611.23678",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 104963,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 102815,
+      "evidence_block_count": 179,
+      "evidence_context_characters": 125376,
+      "evidence_context_id": "a71b3056d68a691d6270b5abdf8f1b0e3040d7640e32e3c59ee8f0004712afde",
+      "evidence_context_sha256": "9cad0673c5f8d10ce8ec521015e263d93c9f2dc8869cfce0243ef0a40903e323",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 105005,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "extracted_pages": 22,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "22185f2db788d09267d9a62ba5ef4ce1df67e0886067933cb4e6267ed053606d",
+        "source_url": "https://arxiv.org/pdf/2611.23678",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 104963,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Evaluating Governed Llm-Driven Ml Experimentation:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "results",
+          "section_index": 0,
+          "source_characters": 182,
+          "supplied_characters": 182
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1906,
+          "supplied_characters": 1906
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 3759,
+          "supplied_characters": 3759
+        },
+        {
+          "heading": "Dowling Wong",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 1714,
+          "supplied_characters": 1714
+        },
+        {
+          "heading": "Background And Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 3656,
+          "supplied_characters": 3656
+        },
+        {
+          "heading": "Background And Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 219,
+          "supplied_characters": 219
+        },
+        {
+          "heading": "Governed Control Plane",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 2554,
+          "supplied_characters": 2554
+        },
+        {
+          "heading": "Alignment With Agent Evaluation Criteria",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 7,
+          "source_characters": 141,
+          "supplied_characters": 141
+        },
+        {
+          "heading": "Manager, Worker, And Replacement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 2622,
+          "supplied_characters": 2622
+        },
+        {
+          "heading": "Dowling Wong",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 655,
+          "supplied_characters": 655
+        },
+        {
+          "heading": "Benchmark Node Inventory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 10,
+          "source_characters": 242,
+          "supplied_characters": 242
+        },
+        {
+          "heading": "Trial Lifecycle",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1978,
+          "supplied_characters": 1978
+        },
+        {
+          "heading": "Failure Taxonomy And Metric Validation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 12,
+          "source_characters": 1208,
+          "supplied_characters": 1208
+        },
+        {
+          "heading": "Memory Modes And Decision Authority",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 987,
+          "supplied_characters": 987
+        },
+        {
+          "heading": "Evaluation Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 14,
+          "source_characters": 268,
+          "supplied_characters": 268
+        },
+        {
+          "heading": "Benchmark Nodes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 429,
+          "supplied_characters": 429
+        },
+        {
+          "heading": "Benchmark Nodes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 16,
+          "source_characters": 3246,
+          "supplied_characters": 3246
+        },
+        {
+          "heading": "Campaign Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 17,
+          "source_characters": 1936,
+          "supplied_characters": 1936
+        },
+        {
+          "heading": "Memory Ablation Design",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 18,
+          "source_characters": 952,
+          "supplied_characters": 952
+        },
+        {
+          "heading": "Dowling Wong",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1345,
+          "supplied_characters": 1345
+        },
+        {
+          "heading": "Governance Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 592,
+          "supplied_characters": 592
+        },
+        {
+          "heading": "Metric Validation Probes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 21,
+          "source_characters": 1846,
+          "supplied_characters": 1846
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 22,
+          "source_characters": 1489,
+          "supplied_characters": 1489
+        },
+        {
+          "heading": "Real-Worker Scientific Node Case Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 405,
+          "supplied_characters": 405
+        },
+        {
+          "heading": "Real-Worker Scientific Node Case Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 746,
+          "supplied_characters": 746
+        },
+        {
+          "heading": "Cross-Node Governance Transfer",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1774,
+          "supplied_characters": 1774
+        },
+        {
+          "heading": "Stress Campaigns And Ungoverned",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 2427,
+          "supplied_characters": 2427
+        },
+        {
+          "heading": "Memory Ablation As Diagnostic Probe",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 27,
+          "source_characters": 348,
+          "supplied_characters": 348
+        },
+        {
+          "heading": "Dowling Wong",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 5689,
+          "supplied_characters": 5689
+        },
+        {
+          "heading": "Dowling Wong",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 317,
+          "supplied_characters": 317
+        },
+        {
+          "heading": "Large-Scale Memory Replication (Nvidia",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 2384,
+          "supplied_characters": 2384
+        },
+        {
+          "heading": "Real Lm Training Node: Governance Under",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 31,
+          "source_characters": 1228,
+          "supplied_characters": 1228
+        },
+        {
+          "heading": "Discussion And Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "limitations",
+          "section_index": 32,
+          "source_characters": 1226,
+          "supplied_characters": 1226
+        },
+        {
+          "heading": "Resnet Replicates (The Full Hypothesised Ordering Holds Only In",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 961,
+          "supplied_characters": 961
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 34,
+          "source_characters": 255,
+          "supplied_characters": 255
+        },
+        {
+          "heading": "Dowling Wong",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 150,
+          "supplied_characters": 150
+        },
+        {
+          "heading": "The Author Is Deeply Grateful To Sudhir Shetty For The Many Inspir-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 192,
+          "supplied_characters": 192
+        },
+        {
+          "heading": "Hoogar For Their Encouragement And For The Thoughtful Conver-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 61,
+          "supplied_characters": 61
+        },
+        {
+          "heading": "Sations That Have Enriched His Perspective And Helped Shape His",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 83,
+          "supplied_characters": 83
+        },
+        {
+          "heading": "Ai Usage Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 217,
+          "supplied_characters": 217
+        },
+        {
+          "heading": "Ai Usage Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 93,
+          "supplied_characters": 93
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 6410,
+          "supplied_characters": 6410
+        },
+        {
+          "heading": "Dowling Wong",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 12,
+          "supplied_characters": 12
+        },
+        {
+          "heading": "These Appendices Are The Reproducibility Material Of The Paper",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 420,
+          "supplied_characters": 420
+        },
+        {
+          "heading": "Appendix: A Reproducibility And Artifact Description",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 42,
+          "supplied_characters": 42
+        },
+        {
+          "heading": "Appendix: Artifact And Code Availability",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 123,
+          "supplied_characters": 123
+        },
+        {
+          "heading": "Behind The Numbers In This Paper Are Released As A Tagged",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 550,
+          "supplied_characters": 550
+        },
+        {
+          "heading": "Vation Log Is Byte-Identical To Its Copy Inautoresearch-Harness-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 191,
+          "supplied_characters": 191
+        },
+        {
+          "heading": "Commit Is The Code Version From Which The Reported Numbers Are",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 188,
+          "supplied_characters": 188
+        },
+        {
+          "heading": "Of The Resnet-Trigger Langgraph Memory Ablation (All Rows Of Ta-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "results",
+          "section_index": 49,
+          "source_characters": 565,
+          "supplied_characters": 565
+        },
+        {
+          "heading": "Cludes Large Or Private Execution Artifacts: The Two Resnet Hdf5",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 64,
+          "supplied_characters": 64
+        },
+        {
+          "heading": "Data Files And The Execution-Host Patch And Run-Log Files Are Not",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 65,
+          "supplied_characters": 65
+        },
+        {
+          "heading": "Needed To Recompute The Reported Governance Metrics From The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 69,
+          "supplied_characters": 69
+        },
+        {
+          "heading": "Execution-Host Patch And Run-Log Files Are Referenced In Each",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 494,
+          "supplied_characters": 494
+        },
+        {
+          "heading": "Its Ledgers Underexperiments/Ledgers/And From There To The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "results",
+          "section_index": 54,
+          "source_characters": 225,
+          "supplied_characters": 225
+        },
+        {
+          "heading": "Tached Only Where A Control-Plane Guard Or Worker Failure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 87,
+          "supplied_characters": 87
+        },
+        {
+          "heading": "Field Meaning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 56,
+          "source_characters": 60,
+          "supplied_characters": 60
+        },
+        {
+          "heading": "Campaign_Idlinks Rows To The Campaign Id Inventory In Sec-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 57,
+          "source_characters": 448,
+          "supplied_characters": 448
+        },
+        {
+          "heading": "Manager Proposal Text Recorded Before Worker Exe-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 58,
+          "source_characters": 185,
+          "supplied_characters": 185
+        },
+        {
+          "heading": "Parsed_Metricsmachine-Parsed Task Metrics Used By The Decision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 59,
+          "source_characters": 197,
+          "supplied_characters": 197
+        },
+        {
+          "heading": "Node_State_Hashhash Of Node-Local State Used For Reset And Diver-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 60,
+          "source_characters": 81,
+          "supplied_characters": 81
+        },
+        {
+          "heading": "The Harness Can Be Exercised Without Ollama Or A Gpu Using Dry-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 61,
+          "source_characters": 63,
+          "supplied_characters": 63
+        },
+        {
+          "heading": "Run Mode:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 62,
+          "source_characters": 502,
+          "supplied_characters": 502
+        },
+        {
+          "heading": "For A Real Campaign With A Local Ollama Model:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 63,
+          "source_characters": 304,
+          "supplied_characters": 304
+        },
+        {
+          "heading": "For A Real Campaign With A Local Ollama Model:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 64,
+          "source_characters": 93,
+          "supplied_characters": 93
+        },
+        {
+          "heading": "Appendix: Hardware And Model Environment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 65,
+          "source_characters": 663,
+          "supplied_characters": 663
+        },
+        {
+          "heading": "The Stochastic Memory Ablation Usesqwen2.5-Coder:7Bat",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "results",
+          "section_index": 66,
+          "source_characters": 497,
+          "supplied_characters": 497
+        },
+        {
+          "heading": "Appendix: Bootstrap Confidence Intervals",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 67,
+          "source_characters": 222,
+          "supplied_characters": 222
+        },
+        {
+          "heading": "Appendix: Node-State-Hash Reset Verification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 68,
+          "source_characters": 881,
+          "supplied_characters": 881
+        },
+        {
+          "heading": "Appendix: Provenance And Artifact Completeness",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 69,
+          "source_characters": 1453,
+          "supplied_characters": 1453
+        },
+        {
+          "heading": "Appendix: Analysis Notebook",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 70,
+          "source_characters": 839,
+          "supplied_characters": 839
+        },
+        {
+          "heading": "Appendix: Campaign Id Inventory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 71,
+          "source_characters": 172,
+          "supplied_characters": 172
+        },
+        {
+          "heading": "Appendix: Langgraph Memory Ablation Detail",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 72,
+          "source_characters": 98,
+          "supplied_characters": 98
+        },
+        {
+          "heading": "Dowling Wong",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 73,
+          "source_characters": 3790,
+          "supplied_characters": 3790
+        },
+        {
+          "heading": "Dowling Wong",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 74,
+          "source_characters": 93,
+          "supplied_characters": 93
+        },
+        {
+          "heading": "Appendix: Cross-Node Acceptance And Invalid Rates",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 75,
+          "source_characters": 1146,
+          "supplied_characters": 1146
+        },
+        {
+          "heading": "Appendix: Lr-Synthetic Memory Ablation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 76,
+          "source_characters": 1065,
+          "supplied_characters": 1065
+        },
+        {
+          "heading": "Appendix: Resnet L40S Best-Auc Trajectory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 77,
+          "source_characters": 99,
+          "supplied_characters": 99
+        },
+        {
+          "heading": "Appendix: Large-Scale L40S Replication",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 78,
+          "source_characters": 56,
+          "supplied_characters": 56
+        },
+        {
+          "heading": "Appendix: Autoresearch Linux Per-Seed Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 79,
+          "source_characters": 128,
+          "supplied_characters": 128
+        },
+        {
+          "heading": "Dowling Wong",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 80,
+          "source_characters": 1983,
+          "supplied_characters": 1983
+        },
+        {
+          "heading": "Appendix: Openml Per-Budget Summary",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 81,
+          "source_characters": 60,
+          "supplied_characters": 60
+        },
+        {
+          "heading": "Appendix: Openml Dataset Statistics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 82,
+          "source_characters": 392,
+          "supplied_characters": 392
+        },
+        {
+          "heading": "Appendix: Openml Running-Best Trajectories",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 83,
+          "source_characters": 955,
+          "supplied_characters": 955
+        },
+        {
+          "heading": "Appendix: Trial Lifecycle",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 84,
+          "source_characters": 521,
+          "supplied_characters": 521
+        },
+        {
+          "heading": "If Worker Fails\u2192Recordfailed_Invalid/Runtime_Erroror",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 85,
+          "source_characters": 64,
+          "supplied_characters": 64
+        },
+        {
+          "heading": "If Metric Missing\u2192Failed_Invalid/Metric_Missing. If Metric",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 86,
+          "source_characters": 670,
+          "supplied_characters": 670
+        },
+        {
+          "heading": "Appendix: Control-Plane Trial Decision Timeline",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 87,
+          "source_characters": 133,
+          "supplied_characters": 133
+        },
+        {
+          "heading": "Appendix: Control-Plane Trial Decision Timeline",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 88,
+          "source_characters": 2691,
+          "supplied_characters": 2691
+        },
+        {
+          "heading": "Appendix: Governed Vs. Ungoverned Counterfactual",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 89,
+          "source_characters": 85,
+          "supplied_characters": 85
+        },
+        {
+          "heading": "Appendix: Resnet L40S Per-Seed Panels",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 90,
+          "source_characters": 108,
+          "supplied_characters": 108
+        },
+        {
+          "heading": "Appendix: Decision Rule",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 91,
+          "source_characters": 197,
+          "supplied_characters": 197
+        },
+        {
+          "heading": "Appendix: Memory Context Algorithm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 92,
+          "source_characters": 152,
+          "supplied_characters": 152
+        },
+        {
+          "heading": "Appendix: Repeated-Bad Rate Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 93,
+          "source_characters": 576,
+          "supplied_characters": 576
+        },
+        {
+          "heading": "Dowling Wong",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 94,
+          "source_characters": 4024,
+          "supplied_characters": 4024
+        },
+        {
+          "heading": "Dowling Wong",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 95,
+          "source_characters": 93,
+          "supplied_characters": 93
+        },
+        {
+          "heading": "Appendix: Manager Prompt Template",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 96,
+          "source_characters": 2239,
+          "supplied_characters": 2239
+        },
+        {
+          "heading": "Appendix: Scope Validation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 97,
+          "source_characters": 423,
+          "supplied_characters": 423
+        },
+        {
+          "heading": "Appendix: Crash-Recovery Path",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 98,
+          "source_characters": 690,
+          "supplied_characters": 690
+        },
+        {
+          "heading": "Appendix: Schema",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 99,
+          "source_characters": 1405,
+          "supplied_characters": 1405
+        },
+        {
+          "heading": "Appendix: Annotated Example:Resnet_Trigger",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 100,
+          "source_characters": 249,
+          "supplied_characters": 249
+        },
+        {
+          "heading": "Dowling Wong",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 101,
+          "source_characters": 785,
+          "supplied_characters": 785
+        },
+        {
+          "heading": "Appendix: Annotated Example:Lr_Synthetic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 102,
+          "source_characters": 1351,
+          "supplied_characters": 1351
+        },
+        {
+          "heading": "Appendix: Concrete Ledger Records",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 103,
+          "source_characters": 1836,
+          "supplied_characters": 1836
+        },
+        {
+          "heading": "Appendix: Concrete Ledger Records",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 104,
+          "source_characters": 4120,
+          "supplied_characters": 4120
+        },
+        {
+          "heading": "Appendix: Taxonomy Reliability Probe",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 105,
+          "source_characters": 988,
+          "supplied_characters": 988
+        },
+        {
+          "heading": "Appendix: Distinguishing Failed From Discarded",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 106,
+          "source_characters": 365,
+          "supplied_characters": 365
+        },
+        {
+          "heading": "Dowling Wong",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 107,
+          "source_characters": 142,
+          "supplied_characters": 142
+        },
+        {
+          "heading": "Appendix: New Category Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 108,
+          "source_characters": 396,
+          "supplied_characters": 396
+        }
+      ],
+      "selected_characters": 102815,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "selected_sections": [
+        {
+          "characters": 182,
+          "heading": "Evaluating Governed Llm-Driven Ml Experimentation:",
+          "page": 1
+        },
+        {
+          "characters": 1906,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 3759,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1714,
+          "heading": "Dowling Wong",
+          "page": 2
+        },
+        {
+          "characters": 3656,
+          "heading": "Background And Related Work",
+          "page": 2
+        },
+        {
+          "characters": 219,
+          "heading": "Background And Related Work",
+          "page": 3
+        },
+        {
+          "characters": 2554,
+          "heading": "Governed Control Plane",
+          "page": 3
+        },
+        {
+          "characters": 141,
+          "heading": "Alignment With Agent Evaluation Criteria",
+          "page": 3
+        },
+        {
+          "characters": 2622,
+          "heading": "Manager, Worker, And Replacement",
+          "page": 3
+        },
+        {
+          "characters": 655,
+          "heading": "Dowling Wong",
+          "page": 4
+        },
+        {
+          "characters": 242,
+          "heading": "Benchmark Node Inventory",
+          "page": 4
+        },
+        {
+          "characters": 1978,
+          "heading": "Trial Lifecycle",
+          "page": 4
+        },
+        {
+          "characters": 1208,
+          "heading": "Failure Taxonomy And Metric Validation",
+          "page": 4
+        },
+        {
+          "characters": 987,
+          "heading": "Memory Modes And Decision Authority",
+          "page": 4
+        },
+        {
+          "characters": 268,
+          "heading": "Evaluation Protocol",
+          "page": 4
+        },
+        {
+          "characters": 429,
+          "heading": "Benchmark Nodes",
+          "page": 4
+        },
+        {
+          "characters": 3246,
+          "heading": "Benchmark Nodes",
+          "page": 5
+        },
+        {
+          "characters": 1936,
+          "heading": "Campaign Protocol",
+          "page": 5
+        },
+        {
+          "characters": 952,
+          "heading": "Memory Ablation Design",
+          "page": 5
+        },
+        {
+          "characters": 1345,
+          "heading": "Dowling Wong",
+          "page": 6
+        },
+        {
+          "characters": 592,
+          "heading": "Governance Metrics",
+          "page": 6
+        },
+        {
+          "characters": 1846,
+          "heading": "Metric Validation Probes",
+          "page": 6
+        },
+        {
+          "characters": 1489,
+          "heading": "Results",
+          "page": 6
+        },
+        {
+          "characters": 405,
+          "heading": "Real-Worker Scientific Node Case Study",
+          "page": 6
+        },
+        {
+          "characters": 746,
+          "heading": "Real-Worker Scientific Node Case Study",
+          "page": 7
+        },
+        {
+          "characters": 1774,
+          "heading": "Cross-Node Governance Transfer",
+          "page": 7
+        },
+        {
+          "characters": 2427,
+          "heading": "Stress Campaigns And Ungoverned",
+          "page": 7
+        },
+        {
+          "characters": 348,
+          "heading": "Memory Ablation As Diagnostic Probe",
+          "page": 7
+        },
+        {
+          "characters": 5689,
+          "heading": "Dowling Wong",
+          "page": 8
+        },
+        {
+          "characters": 317,
+          "heading": "Dowling Wong",
+          "page": 9
+        },
+        {
+          "characters": 2384,
+          "heading": "Large-Scale Memory Replication (Nvidia",
+          "page": 9
+        },
+        {
+          "characters": 1228,
+          "heading": "Real Lm Training Node: Governance Under",
+          "page": 9
+        },
+        {
+          "characters": 1226,
+          "heading": "Discussion And Limitations",
+          "page": 9
+        },
+        {
+          "characters": 961,
+          "heading": "Resnet Replicates (The Full Hypothesised Ordering Holds Only In",
+          "page": 9
+        },
+        {
+          "characters": 255,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 150,
+          "heading": "Dowling Wong",
+          "page": 10
+        },
+        {
+          "characters": 192,
+          "heading": "The Author Is Deeply Grateful To Sudhir Shetty For The Many Inspir-",
+          "page": 10
+        },
+        {
+          "characters": 61,
+          "heading": "Hoogar For Their Encouragement And For The Thoughtful Conver-",
+          "page": 10
+        },
+        {
+          "characters": 83,
+          "heading": "Sations That Have Enriched His Perspective And Helped Shape His",
+          "page": 10
+        },
+        {
+          "characters": 217,
+          "heading": "Ai Usage Statement",
+          "page": 10
+        },
+        {
+          "characters": 93,
+          "heading": "Ai Usage Statement",
+          "page": 11
+        },
+        {
+          "characters": 6410,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 12,
+          "heading": "Dowling Wong",
+          "page": 12
+        },
+        {
+          "characters": 420,
+          "heading": "These Appendices Are The Reproducibility Material Of The Paper",
+          "page": 12
+        },
+        {
+          "characters": 42,
+          "heading": "Appendix: A Reproducibility And Artifact Description",
+          "page": 12
+        },
+        {
+          "characters": 123,
+          "heading": "Appendix: Artifact And Code Availability",
+          "page": 12
+        },
+        {
+          "characters": 550,
+          "heading": "Behind The Numbers In This Paper Are Released As A Tagged",
+          "page": 12
+        },
+        {
+          "characters": 191,
+          "heading": "Vation Log Is Byte-Identical To Its Copy Inautoresearch-Harness-",
+          "page": 12
+        },
+        {
+          "characters": 188,
+          "heading": "Commit Is The Code Version From Which The Reported Numbers Are",
+          "page": 12
+        },
+        {
+          "characters": 565,
+          "heading": "Of The Resnet-Trigger Langgraph Memory Ablation (All Rows Of Ta-",
+          "page": 12
+        },
+        {
+          "characters": 64,
+          "heading": "Cludes Large Or Private Execution Artifacts: The Two Resnet Hdf5",
+          "page": 12
+        },
+        {
+          "characters": 65,
+          "heading": "Data Files And The Execution-Host Patch And Run-Log Files Are Not",
+          "page": 12
+        },
+        {
+          "characters": 69,
+          "heading": "Needed To Recompute The Reported Governance Metrics From The",
+          "page": 12
+        },
+        {
+          "characters": 494,
+          "heading": "Execution-Host Patch And Run-Log Files Are Referenced In Each",
+          "page": 12
+        },
+        {
+          "characters": 225,
+          "heading": "Its Ledgers Underexperiments/Ledgers/And From There To The",
+          "page": 12
+        },
+        {
+          "characters": 87,
+          "heading": "Tached Only Where A Control-Plane Guard Or Worker Failure",
+          "page": 12
+        },
+        {
+          "characters": 60,
+          "heading": "Field Meaning",
+          "page": 12
+        },
+        {
+          "characters": 448,
+          "heading": "Campaign_Idlinks Rows To The Campaign Id Inventory In Sec-",
+          "page": 12
+        },
+        {
+          "characters": 185,
+          "heading": "Manager Proposal Text Recorded Before Worker Exe-",
+          "page": 12
+        },
+        {
+          "characters": 197,
+          "heading": "Parsed_Metricsmachine-Parsed Task Metrics Used By The Decision",
+          "page": 12
+        },
+        {
+          "characters": 81,
+          "heading": "Node_State_Hashhash Of Node-Local State Used For Reset And Diver-",
+          "page": 12
+        },
+        {
+          "characters": 63,
+          "heading": "The Harness Can Be Exercised Without Ollama Or A Gpu Using Dry-",
+          "page": 12
+        },
+        {
+          "characters": 502,
+          "heading": "Run Mode:",
+          "page": 12
+        },
+        {
+          "characters": 304,
+          "heading": "For A Real Campaign With A Local Ollama Model:",
+          "page": 12
+        },
+        {
+          "characters": 93,
+          "heading": "For A Real Campaign With A Local Ollama Model:",
+          "page": 13
+        },
+        {
+          "characters": 663,
+          "heading": "Appendix: Hardware And Model Environment",
+          "page": 13
+        },
+        {
+          "characters": 497,
+          "heading": "The Stochastic Memory Ablation Usesqwen2.5-Coder:7Bat",
+          "page": 13
+        },
+        {
+          "characters": 222,
+          "heading": "Appendix: Bootstrap Confidence Intervals",
+          "page": 13
+        },
+        {
+          "characters": 881,
+          "heading": "Appendix: Node-State-Hash Reset Verification",
+          "page": 13
+        },
+        {
+          "characters": 1453,
+          "heading": "Appendix: Provenance And Artifact Completeness",
+          "page": 13
+        },
+        {
+          "characters": 839,
+          "heading": "Appendix: Analysis Notebook",
+          "page": 13
+        },
+        {
+          "characters": 172,
+          "heading": "Appendix: Campaign Id Inventory",
+          "page": 13
+        },
+        {
+          "characters": 98,
+          "heading": "Appendix: Langgraph Memory Ablation Detail",
+          "page": 13
+        },
+        {
+          "characters": 3790,
+          "heading": "Dowling Wong",
+          "page": 14
+        },
+        {
+          "characters": 93,
+          "heading": "Dowling Wong",
+          "page": 15
+        },
+        {
+          "characters": 1146,
+          "heading": "Appendix: Cross-Node Acceptance And Invalid Rates",
+          "page": 15
+        },
+        {
+          "characters": 1065,
+          "heading": "Appendix: Lr-Synthetic Memory Ablation",
+          "page": 15
+        },
+        {
+          "characters": 99,
+          "heading": "Appendix: Resnet L40S Best-Auc Trajectory",
+          "page": 15
+        },
+        {
+          "characters": 56,
+          "heading": "Appendix: Large-Scale L40S Replication",
+          "page": 15
+        },
+        {
+          "characters": 128,
+          "heading": "Appendix: Autoresearch Linux Per-Seed Results",
+          "page": 15
+        },
+        {
+          "characters": 1983,
+          "heading": "Dowling Wong",
+          "page": 16
+        },
+        {
+          "characters": 60,
+          "heading": "Appendix: Openml Per-Budget Summary",
+          "page": 16
+        },
+        {
+          "characters": 392,
+          "heading": "Appendix: Openml Dataset Statistics",
+          "page": 16
+        },
+        {
+          "characters": 955,
+          "heading": "Appendix: Openml Running-Best Trajectories",
+          "page": 16
+        },
+        {
+          "characters": 521,
+          "heading": "Appendix: Trial Lifecycle",
+          "page": 16
+        },
+        {
+          "characters": 64,
+          "heading": "If Worker Fails\u2192Recordfailed_Invalid/Runtime_Erroror",
+          "page": 16
+        },
+        {
+          "characters": 670,
+          "heading": "If Metric Missing\u2192Failed_Invalid/Metric_Missing. If Metric",
+          "page": 16
+        },
+        {
+          "characters": 133,
+          "heading": "Appendix: Control-Plane Trial Decision Timeline",
+          "page": 16
+        },
+        {
+          "characters": 2691,
+          "heading": "Appendix: Control-Plane Trial Decision Timeline",
+          "page": 17
+        },
+        {
+          "characters": 85,
+          "heading": "Appendix: Governed Vs. Ungoverned Counterfactual",
+          "page": 17
+        },
+        {
+          "characters": 108,
+          "heading": "Appendix: Resnet L40S Per-Seed Panels",
+          "page": 17
+        },
+        {
+          "characters": 197,
+          "heading": "Appendix: Decision Rule",
+          "page": 17
+        },
+        {
+          "characters": 152,
+          "heading": "Appendix: Memory Context Algorithm",
+          "page": 17
+        },
+        {
+          "characters": 576,
+          "heading": "Appendix: Repeated-Bad Rate Detection",
+          "page": 17
+        },
+        {
+          "characters": 4024,
+          "heading": "Dowling Wong",
+          "page": 18
+        },
+        {
+          "characters": 93,
+          "heading": "Dowling Wong",
+          "page": 19
+        },
+        {
+          "characters": 2239,
+          "heading": "Appendix: Manager Prompt Template",
+          "page": 19
+        },
+        {
+          "characters": 423,
+          "heading": "Appendix: Scope Validation",
+          "page": 19
+        },
+        {
+          "characters": 690,
+          "heading": "Appendix: Crash-Recovery Path",
+          "page": 19
+        },
+        {
+          "characters": 1405,
+          "heading": "Appendix: Schema",
+          "page": 19
+        },
+        {
+          "characters": 249,
+          "heading": "Appendix: Annotated Example:Resnet_Trigger",
+          "page": 19
+        },
+        {
+          "characters": 785,
+          "heading": "Dowling Wong",
+          "page": 20
+        },
+        {
+          "characters": 1351,
+          "heading": "Appendix: Annotated Example:Lr_Synthetic",
+          "page": 20
+        },
+        {
+          "characters": 1836,
+          "heading": "Appendix: Concrete Ledger Records",
+          "page": 20
+        },
+        {
+          "characters": 4120,
+          "heading": "Appendix: Concrete Ledger Records",
+          "page": 21
+        },
+        {
+          "characters": 988,
+          "heading": "Appendix: Taxonomy Reliability Probe",
+          "page": 21
+        },
+        {
+          "characters": 365,
+          "heading": "Appendix: Distinguishing Failed From Discarded",
+          "page": 21
+        },
+        {
+          "characters": 142,
+          "heading": "Dowling Wong",
+          "page": 22
+        },
+        {
+          "characters": 396,
+          "heading": "Appendix: New Category Protocol",
+          "page": 22
+        }
+      ],
+      "selected_text_sha256": "37fd08826d6fa2c6f51b9cc6ec14b098dcfce3a01cd8fdcae5b7257db4a835ed",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "22185f2db788d09267d9a62ba5ef4ce1df67e0886067933cb4e6267ed053606d",
+      "source_pages": 22,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "a71b3056d68a691d6270b5abdf8f1b0e3040d7640e32e3c59ee8f0004712afde",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea71b3056d68a691d-B0007"
+        ],
+        "excerpt": "one bounded change per trial; a worker\napplies it and runs training; and a control plane owns everything\nelse: the trial's lifecycle, the check that the patch touches only ed-\nitable files, metric parsing, the keep or discard decision, and one\nappend-only ledger record per trial, written whatever the outcome.\nNone of these is delegated to the agent, so the manager can be\nreplaced without changing what is recorded. From the ledger we\ncompute six governance metrics alongside the task metric: accep-\ntance rate, invalid-action rate, repeated-bad rate, provenance com-\npleteness, artifact-reference completeness, and a failure taxonomy\n(Section 4.4).\nWe evaluate this contract on six ML tasks over 1,445 trials: syn-\nthetic logistic regression, two public OpenML tabular tasks, an\nMLAgentBench vectorization task, a ResNet classifier for a scien-\ntific trigger task, and GPT pretraining. Four ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3d1f4aebe8f29ad50e86f96ca5ed615c598fd6a8b7453f73e8297cff85dccec6",
+            "evidence_id": "Ea71b3056d68a691d-B0007",
+            "pages": [
+              1
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2691,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 1797,
+                "text": "one bounded change per trial; a worker\napplies it and runs training; and a control plane owns everything\nelse: the trial's lifecycle, the check that the patch touches only ed-\nitable files, metric parsing, the keep or discard decision, and one\nappend-only ledger record per trial, written whatever the outcome.\nNone of these is delegated to the agent, so the manager can be\nreplaced without changing what is recorded. From the ledger we\ncompute six governance metrics alongside the task metric: accep-\ntance rate, invalid-action rate, repeated-bad rate, provenance com-\npleteness, artifact-reference completeness, and a failure taxonomy\n(Section 4.4).\nWe evaluate this contract on six ML tasks over 1,445 trials: syn-\nthetic logistic regression, two public OpenML tabular tasks, an\nMLAgentBench vectorization task, a ResNet classifier for a scien-\ntific trigger task, and GPT pretraining. Four "
+              }
+            ],
+            "text": "one bounded change per trial; a worker\napplies it and runs training; and a control plane owns everything\nelse: the trial's lifecycle, the check that the patch touches only ed-\nitable files, metric parsing, the keep or discard decision, and one\nappend-only ledger record per trial, written whatever the outcome.\nNone of these is delegated to the agent, so the manager can be\nreplaced without changing what is recorded. From the ledger we\ncompute six governance metrics alongside the task metric: accep-\ntance rate, invalid-action rate, repeated-bad rate, provenance com-\npleteness, artifact-reference completeness, and a failure taxonomy\n(Section 4.4).\nWe evaluate this contract on six ML tasks over 1,445 trials: syn-\nthetic logistic regression, two public OpenML tabular tasks, an\nMLAgentBench vectorization task, a ResNet classifier for a scien-\ntific trigger task, and GPT pretraining. Four "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a71b3056d68a691d6270b5abdf8f1b0e3040d7640e32e3c59ee8f0004712afde",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea71b3056d68a691d-B0018"
+        ],
+        "excerpt": "split\nlogic would terminate here asinvalid_edit_scope, before any\ntraining runs. (iii)Execution under guard:the control plane writes\na pending-guard file, then the worker runs training; a crash here\nwould leave a stale guard that forces afailed_invalidrecord at\nthe next campaign start rather than a silent gap. (iv)Metric parse\nand decision:the parser extractsval_aucand the control plane \u2014\nnot the manager \u2014 compares it against the current best (this cam-\npaign improves 0.7747\u21920.7827 over 20 trials); an improvement is\nkept, a valid non-improvementdiscarded. (v)Ledger append:ex-\nactly one immutable JSONL record is appended \u2014 proposal text,\npatch reference and hash, raw-log reference, parsed metric, deci-\nsion, failure category if any, and five provenance IDs (proposal,\npatch, run, metric, and decision IDs, each derived by hashing the\ntrial ID) \u2014 the guard is deleted, and the next budget ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Governed Control Plane",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0e37b58c4afdd041fbbef6b802442bfc5746411c7b3cc5cae58335fc81fbe3cf",
+            "evidence_id": "Ea71b3056d68a691d-B0018",
+            "pages": [
+              3
+            ],
+            "section": "Governed Control Plane",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1794,
+                "page": 3,
+                "section": "Governed Control Plane",
+                "section_index": 6,
+                "start": 897,
+                "text": "split\nlogic would terminate here asinvalid_edit_scope, before any\ntraining runs. (iii)Execution under guard:the control plane writes\na pending-guard file, then the worker runs training; a crash here\nwould leave a stale guard that forces afailed_invalidrecord at\nthe next campaign start rather than a silent gap. (iv)Metric parse\nand decision:the parser extractsval_aucand the control plane \u2014\nnot the manager \u2014 compares it against the current best (this cam-\npaign improves 0.7747\u21920.7827 over 20 trials); an improvement is\nkept, a valid non-improvementdiscarded. (v)Ledger append:ex-\nactly one immutable JSONL record is appended \u2014 proposal text,\npatch reference and hash, raw-log reference, parsed metric, deci-\nsion, failure category if any, and five provenance IDs (proposal,\npatch, run, metric, and decision IDs, each derived by hashing the\ntrial ID) \u2014 the guard is deleted, and the next budget "
+              }
+            ],
+            "text": "split\nlogic would terminate here asinvalid_edit_scope, before any\ntraining runs. (iii)Execution under guard:the control plane writes\na pending-guard file, then the worker runs training; a crash here\nwould leave a stale guard that forces afailed_invalidrecord at\nthe next campaign start rather than a silent gap. (iv)Metric parse\nand decision:the parser extractsval_aucand the control plane \u2014\nnot the manager \u2014 compares it against the current best (this cam-\npaign improves 0.7747\u21920.7827 over 20 trials); an improvement is\nkept, a valid non-improvementdiscarded. (v)Ledger append:ex-\nactly one immutable JSONL record is appended \u2014 proposal text,\npatch reference and hash, raw-log reference, parsed metric, deci-\nsion, failure category if any, and five provenance IDs (proposal,\npatch, run, metric, and decision IDs, each derived by hashing the\ntrial ID) \u2014 the guard is deleted, and the next budget "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a71b3056d68a691d6270b5abdf8f1b0e3040d7640e32e3c59ee8f0004712afde",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea71b3056d68a691d-B0021"
+        ],
+        "excerpt": "Principle\nThe manager generates proposals (summary, rationale, target, in-\ntended effect). The worker executes bounded actions (patch + run\nTable 1: Five auditability desiderata for governed agentic ex-\nperimentation.\nDesideratum Operational meaning\nD1. Bounded edit scope The agent cannot change protected benchmark,\ndata, or evaluation files.\nD2. Complete attempt\naccounting\nEvery proposed attempt is recorded, including\ninvalid proposals and crashes.\nD3. Independent\nadjudication\nAcceptance or rejection is decided by fixed\ncontrol-plane rules, not by the agent.\nD4. Provenance linkage Each recorded attempt links to patch,\nconfiguration, run, metric, and decision\nevidence.\nD5. Recomputability Aggregate governance claims can be\nrecomputed from the ledger without\nre-running training.\nManager\nreplaceable\nprompt_manager\nLangGraph\nbaseline\nControl Plane\nfixed contract\nscope validation\nlifecycle ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Manager, Worker, And Replacement",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "40a6e69536d4f077c4468bc30e4dfe62358c7864ccdfd1451934b864ccd6ba00",
+            "evidence_id": "Ea71b3056d68a691d-B0021",
+            "pages": [
+              3
+            ],
+            "section": "Manager, Worker, And Replacement",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 3,
+                "section": "Manager, Worker, And Replacement",
+                "section_index": 8,
+                "start": 0,
+                "text": "Principle\nThe manager generates proposals (summary, rationale, target, in-\ntended effect). The worker executes bounded actions (patch + run\nTable 1: Five auditability desiderata for governed agentic ex-\nperimentation.\nDesideratum Operational meaning\nD1. Bounded edit scope The agent cannot change protected benchmark,\ndata, or evaluation files.\nD2. Complete attempt\naccounting\nEvery proposed attempt is recorded, including\ninvalid proposals and crashes.\nD3. Independent\nadjudication\nAcceptance or rejection is decided by fixed\ncontrol-plane rules, not by the agent.\nD4. Provenance linkage Each recorded attempt links to patch,\nconfiguration, run, metric, and decision\nevidence.\nD5. Recomputability Aggregate governance claims can be\nrecomputed from the ledger without\nre-running training.\nManager\nreplaceable\nprompt_manager\nLangGraph\nbaseline\nControl Plane\nfixed contract\nscope validation\nlifecycle "
+              }
+            ],
+            "text": "Principle\nThe manager generates proposals (summary, rationale, target, in-\ntended effect). The worker executes bounded actions (patch + run\nTable 1: Five auditability desiderata for governed agentic ex-\nperimentation.\nDesideratum Operational meaning\nD1. Bounded edit scope The agent cannot change protected benchmark,\ndata, or evaluation files.\nD2. Complete attempt\naccounting\nEvery proposed attempt is recorded, including\ninvalid proposals and crashes.\nD3. Independent\nadjudication\nAcceptance or rejection is decided by fixed\ncontrol-plane rules, not by the agent.\nD4. Provenance linkage Each recorded attempt links to patch,\nconfiguration, run, metric, and decision\nevidence.\nD5. Recomputability Aggregate governance claims can be\nrecomputed from the ledger without\nre-running training.\nManager\nreplaceable\nprompt_manager\nLangGraph\nbaseline\nControl Plane\nfixed contract\nscope validation\nlifecycle "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a71b3056d68a691d6270b5abdf8f1b0e3040d7640e32e3c59ee8f0004712afde",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea71b3056d68a691d-B0027"
+        ],
+        "excerpt": "invari-\nant:\nFor every budget slot that entersexecuting, the con-\ntrol plane appends exactly one terminal record\u2014kept,\ndiscarded, orfailed_invalid\u2014to the append-only\nledger before the next slot may open. No slot is silently\nskipped; no slot produces more than one record; no record\nis overwritten or deleted.\nEnforcement has two paths.Normal path:the pending guard is\nwritten before the worker starts and deleted on the terminal transi-\ntion; any deviation raises an error before the ledger append.Crash-\nrecovery path:if the process crashes mid-trial, the guard file per-\nsists; at the next campaign startPendingTrialErroris raised, the\nstale guard is inspected viascripts/recover_pending.py, and a\nfailed_invalidrecord is appended before any new trial begins.\nNeither path allows a budget slot to close without a ledger record.\nThe invariant is structural rather than empirical: it holds by ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Trial Lifecycle",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "aae4b8bea66980221a13280024a841bfb7c8775adf83f87eecc86d98ebd9fd52",
+            "evidence_id": "Ea71b3056d68a691d-B0027",
+            "pages": [
+              4
+            ],
+            "section": "Trial Lifecycle",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1782,
+                "page": 4,
+                "section": "Trial Lifecycle",
+                "section_index": 11,
+                "start": 889,
+                "text": "invari-\nant:\nFor every budget slot that entersexecuting, the con-\ntrol plane appends exactly one terminal record\u2014kept,\ndiscarded, orfailed_invalid\u2014to the append-only\nledger before the next slot may open. No slot is silently\nskipped; no slot produces more than one record; no record\nis overwritten or deleted.\nEnforcement has two paths.Normal path:the pending guard is\nwritten before the worker starts and deleted on the terminal transi-\ntion; any deviation raises an error before the ledger append.Crash-\nrecovery path:if the process crashes mid-trial, the guard file per-\nsists; at the next campaign startPendingTrialErroris raised, the\nstale guard is inspected viascripts/recover_pending.py, and a\nfailed_invalidrecord is appended before any new trial begins.\nNeither path allows a budget slot to close without a ledger record.\nThe invariant is structural rather than empirical: it holds by "
+              }
+            ],
+            "text": "invari-\nant:\nFor every budget slot that entersexecuting, the con-\ntrol plane appends exactly one terminal record\u2014kept,\ndiscarded, orfailed_invalid\u2014to the append-only\nledger before the next slot may open. No slot is silently\nskipped; no slot produces more than one record; no record\nis overwritten or deleted.\nEnforcement has two paths.Normal path:the pending guard is\nwritten before the worker starts and deleted on the terminal transi-\ntion; any deviation raises an error before the ledger append.Crash-\nrecovery path:if the process crashes mid-trial, the guard file per-\nsists; at the next campaign startPendingTrialErroris raised, the\nstale guard is inspected viascripts/recover_pending.py, and a\nfailed_invalidrecord is appended before any new trial begins.\nNeither path allows a budget slot to close without a ledger record.\nThe invariant is structural rather than empirical: it holds by "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a71b3056d68a691d6270b5abdf8f1b0e3040d7640e32e3c59ee8f0004712afde",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea71b3056d68a691d-B0033"
+        ],
+        "excerpt": "The evaluation asks whether an autonomous ML experimentation\nloop is bounded, auditable, failure-aware, reproducible, and behav-\niorally affected by governance memory. Governance metrics are\nprimary; task-metric AUC is secondary evidence that the loop runs\nend-to-end.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "00cfc5d06b2a5d22cff2c1d16bc7b92f9fa2efcd47e99ff2b7cad97dc021287b",
+            "evidence_id": "Ea71b3056d68a691d-B0033",
+            "pages": [
+              4
+            ],
+            "section": "Evaluation Protocol",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 268,
+                "page": 4,
+                "section": "Evaluation Protocol",
+                "section_index": 14,
+                "start": 0,
+                "text": "The evaluation asks whether an autonomous ML experimentation\nloop is bounded, auditable, failure-aware, reproducible, and behav-\niorally affected by governance memory. Governance metrics are\nprimary; task-metric AUC is secondary evidence that the loop runs\nend-to-end."
+              }
+            ],
+            "text": "The evaluation asks whether an autonomous ML experimentation\nloop is bounded, auditable, failure-aware, reproducible, and behav-\niorally affected by governance memory. Governance metrics are\nprimary; task-metric AUC is secondary evidence that the loop runs\nend-to-end."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a71b3056d68a691d6270b5abdf8f1b0e3040d7640e32e3c59ee8f0004712afde",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea71b3056d68a691d-B0047"
+        ],
+        "excerpt": "We run three lightweight validation probes for the governance met-\nrics. First, two reruns of the MLAgentBench vectorization adapter\ntest whether the same NodeSpec contract continues to produce\ncomplete lifecycle records under repeated runs. Second, a re-execution\nscript rebuilds kept-trial state from cumulative patch references\nand reruns selected kept trials where the underlying execution ar-\ntifacts are available. Third, we estimate structural relabeling agree-\nment by computing Cohen's\ud835\udf05between control-plane-assigned la-\nbels and an independent rule-based relabeler applied to structurally\nobservable fields only (scope-validation flags, patch presence, training-\ninitiation signals, execution status). On a stratified sample of 50\nfailed_invalidtrials spanning the observed validation categories,\nTable 6: Real-worker scientific-node case study\n(kdd_resnet_scientific_20, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Metric Validation Probes",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3a435e8a263e59e1f191a4009aeda23fcb274c3400ec6c30ade038807ef24fa0",
+            "evidence_id": "Ea71b3056d68a691d-B0047",
+            "pages": [
+              6
+            ],
+            "section": "Metric Validation Probes",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 882,
+                "page": 6,
+                "section": "Metric Validation Probes",
+                "section_index": 21,
+                "start": 0,
+                "text": "We run three lightweight validation probes for the governance met-\nrics. First, two reruns of the MLAgentBench vectorization adapter\ntest whether the same NodeSpec contract continues to produce\ncomplete lifecycle records under repeated runs. Second, a re-execution\nscript rebuilds kept-trial state from cumulative patch references\nand reruns selected kept trials where the underlying execution ar-\ntifacts are available. Third, we estimate structural relabeling agree-\nment by computing Cohen's\ud835\udf05between control-plane-assigned la-\nbels and an independent rule-based relabeler applied to structurally\nobservable fields only (scope-validation flags, patch presence, training-\ninitiation signals, execution status). On a stratified sample of 50\nfailed_invalidtrials spanning the observed validation categories,\nTable 6: Real-worker scientific-node case study\n(kdd_resnet_scientific_20, "
+              }
+            ],
+            "text": "We run three lightweight validation probes for the governance met-\nrics. First, two reruns of the MLAgentBench vectorization adapter\ntest whether the same NodeSpec contract continues to produce\ncomplete lifecycle records under repeated runs. Second, a re-execution\nscript rebuilds kept-trial state from cumulative patch references\nand reruns selected kept trials where the underlying execution ar-\ntifacts are available. Third, we estimate structural relabeling agree-\nment by computing Cohen's\ud835\udf05between control-plane-assigned la-\nbels and an independent rule-based relabeler applied to structurally\nobservable fields only (scope-validation flags, patch presence, training-\ninitiation signals, execution status). On a stratified sample of 50\nfailed_invalidtrials spanning the observed validation categories,\nTable 6: Real-worker scientific-node case study\n(kdd_resnet_scientific_20, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a71b3056d68a691d6270b5abdf8f1b0e3040d7640e32e3c59ee8f0004712afde",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea71b3056d68a691d-B0048"
+        ],
+        "excerpt": "ResNet-trigger,\nprompt_manager,claw_style_worker, budget=20).\nField Value\nKept / disc. / failed-invalid 4 / 5 / 11\nNon-kept categories 5\u00d7degraded_metric; 11\u00d7proposal\n_precondition_failed\nAcceptance / invalid rate 0.20 / 0.55\nProvenance completeness 1.00 (20/20)\nDecision record completeness 1.00 (20/20)\nFailure evidence completeness 1.00 (11/11 precondition failures classified)\nPatch refs/hashes for materialized\nvalid runs\n1.00 (9/9 valid runs)\nInitial / bestval_auc0.7747 / 0.7827 (+0.008022)\nBaseline seed noise (5 seeds) mean 0.785, bootstrap 95% CI of mean [0.775,\n0.798]\nthe structural relabeler achieves\ud835\udf05=0.830(95% CI[0.703,0.958]).\nThis is a structural consistency check, not a human inter-rater study.\nThe remaining discordant records are edge cases where the ledger-\nlevel structural evidence does not distinguish the precise worker-\nside failure without consulting the referenced ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Metric Validation Probes",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e9b5d8d1967c89ac77264d9ff8f177ca3e62ca11c6bfdc1b11c9b275beaab302",
+            "evidence_id": "Ea71b3056d68a691d-B0048",
+            "pages": [
+              6
+            ],
+            "section": "Metric Validation Probes",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1775,
+                "page": 6,
+                "section": "Metric Validation Probes",
+                "section_index": 21,
+                "start": 882,
+                "text": "ResNet-trigger,\nprompt_manager,claw_style_worker, budget=20).\nField Value\nKept / disc. / failed-invalid 4 / 5 / 11\nNon-kept categories 5\u00d7degraded_metric; 11\u00d7proposal\n_precondition_failed\nAcceptance / invalid rate 0.20 / 0.55\nProvenance completeness 1.00 (20/20)\nDecision record completeness 1.00 (20/20)\nFailure evidence completeness 1.00 (11/11 precondition failures classified)\nPatch refs/hashes for materialized\nvalid runs\n1.00 (9/9 valid runs)\nInitial / bestval_auc0.7747 / 0.7827 (+0.008022)\nBaseline seed noise (5 seeds) mean 0.785, bootstrap 95% CI of mean [0.775,\n0.798]\nthe structural relabeler achieves\ud835\udf05=0.830(95% CI[0.703,0.958]).\nThis is a structural consistency check, not a human inter-rater study.\nThe remaining discordant records are edge cases where the ledger-\nlevel structural evidence does not distinguish the precise worker-\nside failure without consulting the referenced "
+              }
+            ],
+            "text": "ResNet-trigger,\nprompt_manager,claw_style_worker, budget=20).\nField Value\nKept / disc. / failed-invalid 4 / 5 / 11\nNon-kept categories 5\u00d7degraded_metric; 11\u00d7proposal\n_precondition_failed\nAcceptance / invalid rate 0.20 / 0.55\nProvenance completeness 1.00 (20/20)\nDecision record completeness 1.00 (20/20)\nFailure evidence completeness 1.00 (11/11 precondition failures classified)\nPatch refs/hashes for materialized\nvalid runs\n1.00 (9/9 valid runs)\nInitial / bestval_auc0.7747 / 0.7827 (+0.008022)\nBaseline seed noise (5 seeds) mean 0.785, bootstrap 95% CI of mean [0.775,\n0.798]\nthe structural relabeler achieves\ud835\udf05=0.830(95% CI[0.703,0.958]).\nThis is a structural consistency check, not a human inter-rater study.\nThe remaining discordant records are edge cases where the ledger-\nlevel structural evidence does not distinguish the precise worker-\nside failure without consulting the referenced "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a71b3056d68a691d6270b5abdf8f1b0e3040d7640e32e3c59ee8f0004712afde",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea71b3056d68a691d-B0054"
+        ],
+        "excerpt": "Table 7 and Figure 1 consolidate all six nodes into a single gov-\nernance view; Figure 3 breaks the failed-invalid trials down by\nfailure category. The central finding is that provenance complete-\nness is 100% on every node without exception \u2014 including the 120-\ntrial none-arm total failure and the s2 anomaly onautoresearch\n_linux, and across all three lifecycle outcomes (kept, discarded,\nfailed-invalid).\nPublic tabular nodes.openml_credit_gandopenml_bank\n_marketingtest whether governed keep/discard/fail decisions\ntransfer to public tabular substrates (LangGraph manager, sum-\nmary memory, b20 and b30 budgets). Both nodes expose only\nboundedconfig.yamledits; dataset, split, preprocessing, and\nparser code are frozen. Provenance completeness is 1.00 across all\n460 trials combined.openml_bank_marketingshows visible task-\nmetric improvement (mean best AUC 0.9295 at b20, 0.9341 at b30;\n95% CI ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Cross-Node Governance Transfer",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "998905847b7dcb4c03ad08e195ff41a085e9727b9a338c0a16b7efd8f3778668",
+            "evidence_id": "Ea71b3056d68a691d-B0054",
+            "pages": [
+              7
+            ],
+            "section": "Cross-Node Governance Transfer",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 7,
+                "section": "Cross-Node Governance Transfer",
+                "section_index": 25,
+                "start": 0,
+                "text": "Table 7 and Figure 1 consolidate all six nodes into a single gov-\nernance view; Figure 3 breaks the failed-invalid trials down by\nfailure category. The central finding is that provenance complete-\nness is 100% on every node without exception \u2014 including the 120-\ntrial none-arm total failure and the s2 anomaly onautoresearch\n_linux, and across all three lifecycle outcomes (kept, discarded,\nfailed-invalid).\nPublic tabular nodes.openml_credit_gandopenml_bank\n_marketingtest whether governed keep/discard/fail decisions\ntransfer to public tabular substrates (LangGraph manager, sum-\nmary memory, b20 and b30 budgets). Both nodes expose only\nboundedconfig.yamledits; dataset, split, preprocessing, and\nparser code are frozen. Provenance completeness is 1.00 across all\n460 trials combined.openml_bank_marketingshows visible task-\nmetric improvement (mean best AUC 0.9295 at b20, 0.9341 at b30;\n95% CI "
+              }
+            ],
+            "text": "Table 7 and Figure 1 consolidate all six nodes into a single gov-\nernance view; Figure 3 breaks the failed-invalid trials down by\nfailure category. The central finding is that provenance complete-\nness is 100% on every node without exception \u2014 including the 120-\ntrial none-arm total failure and the s2 anomaly onautoresearch\n_linux, and across all three lifecycle outcomes (kept, discarded,\nfailed-invalid).\nPublic tabular nodes.openml_credit_gandopenml_bank\n_marketingtest whether governed keep/discard/fail decisions\ntransfer to public tabular substrates (LangGraph manager, sum-\nmary memory, b20 and b30 budgets). Both nodes expose only\nboundedconfig.yamledits; dataset, split, preprocessing, and\nparser code are frozen. Provenance completeness is 1.00 across all\n460 trials combined.openml_bank_marketingshows visible task-\nmetric improvement (mean best AUC 0.9295 at b20, 0.9341 at b30;\n95% CI "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a71b3056d68a691d6270b5abdf8f1b0e3040d7640e32e3c59ee8f0004712afde",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea71b3056d68a691d-B0058"
+        ],
+        "excerpt": "failure spectrum. Theautoresearch\n_linuxrow is an extremal, definitional case: when every trial fails\nand failure appends are disabled, completeness is necessarily zero.\nThe informative mixed-outcome comparison isopenml_bank_mkt,\nwhere the ungoverned ledger retains only the 7 valid trials and\nsilently omits all 13 failures. Combined, 43 of 50 ungoverned trials\nleave no ledger record versus 0 of 50 governed; because the two\nnodes were chosen to span failure rates, this combined fraction de-\nscribes these campaigns, not a typical loss rate. The 95% bootstrap\nCI for ungoverned completeness lies strictly below 1.00 on both\nnodes.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stress Campaigns And Ungoverned",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fd8a3746aab74d1167166e4ac382acd33752176ca4135cf7e836122ddfa98f5d",
+            "evidence_id": "Ea71b3056d68a691d-B0058",
+            "pages": [
+              7
+            ],
+            "section": "Stress Campaigns And Ungoverned",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2427,
+                "page": 7,
+                "section": "Stress Campaigns And Ungoverned",
+                "section_index": 26,
+                "start": 1794,
+                "text": "failure spectrum. Theautoresearch\n_linuxrow is an extremal, definitional case: when every trial fails\nand failure appends are disabled, completeness is necessarily zero.\nThe informative mixed-outcome comparison isopenml_bank_mkt,\nwhere the ungoverned ledger retains only the 7 valid trials and\nsilently omits all 13 failures. Combined, 43 of 50 ungoverned trials\nleave no ledger record versus 0 of 50 governed; because the two\nnodes were chosen to span failure rates, this combined fraction de-\nscribes these campaigns, not a typical loss rate. The 95% bootstrap\nCI for ungoverned completeness lies strictly below 1.00 on both\nnodes."
+              }
+            ],
+            "text": "failure spectrum. Theautoresearch\n_linuxrow is an extremal, definitional case: when every trial fails\nand failure appends are disabled, completeness is necessarily zero.\nThe informative mixed-outcome comparison isopenml_bank_mkt,\nwhere the ungoverned ledger retains only the 7 valid trials and\nsilently omits all 13 failures. Combined, 43 of 50 ungoverned trials\nleave no ledger record versus 0 of 50 governed; because the two\nnodes were chosen to span failure rates, this combined fraction de-\nscribes these campaigns, not a typical loss rate. The 95% bootstrap\nCI for ungoverned completeness lies strictly below 1.00 on both\nnodes."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a71b3056d68a691d6270b5abdf8f1b0e3040d7640e32e3c59ee8f0004712afde",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea71b3056d68a691d-B0068"
+        ],
+        "excerpt": "trial-1node_state_hash, whereas the case study, the Lang-\nGraph ablation and the baseline-seed interval use the node's CPU\nfast-search mode (1,000 signal and 1,000 noise traces cropped to\n4,096 samples; batch size 64 and 3 epochs, fixed by the mode). L40S\nAUCs are therefore comparable across arms but not with the other\nResNet results. From the common start, the mean best AUC rises by\nabout 0.011 without memory and by about 0.05 with either mem-\nory mode.\nL40S replication: memory arms outperform none.Across\nall five clean seeds, mean best AUC follows none<summary\u2248\nrationale (0.899 vs. 0.939 and 0.941); the 0.002 difference between\nthe two memory arms is not treated as meaningful. Cross-seed\nvariability is lower for both memory arms, with\ud835\udf0e none =0.009\nvs.\ud835\udf0e summary =\ud835\udf0e rationale =0.002, a 4\u20135\u00d7smaller standard devia-\ntion; with five seeds per arm this is descriptive. Memory arms di-\nverge ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Large-Scale Memory Replication (Nvidia",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "653b840713bd38156190cff75eee5d902a6086a91b17744551a967585bdda837",
+            "evidence_id": "Ea71b3056d68a691d-B0068",
+            "pages": [
+              9
+            ],
+            "section": "Large-Scale Memory Replication (Nvidia",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1788,
+                "page": 9,
+                "section": "Large-Scale Memory Replication (Nvidia",
+                "section_index": 30,
+                "start": 891,
+                "text": "trial-1node_state_hash, whereas the case study, the Lang-\nGraph ablation and the baseline-seed interval use the node's CPU\nfast-search mode (1,000 signal and 1,000 noise traces cropped to\n4,096 samples; batch size 64 and 3 epochs, fixed by the mode). L40S\nAUCs are therefore comparable across arms but not with the other\nResNet results. From the common start, the mean best AUC rises by\nabout 0.011 without memory and by about 0.05 with either mem-\nory mode.\nL40S replication: memory arms outperform none.Across\nall five clean seeds, mean best AUC follows none<summary\u2248\nrationale (0.899 vs. 0.939 and 0.941); the 0.002 difference between\nthe two memory arms is not treated as meaningful. Cross-seed\nvariability is lower for both memory arms, with\ud835\udf0e none =0.009\nvs.\ud835\udf0e summary =\ud835\udf0e rationale =0.002, a 4\u20135\u00d7smaller standard devia-\ntion; with five seeds per arm this is descriptive. Memory arms di-\nverge "
+              }
+            ],
+            "text": "trial-1node_state_hash, whereas the case study, the Lang-\nGraph ablation and the baseline-seed interval use the node's CPU\nfast-search mode (1,000 signal and 1,000 noise traces cropped to\n4,096 samples; batch size 64 and 3 epochs, fixed by the mode). L40S\nAUCs are therefore comparable across arms but not with the other\nResNet results. From the common start, the mean best AUC rises by\nabout 0.011 without memory and by about 0.05 with either mem-\nory mode.\nL40S replication: memory arms outperform none.Across\nall five clean seeds, mean best AUC follows none<summary\u2248\nrationale (0.899 vs. 0.939 and 0.941); the 0.002 difference between\nthe two memory arms is not treated as meaningful. Cross-seed\nvariability is lower for both memory arms, with\ud835\udf0e none =0.009\nvs.\ud835\udf0e summary =\ud835\udf0e rationale =0.002, a 4\u20135\u00d7smaller standard devia-\ntion; with five seeds per arm this is descriptive. Memory arms di-\nverge "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a71b3056d68a691d6270b5abdf8f1b0e3040d7640e32e3c59ee8f0004712afde",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea71b3056d68a691d-B0072"
+        ],
+        "excerpt": "Evidence strength.Table 10 separates demonstrated properties\nfrom case-study findings and non-claims.\nTable 10: Evidence strength by claim.\nClaim Evidence level Where\nControl plane classifies kept / discarded\n/ failed_invalid\nDemonstrated Secs 5.1\u20135.6\nAppend-only ledger: 100% provenance Demonstrated All nodes; Sec 5.2\nGuard failures visible in audit record Demonstrated Stress, Sec 5.3\nProtocol transfers across node types Demonstrated, 6 nodes Secs 5.2\u20135.6\nRepeated-bad rate diagnoses memory\nsensitivity\nMixed case study ResNet: summary lowest\nin 2/3;lr_syntheticfails\nMemory ordering none<summary\u2248\nrationale (AUC)\nObserved, 5 clean seeds Sec 5.5; not on\nlr_synthetic\nSmaller cross-seed spread with memory Observed, 5 seeds (descrip-\ntive)\n\ud835\udf0enone=0.009 vs. 0.002 (4\u2013\n5\u00d7)\nRationale reduces repeated-bad rate Not claimed Non-monotonic; verbosity\nablation not supported\nNo-memory arm: 100% invalid, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion And Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ffec993dd1bb5be03e453a2e881c771287218347f736ca12f4fd2e2b163abc32",
+            "evidence_id": "Ea71b3056d68a691d-B0072",
+            "pages": [
+              9
+            ],
+            "section": "Discussion And Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 9,
+                "section": "Discussion And Limitations",
+                "section_index": 32,
+                "start": 0,
+                "text": "Evidence strength.Table 10 separates demonstrated properties\nfrom case-study findings and non-claims.\nTable 10: Evidence strength by claim.\nClaim Evidence level Where\nControl plane classifies kept / discarded\n/ failed_invalid\nDemonstrated Secs 5.1\u20135.6\nAppend-only ledger: 100% provenance Demonstrated All nodes; Sec 5.2\nGuard failures visible in audit record Demonstrated Stress, Sec 5.3\nProtocol transfers across node types Demonstrated, 6 nodes Secs 5.2\u20135.6\nRepeated-bad rate diagnoses memory\nsensitivity\nMixed case study ResNet: summary lowest\nin 2/3;lr_syntheticfails\nMemory ordering none<summary\u2248\nrationale (AUC)\nObserved, 5 clean seeds Sec 5.5; not on\nlr_synthetic\nSmaller cross-seed spread with memory Observed, 5 seeds (descrip-\ntive)\n\ud835\udf0enone=0.009 vs. 0.002 (4\u2013\n5\u00d7)\nRationale reduces repeated-bad rate Not claimed Non-monotonic; verbosity\nablation not supported\nNo-memory arm: 100% invalid, "
+              }
+            ],
+            "text": "Evidence strength.Table 10 separates demonstrated properties\nfrom case-study findings and non-claims.\nTable 10: Evidence strength by claim.\nClaim Evidence level Where\nControl plane classifies kept / discarded\n/ failed_invalid\nDemonstrated Secs 5.1\u20135.6\nAppend-only ledger: 100% provenance Demonstrated All nodes; Sec 5.2\nGuard failures visible in audit record Demonstrated Stress, Sec 5.3\nProtocol transfers across node types Demonstrated, 6 nodes Secs 5.2\u20135.6\nRepeated-bad rate diagnoses memory\nsensitivity\nMixed case study ResNet: summary lowest\nin 2/3;lr_syntheticfails\nMemory ordering none<summary\u2248\nrationale (AUC)\nObserved, 5 clean seeds Sec 5.5; not on\nlr_synthetic\nSmaller cross-seed spread with memory Observed, 5 seeds (descrip-\ntive)\n\ud835\udf0enone=0.009 vs. 0.002 (4\u2013\n5\u00d7)\nRationale reduces repeated-bad rate Not claimed Non-monotonic; verbosity\nablation not supported\nNo-memory arm: 100% invalid, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a71b3056d68a691d6270b5abdf8f1b0e3040d7640e32e3c59ee8f0004712afde",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea71b3056d68a691d-B0074"
+        ],
+        "excerpt": "rep2, whose arms were not reset between campaigns), and the or-\ndering reverses onlr_synthetic.Label validation:structural rela-\nbeling agreement (\ud835\udf05=0.830, Section 4.5) is a consistency check, not\na human study; two-rater validation and holdout-node replication\nremain future work.Task metric and reset scope:the ResNet best\nAUC falls within the 5-seed baseline min\u2013max range [0.771, 0.811]\n(bootstrap 95% CI of mean: [0.775, 0.798]), so AUC gain is secondary\nevidence; theautoresearch_linuxcampaigns predate the frozen-\nbaseline restore protocol, so neither theirnone-arm total failure\nnor their s2 anomaly is used as memory-effect evidence.Human\nutility:the paper shows that governance properties can be enforced\nand measured, and what evidence is lost without them (Section 5.3)\n\u2014 not that governed ledgers improve human audit outcomes; a\nhuman-auditor utility study (do reviewers with governed ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Resnet Replicates (The Full Hypothesised Ordering Holds Only In",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a8eaba75d053fd5cb2c92cc270c5298a380a7562cca30c859c8d1df9a97bea3e",
+            "evidence_id": "Ea71b3056d68a691d-B0074",
+            "pages": [
+              9
+            ],
+            "section": "Resnet Replicates (The Full Hypothesised Ordering Holds Only In",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 9,
+                "section": "Resnet Replicates (The Full Hypothesised Ordering Holds Only In",
+                "section_index": 33,
+                "start": 0,
+                "text": "rep2, whose arms were not reset between campaigns), and the or-\ndering reverses onlr_synthetic.Label validation:structural rela-\nbeling agreement (\ud835\udf05=0.830, Section 4.5) is a consistency check, not\na human study; two-rater validation and holdout-node replication\nremain future work.Task metric and reset scope:the ResNet best\nAUC falls within the 5-seed baseline min\u2013max range [0.771, 0.811]\n(bootstrap 95% CI of mean: [0.775, 0.798]), so AUC gain is secondary\nevidence; theautoresearch_linuxcampaigns predate the frozen-\nbaseline restore protocol, so neither theirnone-arm total failure\nnor their s2 anomaly is used as memory-effect evidence.Human\nutility:the paper shows that governance properties can be enforced\nand measured, and what evidence is lost without them (Section 5.3)\n\u2014 not that governed ledgers improve human audit outcomes; a\nhuman-auditor utility study (do reviewers with governed "
+              }
+            ],
+            "text": "rep2, whose arms were not reset between campaigns), and the or-\ndering reverses onlr_synthetic.Label validation:structural rela-\nbeling agreement (\ud835\udf05=0.830, Section 4.5) is a consistency check, not\na human study; two-rater validation and holdout-node replication\nremain future work.Task metric and reset scope:the ResNet best\nAUC falls within the 5-seed baseline min\u2013max range [0.771, 0.811]\n(bootstrap 95% CI of mean: [0.775, 0.798]), so AUC gain is secondary\nevidence; theautoresearch_linuxcampaigns predate the frozen-\nbaseline restore protocol, so neither theirnone-arm total failure\nnor their s2 anomaly is used as memory-effect evidence.Human\nutility:the paper shows that governance properties can be enforced\nand measured, and what evidence is lost without them (Section 5.3)\n\u2014 not that governed ledgers improve human audit outcomes; a\nhuman-auditor utility study (do reviewers with governed "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2611.23678",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2611.23678",
+        "context_id": "a71b3056d68a691d6270b5abdf8f1b0e3040d7640e32e3c59ee8f0004712afde",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "An independent rule-based relabeler applied to observable ledger fields achieved Cohen's kappa 0.830 against control-plane failure labels, and matched ungoverned counterfactual campaigns corroborate the ledger-completeness loss claim.",
+          "final_evaluation_signal": "Governance metrics computed from the append-only ledger (provenance completeness, invalid rate, failure taxonomy) and matched governed-versus-ungoverned ledger completeness.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The control plane's deterministic keep/discard rule uses parsed task metrics against the current best, while the manager's proposals are shaped by memory context and the repeated-bad detector.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ea71b3056d68a691d-B0007",
+          "Ea71b3056d68a691d-B0018",
+          "Ea71b3056d68a691d-B0021",
+          "Ea71b3056d68a691d-B0027",
+          "Ea71b3056d68a691d-B0033",
+          "Ea71b3056d68a691d-B0047",
+          "Ea71b3056d68a691d-B0048",
+          "Ea71b3056d68a691d-B0054",
+          "Ea71b3056d68a691d-B0058",
+          "Ea71b3056d68a691d-B0068",
+          "Ea71b3056d68a691d-B0072",
+          "Ea71b3056d68a691d-B0074"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "22185f2db788d09267d9a62ba5ef4ce1df67e0886067933cb4e6267ed053606d"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2611.23678",
+        "claim_evidence_alignment": "Claims are carefully scoped: governance and provenance completeness (100%) are demonstrated structurally, while task-metric optimization and memory ablation effects are explicitly bounded as secondary or case-specific findings [Ea71b3056d68a691d-B0053, Ea71b3056d68a691d-B0072]. Limitations regarding short budgets, reset issues, and lack of human user studies are transparently disclosed [Ea71b3056d68a691d-B0074].",
+        "context_id": "a71b3056d68a691d6270b5abdf8f1b0e3040d7640e32e3c59ee8f0004712afde",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation spans 1,445 trials across six diverse benchmark nodes ranging from synthetic regression to GPU-based language model training [Ea71b3056d68a691d-B0007, Ea71b3056d68a691d-B0054]. It validates governance guarantees via matched ungoverned counterfactuals, reset integrity hashing, memory ablations, and structural relabeling agreement (kappa = 0.830) [Ea71b3056d68a691d-B0048, Ea71b3056d68a691d-B0058].",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "An independent rule-based structural relabeler tested on observable ledger fields demonstrated high agreement (Cohen's kappa = 0.830) with control-plane failure categorizations, and matched ungoverned runs corroborated ledger completeness differences [Ea71b3056d68a691d-B0048, Ea71b3056d68a691d-B0058].",
+          "final_evaluation_signal": "Control-plane governance metrics (provenance completeness, invalid rate, failure categorization, and counterfactual ledger retention) alongside objective benchmark task scores [Ea71b3056d68a691d-B0033, Ea71b3056d68a691d-B0046].",
+          "independent_corroboration": "present",
+          "optimization_signal": "Pre-run guard checks, execution status, and objective validation task metrics (such as validation AUC or bits-per-byte) evaluated against the current best to decide keep, discard, or fail states [Ea71b3056d68a691d-B0018, Ea71b3056d68a691d-B0031].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ea71b3056d68a691d-B0007",
+          "Ea71b3056d68a691d-B0018",
+          "Ea71b3056d68a691d-B0021",
+          "Ea71b3056d68a691d-B0027",
+          "Ea71b3056d68a691d-B0033",
+          "Ea71b3056d68a691d-B0047",
+          "Ea71b3056d68a691d-B0048",
+          "Ea71b3056d68a691d-B0054",
+          "Ea71b3056d68a691d-B0058",
+          "Ea71b3056d68a691d-B0068",
+          "Ea71b3056d68a691d-B0072",
+          "Ea71b3056d68a691d-B0074"
+        ],
+        "limitations": "The manuscript explicitly details the descriptive nature of memory ablation orderings across tasks, reset protocol anomalies in earlier runs, the unverified root cause of total worker failure on the autoresearch node, and the absence of a multi-rater human audit study [Ea71b3056d68a691d-B0070, Ea71b3056d68a691d-B0074].",
+        "method_assessment": "The methodology clearly separates proposal generation (manager), execution (worker), and governance authority (control plane) using enforceable invariants, pre-run and post-run guards, and an append-only JSONL ledger [Ea71b3056d68a691d-B0018, Ea71b3056d68a691d-B0027]. The taxonomy of failure modes and lifecycle transitions are thoroughly operationalised and tested via deterministic probes and recovery paths [Ea71b3056d68a691d-B0029, Ea71b3056d68a691d-B0047].",
+        "quality_rationale": "The paper provides an exceptionally rigorous, well-engineered, and transparently characterized framework for auditing autonomous ML experimentation agents. By focusing on governance, auditability, and failure classification rather than merely reporting peak task scores, it makes a substantial methodological contribution supported by solid empirical evidence and reproducible open artifacts.",
+        "scoped_contribution": "A governed harness and evaluation protocol for autonomous LLM-driven ML experimentation that enforces lifecycle state transitions, bounded edit scopes, independent deterministic adjudication, and append-only ledger provenance across trials [Ea71b3056d68a691d-B0007, Ea71b3056d68a691d-B0021].",
+        "source_content_hash": "22185f2db788d09267d9a62ba5ef4ce1df67e0886067933cb4e6267ed053606d"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The paper provides an exceptionally rigorous, well-engineered, and transparently characterized framework for auditing autonomous ML experimentation agents. By focusing on governance, auditability, and failure classification rather than merely reporting peak task scores, it makes a substantial methodological contribution supported by solid empirical evidence and reproducible open artifacts.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "22185f2db788d09267d9a62ba5ef4ce1df67e0886067933cb4e6267ed053606d",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The manuscript explicitly details the descriptive nature of memory ablation orderings across tasks, reset protocol anomalies in earlier runs, the unverified root cause of total worker failure on the autoresearch node, and the absence of a multi-rater human audit study [Ea71b3056d68a691d-B0070, Ea71b3056d68a691d-B0074]."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -158,7 +2583,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

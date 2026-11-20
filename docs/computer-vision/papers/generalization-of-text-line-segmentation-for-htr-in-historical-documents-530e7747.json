@@ -21,13 +21,13 @@
   "first_seen_at": "2026-11-19 12:28:24",
   "first_seen_date": "2026-11-19",
   "future_date": false,
-  "is_new": true,
-  "last_seen_at": "2026-11-19 12:28:42",
-  "last_seen_date": "2026-11-19",
+  "is_new": false,
+  "last_seen_at": "2026-11-20 12:30:03",
+  "last_seen_date": "2026-11-20",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-11-18",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-11-19 12:29:03",
   "notified_date": "2026-11-19",
   "openalex_id": null,
@@ -37,8 +37,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-11-19 12:28:24",
-    "generated_at": "2026-11-19 12:32:59",
-    "last_seen_at": "2026-11-19 12:28:42",
+    "generated_at": "2026-11-20 12:34:21",
+    "last_seen_at": "2026-11-20 12:30:03",
     "metadata_sources": [
       "arxiv"
     ],
@@ -104,36 +104,1578 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-20T12:32:58.750903+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 1.0,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a rigorous, well-controlled comparative study addressing a practical question in document analysis and digital humanities. Experimental controls, baselines, and downstream validation metrics are sound and properly interpreted.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 50574,
+      "assessment_input_sha256": "207d1ddbb9c0739c3a64bfe688eaeee133e2dfcb0726c39c1d1a9b8255ba7290",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2611.24726",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 49025,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 48430,
+      "evidence_block_count": 74,
+      "evidence_context_characters": 58447,
+      "evidence_context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+      "evidence_context_sha256": "956818cf4ef749d948d97b17cb635c2f299f087bf5d34133f73073b7975f11e4",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 49047,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "extracted_pages": 12,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "6a4cbca54e166c8d92f7aa9aabb41a4757defcfc4fe8e46f00d147eea6d74825",
+        "source_url": "https://arxiv.org/pdf/2611.24726",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 49025,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Generalization Oftextlinesegmentation Forhtrin",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 66,
+          "supplied_characters": 66
+        },
+        {
+          "heading": "Appendix: Preprint",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "appendix",
+          "section_index": 1,
+          "source_characters": 452,
+          "supplied_characters": 452
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 1332,
+          "supplied_characters": 1332
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 962,
+          "supplied_characters": 962
+        },
+        {
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 3543,
+          "supplied_characters": 3543
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 1656,
+          "supplied_characters": 1656
+        },
+        {
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1943,
+          "supplied_characters": 1943
+        },
+        {
+          "heading": "Datasets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 684,
+          "supplied_characters": 684
+        },
+        {
+          "heading": "Bk 1",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 21,
+          "supplied_characters": 21
+        },
+        {
+          "heading": "Bk 2",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 21,
+          "supplied_characters": 21
+        },
+        {
+          "heading": "Gbg 1",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 22,
+          "supplied_characters": 22
+        },
+        {
+          "heading": "Gbg 2",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 35,
+          "supplied_characters": 35
+        },
+        {
+          "heading": "Lb 3",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 793,
+          "supplied_characters": 793
+        },
+        {
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 2580,
+          "supplied_characters": 2580
+        },
+        {
+          "heading": "Evaluation Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 14,
+          "source_characters": 2422,
+          "supplied_characters": 2422
+        },
+        {
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 492,
+          "supplied_characters": 492
+        },
+        {
+          "heading": "Text Line Detection Models",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 2130,
+          "supplied_characters": 2130
+        },
+        {
+          "heading": "Htr Crnn Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1060,
+          "supplied_characters": 1060
+        },
+        {
+          "heading": "Text Line Segmentation Training Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 18,
+          "source_characters": 1364,
+          "supplied_characters": 1364
+        },
+        {
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 2014,
+          "supplied_characters": 2014
+        },
+        {
+          "heading": "Htr Training Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 20,
+          "source_characters": 455,
+          "supplied_characters": 455
+        },
+        {
+          "heading": "Quantitative Evaluation Of Line Segmentation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 21,
+          "source_characters": 2132,
+          "supplied_characters": 2132
+        },
+        {
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 1303,
+          "supplied_characters": 1303
+        },
+        {
+          "heading": "Qualitative Evaluation Of Line Segmentation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 23,
+          "source_characters": 627,
+          "supplied_characters": 627
+        },
+        {
+          "heading": "Investigation Into Map As Evaluation Metric",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 24,
+          "source_characters": 1194,
+          "supplied_characters": 1194
+        },
+        {
+          "heading": "Quantitative Evaluation Of Recognition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 25,
+          "source_characters": 1459,
+          "supplied_characters": 1459
+        },
+        {
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 1873,
+          "supplied_characters": 1873
+        },
+        {
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 447,
+          "supplied_characters": 447
+        },
+        {
+          "heading": "Impact Of Few-Shot Learning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 3277,
+          "supplied_characters": 3277
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "discussion",
+          "section_index": 29,
+          "source_characters": 236,
+          "supplied_characters": 236
+        },
+        {
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 356,
+          "supplied_characters": 356
+        },
+        {
+          "heading": "Generalization Capabilities",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 1731,
+          "supplied_characters": 1731
+        },
+        {
+          "heading": "Fine-Tuning Impact",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 1341,
+          "supplied_characters": 1341
+        },
+        {
+          "heading": "Resource Requirements",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 1248,
+          "supplied_characters": 1248
+        },
+        {
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 1638,
+          "supplied_characters": 1638
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "conclusion",
+          "section_index": 35,
+          "source_characters": 1667,
+          "supplied_characters": 1667
+        },
+        {
+          "heading": "Back matter: Acknowledgements",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 387,
+          "supplied_characters": 387
+        },
+        {
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 80,
+          "supplied_characters": 80
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 3387,
+          "supplied_characters": 3387
+        }
+      ],
+      "selected_characters": 48430,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "selected_sections": [
+        {
+          "characters": 66,
+          "heading": "Generalization Oftextlinesegmentation Forhtrin",
+          "page": 1
+        },
+        {
+          "characters": 452,
+          "heading": "Appendix: Preprint",
+          "page": 1
+        },
+        {
+          "characters": 1332,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 962,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3543,
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "page": 2
+        },
+        {
+          "characters": 1656,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 1943,
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "page": 3
+        },
+        {
+          "characters": 684,
+          "heading": "Datasets",
+          "page": 3
+        },
+        {
+          "characters": 21,
+          "heading": "Bk 1",
+          "page": 3
+        },
+        {
+          "characters": 21,
+          "heading": "Bk 2",
+          "page": 3
+        },
+        {
+          "characters": 22,
+          "heading": "Gbg 1",
+          "page": 3
+        },
+        {
+          "characters": 35,
+          "heading": "Gbg 2",
+          "page": 3
+        },
+        {
+          "characters": 793,
+          "heading": "Lb 3",
+          "page": 3
+        },
+        {
+          "characters": 2580,
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "page": 4
+        },
+        {
+          "characters": 2422,
+          "heading": "Evaluation Metrics",
+          "page": 4
+        },
+        {
+          "characters": 492,
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "page": 5
+        },
+        {
+          "characters": 2130,
+          "heading": "Text Line Detection Models",
+          "page": 5
+        },
+        {
+          "characters": 1060,
+          "heading": "Htr Crnn Model",
+          "page": 5
+        },
+        {
+          "characters": 1364,
+          "heading": "Text Line Segmentation Training Protocol",
+          "page": 5
+        },
+        {
+          "characters": 2014,
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "page": 6
+        },
+        {
+          "characters": 455,
+          "heading": "Htr Training Protocol",
+          "page": 6
+        },
+        {
+          "characters": 2132,
+          "heading": "Quantitative Evaluation Of Line Segmentation",
+          "page": 6
+        },
+        {
+          "characters": 1303,
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "page": 7
+        },
+        {
+          "characters": 627,
+          "heading": "Qualitative Evaluation Of Line Segmentation",
+          "page": 7
+        },
+        {
+          "characters": 1194,
+          "heading": "Investigation Into Map As Evaluation Metric",
+          "page": 7
+        },
+        {
+          "characters": 1459,
+          "heading": "Quantitative Evaluation Of Recognition",
+          "page": 7
+        },
+        {
+          "characters": 1873,
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "page": 8
+        },
+        {
+          "characters": 447,
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "page": 9
+        },
+        {
+          "characters": 3277,
+          "heading": "Impact Of Few-Shot Learning",
+          "page": 9
+        },
+        {
+          "characters": 236,
+          "heading": "Discussion",
+          "page": 9
+        },
+        {
+          "characters": 356,
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "page": 10
+        },
+        {
+          "characters": 1731,
+          "heading": "Generalization Capabilities",
+          "page": 10
+        },
+        {
+          "characters": 1341,
+          "heading": "Fine-Tuning Impact",
+          "page": 10
+        },
+        {
+          "characters": 1248,
+          "heading": "Resource Requirements",
+          "page": 10
+        },
+        {
+          "characters": 1638,
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "page": 11
+        },
+        {
+          "characters": 1667,
+          "heading": "Conclusion",
+          "page": 11
+        },
+        {
+          "characters": 387,
+          "heading": "Back matter: Acknowledgements",
+          "page": 11
+        },
+        {
+          "characters": 80,
+          "heading": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+          "page": 12
+        },
+        {
+          "characters": 3387,
+          "heading": "Unclassified body after references",
+          "page": 12
+        }
+      ],
+      "selected_text_sha256": "207d1ddbb9c0739c3a64bfe688eaeee133e2dfcb0726c39c1d1a9b8255ba7290",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "6a4cbca54e166c8d92f7aa9aabb41a4757defcfc4fe8e46f00d147eea6d74825",
+      "source_pages": 12,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0003"
+        ],
+        "excerpt": "In this paper we investigate the generalization capability of state-of-the-art object detection models\n(Hi-SAM, YOLO, and RT-DETR) for the automatic segmentation of text lines in historical documents.\nGeneralization is needed because it is not practical for museums and archives to produce large\namounts of labeled samples for each new collection. We also evaluate the few-shot setting by fine-\ntuning the networks with only a small number of training samples per target dataset. To this end,\nwe use nine different datasets that differ significantly in visual layout and language. Additionally,\nwe discuss why mean average precision (mAP), a classic evaluation metric for object detection, is\ninsufficient for assessing the quality of a text line segmentation model. Depending on the dataset,\nour CRNN models achieve character error rates (CER) ranging from 2.48% to 7.07% per page for\nthe segmented ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e118842fc5114fc117eb148df352b9f7daf0e6eb25fb0727df3bc716a35b0c62",
+            "evidence_id": "E330ea45eb35e4bf9-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 0,
+                "text": "In this paper we investigate the generalization capability of state-of-the-art object detection models\n(Hi-SAM, YOLO, and RT-DETR) for the automatic segmentation of text lines in historical documents.\nGeneralization is needed because it is not practical for museums and archives to produce large\namounts of labeled samples for each new collection. We also evaluate the few-shot setting by fine-\ntuning the networks with only a small number of training samples per target dataset. To this end,\nwe use nine different datasets that differ significantly in visual layout and language. Additionally,\nwe discuss why mean average precision (mAP), a classic evaluation metric for object detection, is\ninsufficient for assessing the quality of a text line segmentation model. Depending on the dataset,\nour CRNN models achieve character error rates (CER) ranging from 2.48% to 7.07% per page for\nthe segmented "
+              }
+            ],
+            "text": "In this paper we investigate the generalization capability of state-of-the-art object detection models\n(Hi-SAM, YOLO, and RT-DETR) for the automatic segmentation of text lines in historical documents.\nGeneralization is needed because it is not practical for museums and archives to produce large\namounts of labeled samples for each new collection. We also evaluate the few-shot setting by fine-\ntuning the networks with only a small number of training samples per target dataset. To this end,\nwe use nine different datasets that differ significantly in visual layout and language. Additionally,\nwe discuss why mean average precision (mAP), a classic evaluation metric for object detection, is\ninsufficient for assessing the quality of a text line segmentation model. Depending on the dataset,\nour CRNN models achieve character error rates (CER) ranging from 2.48% to 7.07% per page for\nthe segmented "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0009"
+        ],
+        "excerpt": "performance. We further explore the usefulness of the mean average precision (mAP) evaluation\nmetric, typically used with detection networks, for assessing the quality of text line segmentation networks with the\ndownstream task of HTR in mind.\nModern line segmentation models can be large and computationally expensive. This is another challenge for institutions\nlike archives and libraries who usually will not have access to large supercomputing networks. Therefore, we further\nreport the memory and compute needed to train and do inference with these models and provide an overview of the\nnecessary resources, including RAM, training time, and inference time, for different use cases, ranging from a regular\nlaptop without a dedicated GPU to a high-performance cluster designed for machine learning tasks.\nHence, the contributions of our paper are as follows:\n\u2022 a study on the generalization ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8e1b4041591b6bc9ea27d8e57c6b3cdd9f2dc6136117a6b84af77347b30ff96a",
+            "evidence_id": "E330ea45eb35e4bf9-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2688,
+                "page": 2,
+                "section": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+                "section_index": 4,
+                "start": 1793,
+                "text": "performance. We further explore the usefulness of the mean average precision (mAP) evaluation\nmetric, typically used with detection networks, for assessing the quality of text line segmentation networks with the\ndownstream task of HTR in mind.\nModern line segmentation models can be large and computationally expensive. This is another challenge for institutions\nlike archives and libraries who usually will not have access to large supercomputing networks. Therefore, we further\nreport the memory and compute needed to train and do inference with these models and provide an overview of the\nnecessary resources, including RAM, training time, and inference time, for different use cases, ranging from a regular\nlaptop without a dedicated GPU to a high-performance cluster designed for machine learning tasks.\nHence, the contributions of our paper are as follows:\n\u2022 a study on the generalization "
+              }
+            ],
+            "text": "performance. We further explore the usefulness of the mean average precision (mAP) evaluation\nmetric, typically used with detection networks, for assessing the quality of text line segmentation networks with the\ndownstream task of HTR in mind.\nModern line segmentation models can be large and computationally expensive. This is another challenge for institutions\nlike archives and libraries who usually will not have access to large supercomputing networks. Therefore, we further\nreport the memory and compute needed to train and do inference with these models and provide an overview of the\nnecessary resources, including RAM, training time, and inference time, for different use cases, ranging from a regular\nlaptop without a dedicated GPU to a high-performance cluster designed for machine learning tasks.\nHence, the contributions of our paper are as follows:\n\u2022 a study on the generalization "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0016"
+        ],
+        "excerpt": "Our study is based on nine historical datasets with diverse visual and linguistic characteristics. Table 1 summarizes the\ndataset statistics, while Figure 1 provides a visual overview. Three datasets are selected as source domains for training\nbased on their visual diversity and comparable number of pages to ensure a fair comparison.\nTable 1: Dataset statistics for the ten datasets used in the study. The table reports the number of pages and text lines in\nthe training, validation, test, and total splits. Underlined datasets have been used as source domains for training.\nEnglish Norwegian Swedish German Mix Dataset\nBentham\n[9]\nNorHand\n72702\n[10]\nNorHand\n331861\n[10]\nRiksarkivet",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Datasets",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a885f35b6a3bf0a12aca6c4bdf63f9a50a73ddeed1fad61855b0e3d93f752e11",
+            "evidence_id": "E330ea45eb35e4bf9-B0016",
+            "pages": [
+              3
+            ],
+            "section": "Datasets",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 684,
+                "page": 3,
+                "section": "Datasets",
+                "section_index": 7,
+                "start": 0,
+                "text": "Our study is based on nine historical datasets with diverse visual and linguistic characteristics. Table 1 summarizes the\ndataset statistics, while Figure 1 provides a visual overview. Three datasets are selected as source domains for training\nbased on their visual diversity and comparable number of pages to ensure a fair comparison.\nTable 1: Dataset statistics for the ten datasets used in the study. The table reports the number of pages and text lines in\nthe training, validation, test, and total splits. Underlined datasets have been used as source domains for training.\nEnglish Norwegian Swedish German Mix Dataset\nBentham\n[9]\nNorHand\n72702\n[10]\nNorHand\n331861\n[10]\nRiksarkivet"
+              }
+            ],
+            "text": "Our study is based on nine historical datasets with diverse visual and linguistic characteristics. Table 1 summarizes the\ndataset statistics, while Figure 1 provides a visual overview. Three datasets are selected as source domains for training\nbased on their visual diversity and comparable number of pages to ensure a fair comparison.\nTable 1: Dataset statistics for the ten datasets used in the study. The table reports the number of pages and text lines in\nthe training, validation, test, and total splits. Underlined datasets have been used as source domains for training.\nEnglish Norwegian Swedish German Mix Dataset\nBentham\n[9]\nNorHand\n72702\n[10]\nNorHand\n331861\n[10]\nRiksarkivet"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0025"
+        ],
+        "excerpt": "We usemean average precision(mAP) as a metric to evaluate the performance of our object detection networks. It is\ndefined as\nmAP= 1n\nnX\ni=1\nAPi\nwhere APi is the average precision for class i (in our case, n= 1 as we are only predicting text lines). The average\nprecision is defined as the area under the precision-recall-curve. To define the alignment of predictions and ground-truth\n(GT) annotations, an Intersection over Union (IoU) threshold is determined. We compute the mAP50:95 metric, which\ntakes the average for all IoU thresholds from 0.50 to 0.95 in incremental steps of step width 0.05. The higher this value,\nthe closer the alignment of predictions and GT boxes.\nWhile mAP is commonly used to evaluate object detection models, we ultimately have text recognition in mind as the\ndownstream task. Therefore, the quality of the recognition results is equally important, as we need to ensure ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Metrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6a76eacfd338480303b7a56d12ae4751f56dca3bbc47ea3a62967e9d8becaf4b",
+            "evidence_id": "E330ea45eb35e4bf9-B0025",
+            "pages": [
+              4
+            ],
+            "section": "Evaluation Metrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 4,
+                "section": "Evaluation Metrics",
+                "section_index": 14,
+                "start": 0,
+                "text": "We usemean average precision(mAP) as a metric to evaluate the performance of our object detection networks. It is\ndefined as\nmAP= 1n\nnX\ni=1\nAPi\nwhere APi is the average precision for class i (in our case, n= 1 as we are only predicting text lines). The average\nprecision is defined as the area under the precision-recall-curve. To define the alignment of predictions and ground-truth\n(GT) annotations, an Intersection over Union (IoU) threshold is determined. We compute the mAP50:95 metric, which\ntakes the average for all IoU thresholds from 0.50 to 0.95 in incremental steps of step width 0.05. The higher this value,\nthe closer the alignment of predictions and GT boxes.\nWhile mAP is commonly used to evaluate object detection models, we ultimately have text recognition in mind as the\ndownstream task. Therefore, the quality of the recognition results is equally important, as we need to ensure "
+              }
+            ],
+            "text": "We usemean average precision(mAP) as a metric to evaluate the performance of our object detection networks. It is\ndefined as\nmAP= 1n\nnX\ni=1\nAPi\nwhere APi is the average precision for class i (in our case, n= 1 as we are only predicting text lines). The average\nprecision is defined as the area under the precision-recall-curve. To define the alignment of predictions and ground-truth\n(GT) annotations, an Intersection over Union (IoU) threshold is determined. We compute the mAP50:95 metric, which\ntakes the average for all IoU thresholds from 0.50 to 0.95 in incremental steps of step width 0.05. The higher this value,\nthe closer the alignment of predictions and GT boxes.\nWhile mAP is commonly used to evaluate object detection models, we ultimately have text recognition in mind as the\ndownstream task. Therefore, the quality of the recognition results is equally important, as we need to ensure "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0026"
+        ],
+        "excerpt": "that the\npredicted text line boxes provide suitable input for the HTR system to extract the text effectively.\nWe evaluate the quality of HTR with the Character Error Rate (CER):\nCER= S+I+DN ,(1)\nwhich is based on the Levenshtein edit distance [14]. CER quantifies the number of character-level operations required\nto transform the predicted text into the ground-truth. It is computed as the ratio of the total number of substitutions (S),\ninsertions (I), and deletions (D) edits to the number of characters (N) in the ground-truth. Lower CER values indicate\nbetter recognition performance, reflecting fewer discrepancies between the predicted and reference text.\nTo compute the CER for the predicted text lines, the corresponding ground-truth text must first be identified. Since\nthe predicted bounding boxes are not guaranteed to follow the top-to-bottom reading order and some lines are ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Metrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "51bccb5924c3ff14cc3087463f2d396e9c44517750e8a74769d182aff67d8d67",
+            "evidence_id": "E330ea45eb35e4bf9-B0026",
+            "pages": [
+              4
+            ],
+            "section": "Evaluation Metrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1789,
+                "page": 4,
+                "section": "Evaluation Metrics",
+                "section_index": 14,
+                "start": 900,
+                "text": "that the\npredicted text line boxes provide suitable input for the HTR system to extract the text effectively.\nWe evaluate the quality of HTR with the Character Error Rate (CER):\nCER= S+I+DN ,(1)\nwhich is based on the Levenshtein edit distance [14]. CER quantifies the number of character-level operations required\nto transform the predicted text into the ground-truth. It is computed as the ratio of the total number of substitutions (S),\ninsertions (I), and deletions (D) edits to the number of characters (N) in the ground-truth. Lower CER values indicate\nbetter recognition performance, reflecting fewer discrepancies between the predicted and reference text.\nTo compute the CER for the predicted text lines, the corresponding ground-truth text must first be identified. Since\nthe predicted bounding boxes are not guaranteed to follow the top-to-bottom reading order and some lines are "
+              }
+            ],
+            "text": "that the\npredicted text line boxes provide suitable input for the HTR system to extract the text effectively.\nWe evaluate the quality of HTR with the Character Error Rate (CER):\nCER= S+I+DN ,(1)\nwhich is based on the Levenshtein edit distance [14]. CER quantifies the number of character-level operations required\nto transform the predicted text into the ground-truth. It is computed as the ratio of the total number of substitutions (S),\ninsertions (I), and deletions (D) edits to the number of characters (N) in the ground-truth. Lower CER values indicate\nbetter recognition performance, reflecting fewer discrepancies between the predicted and reference text.\nTo compute the CER for the predicted text lines, the corresponding ground-truth text must first be identified. Since\nthe predicted bounding boxes are not guaranteed to follow the top-to-bottom reading order and some lines are "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0027"
+        ],
+        "excerpt": "not\ndetected, we match the predicted boxes to the ground-truth boxes by first computing the IoU between them and then\napplying the Hungarian search algorithm to obtain the optimal assignment. This matching enables accurate line-level\n2To our knowledge, these texts were digitized automatically using an HTR model. Since the quality is sufficient for reading\ncomprehension and searching, the texts have not been corrected in detail and may thus contain errors.\n3The splits for NorHand-331861, NorHand-72702, Nuremberg LB 3, Riksarkivet BK 1 and 2, and Riksarkivet GBG 1 and 2 are\npublished onhttps://doi.org/10.5281/zenodo.20289977.\n4",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Metrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e536e384db9a4930235aa65f03f0217c13a40343f92b3eb323f750e0de2bba06",
+            "evidence_id": "E330ea45eb35e4bf9-B0027",
+            "pages": [
+              4
+            ],
+            "section": "Evaluation Metrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2422,
+                "page": 4,
+                "section": "Evaluation Metrics",
+                "section_index": 14,
+                "start": 1789,
+                "text": "not\ndetected, we match the predicted boxes to the ground-truth boxes by first computing the IoU between them and then\napplying the Hungarian search algorithm to obtain the optimal assignment. This matching enables accurate line-level\n2To our knowledge, these texts were digitized automatically using an HTR model. Since the quality is sufficient for reading\ncomprehension and searching, the texts have not been corrected in detail and may thus contain errors.\n3The splits for NorHand-331861, NorHand-72702, Nuremberg LB 3, Riksarkivet BK 1 and 2, and Riksarkivet GBG 1 and 2 are\npublished onhttps://doi.org/10.5281/zenodo.20289977.\n4"
+              }
+            ],
+            "text": "not\ndetected, we match the predicted boxes to the ground-truth boxes by first computing the IoU between them and then\napplying the Hungarian search algorithm to obtain the optimal assignment. This matching enables accurate line-level\n2To our knowledge, these texts were digitized automatically using an HTR model. Since the quality is sufficient for reading\ncomprehension and searching, the texts have not been corrected in detail and may thus contain errors.\n3The splits for NorHand-331861, NorHand-72702, Nuremberg LB 3, Riksarkivet BK 1 and 2, and Riksarkivet GBG 1 and 2 are\npublished onhttps://doi.org/10.5281/zenodo.20289977.\n4"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0034"
+        ],
+        "excerpt": "First, we train all three methods on the four training datasets and evaluate their segmentation performance in-domain.\nWe test zero-shot out-of-domain on the remaining six datasets to determine their generalization capability.\nIn the second phase, we evaluate few-shot learning by adding a small number of target-domain samples to improve line\ndetector performance and assess sensitivity to limited target-domain data.\nHi-SAMwas trained with 6x A100 40GB GPUs with a batch size of 1 and an initial learning rate (LR) of 1e-4, which\nwas reduced to 1e-5 after a patience of 200 epochs. Following the learning rate reduction, early stopping was applied\nwith an additional patience of 200 epochs. We adopted the original data augmentation strategy used for Hi-SAM, but\nlimited the maximum random rotation to 20\u25e6. Training Hi-SAM requires document images, polygon annotations for\ntext lines, and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Text Line Segmentation Training Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6b42777f195477cd4463f64c8a1be681f3f40f87cd1062b8228d8f5db0825416",
+            "evidence_id": "E330ea45eb35e4bf9-B0034",
+            "pages": [
+              5
+            ],
+            "section": "Text Line Segmentation Training Protocol",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 5,
+                "section": "Text Line Segmentation Training Protocol",
+                "section_index": 18,
+                "start": 0,
+                "text": "First, we train all three methods on the four training datasets and evaluate their segmentation performance in-domain.\nWe test zero-shot out-of-domain on the remaining six datasets to determine their generalization capability.\nIn the second phase, we evaluate few-shot learning by adding a small number of target-domain samples to improve line\ndetector performance and assess sensitivity to limited target-domain data.\nHi-SAMwas trained with 6x A100 40GB GPUs with a batch size of 1 and an initial learning rate (LR) of 1e-4, which\nwas reduced to 1e-5 after a patience of 200 epochs. Following the learning rate reduction, early stopping was applied\nwith an additional patience of 200 epochs. We adopted the original data augmentation strategy used for Hi-SAM, but\nlimited the maximum random rotation to 20\u25e6. Training Hi-SAM requires document images, polygon annotations for\ntext lines, and "
+              }
+            ],
+            "text": "First, we train all three methods on the four training datasets and evaluate their segmentation performance in-domain.\nWe test zero-shot out-of-domain on the remaining six datasets to determine their generalization capability.\nIn the second phase, we evaluate few-shot learning by adding a small number of target-domain samples to improve line\ndetector performance and assess sensitivity to limited target-domain data.\nHi-SAMwas trained with 6x A100 40GB GPUs with a batch size of 1 and an initial learning rate (LR) of 1e-4, which\nwas reduced to 1e-5 after a patience of 200 epochs. Following the learning rate reduction, early stopping was applied\nwith an additional patience of 200 epochs. We adopted the original data augmentation strategy used for Hi-SAM, but\nlimited the maximum random rotation to 20\u25e6. Training Hi-SAM requires document images, polygon annotations for\ntext lines, and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0036"
+        ],
+        "excerpt": "Generalization of Text Line Segmentation for HTR in Historical DocumentsPREPRINT\nBothYOLOv8andRT-DETRwere trained for up to 5,000 epochs with early stopping (patience = 250) using the\nMuSGD optimizer (LR 0.01, momentum 0.9), batch size of 8, and an input size of 1280 \u00d7 1280 pixels.\nTo ensure a fair comparison, Hi-SAM was initialized using SAM pre-trained weights derived from natural-image\ntraining, whereas YOLO and RT-DETR were initialized using weights pre-trained on the COCO dataset. As RT-DETR\nproduces only bounding-box predictions, the segmentation masks generated by Hi-SAM and YOLO are converted into\nbounding boxes to enable a consistent comparison across models.\nWe observed that RT-DETR creates an extensive amount of overlapping predictions. To mitigate this issue, we apply\nadditional NMS as a post-processing step to remove redundant detections at inference.\nThe optimal confidence ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6f2cc7b932cc7dd0eb456a2a5a6e83016c9da5ef74445faa7e4d8817fbf37d0a",
+            "evidence_id": "E330ea45eb35e4bf9-B0036",
+            "pages": [
+              6
+            ],
+            "section": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 6,
+                "section": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+                "section_index": 19,
+                "start": 0,
+                "text": "Generalization of Text Line Segmentation for HTR in Historical DocumentsPREPRINT\nBothYOLOv8andRT-DETRwere trained for up to 5,000 epochs with early stopping (patience = 250) using the\nMuSGD optimizer (LR 0.01, momentum 0.9), batch size of 8, and an input size of 1280 \u00d7 1280 pixels.\nTo ensure a fair comparison, Hi-SAM was initialized using SAM pre-trained weights derived from natural-image\ntraining, whereas YOLO and RT-DETR were initialized using weights pre-trained on the COCO dataset. As RT-DETR\nproduces only bounding-box predictions, the segmentation masks generated by Hi-SAM and YOLO are converted into\nbounding boxes to enable a consistent comparison across models.\nWe observed that RT-DETR creates an extensive amount of overlapping predictions. To mitigate this issue, we apply\nadditional NMS as a post-processing step to remove redundant detections at inference.\nThe optimal confidence "
+              }
+            ],
+            "text": "Generalization of Text Line Segmentation for HTR in Historical DocumentsPREPRINT\nBothYOLOv8andRT-DETRwere trained for up to 5,000 epochs with early stopping (patience = 250) using the\nMuSGD optimizer (LR 0.01, momentum 0.9), batch size of 8, and an input size of 1280 \u00d7 1280 pixels.\nTo ensure a fair comparison, Hi-SAM was initialized using SAM pre-trained weights derived from natural-image\ntraining, whereas YOLO and RT-DETR were initialized using weights pre-trained on the COCO dataset. As RT-DETR\nproduces only bounding-box predictions, the segmentation masks generated by Hi-SAM and YOLO are converted into\nbounding boxes to enable a consistent comparison across models.\nWe observed that RT-DETR creates an extensive amount of overlapping predictions. To mitigate this issue, we apply\nadditional NMS as a post-processing step to remove redundant detections at inference.\nThe optimal confidence "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0037"
+        ],
+        "excerpt": "and NMS thresholds for YOLO and RT-DETR, as well as the optimal score and NMS thresholds\nfor Hi-SAM, were identified through a grid search that we performed on the source-domain validation set.\nFor few-shot learning, we created two training sub-splits from each target dataset: one containing 10 sample pages and\nanother containing 50 sample pages, where the 10-page split is a subset of the 50-page split. During training, only the\nselected few-shot samples were used as training data, while the full validation set of the target dataset was used for\nmodel selection.\nThe total number of training epochs for Hi-SAM was limited to 300. Fine-tuning was performed with an initial learning\nrate of 1e-4, which was reduced to 1e-5 after 250 epochs. All experiments were conducted using a single NVIDIA\nA100 GPU. Both YOLO and RT-DETR were trained a total of 8,000 epochs without early stopping and we ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5472ed55dd761dd4a3f11233e40260d5191716cd83c3d4c914c8d24c0642453f",
+            "evidence_id": "E330ea45eb35e4bf9-B0037",
+            "pages": [
+              6
+            ],
+            "section": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1797,
+                "page": 6,
+                "section": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+                "section_index": 19,
+                "start": 900,
+                "text": "and NMS thresholds for YOLO and RT-DETR, as well as the optimal score and NMS thresholds\nfor Hi-SAM, were identified through a grid search that we performed on the source-domain validation set.\nFor few-shot learning, we created two training sub-splits from each target dataset: one containing 10 sample pages and\nanother containing 50 sample pages, where the 10-page split is a subset of the 50-page split. During training, only the\nselected few-shot samples were used as training data, while the full validation set of the target dataset was used for\nmodel selection.\nThe total number of training epochs for Hi-SAM was limited to 300. Fine-tuning was performed with an initial learning\nrate of 1e-4, which was reduced to 1e-5 after 250 epochs. All experiments were conducted using a single NVIDIA\nA100 GPU. Both YOLO and RT-DETR were trained a total of 8,000 epochs without early stopping and we "
+              }
+            ],
+            "text": "and NMS thresholds for YOLO and RT-DETR, as well as the optimal score and NMS thresholds\nfor Hi-SAM, were identified through a grid search that we performed on the source-domain validation set.\nFor few-shot learning, we created two training sub-splits from each target dataset: one containing 10 sample pages and\nanother containing 50 sample pages, where the 10-page split is a subset of the 50-page split. During training, only the\nselected few-shot samples were used as training data, while the full validation set of the target dataset was used for\nmodel selection.\nThe total number of training epochs for Hi-SAM was limited to 300. Fine-tuning was performed with an initial learning\nrate of 1e-4, which was reduced to 1e-5 after 250 epochs. All experiments were conducted using a single NVIDIA\nA100 GPU. Both YOLO and RT-DETR were trained a total of 8,000 epochs without early stopping and we "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0039"
+        ],
+        "excerpt": "For each dataset, we train a CRNN HTR model using text lines obtained from the ground-truth bounding boxes together\nwith their corresponding transcriptions. The CRNN models are trained using the Adam optimizer with a batch size of\n32 and a learning rate of 5e-4. The training is conducted for 1,500 total epochs. The learning rate is reduced to 5e-5\nwith a patience of 100 and early stopping is applied with a patience of 200 after the learning rate drop.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Htr Training Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2773c4655cbd3ca82d0992fb6492809b14580898f3dc12ec1dc67a335f1b2254",
+            "evidence_id": "E330ea45eb35e4bf9-B0039",
+            "pages": [
+              6
+            ],
+            "section": "Htr Training Protocol",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 455,
+                "page": 6,
+                "section": "Htr Training Protocol",
+                "section_index": 20,
+                "start": 0,
+                "text": "For each dataset, we train a CRNN HTR model using text lines obtained from the ground-truth bounding boxes together\nwith their corresponding transcriptions. The CRNN models are trained using the Adam optimizer with a batch size of\n32 and a learning rate of 5e-4. The training is conducted for 1,500 total epochs. The learning rate is reduced to 5e-5\nwith a patience of 100 and early stopping is applied with a patience of 200 after the learning rate drop."
+              }
+            ],
+            "text": "For each dataset, we train a CRNN HTR model using text lines obtained from the ground-truth bounding boxes together\nwith their corresponding transcriptions. The CRNN models are trained using the Adam optimizer with a batch size of\n32 and a learning rate of 5e-4. The training is conducted for 1,500 total epochs. The learning rate is reduced to 5e-5\nwith a patience of 100 and early stopping is applied with a patience of 200 after the learning rate drop."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0040"
+        ],
+        "excerpt": "This section presents the quantitative evaluation of the trained line segmentation models. We report performance using\nmAP, which measures how accurately the predicted bounding boxes align with the ground-truth line annotations.\nTable 2: Cross-dataset evaluation of three line detectors trained on four datasets and tested on nine datasets. Performance\nis reported as mAP, where higher value is better.\nTested on\nTraining Dataset LineDetector Bentham NorHand72702 NorHand331861 RiksarkivetBK 1 RiksarkivetBK 2 RiksarkivetGBG 1 RiksarkivetGBG 2 READ2016 NurembergLB 3\nNorHand-331861 Hi-SAM 49.64 58.00 75.53 68.05 62.02 55.62 47.15 28.77 41.29\nYOLO 39.51 52.89 81.67 74.78 71.31 58.53 48.72 21.31 19.86\nRT-DETR 12.05 15.81 37.22 16.58 27.50 15.85 13.10 07.41 05.27\nREAD 2016 Hi-SAM 32.17 35.85 41.74 29.22 33.85 38.43 33.75 79.01 49.08\nYOLO 25.26 13.98 13.35 24.43 21.74 34.94 27.65 81.12 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Quantitative Evaluation Of Line Segmentation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7812de8156dda401137be922041762d0010ae48fc24f1103cf374f6e10d26ae4",
+            "evidence_id": "E330ea45eb35e4bf9-B0040",
+            "pages": [
+              6
+            ],
+            "section": "Quantitative Evaluation Of Line Segmentation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 888,
+                "page": 6,
+                "section": "Quantitative Evaluation Of Line Segmentation",
+                "section_index": 21,
+                "start": 0,
+                "text": "This section presents the quantitative evaluation of the trained line segmentation models. We report performance using\nmAP, which measures how accurately the predicted bounding boxes align with the ground-truth line annotations.\nTable 2: Cross-dataset evaluation of three line detectors trained on four datasets and tested on nine datasets. Performance\nis reported as mAP, where higher value is better.\nTested on\nTraining Dataset LineDetector Bentham NorHand72702 NorHand331861 RiksarkivetBK 1 RiksarkivetBK 2 RiksarkivetGBG 1 RiksarkivetGBG 2 READ2016 NurembergLB 3\nNorHand-331861 Hi-SAM 49.64 58.00 75.53 68.05 62.02 55.62 47.15 28.77 41.29\nYOLO 39.51 52.89 81.67 74.78 71.31 58.53 48.72 21.31 19.86\nRT-DETR 12.05 15.81 37.22 16.58 27.50 15.85 13.10 07.41 05.27\nREAD 2016 Hi-SAM 32.17 35.85 41.74 29.22 33.85 38.43 33.75 79.01 49.08\nYOLO 25.26 13.98 13.35 24.43 21.74 34.94 27.65 81.12 "
+              }
+            ],
+            "text": "This section presents the quantitative evaluation of the trained line segmentation models. We report performance using\nmAP, which measures how accurately the predicted bounding boxes align with the ground-truth line annotations.\nTable 2: Cross-dataset evaluation of three line detectors trained on four datasets and tested on nine datasets. Performance\nis reported as mAP, where higher value is better.\nTested on\nTraining Dataset LineDetector Bentham NorHand72702 NorHand331861 RiksarkivetBK 1 RiksarkivetBK 2 RiksarkivetGBG 1 RiksarkivetGBG 2 READ2016 NurembergLB 3\nNorHand-331861 Hi-SAM 49.64 58.00 75.53 68.05 62.02 55.62 47.15 28.77 41.29\nYOLO 39.51 52.89 81.67 74.78 71.31 58.53 48.72 21.31 19.86\nRT-DETR 12.05 15.81 37.22 16.58 27.50 15.85 13.10 07.41 05.27\nREAD 2016 Hi-SAM 32.17 35.85 41.74 29.22 33.85 38.43 33.75 79.01 49.08\nYOLO 25.26 13.98 13.35 24.43 21.74 34.94 27.65 81.12 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0046"
+        ],
+        "excerpt": "To better understand the discrepancy between the qualitative and quantitative results, we examined the mAP calculation\nprocedure. mAP is computed by first measuring the Intersection over Union (IoU) between each predicted bounding\nbox and its corresponding ground-truth box. A set of IoU thresholds is then applied, as described in Section 3.2, to\nclassify detections as true positives or false positives. However, for a given IoU threshold, there are two possible\noutcomes for each predicted bounding box. For example, as illustrated in Figure 3, a prediction that covers only half\nof the ground-truth region (case 1) has an IoU measure of 0.5, but is clearly insufficient for line level HTR and may\nresult in increased CER. Conversely, a prediction that slightly extends beyond the ground-truth boundaries on all four\nsides (case 2) can also achieve an IoU of 0.5 while having minimal impact on ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Investigation Into Map As Evaluation Metric",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f38fa123ac8e8311d6a4914701bcba5076b5b06f8bc1c017763631a41d21e643",
+            "evidence_id": "E330ea45eb35e4bf9-B0046",
+            "pages": [
+              7
+            ],
+            "section": "Investigation Into Map As Evaluation Metric",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 7,
+                "section": "Investigation Into Map As Evaluation Metric",
+                "section_index": 24,
+                "start": 0,
+                "text": "To better understand the discrepancy between the qualitative and quantitative results, we examined the mAP calculation\nprocedure. mAP is computed by first measuring the Intersection over Union (IoU) between each predicted bounding\nbox and its corresponding ground-truth box. A set of IoU thresholds is then applied, as described in Section 3.2, to\nclassify detections as true positives or false positives. However, for a given IoU threshold, there are two possible\noutcomes for each predicted bounding box. For example, as illustrated in Figure 3, a prediction that covers only half\nof the ground-truth region (case 1) has an IoU measure of 0.5, but is clearly insufficient for line level HTR and may\nresult in increased CER. Conversely, a prediction that slightly extends beyond the ground-truth boundaries on all four\nsides (case 2) can also achieve an IoU of 0.5 while having minimal impact on "
+              }
+            ],
+            "text": "To better understand the discrepancy between the qualitative and quantitative results, we examined the mAP calculation\nprocedure. mAP is computed by first measuring the Intersection over Union (IoU) between each predicted bounding\nbox and its corresponding ground-truth box. A set of IoU thresholds is then applied, as described in Section 3.2, to\nclassify detections as true positives or false positives. However, for a given IoU threshold, there are two possible\noutcomes for each predicted bounding box. For example, as illustrated in Figure 3, a prediction that covers only half\nof the ground-truth region (case 1) has an IoU measure of 0.5, but is clearly insufficient for line level HTR and may\nresult in increased CER. Conversely, a prediction that slightly extends beyond the ground-truth boundaries on all four\nsides (case 2) can also achieve an IoU of 0.5 while having minimal impact on "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0048"
+        ],
+        "excerpt": "Table 3: Cross-dataset evaluation of three line detectors trained on four datasets and tested on 9 datasets. Performance\nis reported as CER%, where lower values indicate better performance.\nTested on\nTraining Dataset LineDetector Bentham NorHand72702 NorHand331861 RiksarkivetBK 1 RiksarkivetBK 2 RiksarkivetGBG 1 RiksarkivetGBG 2 READ2016 NurembergLB 3 OOD A VGgap withBaseline\nBaseline GT-Boxes 2.22 1.61 3.09 3.40 2.48 4.60 2.96 3.99 5.02\nNorHand-331861 Hi-SAM 5.03 3.56 3.65 4.72 3.53 8.81 13.82 13.46 14.05 5.09\nYOLO 7.47 6.64 3.48 4.93 5.93 9.67 14.13 14.82 39.90 9.65\nRT-DETR 26.59 48.81 24.12 56.77 44.37 63.90 64.67 70.25 86.14 54.40\nREAD 2016 Hi-SAM 5.34 4.08 6.52 4.74 3.73 8.81 12.39 4.40 8.35 3.57\nYOLO 8.28 37.71 34.36 9.53 14.47 17.81 25.59 4.31 37.56 19.99\nRT-DETR 9.32 23.90 31.92 8.67 13.79 22.70 26.27 6.90 30.49 17.71\nNuremberg LB 3 Hi-SAM 4.81 4.51 10.15 4.02 3.71 9.17 23.58 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Quantitative Evaluation Of Recognition",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "accae14128991a5ce9ec47f4abb3c31f8d423c7c4fbed158e1617cdda9a3edda",
+            "evidence_id": "E330ea45eb35e4bf9-B0048",
+            "pages": [
+              7
+            ],
+            "section": "Quantitative Evaluation Of Recognition",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 7,
+                "section": "Quantitative Evaluation Of Recognition",
+                "section_index": 25,
+                "start": 0,
+                "text": "Table 3: Cross-dataset evaluation of three line detectors trained on four datasets and tested on 9 datasets. Performance\nis reported as CER%, where lower values indicate better performance.\nTested on\nTraining Dataset LineDetector Bentham NorHand72702 NorHand331861 RiksarkivetBK 1 RiksarkivetBK 2 RiksarkivetGBG 1 RiksarkivetGBG 2 READ2016 NurembergLB 3 OOD A VGgap withBaseline\nBaseline GT-Boxes 2.22 1.61 3.09 3.40 2.48 4.60 2.96 3.99 5.02\nNorHand-331861 Hi-SAM 5.03 3.56 3.65 4.72 3.53 8.81 13.82 13.46 14.05 5.09\nYOLO 7.47 6.64 3.48 4.93 5.93 9.67 14.13 14.82 39.90 9.65\nRT-DETR 26.59 48.81 24.12 56.77 44.37 63.90 64.67 70.25 86.14 54.40\nREAD 2016 Hi-SAM 5.34 4.08 6.52 4.74 3.73 8.81 12.39 4.40 8.35 3.57\nYOLO 8.28 37.71 34.36 9.53 14.47 17.81 25.59 4.31 37.56 19.99\nRT-DETR 9.32 23.90 31.92 8.67 13.79 22.70 26.27 6.90 30.49 17.71\nNuremberg LB 3 Hi-SAM 4.81 4.51 10.15 4.02 3.71 9.17 23.58 "
+              }
+            ],
+            "text": "Table 3: Cross-dataset evaluation of three line detectors trained on four datasets and tested on 9 datasets. Performance\nis reported as CER%, where lower values indicate better performance.\nTested on\nTraining Dataset LineDetector Bentham NorHand72702 NorHand331861 RiksarkivetBK 1 RiksarkivetBK 2 RiksarkivetGBG 1 RiksarkivetGBG 2 READ2016 NurembergLB 3 OOD A VGgap withBaseline\nBaseline GT-Boxes 2.22 1.61 3.09 3.40 2.48 4.60 2.96 3.99 5.02\nNorHand-331861 Hi-SAM 5.03 3.56 3.65 4.72 3.53 8.81 13.82 13.46 14.05 5.09\nYOLO 7.47 6.64 3.48 4.93 5.93 9.67 14.13 14.82 39.90 9.65\nRT-DETR 26.59 48.81 24.12 56.77 44.37 63.90 64.67 70.25 86.14 54.40\nREAD 2016 Hi-SAM 5.34 4.08 6.52 4.74 3.73 8.81 12.39 4.40 8.35 3.57\nYOLO 8.28 37.71 34.36 9.53 14.47 17.81 25.59 4.31 37.56 19.99\nRT-DETR 9.32 23.90 31.92 8.67 13.79 22.70 26.27 6.90 30.49 17.71\nNuremberg LB 3 Hi-SAM 4.81 4.51 10.15 4.02 3.71 9.17 23.58 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0053"
+        ],
+        "excerpt": "We observed the strongest generalizability when the models were trained on the Mix dataset, especially Hi-SAM and\nYOLO. In this section, we fine-tune them using 10 and 50 target-domain few-shot sample pages to evaluate whether\nlimited in-domain supervision can further improve line detector performance. Given its comparatively poor performance\nacross the zero-shot evaluations, RT-DETR was excluded from the few-shot fine-tuning stage.\nTable 4: Few-shot mAP% evaluation of Hi-SAM and YOLO line detectors pre-trained on the Mix dataset and fine-tuned\non six target datasets. Zero-shot rows report the corresponding results from Table 2. Higher values indicate better\nperformance.\nTested on\nLine\nDetector Bentham NorHand72702 RiksarkivetBK RiksarkivetBK 2 RiksarkivetGBG 1 RiksarkivetGBG 2\nZero-shot Hi-SAM 45.32 54.04 40.64 42.16 44.18 37.08\nFew-shot 10 Hi-SAM 64.32 54.64 73.91 71.75 62.77 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Impact Of Few-Shot Learning",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6d5a563a7e0dd3ccd144ea3f936c4681c0381fc46d376e18cb2e2f36b1afa820",
+            "evidence_id": "E330ea45eb35e4bf9-B0053",
+            "pages": [
+              9
+            ],
+            "section": "Impact Of Few-Shot Learning",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 9,
+                "section": "Impact Of Few-Shot Learning",
+                "section_index": 28,
+                "start": 0,
+                "text": "We observed the strongest generalizability when the models were trained on the Mix dataset, especially Hi-SAM and\nYOLO. In this section, we fine-tune them using 10 and 50 target-domain few-shot sample pages to evaluate whether\nlimited in-domain supervision can further improve line detector performance. Given its comparatively poor performance\nacross the zero-shot evaluations, RT-DETR was excluded from the few-shot fine-tuning stage.\nTable 4: Few-shot mAP% evaluation of Hi-SAM and YOLO line detectors pre-trained on the Mix dataset and fine-tuned\non six target datasets. Zero-shot rows report the corresponding results from Table 2. Higher values indicate better\nperformance.\nTested on\nLine\nDetector Bentham NorHand72702 RiksarkivetBK RiksarkivetBK 2 RiksarkivetGBG 1 RiksarkivetGBG 2\nZero-shot Hi-SAM 45.32 54.04 40.64 42.16 44.18 37.08\nFew-shot 10 Hi-SAM 64.32 54.64 73.91 71.75 62.77 "
+              }
+            ],
+            "text": "We observed the strongest generalizability when the models were trained on the Mix dataset, especially Hi-SAM and\nYOLO. In this section, we fine-tune them using 10 and 50 target-domain few-shot sample pages to evaluate whether\nlimited in-domain supervision can further improve line detector performance. Given its comparatively poor performance\nacross the zero-shot evaluations, RT-DETR was excluded from the few-shot fine-tuning stage.\nTable 4: Few-shot mAP% evaluation of Hi-SAM and YOLO line detectors pre-trained on the Mix dataset and fine-tuned\non six target datasets. Zero-shot rows report the corresponding results from Table 2. Higher values indicate better\nperformance.\nTested on\nLine\nDetector Bentham NorHand72702 RiksarkivetBK RiksarkivetBK 2 RiksarkivetGBG 1 RiksarkivetGBG 2\nZero-shot Hi-SAM 45.32 54.04 40.64 42.16 44.18 37.08\nFew-shot 10 Hi-SAM 64.32 54.64 73.91 71.75 62.77 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0055"
+        ],
+        "excerpt": "performance of the HTR model when trained using ground-truth line bounding boxes.\nTested on\nLine\nDetector Bentham NorHand72702 RiksarkivetBK 1 RiksarkivetBK 2 RiksarkivetGBG 1 RiksarkivetGBG 2 OOD A VGgap withBaseline\nBaseline GT-Boxes 2.22 1.61 3.40 2.48 4.60 2.96\nZero-shot Hi-SAM 4.44 3.36 4.20 3.14 7.77 11.76 2.90\nFew-shot 10 Hi-SAM 3.31 2.72 3.89 2.64 6.59 8.25 1.69\nFew-shot 50 Hi-SAM 3.22 2.56 3.57 2.69 6.50 5.89 1.19\nZero-shot YOLO 5.48 10.81 4.09 3.67 7.53 11.87 4.36\nFew-shot 10 YOLO 3.79 3.08 3.80 2.93 7.12 8.80 2.04\nFew-shot 50 YOLO 3.64 2.79 3.49 2.48 7.07 6.32 1.42\nCOCO + Few-shot 10 YOLO 6.12 94.56 3.75 16.03 8.27 9.93 20.23\nCOCO + Few-shot 50 YOLO 4.31 2.65 3.55 2.55 7.13 5.60 1.42\nFine-tuning on the target datasets reduces the CER gap relative to the baseline, as shown in Table 5. For Hi-SAM, the\naverage gap decreases from 2.90pp to 1.69pp with target-domain fine-tuning ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Impact Of Few-Shot Learning",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "66136ca8d4dc032ca0eb12c265a84ab88add638869f3ee5dfa9ad7f3da0ff4b4",
+            "evidence_id": "E330ea45eb35e4bf9-B0055",
+            "pages": [
+              9
+            ],
+            "section": "Impact Of Few-Shot Learning",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2679,
+                "page": 9,
+                "section": "Impact Of Few-Shot Learning",
+                "section_index": 28,
+                "start": 1782,
+                "text": "performance of the HTR model when trained using ground-truth line bounding boxes.\nTested on\nLine\nDetector Bentham NorHand72702 RiksarkivetBK 1 RiksarkivetBK 2 RiksarkivetGBG 1 RiksarkivetGBG 2 OOD A VGgap withBaseline\nBaseline GT-Boxes 2.22 1.61 3.40 2.48 4.60 2.96\nZero-shot Hi-SAM 4.44 3.36 4.20 3.14 7.77 11.76 2.90\nFew-shot 10 Hi-SAM 3.31 2.72 3.89 2.64 6.59 8.25 1.69\nFew-shot 50 Hi-SAM 3.22 2.56 3.57 2.69 6.50 5.89 1.19\nZero-shot YOLO 5.48 10.81 4.09 3.67 7.53 11.87 4.36\nFew-shot 10 YOLO 3.79 3.08 3.80 2.93 7.12 8.80 2.04\nFew-shot 50 YOLO 3.64 2.79 3.49 2.48 7.07 6.32 1.42\nCOCO + Few-shot 10 YOLO 6.12 94.56 3.75 16.03 8.27 9.93 20.23\nCOCO + Few-shot 50 YOLO 4.31 2.65 3.55 2.55 7.13 5.60 1.42\nFine-tuning on the target datasets reduces the CER gap relative to the baseline, as shown in Table 5. For Hi-SAM, the\naverage gap decreases from 2.90pp to 1.69pp with target-domain fine-tuning "
+              }
+            ],
+            "text": "performance of the HTR model when trained using ground-truth line bounding boxes.\nTested on\nLine\nDetector Bentham NorHand72702 RiksarkivetBK 1 RiksarkivetBK 2 RiksarkivetGBG 1 RiksarkivetGBG 2 OOD A VGgap withBaseline\nBaseline GT-Boxes 2.22 1.61 3.40 2.48 4.60 2.96\nZero-shot Hi-SAM 4.44 3.36 4.20 3.14 7.77 11.76 2.90\nFew-shot 10 Hi-SAM 3.31 2.72 3.89 2.64 6.59 8.25 1.69\nFew-shot 50 Hi-SAM 3.22 2.56 3.57 2.69 6.50 5.89 1.19\nZero-shot YOLO 5.48 10.81 4.09 3.67 7.53 11.87 4.36\nFew-shot 10 YOLO 3.79 3.08 3.80 2.93 7.12 8.80 2.04\nFew-shot 50 YOLO 3.64 2.79 3.49 2.48 7.07 6.32 1.42\nCOCO + Few-shot 10 YOLO 6.12 94.56 3.75 16.03 8.27 9.93 20.23\nCOCO + Few-shot 50 YOLO 4.31 2.65 3.55 2.55 7.13 5.60 1.42\nFine-tuning on the target datasets reduces the CER gap relative to the baseline, as shown in Table 5. For Hi-SAM, the\naverage gap decreases from 2.90pp to 1.69pp with target-domain fine-tuning "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0065"
+        ],
+        "excerpt": "Generalization of Text Line Segmentation for HTR in Historical DocumentsPREPRINT\nTable 6: Overview of run times of the tested models in different use case environments, investigating the loading time\nfor models as well as training and inference performance.\nTraining Inference\nGPU Memory # Param. Trainingin (GPU) hours GPU Memory Model Load Time Inference per PageBatch Size = 1\nA100 Hi-SAM 40 GB 699.2 M(62.2 trainable) 690 GPUh (with SAM weights)380 GPUh (with Hi-SAM weights) 13 GB 9.75 s 1.6 s\nYOLO 26 GB 46.0 M 2.5 GPUh (avg 3100 epochs) 1.5 GB 0.5 s 0.12 s\nRT-DETR 23 GB 32.8 M 2.0 GPUh (avg 2500 epochs) 1.2 GB 0.5 s 0.13 s\nRTX 4080 Hi-SAM - 699.2 M(62.2 trainable) - - 4.97 s 1.5 s\nYOLO - 46.0 M 50 h (for 3100 epochs) - 0.10 s 0.11 s\nRT-DETR - 32.8 M - - 0.10 s 0.11 s\nLaptop (CPU) Hi-SAM - 699.2 M(62.2 trainable) - - 0.16 s 100.13 s\nYOLO - 46.0 M 7500 h (est. extrapolation for 3100 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "be1b684fa337a3c6b1f638a591140e7d9b0b5824b13c8321a341d71ad51c113f",
+            "evidence_id": "E330ea45eb35e4bf9-B0065",
+            "pages": [
+              11
+            ],
+            "section": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 11,
+                "section": "Generalization Of Text Line Segmentation For Htr In Historical Documentspreprint",
+                "section_index": 34,
+                "start": 0,
+                "text": "Generalization of Text Line Segmentation for HTR in Historical DocumentsPREPRINT\nTable 6: Overview of run times of the tested models in different use case environments, investigating the loading time\nfor models as well as training and inference performance.\nTraining Inference\nGPU Memory # Param. Trainingin (GPU) hours GPU Memory Model Load Time Inference per PageBatch Size = 1\nA100 Hi-SAM 40 GB 699.2 M(62.2 trainable) 690 GPUh (with SAM weights)380 GPUh (with Hi-SAM weights) 13 GB 9.75 s 1.6 s\nYOLO 26 GB 46.0 M 2.5 GPUh (avg 3100 epochs) 1.5 GB 0.5 s 0.12 s\nRT-DETR 23 GB 32.8 M 2.0 GPUh (avg 2500 epochs) 1.2 GB 0.5 s 0.13 s\nRTX 4080 Hi-SAM - 699.2 M(62.2 trainable) - - 4.97 s 1.5 s\nYOLO - 46.0 M 50 h (for 3100 epochs) - 0.10 s 0.11 s\nRT-DETR - 32.8 M - - 0.10 s 0.11 s\nLaptop (CPU) Hi-SAM - 699.2 M(62.2 trainable) - - 0.16 s 100.13 s\nYOLO - 46.0 M 7500 h (est. extrapolation for 3100 "
+              }
+            ],
+            "text": "Generalization of Text Line Segmentation for HTR in Historical DocumentsPREPRINT\nTable 6: Overview of run times of the tested models in different use case environments, investigating the loading time\nfor models as well as training and inference performance.\nTraining Inference\nGPU Memory # Param. Trainingin (GPU) hours GPU Memory Model Load Time Inference per PageBatch Size = 1\nA100 Hi-SAM 40 GB 699.2 M(62.2 trainable) 690 GPUh (with SAM weights)380 GPUh (with Hi-SAM weights) 13 GB 9.75 s 1.6 s\nYOLO 26 GB 46.0 M 2.5 GPUh (avg 3100 epochs) 1.5 GB 0.5 s 0.12 s\nRT-DETR 23 GB 32.8 M 2.0 GPUh (avg 2500 epochs) 1.2 GB 0.5 s 0.13 s\nRTX 4080 Hi-SAM - 699.2 M(62.2 trainable) - - 4.97 s 1.5 s\nYOLO - 46.0 M 50 h (for 3100 epochs) - 0.10 s 0.11 s\nRT-DETR - 32.8 M - - 0.10 s 0.11 s\nLaptop (CPU) Hi-SAM - 699.2 M(62.2 trainable) - - 0.16 s 100.13 s\nYOLO - 46.0 M 7500 h (est. extrapolation for 3100 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0068"
+        ],
+        "excerpt": "dataset.\nThe experiments conducted here have primarily focused on documents with a rather simple layout: single-column text\narranged in neat horizontal lines with minimal marginalia. Detecting and recognizing more complex layouts, such as\nthose with curved or rotated text lines or tabular structures, increases the complexity of the problem. This issue will be\nexamined in greater detail in future research.\nIn this study we focused on the generalization capabilities of text line segmentation models. However, these models\nconstitute only the first step in an HTR pipeline. Therefore, further research to investigate and develop domain\nadaptation and generalization for HTR models to determine and reduce the effort required for data acquisition in this\ncontext is also needed.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "539f8004c98317d5f5acf81502d60872cc414989494b4e5c0dc6948bb328645b",
+            "evidence_id": "E330ea45eb35e4bf9-B0068",
+            "pages": [
+              11
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 1667,
+                "page": 11,
+                "section": "Conclusion",
+                "section_index": 35,
+                "start": 888,
+                "text": "dataset.\nThe experiments conducted here have primarily focused on documents with a rather simple layout: single-column text\narranged in neat horizontal lines with minimal marginalia. Detecting and recognizing more complex layouts, such as\nthose with curved or rotated text lines or tabular structures, increases the complexity of the problem. This issue will be\nexamined in greater detail in future research.\nIn this study we focused on the generalization capabilities of text line segmentation models. However, these models\nconstitute only the first step in an HTR pipeline. Therefore, further research to investigate and develop domain\nadaptation and generalization for HTR models to determine and reduce the effort required for data acquisition in this\ncontext is also needed."
+              }
+            ],
+            "text": "dataset.\nThe experiments conducted here have primarily focused on documents with a rather simple layout: single-column text\narranged in neat horizontal lines with minimal marginalia. Detecting and recognizing more complex layouts, such as\nthose with curved or rotated text lines or tabular structures, increases the complexity of the problem. This issue will be\nexamined in greater detail in future research.\nIn this study we focused on the generalization capabilities of text line segmentation models. However, these models\nconstitute only the first step in an HTR pipeline. Therefore, further research to investigate and develop domain\nadaptation and generalization for HTR models to determine and reduce the effort required for data acquisition in this\ncontext is also needed."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2611.24726",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2611.24726",
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Downstream CRNN Character Error Rate (CER) computed against ground-truth transcriptions provides an independent measurement of segmentation quality and corroborates the headline findings, including the mAP limitation and few-shot gains.",
+          "final_evaluation_signal": "Headline outcomes are established by mAP50:95 on held-out test splits and, critically, by Hungarian-matched downstream CER from a separately trained CRNN HTR model evaluated against ground-truth transcriptions.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Detector training and checkpoint selection used supervised segmentation losses and validation mAP on source or target-domain annotated pages.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0003",
+          "E330ea45eb35e4bf9-B0009",
+          "E330ea45eb35e4bf9-B0016",
+          "E330ea45eb35e4bf9-B0025",
+          "E330ea45eb35e4bf9-B0026",
+          "E330ea45eb35e4bf9-B0027",
+          "E330ea45eb35e4bf9-B0034",
+          "E330ea45eb35e4bf9-B0036",
+          "E330ea45eb35e4bf9-B0039",
+          "E330ea45eb35e4bf9-B0040",
+          "E330ea45eb35e4bf9-B0046",
+          "E330ea45eb35e4bf9-B0048",
+          "E330ea45eb35e4bf9-B0053",
+          "E330ea45eb35e4bf9-B0055",
+          "E330ea45eb35e4bf9-B0065",
+          "E330ea45eb35e4bf9-B0068"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "6a4cbca54e166c8d92f7aa9aabb41a4757defcfc4fe8e46f00d147eea6d74825"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2611.24726",
+        "claim_evidence_alignment": "Reported claims closely match the empirical evidence: Hi-SAM provides superior zero-shot transfer while YOLO matches it with minimal target supervision, and runtime/memory tradeoffs across CPU/GPU setups are clearly measured [E330ea45eb35e4bf9-B0048, E330ea45eb35e4bf9-B0055, E330ea45eb35e4bf9-B0065].",
+        "context_id": "330ea45eb35e4bf99a2b2363cd6040d43654bb7fede59f0e1660053841415e1c",
+        "decision": "pass",
+        "evaluation_assessment": "The empirical evaluation is solid, examining nine historical datasets across English, Norwegian, Swedish, and German in zero-shot cross-dataset transfer and 10/50-shot fine-tuning settings [E330ea45eb35e4bf9-B0016, E330ea45eb35e4bf9-B0040, E330ea45eb35e4bf9-B0048, E330ea45eb35e4bf9-B0053, E330ea45eb35e4bf9-B0055]. The authors effectively demonstrate that bounding box mAP is poorly correlated with downstream CER and that lightweight models like YOLO catch up to larger foundation models with minimal few-shot supervision [E330ea45eb35e4bf9-B0046, E330ea45eb35e4bf9-B0056].",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Downstream CRNN Character Error Rate (CER) evaluated against ground-truth transcriptions independently corroborates line segmentation quality and highlights mAP limitations [E330ea45eb35e4bf9-B0048, E330ea45eb35e4bf9-B0055].",
+          "final_evaluation_signal": "Mean average precision (mAP50:95) on held-out test splits, alongside Hungarian-matched downstream Character Error Rate (CER) computed with an independent CRNN text recognition model [E330ea45eb35e4bf9-B0025, E330ea45eb35e4bf9-B0026, E330ea45eb35e4bf9-B0048].",
+          "independent_corroboration": "present",
+          "optimization_signal": "Standard supervised bounding box and segmentation losses (and validation mAP for model checkpoint selection) on source or target-domain annotated pages [E330ea45eb35e4bf9-B0034, E330ea45eb35e4bf9-B0038].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E330ea45eb35e4bf9-B0003",
+          "E330ea45eb35e4bf9-B0009",
+          "E330ea45eb35e4bf9-B0016",
+          "E330ea45eb35e4bf9-B0025",
+          "E330ea45eb35e4bf9-B0026",
+          "E330ea45eb35e4bf9-B0034",
+          "E330ea45eb35e4bf9-B0037",
+          "E330ea45eb35e4bf9-B0039",
+          "E330ea45eb35e4bf9-B0040",
+          "E330ea45eb35e4bf9-B0046",
+          "E330ea45eb35e4bf9-B0048",
+          "E330ea45eb35e4bf9-B0053",
+          "E330ea45eb35e4bf9-B0055",
+          "E330ea45eb35e4bf9-B0065",
+          "E330ea45eb35e4bf9-B0068"
+        ],
+        "limitations": "The study explicitly acknowledges that evaluation was restricted to predominantly single-column, horizontal historical layouts without complex marginalia or tabular structures, and that HTR domain adaptation itself was kept constant rather than jointly adapted [E330ea45eb35e4bf9-B0068].",
+        "method_assessment": "The methodology is thoroughly detailed, describing the training and fine-tuning protocols for the detectors across diverse historical datasets, the configuration of the downstream CRNN HTR model, and the Hungarian matching algorithm used to align predicted boxes to ground truth lines for CER computation [E330ea45eb35e4bf9-B0027, E330ea45eb35e4bf9-B0034, E330ea45eb35e4bf9-B0036, E330ea45eb35e4bf9-B0039].",
+        "quality_rationale": "The manuscript presents a rigorous, well-controlled comparative study addressing a practical question in document analysis and digital humanities. Experimental controls, baselines, and downstream validation metrics are sound and properly interpreted.",
+        "scoped_contribution": "The paper investigates the cross-domain generalization and few-shot adaptation capabilities of modern object detectors (Hi-SAM, YOLOv8-seg, and RT-DETR) for historical handwritten text line segmentation, analyzing detection metrics (mAP) versus downstream recognition performance (CER) and benchmarking compute requirements across hardware setups [E330ea45eb35e4bf9-B0003, E330ea45eb35e4bf9-B0009, E330ea45eb35e4bf9-B0065].",
+        "source_content_hash": "6a4cbca54e166c8d92f7aa9aabb41a4757defcfc4fe8e46f00d147eea6d74825"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a rigorous, well-controlled comparative study addressing a practical question in document analysis and digital humanities. Experimental controls, baselines, and downstream validation metrics are sound and properly interpreted.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "6a4cbca54e166c8d92f7aa9aabb41a4757defcfc4fe8e46f00d147eea6d74825",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The study explicitly acknowledges that evaluation was restricted to predominantly single-column, horizontal historical layouts without complex marginalia or tabular structures, and that HTR domain adaptation itself was kept constant rather than jointly adapted [E330ea45eb35e4bf9-B0068]."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -162,7 +1704,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

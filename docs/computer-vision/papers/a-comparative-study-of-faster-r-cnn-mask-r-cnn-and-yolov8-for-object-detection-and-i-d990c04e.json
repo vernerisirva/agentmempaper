@@ -34,7 +34,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-23 09:08:15",
-    "generated_at": "2026-11-19 12:32:59",
+    "generated_at": "2026-11-20 12:34:21",
     "last_seen_at": "2026-09-25 13:55:30",
     "metadata_sources": [
       "openalex"
@@ -97,36 +97,1616 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-24T09:04:05.279198+00:00",
-    "assessment_scope": "metadata_only",
+    "assessed_at": "2026-11-20T12:31:58.707454+00:00",
+    "assessment_scope": "full_text",
     "assessment_version": "quality-promotion-v2",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 1.0,
-    "concerns": [],
-    "concise_summary": "Manuscript unavailable; no scientific decision.",
+    "concerns": [
+      "The manuscript reports no quantitative evaluation: mAP, precision, recall, FPS, and parameter counts are explicitly deferred to future work, leaving only qualitative inspection of a few sample images as evidence.",
+      "The central empirical comparison is asymmetric and uncontrolled: YOLOv8s is fine-tuned on the custom tank class while Faster R-CNN and Mask R-CNN are evaluated zero-shot on COCO, so the headline claim about single-stage transfer-learning advantage is not established as a controlled result.",
+      "The custom dataset contains only twenty annotated images with no reported validation protocol, data augmentation, or held-out quantitative assessment, which is insufficient to support claims about generalization or annotation efficiency."
+    ],
+    "concise_summary": "The paper provides an accessible summary of classic detection architectures and a small-scale demonstration, but it lacks any quantitative experimental validation or controlled empirical benchmarking.",
     "confidence": "low",
     "coverage": {
-      "assessment_input_characters": 175,
-      "extraction_complete": false,
-      "version": "coverage-v1"
+      "assessment_input_characters": 49418,
+      "assessment_input_sha256": "e26b819762b37f38ef71850f04f78be33c00e1b0e67bf83b32099e912ec3fef2",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.21203/rs.3.rs-10831765/v1",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 47996,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 46963,
+      "evidence_block_count": 68,
+      "evidence_context_characters": 55568,
+      "evidence_context_id": "5e00e4223c7c84579d29b95dec91eba1f46ffd43ca0aad781756eeb27ddacbaf",
+      "evidence_context_sha256": "e51bcedbf7678e08a08d4dbfcb0737624ce6231049690f8c083ce18ac8759455",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 48046,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "extracted_pages": 26,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "98dc1250ed1f1885393e9d90dd5535df3e28b08899843695d793399fb5b80caa",
+        "source_url": "https://www.researchsquare.com/article/rs-10831765/latest.pdf",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 47996,
+      "scientific_body_pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 660,
+          "supplied_characters": 660
+        },
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 852,
+          "supplied_characters": 852
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 2188,
+          "supplied_characters": 2188
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "abstract",
+          "section_index": 3,
+          "source_characters": 1,
+          "supplied_characters": 1
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 2957,
+          "supplied_characters": 2957
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "introduction",
+          "section_index": 5,
+          "source_characters": 503,
+          "supplied_characters": 503
+        },
+        {
+          "heading": "Glossary Of Terms",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 769,
+          "supplied_characters": 769
+        },
+        {
+          "heading": "Glossary Of Terms",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1,
+          "supplied_characters": 1
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "related",
+          "section_index": 8,
+          "source_characters": 235,
+          "supplied_characters": 235
+        },
+        {
+          "heading": "From R-Cnn To Faster R-Cnn",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1423,
+          "supplied_characters": 1423
+        },
+        {
+          "heading": "From R-Cnn To Faster R-Cnn",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 137,
+          "supplied_characters": 137
+        },
+        {
+          "heading": "From R-Cnn To Faster R-Cnn",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 845,
+          "supplied_characters": 845
+        },
+        {
+          "heading": "From R-Cnn To Faster R-Cnn",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 301,
+          "supplied_characters": 301
+        },
+        {
+          "heading": "From R-Cnn To Faster R-Cnn",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 1,
+          "supplied_characters": 1
+        },
+        {
+          "heading": "Mask R-Cnn And Instance Segmentation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1083,
+          "supplied_characters": 1083
+        },
+        {
+          "heading": "Yolo And The Single-Stage Paradigm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1290,
+          "supplied_characters": 1290
+        },
+        {
+          "heading": "Post-2024 Developments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1235,
+          "supplied_characters": 1235
+        },
+        {
+          "heading": "Post-2024 Developments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1076,
+          "supplied_characters": 1076
+        },
+        {
+          "heading": "Positioning Of This Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 994,
+          "supplied_characters": 994
+        },
+        {
+          "heading": "Faster R-Cnn: Region Proposal Network And Training",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "methods",
+          "section_index": 19,
+          "source_characters": 1424,
+          "supplied_characters": 1424
+        },
+        {
+          "heading": "Faster R-Cnn: Region Proposal Network And Training",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "methods",
+          "section_index": 20,
+          "source_characters": 357,
+          "supplied_characters": 357
+        },
+        {
+          "heading": "Mask R-Cnn: Roialign And The Mask Branch",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 827,
+          "supplied_characters": 827
+        },
+        {
+          "heading": "Mask R-Cnn: Roialign And The Mask Branch",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 173,
+          "supplied_characters": 173
+        },
+        {
+          "heading": "Yolov8: Architecture And Loss Functions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "methods",
+          "section_index": 23,
+          "source_characters": 689,
+          "supplied_characters": 689
+        },
+        {
+          "heading": "Yolov8: Architecture And Loss Functions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "methods",
+          "section_index": 24,
+          "source_characters": 785,
+          "supplied_characters": 785
+        },
+        {
+          "heading": "Evaluation Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "results",
+          "section_index": 25,
+          "source_characters": 948,
+          "supplied_characters": 948
+        },
+        {
+          "heading": "Datasets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 509,
+          "supplied_characters": 509
+        },
+        {
+          "heading": "Datasets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 349,
+          "supplied_characters": 349
+        },
+        {
+          "heading": "Training Configuration",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "methods",
+          "section_index": 28,
+          "source_characters": 943,
+          "supplied_characters": 943
+        },
+        {
+          "heading": "Training Configuration",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "methods",
+          "section_index": 29,
+          "source_characters": 2,
+          "supplied_characters": 2
+        },
+        {
+          "heading": "Custom Military Vehicle Detector: Experimental Pipeline",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "results",
+          "section_index": 30,
+          "source_characters": 1878,
+          "supplied_characters": 1878
+        },
+        {
+          "heading": "Results And Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "results",
+          "section_index": 31,
+          "source_characters": 216,
+          "supplied_characters": 216
+        },
+        {
+          "heading": "Results And Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "results",
+          "section_index": 32,
+          "source_characters": 167,
+          "supplied_characters": 167
+        },
+        {
+          "heading": "Faster R-Cnn (Coco-Pretrained, Inception-Resnet-V2)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 1590,
+          "supplied_characters": 1590
+        },
+        {
+          "heading": "Faster R-Cnn (Coco-Pretrained, Inception-Resnet-V2)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 3302,
+          "supplied_characters": 3302
+        },
+        {
+          "heading": "Faster R-Cnn (Coco-Pretrained, Inception-Resnet-V2)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 2,
+          "supplied_characters": 2
+        },
+        {
+          "heading": "Mask R-Cnn (Coco-Pretrained, Resnet-101)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 1264,
+          "supplied_characters": 1264
+        },
+        {
+          "heading": "Mask R-Cnn (Coco-Pretrained, Resnet-101)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 2,
+          "supplied_characters": 2
+        },
+        {
+          "heading": "Yolov8 \u2014 General-Purpose (Pretrained, Yolov8N)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 573,
+          "supplied_characters": 573
+        },
+        {
+          "heading": "Yolov8 \u2014 Custom Military Vehicle Class (Fine-Tuned Yolov8S)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 764,
+          "supplied_characters": 764
+        },
+        {
+          "heading": "Yolov8 \u2014 Custom Military Vehicle Class (Fine-Tuned Yolov8S)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 875,
+          "supplied_characters": 875
+        },
+        {
+          "heading": "Yolov8 \u2014 Custom Military Vehicle Class (Fine-Tuned Yolov8S)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 2,
+          "supplied_characters": 2
+        },
+        {
+          "heading": "Comparative Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "discussion",
+          "section_index": 42,
+          "source_characters": 926,
+          "supplied_characters": 926
+        },
+        {
+          "heading": "Comparative Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "discussion",
+          "section_index": 43,
+          "source_characters": 402,
+          "supplied_characters": 402
+        },
+        {
+          "heading": "Rt-Detr / Rf-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 13,
+          "supplied_characters": 13
+        },
+        {
+          "heading": "Detr (2023-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 1746,
+          "supplied_characters": 1746
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "limitations",
+          "section_index": 46,
+          "source_characters": 1079,
+          "supplied_characters": 1079
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "limitations",
+          "section_index": 47,
+          "source_characters": 896,
+          "supplied_characters": 896
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "conclusion",
+          "section_index": 48,
+          "source_characters": 1311,
+          "supplied_characters": 1311
+        },
+        {
+          "heading": "Future Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 1331,
+          "supplied_characters": 1331
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 3445,
+          "supplied_characters": 3445
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 1622,
+          "supplied_characters": 1622
+        }
+      ],
+      "selected_characters": 46963,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "selected_sections": [
+        {
+          "characters": 660,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 852,
+          "heading": "Abstract / front matter",
+          "page": 2
+        },
+        {
+          "characters": 2188,
+          "heading": "Abstract",
+          "page": 3
+        },
+        {
+          "characters": 1,
+          "heading": "Abstract",
+          "page": 4
+        },
+        {
+          "characters": 2957,
+          "heading": "Introduction",
+          "page": 4
+        },
+        {
+          "characters": 503,
+          "heading": "Introduction",
+          "page": 5
+        },
+        {
+          "characters": 769,
+          "heading": "Glossary Of Terms",
+          "page": 5
+        },
+        {
+          "characters": 1,
+          "heading": "Glossary Of Terms",
+          "page": 6
+        },
+        {
+          "characters": 235,
+          "heading": "Related Work",
+          "page": 6
+        },
+        {
+          "characters": 1423,
+          "heading": "From R-Cnn To Faster R-Cnn",
+          "page": 6
+        },
+        {
+          "characters": 137,
+          "heading": "From R-Cnn To Faster R-Cnn",
+          "page": 7
+        },
+        {
+          "characters": 845,
+          "heading": "From R-Cnn To Faster R-Cnn",
+          "page": 8
+        },
+        {
+          "characters": 301,
+          "heading": "From R-Cnn To Faster R-Cnn",
+          "page": 9
+        },
+        {
+          "characters": 1,
+          "heading": "From R-Cnn To Faster R-Cnn",
+          "page": 10
+        },
+        {
+          "characters": 1083,
+          "heading": "Mask R-Cnn And Instance Segmentation",
+          "page": 10
+        },
+        {
+          "characters": 1290,
+          "heading": "Yolo And The Single-Stage Paradigm",
+          "page": 10
+        },
+        {
+          "characters": 1235,
+          "heading": "Post-2024 Developments",
+          "page": 10
+        },
+        {
+          "characters": 1076,
+          "heading": "Post-2024 Developments",
+          "page": 11
+        },
+        {
+          "characters": 994,
+          "heading": "Positioning Of This Study",
+          "page": 11
+        },
+        {
+          "characters": 1424,
+          "heading": "Faster R-Cnn: Region Proposal Network And Training",
+          "page": 11
+        },
+        {
+          "characters": 357,
+          "heading": "Faster R-Cnn: Region Proposal Network And Training",
+          "page": 12
+        },
+        {
+          "characters": 827,
+          "heading": "Mask R-Cnn: Roialign And The Mask Branch",
+          "page": 12
+        },
+        {
+          "characters": 173,
+          "heading": "Mask R-Cnn: Roialign And The Mask Branch",
+          "page": 13
+        },
+        {
+          "characters": 689,
+          "heading": "Yolov8: Architecture And Loss Functions",
+          "page": 13
+        },
+        {
+          "characters": 785,
+          "heading": "Yolov8: Architecture And Loss Functions",
+          "page": 14
+        },
+        {
+          "characters": 948,
+          "heading": "Evaluation Metrics",
+          "page": 14
+        },
+        {
+          "characters": 509,
+          "heading": "Datasets",
+          "page": 14
+        },
+        {
+          "characters": 349,
+          "heading": "Datasets",
+          "page": 15
+        },
+        {
+          "characters": 943,
+          "heading": "Training Configuration",
+          "page": 15
+        },
+        {
+          "characters": 2,
+          "heading": "Training Configuration",
+          "page": 16
+        },
+        {
+          "characters": 1878,
+          "heading": "Custom Military Vehicle Detector: Experimental Pipeline",
+          "page": 16
+        },
+        {
+          "characters": 216,
+          "heading": "Results And Discussion",
+          "page": 16
+        },
+        {
+          "characters": 167,
+          "heading": "Results And Discussion",
+          "page": 17
+        },
+        {
+          "characters": 1590,
+          "heading": "Faster R-Cnn (Coco-Pretrained, Inception-Resnet-V2)",
+          "page": 17
+        },
+        {
+          "characters": 3302,
+          "heading": "Faster R-Cnn (Coco-Pretrained, Inception-Resnet-V2)",
+          "page": 18
+        },
+        {
+          "characters": 2,
+          "heading": "Faster R-Cnn (Coco-Pretrained, Inception-Resnet-V2)",
+          "page": 19
+        },
+        {
+          "characters": 1264,
+          "heading": "Mask R-Cnn (Coco-Pretrained, Resnet-101)",
+          "page": 19
+        },
+        {
+          "characters": 2,
+          "heading": "Mask R-Cnn (Coco-Pretrained, Resnet-101)",
+          "page": 20
+        },
+        {
+          "characters": 573,
+          "heading": "Yolov8 \u2014 General-Purpose (Pretrained, Yolov8N)",
+          "page": 20
+        },
+        {
+          "characters": 764,
+          "heading": "Yolov8 \u2014 Custom Military Vehicle Class (Fine-Tuned Yolov8S)",
+          "page": 20
+        },
+        {
+          "characters": 875,
+          "heading": "Yolov8 \u2014 Custom Military Vehicle Class (Fine-Tuned Yolov8S)",
+          "page": 21
+        },
+        {
+          "characters": 2,
+          "heading": "Yolov8 \u2014 Custom Military Vehicle Class (Fine-Tuned Yolov8S)",
+          "page": 22
+        },
+        {
+          "characters": 926,
+          "heading": "Comparative Discussion",
+          "page": 22
+        },
+        {
+          "characters": 402,
+          "heading": "Comparative Discussion",
+          "page": 23
+        },
+        {
+          "characters": 13,
+          "heading": "Rt-Detr / Rf-",
+          "page": 23
+        },
+        {
+          "characters": 1746,
+          "heading": "Detr (2023-",
+          "page": 23
+        },
+        {
+          "characters": 1079,
+          "heading": "Limitations",
+          "page": 23
+        },
+        {
+          "characters": 896,
+          "heading": "Limitations",
+          "page": 24
+        },
+        {
+          "characters": 1311,
+          "heading": "Conclusion",
+          "page": 24
+        },
+        {
+          "characters": 1331,
+          "heading": "Future Work",
+          "page": 24
+        },
+        {
+          "characters": 3445,
+          "heading": "Unclassified body after references",
+          "page": 25
+        },
+        {
+          "characters": 1622,
+          "heading": "Unclassified body after references",
+          "page": 26
+        }
+      ],
+      "selected_text_sha256": "e26b819762b37f38ef71850f04f78be33c00e1b0e67bf83b32099e912ec3fef2",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "98dc1250ed1f1885393e9d90dd5535df3e28b08899843695d793399fb5b80caa",
+      "source_pages": 26,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
     },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "5e00e4223c7c84579d29b95dec91eba1f46ffd43ca0aad781756eeb27ddacbaf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5e00e4223c7c8457-B0003"
+        ],
+        "excerpt": "Object detection and instance segmentation are foundational tasks in computer vision , underpinning \napplications ranging from autonomous driving to medical imaging and defense surve illance. This paper \npresents a structured, reproducible comparison of three influential detection architectures \u2014 Faster R-CNN, \nMask R-CNN, and YOLOv8 \u2014 spanning the two-stage, mask-augmented, and single-stage detection \nparadigms. I first re-derive and consolidate the theoretical foundations that con nect these architectures, \ntracing the lineage from R-CNN and Fast R-CNN through the Region Proposal Network (RPN) innovation \nthat defines Faster R-CNN, and onward to the RoIAlign-based mask branch of Ma sk R-CNN and the \nanchor-free, single-pass design of YOLOv8. I then evaluate the three models qualitatively, both on general-\npurpose COCO-domain imagery and on a purpose-built, hand-annotated dataset for a ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "26e06f7884aa4c95aeb82c87541c9294ee51819480821d5e8f84a0f7e088ad90",
+            "evidence_id": "E5e00e4223c7c8457-B0003",
+            "pages": [
+              3
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 3,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 0,
+                "text": "Object detection and instance segmentation are foundational tasks in computer vision , underpinning \napplications ranging from autonomous driving to medical imaging and defense surve illance. This paper \npresents a structured, reproducible comparison of three influential detection architectures \u2014 Faster R-CNN, \nMask R-CNN, and YOLOv8 \u2014 spanning the two-stage, mask-augmented, and single-stage detection \nparadigms. I first re-derive and consolidate the theoretical foundations that con nect these architectures, \ntracing the lineage from R-CNN and Fast R-CNN through the Region Proposal Network (RPN) innovation \nthat defines Faster R-CNN, and onward to the RoIAlign-based mask branch of Ma sk R-CNN and the \nanchor-free, single-pass design of YOLOv8. I then evaluate the three models qualitatively, both on general-\npurpose COCO-domain imagery and on a purpose-built, hand-annotated dataset for a "
+              }
+            ],
+            "text": "Object detection and instance segmentation are foundational tasks in computer vision , underpinning \napplications ranging from autonomous driving to medical imaging and defense surve illance. This paper \npresents a structured, reproducible comparison of three influential detection architectures \u2014 Faster R-CNN, \nMask R-CNN, and YOLOv8 \u2014 spanning the two-stage, mask-augmented, and single-stage detection \nparadigms. I first re-derive and consolidate the theoretical foundations that con nect these architectures, \ntracing the lineage from R-CNN and Fast R-CNN through the Region Proposal Network (RPN) innovation \nthat defines Faster R-CNN, and onward to the RoIAlign-based mask branch of Ma sk R-CNN and the \nanchor-free, single-pass design of YOLOv8. I then evaluate the three models qualitatively, both on general-\npurpose COCO-domain imagery and on a purpose-built, hand-annotated dataset for a "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5e00e4223c7c84579d29b95dec91eba1f46ffd43ca0aad781756eeb27ddacbaf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5e00e4223c7c8457-B0004"
+        ],
+        "excerpt": "domain the pretrained \nCOCO label space does not cover: military armored vehicles (\"tanks\"). Using CVAT.ai-annotated bounding \nboxes and a YOLOv8s model fine-tuned via transfer learning, I show that a lightwei ght, single-stage \ndetector can be adapted to a novel class with a small annotated corpus and modest  compute, while two-\nstage detectors trained only on COCO systematically mislabel the same objects as \"truck\" or \"car.\" I further \nsituate the study within the rapidly evolving 2024-2026 detection landscape, discuss ing how transformer-\nbased real-time detectors (RT-DETR, RF-DETR) and newer YOLO variants (YOLOv9-YOLOv12) extend \nthe accuracy-speed frontier established by the models benchmarked here. I con clude with a discussion of \nthe practical trade-offs between detection accuracy, inference latency, computational cost, and annotation \nburden, and I outline the quantitative ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "900df01440ae5b2de14b01291a05069b3e2311b65a71ad257312df0e6471d3d3",
+            "evidence_id": "E5e00e4223c7c8457-B0004",
+            "pages": [
+              3
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1795,
+                "page": 3,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 900,
+                "text": "domain the pretrained \nCOCO label space does not cover: military armored vehicles (\"tanks\"). Using CVAT.ai-annotated bounding \nboxes and a YOLOv8s model fine-tuned via transfer learning, I show that a lightwei ght, single-stage \ndetector can be adapted to a novel class with a small annotated corpus and modest  compute, while two-\nstage detectors trained only on COCO systematically mislabel the same objects as \"truck\" or \"car.\" I further \nsituate the study within the rapidly evolving 2024-2026 detection landscape, discuss ing how transformer-\nbased real-time detectors (RT-DETR, RF-DETR) and newer YOLO variants (YOLOv9-YOLOv12) extend \nthe accuracy-speed frontier established by the models benchmarked here. I con clude with a discussion of \nthe practical trade-offs between detection accuracy, inference latency, computational cost, and annotation \nburden, and I outline the quantitative "
+              }
+            ],
+            "text": "domain the pretrained \nCOCO label space does not cover: military armored vehicles (\"tanks\"). Using CVAT.ai-annotated bounding \nboxes and a YOLOv8s model fine-tuned via transfer learning, I show that a lightwei ght, single-stage \ndetector can be adapted to a novel class with a small annotated corpus and modest  compute, while two-\nstage detectors trained only on COCO systematically mislabel the same objects as \"truck\" or \"car.\" I further \nsituate the study within the rapidly evolving 2024-2026 detection landscape, discuss ing how transformer-\nbased real-time detectors (RT-DETR, RF-DETR) and newer YOLO variants (YOLOv9-YOLOv12) extend \nthe accuracy-speed frontier established by the models benchmarked here. I con clude with a discussion of \nthe practical trade-offs between detection accuracy, inference latency, computational cost, and annotation \nburden, and I outline the quantitative "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5e00e4223c7c84579d29b95dec91eba1f46ffd43ca0aad781756eeb27ddacbaf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5e00e4223c7c8457-B0005"
+        ],
+        "excerpt": "benchmarking protocol \u2014 mAP, precision-recall, and frames-per-\nsecond measurement across matched training conditions \u2014 needed to extend this qualitative and \narchitectural comparison into a fully numeric one. \nKeywords: object detection; instance segmentation; Faster R-CNN; Mask R-CNN; Y OLOv8; region \nproposal network; transfer learning; custom object classes; computer vision benchmarking.\n3",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e79d776379bbe4223d4a55050c5c39c0d074249501f5a7879381b9370388c47e",
+            "evidence_id": "E5e00e4223c7c8457-B0005",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 2188,
+                "page": 3,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 1795,
+                "text": "benchmarking protocol \u2014 mAP, precision-recall, and frames-per-\nsecond measurement across matched training conditions \u2014 needed to extend this qualitative and \narchitectural comparison into a fully numeric one. \nKeywords: object detection; instance segmentation; Faster R-CNN; Mask R-CNN; Y OLOv8; region \nproposal network; transfer learning; custom object classes; computer vision benchmarking."
+              },
+              {
+                "end": 1,
+                "page": 4,
+                "section": "Abstract",
+                "section_index": 3,
+                "start": 0,
+                "text": "3"
+              }
+            ],
+            "text": "benchmarking protocol \u2014 mAP, precision-recall, and frames-per-\nsecond measurement across matched training conditions \u2014 needed to extend this qualitative and \narchitectural comparison into a fully numeric one. \nKeywords: object detection; instance segmentation; Faster R-CNN; Mask R-CNN; Y OLOv8; region \nproposal network; transfer learning; custom object classes; computer vision benchmarking.\n3"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5e00e4223c7c84579d29b95dec91eba1f46ffd43ca0aad781756eeb27ddacbaf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5e00e4223c7c8457-B0031"
+        ],
+        "excerpt": "The principal metric used across all three architectures is mean Average Precision (mAP): \nmAP = (1/n) \u03a3_{k=1}^{n} AP_k \nwhere AP_k is the Average Precision for class k (the area under the class's precision-recall curve at a given \nIoU threshold) and n is the number of classes. This study evaluates all three archite ctures against this \nframework qualitatively, on the visual detection outcomes reported in Section 6 ; a natural and valuable \nextension \u2014 outlined in Section 10 \u2014 is to compute the full numeric framework directly: (i) mAP@50 and \nmAP@50:95, following the COCO convention, to allow direct comparison with the post-2024 baselines \ndiscussed in Section 3.4; (ii) per-class precision, recall, and F1-score; (iii) inference latency in milliseconds \nand throughput in frames per second, measured on a stated GPU/CPU configuration and batch s ize; and \n(iv) parameter count and FLOPs, to ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Metrics",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "267e86b150d330c66280a15e4665ae63aa7eb3b44c3de16f436d6e32d34f382f",
+            "evidence_id": "E5e00e4223c7c8457-B0031",
+            "pages": [
+              14
+            ],
+            "section": "Evaluation Metrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 14,
+                "section": "Evaluation Metrics",
+                "section_index": 25,
+                "start": 0,
+                "text": "The principal metric used across all three architectures is mean Average Precision (mAP): \nmAP = (1/n) \u03a3_{k=1}^{n} AP_k \nwhere AP_k is the Average Precision for class k (the area under the class's precision-recall curve at a given \nIoU threshold) and n is the number of classes. This study evaluates all three archite ctures against this \nframework qualitatively, on the visual detection outcomes reported in Section 6 ; a natural and valuable \nextension \u2014 outlined in Section 10 \u2014 is to compute the full numeric framework directly: (i) mAP@50 and \nmAP@50:95, following the COCO convention, to allow direct comparison with the post-2024 baselines \ndiscussed in Section 3.4; (ii) per-class precision, recall, and F1-score; (iii) inference latency in milliseconds \nand throughput in frames per second, measured on a stated GPU/CPU configuration and batch s ize; and \n(iv) parameter count and FLOPs, to "
+              }
+            ],
+            "text": "The principal metric used across all three architectures is mean Average Precision (mAP): \nmAP = (1/n) \u03a3_{k=1}^{n} AP_k \nwhere AP_k is the Average Precision for class k (the area under the class's precision-recall curve at a given \nIoU threshold) and n is the number of classes. This study evaluates all three archite ctures against this \nframework qualitatively, on the visual detection outcomes reported in Section 6 ; a natural and valuable \nextension \u2014 outlined in Section 10 \u2014 is to compute the full numeric framework directly: (i) mAP@50 and \nmAP@50:95, following the COCO convention, to allow direct comparison with the post-2024 baselines \ndiscussed in Section 3.4; (ii) per-class precision, recall, and F1-score; (iii) inference latency in milliseconds \nand throughput in frames per second, measured on a stated GPU/CPU configuration and batch s ize; and \n(iv) parameter count and FLOPs, to "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5e00e4223c7c84579d29b95dec91eba1f46ffd43ca0aad781756eeb27ddacbaf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5e00e4223c7c8457-B0033"
+        ],
+        "excerpt": "Two datasets are used. First, the Microsoft COCO dataset [23] \u2014 over 200,000 images spanning 80 object \ncategories with bounding-box and pixel-level instance-segmentation annotations \u2014 is used to evaluate the \npretrained Faster R-CNN (Inception-ResNet-v2 backbone, via TensorFlow Hu b, following the Inception-\nResNet-v2 architecture of Szegedy et al. [24]) and Mask R-CNN (ResNet-101 backbone) models on general \nimagery. Second, a custom dataset of military armored-vehicle imagery sourced from Flickr under\n14 \npermissive licenses was assembled to fine-tune YOLOv8 on a class outside the COCO label space. Twenty \nimages were manually annotated with axis-aligned bounding boxes using CVAT.ai, and a YOLO-format \ndataset configuration file (data.yaml) specified the training, validation, and t est splits together with the \nsingle custom class label \"tank.\"",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14,
+          15
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Datasets",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e7dce0b95b0bd61a2b6121e3a207dfb5a1184dcb58d5a72213b8a621411220b6",
+            "evidence_id": "E5e00e4223c7c8457-B0033",
+            "pages": [
+              14,
+              15
+            ],
+            "section": "Datasets",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 509,
+                "page": 14,
+                "section": "Datasets",
+                "section_index": 26,
+                "start": 0,
+                "text": "Two datasets are used. First, the Microsoft COCO dataset [23] \u2014 over 200,000 images spanning 80 object \ncategories with bounding-box and pixel-level instance-segmentation annotations \u2014 is used to evaluate the \npretrained Faster R-CNN (Inception-ResNet-v2 backbone, via TensorFlow Hu b, following the Inception-\nResNet-v2 architecture of Szegedy et al. [24]) and Mask R-CNN (ResNet-101 backbone) models on general \nimagery. Second, a custom dataset of military armored-vehicle imagery sourced from Flickr under"
+              },
+              {
+                "end": 349,
+                "page": 15,
+                "section": "Datasets",
+                "section_index": 27,
+                "start": 0,
+                "text": "14 \npermissive licenses was assembled to fine-tune YOLOv8 on a class outside the COCO label space. Twenty \nimages were manually annotated with axis-aligned bounding boxes using CVAT.ai, and a YOLO-format \ndataset configuration file (data.yaml) specified the training, validation, and t est splits together with the \nsingle custom class label \"tank.\""
+              }
+            ],
+            "text": "Two datasets are used. First, the Microsoft COCO dataset [23] \u2014 over 200,000 images spanning 80 object \ncategories with bounding-box and pixel-level instance-segmentation annotations \u2014 is used to evaluate the \npretrained Faster R-CNN (Inception-ResNet-v2 backbone, via TensorFlow Hu b, following the Inception-\nResNet-v2 architecture of Szegedy et al. [24]) and Mask R-CNN (ResNet-101 backbone) models on general \nimagery. Second, a custom dataset of military armored-vehicle imagery sourced from Flickr under\n14 \npermissive licenses was assembled to fine-tune YOLOv8 on a class outside the COCO label space. Twenty \nimages were manually annotated with axis-aligned bounding boxes using CVAT.ai, and a YOLO-format \ndataset configuration file (data.yaml) specified the training, validation, and t est splits together with the \nsingle custom class label \"tank.\""
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5e00e4223c7c84579d29b95dec91eba1f46ffd43ca0aad781756eeb27ddacbaf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5e00e4223c7c8457-B0034"
+        ],
+        "excerpt": "YOLOv8 was fine-tuned via transfer learning from COCO-pretrained weigh ts. Training was initially \nattempted with the medium-sized model variant (YOLOv8m) for 20 epochs; instability in the Google Colab \ntraining environment led to the adoption of the smaller YOLOv8s variant, which completed training without \ninterruption. Faster R-CNN and Mask R-CNN were used as off-the-shelf, COCO-pretrained models without \nadditional fine-tuning, which is an important asymmetry to state explicitly: the comparison in Section 6 \ncontrasts a fine-tuned YOLOv8 model against zero-shot Faster R-CNN / Mask R-CNN predictions on an \nout-of-distribution class, rather than a fully controlled, equal-training co mparison. I preserve this \nasymmetry in the discussion below because it reflects a realistic and comm on practical scenario \u2014 \nextending an existing pretrained pipeline to a new class \u2014 rather than ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 15,
+        "pages": [
+          15
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Training Configuration",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "126683eb24003cfdf1a1ffa80905e496fc7f3f5865da854871704b5d931008a6",
+            "evidence_id": "E5e00e4223c7c8457-B0034",
+            "pages": [
+              15
+            ],
+            "section": "Training Configuration",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 15,
+                "section": "Training Configuration",
+                "section_index": 28,
+                "start": 0,
+                "text": "YOLOv8 was fine-tuned via transfer learning from COCO-pretrained weigh ts. Training was initially \nattempted with the medium-sized model variant (YOLOv8m) for 20 epochs; instability in the Google Colab \ntraining environment led to the adoption of the smaller YOLOv8s variant, which completed training without \ninterruption. Faster R-CNN and Mask R-CNN were used as off-the-shelf, COCO-pretrained models without \nadditional fine-tuning, which is an important asymmetry to state explicitly: the comparison in Section 6 \ncontrasts a fine-tuned YOLOv8 model against zero-shot Faster R-CNN / Mask R-CNN predictions on an \nout-of-distribution class, rather than a fully controlled, equal-training co mparison. I preserve this \nasymmetry in the discussion below because it reflects a realistic and comm on practical scenario \u2014 \nextending an existing pretrained pipeline to a new class \u2014 rather than "
+              }
+            ],
+            "text": "YOLOv8 was fine-tuned via transfer learning from COCO-pretrained weigh ts. Training was initially \nattempted with the medium-sized model variant (YOLOv8m) for 20 epochs; instability in the Google Colab \ntraining environment led to the adoption of the smaller YOLOv8s variant, which completed training without \ninterruption. Faster R-CNN and Mask R-CNN were used as off-the-shelf, COCO-pretrained models without \nadditional fine-tuning, which is an important asymmetry to state explicitly: the comparison in Section 6 \ncontrasts a fine-tuned YOLOv8 model against zero-shot Faster R-CNN / Mask R-CNN predictions on an \nout-of-distribution class, rather than a fully controlled, equal-training co mparison. I preserve this \nasymmetry in the discussion below because it reflects a realistic and comm on practical scenario \u2014 \nextending an existing pretrained pipeline to a new class \u2014 rather than "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5e00e4223c7c84579d29b95dec91eba1f46ffd43ca0aad781756eeb27ddacbaf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5e00e4223c7c8457-B0039"
+        ],
+        "excerpt": "The results below are organized by model. Each finding is drawn directly from the detection outputs shown \nin Figures 9\u201311 and interpreted in terms of the underlying architectural mechanism responsible for it, rather\n16 \nthan presented as a caption-style description; Section 8 discusses what a follow-up quantitative evaluation \nwould add to the qualitative picture established here.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 16,
+        "pages": [
+          16,
+          17
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results And Discussion",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "11aebb5fdb53617a300877dbbebe8870acbb95e08d5a67dc55f01bf79f864bd6",
+            "evidence_id": "E5e00e4223c7c8457-B0039",
+            "pages": [
+              16,
+              17
+            ],
+            "section": "Results And Discussion",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 216,
+                "page": 16,
+                "section": "Results And Discussion",
+                "section_index": 31,
+                "start": 0,
+                "text": "The results below are organized by model. Each finding is drawn directly from the detection outputs shown \nin Figures 9\u201311 and interpreted in terms of the underlying architectural mechanism responsible for it, rather"
+              },
+              {
+                "end": 167,
+                "page": 17,
+                "section": "Results And Discussion",
+                "section_index": 32,
+                "start": 0,
+                "text": "16 \nthan presented as a caption-style description; Section 8 discusses what a follow-up quantitative evaluation \nwould add to the qualitative picture established here."
+              }
+            ],
+            "text": "The results below are organized by model. Each finding is drawn directly from the detection outputs shown \nin Figures 9\u201311 and interpreted in terms of the underlying architectural mechanism responsible for it, rather\n16 \nthan presented as a caption-style description; Section 8 discusses what a follow-up quantitative evaluation \nwould add to the qualitative picture established here."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5e00e4223c7c84579d29b95dec91eba1f46ffd43ca0aad781756eeb27ddacbaf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5e00e4223c7c8457-B0049"
+        ],
+        "excerpt": "\u2022 In a museum-interior scene with multiple tanks, related armored vehicles, and background clutter, the \nfine-tuned model correctly localized four tank instances, with confidence scores ranging from 0.30 to \n0.90; the lower-confidence boxes correspond to partially occluded vehicles at the edges of the frame \nor to visually ambiguous museum signage/models, indicating the expected degradation in confidence \nunder occlusion and background clutter typical of a small fine-tuning set. \n\u2022 On two outdoor static-display photographs, the model detected each tank at very high confi dence \n(0.99-1.00), suggesting strong performance on clear, unoccluded, canonical side-view prese ntations \nof the target class \u2014 the dominant viewpoint in the twenty-image training set.\n20 \n\u2022 On a distant, moving-vehicle field photograph, the model correctly detected a modern armored vehicle \nat 0.99 confidence despite ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 20,
+        "pages": [
+          20,
+          21
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Yolov8 \u2014 Custom Military Vehicle Class (Fine-Tuned Yolov8S)",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "2a1a531534852d68660194c530a02561c387d32bc5ba31d9f3bdc0769abce9c2",
+            "evidence_id": "E5e00e4223c7c8457-B0049",
+            "pages": [
+              20,
+              21
+            ],
+            "section": "Yolov8 \u2014 Custom Military Vehicle Class (Fine-Tuned Yolov8S)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 764,
+                "page": 20,
+                "section": "Yolov8 \u2014 Custom Military Vehicle Class (Fine-Tuned Yolov8S)",
+                "section_index": 39,
+                "start": 0,
+                "text": "\u2022 In a museum-interior scene with multiple tanks, related armored vehicles, and background clutter, the \nfine-tuned model correctly localized four tank instances, with confidence scores ranging from 0.30 to \n0.90; the lower-confidence boxes correspond to partially occluded vehicles at the edges of the frame \nor to visually ambiguous museum signage/models, indicating the expected degradation in confidence \nunder occlusion and background clutter typical of a small fine-tuning set. \n\u2022 On two outdoor static-display photographs, the model detected each tank at very high confi dence \n(0.99-1.00), suggesting strong performance on clear, unoccluded, canonical side-view prese ntations \nof the target class \u2014 the dominant viewpoint in the twenty-image training set."
+              },
+              {
+                "end": 135,
+                "page": 21,
+                "section": "Yolov8 \u2014 Custom Military Vehicle Class (Fine-Tuned Yolov8S)",
+                "section_index": 40,
+                "start": 0,
+                "text": "20 \n\u2022 On a distant, moving-vehicle field photograph, the model correctly detected a modern armored vehicle \nat 0.99 confidence despite "
+              }
+            ],
+            "text": "\u2022 In a museum-interior scene with multiple tanks, related armored vehicles, and background clutter, the \nfine-tuned model correctly localized four tank instances, with confidence scores ranging from 0.30 to \n0.90; the lower-confidence boxes correspond to partially occluded vehicles at the edges of the frame \nor to visually ambiguous museum signage/models, indicating the expected degradation in confidence \nunder occlusion and background clutter typical of a small fine-tuning set. \n\u2022 On two outdoor static-display photographs, the model detected each tank at very high confi dence \n(0.99-1.00), suggesting strong performance on clear, unoccluded, canonical side-view prese ntations \nof the target class \u2014 the dominant viewpoint in the twenty-image training set.\n20 \n\u2022 On a distant, moving-vehicle field photograph, the model correctly detected a modern armored vehicle \nat 0.99 confidence despite "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5e00e4223c7c84579d29b95dec91eba1f46ffd43ca0aad781756eeb27ddacbaf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5e00e4223c7c8457-B0050"
+        ],
+        "excerpt": "significant scale reduction and motion blur, indicating rea sonable \ngeneralization beyond the specific tank models likely present in the small training corpus. \nTaken together, these results support the central practical claim of the case study: a small, well-annotated \ndataset and a lightweight, anchor-free single-stage detector are sufficient to extend detection coverage to a \nnovel, domain-specific class that pretrained, closed-vocabulary two-stage detectors cannot recognize at all. \nThis is a meaningfully different comparison axis from raw accuracy on shared classe s: it is a claim about \nannotation efficiency and deployment workflow, not a head-to-head accuracy contest on identical \ncategories, and it should be read as such.\n21",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 21,
+        "pages": [
+          21,
+          22
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Yolov8 \u2014 Custom Military Vehicle Class (Fine-Tuned Yolov8S)",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "b0d29d3993639e1c866380b804a3635e28b2afbcdc507cb2682a7c03b1b9c6c3",
+            "evidence_id": "E5e00e4223c7c8457-B0050",
+            "pages": [
+              21,
+              22
+            ],
+            "section": "Yolov8 \u2014 Custom Military Vehicle Class (Fine-Tuned Yolov8S)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 875,
+                "page": 21,
+                "section": "Yolov8 \u2014 Custom Military Vehicle Class (Fine-Tuned Yolov8S)",
+                "section_index": 40,
+                "start": 135,
+                "text": "significant scale reduction and motion blur, indicating rea sonable \ngeneralization beyond the specific tank models likely present in the small training corpus. \nTaken together, these results support the central practical claim of the case study: a small, well-annotated \ndataset and a lightweight, anchor-free single-stage detector are sufficient to extend detection coverage to a \nnovel, domain-specific class that pretrained, closed-vocabulary two-stage detectors cannot recognize at all. \nThis is a meaningfully different comparison axis from raw accuracy on shared classe s: it is a claim about \nannotation efficiency and deployment workflow, not a head-to-head accuracy contest on identical \ncategories, and it should be read as such."
+              },
+              {
+                "end": 2,
+                "page": 22,
+                "section": "Yolov8 \u2014 Custom Military Vehicle Class (Fine-Tuned Yolov8S)",
+                "section_index": 41,
+                "start": 0,
+                "text": "21"
+              }
+            ],
+            "text": "significant scale reduction and motion blur, indicating rea sonable \ngeneralization beyond the specific tank models likely present in the small training corpus. \nTaken together, these results support the central practical claim of the case study: a small, well-annotated \ndataset and a lightweight, anchor-free single-stage detector are sufficient to extend detection coverage to a \nnovel, domain-specific class that pretrained, closed-vocabulary two-stage detectors cannot recognize at all. \nThis is a meaningfully different comparison axis from raw accuracy on shared classe s: it is a claim about \nannotation efficiency and deployment workflow, not a head-to-head accuracy contest on identical \ncategories, and it should be read as such.\n21"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5e00e4223c7c84579d29b95dec91eba1f46ffd43ca0aad781756eeb27ddacbaf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5e00e4223c7c8457-B0055"
+        ],
+        "excerpt": "NMS-free, transformer-based real-time \ndetectors \u2014 that did not exist when Faster R-CNN and Mask R-CNN were introduced. Second, the custom-\nclass case study illustrates a comparison axis that raw COCO benchmark tables do not capture: annotation \nefficiency and fine-tuning cost for previously unseen categories, which is often the more decision-relevant \nmetric for applied practitioners than marginal mAP differences on shared classes. Third, because Faster R-\nCNN and Mask R-CNN were evaluated here in a zero-shot, COCO-only configuration while YOLOv8 was \nfine-tuned, the tank-detection results should be read as evidence about dep loyment workflow, not as a \ncontrolled accuracy comparison between architectures; a rigorous follow-up woul d fine-tune all three \narchitectures on the identical annotated tank dataset and report matched mAP figures.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 23,
+        "pages": [
+          23
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Detr (2023-",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "fbbd1415c80aba67ff390671baacf3645a5fd81e74baab411fb527dbee7ea8fd",
+            "evidence_id": "E5e00e4223c7c8457-B0055",
+            "pages": [
+              23
+            ],
+            "section": "Detr (2023-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1746,
+                "page": 23,
+                "section": "Detr (2023-",
+                "section_index": 45,
+                "start": 895,
+                "text": "NMS-free, transformer-based real-time \ndetectors \u2014 that did not exist when Faster R-CNN and Mask R-CNN were introduced. Second, the custom-\nclass case study illustrates a comparison axis that raw COCO benchmark tables do not capture: annotation \nefficiency and fine-tuning cost for previously unseen categories, which is often the more decision-relevant \nmetric for applied practitioners than marginal mAP differences on shared classes. Third, because Faster R-\nCNN and Mask R-CNN were evaluated here in a zero-shot, COCO-only configuration while YOLOv8 was \nfine-tuned, the tank-detection results should be read as evidence about dep loyment workflow, not as a \ncontrolled accuracy comparison between architectures; a rigorous follow-up woul d fine-tune all three \narchitectures on the identical annotated tank dataset and report matched mAP figures."
+              }
+            ],
+            "text": "NMS-free, transformer-based real-time \ndetectors \u2014 that did not exist when Faster R-CNN and Mask R-CNN were introduced. Second, the custom-\nclass case study illustrates a comparison axis that raw COCO benchmark tables do not capture: annotation \nefficiency and fine-tuning cost for previously unseen categories, which is often the more decision-relevant \nmetric for applied practitioners than marginal mAP differences on shared classes. Third, because Faster R-\nCNN and Mask R-CNN were evaluated here in a zero-shot, COCO-only configuration while YOLOv8 was \nfine-tuned, the tank-detection results should be read as evidence about dep loyment workflow, not as a \ncontrolled accuracy comparison between architectures; a rigorous follow-up woul d fine-tune all three \narchitectures on the identical annotated tank dataset and report matched mAP figures."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5e00e4223c7c84579d29b95dec91eba1f46ffd43ca0aad781756eeb27ddacbaf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5e00e4223c7c8457-B0056"
+        ],
+        "excerpt": "\u2022 Quantitative metrics (mAP, precision, recall, FPS, parameter counts) are not  yet reported for any of \nthe three models on either dataset; the current evidence base is qualitative and image-by-image, which \nfalls short of the reporting standard expected by peer-reviewed venues in computer vision. \n\u2022 The custom tank dataset comprises only twenty annotated images, which is small relative to standard \ndetection-dataset norms and raises concerns about overfitting and limited viewpoint/model diversity; \na data augmentation strategy and a larger, more diverse annotated corpus (or an expl icit few-shot \nlearning framing) would substantially strengthen the contribution. \n\u2022 Faster R-CNN and Mask R-CNN were evaluated zero-shot on COCO classes while YOLOv8 was \nfine-tuned for the tank class, so the three models are not compared under matched training conditions; \nthis asymmetry should be stated ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 23,
+        "pages": [
+          23
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "75abbeba19b44eaa51f04153f915b660f34bfe984a0fcc74f4c3346ca526d8ff",
+            "evidence_id": "E5e00e4223c7c8457-B0056",
+            "pages": [
+              23
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 23,
+                "section": "Limitations",
+                "section_index": 46,
+                "start": 0,
+                "text": "\u2022 Quantitative metrics (mAP, precision, recall, FPS, parameter counts) are not  yet reported for any of \nthe three models on either dataset; the current evidence base is qualitative and image-by-image, which \nfalls short of the reporting standard expected by peer-reviewed venues in computer vision. \n\u2022 The custom tank dataset comprises only twenty annotated images, which is small relative to standard \ndetection-dataset norms and raises concerns about overfitting and limited viewpoint/model diversity; \na data augmentation strategy and a larger, more diverse annotated corpus (or an expl icit few-shot \nlearning framing) would substantially strengthen the contribution. \n\u2022 Faster R-CNN and Mask R-CNN were evaluated zero-shot on COCO classes while YOLOv8 was \nfine-tuned for the tank class, so the three models are not compared under matched training conditions; \nthis asymmetry should be stated "
+              }
+            ],
+            "text": "\u2022 Quantitative metrics (mAP, precision, recall, FPS, parameter counts) are not  yet reported for any of \nthe three models on either dataset; the current evidence base is qualitative and image-by-image, which \nfalls short of the reporting standard expected by peer-reviewed venues in computer vision. \n\u2022 The custom tank dataset comprises only twenty annotated images, which is small relative to standard \ndetection-dataset norms and raises concerns about overfitting and limited viewpoint/model diversity; \na data augmentation strategy and a larger, more diverse annotated corpus (or an expl icit few-shot \nlearning framing) would substantially strengthen the contribution. \n\u2022 Faster R-CNN and Mask R-CNN were evaluated zero-shot on COCO classes while YOLOv8 was \nfine-tuned for the tank class, so the three models are not compared under matched training conditions; \nthis asymmetry should be stated "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5e00e4223c7c84579d29b95dec91eba1f46ffd43ca0aad781756eeb27ddacbaf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5e00e4223c7c8457-B0061"
+        ],
+        "excerpt": "\u2022 Report full quantitative metrics (mAP@50, mAP@50:95, precision, recall, F1, FPS, parameter count, \nFLOPs) for all three models on both the COCO validation subset and the custom tank test split, \nreplacing the qualitative discussion in Section 6 with reproducible numeric results. \n\u2022 Expand the custom tank dataset substantially beyond twenty images, incorporate data augmentation \n(mosaic, random scale/rotation, color jitter), and consider semi-automated annotati on using the \nSegment Anything Model (SAM) to accelerate labeling of additional classes. \n\u2022 Fine-tune Faster R-CNN and Mask R-CNN on the same custom dataset used for YOLOv8, to produce \na matched-training comparison rather than a zero-shot-versus-fine-tuned comparison. \n\u2022 Benchmark against YOLOv9-YOLOv12 and RT-DETR/RF-DETR on identical data split s and \nhardware, given their demonstrated improvements over YOLOv8 on standard ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 24,
+        "pages": [
+          24
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Future Work",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "84e0a0d3b00370efa8c05204aba87f4fe30bd156e9cd71746ec6ee1e05b92a3b",
+            "evidence_id": "E5e00e4223c7c8457-B0061",
+            "pages": [
+              24
+            ],
+            "section": "Future Work",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 24,
+                "section": "Future Work",
+                "section_index": 49,
+                "start": 0,
+                "text": "\u2022 Report full quantitative metrics (mAP@50, mAP@50:95, precision, recall, F1, FPS, parameter count, \nFLOPs) for all three models on both the COCO validation subset and the custom tank test split, \nreplacing the qualitative discussion in Section 6 with reproducible numeric results. \n\u2022 Expand the custom tank dataset substantially beyond twenty images, incorporate data augmentation \n(mosaic, random scale/rotation, color jitter), and consider semi-automated annotati on using the \nSegment Anything Model (SAM) to accelerate labeling of additional classes. \n\u2022 Fine-tune Faster R-CNN and Mask R-CNN on the same custom dataset used for YOLOv8, to produce \na matched-training comparison rather than a zero-shot-versus-fine-tuned comparison. \n\u2022 Benchmark against YOLOv9-YOLOv12 and RT-DETR/RF-DETR on identical data split s and \nhardware, given their demonstrated improvements over YOLOv8 on standard "
+              }
+            ],
+            "text": "\u2022 Report full quantitative metrics (mAP@50, mAP@50:95, precision, recall, F1, FPS, parameter count, \nFLOPs) for all three models on both the COCO validation subset and the custom tank test split, \nreplacing the qualitative discussion in Section 6 with reproducible numeric results. \n\u2022 Expand the custom tank dataset substantially beyond twenty images, incorporate data augmentation \n(mosaic, random scale/rotation, color jitter), and consider semi-automated annotati on using the \nSegment Anything Model (SAM) to accelerate labeling of additional classes. \n\u2022 Fine-tune Faster R-CNN and Mask R-CNN on the same custom dataset used for YOLOv8, to produce \na matched-training comparison rather than a zero-shot-versus-fine-tuned comparison. \n\u2022 Benchmark against YOLOv9-YOLOv12 and RT-DETR/RF-DETR on identical data split s and \nhardware, given their demonstrated improvements over YOLOv8 on standard "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://www.researchsquare.com/article/rs-10831765/latest.pdf",
     "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [
-      "Not enough paper content was available for a defensible scholarly-quality score.",
-      "No extractable manuscript text was available."
-    ],
+    "missing_information": [],
     "overall_quality_score": null,
     "paper_type": "case_study",
     "positive_signals": [],
     "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The manuscript reports no quantitative evaluation: mAP, precision, recall, FPS, and parameter counts are explicitly deferred to future work, leaving only qualitative inspection of a few sample images as evidence.",
+          "The central empirical comparison is asymmetric and uncontrolled: YOLOv8s is fine-tuned on the custom tank class while Faster R-CNN and Mask R-CNN are evaluated zero-shot on COCO, so the headline claim about single-stage transfer-learning advantage is not established as a controlled result.",
+          "The custom dataset contains only twenty annotated images with no reported validation protocol, data augmentation, or held-out quantitative assessment, which is insufficient to support claims about generalization or annotation efficiency."
+        ],
+        "canonical_id": "doi:10.21203/rs.3.rs-10831765/v1",
+        "context_id": "5e00e4223c7c84579d29b95dec91eba1f46ffd43ca0aad781756eeb27ddacbaf",
+        "evaluation_independence": {
+          "concern": "moderate",
+          "corroboration_direction": "unavailable",
+          "corroboration_summary": "No independent quantitative measurement is reported; the manuscript explicitly defers mAP, precision, recall, and FPS to future work.",
+          "final_evaluation_signal": "Qualitative visual inspection of detection outputs on a small number of sample images.",
+          "independent_corroboration": "absent",
+          "optimization_signal": "Supervised fine-tuning of YOLOv8s on twenty custom-annotated tank images using CIoU and DFL/BCE losses.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E5e00e4223c7c8457-B0003",
+          "E5e00e4223c7c8457-B0004",
+          "E5e00e4223c7c8457-B0005",
+          "E5e00e4223c7c8457-B0031",
+          "E5e00e4223c7c8457-B0033",
+          "E5e00e4223c7c8457-B0034",
+          "E5e00e4223c7c8457-B0039",
+          "E5e00e4223c7c8457-B0049",
+          "E5e00e4223c7c8457-B0050",
+          "E5e00e4223c7c8457-B0055",
+          "E5e00e4223c7c8457-B0056",
+          "E5e00e4223c7c8457-B0061"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "98dc1250ed1f1885393e9d90dd5535df3e28b08899843695d793399fb5b80caa"
+      },
       "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
       "adjudicator_provider": "openrouter",
       "model_pair": {
@@ -143,17 +1723,52 @@
         },
         "version": "model-pair-v1"
       },
-      "outcome": "manuscript_unavailable",
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.21203/rs.3.rs-10831765/v1",
+        "claim_evidence_alignment": "Claims regarding transfer learning and comparative strengths across paradigms are supported only by qualitative illustrative detections on a handful of sample images rather than rigorous benchmarking.",
+        "context_id": "5e00e4223c7c84579d29b95dec91eba1f46ffd43ca0aad781756eeb27ddacbaf",
+        "decision": "uncertain",
+        "evaluation_assessment": "There is no quantitative empirical evaluation. As explicitly acknowledged by the author, standard performance metrics such as mAP, precision, recall, and FPS are absent, with validation restricted to qualitative inspections of individual output images.",
+        "evaluation_independence": {
+          "concern": "moderate",
+          "corroboration_direction": "unavailable",
+          "corroboration_summary": "No independent quantitative evaluation (such as holdout test mAP or controlled benchmark metrics) is reported.",
+          "final_evaluation_signal": "Qualitative visual inspection of bounding box detections on several sample images.",
+          "independent_corroboration": "absent",
+          "optimization_signal": "Supervised fine-tuning loss (CIoU and DFL/BCE) on 20 custom-annotated Flickr tank images for YOLOv8s, alongside standard pretraining on MS-COCO.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E5e00e4223c7c8457-B0003",
+          "E5e00e4223c7c8457-B0004",
+          "E5e00e4223c7c8457-B0005",
+          "E5e00e4223c7c8457-B0033",
+          "E5e00e4223c7c8457-B0034",
+          "E5e00e4223c7c8457-B0039",
+          "E5e00e4223c7c8457-B0049",
+          "E5e00e4223c7c8457-B0050",
+          "E5e00e4223c7c8457-B0055",
+          "E5e00e4223c7c8457-B0056",
+          "E5e00e4223c7c8457-B0061"
+        ],
+        "limitations": "The author transparently notes that quantitative metrics are entirely absent, the dataset contains only 20 images, and Faster R-CNN and Mask R-CNN were not fine-tuned, resulting in an asymmetric qualitative comparison.",
+        "method_assessment": "The architectural consolidation relies on established standard descriptions from existing literature without new algorithmic developments. The experimental pipeline fine-tunes YOLOv8s on a very small dataset of 20 images sourced from Flickr, with minimal details regarding validation protocols or hyperparameter sweeps.",
+        "quality_rationale": "The paper provides an accessible summary of classic detection architectures and a small-scale demonstration, but it lacks any quantitative experimental validation or controlled empirical benchmarking.",
+        "scoped_contribution": "The manuscript reviews the architectural lineages of Faster R-CNN, Mask R-CNN, and YOLOv8, and presents a qualitative transfer-learning case study fine-tuning YOLOv8s on a 20-image military tank dataset while contrasting it against off-the-shelf COCO-pretrained models.",
+        "source_content_hash": "98dc1250ed1f1885393e9d90dd5535df3e28b08899843695d793399fb5b80caa"
+      },
       "primary_model": "gemini-3.8-flash",
-      "primary_provider": "google"
+      "primary_provider": "google",
+      "provenance_status": "pass"
     },
-    "rationale": "Manuscript unavailable; no scientific decision.",
+    "rationale": "The paper provides an accessible summary of classic detection architectures and a small-scale demonstration, but it lacks any quantitative experimental validation or controlled empirical benchmarking.",
     "recommendation": "unknown",
     "rubric_version": "scholarly-rubric-v2",
-    "source_content_hash": "22f783c9bb7dabfda79824441ad5f319a6dab484bad6d015175ae42a3a6de7dd",
+    "source_content_hash": "98dc1250ed1f1885393e9d90dd5535df3e28b08899843695d793399fb5b80caa",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "No promotion; review candidates may remain pending indefinitely."
+    "uncertainty": "The author transparently notes that quantitative metrics are entirely absent, the dataset contains only 20 images, and Faster R-CNN and Mask R-CNN were not fine-tuned, resulting in an asymmetric qualitative comparison."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -182,7 +1797,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

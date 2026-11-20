@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eliciting Research Taste in LLMs through Future Research Direction Choice</title>
+  <meta name="description" content="Daily Paper Scout briefing for autonomous research agents, AI-scientist systems, and deep research workflows.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory Library</a> <a href="../../engram/index.html">Engram</a> <a href="../../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Eliciting Research Taste in LLMs through Future Research Direction Choice</h1>
+          <p class="hero-copy">Dhruv Trehan, Paras Chopra</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2611.19794">Open paper</a>
+            <a class="paper-detail-link" href="eliciting-research-taste-in-llms-through-future-research-direction-choice-12c271be.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Dhruv Trehan, Paras Chopra</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-11-15</dd></div>
+              <div><dt>Publication date</dt><dd>2026-11-15</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2611.19794v1">arXiv</a><a href="https://doi.org/10.48550/arxiv.2611.19794">DOI</a><a href="https://openalex.org/W7234852712">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies AI-scientist or scientific-discovery agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Research taste is increasingly discussed in the context of AI scientists, yet remains little studied or measured in LLMs. This judgment matters especially in open-ended research, where a direction must be chosen before a verifiable objective is available. We operationalize research taste through one task of the scie...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The paper provides a well-designed, transparently controlled behavioral evaluation of an open-ended concept (research taste) with solid methodology, rigorous order controls, insightful ablation experiments, and appropriate contextualization of limitations.</p>
+      <p>The manuscript candidly acknowledges reliance on a single LLM (Sonnet 4.5) for text extraction and distractor filtering, the small sample size (80 pairs from 19 ML papers), restriction to ML subdomains, single-temperature sampling, and the pilot scale of the human baseline [E639f1a641729868a-B0016, E639f1a641729868a-B0028, E639f1a641729868a-B0037, E639f1a641729868a-B0038, E639f1a641729868a-B0039].</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-18T12:41:18.702737+00:00.</p>
+        <p>Coverage: 60712 of 60712 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Research taste is increasingly discussed in the context of AI scientists, yet re-
+mains little studied or measured in LLMs. This judgment matters especially
+in open-ended research, where a direction must be chosen before a verifi-
+able objective is available. We operationalize research taste through one
+task of the scientific workflow: choosing which future research direction to
+pursue given a research goal and current results. Rather than predicting
+downstream scientometric metrics or treating author choices as objectively
+correct, we evaluate models against human-authored future-work direc-
+tions and report author alignment, stable divergence, and unstable choice
+as behavioral measures of research-direction preference. We construct an
+order-controlled evaluation of 80 pairwise comparisons from 19 ML papers
+published between December 2025 and February 2026 across four subdo-
+mains. </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Each query presents a research goal, hypotheses tested with key
+results, and two candidate future directions: one author-recommended
+direction and one plausible distractor sampled from a similar paper. Across
+eight LLMs, author alignment ranges from 45.0% to 67.5%, while stable
+divergence ranges from 15.0% to 36.2%. These divergences largely per-
+sist under similarity controls, prompt ablations, and an author-preference
+framing check, and inter-model agreement suggests that some non-author
+preferences are shared across models. We characterize what models diverge
+toward using transition-category labels and selected reasoning examples,
+finding recurring movement toward scaling/generalization and trade-offs
+between methodological and infrastructure/data extensions. We view
+this as an early descriptive evaluation for eliciting research taste profiles
+in LLMs, and as a step toward </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>LLMs, namely selecting which future research direction to pursue, given an
+existing research context. Figure 1 shows an example query.
+We make three contributions. First, we build a pairwise evaluation of 80 such queries
+that uses human-authored future works as ground-truth reference points matched with
+distinct and plausible distractors. This lets us study when models align with author-
+recommended directions, when they stably prefer non-author alternatives, and when their
+choices are sensitive to option ordering. Second, we evaluate eight frontier and open-weight
+models and show that non-author preferences, especially stable divergences, recur across
+models and queries and are not explained by simple similarity signals. Third, we study the
+structure of these divergences through prompt variations, inter-model agreement analysis,
+an early descriptive taxonomy of model research-direction </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Dataset Construction. Our dataset of 80 pairwise comparisons (160 prompts) comes from
+19 papers across 4 subdomains of ML research, namely Agents/Methods, LLM Analysis,
+Training/Infrastructure, and AI for Science. We started with a pool of 41 papers from
+December 2025-February 2026, after the stated training cutoff dates of the evaluated models,
+to mitigate data contamination. We prioritized papers from established research groups to
+ensure that the extracted research context (hypotheses, results, and future work) meets the
+standard methodological and rigor expectations of the human research community.
+Figure 2 summarizes our dataset construction and evaluation pipeline, from source-paper
+selection through distractor filtering and ordered query-pair creation.
+1
+Source Papers
+Post model training and
+knowledge cut-off dates.
+2
+Extract Structured
+Context
+Using LaTeX source via
+ArXiv API </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and Sonnet 4.5.
+Research Goal
+Key Results
+Future Works
+2
+Rephrase All Future
+Works
+Using Claude Sonnet 4.5.
+3
+4
+Build Distractor
+Pool Per Paper
+Using extracted future
+works from similar papers
+5
+Filter Distractors Per
+Sourced Paper
+Using Sonnet-4.5-as-Judge
+and manual review.
+Length Match
+Distinctiveness
+Plausibility
+6
+Create Ordered
+Query Pairs
+Drop papers with fewer than
+2 valid distractors.
+Figure 2: Dataset construction and evaluation pipeline.
+We access the LaTeX source for these 41 papers via the arXiv API and then filter them for
+explicitly stated future works using Appendix prompt B.0.1. For each remaining paper, we
+use Claude Sonnet 4.5 at temperature 0.3 to extract three structured fields: the research goal,
+the hypotheses tested with key results, and future works with source citations. Prompts for
+each of these extractions are shared in Appendix B.0.2, B.0.3, and B.0.4. We </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>also use Sonnet
+4.5 to rephrase all extracted future works, using Appendix prompt B.0.5, into standardized
+research-direction statements while preserving original terminology where possible. This
+standardization reduces formatting and lexical cues that could otherwise distinguish author-
+recommended directions from distractors.
+To construct a distractor pool for each target paper&#x27;s ground-truth author-recommended
+future work statements, we compute an embedding similarity matrix across papers using
+OpenAI&#x27;s text-embedding-3-small on an 8000-token excerpt of each paper&#x27;s LaTeX source (
+first 2,000 and last 6,000 tokens), and retrieve rephrased future works from the top-5 most
+similar papers as candidate distractors for each target paper. We filter candidates by length,
+requiring distractors to be within 0.75-1.25x the author-recommended future works word
+count, and use Claude Sonnet 4.5 </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>as an LLM judge to assess distinctiveness from the target
+paper&#x27;s ground-truth future works and plausibility as a next direction for the target paper
+(Appendix B.0.6). After automated filtering and manual query-quality review, papers with
+fewer than 2 valid distractors are dropped. 19 of 41 papers are retained, yielding 80 unique
+pairwise comparisons.
+We also piloted a three-option multiple-choice format before adopting this design. Pilot
+results are reported in Appendix Tables 17 and 18. While reviewing this, we ran into the lim-
+itations of multiple-choice evaluations and their susceptibility to position bias documented
+extensively in literature such as (Zheng et al., 2024). To minimize position bias, our final
+query set was constructed pairwise.
+As a dataset diagnostic, we compute embedding and TF-IDF similarity between each option
+and the research context. The author-recommended </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>option is more context-similar in 64 of
+80 pairs (80.0%), but absolute similarities are low and the average delta is small relative to
+its variance, indicating that similarity alone is not a reliable discriminator. Full similarity
+statistics are reported in Appendix Table 1.
+Evaluation Setup. We evaluate Claude Opus 4.5 and Claude Haiku 4.5 from Anthropic,
+Gemini 3 Pro and Gemini 3 Flash from Google DeepMind, GPT-5.2 Pro and GPT OSS
+120B from OpenAI, Qwen3 Max (Thinking) from Qwen, and Llama 4 Maverick from Meta.
+Models are chosen to span open and closed model providers and model size families.
+3
+Published as a workshop paper at COLM 2026
+All evaluations use temperature 0 with one response per ordered prompt. The reported
+outcomes, therefore, represent single-sample behavioral elicitation. We leave multi-sample
+consistency and across-temperature checks, as well as log-probability-based </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>confidence
+analysis and mechanistic interpretability analyses of these behaviors, to future work.
+We report three key metrics across 80 query pairs: author alignment (the author-
+recommended direction selected in both orderings), stable divergence (the sampled dis-
+tractor selected in both orderings), and unstable choice (chosen option differs across the
+two orderings). We compute these metrics using only the final selected option and do not
+evaluate the soundness of the accompanying reasoning trace.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Figure 3 summarizes the three outcome shares per model: Author Alignment, Stable
+Divergence, and Unstable Choice. Exact per-model values are reported in Appendix Table 2.
+Among cases where models do not align with the author-recommended direction, models
+differ in whether they make an order-consistent content-level non-author choice or become
+sensitive to option ordering, producing unstable choices.
+0% 20% 40% 60% 80% 100%
+Share of 80 future-work pairs (%)
+Llama 4 Maverick
+Qwen3 Max
+GPT-OSS-120B
+GPT-5.2 Pro
+Claude Haiku 4.5
+Claude Opus 4.5
+Gemini 3 Flash
+Gemini 3 Pro
+45.0
+50.0
+50.0
+57.5
+50.0
+55.0
+62.5
+67.5
+35.0
+23.8
+36.2
+30.0
+21.2
+26.2
+23.8
+15.0
+20.0
+26.2
+13.8
+12.5
+28.7
+18.8
+13.8
+17.5
+Author alignment Stable divergence Unstable choice
+Figure 3: Outcome shares for future-work selection across evaluated models. All models
+exceed the 25% random baseline on author alignment and show some </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>substantial stable
+divergence. Author alignment ranges from 45.0% to 67.5%, and stable divergence from
+15.0% to 36.2%. Unstable-choice rates vary from 12.5% to 28.7%, indicating that some models
+preserve content choices across orderings more consistently than others.
+Stable divergence was not isolated to a select few queries. 45 of 80 pairs elicited stable
+divergence from at least one model, 34 from at least two, 27 from at least three, and 24
+from at least four. Appendix table 3 reports the cumulative number of pairs eliciting stable
+divergence at each model-count. In total, we observe 169 stable divergence events across all
+models. These counts suggest that non-author preferences recur across models and queries,
+rather than remaining idiosyncratic to individual models.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Similarity control.As discussed in Section 2 Table 1 the author-recommended option is
+more context-similar in 64 of 80 pairs. This suggests a pure similarity heuristic would score
+an 80.0% author-alignment rate. No evaluated model reaches this. To further verify that
+stable divergences reflect content-level preferences rather than similarity heuristics, we split
+per-model stable divergence events by their semantic similarity to author-recommended
+directions and extracted-distractors in Appendix table 4. Across all 169 stable-divergence
+events,76.9%occur on pairs where the author-recommended option had higher similarity
+to context, with per-model rates ranging from 67% to 82%.
+Prompt variation.We re-ran response generation on all 169 stable divergence events with
+four prompt variations to explore the effect of prompting on these stable divergence events.
+Three of these variations were </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(%)
+mean
+61.9%
+(a) Inter-model agreement across three-state pair-
+wise outcomes. Across all 28 model pairs, agree-
+ment ranges from 51.2% to 80.0% (mean 61.9%).
+Gemini 3 Pro Gemini 3 FlashClaude Opus 4.5 GPT-5.2 Pro GPT-OSS-120B
+0
+20
+40
+60
+80
+100Retained Stable Divergence (%)
+No Role
+No Goal
+Reframed
+Author-pref
+(b) Retained-divergence rates for selected models
+across prompt and author-preference ablations.
+Figure 4: Robustness and agreement structure of model future-work choices: inter-model
+agreement (left) and retained stable-divergence rates under prompt and author-preference
+variations (right).
+Across all four prompt variations, models retained the majority of their stable divergences
+with weighted mean retained divergences across all models ranging from 66.9% to 80.5%.
+Figure 4b shows retained-divergence rates for selected models across all four conditions.
+When divergences did </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>not hold, they predominantly became unstable choices across order-
+ings rather than correcting toward preference for author-recommended directions, suggest-
+5
+Published as a workshop paper at COLM 2026
+ing that prompt constructions contributed to choice consistency more than to the direction
+of the preference itself. Appendix Tables 5 and 7 include the unstable choice and reversal
+to author alignment rates for each model. Appendix Table 8 reports model-specific Wilson
+confidence intervals for retained stable divergence rates.
+Per-model behavior varied substantially across the four prompt variations. Gemini 3 Pro
+and Gemini 3 Flash were especially sensitive to prompt changes, specifically the no-goal
+variation. Divergence rates dropped to 50% and 47%, respectively, and unstable choices
+across the two orderings increased to 42% and 37%, respectively, suggesting that their
+canonical </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We also report a pilot human baseline study on the same task. We collected 108 responses
+from 10 participants on an anonymized, filtered subset of 23 of the 80 unique query pairs.
+Unlike the models, each human participant saw only one randomized ordering of each
+option pair, could complete any number of queries, and could abstain if they thought
+the query was underdetermined due to insufficient context, unclear options, or a lack of
+immediate domain expertise. Response coverage across the 23 query pairs ranges from 1
+to 8 substantive judgments per query, with only three queries receiving fewer than three
+substantive responses. Per-query response counts, abstention reasons, and participant
+qualifications are reported in Appendix tables 10 and 12.
+Of the 108 responses, 13 (12.0%) were abstentions. Among the remaining 95 fixed-choice
+responses, 58 (61.1%) selected the author-recommended </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>direction and 37 (38.9%) selected
+the sampled distractor. Because participants completed different numbers of queries, we
+also computed per-query macro-averaged choice rates by first computing the choice rate
+for each query, excluding abstentions, and then averaging across all 23 queries. These were
+similar to the pooled result, with 61.6% author-aligned choices and 38.4% alternative choices.
+Majority-vote analyses across query responses also show the same qualitative pattern. Full
+results are shared in Appendix table 11 including subset analyses restricted to pairs with at
+least three fixed-choice responses, and pairs with no query-quality abstentions.
+Overall, the pilot suggests that participants can engage with the task, as reflected in the
+relatively low abstention rate, while also showing non-trivial variation across responses with
+a modest overall preference for author-recommended </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>selected view of the most frequent transitions in the 144-event subset from
+pairs where at least three models diverged in Appendix table 16. These patterns remain
+broadly similar to the transition distribution in the full 169-event set.
+6
+Published as a workshop paper at COLM 2026
+Of the 169 events, 128 (75.7%) crossed category boundaries, while 41 (24.3%) remained
+within the same broad category. These within-category events underscore the coarseness of
+our early five-category taxonomy. Two meaningfully different research directions may still
+propose the same high-level type of extension to the research project. We include examples
+of both within-category and cross-category transition labels in the Appendix as well.
+Across the 128 cross-category events, the three most frequent transition families were
+Infrastructure-to-Methodological substitutions (55 events), Methodological-to-Scaling </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>transi-
+tions (23 events), and Application-to-Scaling transitions (12 events). Together, these families
+account for 90 of the 128 cross-category events (70.3%), or 53.3% of all stable-divergence
+events.
+The Infrastructure-to-Methodological pattern is bidirectional and reflects a recurring trade-
+off between these types of future research extensions, whereas the latter two patterns show
+a clearer directional movement toward scaling and generalization. Because this analysis
+includes only stable divergence events and does not account for how frequently each transi-
+tion was available, we report these counts descriptively rather than as normative judgments
+of model-level preferences. To illustrate the qualitative character of these divergences, we
+present representative reasoning traces across selected transition categories in Appendix
+figures 5, 6 and 7.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Construct Validity &amp; Interpretation. Ground truth reflects the author&#x27;s preference, not an
+objectively optimal research direction. Distractors are real future works from related papers
+and could genuinely be better directions. We therefore frame results as author alignment
+rather than accuracy, and focus on characterizing taste profiles rather than evaluating
+correctness or recurring failure modes. Post-cutoff contamination also cannot be ruled out
+entirely, especially for API-accessed models whose training data or retrieval access may
+extend beyond stated cutoff dates. Future versions should ground human research-direction
+preferences in richer traces beyond future-work statements, such as author-specific citation
+trees and expert-sourced steering trajectories over research directions.
+Dataset Construction Rigor. All extractions are performed using a single model (Claude
+Sonnet 4.5), </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>which is also used as the LLM-as-judge for distractor filtering. Using a single
+model across extraction, rephrasing, and judging can amplify any biases it carries into the
+final query set. Although we conduct manual author review of query quality, this audit is
+limited. Future versions should include more rigorous query-level quality control, including
+multi-model LLM-as-judge scoring and expert human ratings of whether each prompt with
+its context and options forms a sufficient, fair and meaningful research-direction choice.
+Dataset Coverage. The dataset comprises 80 pairwise comparisons from 19 papers across
+ML subdomains, so we cannot claim generalization to other scientific fields or broader
+coverage within ML. Future work should scale up the dataset within ML and extend the
+task to scientific domains beyond ML, such as biology, physics, and the social sciences, to
+test </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to autonomous/deep research workflows based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>AI-scientist / discovery workflow</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to deep research / autonomous research</dt>
+              <dd>Studies autonomous scientific-discovery or hypothesis-generation workflows</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 93/100</li>
+              <li>Screening category: AI scientist / discovery system</li>
+              <li>Tags: ai-scientist, deep-research-agents</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-11-19</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-17 12:45:53</li><li>Last seen by Paper Scout: 2026-11-20 12:28:48</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2611.19794</li><li>arXiv: 2611.19794</li><li>OpenAlex: W7234852712</li><li>OpenAlex IDs: W7234852712</li><li>arXiv IDs: 2611.19794</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="eliciting-research-taste-in-llms-through-future-research-direction-choice-12c271be.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Eliciting Research Taste in LLMs through Future Research Direction Choice. Dhruv Trehan, Paras Chopra. 2026-11-15. https://arxiv.org/abs/2611.19794</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

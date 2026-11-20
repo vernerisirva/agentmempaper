@@ -59,16 +59,204 @@
             <p>Autonomous agents that run ML experiments are usually judged by the best score they reach. That score says nothing about how it was reached: whether the agent stayed within the files it was allowed to edit, whether failed trials were kept or silently dropped, and whether each keep or discard decision can be traced t...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper provides an exceptionally rigorous, well-engineered, and transparently characterized framework for auditing autonomous ML experimentation agents. By focusing on governance, auditability, and failure classification rather than merely reporting peak task scores, it makes a substantial methodological contribution supported by solid empirical evidence and reproducible open artifacts.</p>
+      <p>The manuscript explicitly details the descriptive nature of memory ablation orderings across tasks, reset protocol anomalies in earlier runs, the unverified root cause of total worker failure on the autoresearch node, and the absence of a multi-rater human audit study [Ea71b3056d68a691d-B0070, Ea71b3056d68a691d-B0074].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-20T12:32:15.347486+00:00.</p>
+        <p>Coverage: 102815 of 102815 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>one bounded change per trial; a worker
+applies it and runs training; and a control plane owns everything
+else: the trial&#x27;s lifecycle, the check that the patch touches only ed-
+itable files, metric parsing, the keep or discard decision, and one
+append-only ledger record per trial, written whatever the outcome.
+None of these is delegated to the agent, so the manager can be
+replaced without changing what is recorded. From the ledger we
+compute six governance metrics alongside the task metric: accep-
+tance rate, invalid-action rate, repeated-bad rate, provenance com-
+pleteness, artifact-reference completeness, and a failure taxonomy
+(Section 4.4).
+We evaluate this contract on six ML tasks over 1,445 trials: syn-
+thetic logistic regression, two public OpenML tabular tasks, an
+MLAgentBench vectorization task, a ResNet classifier for a scien-
+tific trigger task, and GPT pretraining. Four </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>split
+logic would terminate here asinvalid_edit_scope, before any
+training runs. (iii)Execution under guard:the control plane writes
+a pending-guard file, then the worker runs training; a crash here
+would leave a stale guard that forces afailed_invalidrecord at
+the next campaign start rather than a silent gap. (iv)Metric parse
+and decision:the parser extractsval_aucand the control plane —
+not the manager — compares it against the current best (this cam-
+paign improves 0.7747→0.7827 over 20 trials); an improvement is
+kept, a valid non-improvementdiscarded. (v)Ledger append:ex-
+actly one immutable JSONL record is appended — proposal text,
+patch reference and hash, raw-log reference, parsed metric, deci-
+sion, failure category if any, and five provenance IDs (proposal,
+patch, run, metric, and decision IDs, each derived by hashing the
+trial ID) — the guard is deleted, and the next budget </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Principle
+The manager generates proposals (summary, rationale, target, in-
+tended effect). The worker executes bounded actions (patch + run
+Table 1: Five auditability desiderata for governed agentic ex-
+perimentation.
+Desideratum Operational meaning
+D1. Bounded edit scope The agent cannot change protected benchmark,
+data, or evaluation files.
+D2. Complete attempt
+accounting
+Every proposed attempt is recorded, including
+invalid proposals and crashes.
+D3. Independent
+adjudication
+Acceptance or rejection is decided by fixed
+control-plane rules, not by the agent.
+D4. Provenance linkage Each recorded attempt links to patch,
+configuration, run, metric, and decision
+evidence.
+D5. Recomputability Aggregate governance claims can be
+recomputed from the ledger without
+re-running training.
+Manager
+replaceable
+prompt_manager
+LangGraph
+baseline
+Control Plane
+fixed contract
+scope validation
+lifecycle </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>invari-
+ant:
+For every budget slot that entersexecuting, the con-
+trol plane appends exactly one terminal record—kept,
+discarded, orfailed_invalid—to the append-only
+ledger before the next slot may open. No slot is silently
+skipped; no slot produces more than one record; no record
+is overwritten or deleted.
+Enforcement has two paths.Normal path:the pending guard is
+written before the worker starts and deleted on the terminal transi-
+tion; any deviation raises an error before the ledger append.Crash-
+recovery path:if the process crashes mid-trial, the guard file per-
+sists; at the next campaign startPendingTrialErroris raised, the
+stale guard is inspected viascripts/recover_pending.py, and a
+failed_invalidrecord is appended before any new trial begins.
+Neither path allows a budget slot to close without a ledger record.
+The invariant is structural rather than empirical: it holds by </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The evaluation asks whether an autonomous ML experimentation
+loop is bounded, auditable, failure-aware, reproducible, and behav-
+iorally affected by governance memory. Governance metrics are
+primary; task-metric AUC is secondary evidence that the loop runs
+end-to-end.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We run three lightweight validation probes for the governance met-
+rics. First, two reruns of the MLAgentBench vectorization adapter
+test whether the same NodeSpec contract continues to produce
+complete lifecycle records under repeated runs. Second, a re-execution
+script rebuilds kept-trial state from cumulative patch references
+and reruns selected kept trials where the underlying execution ar-
+tifacts are available. Third, we estimate structural relabeling agree-
+ment by computing Cohen&#x27;s𝜅between control-plane-assigned la-
+bels and an independent rule-based relabeler applied to structurally
+observable fields only (scope-validation flags, patch presence, training-
+initiation signals, execution status). On a stratified sample of 50
+failed_invalidtrials spanning the observed validation categories,
+Table 6: Real-worker scientific-node case study
+(kdd_resnet_scientific_20, </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ResNet-trigger,
+prompt_manager,claw_style_worker, budget=20).
+Field Value
+Kept / disc. / failed-invalid 4 / 5 / 11
+Non-kept categories 5×degraded_metric; 11×proposal
+_precondition_failed
+Acceptance / invalid rate 0.20 / 0.55
+Provenance completeness 1.00 (20/20)
+Decision record completeness 1.00 (20/20)
+Failure evidence completeness 1.00 (11/11 precondition failures classified)
+Patch refs/hashes for materialized
+valid runs
+1.00 (9/9 valid runs)
+Initial / bestval_auc0.7747 / 0.7827 (+0.008022)
+Baseline seed noise (5 seeds) mean 0.785, bootstrap 95% CI of mean [0.775,
+0.798]
+the structural relabeler achieves𝜅=0.830(95% CI[0.703,0.958]).
+This is a structural consistency check, not a human inter-rater study.
+The remaining discordant records are edge cases where the ledger-
+level structural evidence does not distinguish the precise worker-
+side failure without consulting the referenced </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 7 and Figure 1 consolidate all six nodes into a single gov-
+ernance view; Figure 3 breaks the failed-invalid trials down by
+failure category. The central finding is that provenance complete-
+ness is 100% on every node without exception — including the 120-
+trial none-arm total failure and the s2 anomaly onautoresearch
+_linux, and across all three lifecycle outcomes (kept, discarded,
+failed-invalid).
+Public tabular nodes.openml_credit_gandopenml_bank
+_marketingtest whether governed keep/discard/fail decisions
+transfer to public tabular substrates (LangGraph manager, sum-
+mary memory, b20 and b30 budgets). Both nodes expose only
+boundedconfig.yamledits; dataset, split, preprocessing, and
+parser code are frozen. Provenance completeness is 1.00 across all
+460 trials combined.openml_bank_marketingshows visible task-
+metric improvement (mean best AUC 0.9295 at b20, 0.9341 at b30;
+95% CI </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>failure spectrum. Theautoresearch
+_linuxrow is an extremal, definitional case: when every trial fails
+and failure appends are disabled, completeness is necessarily zero.
+The informative mixed-outcome comparison isopenml_bank_mkt,
+where the ungoverned ledger retains only the 7 valid trials and
+silently omits all 13 failures. Combined, 43 of 50 ungoverned trials
+leave no ledger record versus 0 of 50 governed; because the two
+nodes were chosen to span failure rates, this combined fraction de-
+scribes these campaigns, not a typical loss rate. The 95% bootstrap
+CI for ungoverned completeness lies strictly below 1.00 on both
+nodes.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>trial-1node_state_hash, whereas the case study, the Lang-
+Graph ablation and the baseline-seed interval use the node&#x27;s CPU
+fast-search mode (1,000 signal and 1,000 noise traces cropped to
+4,096 samples; batch size 64 and 3 epochs, fixed by the mode). L40S
+AUCs are therefore comparable across arms but not with the other
+ResNet results. From the common start, the mean best AUC rises by
+about 0.011 without memory and by about 0.05 with either mem-
+ory mode.
+L40S replication: memory arms outperform none.Across
+all five clean seeds, mean best AUC follows none&lt;summary≈
+rationale (0.899 vs. 0.939 and 0.941); the 0.002 difference between
+the two memory arms is not treated as meaningful. Cross-seed
+variability is lower for both memory arms, with𝜎 none =0.009
+vs.𝜎 summary =𝜎 rationale =0.002, a 4–5×smaller standard devia-
+tion; with five seeds per arm this is descriptive. Memory arms di-
+verge </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Evidence strength.Table 10 separates demonstrated properties
+from case-study findings and non-claims.
+Table 10: Evidence strength by claim.
+Claim Evidence level Where
+Control plane classifies kept / discarded
+/ failed_invalid
+Demonstrated Secs 5.1–5.6
+Append-only ledger: 100% provenance Demonstrated All nodes; Sec 5.2
+Guard failures visible in audit record Demonstrated Stress, Sec 5.3
+Protocol transfers across node types Demonstrated, 6 nodes Secs 5.2–5.6
+Repeated-bad rate diagnoses memory
+sensitivity
+Mixed case study ResNet: summary lowest
+in 2/3;lr_syntheticfails
+Memory ordering none&lt;summary≈
+rationale (AUC)
+Observed, 5 clean seeds Sec 5.5; not on
+lr_synthetic
+Smaller cross-seed spread with memory Observed, 5 seeds (descrip-
+tive)
+𝜎none=0.009 vs. 0.002 (4–
+5×)
+Rationale reduces repeated-bad rate Not claimed Non-monotonic; verbosity
+ablation not supported
+No-memory arm: 100% invalid, </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>rep2, whose arms were not reset between campaigns), and the or-
+dering reverses onlr_synthetic.Label validation:structural rela-
+beling agreement (𝜅=0.830, Section 4.5) is a consistency check, not
+a human study; two-rater validation and holdout-node replication
+remain future work.Task metric and reset scope:the ResNet best
+AUC falls within the 5-seed baseline min–max range [0.771, 0.811]
+(bootstrap 95% CI of mean: [0.775, 0.798]), so AUC gain is secondary
+evidence; theautoresearch_linuxcampaigns predate the frozen-
+baseline restore protocol, so neither theirnone-arm total failure
+nor their s2 anomaly is used as memory-effect evidence.Human
+utility:the paper shows that governance properties can be enforced
+and measured, and what evidence is lost without them (Section 5.3)
+— not that governed ledgers improve human audit outcomes; a
+human-auditor utility study (do reviewers with governed </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +295,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +311,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-18</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-19 12:26:22</li><li>Last seen by Paper Scout: 2026-11-19 12:26:51</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-18</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-19 12:26:22</li><li>Last seen by Paper Scout: 2026-11-20 12:27:30</li></ul>
             <ul><li>arXiv: 2611.23678</li><li>arXiv IDs: 2611.23678</li></ul>
           </section>
           <section class="detail-panel">

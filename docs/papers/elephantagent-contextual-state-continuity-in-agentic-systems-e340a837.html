@@ -59,16 +59,285 @@
             <p>Agentic systems enhance their capabilities by invoking external tools and maintaining persistent memory. However, these external dependencies introduce novel attack surfaces. Recent tool and memory poisoning attacks show that maliciously crafted tool descriptors and poisoned memory can covertly bias agent behavior....</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The work provides a complete, well-reasoned systems security contribution with formal guarantees, sound implementation in DeepSeek Harness, robust experimental validation against actual attack vectors, and explicit threat boundary considerations.</p>
+      <p>The authors clearly delineate the boundary of contextual state protection, noting that untracked workspace files rely on indirect tool ingestion, and acknowledge the deliberate fail-closed trade-off regarding system liveness during severe disruption.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-20T12:31:40.783854+00:00.</p>
+        <p>Coverage: 95091 of 95091 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>State
+Continuity over the bounded, security-critical subset of the
+agent&#x27;s context. Before each planning-and-execution cycle,
+ELEPHANTAGENTrecomputes the digest of the local contex-
+tual state and verifies it against the latest authorized digest in
+a linearizable ledger of state transitions, maintained over repli-
+cated trusted hardware. The protocol also provides Historical
+Traceability, a secondary guarantee that keeps state transitions
+attributable and recoverable. We integrate ELEPHANTAGENT
+into DeepSeek Harness (DSH) and implement ELEPHANTDSH,
+an agentic system protected by contextual state verification.
+ELEPHANTDSH withstood all out-of-band attack attempts,
+from rug pulls and rollbacks to attacks on its own mechanism,
+and recovered from an in-band prompt injection in all trials.
+By comparison, existing defenses typically check only what
+enters the context: of the five we </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>memory entries with lineage tracking that gates sensitive actions 10 10
+A-MemGuard [10] Consensus-based validation and adaptation for agent memory poisoning 10 7
+MCP Tool Pinning [11] Hash pinning of approved tool descriptors that blocks later changes 0 10
+ACE [12] Information-flow checks on plans from trusted input, with app isolation 0 10
+Tool Result Parsing [13] LLM-based parsing that extracts only the required data from tool results,
+filtering out injected instructions
+8 10
+DSH [14] Original DeepSeek Harness 5 10
+ELEPHANTDSH ELEPHANTAGENTintegrated into DSH: continuity verification of tool
+state and memory
+0 0
+poisoning as a critical threat category [7].
+Mounted out of band, this family of attacks reveals an
+underlying problem: the lack of continuity in the agent&#x27;s
+contextual state (i.e., a bounded, security-critical subset of
+the agent&#x27;s context). Tool-descriptor rug pulls, </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>is authorized,
+ordered, and attributable to a recorded history, so
+that an auditor can identify a known-good prior state
+and the system can verifiably recover to it after an
+in-band attack (e.g., a prompt injection).
+•Contextual state and protocol design for agentic
+systems.We design ELEPHANTAGENT, an add-on
+protocol that augments agentic systems with the
+Context Guard (CG), running inside a TEE, and
+the State Continuity Module (SCM). CG scopes
+the contextual state to the components the agent
+consumes as decision-making context, derives each
+transition from the realized query through a side-
+effect-free preview, commits it to SCM before any
+local side effect, and admits external changes only as
+approved transitions. SCM maintains the linearizable
+state history as a replicated TEE-backed service.
+We prove that ELEPHANTAGENTsatisfies both CSC
+and HT under the stated trust assumptions, </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>making
+it a verification-based defense: on the scope ELE-
+PHANTAGENTprotects, it verifiably guarantees the
+contextual state the agent acts on.
+•Implementation and evaluation in a real agent har-
+ness.We integrate ELEPHANTAGENTinto DSH and
+implement ELEPHANTDSH, mediating every path
+by which content reaches the model or the ses-
+sion store (Section 6.1). ELEPHANTDSH rejects
+every rollback and tool-descriptor rug pull attempt,
+whereas the original DSH and all five representative
+defenses leaked under the rollback, and the original
+DSH and three of them also leaked under the rug
+pull. Attacks on the mechanism itself, from on-
+path and rogue SCM endpoints to crashes during
+updates, all failed on ELEPHANTDSH. Against a
+prompt injection attack, ELEPHANTDSH&#x27;s recov-
+ery re-anchored the last clean state in all trials.
+On coding tasks at three levels of difficulty, ELE-
+PHANTDSH completes all </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Contextual State Continuity. Contextual State Con-
+tinuity requires that the agentic system release to the agent
+only the latest faithfully evolved contextual state at every
+planning-and-execution cycle. It is the primary security
+property of ELEPHANTAGENT, targeting out-of-band tam-
+pering (Scenarios I and II).
+We define this property with respect to an ideal reference
+agentic system, which runs in a trusted environment. For
+each query, the reference system reads the current contextual
+state from the environment, processes the query, and updates
+the contextual state before finalizing that query and proceed-
+ing to the next one. Besides queries, the trusted user may
+approve an updateu= (κ, x, x′)that changes componentκ
+of the contextual state (e.g., an instruction file) from content
+xtox ′. An approved update takes effect within the next
+query&#x27;s transition, deterministically: the </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>contextual stateC 0, every adversary admitted
+by the threat model in Section 3.1, and every execution of
+the real system fromC 0 in the presence of the adversary,
+the following holds. LetQbe the sequence of elements the
+execution finalizes (i.e., whose cycles complete their state
+updates), in order, letΩbe the resolution of environment
+nondeterminism consumed by the finalized cycles, and let
+L∗ be the reference ledger fromC 0 underQandΩ. Then at
+every planning-and-execution cycle at which the real system
+releases a contextual state to the agent, the released state
+induces exactly the entry(t, ht)ofL ∗, wheretis the number
+of elements the execution has finalized before that cycle. The
+real system may abort a cycle instead (fail-closed behavior):
+an aborted cycle finalizes no element and contributes no
+entry.
+Historical Traceability. Historical Traceability is the
+secondary security </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Client is the
+protocol-facing component inside the Agent Host
+that enumerates tool descriptors from MCP Servers
+and dispatches tool invocations.
+•Context Guard (Trusted)CG mediates the agent&#x27;s
+context construction. Before processing each query,
+CG recomputes the local contextual state digest and
+verifies that it matches the latest SCM-authorized
+digest. CG is also responsible for state updates.
+The State Continuity Module (Trusted). SCM main-
+tains a linearizable, append-only ledger of authorized con-
+textual state digests. It is instantiated as a replicated TEE-
+backed service to tolerate failures and prevent rollback.
+SCM accepts operations on a ledger only from its bound
+CG, over an authenticated channel.
+MCP Servers (Untrusted). External entities that pro-
+vide tools. We assume that MCP Servers may be compro-
+mised and return malicious tool descriptors.
+The Auditor (Trusted). The </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>generates a fresh
+read-challenge noncen r and requires SCM to return a
+signed proof bound to(ℓ, id, h, nr). CG verifies the proof
+and checks that the locally recomputed digest matches the
+Algorithm 2State Verification
+1:Context:SCM public keyP K SCM
+2:functionVERIFYSTATE(ℓ, id, h)
+3:// 1. Retrieve the latest proof from SCM
+4:n r ←GENNONCE()
+5:(status, π)←SCM.GETLATESTSTATE(ℓ, n r)
+6:if¬statusthen
+7:Abort&quot;SCM Unreachable: Verification Failed&quot;
+8:end if
+9:// 2. Verify the SCM proof
+10:(ℓ scm, idscm, hscm, nscm, σ)←UNPACK(π)
+11:ifn scm ̸=n r then
+12:Abort&quot;SCM Proof Nonce Mismatch&quot;
+13:end if
+14:if¬VERIFYSIG(P K SCM ,(ℓ scm, idscm, hscm, nscm), σ)
+then
+15:Abort&quot;Invalid SCM Proof&quot;
+16:end if
+17:// 3. State continuity check
+18:ifℓ scm ̸=ℓ∨id scm ̸=id∨h̸=h scm then
+19:returnfailure
+20:end if
+21:returnsuccess
+22:end function
+SCM-authorized digest. Any mismatch causes CG to abort
+the query in a </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>←SEALPENDING(ρ pendid+1)
+9:if¬status pend then
+10:Abort&quot;Pending Update Sealing Failed&quot;
+11:end if
+12:// 3. Commit the next state digest to SCM
+13:(status, σ commit)←SCM.COMMIT(ℓ, id+1, hnext)
+14:if¬statusthen
+15:returnfailure
+16:end if
+17:if¬VERIFYSIG(P K SCM ,(ℓ, id+ 1, hnext),
+σcommit)then
+18:Abort&quot;Invalid SCM Receipt&quot;
+19:end if
+20:// 4. Materialize local side effects
+21:if¬FINALIZE(A)then
+22:returnfailure▷Retained for retry
+23:end if
+24:// 5. Decide whether to take a snapshot
+25:snapshot ref←NULL
+26:ifSHOULDTAKESNAPSHOT(ℓ, id+ 1)then
+27:snapshot ref←SEALSNAPSHOT(C next)
+28:ifsnapshot ref=NULLthen
+29:Abort&quot;Snapshot Sealing Failed&quot;
+30:end if
+31:end if
+32:// 6. Append the new record to the local ledger
+33:L local ←UNSEALLOCALLEDGER()
+34:APPEND(L local[ℓ],(id+ 1, hnext, σcommit,
+snapshot ref))
+35:SEALLOCALLEDGER(L local)
+36:DISCARDPENDING(ρ pendid+1)
+37:returnsuccess
+38:end function</blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Contextual State Continuity (Definition 1) requires that,
+at every planning-and-execution cycle, the agent acts only
+on the latest faithfully evolved contextual state.
+Lemma 1(Contextual State Integrity and Freshness).Fix
+a ledgerℓmaintained by SCM. IfVERIFYSTATE(Al-
+gorithm 2) returns success, then the contextual state CG
+accepts for release to the agent satisfies the following:
+1) Integrity.The accepted contextual state is a faith-
+fully evolved contextual state for ledgerℓ.
+2) Freshness.The accepted contextual state is not a
+stale prior state, but the latest state for ledgerℓ.
+Moreover, any attempt to make CG proceed on an out-
+of-band tampered contextual state causesVERIFYSTATEto
+return failure or abort, and the agent does not proceed to
+planning or execution on such a state.
+Appendix C gives the proof. We extend this single-step
+guarantee to the whole execution by comparing the </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Historical Traceability supports post-hoc recovery.
+Lemma 2(Authorized, Logged, and Ordered Effective Tran-
+sitions).Fix a ledgerℓmaintained by SCM. Consider an
+execution of Algorithm 4 in whichUPDATESTATEis invoked
+after a successfulVERIFYSTATEand returns success, ad-
+vancing the local sequence identifier fromidtoid+ 1. Then
+the following statements hold:
+1)SCM has appended the entry(id+ 1, h next)to
+ledgerℓ, as attested by a valid SCM receipt
+σcommit.
+2)The local ledgerL local contains a record(id+
+1, hnext, σcommit,snapshot ref)for that entry.
+3)The locally recorded transitions for ledgerℓ
+preserve the order of the corresponding SCM-
+authorized transitions.
+Appendix C gives the proof.
+Corollary 2(History and Recovery Soundness).Fix a
+ledgerℓand an adversary admitted by the threat model
+in Section 3.1. LetRbe the set of local ledger records for
+ℓand their snapshots that remain </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our experiments run on machines equipped with Intel
+Xeon 6982P-C CPUs that support Intel TDX. All machines
+are &quot;ecs.g9i.xlarge&quot; instances rented from Alibaba Cloud in
+the Beijing region and communicate over an intra-datacenter
+LAN. Three instances run as TDX-protected VMs, which
+we denote as &quot;TDX1&quot;, &quot;TDX2&quot;, and &quot;TDX3&quot;. A fourth
+instance, &quot;NT1&quot;, runs without TDX (i.e., TDX disabled).
+We compare ELEPHANTDSH against NATIVEDSH,
+the original DSH. NATIVEDSH runs on NT1. ELE-
+PHANTDSH&#x27;s harness and CG run on TDX1, and SCM runs
+on TDX2 and TDX3, with three nodes as separate processes
+on TDX2 and two on TDX3; the external MCP Servers
+of the security experiments run on NT1. The overhead we
+report therefore includes the CG and SCM work; we observe
+that the TDX VM itself adds negligible overhead to the cod-
+ing tasks we evaluate, consistent with Intel&#x27;s characterization
+of TDX overhead as </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>stopped both attacks. Every one failed to prevent the
+rollback, and all but ACE and tool pinning leaked under
+the rug pull. In the three of ten rollback trials in which
+A-MemGuard did not leak, its LLM consistency check
+happened to judge the stale policy unsafe for the current
+task and returned no memory. ACE blocked the rug pull
+through its information-flow analysis. MemLineage, which
+signs every memory entry, leaked in all 10 rollback trials,
+as each entry of the stale state still carries a valid signature.
+Likewise, tool pinning refused every rug pull, but the roll-
+back restored its pins together with the stale policy, so every
+pin check passed. ELEPHANTDSH rejected all out-of-band
+attack attempts: under the rug pull, the tool descriptor no
+longer matched the approved one, and under the rollback,
+the restored local contextual state differed from the latest
+SCM-authorized state. In </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>NATIVEDSH ELEPHANTDSH
+Task Total Non-m. Total Non-m. Overhead Adj.
+WC 8.5 1.7 9.2 2.3 1.08 1.07
+Med 10.1 1.7 10.5 2.3 1.04 1.06
+Conv 9.7 1.7 10.5 2.3 1.08 1.06
+Fix 17.1 1.8 17.7 2.6 1.04 1.05
+QE 54.0 3.3 55.9 4.3 1.03 1.02
+the added non-model time grows only from 0.6 to 1.0 s, so
+the relative overhead declines slightly as tasks get harder.
+We report the one-off SCM attestation cost separately:
+CG attests SCM at first deployment and after recovery,
+taking a median of 1.61 s over 10 trials.</blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Execution Under Interference and Crashes. ELE-
+PHANTAGENTprioritizes safety over liveness, following the
+standard posture of state-continuity systems [27], [29], [30],
+[32]: under adversarial interference, such as tampering with
+host-side persisted state or blocking access to the latest
+SCM-authorized state, ELEPHANTAGENTfails closed. Like-
+wise, authenticated encryption protects the sealed ledger and
+snapshots against undetected modification but not against
+deletion [30]. Deleting them stops the current session, and
+a restarted session must re-approve the local content it starts
+from. Continuity also does not imply exactly-once execution
+of external tool effects: a crash between a tool&#x27;s external
+effect and the commit of its transition can duplicate the
+effect when the query is re-issued. This classic problem
+is addressed by standard mechanisms at the tool boundary
+(e.g., idempotency </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +376,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

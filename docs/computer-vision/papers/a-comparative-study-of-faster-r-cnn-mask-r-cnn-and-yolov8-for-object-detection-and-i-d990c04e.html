@@ -59,16 +59,112 @@
             <p>No abstract summary available.</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>AI assessment unavailable</h2>
-      <p>Manuscript unavailable; no scientific decision.</p>
-      <p>No promotion; review candidates may remain pending indefinitely.</p>
+      <h2>AI assessment inconclusive</h2>
+      <p>The paper provides an accessible summary of classic detection architectures and a small-scale demonstration, but it lacks any quantitative experimental validation or controlled empirical benchmarking.</p>
+      <p>The author transparently notes that quantitative metrics are entirely absent, the dataset contains only 20 images, and Faster R-CNN and Mask R-CNN were not fine-tuned, resulting in an asymmetric qualitative comparison.</p>
       <p>Publication: preprint. Source metadata identifies a working manuscript/preprint; peer review is not established.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: metadata_only.</p>
-        <p>Assessor: deterministic. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
-        <p>Assessed: 2026-09-24T09:04:05.279198+00:00.</p>
-        <p>Coverage: unknown of unknown eligible manuscript characters; omitted body: unknown. Extraction complete: False.</p>
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-20T12:31:58.707454+00:00.</p>
+        <p>Coverage: 46963 of 46963 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Object detection and instance segmentation are foundational tasks in computer vision , underpinning
+applications ranging from autonomous driving to medical imaging and defense surve illance. This paper
+presents a structured, reproducible comparison of three influential detection architectures — Faster R-CNN,
+Mask R-CNN, and YOLOv8 — spanning the two-stage, mask-augmented, and single-stage detection
+paradigms. I first re-derive and consolidate the theoretical foundations that con nect these architectures,
+tracing the lineage from R-CNN and Fast R-CNN through the Region Proposal Network (RPN) innovation
+that defines Faster R-CNN, and onward to the RoIAlign-based mask branch of Ma sk R-CNN and the
+anchor-free, single-pass design of YOLOv8. I then evaluate the three models qualitatively, both on general-
+purpose COCO-domain imagery and on a purpose-built, hand-annotated dataset for a </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>domain the pretrained
+COCO label space does not cover: military armored vehicles (&quot;tanks&quot;). Using CVAT.ai-annotated bounding
+boxes and a YOLOv8s model fine-tuned via transfer learning, I show that a lightwei ght, single-stage
+detector can be adapted to a novel class with a small annotated corpus and modest  compute, while two-
+stage detectors trained only on COCO systematically mislabel the same objects as &quot;truck&quot; or &quot;car.&quot; I further
+situate the study within the rapidly evolving 2024-2026 detection landscape, discuss ing how transformer-
+based real-time detectors (RT-DETR, RF-DETR) and newer YOLO variants (YOLOv9-YOLOv12) extend
+the accuracy-speed frontier established by the models benchmarked here. I con clude with a discussion of
+the practical trade-offs between detection accuracy, inference latency, computational cost, and annotation
+burden, and I outline the quantitative </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>benchmarking protocol — mAP, precision-recall, and frames-per-
+second measurement across matched training conditions — needed to extend this qualitative and
+architectural comparison into a fully numeric one.
+Keywords: object detection; instance segmentation; Faster R-CNN; Mask R-CNN; Y OLOv8; region
+proposal network; transfer learning; custom object classes; computer vision benchmarking.
+3</blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The principal metric used across all three architectures is mean Average Precision (mAP):
+mAP = (1/n) Σ_{k=1}^{n} AP_k
+where AP_k is the Average Precision for class k (the area under the class&#x27;s precision-recall curve at a given
+IoU threshold) and n is the number of classes. This study evaluates all three archite ctures against this
+framework qualitatively, on the visual detection outcomes reported in Section 6 ; a natural and valuable
+extension — outlined in Section 10 — is to compute the full numeric framework directly: (i) mAP@50 and
+mAP@50:95, following the COCO convention, to allow direct comparison with the post-2024 baselines
+discussed in Section 3.4; (ii) per-class precision, recall, and F1-score; (iii) inference latency in milliseconds
+and throughput in frames per second, measured on a stated GPU/CPU configuration and batch s ize; and
+(iv) parameter count and FLOPs, to </blockquote></details></li><li><strong>Contribution clarity — pages 14–15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Two datasets are used. First, the Microsoft COCO dataset [23] — over 200,000 images spanning 80 object
+categories with bounding-box and pixel-level instance-segmentation annotations — is used to evaluate the
+pretrained Faster R-CNN (Inception-ResNet-v2 backbone, via TensorFlow Hu b, following the Inception-
+ResNet-v2 architecture of Szegedy et al. [24]) and Mask R-CNN (ResNet-101 backbone) models on general
+imagery. Second, a custom dataset of military armored-vehicle imagery sourced from Flickr under
+14
+permissive licenses was assembled to fine-tune YOLOv8 on a class outside the COCO label space. Twenty
+images were manually annotated with axis-aligned bounding boxes using CVAT.ai, and a YOLO-format
+dataset configuration file (data.yaml) specified the training, validation, and t est splits together with the
+single custom class label &quot;tank.&quot;</blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>YOLOv8 was fine-tuned via transfer learning from COCO-pretrained weigh ts. Training was initially
+attempted with the medium-sized model variant (YOLOv8m) for 20 epochs; instability in the Google Colab
+training environment led to the adoption of the smaller YOLOv8s variant, which completed training without
+interruption. Faster R-CNN and Mask R-CNN were used as off-the-shelf, COCO-pretrained models without
+additional fine-tuning, which is an important asymmetry to state explicitly: the comparison in Section 6
+contrasts a fine-tuned YOLOv8 model against zero-shot Faster R-CNN / Mask R-CNN predictions on an
+out-of-distribution class, rather than a fully controlled, equal-training co mparison. I preserve this
+asymmetry in the discussion below because it reflects a realistic and comm on practical scenario —
+extending an existing pretrained pipeline to a new class — rather than </blockquote></details></li><li><strong>Contribution clarity — pages 16–17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The results below are organized by model. Each finding is drawn directly from the detection outputs shown
+in Figures 9–11 and interpreted in terms of the underlying architectural mechanism responsible for it, rather
+16
+than presented as a caption-style description; Section 8 discusses what a follow-up quantitative evaluation
+would add to the qualitative picture established here.</blockquote></details></li><li><strong>Contribution clarity — pages 20–21</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>• In a museum-interior scene with multiple tanks, related armored vehicles, and background clutter, the
+fine-tuned model correctly localized four tank instances, with confidence scores ranging from 0.30 to
+0.90; the lower-confidence boxes correspond to partially occluded vehicles at the edges of the frame
+or to visually ambiguous museum signage/models, indicating the expected degradation in confidence
+under occlusion and background clutter typical of a small fine-tuning set.
+• On two outdoor static-display photographs, the model detected each tank at very high confi dence
+(0.99-1.00), suggesting strong performance on clear, unoccluded, canonical side-view prese ntations
+of the target class — the dominant viewpoint in the twenty-image training set.
+20
+• On a distant, moving-vehicle field photograph, the model correctly detected a modern armored vehicle
+at 0.99 confidence despite </blockquote></details></li><li><strong>Contribution clarity — pages 21–22</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>significant scale reduction and motion blur, indicating rea sonable
+generalization beyond the specific tank models likely present in the small training corpus.
+Taken together, these results support the central practical claim of the case study: a small, well-annotated
+dataset and a lightweight, anchor-free single-stage detector are sufficient to extend detection coverage to a
+novel, domain-specific class that pretrained, closed-vocabulary two-stage detectors cannot recognize at all.
+This is a meaningfully different comparison axis from raw accuracy on shared classe s: it is a claim about
+annotation efficiency and deployment workflow, not a head-to-head accuracy contest on identical
+categories, and it should be read as such.
+21</blockquote></details></li><li><strong>Contribution clarity — page 23</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>NMS-free, transformer-based real-time
+detectors — that did not exist when Faster R-CNN and Mask R-CNN were introduced. Second, the custom-
+class case study illustrates a comparison axis that raw COCO benchmark tables do not capture: annotation
+efficiency and fine-tuning cost for previously unseen categories, which is often the more decision-relevant
+metric for applied practitioners than marginal mAP differences on shared classes. Third, because Faster R-
+CNN and Mask R-CNN were evaluated here in a zero-shot, COCO-only configuration while YOLOv8 was
+fine-tuned, the tank-detection results should be read as evidence about dep loyment workflow, not as a
+controlled accuracy comparison between architectures; a rigorous follow-up woul d fine-tune all three
+architectures on the identical annotated tank dataset and report matched mAP figures.</blockquote></details></li><li><strong>Contribution clarity — page 23</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>• Quantitative metrics (mAP, precision, recall, FPS, parameter counts) are not  yet reported for any of
+the three models on either dataset; the current evidence base is qualitative and image-by-image, which
+falls short of the reporting standard expected by peer-reviewed venues in computer vision.
+• The custom tank dataset comprises only twenty annotated images, which is small relative to standard
+detection-dataset norms and raises concerns about overfitting and limited viewpoint/model diversity;
+a data augmentation strategy and a larger, more diverse annotated corpus (or an expl icit few-shot
+learning framing) would substantially strengthen the contribution.
+• Faster R-CNN and Mask R-CNN were evaluated zero-shot on COCO classes while YOLOv8 was
+fine-tuned for the tank class, so the three models are not compared under matched training conditions;
+this asymmetry should be stated </blockquote></details></li><li><strong>Contribution clarity — page 24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>• Report full quantitative metrics (mAP@50, mAP@50:95, precision, recall, F1, FPS, parameter count,
+FLOPs) for all three models on both the COCO validation subset and the custom tank test split,
+replacing the qualitative discussion in Section 6 with reproducible numeric results.
+• Expand the custom tank dataset substantially beyond twenty images, incorporate data augmentation
+(mosaic, random scale/rotation, color jitter), and consider semi-automated annotati on using the
+Segment Anything Model (SAM) to accelerate labeling of additional classes.
+• Fine-tune Faster R-CNN and Mask R-CNN on the same custom dataset used for YOLOv8, to produce
+a matched-training comparison rather than a zero-shot-versus-fine-tuned comparison.
+• Benchmark against YOLOv9-YOLOv12 and RT-DETR/RF-DETR on identical data split s and
+hardware, given their demonstrated improvements over YOLOv8 on standard </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +203,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

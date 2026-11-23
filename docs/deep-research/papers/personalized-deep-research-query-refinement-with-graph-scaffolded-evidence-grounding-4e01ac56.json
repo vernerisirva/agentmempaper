@@ -27,7 +27,7 @@
   "last_seen_date": "2026-08-13",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-07 07:45:16",
   "notified_date": "2026-08-07",
@@ -38,7 +38,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-07 07:44:42",
-    "generated_at": "2026-11-20 12:34:17",
+    "generated_at": "2026-11-23 14:09:12",
     "last_seen_at": "2026-08-13 07:57:14",
     "metadata_sources": [
       "openalex",
@@ -105,85 +105,1464 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-08-13T07:57:31+00:00",
-    "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v1",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessed_at": "2026-11-23T14:06:10.004791+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": "The available evidence suggests weak or incomplete scholarly validation. Automated score 45/100, medium confidence, based on partial full text.",
-    "confidence": "medium",
-    "coverage": {},
-    "curation_note": null,
-    "dimension_scores": {
-      "contribution_clarity": 2,
-      "evaluation_or_validation_strength": 1,
-      "evidence_to_claim_alignment": 4,
-      "limitations_and_uncertainty_handling": 1,
-      "methodological_rigor": 2,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 2,
-      "reproducibility_and_transparency": 2,
-      "scholarly_novelty_or_value": 3
+    "concise_summary": "The study offers a well-defined scoping and methodological formulation, backed by solid experimental controls, ablations across training stages and graph ordering, sensitivity analyses, and dual downstream DRA evaluations.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 57065,
+      "assessment_input_sha256": "1d50f616431ffd0ef8dd0c8f1063143c161edd06a93914cf7df280da166b3333",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7202006327",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 55808,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 55699,
+      "evidence_block_count": 75,
+      "evidence_context_characters": 64533,
+      "evidence_context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+      "evidence_context_sha256": "53eedcc78e1fac31ae057a01dc2ddf7df86c32d4e9ff513fa28dcb93427f8ac6",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 55832,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "extracted_pages": 13,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "c28c949c13e28e42c9aa0db607335cea756cfe47083ccbf01c44f9f8c604e18c",
+        "source_url": "https://arxiv.org/pdf/2608.05876",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 55808,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Personalized Deep Research Query Refinement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 200,
+          "supplied_characters": 200
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1370,
+          "supplied_characters": 1370
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2192,
+          "supplied_characters": 2192
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 5259,
+          "supplied_characters": 5259
+        },
+        {
+          "heading": "Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 4,
+          "source_characters": 701,
+          "supplied_characters": 701
+        },
+        {
+          "heading": "Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 5,
+          "source_characters": 5679,
+          "supplied_characters": 5679
+        },
+        {
+          "heading": "Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 6,
+          "source_characters": 3063,
+          "supplied_characters": 3063
+        },
+        {
+          "heading": "Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 7,
+          "source_characters": 1494,
+          "supplied_characters": 1494
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 8,
+          "source_characters": 4096,
+          "supplied_characters": 4096
+        },
+        {
+          "heading": "Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 9,
+          "source_characters": 4407,
+          "supplied_characters": 4407
+        },
+        {
+          "heading": "Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 10,
+          "source_characters": 2726,
+          "supplied_characters": 2726
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "conclusion",
+          "section_index": 11,
+          "source_characters": 801,
+          "supplied_characters": 801
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 109,
+          "supplied_characters": 109
+        },
+        {
+          "heading": "Of The 2025 Conference On Empirical Methods In Natural",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 13,
+          "source_characters": 1160,
+          "supplied_characters": 1160
+        },
+        {
+          "heading": "Benchmark For Search-Augmented Large Language Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 14,
+          "source_characters": 355,
+          "supplied_characters": 355
+        },
+        {
+          "heading": "Ternational Acm Sigir Conference On Research And De-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1415,
+          "supplied_characters": 1415
+        },
+        {
+          "heading": "Ceedings Of The 2019 Conference On Empirical Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 16,
+          "source_characters": 52,
+          "supplied_characters": 52
+        },
+        {
+          "heading": "In Natural Language Processing And The 9Th International",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 225,
+          "supplied_characters": 225
+        },
+        {
+          "heading": "Mization Methods For Personalizing Large Language Mod-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 18,
+          "source_characters": 312,
+          "supplied_characters": 312
+        },
+        {
+          "heading": "Inproceedings Of The 62Nd Annual Meeting Of The Associa-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 359,
+          "supplied_characters": 359
+        },
+        {
+          "heading": "Deepseekmath: Pushing The Limits Of Mathematical Rea-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 164,
+          "supplied_characters": 164
+        },
+        {
+          "heading": "Net: Masked And Permuted Pre-Training For Language Un-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 21,
+          "source_characters": 248,
+          "supplied_characters": 248
+        },
+        {
+          "heading": "Liveresearchbench: A Live Benchmark For User-Centric",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 22,
+          "source_characters": 1099,
+          "supplied_characters": 1099
+        },
+        {
+          "heading": "Liveresearchbench: A Live Benchmark For User-Centric",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 23,
+          "source_characters": 1270,
+          "supplied_characters": 1270
+        },
+        {
+          "heading": "Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "methods",
+          "section_index": 24,
+          "source_characters": 5424,
+          "supplied_characters": 5424
+        },
+        {
+          "heading": "Setting Sft Grpo",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 4952,
+          "supplied_characters": 4952
+        },
+        {
+          "heading": "Setting Sft Grpo",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 3693,
+          "supplied_characters": 3693
+        },
+        {
+          "heading": "Setting Sft Grpo",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 2874,
+          "supplied_characters": 2874
+        }
+      ],
+      "selected_characters": 55699,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "selected_sections": [
+        {
+          "characters": 200,
+          "heading": "Personalized Deep Research Query Refinement",
+          "page": 1
+        },
+        {
+          "characters": 1370,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2192,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 5259,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 701,
+          "heading": "Methodology",
+          "page": 2
+        },
+        {
+          "characters": 5679,
+          "heading": "Methodology",
+          "page": 3
+        },
+        {
+          "characters": 3063,
+          "heading": "Methodology",
+          "page": 4
+        },
+        {
+          "characters": 1494,
+          "heading": "Methodology",
+          "page": 5
+        },
+        {
+          "characters": 4096,
+          "heading": "Experimental Setup",
+          "page": 5
+        },
+        {
+          "characters": 4407,
+          "heading": "Method",
+          "page": 6
+        },
+        {
+          "characters": 2726,
+          "heading": "Method",
+          "page": 7
+        },
+        {
+          "characters": 801,
+          "heading": "Conclusion",
+          "page": 7
+        },
+        {
+          "characters": 109,
+          "heading": "Unclassified body after references",
+          "page": 8
+        },
+        {
+          "characters": 1160,
+          "heading": "Of The 2025 Conference On Empirical Methods In Natural",
+          "page": 8
+        },
+        {
+          "characters": 355,
+          "heading": "Benchmark For Search-Augmented Large Language Model",
+          "page": 8
+        },
+        {
+          "characters": 1415,
+          "heading": "Ternational Acm Sigir Conference On Research And De-",
+          "page": 8
+        },
+        {
+          "characters": 52,
+          "heading": "Ceedings Of The 2019 Conference On Empirical Methods",
+          "page": 8
+        },
+        {
+          "characters": 225,
+          "heading": "In Natural Language Processing And The 9Th International",
+          "page": 8
+        },
+        {
+          "characters": 312,
+          "heading": "Mization Methods For Personalizing Large Language Mod-",
+          "page": 8
+        },
+        {
+          "characters": 359,
+          "heading": "Inproceedings Of The 62Nd Annual Meeting Of The Associa-",
+          "page": 8
+        },
+        {
+          "characters": 164,
+          "heading": "Deepseekmath: Pushing The Limits Of Mathematical Rea-",
+          "page": 8
+        },
+        {
+          "characters": 248,
+          "heading": "Net: Masked And Permuted Pre-Training For Language Un-",
+          "page": 8
+        },
+        {
+          "characters": 1099,
+          "heading": "Liveresearchbench: A Live Benchmark For User-Centric",
+          "page": 8
+        },
+        {
+          "characters": 1270,
+          "heading": "Liveresearchbench: A Live Benchmark For User-Centric",
+          "page": 9
+        },
+        {
+          "characters": 5424,
+          "heading": "Implementation Details",
+          "page": 10
+        },
+        {
+          "characters": 4952,
+          "heading": "Setting Sft Grpo",
+          "page": 11
+        },
+        {
+          "characters": 3693,
+          "heading": "Setting Sft Grpo",
+          "page": 12
+        },
+        {
+          "characters": 2874,
+          "heading": "Setting Sft Grpo",
+          "page": 13
+        }
+      ],
+      "selected_text_sha256": "1d50f616431ffd0ef8dd0c8f1063143c161edd06a93914cf7df280da166b3333",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "c28c949c13e28e42c9aa0db607335cea756cfe47083ccbf01c44f9f8c604e18c",
+      "source_pages": 13,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
     },
+    "curation_note": null,
+    "dimension_scores": {},
     "downranked": false,
     "evidence": [
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "A baseline or comparison system is described.",
-        "section": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0002"
+        ],
+        "excerpt": "Userrequestsserveasresearchspecificationsfordeepresearch\nagents, shaping what evidence to seek and how to synthesize\nit. In personalized deep research, these specifications must\nadditionally reflect user goals, constraints, preferences, and\nevaluation criteria. User context can be incorporated either\nwithin the deep research pipeline or into the research specifi-\ncationprovidedasitsinput.Wefocusonthelatter,refiningthe\nuser request into a personalized research specification before\npassing it to an unchanged deep research agent. This requires\nresolving three coupled decisions: which framing factors are\nrelevant, whether the available user context sufficiently sup-\nports them, and whether to retrieve user memory, ask the\nuser, or stop and refine the query. For training, G-STEER\norganizes framing factors as elicitation targets in an Intent\nElicitation Graph that captures their dependencies. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "8862adc2485b7f5f0724fe8af8543ed99297fd2998772a49fc687fcf62a21e97",
+            "evidence_id": "E7e2813308bc905f0-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Userrequestsserveasresearchspecificationsfordeepresearch\nagents, shaping what evidence to seek and how to synthesize\nit. In personalized deep research, these specifications must\nadditionally reflect user goals, constraints, preferences, and\nevaluation criteria. User context can be incorporated either\nwithin the deep research pipeline or into the research specifi-\ncationprovidedasitsinput.Wefocusonthelatter,refiningthe\nuser request into a personalized research specification before\npassing it to an unchanged deep research agent. This requires\nresolving three coupled decisions: which framing factors are\nrelevant, whether the available user context sufficiently sup-\nports them, and whether to retrieve user memory, ask the\nuser, or stop and refine the query. For training, G-STEER\norganizes framing factors as elicitation targets in an Intent\nElicitation Graph that captures their dependencies. "
+              }
+            ],
+            "text": "Userrequestsserveasresearchspecificationsfordeepresearch\nagents, shaping what evidence to seek and how to synthesize\nit. In personalized deep research, these specifications must\nadditionally reflect user goals, constraints, preferences, and\nevaluation criteria. User context can be incorporated either\nwithin the deep research pipeline or into the research specifi-\ncationprovidedasitsinput.Wefocusonthelatter,refiningthe\nuser request into a personalized research specification before\npassing it to an unchanged deep research agent. This requires\nresolving three coupled decisions: which framing factors are\nrelevant, whether the available user context sufficiently sup-\nports them, and whether to retrieve user memory, ask the\nuser, or stop and refine the query. For training, G-STEER\norganizes framing factors as elicitation targets in an Intent\nElicitation Graph that captures their dependencies. "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
-        "section": null,
-        "signal_type": "missing",
-        "source_blocks": [],
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0007"
+        ],
+        "excerpt": "evidence may instead re-\nquire direct clarification. Learning these decisions requires\ninteraction states in which factor relevance and evidential\nsupport change as evidence is acquired.\nTo this end, we proposeG-STEER, a training framework\ncombining dependency-scaffolded trajectories with explicit\nevidence-state tracking.G-STEERorganizes user-specific\nframing factors in an Intent Elicitation Graph (IEG), whose\nedges capture conditional elicitation dependencies. Using\nthe IEG and controlled evidence scenarios,G-STEERcon-\nstructstrajectoriesthatvaryconditionalfactoractivationand\nevidence availability across the user profile, retrieved mem-\nory,anddialogue.Theresultingpolicylearnswhichfactorto\ngroundnext,whethercurrentevidencesuffices,andwhether\nto selectRetrieve,Ask, orStop. The IEG is used only for\ntrajectory construction and is unavailable at inference.\nSupervised fine-tuning teaches ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5e07237592cf5f4597ae31b117a3fadff5612a9175d308579ab5d8e28127090c",
+            "evidence_id": "E7e2813308bc905f0-B0007",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1392,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 495,
+                "text": "evidence may instead re-\nquire direct clarification. Learning these decisions requires\ninteraction states in which factor relevance and evidential\nsupport change as evidence is acquired.\nTo this end, we proposeG-STEER, a training framework\ncombining dependency-scaffolded trajectories with explicit\nevidence-state tracking.G-STEERorganizes user-specific\nframing factors in an Intent Elicitation Graph (IEG), whose\nedges capture conditional elicitation dependencies. Using\nthe IEG and controlled evidence scenarios,G-STEERcon-\nstructstrajectoriesthatvaryconditionalfactoractivationand\nevidence availability across the user profile, retrieved mem-\nory,anddialogue.Theresultingpolicylearnswhichfactorto\ngroundnext,whethercurrentevidencesuffices,andwhether\nto selectRetrieve,Ask, orStop. The IEG is used only for\ntrajectory construction and is unavailable at inference.\nSupervised fine-tuning teaches "
+              }
+            ],
+            "text": "evidence may instead re-\nquire direct clarification. Learning these decisions requires\ninteraction states in which factor relevance and evidential\nsupport change as evidence is acquired.\nTo this end, we proposeG-STEER, a training framework\ncombining dependency-scaffolded trajectories with explicit\nevidence-state tracking.G-STEERorganizes user-specific\nframing factors in an Intent Elicitation Graph (IEG), whose\nedges capture conditional elicitation dependencies. Using\nthe IEG and controlled evidence scenarios,G-STEERcon-\nstructstrajectoriesthatvaryconditionalfactoractivationand\nevidence availability across the user profile, retrieved mem-\nory,anddialogue.Theresultingpolicylearnswhichfactorto\ngroundnext,whethercurrentevidencesuffices,andwhether\nto selectRetrieve,Ask, orStop. The IEG is used only for\ntrajectory construction and is unavailable at inference.\nSupervised fine-tuning teaches "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0014"
+        ],
+        "excerpt": "evidence state:\n\u03a3t+1 = Update(\u03a3t, at, ot+1).\nThe policy is defined as\n\u03c0\u03b8(at |q, pu,\u03a3 t),\nand when it selectsStopat stepT,\nq\u2217 =g(q, pu,\u03a3 T ).\nFramework Overview\nG-STEERis a training framework that constructs Graph-\nScaffoldedTrajectoriesforlearningEvidencE-groundingde-\ncisionstowardpersonalizeddeepresearchqueryRefinement.\nG-STEERtrains a personalized query refiner in two stages.\nFirst, it organizes user-specific elicitation targets into an In-\ntent Elicitation Graph (IEG) and constructs trajectories that\nvarytargetdependencies,evidenceavailability,andstopping\nconditions.Itthenoptimizestheclarificationpolicyfortarget\ncoverage and interaction efficiency. At inference, the policy\nselectsRetrieve,Ask, orStopfrom the evolving evidence\nstate without access to the elicitation targets or IEG.\nElicitation Target Construction\nTo supervise personalized query refinement, we represent\nuser-dependent ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methodology",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c993b7d8059152ffdfe84e6b4b801425602f99ab66fc17f8f19c71ef4b22d223",
+            "evidence_id": "E7e2813308bc905f0-B0014",
+            "pages": [
+              3
+            ],
+            "section": "Methodology",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1093,
+                "page": 3,
+                "section": "Methodology",
+                "section_index": 5,
+                "start": 194,
+                "text": "evidence state:\n\u03a3t+1 = Update(\u03a3t, at, ot+1).\nThe policy is defined as\n\u03c0\u03b8(at |q, pu,\u03a3 t),\nand when it selectsStopat stepT,\nq\u2217 =g(q, pu,\u03a3 T ).\nFramework Overview\nG-STEERis a training framework that constructs Graph-\nScaffoldedTrajectoriesforlearningEvidencE-groundingde-\ncisionstowardpersonalizeddeepresearchqueryRefinement.\nG-STEERtrains a personalized query refiner in two stages.\nFirst, it organizes user-specific elicitation targets into an In-\ntent Elicitation Graph (IEG) and constructs trajectories that\nvarytargetdependencies,evidenceavailability,andstopping\nconditions.Itthenoptimizestheclarificationpolicyfortarget\ncoverage and interaction efficiency. At inference, the policy\nselectsRetrieve,Ask, orStopfrom the evolving evidence\nstate without access to the elicitation targets or IEG.\nElicitation Target Construction\nTo supervise personalized query refinement, we represent\nuser-dependent "
+              }
+            ],
+            "text": "evidence state:\n\u03a3t+1 = Update(\u03a3t, at, ot+1).\nThe policy is defined as\n\u03c0\u03b8(at |q, pu,\u03a3 t),\nand when it selectsStopat stepT,\nq\u2217 =g(q, pu,\u03a3 T ).\nFramework Overview\nG-STEERis a training framework that constructs Graph-\nScaffoldedTrajectoriesforlearningEvidencE-groundingde-\ncisionstowardpersonalizeddeepresearchqueryRefinement.\nG-STEERtrains a personalized query refiner in two stages.\nFirst, it organizes user-specific elicitation targets into an In-\ntent Elicitation Graph (IEG) and constructs trajectories that\nvarytargetdependencies,evidenceavailability,andstopping\nconditions.Itthenoptimizestheclarificationpolicyfortarget\ncoverage and interaction efficiency. At inference, the policy\nselectsRetrieve,Ask, orStopfrom the evolving evidence\nstate without access to the elicitation targets or IEG.\nElicitation Target Construction\nTo supervise personalized query refinement, we represent\nuser-dependent "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0016"
+        ],
+        "excerpt": "where\nei = (g i, qseedi , aseedi , wi, \u03b7i).Here,g i denotes the target\ndescription,q seedi anda seedi provide seed question\u2013answer\npair,w iistherubric-derivedimportanceweight,and\u03b7 iisthe\nessentialitylabel.Theweightw i isusedonlyasasupporting\nsignalbecauseitisinheritedfromthebenchmarkevaluator.\nGraph-Scaffolded Supervised Fine-Tuning\nTotrainstate-dependentclarificationbehavior,validatedelic-\nitation targets are organized into anIntent Elicitation Graph\n(IEG) and instantiated as scenario-controlled trajectories.\nThese trajectories expose the policy to variations in target\ndependencies,evidenceavailability,andstoppingconditions.\nIntent Elicitation Graph.For each instance, an Intent\nElicitation Graph is constructed as a directed acyclic graph\nG= (V,D),whereV=Eandtheinitialqueryactsasanex-\nternal root. An edge(ei, ej)\u2208 Dindicates that resolvingei\ncan change whether or howej should be ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methodology",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ff308f60d0c51358fe408140d5b19151ef2b6e2a59eb260f53182c2e915a01f9",
+            "evidence_id": "E7e2813308bc905f0-B0016",
+            "pages": [
+              3
+            ],
+            "section": "Methodology",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2877,
+                "page": 3,
+                "section": "Methodology",
+                "section_index": 5,
+                "start": 1985,
+                "text": "where\nei = (g i, qseedi , aseedi , wi, \u03b7i).Here,g i denotes the target\ndescription,q seedi anda seedi provide seed question\u2013answer\npair,w iistherubric-derivedimportanceweight,and\u03b7 iisthe\nessentialitylabel.Theweightw i isusedonlyasasupporting\nsignalbecauseitisinheritedfromthebenchmarkevaluator.\nGraph-Scaffolded Supervised Fine-Tuning\nTotrainstate-dependentclarificationbehavior,validatedelic-\nitation targets are organized into anIntent Elicitation Graph\n(IEG) and instantiated as scenario-controlled trajectories.\nThese trajectories expose the policy to variations in target\ndependencies,evidenceavailability,andstoppingconditions.\nIntent Elicitation Graph.For each instance, an Intent\nElicitation Graph is constructed as a directed acyclic graph\nG= (V,D),whereV=Eandtheinitialqueryactsasanex-\nternal root. An edge(ei, ej)\u2208 Dindicates that resolvingei\ncan change whether or howej should be "
+              }
+            ],
+            "text": "where\nei = (g i, qseedi , aseedi , wi, \u03b7i).Here,g i denotes the target\ndescription,q seedi anda seedi provide seed question\u2013answer\npair,w iistherubric-derivedimportanceweight,and\u03b7 iisthe\nessentialitylabel.Theweightw i isusedonlyasasupporting\nsignalbecauseitisinheritedfromthebenchmarkevaluator.\nGraph-Scaffolded Supervised Fine-Tuning\nTotrainstate-dependentclarificationbehavior,validatedelic-\nitation targets are organized into anIntent Elicitation Graph\n(IEG) and instantiated as scenario-controlled trajectories.\nThese trajectories expose the policy to variations in target\ndependencies,evidenceavailability,andstoppingconditions.\nIntent Elicitation Graph.For each instance, an Intent\nElicitation Graph is constructed as a directed acyclic graph\nG= (V,D),whereV=Eandtheinitialqueryactsasanex-\nternal root. An edge(ei, ej)\u2208 Dindicates that resolvingei\ncan change whether or howej should be "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0020"
+        ],
+        "excerpt": "memory and\nprofile state. Each trajectory\u03c4receives the reward\nR(\u03c4, E) =Ralign(\u03c4, E)\u2212C acq(\u03c4)\u2212C con(\u03c4).(1)\nFigure 2: Overview ofG-STEER.\nGRPO normalizes trajectory rewards within each group and\napplies the resulting advantage to all policy transitions in\nthe corresponding rollout. The update increases the likeli-\nhood of trajectories that cover important targets with fewer\nunnecessary actions and violations.\nTarget-Anchored Alignment.LetV covT denote the cov-\neredslotsinthefinalevidencestate,andletNbethenumber\nof elicitation targets. Each elicitation targetei is represented\nbyarewardanchorconstructedfromitstargetdescriptiong i\nand rubric criterion. Each covered slotvj is represented by\nits name and purpose.\nThe similarity between targete i and slotv j isS ij =\nmax\n\u0000\n0, \u03d5(gi)\u22a4\u03d5(vj)\u0001 where\u03d5(\u00b7)is an L2-normalized en-\ncoder. A one-to-one matchingM\u2217 maximizes the total sim-\nilarity between ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methodology",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c035a226a36857639afd68fba3e44047d343993651652d0437b0cc3ff550706d",
+            "evidence_id": "E7e2813308bc905f0-B0020",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Methodology",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 5679,
+                "page": 3,
+                "section": "Methodology",
+                "section_index": 5,
+                "start": 5574,
+                "text": "memory and\nprofile state. Each trajectory\u03c4receives the reward\nR(\u03c4, E) =Ralign(\u03c4, E)\u2212C acq(\u03c4)\u2212C con(\u03c4).(1)"
+              },
+              {
+                "end": 791,
+                "page": 4,
+                "section": "Methodology",
+                "section_index": 6,
+                "start": 0,
+                "text": "Figure 2: Overview ofG-STEER.\nGRPO normalizes trajectory rewards within each group and\napplies the resulting advantage to all policy transitions in\nthe corresponding rollout. The update increases the likeli-\nhood of trajectories that cover important targets with fewer\nunnecessary actions and violations.\nTarget-Anchored Alignment.LetV covT denote the cov-\neredslotsinthefinalevidencestate,andletNbethenumber\nof elicitation targets. Each elicitation targetei is represented\nbyarewardanchorconstructedfromitstargetdescriptiong i\nand rubric criterion. Each covered slotvj is represented by\nits name and purpose.\nThe similarity between targete i and slotv j isS ij =\nmax\n\u0000\n0, \u03d5(gi)\u22a4\u03d5(vj)\u0001 where\u03d5(\u00b7)is an L2-normalized en-\ncoder. A one-to-one matchingM\u2217 maximizes the total sim-\nilarity between "
+              }
+            ],
+            "text": "memory and\nprofile state. Each trajectory\u03c4receives the reward\nR(\u03c4, E) =Ralign(\u03c4, E)\u2212C acq(\u03c4)\u2212C con(\u03c4).(1)\nFigure 2: Overview ofG-STEER.\nGRPO normalizes trajectory rewards within each group and\napplies the resulting advantage to all policy transitions in\nthe corresponding rollout. The update increases the likeli-\nhood of trajectories that cover important targets with fewer\nunnecessary actions and violations.\nTarget-Anchored Alignment.LetV covT denote the cov-\neredslotsinthefinalevidencestate,andletNbethenumber\nof elicitation targets. Each elicitation targetei is represented\nbyarewardanchorconstructedfromitstargetdescriptiong i\nand rubric criterion. Each covered slotvj is represented by\nits name and purpose.\nThe similarity between targete i and slotv j isS ij =\nmax\n\u0000\n0, \u03d5(gi)\u22a4\u03d5(vj)\u0001 where\u03d5(\u00b7)is an L2-normalized en-\ncoder. A one-to-one matchingM\u2217 maximizes the total sim-\nilarity between "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0021"
+        ],
+        "excerpt": "targets and covered slots. This ensures that\neach target and slot contributes to at most one match.\nThe alignment reward is\nRalign(\u03c4, E) =\u03b1Cov(\u03c4, E)\u2212\u03b2 CFP(\u03c4, E),(2)\nwhere\nCov(\u03c4, E) =\nP\n(i,j)\u2208M\u2217 wiSij\nPN\ni=1 wi\n.(3)\nThe coverage term gives greater reward to trajectories that\ncover important targets with strong alignment.\nForeachcoveredslot,let\u02c6s j =S ij when(i, j)\u2208 M\u2217 and\n\u02c6sj = 0otherwise. The false-positive cost is\nCFP(\u03c4, E) = 1N Xvj \u2208V covT (1\u2212\u02c6sj).(4)\nIt penalizes covered slots that are unmatched or weakly\naligned with the elicitation targets.\nEvidence Acquisition Cost.We penalize evidence acqui-\nsition to discourage unnecessary retrieval and user interac-\ntion. The cost is\nCacq(\u03c4) =\u03bb askTask +\u03bb retTret,(5)\nwhereT ask andT ret are the action counts, and\u03bbask and\u03bb ret\naretheircostweights.Weset\u03bb ask > \u03bbret becauseaskingthe\nuser imposes greater burden than retrieving from ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methodology",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6784314a392e12d1554c30fccce41cf6f390eaa53bcb1f51b9db64086291d3fc",
+            "evidence_id": "E7e2813308bc905f0-B0021",
+            "pages": [
+              4
+            ],
+            "section": "Methodology",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1674,
+                "page": 4,
+                "section": "Methodology",
+                "section_index": 6,
+                "start": 791,
+                "text": "targets and covered slots. This ensures that\neach target and slot contributes to at most one match.\nThe alignment reward is\nRalign(\u03c4, E) =\u03b1Cov(\u03c4, E)\u2212\u03b2 CFP(\u03c4, E),(2)\nwhere\nCov(\u03c4, E) =\nP\n(i,j)\u2208M\u2217 wiSij\nPN\ni=1 wi\n.(3)\nThe coverage term gives greater reward to trajectories that\ncover important targets with strong alignment.\nForeachcoveredslot,let\u02c6s j =S ij when(i, j)\u2208 M\u2217 and\n\u02c6sj = 0otherwise. The false-positive cost is\nCFP(\u03c4, E) = 1N Xvj \u2208V covT (1\u2212\u02c6sj).(4)\nIt penalizes covered slots that are unmatched or weakly\naligned with the elicitation targets.\nEvidence Acquisition Cost.We penalize evidence acqui-\nsition to discourage unnecessary retrieval and user interac-\ntion. The cost is\nCacq(\u03c4) =\u03bb askTask +\u03bb retTret,(5)\nwhereT ask andT ret are the action counts, and\u03bbask and\u03bb ret\naretheircostweights.Weset\u03bb ask > \u03bbret becauseaskingthe\nuser imposes greater burden than retrieving from "
+              }
+            ],
+            "text": "targets and covered slots. This ensures that\neach target and slot contributes to at most one match.\nThe alignment reward is\nRalign(\u03c4, E) =\u03b1Cov(\u03c4, E)\u2212\u03b2 CFP(\u03c4, E),(2)\nwhere\nCov(\u03c4, E) =\nP\n(i,j)\u2208M\u2217 wiSij\nPN\ni=1 wi\n.(3)\nThe coverage term gives greater reward to trajectories that\ncover important targets with strong alignment.\nForeachcoveredslot,let\u02c6s j =S ij when(i, j)\u2208 M\u2217 and\n\u02c6sj = 0otherwise. The false-positive cost is\nCFP(\u03c4, E) = 1N Xvj \u2208V covT (1\u2212\u02c6sj).(4)\nIt penalizes covered slots that are unmatched or weakly\naligned with the elicitation targets.\nEvidence Acquisition Cost.We penalize evidence acqui-\nsition to discourage unnecessary retrieval and user interac-\ntion. The cost is\nCacq(\u03c4) =\u03bb askTask +\u03bb retTret,(5)\nwhereT ask andT ret are the action counts, and\u03bbask and\u03bb ret\naretheircostweights.Weset\u03bb ask > \u03bbret becauseaskingthe\nuser imposes greater burden than retrieving from "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0026"
+        ],
+        "excerpt": "Settings.WeevaluateontheprocessedPDR-Bench(Liang\net al. 2026), split into training and test sets, as sum-\nmarized in Table 1. Unless otherwise noted, we use\nQwen3-8B (Yang et al. 2025) as the backbone and fine-\ntune trainable variants with LoRA (Hu et al. 2022).\nQwen3-32B renders SFT trajectories and simulates users,\nwhile GPT-5.4 (OpenAI 2026a) constructs elicitation tar-\ngets and IEGs. We usesentence-transformers/\nall-mpnet-base-v2(Reimers and Gurevych 2019;\nSong et al. 2020) for semantic matching and FAISS-based\nuser-memory indexing (Douze et al. 2024).\nAtevaluation,memoryandprofilesareinitializedfromthe\nfinalonlinestatesaccumulatedduringGRPOonthetraining\nsplit and remain frozen across test instances. Users absent\nfromtrainingstartwithemptystates.Noheld-outannotation\nor test interaction is used to construct or update these states.\nPolicies receive neither reference targets nor ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5d2fffa19f08951c4592beeb4d3748148cbd478134c0a1625ef90c52a17742a6",
+            "evidence_id": "E7e2813308bc905f0-B0026",
+            "pages": [
+              5
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 5,
+                "section": "Experimental Setup",
+                "section_index": 8,
+                "start": 0,
+                "text": "Settings.WeevaluateontheprocessedPDR-Bench(Liang\net al. 2026), split into training and test sets, as sum-\nmarized in Table 1. Unless otherwise noted, we use\nQwen3-8B (Yang et al. 2025) as the backbone and fine-\ntune trainable variants with LoRA (Hu et al. 2022).\nQwen3-32B renders SFT trajectories and simulates users,\nwhile GPT-5.4 (OpenAI 2026a) constructs elicitation tar-\ngets and IEGs. We usesentence-transformers/\nall-mpnet-base-v2(Reimers and Gurevych 2019;\nSong et al. 2020) for semantic matching and FAISS-based\nuser-memory indexing (Douze et al. 2024).\nAtevaluation,memoryandprofilesareinitializedfromthe\nfinalonlinestatesaccumulatedduringGRPOonthetraining\nsplit and remain frozen across test instances. Users absent\nfromtrainingstartwithemptystates.Noheld-outannotation\nor test interaction is used to construct or update these states.\nPolicies receive neither reference targets nor "
+              }
+            ],
+            "text": "Settings.WeevaluateontheprocessedPDR-Bench(Liang\net al. 2026), split into training and test sets, as sum-\nmarized in Table 1. Unless otherwise noted, we use\nQwen3-8B (Yang et al. 2025) as the backbone and fine-\ntune trainable variants with LoRA (Hu et al. 2022).\nQwen3-32B renders SFT trajectories and simulates users,\nwhile GPT-5.4 (OpenAI 2026a) constructs elicitation tar-\ngets and IEGs. We usesentence-transformers/\nall-mpnet-base-v2(Reimers and Gurevych 2019;\nSong et al. 2020) for semantic matching and FAISS-based\nuser-memory indexing (Douze et al. 2024).\nAtevaluation,memoryandprofilesareinitializedfromthe\nfinalonlinestatesaccumulatedduringGRPOonthetraining\nsplit and remain frozen across test instances. Users absent\nfromtrainingstartwithemptystates.Noheld-outannotation\nor test interaction is used to construct or update these states.\nPolicies receive neither reference targets nor "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0027"
+        ],
+        "excerpt": "offline IEGs at\ninference. See the appendix for details.\nEvaluation.We evaluate each refined query against ref-\nerence elicitation targets using precision, recall, and F1.\nBecause these metrics treat all targets equally, we also re-\nport weighted coverage (WCov), the normalized sum of\nPDR-Bench rubric-derived importance weights over cov-\nered targets, and E-WCov, its restriction to essential tar-\ngets. GPT-5.4 extracts user-specific framing factors from\neach refined query, and the extracted factors and reference\ntargets are encoded withsentence-transformers/\nall-mpnet-base-v2(Reimers and Gurevych 2019;\nSong et al. 2020). A target is covered if its maximum co-\nsine similarity to an extracted factor is at least 0.55.\nPrecision is the share of extracted factors matched to ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b9861dce82193ecfc3805d82bdbd7dca4e54405012fe34a2759572eb6083051a",
+            "evidence_id": "E7e2813308bc905f0-B0027",
+            "pages": [
+              5
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1673,
+                "page": 5,
+                "section": "Experimental Setup",
+                "section_index": 8,
+                "start": 893,
+                "text": "offline IEGs at\ninference. See the appendix for details.\nEvaluation.We evaluate each refined query against ref-\nerence elicitation targets using precision, recall, and F1.\nBecause these metrics treat all targets equally, we also re-\nport weighted coverage (WCov), the normalized sum of\nPDR-Bench rubric-derived importance weights over cov-\nered targets, and E-WCov, its restriction to essential tar-\ngets. GPT-5.4 extracts user-specific framing factors from\neach refined query, and the extracted factors and reference\ntargets are encoded withsentence-transformers/\nall-mpnet-base-v2(Reimers and Gurevych 2019;\nSong et al. 2020). A target is covered if its maximum co-\nsine similarity to an extracted factor is at least 0.55.\nPrecision is the share of extracted factors matched to "
+              }
+            ],
+            "text": "offline IEGs at\ninference. See the appendix for details.\nEvaluation.We evaluate each refined query against ref-\nerence elicitation targets using precision, recall, and F1.\nBecause these metrics treat all targets equally, we also re-\nport weighted coverage (WCov), the normalized sum of\nPDR-Bench rubric-derived importance weights over cov-\nered targets, and E-WCov, its restriction to essential tar-\ngets. GPT-5.4 extracts user-specific framing factors from\neach refined query, and the extracted factors and reference\ntargets are encoded withsentence-transformers/\nall-mpnet-base-v2(Reimers and Gurevych 2019;\nSong et al. 2020). A target is covered if its maximum co-\nsine similarity to an extracted factor is at least 0.55.\nPrecision is the share of extracted factors matched to "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0028"
+        ],
+        "excerpt": "tar-\ngets,recalltheshareofcoveredtargets,andF1theirharmonic\nmean.Theseintrinsicmetricsassesstarget-levelframingcov-\nerageandselectivitybutdonotdirectlyverifywhetherevery\nexpressed factor value is entailed by the acquired evidence.\nUsingGPT-5.4forbothtargetconstructionandfactorextrac-\ntion may bias absolute scores, though all methods share the\nsameevaluationpipeline.Thresholdsensitivityfrom0.45to\n0.70 appears in the appendix.\nBaselines.Genericprompting.DirectRewriterewritesthe\nquery without interaction. We implement three agents with\na shared ReAct-style interface (Yao et al. 2023): Memory-\nRAG Agent usesRetrieve/Stop, Clarification Agent uses\nAsk/Stop, and Memory+Clarification Agent uses all three\nactions. All prompting baselines use the same test-time pro-\nfile as G-STEER, with no training or slot tracking.\nPrior clarification.Mistral-Interact (Qian et al. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b1bbd4b8a4fef67a7cd8c29b116aa0e7ccf49ae803d8e3bad6565e110cdd14c2",
+            "evidence_id": "E7e2813308bc905f0-B0028",
+            "pages": [
+              5
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2543,
+                "page": 5,
+                "section": "Experimental Setup",
+                "section_index": 8,
+                "start": 1673,
+                "text": "tar-\ngets,recalltheshareofcoveredtargets,andF1theirharmonic\nmean.Theseintrinsicmetricsassesstarget-levelframingcov-\nerageandselectivitybutdonotdirectlyverifywhetherevery\nexpressed factor value is entailed by the acquired evidence.\nUsingGPT-5.4forbothtargetconstructionandfactorextrac-\ntion may bias absolute scores, though all methods share the\nsameevaluationpipeline.Thresholdsensitivityfrom0.45to\n0.70 appears in the appendix.\nBaselines.Genericprompting.DirectRewriterewritesthe\nquery without interaction. We implement three agents with\na shared ReAct-style interface (Yao et al. 2023): Memory-\nRAG Agent usesRetrieve/Stop, Clarification Agent uses\nAsk/Stop, and Memory+Clarification Agent uses all three\nactions. All prompting baselines use the same test-time pro-\nfile as G-STEER, with no training or slot tracking.\nPrior clarification.Mistral-Interact (Qian et al. "
+              }
+            ],
+            "text": "tar-\ngets,recalltheshareofcoveredtargets,andF1theirharmonic\nmean.Theseintrinsicmetricsassesstarget-levelframingcov-\nerageandselectivitybutdonotdirectlyverifywhetherevery\nexpressed factor value is entailed by the acquired evidence.\nUsingGPT-5.4forbothtargetconstructionandfactorextrac-\ntion may bias absolute scores, though all methods share the\nsameevaluationpipeline.Thresholdsensitivityfrom0.45to\n0.70 appears in the appendix.\nBaselines.Genericprompting.DirectRewriterewritesthe\nquery without interaction. We implement three agents with\na shared ReAct-style interface (Yao et al. 2023): Memory-\nRAG Agent usesRetrieve/Stop, Clarification Agent uses\nAsk/Stop, and Memory+Clarification Agent uses all three\nactions. All prompting baselines use the same test-time pro-\nfile as G-STEER, with no training or slot tracking.\nPrior clarification.Mistral-Interact (Qian et al. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0031"
+        ],
+        "excerpt": "Overall Unseen User Unseen Task Both Unseen Turns\nAsk/Ret.WCov E-WCov Prec. Rec. F1 WCov F1 WCov F1 WCov F1\nDirect Rewrite 0.3305 0.3697 0.3534 0.3134 0.3322 0.3742 0.3624 0.3654 0.3796 0.3685 0.3730 0.0/0.0\nMemory-RAG Agent 0.3180 0.3700 0.3968 0.3158 0.3517 0.3451 0.3872 0.4459 0.4759 0.4801 0.5025 0.0/1.5\nClarification Agent 0.3399 0.3717 0.3754 0.3278 0.3499 0.3415 0.3650 0.3687 0.3947 0.3704 0.3976 3.5/0.0\nMem.+Clarif. Agent 0.3822 0.4364 0.4116 0.3565 0.3820 0.3769 0.3715 0.4505 0.4639 0.4471 0.4294 1.6/0.0\nMistral-Interact 0.3811 0.4223 0.4099 0.3612 0.3841 0.4152 0.3993 0.4062 0.4416 0.4771 0.4767 3.6/0.0\nCEP-Clarify+Rewrite 0.4060 0.4497 0.3818 0.3828 0.3823 0.4026 0.3611 0.45930.48890.4846 0.4698 12.0/0.0\nIntentRL-style Clarifier 0.3760 0.4103 0.3983 0.3589 0.3775 0.4329 0.4398 0.48250.4558 0.5242 0.50613.4/0.0\nG-STEER(Ours)0.4253 0.4639 0.4199 0.3971 0.4082 0.4886 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Method",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "352d666039c693607665ebf7b3edbada18e7ceb95234fb8bacdd79722aa7e215",
+            "evidence_id": "E7e2813308bc905f0-B0031",
+            "pages": [
+              6
+            ],
+            "section": "Method",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 888,
+                "page": 6,
+                "section": "Method",
+                "section_index": 9,
+                "start": 0,
+                "text": "Overall Unseen User Unseen Task Both Unseen Turns\nAsk/Ret.WCov E-WCov Prec. Rec. F1 WCov F1 WCov F1 WCov F1\nDirect Rewrite 0.3305 0.3697 0.3534 0.3134 0.3322 0.3742 0.3624 0.3654 0.3796 0.3685 0.3730 0.0/0.0\nMemory-RAG Agent 0.3180 0.3700 0.3968 0.3158 0.3517 0.3451 0.3872 0.4459 0.4759 0.4801 0.5025 0.0/1.5\nClarification Agent 0.3399 0.3717 0.3754 0.3278 0.3499 0.3415 0.3650 0.3687 0.3947 0.3704 0.3976 3.5/0.0\nMem.+Clarif. Agent 0.3822 0.4364 0.4116 0.3565 0.3820 0.3769 0.3715 0.4505 0.4639 0.4471 0.4294 1.6/0.0\nMistral-Interact 0.3811 0.4223 0.4099 0.3612 0.3841 0.4152 0.3993 0.4062 0.4416 0.4771 0.4767 3.6/0.0\nCEP-Clarify+Rewrite 0.4060 0.4497 0.3818 0.3828 0.3823 0.4026 0.3611 0.45930.48890.4846 0.4698 12.0/0.0\nIntentRL-style Clarifier 0.3760 0.4103 0.3983 0.3589 0.3775 0.4329 0.4398 0.48250.4558 0.5242 0.50613.4/0.0\nG-STEER(Ours)0.4253 0.4639 0.4199 0.3971 0.4082 0.4886 "
+              }
+            ],
+            "text": "Overall Unseen User Unseen Task Both Unseen Turns\nAsk/Ret.WCov E-WCov Prec. Rec. F1 WCov F1 WCov F1 WCov F1\nDirect Rewrite 0.3305 0.3697 0.3534 0.3134 0.3322 0.3742 0.3624 0.3654 0.3796 0.3685 0.3730 0.0/0.0\nMemory-RAG Agent 0.3180 0.3700 0.3968 0.3158 0.3517 0.3451 0.3872 0.4459 0.4759 0.4801 0.5025 0.0/1.5\nClarification Agent 0.3399 0.3717 0.3754 0.3278 0.3499 0.3415 0.3650 0.3687 0.3947 0.3704 0.3976 3.5/0.0\nMem.+Clarif. Agent 0.3822 0.4364 0.4116 0.3565 0.3820 0.3769 0.3715 0.4505 0.4639 0.4471 0.4294 1.6/0.0\nMistral-Interact 0.3811 0.4223 0.4099 0.3612 0.3841 0.4152 0.3993 0.4062 0.4416 0.4771 0.4767 3.6/0.0\nCEP-Clarify+Rewrite 0.4060 0.4497 0.3818 0.3828 0.3823 0.4026 0.3611 0.45930.48890.4846 0.4698 12.0/0.0\nIntentRL-style Clarifier 0.3760 0.4103 0.3983 0.3589 0.3775 0.4329 0.4398 0.48250.4558 0.5242 0.50613.4/0.0\nG-STEER(Ours)0.4253 0.4639 0.4199 0.3971 0.4082 0.4886 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0032"
+        ],
+        "excerpt": "0.44390.4726 0.43590.52660.4586 4.1/1.2\nTable 2: Main evaluation results. Best scores are bolded and second-best scores are underlined. Avg. Turns reports the mean\nnumber of clarification-question and memory-retrieval turns (Ask/Ret.), excluding the final refinement turn.\nMethod WCov E-WCov F1\nFullG-STEER0.42530.4639 0.4082\nUntrained backbone comparison\nQwen3-8B (Untrained) 0.3761 0.4219 0.3892\nQwen3-32B (Untrained) 0.2966 0.3445 0.3316\nTraining ablation\nGraph SFT only 0.4115 0.44120.4248\nGRPO only 0.40290.46670.4036\nIEG Trajectory ablation\nRandom-order SFT only 0.3739 0.3729 0.3634\nRandom-order SFT + GRPO 0.3607 0.4124 0.3512\nTable 3: Ablation study comparing backbone scale, training\nstages, and IEG-scaffolded trajectory construction.\ntions. The untrained Memory+Clarification baseline never\ninvokesRetrievedespiteaccesstobothacquisitionactions,\nshowing anAskbias rather than effective ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Method",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2594127cc5add68e557f19f04e161c2d5b48dd9c31108fb46d1fc8cf8eeb8a32",
+            "evidence_id": "E7e2813308bc905f0-B0032",
+            "pages": [
+              6
+            ],
+            "section": "Method",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1785,
+                "page": 6,
+                "section": "Method",
+                "section_index": 9,
+                "start": 888,
+                "text": "0.44390.4726 0.43590.52660.4586 4.1/1.2\nTable 2: Main evaluation results. Best scores are bolded and second-best scores are underlined. Avg. Turns reports the mean\nnumber of clarification-question and memory-retrieval turns (Ask/Ret.), excluding the final refinement turn.\nMethod WCov E-WCov F1\nFullG-STEER0.42530.4639 0.4082\nUntrained backbone comparison\nQwen3-8B (Untrained) 0.3761 0.4219 0.3892\nQwen3-32B (Untrained) 0.2966 0.3445 0.3316\nTraining ablation\nGraph SFT only 0.4115 0.44120.4248\nGRPO only 0.40290.46670.4036\nIEG Trajectory ablation\nRandom-order SFT only 0.3739 0.3729 0.3634\nRandom-order SFT + GRPO 0.3607 0.4124 0.3512\nTable 3: Ablation study comparing backbone scale, training\nstages, and IEG-scaffolded trajectory construction.\ntions. The untrained Memory+Clarification baseline never\ninvokesRetrievedespiteaccesstobothacquisitionactions,\nshowing anAskbias rather than effective "
+              }
+            ],
+            "text": "0.44390.4726 0.43590.52660.4586 4.1/1.2\nTable 2: Main evaluation results. Best scores are bolded and second-best scores are underlined. Avg. Turns reports the mean\nnumber of clarification-question and memory-retrieval turns (Ask/Ret.), excluding the final refinement turn.\nMethod WCov E-WCov F1\nFullG-STEER0.42530.4639 0.4082\nUntrained backbone comparison\nQwen3-8B (Untrained) 0.3761 0.4219 0.3892\nQwen3-32B (Untrained) 0.2966 0.3445 0.3316\nTraining ablation\nGraph SFT only 0.4115 0.44120.4248\nGRPO only 0.40290.46670.4036\nIEG Trajectory ablation\nRandom-order SFT only 0.3739 0.3729 0.3634\nRandom-order SFT + GRPO 0.3607 0.4124 0.3512\nTable 3: Ablation study comparing backbone scale, training\nstages, and IEG-scaffolded trajectory construction.\ntions. The untrained Memory+Clarification baseline never\ninvokesRetrievedespiteaccesstobothacquisitionactions,\nshowing anAskbias rather than effective "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0035"
+        ],
+        "excerpt": "and its improvement per question over Direct Rewrite.\nWeuseE-WCovastheutilitymeasurebecauseitemphasizes\nfactors essential to the personalized research specification.\nG-STEER achieves the highest E-WCov and the largest\nimprovement per question, outperforming IntentRL-style at\ncomparable burden and CEP-Clarify+Rewrite with roughly\none-third as many questions, indicating that its gains are not\nmerely due to asking more questions.\nDownstream Report Utility\nWe complement intrinsic target matching with report-\nlevel evaluation under two fixed downstream settings:\nOpenAI Deep Research (o4-mini-deep-research-\n2025-06-26), a commercial black-box DRA, and OA-\ngents,anopen-sourceagentframeworkusinggpt-5-mini\nfor report generation (OpenAI 2026b; Zhu et al. 2025). Fol-\nlowing PQR Evaluation (Liang et al. 2026), we report per-",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Method",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "78543943528b855d49e150fe9e7fec2b02176415dc6c0edc610b9925b4a7949a",
+            "evidence_id": "E7e2813308bc905f0-B0035",
+            "pages": [
+              6
+            ],
+            "section": "Method",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 4407,
+                "page": 6,
+                "section": "Method",
+                "section_index": 9,
+                "start": 3583,
+                "text": "and its improvement per question over Direct Rewrite.\nWeuseE-WCovastheutilitymeasurebecauseitemphasizes\nfactors essential to the personalized research specification.\nG-STEER achieves the highest E-WCov and the largest\nimprovement per question, outperforming IntentRL-style at\ncomparable burden and CEP-Clarify+Rewrite with roughly\none-third as many questions, indicating that its gains are not\nmerely due to asking more questions.\nDownstream Report Utility\nWe complement intrinsic target matching with report-\nlevel evaluation under two fixed downstream settings:\nOpenAI Deep Research (o4-mini-deep-research-\n2025-06-26), a commercial black-box DRA, and OA-\ngents,anopen-sourceagentframeworkusinggpt-5-mini\nfor report generation (OpenAI 2026b; Zhu et al. 2025). Fol-\nlowing PQR Evaluation (Liang et al. 2026), we report per-"
+              }
+            ],
+            "text": "and its improvement per question over Direct Rewrite.\nWeuseE-WCovastheutilitymeasurebecauseitemphasizes\nfactors essential to the personalized research specification.\nG-STEER achieves the highest E-WCov and the largest\nimprovement per question, outperforming IntentRL-style at\ncomparable burden and CEP-Clarify+Rewrite with roughly\none-third as many questions, indicating that its gains are not\nmerely due to asking more questions.\nDownstream Report Utility\nWe complement intrinsic target matching with report-\nlevel evaluation under two fixed downstream settings:\nOpenAI Deep Research (o4-mini-deep-research-\n2025-06-26), a commercial black-box DRA, and OA-\ngents,anopen-sourceagentframeworkusinggpt-5-mini\nfor report generation (OpenAI 2026b; Zhu et al. 2025). Fol-\nlowing PQR Evaluation (Liang et al. 2026), we report per-"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0036"
+        ],
+        "excerpt": "Downstream\nDRA Method\nPersonalization (P) Quality (Q)\nOverall Goal Content Presentation Actionability Overall Depth Logic Clarity\nOpenAI\nDR\nOriginal Query 3.70 3.91 3.57 4.77 3.34 5.43 5.13 5.72 5.57\nMemory+Clarification 3.81 4.10 3.92 4.73 3.32 5.28 5.04 5.56 5.33\nMistral-Interact 3.28 3.52 3.28 4.46 2.84 4.71 4.31 4.82 5.30\nCEP-Clarify+Rewrite 4.25 4.55 4.38 4.91 3.81 5.40 5.15 5.62 5.54\nIntentRL-style 4.22 4.47 4.204.983.85 5.69 5.53 5.84 5.80\nG-STEER 4.35 4.65 4.46 4.94 3.92 5.56 5.37 5.80 5.54\nOAgents\nOriginal Query 5.05 4.98 4.32 5.96 5.22 6.73 6.72 7.13 6.28\nMemory+Clarification 5.12 5.14 4.68 5.94 5.12 6.37 6.28 6.65 6.11\nMistral-Interact 4.94 4.98 4.40 5.77 4.97 6.05 5.94 6.43 5.84\nCEP-Clarify+Rewrite 5.53 5.58 5.09 6.04 5.57 6.37 6.25 6.75 6.08\nIntentRL-style 4.93 4.91 4.45 5.51 5.03 5.92 5.90 6.33 5.47\nG-STEER 5.70 5.72 5.28 6.31 5.73 6.77 6.74 7.22 6.31\nTable 4: Downstream ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Method",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0315a9aa70f2a5ff17030912629211e873312dd779fa944cf5c4ad4c87e038aa",
+            "evidence_id": "E7e2813308bc905f0-B0036",
+            "pages": [
+              7
+            ],
+            "section": "Method",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 7,
+                "section": "Method",
+                "section_index": 10,
+                "start": 0,
+                "text": "Downstream\nDRA Method\nPersonalization (P) Quality (Q)\nOverall Goal Content Presentation Actionability Overall Depth Logic Clarity\nOpenAI\nDR\nOriginal Query 3.70 3.91 3.57 4.77 3.34 5.43 5.13 5.72 5.57\nMemory+Clarification 3.81 4.10 3.92 4.73 3.32 5.28 5.04 5.56 5.33\nMistral-Interact 3.28 3.52 3.28 4.46 2.84 4.71 4.31 4.82 5.30\nCEP-Clarify+Rewrite 4.25 4.55 4.38 4.91 3.81 5.40 5.15 5.62 5.54\nIntentRL-style 4.22 4.47 4.204.983.85 5.69 5.53 5.84 5.80\nG-STEER 4.35 4.65 4.46 4.94 3.92 5.56 5.37 5.80 5.54\nOAgents\nOriginal Query 5.05 4.98 4.32 5.96 5.22 6.73 6.72 7.13 6.28\nMemory+Clarification 5.12 5.14 4.68 5.94 5.12 6.37 6.28 6.65 6.11\nMistral-Interact 4.94 4.98 4.40 5.77 4.97 6.05 5.94 6.43 5.84\nCEP-Clarify+Rewrite 5.53 5.58 5.09 6.04 5.57 6.37 6.25 6.75 6.08\nIntentRL-style 4.93 4.91 4.45 5.51 5.03 5.92 5.90 6.33 5.47\nG-STEER 5.70 5.72 5.28 6.31 5.73 6.77 6.74 7.22 6.31\nTable 4: Downstream "
+              }
+            ],
+            "text": "Downstream\nDRA Method\nPersonalization (P) Quality (Q)\nOverall Goal Content Presentation Actionability Overall Depth Logic Clarity\nOpenAI\nDR\nOriginal Query 3.70 3.91 3.57 4.77 3.34 5.43 5.13 5.72 5.57\nMemory+Clarification 3.81 4.10 3.92 4.73 3.32 5.28 5.04 5.56 5.33\nMistral-Interact 3.28 3.52 3.28 4.46 2.84 4.71 4.31 4.82 5.30\nCEP-Clarify+Rewrite 4.25 4.55 4.38 4.91 3.81 5.40 5.15 5.62 5.54\nIntentRL-style 4.22 4.47 4.204.983.85 5.69 5.53 5.84 5.80\nG-STEER 4.35 4.65 4.46 4.94 3.92 5.56 5.37 5.80 5.54\nOAgents\nOriginal Query 5.05 4.98 4.32 5.96 5.22 6.73 6.72 7.13 6.28\nMemory+Clarification 5.12 5.14 4.68 5.94 5.12 6.37 6.28 6.65 6.11\nMistral-Interact 4.94 4.98 4.40 5.77 4.97 6.05 5.94 6.43 5.84\nCEP-Clarify+Rewrite 5.53 5.58 5.09 6.04 5.57 6.37 6.25 6.75 6.08\nIntentRL-style 4.93 4.91 4.45 5.51 5.03 5.92 5.90 6.33 5.47\nG-STEER 5.70 5.72 5.28 6.31 5.73 6.77 6.74 7.22 6.31\nTable 4: Downstream "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0037"
+        ],
+        "excerpt": "utility with fixed DR agents. P and Q measure personalization alignment and report quality, respectively.\nFigure 4: OAgents searches before and after refinement.\nColor families align factors to related search terms.\nsonalizationalignment(P)andcontentquality(Q),averaged\nover three evaluator rounds per report. We omit factual re-\nliability (R), which primarily reflects the fixed DRA's claim\nverificationandcitationbehavior.Becausethesereport-level\nscoresdependonbothqueryqualityandDRA-specificplan-\nning, retrieval, and synthesis, we compare methods within\neach DRA rather than absolute scores across DRAs. Each\nDRA generates one report per method and test instance.\nTable 4 shows thatG-STEERachieves the highest overall\nP-scorewithinbothdownstreamsettings.WithOpenAIDeep\nResearch,G-STEERoutperforms CEP-Clarify+Rewrite in\npersonalization while attaining the second-highest Q-score,\nshowing that ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Method",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "efbd68843eb39d24697f0de7087611f53c4e10097f9521b79cc53a4fd466dcb8",
+            "evidence_id": "E7e2813308bc905f0-B0037",
+            "pages": [
+              7
+            ],
+            "section": "Method",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1795,
+                "page": 7,
+                "section": "Method",
+                "section_index": 10,
+                "start": 898,
+                "text": "utility with fixed DR agents. P and Q measure personalization alignment and report quality, respectively.\nFigure 4: OAgents searches before and after refinement.\nColor families align factors to related search terms.\nsonalizationalignment(P)andcontentquality(Q),averaged\nover three evaluator rounds per report. We omit factual re-\nliability (R), which primarily reflects the fixed DRA's claim\nverificationandcitationbehavior.Becausethesereport-level\nscoresdependonbothqueryqualityandDRA-specificplan-\nning, retrieval, and synthesis, we compare methods within\neach DRA rather than absolute scores across DRAs. Each\nDRA generates one report per method and test instance.\nTable 4 shows thatG-STEERachieves the highest overall\nP-scorewithinbothdownstreamsettings.WithOpenAIDeep\nResearch,G-STEERoutperforms CEP-Clarify+Rewrite in\npersonalization while attaining the second-highest Q-score,\nshowing that "
+              }
+            ],
+            "text": "utility with fixed DR agents. P and Q measure personalization alignment and report quality, respectively.\nFigure 4: OAgents searches before and after refinement.\nColor families align factors to related search terms.\nsonalizationalignment(P)andcontentquality(Q),averaged\nover three evaluator rounds per report. We omit factual re-\nliability (R), which primarily reflects the fixed DRA's claim\nverificationandcitationbehavior.Becausethesereport-level\nscoresdependonbothqueryqualityandDRA-specificplan-\nning, retrieval, and synthesis, we compare methods within\neach DRA rather than absolute scores across DRAs. Each\nDRA generates one report per method and test instance.\nTable 4 shows thatG-STEERachieves the highest overall\nP-scorewithinbothdownstreamsettings.WithOpenAIDeep\nResearch,G-STEERoutperforms CEP-Clarify+Rewrite in\npersonalization while attaining the second-highest Q-score,\nshowing that "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0040"
+        ],
+        "excerpt": "WeintroducedG-STEER,aframeworkforPDRqueryrefine-\nment that routes evidence acquisition between user memory\nand direct clarification. It uses an Intent Elicitation Graph\nfor dependency-consistent trajectory supervision and target-\nanchoredoptimization,improvingfactoracquisitionandpri-\noritizing important factors under interaction costs. Across\ncommercial black-box and open agent settings,G-STEER\nachieves stronger report personalization with substantially\nfewerquestionsthanthestrongestclarificationbaseline.Our\nevaluation relies on simulated users and a simple retrieval-\nbased memory store, motivating future work with human\ninteraction and richer memory systems. Overall, effective\npersonalized research requires identifying relevant context,\ngrounding it appropriately, and knowing when to stop.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5644c2ab35206bf7c6c4e9e8235164a33c6152c8e115401e6b169d435eb5f269",
+            "evidence_id": "E7e2813308bc905f0-B0040",
+            "pages": [
+              7
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 801,
+                "page": 7,
+                "section": "Conclusion",
+                "section_index": 11,
+                "start": 0,
+                "text": "WeintroducedG-STEER,aframeworkforPDRqueryrefine-\nment that routes evidence acquisition between user memory\nand direct clarification. It uses an Intent Elicitation Graph\nfor dependency-consistent trajectory supervision and target-\nanchoredoptimization,improvingfactoracquisitionandpri-\noritizing important factors under interaction costs. Across\ncommercial black-box and open agent settings,G-STEER\nachieves stronger report personalization with substantially\nfewerquestionsthanthestrongestclarificationbaseline.Our\nevaluation relies on simulated users and a simple retrieval-\nbased memory store, motivating future work with human\ninteraction and richer memory systems. Overall, effective\npersonalized research requires identifying relevant context,\ngrounding it appropriately, and knowing when to stop."
+              }
+            ],
+            "text": "WeintroducedG-STEER,aframeworkforPDRqueryrefine-\nment that routes evidence acquisition between user memory\nand direct clarification. It uses an Intent Elicitation Graph\nfor dependency-consistent trajectory supervision and target-\nanchoredoptimization,improvingfactoracquisitionandpri-\noritizing important factors under interaction costs. Across\ncommercial black-box and open agent settings,G-STEER\nachieves stronger report personalization with substantially\nfewerquestionsthanthestrongestclarificationbaseline.Our\nevaluation relies on simulated users and a simple retrieval-\nbased memory store, motivating future work with human\ninteraction and richer memory systems. Overall, effective\npersonalized research requires identifying relevant context,\ngrounding it appropriately, and knowing when to stop."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0062"
+        ],
+        "excerpt": "Qwen3-\n32B supports user simulation and online memory and pro-",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation Details",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "99f57e26a524c402e2fe423d5e225713be261768539d2ec94aee887fcb35528c",
+            "evidence_id": "E7e2813308bc905f0-B0062",
+            "pages": [
+              10
+            ],
+            "section": "Implementation Details",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 5424,
+                "page": 10,
+                "section": "Implementation Details",
+                "section_index": 24,
+                "start": 5362,
+                "text": "Qwen3-\n32B supports user simulation and online memory and pro-"
+              }
+            ],
+            "text": "Qwen3-\n32B supports user simulation and online memory and pro-"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0071"
+        ],
+        "excerpt": "claim support and citation quality and de-\npendslargelyonthefixedDRA'sdownstreamsearchandver-\nification behavior. The PDR-Bench evaluator uses GPT-5.4,\nwith completed response artifacts reporting the model iden-\ntifiergpt-5.4-2026-03-05. For each generated report\nand each metric, we run three independent scoring rounds\nand report their average. Because the resulting scores reflect\nboththerefinedqueryandDRA-specificplanning,retrieval,\nandsynthesis,wecomparemethodswithineachDRArather\nthan comparing absolute scores across DRAs.\nAdditional Results\nDownstream Performance on Unseen Settings\nTable8reportsdownstreampersonalizationandqualityover-\nall and for the Unseen User, Unseen Task, and Both Unseen\nsettings.TheUnseenUserresultscombineUser-onlyunseen\nand Both unseen instances, while the Unseen Task results\ncombine Task-only unseen and Both unseen instances.\nWith OpenAI Deep ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Setting Sft Grpo",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d570c14de9230e7731993e66649f07551197e975ab9c931fffc33e0fd48eca62",
+            "evidence_id": "E7e2813308bc905f0-B0071",
+            "pages": [
+              12
+            ],
+            "section": "Setting Sft Grpo",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3081,
+                "page": 12,
+                "section": "Setting Sft Grpo",
+                "section_index": 26,
+                "start": 2199,
+                "text": "claim support and citation quality and de-\npendslargelyonthefixedDRA'sdownstreamsearchandver-\nification behavior. The PDR-Bench evaluator uses GPT-5.4,\nwith completed response artifacts reporting the model iden-\ntifiergpt-5.4-2026-03-05. For each generated report\nand each metric, we run three independent scoring rounds\nand report their average. Because the resulting scores reflect\nboththerefinedqueryandDRA-specificplanning,retrieval,\nandsynthesis,wecomparemethodswithineachDRArather\nthan comparing absolute scores across DRAs.\nAdditional Results\nDownstream Performance on Unseen Settings\nTable8reportsdownstreampersonalizationandqualityover-\nall and for the Unseen User, Unseen Task, and Both Unseen\nsettings.TheUnseenUserresultscombineUser-onlyunseen\nand Both unseen instances, while the Unseen Task results\ncombine Task-only unseen and Both unseen instances.\nWith OpenAI Deep "
+              }
+            ],
+            "text": "claim support and citation quality and de-\npendslargelyonthefixedDRA'sdownstreamsearchandver-\nification behavior. The PDR-Bench evaluator uses GPT-5.4,\nwith completed response artifacts reporting the model iden-\ntifiergpt-5.4-2026-03-05. For each generated report\nand each metric, we run three independent scoring rounds\nand report their average. Because the resulting scores reflect\nboththerefinedqueryandDRA-specificplanning,retrieval,\nandsynthesis,wecomparemethodswithineachDRArather\nthan comparing absolute scores across DRAs.\nAdditional Results\nDownstream Performance on Unseen Settings\nTable8reportsdownstreampersonalizationandqualityover-\nall and for the Unseen User, Unseen Task, and Both Unseen\nsettings.TheUnseenUserresultscombineUser-onlyunseen\nand Both unseen instances, while the Unseen Task results\ncombine Task-only unseen and Both unseen instances.\nWith OpenAI Deep "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0074"
+        ],
+        "excerpt": "absolute scores across cosine similarity thresholds.\nshow that the relative advantage of each refinement method\ncanvarywiththedownstreamDRAandthetypeofdistribu-\ntion shift. Overall,G-STEERmaintains strong personaliza-\ntion under user and task shift, while report quality remains\ncompetitive across downstream DRAs and unseen settings.\nThreshold Sensitivity\nThe main evaluation uses a cosine-similarity threshold of\n0.55, representing an intermediate setting between the more\npermissiveandstricterthresholdsexamined.Toexaminehow\nsensitive the evaluation results are to this threshold, Table 9\nreportsabsoluteWCov,E-WCov,andF1scoresforthresholds\nfrom0.45to0.70.Asthethresholdbecomesstricter,absolute\nscores generally decrease because fewer semantic matches\nareaccepted.Therelativeperformanceofthemethodsvaries\nacrossmetricsandthresholds,andwethereforedonotclaim\nuniform superiority over the full ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Setting Sft Grpo",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "87a4306dec747c20e62850f9732474788ef6879cbec1172a18a61b9429d8e3c1",
+            "evidence_id": "E7e2813308bc905f0-B0074",
+            "pages": [
+              13
+            ],
+            "section": "Setting Sft Grpo",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2075,
+                "page": 13,
+                "section": "Setting Sft Grpo",
+                "section_index": 27,
+                "start": 1181,
+                "text": "absolute scores across cosine similarity thresholds.\nshow that the relative advantage of each refinement method\ncanvarywiththedownstreamDRAandthetypeofdistribu-\ntion shift. Overall,G-STEERmaintains strong personaliza-\ntion under user and task shift, while report quality remains\ncompetitive across downstream DRAs and unseen settings.\nThreshold Sensitivity\nThe main evaluation uses a cosine-similarity threshold of\n0.55, representing an intermediate setting between the more\npermissiveandstricterthresholdsexamined.Toexaminehow\nsensitive the evaluation results are to this threshold, Table 9\nreportsabsoluteWCov,E-WCov,andF1scoresforthresholds\nfrom0.45to0.70.Asthethresholdbecomesstricter,absolute\nscores generally decrease because fewer semantic matches\nareaccepted.Therelativeperformanceofthemethodsvaries\nacrossmetricsandthresholds,andwethereforedonotclaim\nuniform superiority over the full "
+              }
+            ],
+            "text": "absolute scores across cosine similarity thresholds.\nshow that the relative advantage of each refinement method\ncanvarywiththedownstreamDRAandthetypeofdistribu-\ntion shift. Overall,G-STEERmaintains strong personaliza-\ntion under user and task shift, while report quality remains\ncompetitive across downstream DRAs and unseen settings.\nThreshold Sensitivity\nThe main evaluation uses a cosine-similarity threshold of\n0.55, representing an intermediate setting between the more\npermissiveandstricterthresholdsexamined.Toexaminehow\nsensitive the evaluation results are to this threshold, Table 9\nreportsabsoluteWCov,E-WCov,andF1scoresforthresholds\nfrom0.45to0.70.Asthethresholdbecomesstricter,absolute\nscores generally decrease because fewer semantic matches\nareaccepted.Therelativeperformanceofthemethodsvaries\nacrossmetricsandthresholds,andwethereforedonotclaim\nuniform superiority over the full "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       }
     ],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2608.05876",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [
-      "No quantitative, user, expert, or operational evaluation was detected in the available text."
-    ],
-    "overall_quality_score": 45,
-    "paper_type": "empirical_research",
-    "positive_signals": [
-      "A baseline or comparison system is described."
-    ],
-    "promotion": {},
-    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
-    "recommendation": "weak",
-    "rubric_version": "scholarly-rubric-v1",
+    "missing_information": [],
+    "overall_quality_score": null,
+    "paper_type": "case_study",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7202006327",
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Downstream report personalization and quality were measured on two fixed execution platforms, OpenAI Deep Research and OAgents, using the PDR-Bench P/Q protocol, and G-STEER achieved the highest overall P-score within both settings.",
+          "final_evaluation_signal": "Intrinsic coverage metrics use GPT-5.4 to extract framing factors from refined queries and all-mpnet-base-v2 cosine matching against the same reference targets; downstream P/Q scores use GPT-5.4 rubric scoring of reports from two fixed DRAs.",
+          "independent_corroboration": "present",
+          "optimization_signal": "GRPO reward anchors are the offline elicitation targets, with coverage scored by all-mpnet-base-v2 embedding similarity between target descriptions and covered slots, plus rule-based acquisition and behavioral penalties.",
+          "signal_reuse": "materially_reused"
+        },
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0002",
+          "E7e2813308bc905f0-B0007",
+          "E7e2813308bc905f0-B0014",
+          "E7e2813308bc905f0-B0016",
+          "E7e2813308bc905f0-B0020",
+          "E7e2813308bc905f0-B0021",
+          "E7e2813308bc905f0-B0026",
+          "E7e2813308bc905f0-B0027",
+          "E7e2813308bc905f0-B0028",
+          "E7e2813308bc905f0-B0031",
+          "E7e2813308bc905f0-B0032",
+          "E7e2813308bc905f0-B0035",
+          "E7e2813308bc905f0-B0036",
+          "E7e2813308bc905f0-B0037",
+          "E7e2813308bc905f0-B0040",
+          "E7e2813308bc905f0-B0062",
+          "E7e2813308bc905f0-B0071",
+          "E7e2813308bc905f0-B0074"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "c28c949c13e28e42c9aa0db607335cea756cfe47083ccbf01c44f9f8c604e18c"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7202006327",
+        "claim_evidence_alignment": "Reported experimental results substantiate the claims, showing that G-STEER improves weighted target coverage and downstream personalization alignment while substantially decreasing clarification question burden compared to strong baselines.",
+        "context_id": "7e2813308bc905f050c72c44179c2c849544eba9cf122b8bf603ef3ee64387e0",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation combines intrinsic target coverage metrics on PDR-Bench across seen and unseen splits with extrinsic downstream report evaluation using two deep research agents (OpenAI Deep Research and OAgents) under established PQR protocols.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Downstream research report personalization and quality were evaluated across two independent execution platforms (commercial black-box OpenAI Deep Research and open-source OAgents) evaluated on GPT-5.4 PQR rubric scoring.",
+          "final_evaluation_signal": "Intrinsic precision, recall, and weighted coverage metrics scored via GPT-5.4 target extraction, as well as extrinsic downstream report evaluation using multi-round GPT-5.4 scoring under the PDR-Bench PQR protocol.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Target-anchored alignment reward using embedding cosine similarity (all-mpnet-base-v2) to match covered slots to offline elicitation targets, combined with rule-based acquisition and behavioral penalties during GRPO.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E7e2813308bc905f0-B0002",
+          "E7e2813308bc905f0-B0007",
+          "E7e2813308bc905f0-B0014",
+          "E7e2813308bc905f0-B0016",
+          "E7e2813308bc905f0-B0020",
+          "E7e2813308bc905f0-B0021",
+          "E7e2813308bc905f0-B0026",
+          "E7e2813308bc905f0-B0027",
+          "E7e2813308bc905f0-B0031",
+          "E7e2813308bc905f0-B0032",
+          "E7e2813308bc905f0-B0035",
+          "E7e2813308bc905f0-B0036",
+          "E7e2813308bc905f0-B0037",
+          "E7e2813308bc905f0-B0040",
+          "E7e2813308bc905f0-B0071"
+        ],
+        "limitations": "The authors explicitly acknowledge limitations including reliance on simulated user interactions, reliance on LLM-based target extraction, and the use of simple retrieval-based memory rather than complex human dynamic studies.",
+        "method_assessment": "The methodology is thoroughly detailed, describing the extraction of elicitation targets, graph-scaffolded trajectory construction for SFT, and GRPO reward optimization balancing semantic target coverage against action and violation costs.",
+        "quality_rationale": "The study offers a well-defined scoping and methodological formulation, backed by solid experimental controls, ablations across training stages and graph ordering, sensitivity analyses, and dual downstream DRA evaluations.",
+        "scoped_contribution": "The paper presents G-STEER, a framework for personalized deep research query refinement that routes evidence acquisition between memory retrieval, user clarification, and stopping using Intent Elicitation Graphs and target-anchored reinforcement learning.",
+        "source_content_hash": "c28c949c13e28e42c9aa0db607335cea756cfe47083ccbf01c44f9f8c604e18c"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The study offers a well-defined scoping and methodological formulation, backed by solid experimental controls, ablations across training stages and graph ordering, sensitivity analyses, and dual downstream DRA evaluations.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
     "source_content_hash": "c28c949c13e28e42c9aa0db607335cea756cfe47083ccbf01c44f9f8c604e18c",
-    "status": "not_assessed",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
+    "uncertainty": "The authors explicitly acknowledge limitations including reliance on simulated user interactions, reliance on LLM-based target extraction, and the use of simple retrieval-based memory rather than complex human dynamic studies."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

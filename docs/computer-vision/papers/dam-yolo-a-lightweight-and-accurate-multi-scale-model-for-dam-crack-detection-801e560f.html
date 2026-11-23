@@ -59,16 +59,138 @@
             <p>No abstract summary available.</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>AI assessment unavailable</h2>
-      <p>Manuscript unavailable; no scientific decision.</p>
-      <p>No promotion; review candidates may remain pending indefinitely.</p>
+      <h2>AI assessment inconclusive</h2>
+      <p>While the architectural concepts for lightweight detection are reasonable, augmenting the raw images from 1,000 to 4,000 before splitting them 8:1:1 into train, validation, and test sets introduces near-duplicate leakage into the test set. This creates high scientific uncertainty regarding whether the reported performance reflects genuine generalization or memorization of augmented pairs.</p>
+      <p>The authors acknowledge sensitivity to complex environmental conditions and illumination changes, but fail to address the methodological flaw of augmenting the dataset prior to random train/val/test partitioning.</p>
       <p>Publication: preprint. Source metadata identifies a working manuscript/preprint; peer review is not established.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: metadata_only.</p>
-        <p>Assessor: deterministic. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
-        <p>Assessed: 2026-09-24T09:04:05.291650+00:00.</p>
-        <p>Coverage: unknown of unknown eligible manuscript characters; omitted body: unknown. Extraction complete: False.</p>
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-23T14:06:45.588611+00:00.</p>
+        <p>Coverage: 52359 of 52359 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>real-world dam crack dataset, and the proposed DAM -YOLO
+was systematically compared with representative object detect ion models. The
+1
+results demonstrate that DAM-YOLO achieves an mAP50 of 97.5% and an
+mAP50:95 of 74.3%, while maintaining only 1.74M parameters and 4.3 GFLO Ps.
+These results indicate that DAM-YOLO achieves an excellent b alance between
+detection accuracy, lightweight design, and inference efficien cy, demonstrating its
+strong potential for real-time dam crack inspection and edge dep loyment.
+Keywords: Dam crack detection, Lightweight object detection, YOLO, M ulti-scale
+feature fusion</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>20
+megapixels and supports a maximum image resolution of 5472 × 3648 pixels. During
+data acquisition, to ensure clear capture of fine crack features, the UA V maintained
+a fixed distance of approximately 100 cm from the dam surface and flew at a con-
+stant low speed along flight paths parallel to the dam face, thereby achie ving complete
+image coverage of the dam surface. The main parameters and scale of the dam crac k
+image data collection are summarized in Table 1.
+The image acquisition process was conducted under various lighting con ditions to
+capture cracks of different patterns. These include characteristi c types such as hairline,
+network, and intersecting cracks.
+In total, 1000 original images were collected, effectively capturing the au then-
+tic crack features of the dam surface across diverse environmental cond itions. These
+5</blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To ensure the stability and generalization capability of the DAM-YOLO mod el during
+training, a standardized and trainable dam crack dataset was constructed b ased on the
+collected raw images. The dataset creation process consists of three m ain stages: data
+augmentation, manual annotation, and sample partitioning, which aim to enhanc e
+sample diversity and labeling accuracy, thereby providing high-q uality data support
+for model training.
+Since the number of raw images was limited, multiple data augmentation tech-
+niques were applied to expand the dataset and enhance the model&#x27;s adap tability to
+different environments. The specific operations included image rotat ion, scaling, hori-
+zontal flipping, brightness and contrast adjustment, color perturbation , and Gaussian
+6
+noise addition. These augmentation strategies effectively simulate th e variations in
+crack appearance under different </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>lighting conditions, shooting angles , and surface
+textures, thus improving the model&#x27;s robustness in complex hy draulic engineering sce-
+narios. Fig. 2 shows examples of the augmented images. After augmentation, a total
+of approximately 4000 crack image samples were obtained, significantly incr easing the
+scale and diversity of the dataset.
+Fig. 2 Examples of data augmentation.
+During the data annotation stage, the Roboflow platform was used to label and
+manage the crack images[ 30]. The annotation process was manually performed to
+ensure that the bounding boxes precisely enclosed the crack region s. To standardize
+the model input, only a single class labeled &quot;Crack&quot; was defined.
+In addition, to maintain the scientific validity of the training proc ess and ensure
+a reasonable sample distribution, the augmented dataset was divided in to training,
+validation, and test sets with a ratio </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>of 8:1:1. A random sampling strategy was applied
+during the partitioning to ensure a balanced distribution of differ ent crack types and
+shooting conditions across subsets, thereby preventing class bias or overfitting during
+model training.</blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Building upon the YOLO family[ 31, 32] of object detection frameworks, this study
+proposes a lightweight and multi-scale enhanced model named DAM-YOLO. T he over-
+all architecture of the proposed model is illustrated in Fig. 3, which comprises three
+primary components: a lightweight feature extraction backbone, a mult i-scale fea-
+ture fusion neck, and an efficient detection head. These components are structurally
+optimized in a collaborative manner to significantly reduce computation al complexity
+while maintaining high detection accuracy, thereby enabling real-t ime deployment of
+the model on embedded devices.
+7
+Fig. 3 Overall architecture of the proposed DAM-YOLO model, which integrates a lightweight
+backbone, a multi-scale feature fusion module, and an efficie nt detection head for accurate dam crack
+detection.</blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>T able 3 Comparison of different object detection models in terms of p arameters,
+computation, and detection performance.
+Model
+Parameters
+(M) GFLOPs
+mAP50
+(%)
+mAP50–95
+(%)
+Latency
+(ms)
+EfficientDet-D0 3.90 8.1 95.60 70.20 2.1
+YOLOv3n 4.05 12.0 96.10 70.40 1.3
+YOLOv5n 2.50 7.1 96.40 67.90 0.9
+YOLOv6n 4.23 11.8 93.70 63.70 1.2
+YOLOv8n 3.00 8.1 97.20 71.70 0.9
+YOLO11n 2.58 6.3 97.00 72.60 0.8
+YOLO12n 2.55 6.3 93.20 62.90 0.8
+Faster R-CNN-R50 41.20 134.5 95.20 69.40 8.4
+Deformable DETR-R50 40.50 92.8 96.00 70.50 6.7
+RT-DETR (R18) 19.80 56.9 95.70 69.20 4.2
+DAM-YOLO (Ours) 1.74 4.3 97.50 74.30 0.7
+Regarding model complexity and computational efficiency, DAM-YOLO achiev es
+the most favorable lightweight characteristics among all compared metho ds. As
+shown in Table 3, DAM-YOLO contains only 1.74M parameters and requires 4.3
+GFLOPs, which are significantly lower than those of other </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>T able 4 Ablation experiments of the proposed DAM-YOLO model with di fferent backbone, neck,
+and head configurations.
+Exp. ID
+StarNet-
+s050
+C3k2
+Star
+Detect
+LSCD
+mAP50
+(%)
+mAP50:95
+(%)
+Params
+(M) GFLOPs
+Latency
+(ms)
+A0 97.00 72.60 2.58 6.3 0.8
+A1 ✓ 96.80 72.20 2.42 5.7 0.9
+A2 ✓ 97.10 74.30 2.54 6.5 0.7
+A3 ✓ ✓ 97.20 74.30 2.38 5.7 1.1
+B0 ✓ 96.50 71.20 1.94 5.0 0.7
+B1 ✓ ✓ 96.50 73.10 1.78 4.3 1.0
+B2 ✓ ✓ 95.60 72.20 1.90 5.1 0.8
+B3 ✓ ✓ ✓ 97.50 74.30 1.74 4.3 0.7
+Note: The best result is highlighted in bold.
+To investigate the effectiveness of each proposed component in DAM-YOLO,
+ablation experiments were conducted by progressively introducin g the StarNet-s050
+backbone, C3k2 Star module, and Detect LSCD head into the baseline model. The
+effects of different component combinations were evaluated in terms of d etection accu-
+racy, model complexity, computational cost, and inference </blockquote></details></li><li><strong>Contribution clarity — page 19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>localization, and small-crack identification, providing an effi cient and
+practical solution for intelligent dam structure monitoring.
+Despite these promising results, the model still has certain li mitations under com-
+plex environmental conditions, such as reduced stability under var ying illumination
+or background interference. Future work will focus on enhancing the environmental
+adaptability and generalization capability of the model, as well as explori ng more effi-
+cient feature fusion and attention mechanisms to promote its applicati on in diverse
+real-world engineering scenarios.
+18</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +229,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

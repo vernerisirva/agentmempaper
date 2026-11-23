@@ -59,16 +59,295 @@
             <p>User requests serve as research specifications for deep research agents, shaping what evidence to seek and how to synthesize it. In personalized deep research, these specifications must additionally reflect user goals, constraints, preferences, and evaluation criteria. User context can be incorporated either within...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not been assessed under the manuscript evidence gate.</p>
-      <p>Legacy assessment retained; manuscript review is required before promotion.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study offers a well-defined scoping and methodological formulation, backed by solid experimental controls, ablations across training stages and graph ordering, sensitivity analyses, and dual downstream DRA evaluations.</p>
+      <p>The authors explicitly acknowledge limitations including reliance on simulated user interactions, reliance on LLM-based target extraction, and the use of simple retrieval-based memory rather than complex human dynamic studies.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: partial_full_text.</p>
-        <p>Assessor: deterministic. Assessment version: quality-v1. Gate: not assessed.</p>
-        <p>Assessed: 2026-08-13T07:57:31+00:00.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-23T14:06:10.004791+00:00.</p>
+        <p>Coverage: 55699 of 55699 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Userrequestsserveasresearchspecificationsfordeepresearch
+agents, shaping what evidence to seek and how to synthesize
+it. In personalized deep research, these specifications must
+additionally reflect user goals, constraints, preferences, and
+evaluation criteria. User context can be incorporated either
+within the deep research pipeline or into the research specifi-
+cationprovidedasitsinput.Wefocusonthelatter,refiningthe
+user request into a personalized research specification before
+passing it to an unchanged deep research agent. This requires
+resolving three coupled decisions: which framing factors are
+relevant, whether the available user context sufficiently sup-
+ports them, and whether to retrieve user memory, ask the
+user, or stop and refine the query. For training, G-STEER
+organizes framing factors as elicitation targets in an Intent
+Elicitation Graph that captures their dependencies. </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>evidence may instead re-
+quire direct clarification. Learning these decisions requires
+interaction states in which factor relevance and evidential
+support change as evidence is acquired.
+To this end, we proposeG-STEER, a training framework
+combining dependency-scaffolded trajectories with explicit
+evidence-state tracking.G-STEERorganizes user-specific
+framing factors in an Intent Elicitation Graph (IEG), whose
+edges capture conditional elicitation dependencies. Using
+the IEG and controlled evidence scenarios,G-STEERcon-
+structstrajectoriesthatvaryconditionalfactoractivationand
+evidence availability across the user profile, retrieved mem-
+ory,anddialogue.Theresultingpolicylearnswhichfactorto
+groundnext,whethercurrentevidencesuffices,andwhether
+to selectRetrieve,Ask, orStop. The IEG is used only for
+trajectory construction and is unavailable at inference.
+Supervised fine-tuning teaches </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>evidence state:
+Σt+1 = Update(Σt, at, ot+1).
+The policy is defined as
+πθ(at |q, pu,Σ t),
+and when it selectsStopat stepT,
+q∗ =g(q, pu,Σ T ).
+Framework Overview
+G-STEERis a training framework that constructs Graph-
+ScaffoldedTrajectoriesforlearningEvidencE-groundingde-
+cisionstowardpersonalizeddeepresearchqueryRefinement.
+G-STEERtrains a personalized query refiner in two stages.
+First, it organizes user-specific elicitation targets into an In-
+tent Elicitation Graph (IEG) and constructs trajectories that
+varytargetdependencies,evidenceavailability,andstopping
+conditions.Itthenoptimizestheclarificationpolicyfortarget
+coverage and interaction efficiency. At inference, the policy
+selectsRetrieve,Ask, orStopfrom the evolving evidence
+state without access to the elicitation targets or IEG.
+Elicitation Target Construction
+To supervise personalized query refinement, we represent
+user-dependent </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>where
+ei = (g i, qseedi , aseedi , wi, ηi).Here,g i denotes the target
+description,q seedi anda seedi provide seed question–answer
+pair,w iistherubric-derivedimportanceweight,andη iisthe
+essentialitylabel.Theweightw i isusedonlyasasupporting
+signalbecauseitisinheritedfromthebenchmarkevaluator.
+Graph-Scaffolded Supervised Fine-Tuning
+Totrainstate-dependentclarificationbehavior,validatedelic-
+itation targets are organized into anIntent Elicitation Graph
+(IEG) and instantiated as scenario-controlled trajectories.
+These trajectories expose the policy to variations in target
+dependencies,evidenceavailability,andstoppingconditions.
+Intent Elicitation Graph.For each instance, an Intent
+Elicitation Graph is constructed as a directed acyclic graph
+G= (V,D),whereV=Eandtheinitialqueryactsasanex-
+ternal root. An edge(ei, ej)∈ Dindicates that resolvingei
+can change whether or howej should be </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>memory and
+profile state. Each trajectoryτreceives the reward
+R(τ, E) =Ralign(τ, E)−C acq(τ)−C con(τ).(1)
+Figure 2: Overview ofG-STEER.
+GRPO normalizes trajectory rewards within each group and
+applies the resulting advantage to all policy transitions in
+the corresponding rollout. The update increases the likeli-
+hood of trajectories that cover important targets with fewer
+unnecessary actions and violations.
+Target-Anchored Alignment.LetV covT denote the cov-
+eredslotsinthefinalevidencestate,andletNbethenumber
+of elicitation targets. Each elicitation targetei is represented
+byarewardanchorconstructedfromitstargetdescriptiong i
+and rubric criterion. Each covered slotvj is represented by
+its name and purpose.
+The similarity between targete i and slotv j isS ij =
+max
 
-        <ul><li>A baseline or comparison system is described.</li><li>No quantitative, user, expert, or operational evaluation was detected in the available text.</li></ul>
+0, ϕ(gi)⊤ϕ(vj) whereϕ(·)is an L2-normalized en-
+coder. A one-to-one matchingM∗ maximizes the total sim-
+ilarity between </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>targets and covered slots. This ensures that
+each target and slot contributes to at most one match.
+The alignment reward is
+Ralign(τ, E) =αCov(τ, E)−β CFP(τ, E),(2)
+where
+Cov(τ, E) =
+P
+(i,j)∈M∗ wiSij
+PN
+i=1 wi
+.(3)
+The coverage term gives greater reward to trajectories that
+cover important targets with strong alignment.
+Foreachcoveredslot,letˆs j =S ij when(i, j)∈ M∗ and
+ˆsj = 0otherwise. The false-positive cost is
+CFP(τ, E) = 1N Xvj ∈V covT (1−ˆsj).(4)
+It penalizes covered slots that are unmatched or weakly
+aligned with the elicitation targets.
+Evidence Acquisition Cost.We penalize evidence acqui-
+sition to discourage unnecessary retrieval and user interac-
+tion. The cost is
+Cacq(τ) =λ askTask +λ retTret,(5)
+whereT ask andT ret are the action counts, andλask andλ ret
+aretheircostweights.Wesetλ ask &gt; λret becauseaskingthe
+user imposes greater burden than retrieving from </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Settings.WeevaluateontheprocessedPDR-Bench(Liang
+et al. 2026), split into training and test sets, as sum-
+marized in Table 1. Unless otherwise noted, we use
+Qwen3-8B (Yang et al. 2025) as the backbone and fine-
+tune trainable variants with LoRA (Hu et al. 2022).
+Qwen3-32B renders SFT trajectories and simulates users,
+while GPT-5.4 (OpenAI 2026a) constructs elicitation tar-
+gets and IEGs. We usesentence-transformers/
+all-mpnet-base-v2(Reimers and Gurevych 2019;
+Song et al. 2020) for semantic matching and FAISS-based
+user-memory indexing (Douze et al. 2024).
+Atevaluation,memoryandprofilesareinitializedfromthe
+finalonlinestatesaccumulatedduringGRPOonthetraining
+split and remain frozen across test instances. Users absent
+fromtrainingstartwithemptystates.Noheld-outannotation
+or test interaction is used to construct or update these states.
+Policies receive neither reference targets nor </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>offline IEGs at
+inference. See the appendix for details.
+Evaluation.We evaluate each refined query against ref-
+erence elicitation targets using precision, recall, and F1.
+Because these metrics treat all targets equally, we also re-
+port weighted coverage (WCov), the normalized sum of
+PDR-Bench rubric-derived importance weights over cov-
+ered targets, and E-WCov, its restriction to essential tar-
+gets. GPT-5.4 extracts user-specific framing factors from
+each refined query, and the extracted factors and reference
+targets are encoded withsentence-transformers/
+all-mpnet-base-v2(Reimers and Gurevych 2019;
+Song et al. 2020). A target is covered if its maximum co-
+sine similarity to an extracted factor is at least 0.55.
+Precision is the share of extracted factors matched to </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>tar-
+gets,recalltheshareofcoveredtargets,andF1theirharmonic
+mean.Theseintrinsicmetricsassesstarget-levelframingcov-
+erageandselectivitybutdonotdirectlyverifywhetherevery
+expressed factor value is entailed by the acquired evidence.
+UsingGPT-5.4forbothtargetconstructionandfactorextrac-
+tion may bias absolute scores, though all methods share the
+sameevaluationpipeline.Thresholdsensitivityfrom0.45to
+0.70 appears in the appendix.
+Baselines.Genericprompting.DirectRewriterewritesthe
+query without interaction. We implement three agents with
+a shared ReAct-style interface (Yao et al. 2023): Memory-
+RAG Agent usesRetrieve/Stop, Clarification Agent uses
+Ask/Stop, and Memory+Clarification Agent uses all three
+actions. All prompting baselines use the same test-time pro-
+file as G-STEER, with no training or slot tracking.
+Prior clarification.Mistral-Interact (Qian et al. </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Overall Unseen User Unseen Task Both Unseen Turns
+Ask/Ret.WCov E-WCov Prec. Rec. F1 WCov F1 WCov F1 WCov F1
+Direct Rewrite 0.3305 0.3697 0.3534 0.3134 0.3322 0.3742 0.3624 0.3654 0.3796 0.3685 0.3730 0.0/0.0
+Memory-RAG Agent 0.3180 0.3700 0.3968 0.3158 0.3517 0.3451 0.3872 0.4459 0.4759 0.4801 0.5025 0.0/1.5
+Clarification Agent 0.3399 0.3717 0.3754 0.3278 0.3499 0.3415 0.3650 0.3687 0.3947 0.3704 0.3976 3.5/0.0
+Mem.+Clarif. Agent 0.3822 0.4364 0.4116 0.3565 0.3820 0.3769 0.3715 0.4505 0.4639 0.4471 0.4294 1.6/0.0
+Mistral-Interact 0.3811 0.4223 0.4099 0.3612 0.3841 0.4152 0.3993 0.4062 0.4416 0.4771 0.4767 3.6/0.0
+CEP-Clarify+Rewrite 0.4060 0.4497 0.3818 0.3828 0.3823 0.4026 0.3611 0.45930.48890.4846 0.4698 12.0/0.0
+IntentRL-style Clarifier 0.3760 0.4103 0.3983 0.3589 0.3775 0.4329 0.4398 0.48250.4558 0.5242 0.50613.4/0.0
+G-STEER(Ours)0.4253 0.4639 0.4199 0.3971 0.4082 0.4886 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.44390.4726 0.43590.52660.4586 4.1/1.2
+Table 2: Main evaluation results. Best scores are bolded and second-best scores are underlined. Avg. Turns reports the mean
+number of clarification-question and memory-retrieval turns (Ask/Ret.), excluding the final refinement turn.
+Method WCov E-WCov F1
+FullG-STEER0.42530.4639 0.4082
+Untrained backbone comparison
+Qwen3-8B (Untrained) 0.3761 0.4219 0.3892
+Qwen3-32B (Untrained) 0.2966 0.3445 0.3316
+Training ablation
+Graph SFT only 0.4115 0.44120.4248
+GRPO only 0.40290.46670.4036
+IEG Trajectory ablation
+Random-order SFT only 0.3739 0.3729 0.3634
+Random-order SFT + GRPO 0.3607 0.4124 0.3512
+Table 3: Ablation study comparing backbone scale, training
+stages, and IEG-scaffolded trajectory construction.
+tions. The untrained Memory+Clarification baseline never
+invokesRetrievedespiteaccesstobothacquisitionactions,
+showing anAskbias rather than effective </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and its improvement per question over Direct Rewrite.
+WeuseE-WCovastheutilitymeasurebecauseitemphasizes
+factors essential to the personalized research specification.
+G-STEER achieves the highest E-WCov and the largest
+improvement per question, outperforming IntentRL-style at
+comparable burden and CEP-Clarify+Rewrite with roughly
+one-third as many questions, indicating that its gains are not
+merely due to asking more questions.
+Downstream Report Utility
+We complement intrinsic target matching with report-
+level evaluation under two fixed downstream settings:
+OpenAI Deep Research (o4-mini-deep-research-
+2025-06-26), a commercial black-box DRA, and OA-
+gents,anopen-sourceagentframeworkusinggpt-5-mini
+for report generation (OpenAI 2026b; Zhu et al. 2025). Fol-
+lowing PQR Evaluation (Liang et al. 2026), we report per-</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Downstream
+DRA Method
+Personalization (P) Quality (Q)
+Overall Goal Content Presentation Actionability Overall Depth Logic Clarity
+OpenAI
+DR
+Original Query 3.70 3.91 3.57 4.77 3.34 5.43 5.13 5.72 5.57
+Memory+Clarification 3.81 4.10 3.92 4.73 3.32 5.28 5.04 5.56 5.33
+Mistral-Interact 3.28 3.52 3.28 4.46 2.84 4.71 4.31 4.82 5.30
+CEP-Clarify+Rewrite 4.25 4.55 4.38 4.91 3.81 5.40 5.15 5.62 5.54
+IntentRL-style 4.22 4.47 4.204.983.85 5.69 5.53 5.84 5.80
+G-STEER 4.35 4.65 4.46 4.94 3.92 5.56 5.37 5.80 5.54
+OAgents
+Original Query 5.05 4.98 4.32 5.96 5.22 6.73 6.72 7.13 6.28
+Memory+Clarification 5.12 5.14 4.68 5.94 5.12 6.37 6.28 6.65 6.11
+Mistral-Interact 4.94 4.98 4.40 5.77 4.97 6.05 5.94 6.43 5.84
+CEP-Clarify+Rewrite 5.53 5.58 5.09 6.04 5.57 6.37 6.25 6.75 6.08
+IntentRL-style 4.93 4.91 4.45 5.51 5.03 5.92 5.90 6.33 5.47
+G-STEER 5.70 5.72 5.28 6.31 5.73 6.77 6.74 7.22 6.31
+Table 4: Downstream </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>utility with fixed DR agents. P and Q measure personalization alignment and report quality, respectively.
+Figure 4: OAgents searches before and after refinement.
+Color families align factors to related search terms.
+sonalizationalignment(P)andcontentquality(Q),averaged
+over three evaluator rounds per report. We omit factual re-
+liability (R), which primarily reflects the fixed DRA&#x27;s claim
+verificationandcitationbehavior.Becausethesereport-level
+scoresdependonbothqueryqualityandDRA-specificplan-
+ning, retrieval, and synthesis, we compare methods within
+each DRA rather than absolute scores across DRAs. Each
+DRA generates one report per method and test instance.
+Table 4 shows thatG-STEERachieves the highest overall
+P-scorewithinbothdownstreamsettings.WithOpenAIDeep
+Research,G-STEERoutperforms CEP-Clarify+Rewrite in
+personalization while attaining the second-highest Q-score,
+showing that </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>WeintroducedG-STEER,aframeworkforPDRqueryrefine-
+ment that routes evidence acquisition between user memory
+and direct clarification. It uses an Intent Elicitation Graph
+for dependency-consistent trajectory supervision and target-
+anchoredoptimization,improvingfactoracquisitionandpri-
+oritizing important factors under interaction costs. Across
+commercial black-box and open agent settings,G-STEER
+achieves stronger report personalization with substantially
+fewerquestionsthanthestrongestclarificationbaseline.Our
+evaluation relies on simulated users and a simple retrieval-
+based memory store, motivating future work with human
+interaction and richer memory systems. Overall, effective
+personalized research requires identifying relevant context,
+grounding it appropriately, and knowing when to stop.</blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Qwen3-
+32B supports user simulation and online memory and pro-</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>claim support and citation quality and de-
+pendslargelyonthefixedDRA&#x27;sdownstreamsearchandver-
+ification behavior. The PDR-Bench evaluator uses GPT-5.4,
+with completed response artifacts reporting the model iden-
+tifiergpt-5.4-2026-03-05. For each generated report
+and each metric, we run three independent scoring rounds
+and report their average. Because the resulting scores reflect
+boththerefinedqueryandDRA-specificplanning,retrieval,
+andsynthesis,wecomparemethodswithineachDRArather
+than comparing absolute scores across DRAs.
+Additional Results
+Downstream Performance on Unseen Settings
+Table8reportsdownstreampersonalizationandqualityover-
+all and for the Unseen User, Unseen Task, and Both Unseen
+settings.TheUnseenUserresultscombineUser-onlyunseen
+and Both unseen instances, while the Unseen Task results
+combine Task-only unseen and Both unseen instances.
+With OpenAI Deep </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>absolute scores across cosine similarity thresholds.
+show that the relative advantage of each refinement method
+canvarywiththedownstreamDRAandthetypeofdistribu-
+tion shift. Overall,G-STEERmaintains strong personaliza-
+tion under user and task shift, while report quality remains
+competitive across downstream DRAs and unseen settings.
+Threshold Sensitivity
+The main evaluation uses a cosine-similarity threshold of
+0.55, representing an intermediate setting between the more
+permissiveandstricterthresholdsexamined.Toexaminehow
+sensitive the evaluation results are to this threshold, Table 9
+reportsabsoluteWCov,E-WCov,andF1scoresforthresholds
+from0.45to0.70.Asthethresholdbecomesstricter,absolute
+scores generally decrease because fewer semantic matches
+areaccepted.Therelativeperformanceofthemethodsvaries
+acrossmetricsandthresholds,andwethereforedonotclaim
+uniform superiority over the full </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

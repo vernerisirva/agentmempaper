@@ -1,27 +1,38 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-11-20](2026-11-20.md).
+Latest daily digest: [2026-11-23](2026-11-23.md).
 
-# Paper Scout Digest - 2026-11-20
+# Paper Scout Digest - 2026-11-23
 
 ## Run Summary
 
-- **Run ID:** 75
-- **Candidates fetched:** 82
-- **New unique papers:** 69
+- **Run ID:** 77
+- **Candidates fetched:** 2
+- **New unique papers:** 2
 - **Relevant:** 1
 - **Maybe relevant:** 0
-- **Irrelevant:** 81
-- **Source summary:** arxiv: 1, openalex: 80, semantic_scholar: 1
+- **Irrelevant:** 1
+- **Source summary:** arxiv: 1, semantic_scholar: 1
 
 ## Source Warnings
 
-- openalex: incomplete discovery window for 'hashed memory language model'; single-page record limit reached.
-- openalex: incomplete discovery window for 'cross-model memory transfer'; single-page record limit reached.
-- openalex: incomplete discovery window for 'learned lookup memory language model'; single-page record limit reached.
+- openalex failed for 'DeepSeek Engram': http error for https://api.openalex.org/works?search=DeepSeek+Engram&filter=from_publication_date%3A2026-11-13&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'hashed memory language model': http error for https://api.openalex.org/works?search=hashed+memory+language+model&filter=from_publication_date%3A2026-11-13&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'cross-model memory transfer': http error for https://api.openalex.org/works?search=cross-model+memory+transfer&filter=from_publication_date%3A2026-11-13&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'learned lookup memory language model': http error for https://api.openalex.org/works?search=learned+lookup+memory+language+model&filter=from_publication_date%3A2026-11-13&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
 - semantic_scholar: incomplete discovery window for 'Engram'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'conditional memory language model'; single-page record limit reached.
-- semantic_scholar failed for 'frozen memory reader adaptation': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- semantic_scholar failed for 'tokenizer-agnostic Engram': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar failed for 'conditional memory language model': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar: incomplete discovery window for 'frozen memory reader adaptation'; single-page record limit reached.
+- semantic_scholar: incomplete discovery window for 'tokenizer-agnostic Engram'; single-page record limit reached.
 
-No new relevant or maybe-relevant papers found.
+## Highly Relevant
+
+### [Chorus: Shared N-gram Embeddings with Layer-wise Adaptation](https://doi.org/10.48550/arxiv.2611.23386)
+
+- **Authors:** Stephen Chung, Wenyu Du
+- **Date:** 2026-11-17
+- **Source:** openalex
+- **Relevance:** relevant (92/100)
+- **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: hashed-ngram-memory.
+- **Tags:** engram, hashed-ngram-memory
+- **Abstract summary:** Language models can gain capacity at little computational cost from n-gram embedding tables: large tables of learned vectors for short sequences of consecutive tokens, which are looked up and added to the model's input or to its intermediate layers. Recent designs commonly use a separate n-gram embedding table for e...

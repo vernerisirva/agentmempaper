@@ -59,16 +59,353 @@
             <p>Image fusion often lacks ground-truth fused images, forcing existing deep methods to indirectly define fusion objectives by requiring the fused image to simultaneously resemble multiple source images. However, the distinct imaging characteristics of different modalities can impose competing constraints on the fused...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>AI assessment inconclusive</h2>
+      <p>The paper provides a well-formulated technical method, addresses the classic image fusion limitation of conflicting source-resemblance losses, and corroborates visual findings with rigorous downstream task benchmarks retrained on fused imagery.</p>
+      <p>The authors note API-related constraints limiting the scale of commercial LMM comparisons, though broader systematic discussion of hallucination edge cases or computational runtime during inference could be expanded [Eaf1a9d20e1b91cc1-B0040].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-23T14:07:06.032629+00:00.</p>
+        <p>Coverage: 42871 of 42871 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Image fusion often lacks ground-truth fused images, forc-
+ing existing deep methods to indirectly define fusion ob-
+jectives by requiring the fused image to simultaneously re-
+semble multiple source images. However, the distinct imag-
+ing characteristics of different modalities can impose com-
+peting constraints on the fused result, potentially limiting
+the effective integration of their complementary informa-
+tion. To address this long-standing challenge facing the im-
+age fusion community, we propose ApexFuse, a novel gen-
+erative image fusion paradigm that moves beyond source-
+resemblance constraints toward learning a general distri-
+bution of high-quality scene representations. Specifically,
+we develop a human-LMM-in-the-loop pipeline that lever-
+ages large multimodal generative models and iterative hu-
+man feedback to translate abstract fusion objectives into re-
+liable visual </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ApexFuse aims to turn the long-envisioned ideal of multi-
+modal image fusion into a tangible and learnable reality, and
+the overall framework is illustrated in Fig. 2. Given a spa-
+tially aligned pair of visible and infrared images[Iv, Ir], our
+goal is not to make the fused image resemble both sources in
+appearance. Instead, we seek to learn a general distribution
+of high-quality scene representations while preserving the
+factual scene information conveyed by the source images.
+To this end, ApexFuse consists of two stages.
+Stage 1: We first establish a human-LMM-in-the-loop
+pipeline using LMMs and iterative human feedback, as
+shown in Fig. 2 (a). This pipeline translates abstract fusion
+objectives into reliable visual references, characterizing the
+target distribution of high-quality scene representations:
+˜If =R GT (Iv, Ir, p);Iv, Ir,(1)
+where ˜If denotes the ideal fusion target,G T </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>denotes a
+pretrained LMM for multimodal image generation,prep-
+resents the fusion generation instruction, andRdenotes
+the quality control process comprising iterative evaluation,
+feedback-based refinement, and human selection. Using
+these verified visual instances, we construct a supervised
+dataset of source image pairs and their corresponding ideal
+fusion targets:
+D=
+n
+I (i)v , I(i)r , ˜I (i)f
+oN
+i=1
+.(2)
+Stage 2: We transfer the generative priors of pretrained
+FLUX to image fusion through target-distribution-guided
+adaptation. Specifically, we adopt pretrained FLUX.2 as
+the generative backbone, freeze its original parameters
+θ0, and optimize only the LoRA adaptation parametersϕ.
+The model is trained using the following conditional flow
+matching objective:
+ϕ∗ = arg min
+ϕ
+ED
+h
+LFM
 
-        <ul></ul>
+θ0, ϕ;Iv, Ir, ˜If
+i
+,(3)
+whereL FM denotes the conditional flow matching loss.
+Through these two </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To characterize the target distribution of high-quality scene
+representations, we develop a human-LMM-in-the-loop
+pipeline that translates abstract fusion objectives into reli-
+able visual references via prompt engine, image generation,
+and human aesthetics.
+3
+Prompt Engine.We first employ Gemini to generate an
+initial prompt describing the ideal fusion objectives, which
+is subsequently refined through manual curation into a uni-
+fied fusion promptp g applicable across different scenes.
+To incorporate scene-specific information, we further em-
+ploy GPT-6 to analyze each visible-infrared image pair
+and generate its corresponding scene descriptiond i. Then,
+the scene description is combined with the unified fusion
+prompt to formulate an initial generation instruction for
+each image pair, ensuring consistency in fusion objectives
+while accommodating scene-specific characteristics:
+p(0)i =p </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>g ⊕d i,(4)
+where⊕denotes the combination of textual information.
+Image Generation.Given thei-th source image pair
+[I (i)v , I(i)r ]and its initial generation instructionp (0)i , we em-
+ploy GPT-Image-2.0 to generate three candidate fused im-
+ages, forming the initial candidate set:
+C(0)i = nI (0)i,j o3j=1 ,
+I (0)i,j = hGT I (i)v , I(i)r , p(0)i ij , (5)
+wherejdenotes the candidate image index, andC (0)i rep-
+resents the initial candidate set. We then employ GPT to
+evaluate each candidate fused image against its correspond-
+ing visible and infrared source images. The evaluation con-
+siders three dimensions:Content Fidelity, which examines
+whether the generated image introduces objects or scene
+content unsupported by the source images;Key Information
+Completeness, which assesses whether salient targets or im-
+portant scene information from the sources are missing; and
+Visual Quality, </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>which evaluates the naturalness, clarity, and
+overall visual coherence of the generated image.
+Candidates that pass the evaluation are retained. For
+those that fail, we formulate individual feedbackr (t)i,j based
+on the evaluation results and corresponding refinement sug-
+gestions. The generation instruction for each candidate is
+then updated accordingly, followed by the regeneration of a
+single fused image:
+p(t+1)i,j =p (t)i,j ⊕r (t)i,j ,
+I (t+1)i,j =G T
+
+I (i)v , I(i)r , p(t+1)i,j
+
+,
+(6)
+herep (0)i,j =p (0)i , andtdenotes the refinement iteration in-
+dex for each candidate. Each candidate maintains an in-
+dependent feedback history and generation instruction. In
+subsequent iterations, only candidates that fail the evalua-
+tion undergo further refinement, with each candidate regen-
+erated individually to produce a single image per iteration.
+The regenerated images are evaluated </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>against the same cri-
+teria, and the process continues until all candidates meet the
+predefined quality requirements.
+Human Aesthetics.We conduct human aesthetic assess-
+ment of candidate fused images that pass the automated
+evaluation. Through qualitative comparison, we examine
+their content consistency with the source images and over-
+all visual appeal. The final ideal fusion target eIf is then
+selected from the qualified candidates for subsequent su-
+pervised learning of the fusion model.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the
+image-side attention projection layers of the dual-stream
+blocks, as well as the attention and MLP projection layers
+of single-stream blocks. For each adapted pretrained weight
+matrixW 0, the effective weight is defined as:
+W=W 0 + αr BA,(12)
+whereAandBare trainable low-rank matrices,rdenotes
+the adaptation rank, andαis the scaling factor.
+During fine-tuning, we first sample timestep indices us-
+ing a logit-normal sampling strategy and retrieve the corre-
+sponding noise levelσand timestept σ from a predefined
+scheduler. We sample standard Gaussian noiseεand con-
+struct a linear interpolation path between the ideal fusion
+target latentz f and the noise:
+zσ = (1−σ)z f +σε, ε∼ N(0, I),(13)
+whereσ∈[0,1]denotes the noise level. Differentiating this
+interpolation path with respect toσyields the corresponding
+target velocity:
+v∗ = ∂zσ
+∂σ =ε−z f .(14)
+Subsequently, the constructed image </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>token sequenceXσ,
+timestept σ, text conditionC p, and corresponding positional
+identifiers are fed into the LoRA-adapted FLUX Trans-
+former to predict the target velocity bVf . The prediction is
+supervised using the mean squared error between the pre-
+dicted and ground-truth velocities. Accordingly, the condi-
+tional flow matching loss is formulated as:
+bVf = Πf Fθ0,ϕ(Xσ, tσ, Cp; IDs),
+LFM(ϕ) =E D,k,ε,b
+ 1
+Nzdz
+
+
+
+ bVf − T(ε−zf )
+
+
+2F  , (15)
+whereF θ0,ϕ denotes the LoRA-adapted FLUX Trans-
+former,Π f denotes the operation of extracting the output
+tokens corresponding to the fusion target,N z andd z rep-
+resent the number of target tokens and their feature dimen-
+sionality, respectively, andIDsdenotes the positional iden-
+tifiers of the image and text tokens. By minimizing this loss,
+gradients are backpropagated to update only the LoRA pa-
+rametersϕ. This enables the model to learn </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Datasets.We select1,060infrared-visible image pairs
+from LLVIP [8], and generate ideal fusion targets using
+GPT-Image-2.0. The data are randomly split within each
+scene into810training pairs and250testing pairs.
+Implementation Details.We employ LoRA for fine-
+tuning, with a rankr= 32and scaling factorα= 32.
+Training runs for3,000steps using AdamW, with an initial
+learning rate of5×10 −5 and weight decay of0.01. During
+training, We adopt a cosine learning rate schedule with100
+warmup steps and a gradient clipping threshold of1.0. All
+experiments are conducted on NVIDIA GeForce RTX 4090
+GPUs with an Intel Xeon Platinum 8368Q CPU.
+5
+VIS
+ IR
+ DDFM
+ SegMiF
+ Text-IF
+ MRFS
+ OmniFuse
+ ControlFusion
+ RFCMask-DiFuser
+ Ours
+Figure 3. Qualitative comparisons of visual representation capability on the LLVIP, MFNet, and FMB datasets.
+Table 1. comparisons of visual representation capability on the </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>LLVIP, MFNet, and FMB datasets.
+LLVIP MFNet FMB
+Method MUSIQ↑TReS↑MANIQA↑CLIP-IQA↑MUSIQ↑TReS↑MANIQA↑CLIP-IQA↑MUSIQ↑TReS↑MANIQA↑CLIP-IQA↑
+DDFM 59.379 77.216 0.351 0.319 37.794 34.964 0.167 0.144 52.110 56.638 0.2790.199
+SegMiF 62.241 78.120 0.361 0.324 37.046 33.824 0.151 0.135 54.127 61.539 0.262 0.183
+Text-IF 62.335 81.153 0.355 0.370 40.464 36.940 0.163 0.165 54.704 63.183 0.259 0.160
+MRFS 57.198 70.338 0.300 0.247 36.358 34.606 0.147 0.131 53.083 58.585 0.252 0.184
+OmniFuse 54.425 55.154 0.266 0.315 35.305 32.017 0.154 0.21450.684 49.139 0.266 0.222
+ControlFusion 64.179 84.224 0.3730.373 42.022 41.545 0.1680.145 56.341 65.9250.277 0.191
+Mask-DiFuser 61.138 76.640 0.344 0.368 37.342 29.384 0.140 0.128 47.822 54.199 0.210 0.189
+RFC 65.332 84.3070.334 0.41136.610 38.811 0.147 0.164 53.541 62.720 0.251 0.216
+Ours 70.206 91.391 0.537 0.564 64.927 81.998 0.393 0.463 68.630 83.160 0.424 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We compare the visual representation capability of Apex-
+Fuse with eight SOTA fusion methods: DDFM [29], Seg-
+MiF [11], Text-IF [20], MRFS [23], OmniFuse [24], Con-
+trolFusion [13], Mask-DiFuser [14], and RFC [26], on
+LLVIP [8], FMB [11], and MFNet [7] datasets. ApexFuse
+is trained exclusively on LLVIP and directly evaluated on
+FMB and MFNet to assess cross-dataset generalization. As
+shown in Fig. 3, ApexFuse delivers astrikingly distinct vi-
+sual experience, producing exceptionally clear, natural,
+and visually compelling results. It faithfully preserves ther-
+mal targets and intricate visible structures, while remark-
+ably recovering rich scene details that are severely degraded
+or barely discernible in the source images.
+The quantitative results in Table 1 are evaluated us-
+ing four image quality metrics: MUSIQ [9], TReS [5],
+MANIQA [19], and CLIP-IQA [15]. ApexFuse achieves
+the best </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Semantic Segmentation.To further evaluate the scene-
+level semantic representation capability of ApexFuse, we
+conduct semantic segmentation experiments on the FMB
+dataset. Specifically, we independently retrain SegNeXt [6]
+using the fused images generated by each method and eval-
+uate their performance under identical testing settings. As
+shown in Fig. 4, ApexFuse produces clearer scene struc-
+6
+Unlabeled Road Sidewalk Building Traffic light Traffic sign Vegetation Sky Person Car Truck Bus Motorcycle Bicycle Pole
+VIS/IR
+ DDFM
+ SegMiF
+ Text-IF
+ MRFS
+ OmniFuse
+ControlFusion
+ Mask-DiFuser
+ RFC
+ Ours
+ Label (GT)
+VIS/IR
+ DDFM
+ SegMiF
+ Text-IF
+ MRFS
+ OmniFuse
+ControlFusion
+ Mask-DiFuser
+ RFC
+ Ours
+ Label (GT)
+Figure 4. Qualitative results of semantic segmentation.
+Table 2. Quantitative comparison of semantic segmentation.
+Method Car Pers. Bus Build. Lamp Sign Road Side. mIoU↑
+DDFM 79.67 67.77 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>47.31 83.75 45.14 73.95 87.44 47.55 57.84
+SegMiF 80.49 68.85 49.66 83.01 34.90 71.20 86.74 46.36 57.29
+Text-IF 79.95 69.12 55.61 83.68 40.20 72.56 87.67 49.47 58.54
+MRFS 79.79 68.45 57.27 83.04 40.06 71.90 87.10 46.83 57.84
+OmniFuse 79.86 66.24 47.70 80.11 36.66 72.09 86.22 46.53 55.94
+ControlFusion 79.57 69.82 53.52 83.99 41.10 73.23 87.52 48.73 58.41
+Mask-DiFuser 79.42 69.07 50.55 83.39 34.85 68.73 87.17 48.23 56.78
+RFC 80.23 69.50 65.24 83.02 38.74 68.36 86.25 44.57 57.70
+Ours 81.05 67.72 64.41 83.84 46.83 74.96 86.16 49.05 59.05
+VIS / IR + GT DDFM SegMiF Text-IF MRFS
+OmniFuse ControlFusion Mask-DiFuser RFC Ours
+Missed
+Missed Missed Missed
+Figure 5. Qualitative results of object detection.
+Table 3. Quantitative comparison of object detection.
+Method Precision↑Recall↑mAP 50 ↑mAP 75 ↑mAP 50:95 ↑
+DDFM 96.090 92.407 95.869 71.701 62.832
+SegMiF 94.486 90.832 94.927 71.979 62.981
+Text-IF </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>94.473 90.600 95.330 70.843 63.539
+MRFS 96.414 91.547 96.048 71.714 62.325
+OmniFuse 93.074 89.398 94.501 68.071 59.856
+ControlFusion 95.464 91.547 95.882 72.928 63.471
+Mask-DiFuser 95.794 90.688 95.816 74.182 63.872
+RFC 95.455 90.264 95.569 68.368 61.440
+Ours 94.500 92.693 96.271 77.260 65.353
+tures, leading to more accurate segmentation, particularly
+in object completeness and semantic region delineation.
+The quantitative results in Table 2 further demonstrate the
+superior semantic representation capability of ApexFuse.
+These results confirm that ApexFuse provides more reli-
+able scene information for downstream visual understand-
+ing while maintaining high visual quality.
+Object Detection.We conduct object detection experi-
+ments on the LLVIP dataset. Specifically, we independently
+VIS IR Seedream 5.0 Qwen-Image 3.0 Nano Banana 2.0 GPT-Image-2.0 Ours
+Figure 6. Qualitative comparison </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>with commercial LMMs.
+Table 4. Quantitative comparison with commercial LMMs.
+Model MUSIQ↑TReS↑MANIQA↑CLIP-IQA↑
+Seedream 5.0 65.151 84.445 0.448 0.571
+Qwen-Image 3.0 67.829 87.167 0.449 0.492
+Nano Banana 2.0 62.444 73.384 0.361 0.433
+GPT-Image-2.0 70.868 91.620 0.521 0.489
+Ours 71.434 92.329 0.546 0.571
+retrain YOLOv8 using the fused images generated by each
+method and evaluate its performance under identical testing
+settings. As shown in Fig. 5, ApexFuse successfully pre-
+serves target contours and structural details. This enables
+clear detection of all targets, including partially occluded
+ones, with the highest confidence scores. The quantitative
+results in Table 3 further demonstrate its superior target rep-
+resentation capability. These results confirm that ApexFuse
+provides reliable target information for downstream object
+detection while maintaining high visual quality.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To investigate whether target-distribution-guided adaptation
+effectively transfers general-purpose generative priors to
+image fusion, we compare ApexFuse with four represen-
+tative commercial LMMs: Seedream 5.0, Qwen-Image 3.0,
+Nano Banana 2.0, and GPT-Image-2.0. Due to API usage
+constraints, we conduct the comparison on20randomly
+selected infrared-visible image pairs, providing all mod-
+els with the same fusion prompt: &quot;Please generate an en-
+hanced infrared-visible fused image from the original. . .&quot;.
+As shown in Fig. 6 and Table 4, ApexFuse achieves su-
+perior cross-modal information integration and fused image
+quality, validating the effectiveness of target-distribution-
+guided adaptation. Notably, although GPT-Image-2.0 is
+used to construct the fusion targets for ApexFuse, our model
+still outperforms it. This advantage stems from learning
+cross-modal integration patterns across </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We investigate four key aspects of ApexFuse: generative
+prior adaptation, cross-modal complementarity, supervision
+targets, and model scale. Five variants are constructed:
+Model Iuses pretrained FLUX.2 4B without LoRA fine-
+tuning;Models II and IIIreplace the visible-infrared in-
+puts with two identical visible or infrared images, respec-
+tively;Model IVreplaces the ideal fusion targets with the
+best of eight source-resemblance-based fusion candidates;
+andModel Vreplaces FLUX.2 4B with FLUX.2 9B. All
+variants are trained under otherwise identical settings.
+Fig. 9 and Table 5 show the qualitative and quantita-
+tive results on the LLVIP dataset. Compared with Model
+I, ApexFuse produces higher-quality results, demonstrating
+the effectiveness of target-distribution-guided adaptation in
+transferring pretrained generative priors. Models II and III
+exhibit inferior results due to the loss of </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +444,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

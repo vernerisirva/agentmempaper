@@ -29,7 +29,7 @@
   "last_seen_date": "2026-07-08",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-07-04 09:10:53",
   "notified_date": "2026-07-04",
@@ -40,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-04 09:05:15",
-    "generated_at": "2026-11-22 13:36:33",
+    "generated_at": "2026-11-23 14:08:48",
     "last_seen_at": "2026-07-08 08:51:55",
     "metadata_sources": [
       "openalex",
@@ -110,36 +110,970 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-23T14:06:27.551833+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The paper provides a well-reasoned, clearly articulated conceptual contribution that establishes clear criteria and taxonomies for using agentic LLMs within Artificial Life, supported by rigorous synthesis and appropriate treatment of epistemic caveats.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 65969,
+      "assessment_input_sha256": "1fc350ba17428955aec55e18dd4f6967f19cc1474912ebefa2726ffec6e6766e",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7167289766",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 64790,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 64717,
+      "evidence_block_count": 81,
+      "evidence_context_characters": 74793,
+      "evidence_context_id": "b0a1b3ff994b4de32ef9033a0c4094e055526b4acf87956d007eeb18bafe49e7",
+      "evidence_context_sha256": "d8a6970b4e3b4c5e362efc89d13518eca77990dacb14ebab642b9a3f57ee4c6b",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 64812,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "extracted_pages": 12,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "571c5e8464f95e4cf77af55efc42bd48f8812a9bbbcce8e084de339552fbe6b8",
+        "source_url": "https://arxiv.org/pdf/2607.01047",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 64790,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction"
+      ],
+      "sections": [
+        {
+          "heading": "Conversable Complexity:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 1688,
+          "supplied_characters": 1688
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1210,
+          "supplied_characters": 1210
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 204,
+          "supplied_characters": 204
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 5907,
+          "supplied_characters": 5907
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 5826,
+          "supplied_characters": 5826
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "introduction",
+          "section_index": 5,
+          "source_characters": 5546,
+          "supplied_characters": 5546
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "introduction",
+          "section_index": 6,
+          "source_characters": 5835,
+          "supplied_characters": 5835
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "introduction",
+          "section_index": 7,
+          "source_characters": 5160,
+          "supplied_characters": 5160
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "introduction",
+          "section_index": 8,
+          "source_characters": 5786,
+          "supplied_characters": 5786
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "introduction",
+          "section_index": 9,
+          "source_characters": 4374,
+          "supplied_characters": 4374
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "conclusion",
+          "section_index": 10,
+          "source_characters": 1274,
+          "supplied_characters": 1274
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 11,
+          "source_characters": 5252,
+          "supplied_characters": 5252
+        },
+        {
+          "heading": "En Is Funded By The Novo Nordisk Foundation Synergy",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 94,
+          "supplied_characters": 94
+        },
+        {
+          "heading": "Funded By The Norwegian Directorate For Higher Education",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 117,
+          "supplied_characters": 117
+        },
+        {
+          "heading": "Center For Computing In Science Education And Center For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 147,
+          "supplied_characters": 147
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 328,
+          "supplied_characters": 328
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1149,
+          "supplied_characters": 1149
+        },
+        {
+          "heading": "Inward: Language Models Can Learn About Themselves By In-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1005,
+          "supplied_characters": 1005
+        },
+        {
+          "heading": "Of The Sixth European Conference On Artificial Life (Ecal",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 1993,
+          "supplied_characters": 1993
+        },
+        {
+          "heading": "The Evolutionary Origin Of Somatic Cells Under The Dirty Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 584,
+          "supplied_characters": 584
+        },
+        {
+          "heading": "Detecting The Disturbance: A Nuanced View Of Introspective",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 399,
+          "supplied_characters": 399
+        },
+        {
+          "heading": "Tructural Sovereignty And Diffused Accountability In Decentral-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 247,
+          "supplied_characters": 247
+        },
+        {
+          "heading": "Tructural Sovereignty And Diffused Accountability In Decentral-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 6178,
+          "supplied_characters": 6178
+        },
+        {
+          "heading": "Tructural Sovereignty And Diffused Accountability In Decentral-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 4414,
+          "supplied_characters": 4414
+        }
+      ],
+      "selected_characters": 64717,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "selected_sections": [
+        {
+          "characters": 1688,
+          "heading": "Conversable Complexity:",
+          "page": 1
+        },
+        {
+          "characters": 1210,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 204,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 5907,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 5826,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 5546,
+          "heading": "Introduction",
+          "page": 4
+        },
+        {
+          "characters": 5835,
+          "heading": "Introduction",
+          "page": 5
+        },
+        {
+          "characters": 5160,
+          "heading": "Introduction",
+          "page": 6
+        },
+        {
+          "characters": 5786,
+          "heading": "Introduction",
+          "page": 7
+        },
+        {
+          "characters": 4374,
+          "heading": "Introduction",
+          "page": 8
+        },
+        {
+          "characters": 1274,
+          "heading": "Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 5252,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 94,
+          "heading": "En Is Funded By The Novo Nordisk Foundation Synergy",
+          "page": 9
+        },
+        {
+          "characters": 117,
+          "heading": "Funded By The Norwegian Directorate For Higher Education",
+          "page": 9
+        },
+        {
+          "characters": 147,
+          "heading": "Center For Computing In Science Education And Center For",
+          "page": 9
+        },
+        {
+          "characters": 328,
+          "heading": "Unclassified body after references",
+          "page": 9
+        },
+        {
+          "characters": 1149,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 1005,
+          "heading": "Inward: Language Models Can Learn About Themselves By In-",
+          "page": 10
+        },
+        {
+          "characters": 1993,
+          "heading": "Of The Sixth European Conference On Artificial Life (Ecal",
+          "page": 10
+        },
+        {
+          "characters": 584,
+          "heading": "The Evolutionary Origin Of Somatic Cells Under The Dirty Work",
+          "page": 10
+        },
+        {
+          "characters": 399,
+          "heading": "Detecting The Disturbance: A Nuanced View Of Introspective",
+          "page": 10
+        },
+        {
+          "characters": 247,
+          "heading": "Tructural Sovereignty And Diffused Accountability In Decentral-",
+          "page": 10
+        },
+        {
+          "characters": 6178,
+          "heading": "Tructural Sovereignty And Diffused Accountability In Decentral-",
+          "page": 11
+        },
+        {
+          "characters": 4414,
+          "heading": "Tructural Sovereignty And Diffused Accountability In Decentral-",
+          "page": 12
+        }
+      ],
+      "selected_text_sha256": "1fc350ba17428955aec55e18dd4f6967f19cc1474912ebefa2726ffec6e6766e",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "571c5e8464f95e4cf77af55efc42bd48f8812a9bbbcce8e084de339552fbe6b8",
+      "source_pages": 12,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "b0a1b3ff994b4de32ef9033a0c4094e055526b4acf87956d007eeb18bafe49e7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb0a1b3ff994b4de3-B0003"
+        ],
+        "excerpt": "Complexity and interpretability rarely coincide: systems\nrich enough for complex behaviours to emerge are usually\ntoo opaque to question, while transparent ones are too sim-\nple for anything complex to emerge. A single large language\nmodel (LLM) is a static artefact, hardly exhibiting any of\nthe emergent properties we associate with life. This changes\nthrough interaction: populations of LLMs display emergent\ndynamics absent from isolated models. Furthermore, LLMs\ncan be endowed with persistent memory, tools and shared\nskills, and the capacity to initiate actions unprompted, i.e.,\nturning LLMsagentic. In this paper, we argue that such col-\nlectives of agents can serve as a computational substrate for\nArtificial Life (ALife) research. Critically, since the agents\ncommunicate in natural language, their collective behaviour\ncan be directly interrogated by examining textual traces and\nasking ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f2f3e5a30f3f859546490fb2ca7daa2bd84bbda961bdabf00130aa770d34df1e",
+            "evidence_id": "Eb0a1b3ff994b4de3-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Complexity and interpretability rarely coincide: systems\nrich enough for complex behaviours to emerge are usually\ntoo opaque to question, while transparent ones are too sim-\nple for anything complex to emerge. A single large language\nmodel (LLM) is a static artefact, hardly exhibiting any of\nthe emergent properties we associate with life. This changes\nthrough interaction: populations of LLMs display emergent\ndynamics absent from isolated models. Furthermore, LLMs\ncan be endowed with persistent memory, tools and shared\nskills, and the capacity to initiate actions unprompted, i.e.,\nturning LLMsagentic. In this paper, we argue that such col-\nlectives of agents can serve as a computational substrate for\nArtificial Life (ALife) research. Critically, since the agents\ncommunicate in natural language, their collective behaviour\ncan be directly interrogated by examining textual traces and\nasking "
+              }
+            ],
+            "text": "Complexity and interpretability rarely coincide: systems\nrich enough for complex behaviours to emerge are usually\ntoo opaque to question, while transparent ones are too sim-\nple for anything complex to emerge. A single large language\nmodel (LLM) is a static artefact, hardly exhibiting any of\nthe emergent properties we associate with life. This changes\nthrough interaction: populations of LLMs display emergent\ndynamics absent from isolated models. Furthermore, LLMs\ncan be endowed with persistent memory, tools and shared\nskills, and the capacity to initiate actions unprompted, i.e.,\nturning LLMsagentic. In this paper, we argue that such col-\nlectives of agents can serve as a computational substrate for\nArtificial Life (ALife) research. Critically, since the agents\ncommunicate in natural language, their collective behaviour\ncan be directly interrogated by examining textual traces and\nasking "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b0a1b3ff994b4de32ef9033a0c4094e055526b4acf87956d007eeb18bafe49e7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb0a1b3ff994b4de3-B0008"
+        ],
+        "excerpt": "to study diverse as-\npects of collective behaviour (Burton et al., 2024). By con-\ntrast to that line of work, we emphasise here the relevance\nof theagenticaspect of the substrate's constitutive units. We\nuse \"agentic\" to denote a computational unit in which an\nLLM is endowed with persistent memory, tool use, and self-\ndirectedness. Persistent memory and tools let the unitex-\nternalise cognition\u2014offloading cognitive mechanisms onto\nexternal structure and providing a substrate for culture\u2014\nwhile self-directedness lets it act beyond purely reactive be-\nhaviour, for instance choosing on its own to take an ac-\ntion or to explore in some direction without being explicitly\nprompted.\nIn this perspective paper, we treat the agentic LLM as\nthe basic computational unit of a substrate. We argue that\ncollectives of such units provide an experimental testbed\nfor bottom-up exploration and hypothesis ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "881eda3b6c8b17858e267a45742d3f38a1c372ee170b5f2e615aa5ac2c4aafc1",
+            "evidence_id": "Eb0a1b3ff994b4de3-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3387,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 2489,
+                "text": "to study diverse as-\npects of collective behaviour (Burton et al., 2024). By con-\ntrast to that line of work, we emphasise here the relevance\nof theagenticaspect of the substrate's constitutive units. We\nuse \"agentic\" to denote a computational unit in which an\nLLM is endowed with persistent memory, tool use, and self-\ndirectedness. Persistent memory and tools let the unitex-\nternalise cognition\u2014offloading cognitive mechanisms onto\nexternal structure and providing a substrate for culture\u2014\nwhile self-directedness lets it act beyond purely reactive be-\nhaviour, for instance choosing on its own to take an ac-\ntion or to explore in some direction without being explicitly\nprompted.\nIn this perspective paper, we treat the agentic LLM as\nthe basic computational unit of a substrate. We argue that\ncollectives of such units provide an experimental testbed\nfor bottom-up exploration and hypothesis "
+              }
+            ],
+            "text": "to study diverse as-\npects of collective behaviour (Burton et al., 2024). By con-\ntrast to that line of work, we emphasise here the relevance\nof theagenticaspect of the substrate's constitutive units. We\nuse \"agentic\" to denote a computational unit in which an\nLLM is endowed with persistent memory, tool use, and self-\ndirectedness. Persistent memory and tools let the unitex-\nternalise cognition\u2014offloading cognitive mechanisms onto\nexternal structure and providing a substrate for culture\u2014\nwhile self-directedness lets it act beyond purely reactive be-\nhaviour, for instance choosing on its own to take an ac-\ntion or to explore in some direction without being explicitly\nprompted.\nIn this perspective paper, we treat the agentic LLM as\nthe basic computational unit of a substrate. We argue that\ncollectives of such units provide an experimental testbed\nfor bottom-up exploration and hypothesis "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b0a1b3ff994b4de32ef9033a0c4094e055526b4acf87956d007eeb18bafe49e7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb0a1b3ff994b4de3-B0009"
+        ],
+        "excerpt": "testing of which\nproperties\u2014such as autonomy, self-modification, cognitive\narchitecture, symbiogenesis, and resource constraints\u2014are\nimportant for life-like behaviour to emerge. Critically, be-\ncause interaction is mediated through natural language, this\nsubstrate is also interpretable, making collective dynamics\ndirectly accessible to observation.\nWhat constitutes a good testbed?We propose that a sub-\nstrate has high potential as an experimental testbed for ALife\nresearch to the extent that it satisfies five properties drawn\nfrom three traditions. In the philosophy of model organ-\nisms (Ankeny and Leonelli, 2020; Leonelli, 2016), we in-\nherit the requirement that the substrate has(i)a clearly stated\nrepresentational target and scope: which phenomena the\nsubstrate is meant to illuminate, and to which other sys-\ntems the results are expected to transfer; and(ii)standard-\nisation ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f12c18539305de87b7f04fa1373afe6df0110b2cb3085cc1896ba3b5ab30665c",
+            "evidence_id": "Eb0a1b3ff994b4de3-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 4278,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 3387,
+                "text": "testing of which\nproperties\u2014such as autonomy, self-modification, cognitive\narchitecture, symbiogenesis, and resource constraints\u2014are\nimportant for life-like behaviour to emerge. Critically, be-\ncause interaction is mediated through natural language, this\nsubstrate is also interpretable, making collective dynamics\ndirectly accessible to observation.\nWhat constitutes a good testbed?We propose that a sub-\nstrate has high potential as an experimental testbed for ALife\nresearch to the extent that it satisfies five properties drawn\nfrom three traditions. In the philosophy of model organ-\nisms (Ankeny and Leonelli, 2020; Leonelli, 2016), we in-\nherit the requirement that the substrate has(i)a clearly stated\nrepresentational target and scope: which phenomena the\nsubstrate is meant to illuminate, and to which other sys-\ntems the results are expected to transfer; and(ii)standard-\nisation "
+              }
+            ],
+            "text": "testing of which\nproperties\u2014such as autonomy, self-modification, cognitive\narchitecture, symbiogenesis, and resource constraints\u2014are\nimportant for life-like behaviour to emerge. Critically, be-\ncause interaction is mediated through natural language, this\nsubstrate is also interpretable, making collective dynamics\ndirectly accessible to observation.\nWhat constitutes a good testbed?We propose that a sub-\nstrate has high potential as an experimental testbed for ALife\nresearch to the extent that it satisfies five properties drawn\nfrom three traditions. In the philosophy of model organ-\nisms (Ankeny and Leonelli, 2020; Leonelli, 2016), we in-\nherit the requirement that the substrate has(i)a clearly stated\nrepresentational target and scope: which phenomena the\nsubstrate is meant to illuminate, and to which other sys-\ntems the results are expected to transfer; and(ii)standard-\nisation "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b0a1b3ff994b4de32ef9033a0c4094e055526b4acf87956d007eeb18bafe49e7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb0a1b3ff994b4de3-B0015"
+        ],
+        "excerpt": "machines assem-\nbled from living frog cells that self-organise and locomote\n(Blackiston et al., 2021). Wet substrates are used to sim-\nulate self-assembly, metabolism, self-maintenance, and the\ntransition from non-living to living matter.\nAgentic Substrates\nWe define anagentic substrateas a population ofagentic\nunits\u2014pretrained language models, each endowed with(i)\na persistent memory that distils salient information from its\ncontext into a structured store outlasting any single context\nwindow;(ii)access to a shared, self-extensible commons\nof tools and skills; and(iii)the self-directedness to act un-\nprompted, or to decline a trigger. The population is in turn\n(iv)coupled through a connectivity structure that fixes a no-\ntion of locality and the channels (natural language) along\nwhich they communicate; and(v)embedded in a shared,\npersistent environment.\nWhen agentic units (iii) are ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a066a3a5b5f200d048720e39f8cf0c0ca02be330a5b9158c1a59ca81f4763aed",
+            "evidence_id": "Eb0a1b3ff994b4de3-B0015",
+            "pages": [
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3739,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 2843,
+                "text": "machines assem-\nbled from living frog cells that self-organise and locomote\n(Blackiston et al., 2021). Wet substrates are used to sim-\nulate self-assembly, metabolism, self-maintenance, and the\ntransition from non-living to living matter.\nAgentic Substrates\nWe define anagentic substrateas a population ofagentic\nunits\u2014pretrained language models, each endowed with(i)\na persistent memory that distils salient information from its\ncontext into a structured store outlasting any single context\nwindow;(ii)access to a shared, self-extensible commons\nof tools and skills; and(iii)the self-directedness to act un-\nprompted, or to decline a trigger. The population is in turn\n(iv)coupled through a connectivity structure that fixes a no-\ntion of locality and the channels (natural language) along\nwhich they communicate; and(v)embedded in a shared,\npersistent environment.\nWhen agentic units (iii) are "
+              }
+            ],
+            "text": "machines assem-\nbled from living frog cells that self-organise and locomote\n(Blackiston et al., 2021). Wet substrates are used to sim-\nulate self-assembly, metabolism, self-maintenance, and the\ntransition from non-living to living matter.\nAgentic Substrates\nWe define anagentic substrateas a population ofagentic\nunits\u2014pretrained language models, each endowed with(i)\na persistent memory that distils salient information from its\ncontext into a structured store outlasting any single context\nwindow;(ii)access to a shared, self-extensible commons\nof tools and skills; and(iii)the self-directedness to act un-\nprompted, or to decline a trigger. The population is in turn\n(iv)coupled through a connectivity structure that fixes a no-\ntion of locality and the channels (natural language) along\nwhich they communicate; and(v)embedded in a shared,\npersistent environment.\nWhen agentic units (iii) are "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b0a1b3ff994b4de32ef9033a0c4094e055526b4acf87956d007eeb18bafe49e7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb0a1b3ff994b4de3-B0028"
+        ],
+        "excerpt": "able to understand 'what is going\non' on the substrate at a given moment, and generate plau-\nsible ideas about what led to the current state. Though the\nspecialist knowledge of the experimenter plays a role here,\ntheinterpretabilityof the substrate has strong bearing on\nwhether such a reading is possible.\nAcross the literature, interpretability is framed as a\nhuman-facing property, with emphasis on legibility (Doshi-\nVelez and Kim, 2017), predictability (Miller, 2019) and\ncausal traceability (Kim et al., 2016). To make any of these\ndefinitions operational, the experimenter has to pick which\nobservable signals about the unit they will base their in-\nterpretation on \u2014 itsobservational channels. We identify\nsix such channels: behavioural, attributional, concept-based,\nand mechanistic based on Bereska and Gavves (2024)'s\nframework, and extended with two new channels: agentic\nand stigmergic ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8d6796b4e4f10bb5948c8554a049cf47e26ead3fe267578546a53a7f48b0df8f",
+            "evidence_id": "Eb0a1b3ff994b4de3-B0028",
+            "pages": [
+              5
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 4018,
+                "page": 5,
+                "section": "Introduction",
+                "section_index": 6,
+                "start": 3119,
+                "text": "able to understand 'what is going\non' on the substrate at a given moment, and generate plau-\nsible ideas about what led to the current state. Though the\nspecialist knowledge of the experimenter plays a role here,\ntheinterpretabilityof the substrate has strong bearing on\nwhether such a reading is possible.\nAcross the literature, interpretability is framed as a\nhuman-facing property, with emphasis on legibility (Doshi-\nVelez and Kim, 2017), predictability (Miller, 2019) and\ncausal traceability (Kim et al., 2016). To make any of these\ndefinitions operational, the experimenter has to pick which\nobservable signals about the unit they will base their in-\nterpretation on \u2014 itsobservational channels. We identify\nsix such channels: behavioural, attributional, concept-based,\nand mechanistic based on Bereska and Gavves (2024)'s\nframework, and extended with two new channels: agentic\nand stigmergic "
+              }
+            ],
+            "text": "able to understand 'what is going\non' on the substrate at a given moment, and generate plau-\nsible ideas about what led to the current state. Though the\nspecialist knowledge of the experimenter plays a role here,\ntheinterpretabilityof the substrate has strong bearing on\nwhether such a reading is possible.\nAcross the literature, interpretability is framed as a\nhuman-facing property, with emphasis on legibility (Doshi-\nVelez and Kim, 2017), predictability (Miller, 2019) and\ncausal traceability (Kim et al., 2016). To make any of these\ndefinitions operational, the experimenter has to pick which\nobservable signals about the unit they will base their in-\nterpretation on \u2014 itsobservational channels. We identify\nsix such channels: behavioural, attributional, concept-based,\nand mechanistic based on Bereska and Gavves (2024)'s\nframework, and extended with two new channels: agentic\nand stigmergic "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b0a1b3ff994b4de32ef9033a0c4094e055526b4acf87956d007eeb18bafe49e7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb0a1b3ff994b4de3-B0031"
+        ],
+        "excerpt": "(Perez et al., 2023).\nBehavioural\nAgentic\nStigmergic\nAttributional\nConcept-based\nMechanistic\nExternal inputs\u2192observed behaviour\nWhat regularities link the unit's\nexternal inputs to its behaviour?\nIn-process traces,\npost-hoc reports\nWhat does the unit report\nabout its own processing,\nduring and after operation?\nExternal tools, reusable artifacts\nHow does the unit alter and\nmake use of its environment?\nFeatures of the external inputs\u2192\noutput features\nHow is responsibility for the behaviour\ndistributed across the external inputs?\nInternal representations, latent states\nWhat does the unit represent internally,\nand how do those representations\nshape its behaviour?\nInternal structure, dynamics\nBy what internal causal pathway do\nexternal inputs give rise to behaviour?\nInterpretability\nFigure 2:Six interpretability channels for analysing units in computational substrates.On the internal level ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bd7d1e0be3ace1e6d0ebe5b6243c688d5942a549b7443d5122d01e10a17cadf6",
+            "evidence_id": "Eb0a1b3ff994b4de3-B0031",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 5835,
+                "page": 5,
+                "section": "Introduction",
+                "section_index": 6,
+                "start": 5814,
+                "text": "(Perez et al., 2023)."
+              },
+              {
+                "end": 876,
+                "page": 6,
+                "section": "Introduction",
+                "section_index": 7,
+                "start": 0,
+                "text": "Behavioural\nAgentic\nStigmergic\nAttributional\nConcept-based\nMechanistic\nExternal inputs\u2192observed behaviour\nWhat regularities link the unit's\nexternal inputs to its behaviour?\nIn-process traces,\npost-hoc reports\nWhat does the unit report\nabout its own processing,\nduring and after operation?\nExternal tools, reusable artifacts\nHow does the unit alter and\nmake use of its environment?\nFeatures of the external inputs\u2192\noutput features\nHow is responsibility for the behaviour\ndistributed across the external inputs?\nInternal representations, latent states\nWhat does the unit represent internally,\nand how do those representations\nshape its behaviour?\nInternal structure, dynamics\nBy what internal causal pathway do\nexternal inputs give rise to behaviour?\nInterpretability\nFigure 2:Six interpretability channels for analysing units in computational substrates.On the internal level "
+              }
+            ],
+            "text": "(Perez et al., 2023).\nBehavioural\nAgentic\nStigmergic\nAttributional\nConcept-based\nMechanistic\nExternal inputs\u2192observed behaviour\nWhat regularities link the unit's\nexternal inputs to its behaviour?\nIn-process traces,\npost-hoc reports\nWhat does the unit report\nabout its own processing,\nduring and after operation?\nExternal tools, reusable artifacts\nHow does the unit alter and\nmake use of its environment?\nFeatures of the external inputs\u2192\noutput features\nHow is responsibility for the behaviour\ndistributed across the external inputs?\nInternal representations, latent states\nWhat does the unit represent internally,\nand how do those representations\nshape its behaviour?\nInternal structure, dynamics\nBy what internal causal pathway do\nexternal inputs give rise to behaviour?\nInterpretability\nFigure 2:Six interpretability channels for analysing units in computational substrates.On the internal level "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b0a1b3ff994b4de32ef9033a0c4094e055526b4acf87956d007eeb18bafe49e7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb0a1b3ff994b4de3-B0036"
+        ],
+        "excerpt": "trustworthy?Self-reports\nthrough natural language have the notable benefit of being\nimmediately readable and understandable for a human ob-\nserver. However, it is well-established that token outputs\non their own can be deceptive, given models' propensity\nformisaligned behaviourslike hidden reasoning (Pfau et al.,\n2024), alignment faking (Greenblatt et al., 2024) and syco-\nphancy (Sharma et al., 2024). Chain-of-thought (Chen et al.,\n2025; Arcuschin et al., 2025) and prompting for introspec-\ntion (Binder et al., 2025) are similarly unreliable on their\nown, even after fine-tuning for faithfulness. Recent work\nnonetheless finds a limited but real capacity for models to\nintrospect on their own internal states, even if this remains\nimperfect and context-dependent (Lindsey, 2026; Hahami\net al., 2025; Li et al., 2026). It is therefore crucial to com-\nbine convergent evidence from multiple ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1f2da7b84bd18e1515acee03901f2ca50a48946c40e6296f636177eae024eaf0",
+            "evidence_id": "Eb0a1b3ff994b4de3-B0036",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 5160,
+                "page": 6,
+                "section": "Introduction",
+                "section_index": 7,
+                "start": 4425,
+                "text": "trustworthy?Self-reports\nthrough natural language have the notable benefit of being\nimmediately readable and understandable for a human ob-\nserver. However, it is well-established that token outputs\non their own can be deceptive, given models' propensity\nformisaligned behaviourslike hidden reasoning (Pfau et al.,\n2024), alignment faking (Greenblatt et al., 2024) and syco-\nphancy (Sharma et al., 2024). Chain-of-thought (Chen et al.,\n2025; Arcuschin et al., 2025) and prompting for introspec-\ntion (Binder et al., 2025) are similarly unreliable on their\nown, even after fine-tuning for faithfulness. Recent work\nnonetheless finds a limited but real capacity for models to\nintrospect on their own internal states, even if this remains"
+              },
+              {
+                "end": 158,
+                "page": 7,
+                "section": "Introduction",
+                "section_index": 8,
+                "start": 0,
+                "text": "imperfect and context-dependent (Lindsey, 2026; Hahami\net al., 2025; Li et al., 2026). It is therefore crucial to com-\nbine convergent evidence from multiple "
+              }
+            ],
+            "text": "trustworthy?Self-reports\nthrough natural language have the notable benefit of being\nimmediately readable and understandable for a human ob-\nserver. However, it is well-established that token outputs\non their own can be deceptive, given models' propensity\nformisaligned behaviourslike hidden reasoning (Pfau et al.,\n2024), alignment faking (Greenblatt et al., 2024) and syco-\nphancy (Sharma et al., 2024). Chain-of-thought (Chen et al.,\n2025; Arcuschin et al., 2025) and prompting for introspec-\ntion (Binder et al., 2025) are similarly unreliable on their\nown, even after fine-tuning for faithfulness. Recent work\nnonetheless finds a limited but real capacity for models to\nintrospect on their own internal states, even if this remains\nimperfect and context-dependent (Lindsey, 2026; Hahami\net al., 2025; Li et al., 2026). It is therefore crucial to com-\nbine convergent evidence from multiple "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b0a1b3ff994b4de32ef9033a0c4094e055526b4acf87956d007eeb18bafe49e7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb0a1b3ff994b4de3-B0054"
+        ],
+        "excerpt": "natu-\nral language. Processes such as norm formation, cooper-\nation, and cultural transmission can therefore be observed\ndirectly rather than inferred indirectly from low-level state\ntransitions. This legibility does not, however, guarantee reli-\nability: natural-language outputs and self-reports can be de-\nceptive or incomplete, and are best treated as evidence to be\ntriangulated across channels rather than as ground truth\u2014a\nlimitation we discuss at the end of the interpretability sec-\ntion. Encouragingly, a growing body of work targets this\ngap directly, from monitoring the faithfulness of chain-of-\nthought reasoning (Korbak et al., 2025; Meek et al., 2025)\nto probing internal activations for signs of strategic decep-\ntion (Goldowsky-Dill et al., 2025). Models themselves,\nmoreover, show an emerging capacity to monitor and report\non their own internal states (Li et al., 2026).\nThe ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cd4f5e5d69ba807735b575f5a472259e4867b83e938bb5802254afed3812390e",
+            "evidence_id": "Eb0a1b3ff994b4de3-B0054",
+            "pages": [
+              9
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 4103,
+                "page": 9,
+                "section": "Conclusion",
+                "section_index": 11,
+                "start": 3208,
+                "text": "natu-\nral language. Processes such as norm formation, cooper-\nation, and cultural transmission can therefore be observed\ndirectly rather than inferred indirectly from low-level state\ntransitions. This legibility does not, however, guarantee reli-\nability: natural-language outputs and self-reports can be de-\nceptive or incomplete, and are best treated as evidence to be\ntriangulated across channels rather than as ground truth\u2014a\nlimitation we discuss at the end of the interpretability sec-\ntion. Encouragingly, a growing body of work targets this\ngap directly, from monitoring the faithfulness of chain-of-\nthought reasoning (Korbak et al., 2025; Meek et al., 2025)\nto probing internal activations for signs of strategic decep-\ntion (Goldowsky-Dill et al., 2025). Models themselves,\nmoreover, show an emerging capacity to monitor and report\non their own internal states (Li et al., 2026).\nThe "
+              }
+            ],
+            "text": "natu-\nral language. Processes such as norm formation, cooper-\nation, and cultural transmission can therefore be observed\ndirectly rather than inferred indirectly from low-level state\ntransitions. This legibility does not, however, guarantee reli-\nability: natural-language outputs and self-reports can be de-\nceptive or incomplete, and are best treated as evidence to be\ntriangulated across channels rather than as ground truth\u2014a\nlimitation we discuss at the end of the interpretability sec-\ntion. Encouragingly, a growing body of work targets this\ngap directly, from monitoring the faithfulness of chain-of-\nthought reasoning (Korbak et al., 2025; Meek et al., 2025)\nto probing internal activations for signs of strategic decep-\ntion (Goldowsky-Dill et al., 2025). Models themselves,\nmoreover, show an emerging capacity to monitor and report\non their own internal states (Li et al., 2026).\nThe "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2607.01047",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7167289766",
+        "context_id": "b0a1b3ff994b4de32ef9033a0c4094e055526b4acf87956d007eeb18bafe49e7",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No optimization or tuning loop is reported; the manuscript is a conceptual perspective paper whose claims are supported by literature synthesis and illustrative case studies rather than an empirical headline outcome.",
+          "final_evaluation_signal": "Comparative literature synthesis and conceptual mapping against established ALife and interpretability frameworks.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Not applicable; no training, tuning, selection, or reward signal is used to shape a system under study.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "Eb0a1b3ff994b4de3-B0003",
+          "Eb0a1b3ff994b4de3-B0008",
+          "Eb0a1b3ff994b4de3-B0009",
+          "Eb0a1b3ff994b4de3-B0015",
+          "Eb0a1b3ff994b4de3-B0028",
+          "Eb0a1b3ff994b4de3-B0031",
+          "Eb0a1b3ff994b4de3-B0036",
+          "Eb0a1b3ff994b4de3-B0054"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "571c5e8464f95e4cf77af55efc42bd48f8812a9bbbcce8e084de339552fbe6b8"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7167289766",
+        "claim_evidence_alignment": "The claims are properly scoped to conceptual and methodological positioning, clearly acknowledging inherent epistemic limitations such as the unreliability and potential deceptiveness of natural-language self-reports and the necessity of multi-channel triangulation.",
+        "context_id": "b0a1b3ff994b4de32ef9033a0c4094e055526b4acf87956d007eeb18bafe49e7",
+        "decision": "pass",
+        "evaluation_assessment": "As a theoretical and conceptual perspective paper, validation is provided through systematic literature synthesis, structural taxonomies, and case-study reviews of emerging persistent multi-agent deployments (e.g., Agents of Chaos, Moltbook, TerraLingua, Spore.fun) mapped against the proposed criteria.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No optimization loop is evaluated; empirical case studies cited serve as illustrative references within the conceptual framework.",
+          "final_evaluation_signal": "Comparative literature synthesis and theoretical mapping against established ALife and interpretability frameworks.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Not applicable; this is a conceptual and perspective framework without an empirical optimization or parameter tuning loop.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "Eb0a1b3ff994b4de3-B0003",
+          "Eb0a1b3ff994b4de3-B0008",
+          "Eb0a1b3ff994b4de3-B0009",
+          "Eb0a1b3ff994b4de3-B0015",
+          "Eb0a1b3ff994b4de3-B0028",
+          "Eb0a1b3ff994b4de3-B0031",
+          "Eb0a1b3ff994b4de3-B0036",
+          "Eb0a1b3ff994b4de3-B0054"
+        ],
+        "limitations": "The authors explicitly discuss key constraints, including that natural-language legibility does not guarantee truthfulness due to phenomena like sycophancy, hidden reasoning, and alignment faking, requiring corroboration from non-verbal interpretability channels.",
+        "method_assessment": "The manuscript presents a structured conceptual framework comparing classical substrates (soft, hard, wet) with agentic LLM collectives across seven core ALife conjecture domains. It integrates principles from the philosophy of model organisms, simulation epistemology, and LLM interpretability literature into a coherent methodological blueprint.",
+        "quality_rationale": "The paper provides a well-reasoned, clearly articulated conceptual contribution that establishes clear criteria and taxonomies for using agentic LLMs within Artificial Life, supported by rigorous synthesis and appropriate treatment of epistemic caveats.",
+        "scoped_contribution": "This perspective paper conceptualizes agentic LLM collectives as a distinct, fourth class of computational substrate for Artificial Life research, formulating five desirable testbed criteria and extending interpretability taxonomies to include agentic and stigmergic observational channels.",
+        "source_content_hash": "571c5e8464f95e4cf77af55efc42bd48f8812a9bbbcce8e084de339552fbe6b8"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The paper provides a well-reasoned, clearly articulated conceptual contribution that establishes clear criteria and taxonomies for using agentic LLMs within Artificial Life, supported by rigorous synthesis and appropriate treatment of epistemic caveats.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "571c5e8464f95e4cf77af55efc42bd48f8812a9bbbcce8e084de339552fbe6b8",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly discuss key constraints, including that natural-language legibility does not guarantee truthfulness due to phenomena like sycophancy, hidden reasoning, and alignment faking, requiring corroboration from non-verbal interpretability channels."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -173,7 +1107,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

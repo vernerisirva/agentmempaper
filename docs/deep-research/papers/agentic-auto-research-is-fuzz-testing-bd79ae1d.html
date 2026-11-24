@@ -59,16 +59,178 @@
             <p>Autonomous research agents can generate experiments faster than researchers can validate them. Researchers have responded by scaling the proposer and ranking more samples with a learned judge or human reviewers. We argue that this *generate-and-rank* paradigm misses the problem of sparse feedback. Within a declared...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not been assessed under the manuscript evidence gate.</p>
-      <p>Legacy assessment retained; manuscript review is required before promotion.</p>
+      <h2>AI assessment inconclusive</h2>
+      <p>While the conceptual positioning is insightful and thoughtfully draws on fuzzing principles to address fundamental failure modes in LLM agent research, the manuscript is primarily a position paper with an illustrative demonstration rather than a fully evaluated scientific contribution. Under library curation standards, promotion requires stronger empirical or formal validation beyond an existence proof.</p>
+      <p>The authors clearly delineate limitations, noting the framework applies only within declared problem formulations and representations, cannot account for abductive shifts in problem framing, and leaves rigorous empirical testing of its core predictions as an open question.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: title_and_abstract.</p>
-        <p>Assessor: deterministic. Assessment version: quality-v1. Gate: not assessed.</p>
-        <p>Assessed: 2026-08-12T09:39:13+00:00.</p>
-
-        <ul><li>The contribution is stated explicitly.</li></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-24T14:41:47.557595+00:00.</p>
+        <p>Coverage: 53123 of 53123 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>inputs and allocate effort, rather than merely rank
+completed runs. Auto-research needs the same two capabilities. First, each experiment must expose a cheap,
+dense signal of epistemic progress before final scientific validation is available. Second, that signal must
+determine the next intervention so the agent searches rather than repeatedly samples. Because the progress signal
+provides guidance rather than a final verdict, final validation must still evaluate claims using evidence protected
+from adaptive reuse. We propose controlled tests to determine whether candidate signals predict validated
+progress, whether feedback-directed search yields more validated discoveries per unit cost than repeated sampling,
+and whether protected validation reduces false discoveries. In a simulated physics environment, an AI research
+agent that tracks its intermediate epistemic progress discovers a </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>instru-
+mented, feedback-directed search.Within a declared re-
+search problem, each experiment should expose a cheap,
+dense measure of epistemic progress; the search policy
+should use that measure to choose its next intervention;
+and final validation, protected from adaptive reuse of the
+progress signal, should determine what counts as a discov-
+ery. This position makes three separable predictions. First,
+candidate progress signals should predict protected scientific
+outcomes and improve how a fixed validation budget is allo-
+cated. Second, with the proposer, task, validator, and budget
+fixed, feedback-directed search should yield more validated
+discoveries per unit cost than repeated sampling. Third,
+with the search trace fixed, protected validation should re-
+duce false discoveries relative to reporting the optimized
+proxy. These predictions specify how feedback should guide
+search; </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>how well each proxy predicts protected outcomes
+and allocates a fixed validation budget. It can then compare
+the number of validated discoveries per unit cost. A useful
+proxy must survive both tests.
+This capability claim makes a falsifiable prediction.Signal
+prediction:with the proposer, task, and candidate pool
+fixed, a useful intermediate metric should predict protected
+outcomes and select more validator-confirmed discoveries
+under a fixed validation budget than an uninformative or
+terminal-only signal. Whether a selected candidate counts
+as a discovery is a distinct final-validation question ad-
+dressed in section 5. If no candidate signal predicts pro-
+tected progress, this claim is wrong.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Agentic Auto-Research is Fuzz Testing
+Figure 4.A scheduler concentrates a fixed budget on the directions whose progress readings improve, and prunes the rest early. Because
+the supply does not grow, pruning D3 and D5 frees flow for D2. Directed greybox fuzzers schedule energy the same way, by distance to a
+target [4, 5].
+as coverage-guided mutators inside software fuzzing loops
+[30, 56]. We need to determine which operators improve
+protected, cost-normalized scientific outcomes rather than
+only the steering proxy.
+Research agents will not inherit Angora&#x27;s gains automati-
+cally.Search prediction:with the proposer, task, protected
+validator, and total budget fixed, a policy that uses interme-
+diate experimental feedback to choose its next intervention
+should yield more validator-confirmed discoveries per unit
+cost than repeated sampling. This comparison definesprin-
+cipled </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reporting the optimized guidance score. This
+is a reliability claim about the final verdict, not another
+search capability.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Physics-Discovery Agent
+A fuzzer asks two questions after every execution: Did any-
+thing new happen? Where have I not been? Both are cheap
+to answer within a research loop, and both can change what
+an agent discovers. We added both readings to an agent on
+DiscoverPhysics, a benchmark of simulated physics worlds.
+In each round, the agent designs an experiment, observes
+noisy trajectories, and fits candidate laws. It ultimately sub-
+mits one law as code with a mechanistic explanation. The
+Loop as deployed
+refit in place
+budget spent:
+submitted anyway
+With the fuzzer&#x27;s two readings
+nothing new
+nothing new
+already coverednew regime
+gated, then
+submitted
+where the hidden law shows regimes the experiments have covered
+Figure 5.One budget, two searches. Same hidden terrain, twelve
+experiments each; orange marks where the hidden law shows, blue
+the regimes covered. Left: the loop as deployed </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>every
+held-out trajectory within noise, and named the wrong force
+law. The first agent never asked whether anything in its data
+was new; the second never asked where it had not been. We
+contrast the searches produced by the same budget with and
+without the two questions (Figure 5).
+We instrument the agent as a fuzzer instruments a program.
+The same design applies beyond physics. The loop has three
+parts. First, it computes readings that answer the two ques-
+tions above using only artifacts the agent has already pro-
+duced. Second, it injects those readings into the control loop
+so that they can influence the next action. Third, it keeps
+certification outside the loop, as section 5 requires. For
+DiscoverPhysics, our task harness computes two readings.1
+Surpriseis the σ-normalized residual of the current law on
+the data collected so far; theenveloperecords the range
+explored for each </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>decided.
+Figure 6.One world, two runs of the same agent. (a) Fit loss on
+the agent&#x27;s own data against the noise floor a correct law reaches;
+the starred round-four answer redirected the search (the panel was
+acknowledged every round). (b) The protected verdict neither run
+could see.
+went unmentioned for an entire run. No protected infor-
+mation crosses the boundary; held-out tests and the judged
+explanation stay outside the loop.
+In Figure 6, we compare two runs and trace how the panel
+changed the verdict. In a world with three hidden particle
+species, the agent fit twelve successive laws in both runs.
+Without the panel, the loss never came within twenty times
+the noise floor the agent had measured. The submitted law
+also placed the species in a field of the wrong form. Its
+trajectory error fell below the benchmark&#x27;s threshold, but
+the judged explanation scored 0.4 against a threshold of</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>round four, it responded: &quot;the valid-case fit is far above the
+noise scale; I will therefore test whether the missing struc-
+ture is species-dependent source and response charge rather
+than collect more redundant trajectories.&quot; Subsequent fits
+introduced per-species source strengths and reduced the loss
+from 19.6 to about twice the noise floor. The submitted law
+named the three species in the ratio 1 : 3 :−2 and scored
+1.0 on the explanation. Its trajectory error was smaller by a
+factor of ninety.</blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>evidence does not justify
+rejecting it universally. Across the benchmarks studied by
+Brown et al. [8], however, the fraction of problems solved
+grew approximately log-linearly over the measured range
+and produced diminishing marginal returns. We claim that
+adaptive feedback can improve this exchange rate without
+replacing scalable computation with hand-tuned heuristics.
+&quot;Open-ended research has no stable search space, so
+coverage is undefined.&quot;Coverage does not require an
+enumeration of every reachable behavior, but a fixed tar-
+get and its instrumentation still define what the fuzzer can
+observe. Research is harder because its hypotheses and
+representations may change during a campaign. Our pro-
+8
+Agentic Auto-Research is Fuzz Testing
+posal therefore assumes a declared problem and an explicit
+progress representation that can grow as observations accu-
+mulate. It does not cover an agent </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>that redefines what counts
+as a candidate or discovery. Within this boundary, guidance
+can compare each new experiment with the accumulated
+record rather than with an enumerated whole.
+&quot;Research has no oracle, so the analogy breaks.&quot;
+Fuzzing has its own oracle problem [3], and real campaigns
+use imperfect, deferred, differential, or human-assisted
+checks. A typical campaign does not separate oracle and
+guidance by invocation schedule or assume that sanitizer
+checks inherently cost more. The same instrumented ex-
+ecution updates coverage and checks relevant operations
+for violations. The signals differ in role: the oracle judges
+the current input, while guidance identifies behavior absent
+from the campaign history. Guidance cannot certify a bug,
+and the oracle cannot efficiently explore the input space.
+Scientific validation may also be expensive or partial, so
+this semantic separation </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Auto-research should operate as instrumented, feedback-
+directed search: expose a cheap measure of epistemic
+progress; let the search policy use that measure to choose the
+next intervention; and let protected validation decide what
+counts as a discovery, since an optimized progress signal
+can no more certify a finding than coverage can certify a bug.
+The position stands or falls on the three controlled compar-
+isons stated above: candidate signals must predict protected
+outcomes, feedback-directed search must beat repeated sam-
+pling per validated discovery, and protected validation must
+reduce false discoveries relative to the optimized proxy. This
+division also locates the durable human role: researchers
+declare the problem at the front and ground the verdict at
+the back, while the agent runs the loop between them. Be-
+neath these three lessons, observable progress, principled
+search, </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +269,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

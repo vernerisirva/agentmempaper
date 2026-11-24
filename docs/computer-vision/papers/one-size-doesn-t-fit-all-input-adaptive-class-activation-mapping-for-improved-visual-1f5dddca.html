@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>One Size Doesn&#x27;t Fit All: Input Adaptive Class Activation Mapping for Improved Visual Explanations</title>
+  <meta name="description" content="Daily Paper Scout library of object detection, YOLO and real-time detectors, segmentation, tracking, and modern computer vision.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory</a> <a href="../../deep-research/index.html">Deep Research</a> <a href="../../engram/index.html">Engram</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>One Size Doesn&#x27;t Fit All: Input Adaptive Class Activation Mapping for Improved Visual Explanations</h1>
+          <p class="hero-copy">Ayesha Sahar, Tahir Mustafa Madni, Tehseen Zia, David Windridge, Uzair Iqbal Janjua, Waleed Umar</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2611.29993v1">Open paper</a>
+            <a class="paper-detail-link" href="one-size-doesn-t-fit-all-input-adaptive-class-activation-mapping-for-improved-visual-1f5dddca.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Ayesha Sahar, Tahir Mustafa Madni, Tehseen Zia, David Windridge, Uzair Iqbal Janjua, Waleed Umar</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-11-23</dd></div>
+              <div><dt>Publication date</dt><dd>2026-11-23</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>arxiv</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>high</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2611.29993">arXiv</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies object-detection architecture, training, or evaluation.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Despite their widespread use in tasks such as image classification, object detection and semantic segmentation, the limited interpretability of Convolutional Neural Networks (CNNs) and Vision Transformers (ViTs) can undermine trust and hinder adoption in safety-critical applications. Explainable artificial intellige...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The work presents an adequately scoped, well-formalized post-hoc explainability method backed by rigorous empirical benchmarks on standard vision datasets and models, extensive ablation studies, and clear reporting of methodological boundaries.</p>
+      <p>The authors document the increased computational footprint from second-order Hessian backward passes, higher variance on certain CNN curvature distributions, and less compact localization on complex multi-object or cluttered scenes.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-24T14:42:56.179638+00:00.</p>
+        <p>Coverage: 73994 of 73994 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Despitetheirwidespreaduseintaskssuchasimageclassification,objectdetectionandsemantic
+segmentation,thelimitedinterpretabilityofConvolutionalNeuralNetworks(CNNs)andVision
+Transformers (ViTs) can undermine trust and hinder adoption in safety-critical applications.
+Explainable artificial intelligence (XAI) methods seek to address this by providing human-
+understandable explanations for model predictions. Class Activation Maps (CAM) constitute
+one such widely used XAI technique for visualizing discriminative regions. However, existing
+CAMmethodsmayexhibitlimitationsinchannelweighting,localization,andadaptabilityacross
+network architectures potentially resulting in noisy or imprecise explanations. To address these
+issues, we propose ADAPT-CAM, a gradient-based, parameter-adaptive CAM framework. The
+method combines first-order gradient energy with activation-weighted second-order curvature
+to </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>processes highlight the importance of contextual processing, adaptive response
+regulation and selective information representation in visual perception.
+Taking inspiration from these principles, we propose ADAPT-CAM, a gradient-based, parameter-adaptive CAM
+framework. It first combines first-order gradient energy with an activation-weighted second-order curvature term to
+producepower-scaledchannelweighting.Motivatedbycontextualcontrastprocessing,weincorporateadaptiveLocal
+ContrastNormalization(LCN).Itsneighborhoodsizeisdeterminedthroughaparticipation-ratio-basedmechanismto
+adjust spatial contrast evaluation according to the distribution of gradient-weighted activations. Drawing inspiration
+from selective response modulation, a cumulative contribution-based knee-point detection mechanism identifies the
+transition between dominant and lower-ranked channels. It is followed by a knee-guided </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>exponential rank-based
+mask that progressively attenuates lower-ranked channels without completely discarding them. The key parameters
+governing these operations are estimated independently for each input rather than fixed across the dataset or model
+architecture. This reflects the stimulus-dependent nature of biological visual processing in which neuronal responses
+adapt to the specific characteristics of each visual stimulus rather than remaining uniform across different inputs.
+Together, these complementary components form a balanced design that produces precise, stable and class-specific
+activation maps.
+The main contributions of this work are summarized as follows:
+•ADAPT-CAM is introduced as a unified formulation whose key parameters are derived per image allowing
+adaptation to different visual domains (e.g. medical vs. natural images) and task granularities e.g. coarse, </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Given an input image and a class of interest (e.g., &#x27;Norwich Terrier&#x27;), we forward propagate the image through
+the trained CNN to obtain a set of non-class conditioned convolutional feature maps. We then compute first-, second-
+order gradients of the target class score with respect to these feature maps. Based on these gradients, adaptive power-
+scaled channel weights𝛼𝑘 are computed to quantify the contribution of each channel. In parallel, adaptive LCN is
+applied to enhance discriminative spatial responses within each feature map with it&#x27;s neighborhood size determined
+by the effective spatial distribution of gradient-weighted activations. The resulting LCN maps are combined with the
+rectified first-order gradients and their corresponding𝛼𝑘 weights to produce spatially resolved channel </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>First-order
+gradients quantify the local sensitivity of the target score to feature activations, whereas second-order derivatives
+characterize how this sensitivity changes with respect to activation variations. Their combination therefore provides
+information about both gradient magnitude and activation-dependent curvature.
+Let𝑠 𝑐 denote post-softmax probability of the target class𝑐and let𝐴𝑘(𝑖,𝑗)denote the activation of channel𝑘at
+spatial location(𝑖,𝑗)in the last convolutional feature map. The first-order gradient is denoted by𝑔𝑘. For the second-
+order term, we use the curvature responseℎ𝑘(𝑖,𝑗) =𝜕 (∑𝑘′,𝑖′,𝑗′𝑔𝑘′(𝑖′,𝑗 ′))∕𝜕𝐴𝑘(𝑖,𝑗), which is the Hessian of𝑠𝑐
+with respect to the feature map applied to a unit vector. This is a spatially and channel-aggregated curvature proxy
+rather than a full or diagonal Hessian, and it requires only one additional backward pass. This keeps the cost close </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>to
+that of first-order methods and reflects how the gradient field around each activation changes under the nonlinearities
+Sahar et al.:Preprint submitted to ElsevierPage 4 of 19
+ADAPT-CAM
+between the feature map and the class score. To characterize the contribution of each channel from complementary
+gradient perspectives, we compute two channel-wise statistics: gradient energy𝐸𝑘 and activation-weighted curvature
+contribution𝑄 𝑘:
+𝐸𝑘 =
+∑
+𝑖,𝑗
+𝑔𝑘(𝑖,𝑗) 2, 𝑄 𝑘 = ∑
+𝑖,𝑗
+|ℎ𝑘(𝑖,𝑗)||𝐴𝑘(𝑖,𝑗)|(1)
+The gradient energy𝐸𝑘 quantifies the accumulated first-order sensitivity of the target score to each channel, with
+squaring preventing positive and negative gradient responses from cancelling one another. However, a first-order
+gradientisonlyalocallinearestimateofhowthescorerespondstoachannel,anditsreliabilitydependsonhowquickly
+thatresponsechangesaroundthecurrentactivations.Tocapturethis,𝑄 𝑘 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>combinesthemagnitudeofthesecond-order
+responsewiththecorrespondingactivations,sothatthecurvaturecontributiondependsonthefeaturespresentineach
+channel rather than treating second-order responses independently of their activations.
+We use these two statistics to formulate a curvature-modulated channel weighting:
+𝛼𝑘 =
+𝐸𝑝𝑘(𝐸𝑘 +𝜆 rel𝑄𝑘)𝑝 +𝜖 (2)
+Here,𝐸 𝑘 denotes the gradient energy of channel𝑘, while𝑄𝑘 represents its activation-weighted curvature contri-
+bution. The resulting coefficient𝛼𝑘 acts as a curvature-dependent modulation of the first-order channel contribution
+rather than an independent measure of channel importance. Specifically, it can be expressed approximately as
+𝛼𝑘 ≈
+(
+1 +𝜆 rel
+𝑄𝑘
+𝐸𝑘
+)−𝑝
+,
+making its dependence on the relative curvature contribution explicit. Thus,𝛼𝑘 approaches one when the curvature
+contribution is small relative to the gradient energy and decreases as the </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and non-negligible curvature contribution, and let
+𝑤𝑘 =𝐸 𝑘∕∑𝑗∈𝐸𝑗 represent the normalized share of gradient energy carried by channel𝑘∈. Then,
+𝜆rel = exp
+(∑
+𝑘∈
+𝑤𝑘 ln𝐸𝑘𝑄𝑘).(3)
+Thisprovidesanimage-dependentcalibrationbetweengradientenergyandcurvaturebyaggregatingtheirrelative
+contributions across valid channels. Channels with larger gradient energy exert greater influence on this estimate,
+while the geometric mean limits the influence of channels with extreme𝐸𝑘∕𝑄𝑘 ratios. If no channel satisfies the
+validity condition,𝜆 rel is set to zero, resulting in no curvature modulation. The exponent𝑝, in contrast, is estimated
+Sahar et al.:Preprint submitted to ElsevierPage 5 of 19
+ADAPT-CAM
+exclusively from the distribution of channel gradient energies. We sort the energies of channels with non-negligible
+gradient energy in descending order,𝐸(1) ≥𝐸 (2) ≥…, and fit a straight line toln𝐸(𝑟) </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>againstln𝑟using least squares.
+The decay rate𝑠is defined as the negative of the fitted slope and clipped at zero to ensure𝑠≥0. The exponent is
+subsequently determined as
+𝑝= 𝑠1 +𝑠 , (4)
+which maps the estimated decay rate to the interval[0,1). A steeper decay indicates that gradient information is
+concentrated in fewer channels, producing a value of𝑝closer to one, whereas a flatter distribution produces a value
+closer to zero. Together, these image-dependent parameters adapt the relative curvature modulation and its nonlinear
+attenuation according to the gradient characteristics of each input image. Consequently, the resulting weighting
+regulateschannelcontributionsbyaccountingfortheirfirst-ordersensitivityandrelativeactivation-weightedcurvature.
+The resulting channel-wise coefficients𝛼𝑘 are reshaped and broadcast across the spatial dimensions of the feature
+maps. They subsequently </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Although the channel-wise weighting captures the relative importance of feature channels, it does not explicitly
+account for the spatial distribution of discriminative information within individual feature maps. Moreover, relying
+exclusively on gradient responses may overlook locally distinctive activation patterns that provide useful structural
+information. To address these limitations, we introduce adaptive Local Contrast Normalization (LCN) followed by a
+spatially resolved combination of channel importance, positive gradients, and local contrast.
+For adaptive neighborhood estimation, we first construct a gradient-weighted activation map by aggregating the
+absolute products of activations and their corresponding first-order gradients across channels:
+𝑀(𝑖,𝑗) =
+𝐾∑
+𝑘=1
+|𝑔𝑘(𝑖,𝑗)𝐴𝑘(𝑖,𝑗)|(5)
+This map represents the spatial distribution of activation responses weighted by their gradient </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>magnitudes,
+providing an indication of where feature activity is associated with changes in the target prediction. We estimate the
+effective spatial extent of this distribution using the participation ratio:
+𝑅ef f =
+(∑
+𝑖,𝑗𝑀(𝑖,𝑗)
+)2
+∑
+𝑖,𝑗𝑀(𝑖,𝑗) 2 +𝜖 (6)
+The participation ratio estimates the number of spatial locations effectively contributing to the distribution:
+concentrated responses produce a smaller value, whereas broadly distributed responses produce a larger one. We
+convert this effective area into an equivalent spatial radius and determine the LCN window size as:
+𝑠= Odd
+(
+Clip
+(
+Round
+(
+2
+√
+𝑅ef f
+𝜋
+)
+,3,𝑠 max
+))
+(7)
+where𝑠 max is the largest odd window size not exceeding the smaller feature-map dimension. The window is
+constrainedtoaminimumofthreepixels,witha1 × 1windowusedwhenthefeature-mapdimensionsareinsufficient.
+This image-dependent estimation avoids imposing the same </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>normalization scale on inputs with different spatial
+distributions of gradient-weighted activations.
+Using this neighborhood, we calculate the local mean𝑚𝑘(𝑖,𝑗)and standard deviation𝜎𝑘(𝑖,𝑗)of each feature map
+through local averaging. The resulting local contrast is defined as:
+Sahar et al.:Preprint submitted to ElsevierPage 6 of 19
+ADAPT-CAM
+𝐶𝑘(𝑖,𝑗) = |𝐴𝑘(𝑖,𝑗) −𝑚 𝑘(𝑖,𝑗)|𝜎𝑘(𝑖,𝑗) + 10 −4 (8)
+where the local standard deviation is obtained from the local second moment, with its variance bounded below
+by10 −12 for numerical stability. By measuring activation deviations relative to their surrounding local variation, this
+normalization emphasizes spatially distinctive responses while reducing the relative contribution of activations that
+are homogeneous within their neighborhoods. Consequently, the adaptive neighborhood allows local contrast to be
+evaluated at a spatial scale determined by the </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>effective distribution of gradient-weighted activations.
+We subsequently combine the previously computed channel-wise weighting coefficient𝛼𝑘 with the positive first-
+order gradients and local contrast map to obtain the combined per-channel spatial contribution:
+̃𝐴𝑘(𝑖,𝑗) =𝛼 𝑘⋅ReLU(𝑔𝑘(𝑖,𝑗))⋅𝐶 𝑘(𝑖,𝑗)(9)
+where𝛼 𝑘 represents the channel-level importance derived from the power-scaled combination of gradient energy
+and curvature information,𝑔𝑘(𝑖,𝑗)denotes the spatially varying first-order gradient, and𝐶𝑘(𝑖,𝑗)captures the local
+structural contrast within the corresponding feature map.
+The three components in Eq. (9) provide complementary information. First,𝛼𝑘 determines the relative contribu-
+tion of each channel by incorporating its gradient energy and curvature-weighted activation contribution. Second,
+ReLU(𝑔𝑘(𝑖,𝑗))preserves positive gradient responses at individual spatial locations, </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>̃𝐴𝑘(𝑖,𝑗)fromEq.(9),wecalculatetheimportanceofeachchannelthrough
+spatial aggregation:
+𝑤𝑘 =
+∑
+𝑖,𝑗
+̃𝐴𝑘(𝑖,𝑗) (10)
+These scores represent the overall contribution of each channel after incorporating gradient-based importance,
+spatialclasssensitivity,andlocalcontrast.Onlychannelswithpositiveimportance(𝑤 𝑘&gt;0)areconsidered,excluding
+channels that provide no positive class-relevant contribution. The remaining channels are sorted in descending order
+of importance, with𝑟𝑘 denoting the rank of channel𝑘. Their normalized cumulative contributions are then examined
+to identify the selection boundary.
+Specifically, the adaptive selection boundary𝐾is determined through knee-point detection as the rank corre-
+sponding to the maximum perpendicular distance between the cumulative contribution curve and the straight line
+connecting its endpoints. This identifies the transition between dominant and </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>relatively less-contributing channels
+withoutrequiringapredefinedselectioncount.Ifthecumulativecurveiseffectivelylinearandnodistinguishableknee
+exists,𝐾is set to the total number of active channels.
+Sahar et al.:Preprint submitted to ElsevierPage 7 of 19
+ADAPT-CAM
+To progressively suppress lower-ranked contributions without imposing a hard selection cutoff, we employ a
+continuous exponential rank-based selection mechanism:
+𝑚𝑘 = exp
+(
+−𝑟𝑘 − 1𝐾 ). (11)
+The highest-ranked channel receives a selection coefficient of one, while the coefficients of subsequent channels
+decay exponentially according to their ranks. The decay scale is determined entirely by the image-adaptive knee
+𝐾. Consequently, contribution distributions with a smaller detected knee produce faster attenuation of </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>lower-ranked
+channels,whereasdistributionswithalargerkneeresultinamoregradualdecay.Thisallowstheselectionmechanism
+to adapt to the contribution distribution of each input while avoiding abrupt channel removal, predefined channel
+counts, or manually specified attenuation parameters.
+Finally,theselectioncoefficientsaremultipliedbytheircorrespondingoriginalchannelimportancescorestoobtain
+the normalized final channel weights:
+𝑤f inal𝑘 = 𝑤𝑘𝑚𝑘𝐶∑
+𝑗=1
+𝑤𝑗𝑚𝑗 +𝜖
+, (12)
+where𝐶denotes the total number of feature channels and𝜖is a small numerical constant for numerical
+stability.Channelswithzeroimportancereceivezeroweight,whereasallpositive-importancechannelsretainnonzero
+contributions through the continuous selection mechanism. The resulting normalized weights preserve the relative
+importance of dominant channels while progressively reducing the influence of weaker contributions. These weights
+are </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The resulting weights are normalized and used to combine the original feature maps, producing the final CAM:
+𝐿CAM(𝑖,𝑗) =
+𝐶∑
+𝑘=1
+𝑤f inal𝑘
+∑𝐶
+𝓁=1𝑤f inal𝓁 +𝜖 𝐴𝑘(𝑖,𝑗).(13)
+Theresultingactivationmapissubsequentlysmoothedandresizedtotheinputresolution.Gaussiansmoothing[30]
+is applied as a spatial post-processing operation because the combined effect of LCN and channel selection produces
+highly localized and specific activation responses. It attenuates abrupt local variations by incorporating neighbouring
+activation values according to their spatial proximity, thereby promoting spatial continuity and producing a more
+coherent representation. ADAPT-CAM employs mild smoothing of𝜎= 0.5to produce a smoother representation
+while retaining the overall activation structure. This operation does not alter the channel-selection weights or their
+relative importance and only refines the spatial </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ADAPT-CAM is evaluated across multiple CNN and Transformer architectures on two image classification
+datasets: ImageNet [31] and Oxford 102 Flowers [32]. For ImageNet [31], experiments are conducted using
+DenseNet121 [33], ResNet-50 [34], DINOv2 [35], and ViT-B/16 [36] on 500 randomly selected validation images.
+For Oxford 102 Flowers [32], experiments are conducted using ResNet-50 [34] and ViT-B/16 [36] on 500 randomly
+selected images to further assess performance on a fine-grained classification dataset. The final convolutional layer is
+usedasthetargetlayerinCNNarchitecturesforallCAMmethods.Intransformerarchitectures,thefeaturesaretaken
+fromthefinalencoderblockoutput,CLStokenexcludedandtheremainingpatchtokensreshapedintotheirrespective
+spatial grids. The 768-dimensional token embeddings are treated as feature channels with each embedding dimension
+forming a spatial feature map across </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the patch grid. This evaluation covers both conventional CNN architectures as
+well as Vision Transformers. Although ADAPT-CAM was initially designed and formulated with CNNs in mind, its
+Sahar et al.:Preprint submitted to ElsevierPage 8 of 19
+ADAPT-CAM
+Table 1
+Evaluation of ADAPT-CAM and baseline methods on ImageNet using DenseNet-121 and ResNet-50 (mean±SEM over
+500 images)
+Architecture Method Insertion↑Deletion↓Avg Drop (%)↓Avg Increase (%)↑
+DenseNet
+Grad-CAM [18] 0.517±0.0120 0.097±0.0044 52.785±1.8957 10.80±1.39
+Grad-CAM++ [19] 0.578±0.0121 0.094±0.0042 38.860±1.8024 18.60±1.74
+Smooth Grad-CAM++ [20] 0.510±0.0121 0.127±0.0061 47.510±1.6147 6.60±1.11
+XGrad-CAM [21] 0.444±0.0131 0.184±0.0082 59.005±1.5634 3.60±0.83
+Score-CAM [23] 0.471±0.0102 0.233±0.0103 41.795±0.9252 7.80±1.20
+EigenCAM [24] 0.526±0.0136 0.092±0.0051 48.967±1.4472 3.10±0.76
+ADAPT-CAM (Ours) 0.582±0.0119 0.089±0.0046 </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>16.756±1.1258 34.60±2.13
+ResNet
+Grad-CAM [18] 0.508±0.013 0.093±0.005 54.105±1.439 7.85±1.20
+Grad-CAM++ [19] 0.506±0.013 0.122±0.004 41.195±1.706 10.40±1.37
+Smooth Grad-CAM++ [20] 0.430±0.012 0.136±0.006 53.023±0.975 11.89±1.45
+XGrad-CAM [21] 0.498±0.013 0.122±0.006 64.939±1.447 5.90±1.05
+Score-CAM [23] 0.523±0.013 0.116±0.005 48.928±1.302 12.75±1.49
+EigenCAM [24] 0.458±0.013 0.088±0.005 55.965±1.115 5.80±1.05
+ADAPT-CAM (Ours) 0.530±0.012 0.084±0.004 19.120±1.112 25.80±1.96
+evaluation on Transformer architectures also investigates its applicability beyond CNN-based models. All baseline
+methods are evaluated using their officially recommended parameter settings for fair comparison. The explanation
+quality is quantitatively evaluated using four established metrics: Insertion AUC, Deletion AUC [37], Average Drop,
+and Average Increase [19]. The study follows standard evaluation protocol for </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>these metrics using 50 steps and the
+softmax probability of the model-predicted class. Higher Insertion AUC and Average Increase, together with lower
+Deletion AUC and Average Drop, indicate more faithful explanations. All metrics are reported as mean±standard
+error of the mean (SEM), calculated over the 500 evaluated images. Lower SEM values indicate more precise mean
+estimates whereas higher values indicate some level of uncertainty in the estimated means.</blockquote></details></li><li><strong>Contribution clarity — pages 10–11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DenseNet-121 [33] and ResNet-50 [34], respectively. These
+are considerably lower than the corresponding results of Grad-CAM++ [19] which is the closest baseline on both
+architectures recording 38.860% and 41.195%. Similarly, ADAPT-CAM obtains Average Increase values of 34.60%
+and25.80%ascomparedwith18.60%forGrad-CAM++[19]onDenseNet-121[33]and12.75%forScore-CAM[23]
+on ResNet-50 [34]. This consistent pattern across both architectures highlights a particularly substantial performance
+difference in these two metrics.
+The SEM values provide an indication of the precision of the estimated mean performance. For Insertion AUC,
+ADAPT-CAM exhibits SEM values comparable to those of the competing methods on both architectures indicating
+Sahar et al.:Preprint submitted to ElsevierPage 9 of 19
+ADAPT-CAM
+Table 2
+Evaluation of ADAPT-CAM and baseline methods on ImageNet using DINOv2 and ViT-B/16 </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(mean±SEM over 500
+images)
+Architecture Method Insertion↑Deletion↓Avg Drop (%)↓Avg Increase (%)↑
+DINOv2
+Grad-CAM [18] 0.786±0.012 0.533±0.015 13.220±0.841 29.60±2.04
+Grad-CAM++ [19] 0.798±0.013 0.520±0.015 13.390±0.868 25.55±1.95
+Score-CAM [23] 0.736±0.014 0.357±0.016 20.239±1.233 22.87±1.88
+RISE [37] 0.758±0.011 0.315±0.015 17.671±0.819 25.72±1.95
+Attention Rollout [38] 0.840±0.012 0.319±0.015 8.771±0.728 27.90±2.01
+ViT-CX [39] 0.775±0.014 0.451±0.016 16.347±1.191 26.07±1.96
+ADAPT-CAM (Ours) 0.875±0.016 0.104±0.006 7.288±1.104 31.20±2.07
+ViT-B/16
+Grad-CAM [18] 0.628±0.018 0.585±0.017 30.736±1.586 25.90±1.96
+Grad-CAM++ [19] 0.525±0.019 0.541±0.019 41.848±1.775 18.70±1.74
+Score-CAM [23] 0.642±0.018 0.580±0.017 29.104±1.580 28.95±2.03
+RISE [37] 0.734±0.011 0.484±0.017 20.171±0.785 29.90±2.05
+Attention Rollout [38] 0.727±0.016 0.494±0.015 21.659±1.165 32.10±2.09
+ViT-CX [39] 0.619±0.016 </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(mean±SEM
+over 500 images)
+Architecture Method Insertion↑Deletion↓Avg Drop (%)↓Avg Increase (%)↑
+ResNet-50
+Grad-CAM [18] 0.5127±0.0151 0.2594±0.0054 32.97±1.687 11.12±1.41
+Grad-CAM++ [19] 0.5391±0.0130 0.2479±0.0068 46.44±1.898 14.80±1.59
+Smooth Grad-CAM++ [20] 0.5388±0.0117 0.2647±0.0067 47.46±1.564 5.34±1.01
+XGrad-CAM [21] 0.4923±0.0133 0.3181±0.0059 62.62±1.762 4.22±0.90
+Score-CAM [23] 0.5453±0.0115 0.2260±0.0059 38.44±1.768 8.70±1.26
+EigenCAM [24] 0.5338±0.0089 0.2880±0.0057 31.33±1.512 3.80±0.86
+ADAPT-CAM (Ours) 0.5567±0.0098 0.2122±0.0038 21.84±1.447 16.12±1.64
+ViT-B/16
+Grad-CAM [18] 0.5487±0.0110 0.468±0.016 31.24±1.486 9.89±1.34
+Grad-CAM++ [19] 0.5597±0.0120 0.487±0.016 29.18±1.676 10.42±1.37
+Score-CAM [23] 0.6527±0.0124 0.551±0.016 19.89±1.470 17.87±1.71
+RISE [37] 0.7743±0.00790.364±0.01517.68±0.985 15.16±1.60
+Attention Rollout [38] 0.8037±0.0103 0.409±0.017 15.35±1.176 </blockquote></details></li><li><strong>Contribution clarity — pages 15–16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>weaker
+channelcontributionsoccursatconsiderablyearlierranksintheconvolutionalfeaturesthaninthetransformerfeatures.
+AlthoughViT-B/16[36]hasthelargestabsolutekneerank(316.43),thisrepresentsasmallerproportionofitsavailable
+Sahar et al.:Preprint submitted to ElsevierPage 14 of 19
+ADAPT-CAM
+Table 4
+Cross-architecture comparison of image-adaptive parameters in ADAPT-CAM (mean±SD over 200 randomly selected
+ImageNet images)
+Parameter DenseNet-121 [33] ResNet-50 [34] ViT-B/16 [36] DINOv2 [35]
+𝑝0.7848±0.0068 0.6777±0.0889 0.3295±0.0315 0.3998±0.0186
+𝜆rel 0.1300±0.4486 0.0018±0.0052 0.0028±0.0027 0.0417±0.0244
+Detected Knee Rank (𝐾) 57.66±12.12 218.91±75.58 316.43±35.23 232.62±32.13
+Detected Knee Rank (%) 5.63±1.18 10.69±3.69 41.20±4.59 30.29±4.18
+Adaptive LCN Window 6.10±1.00 5.07±0.84 9.10±1.96 8.96±1.90
+Adaptive LCN Window (%) 87.14±14.25 72.43±11.94 65.00±14.01 56.00±11.89
+channels than the </blockquote></details></li><li><strong>Contribution clarity — pages 16–17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>staying
+fairlyconsistentwithineachmodel.Thissupportsestimatingthemperimageandpermodelratherthanfixingasingle
+configuration.
+Sahar et al.:Preprint submitted to ElsevierPage 15 of 19
+ADAPT-CAM
+Table 5
+Ablation study of ADAPT-CAM components and adaptive parameter settings
+Configuration Deletion AUC Insertion AUC Average Drop (%) Average Increase (%)
+A1: No𝜆 rel (Without Curvature) 0.1617 0.6244 17.48 34.16
+A2:𝜆 rel = 10.1280 0.6511 15.40 37.22
+A3:𝑝= 10.1253 0.6637 12.57 39.91
+A4:𝑝= 0.10.1420 0.6448 14.25 37.62
+A5: No Channel Selection 0.1531 0.6356 16.16 35.50
+A6: Hard Channel Selection 0.1338 0.6454 13.19 38.42
+A7: No LCN 0.1460 0.6439 18.46 35.20
+A8: Fixed LCN Window (= 3) 0.1243 0.6645 16.34 36.65
+A9: Fixed LCN Window (= 7) 0.1326 0.6558 15.64 38.18
+A10: No Gaussian Smoothing 0.1169 0.6650 13.72 40.78
+ADAPT-CAM (Baseline) 0.1060 0.6738 10.92 42.46</blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To quantify the contribution of each component of ADAPT-CAM, we conducted an ablation study on DenseNet-
+121 using 250 images from the ImageNet dataset. Table 5 reports Deletion AUC (lower is better), Insertion AUC
+(higherisbetter),AverageDrop(lowerisbetter),andAverageIncrease(higherisbetter)fortenvariants,eachobtained
+bymodifyingorremovingasinglecomponentwhilekeepingtherestofthepipelineunchanged.ThefullADAPT-CAM
+configurationachievesthebestresultonallfourmetrics(DeletionAUCof0.1060,InsertionAUCof0.6738,Average
+Dropof10.92%,andAverageIncreaseof 42.46%).Thisindicatesthatthecomponentsarecomplementaryratherthan
+redundant.
+Removing the curvature term (A1, no𝜆rel) causes the largest degradation in Deletion AUC (0.1617) and Insertion
+AUC (0.6244), showing that second-order information is the most influential component. Replacing the adaptive𝜆rel
+with a fixed value of 1 (A2) also hurts </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to computer-vision research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Object-detection method</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to computer vision / object detection</dt>
+              <dd>Concerns object-detection architecture, training, or evaluation</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 100/100</li>
+              <li>Screening category: Object detection</li>
+              <li>Tags: object-detection, segmentation, vision-transformer, visual-representation, benchmark</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-23</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-24 14:40:12</li><li>Last seen by Paper Scout: 2026-11-24 14:40:12</li></ul>
+            <ul><li>arXiv: 2611.29993</li><li>arXiv IDs: 2611.29993</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="one-size-doesn-t-fit-all-input-adaptive-class-activation-mapping-for-improved-visual-1f5dddca.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>One Size Doesn&#x27;t Fit All: Input Adaptive Class Activation Mapping for Improved Visual Explanations. Ayesha Sahar, Tahir Mustafa Madni, Tehseen Zia, David Windridge, Uzair Iqbal Janjua, Waleed Umar. 2026-11-23. https://arxiv.org/abs/2611.29993v1</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,78 @@
+# Paper Scout Live Smoke Report - 2026-11-24
+
+- **CI mode:** True
+- **Sources attempted:** 3
+- **Sources succeeded:** 2
+- **Sources failed:** 1
+- **Raw records:** 275
+- **Candidates fetched:** 146
+- **Unique papers:** 140
+- **State initialized:** True
+- **Idempotency passed:** True
+
+## Sources
+
+### arxiv
+
+- Status: Success
+- Queries attempted: 4
+- Raw records: 100
+- Converted candidates: 46
+- Sample title: SHAKTI: Evidence-Grounded Conversational AI for Nutrition and Health
+- Sample source ID: 2611.29988
+- Sample URL: https://arxiv.org/abs/2611.29988v1
+- Sample published date: 2026-11-23
+- Abstract: yes
+
+### openalex
+
+- Status: Success
+- Queries attempted: 4
+- Raw records: 100
+- Converted candidates: 100
+- Sample title: Seer: Guiding Small Deep-Research Agents with Shared Decision Models
+- Sample source ID: W7237069451
+- Sample URL: https://arxiv.org/abs/2611.26423
+- Sample published date: 2026-11-19
+- Abstract: yes
+
+### semantic_scholar
+
+- Status: Failed
+- Queries attempted: 4
+- Raw records: 75
+- Converted candidates: 0
+- Error: HTTP/API error: Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+
+
+## Decisions
+
+- relevant: 19
+- maybe: 5
+- irrelevant: 116
+
+## Top Relevant Or Maybe Papers
+
+- **The Harness Is the Lab: Measured Self-Improvement for Ontology-Grounded AI Scientists** (relevant, 95/100): Studies AI-scientist or scientific-discovery agents. https://doi.org/10.5281/zenodo.24144799
+- **TwinLab-Bench: Evaluating AI Scientists in Agentic Twins of Real Labs** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://arxiv.org/abs/2611.26248v1
+- **TwinLab-Bench: Evaluating AI Scientists in Agentic Twins of Real Labs** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://arxiv.org/abs/2611.26248
+- **The AI scientist in the mirror: Shared flaws, joint remedies** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://doi.org/10.1073/pnas.2633303123
+- **Inventa: Decentralized Self-Improving Agents for Autonomous Scientific Discovery** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://arxiv.org/abs/2611.21847v1
+- **Inventa: Decentralized Self-Improving Agents for Autonomous Scientific Discovery** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://arxiv.org/abs/2611.21847
+- **Ground, Iterate, Trace: Decomposing AI Research Ideation** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://arxiv.org/abs/2611.24887v1
+- **Eliciting Research Taste in LLMs through Future Research Direction Choice** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://arxiv.org/abs/2611.19794v1
+- **DiscoveryAgent: A Framework for Scientist-centric Agentic AI** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://arxiv.org/abs/2611.21950v1
+- **DiscoveryAgent: A Framework for Scientist-centric Agentic AI** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://arxiv.org/abs/2611.21950
+
+## Source Failures
+
+- semantic_scholar (HTTP/API error) for `automated literature review`: Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+
+## Deduplication Examples
+
+- arxiv:2611.20045: arxiv:2611.20045, arxiv:2611.20045
+- arxiv:2611.19202: arxiv:2611.19202, arxiv:2611.19202
+- arxiv:2611.21950: arxiv:2611.21950, arxiv:2611.21950
+- arxiv:2611.26343: arxiv:2611.26343, arxiv:2611.26343
+- doi:10.48550/arxiv.2611.23323: openalex:W7236692867, openalex:W7236692867
+- doi:10.48550/arxiv.2611.13994: openalex:W7225800606, openalex:W7225800606

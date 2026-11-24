@@ -59,16 +59,307 @@
             <p>Long-running adaptive intelligent agents face a structural tension between knowledge consolidation and information integrity. Memory consolidation is conventionally treated as an agent-changing operation: a model is fine-tuned, a prompt rewritten, a policy distilled, or a reflection appended to the context that gove...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not been assessed under the manuscript evidence gate.</p>
-      <p>Legacy assessment retained; manuscript review is required before promotion.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper presents a clearly bounded, methodologically sound, and rigorously documented contribution combining theoretical proofs with reproducible implementation and evaluation controls. All performance claims are grounded in transparent statistical reporting and robust sensitivity analyses.</p>
+      <p>The manuscript explicitly documents clear limitations, including the restriction of v1 to structured tabular fields without linguistic abstraction, the absence of an explicit temporal decay or forgetting mechanism, dependence on trusted episodic inputs without cryptographic poisoning defences, and the deferral of LLM-assisted consolidation to future work.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: title_and_abstract.</p>
-        <p>Assessor: deterministic. Assessment version: quality-v1. Gate: not assessed.</p>
-        <p>Assessed: 2026-08-09T06:27:35+00:00.</p>
-
-        <ul><li>The contribution is stated explicitly.</li><li>A baseline or comparison system is described.</li><li>Formal definitions or proof-oriented evidence is present.</li></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-24T14:42:12.620094+00:00.</p>
+        <p>Coverage: 75346 of 75346 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Long-running adaptive intelligent agents face a structural tension between
+knowledge consolidation and information integrity. Memory consolidation is
+conventionally treated as an agent-changing operation: a model is fine-tuned,
+a prompt rewritten, a policy distilled, or a reflection appended to the context
+that governs future behaviour. In regulated autonomic deployment this is a
+liability because the agent operates under commitments and audit contracts
+that bind to a specific, cryptographically certified identity. We propose to
+treat consolidation not as a mutation of the planner or the identity manifest,
+but as a deterministic functionf : M epA →M semA from the agent&#x27;s episodic
+event logM epA (an append-only record of past interactions) to a separately
+addressable semantic knowledge layerM semA (queryable, consolidated facts
+derived from that log); the identity hash does not readM </blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>semA , so consolidation
+updates knowledge without changing the agent&#x27;s certified identity. We give a
+formal account of the agent representation, prove identity invariance through
+a structural lemma on the manifest&#x27;s hash-input set, specify a deterministic
+aggregation algorithm whose outputs are auditable database rows with explicit
+confidence and supporting- event provenance, and validate the construction
+with synthetic experiments demonstrating per-field correctness, byte-equal
+∗Corresponding authors.
+Email addresses:qinxue@me.com(Xue Qin),luansiminiot@gmail.com
+(Simin Luan),cong.yang@suda.edu.cn(Cong Yang),lizhijun_os@hit.edu.cn
+(Zhijun Li)
+arXiv:2607.01988v1  [cs.AI]  2 Jul 2026
+identity across consolidation passes, and a mean79.8%reduction in unproduc-
+tive planner attempts (95% BCa CI[78.0%, 81.5%]across10seeds) against a
+calibrated Bayesian-shrunk baseline. The construction is a </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>certificate)
+from a derived semantic layer M semA = f (M epA ). The hash inputs exclude M semA by
+construction (Lemma 1); the planner readsM semA through a read-only surface and never
+mutates the manifest. The robot accumulates operational knowledge without moving its
+identity certificate.
+cryptographic certificate while still letting the agent become operationally
+smarter from lived experience.
+This paper asks: can an adaptive intelligent agent consolidate operational
+knowledge from episodic experience while its identity certificate remains
+byte-equal? Our answer, which we refer to asidentity-stable consolidation,
+treats consolidation not as a mutation of the planner or the identity manifest,
+but as a deterministic function over episodic memory whose output is a
+separately addressable semantic knowledge layerM semA which downstream
+planners query for grounding facts. The approach </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>table, computed from the episodic rows by a deterministic rule, and
+recoverable byte-for-byte from the same inputs. A reviewer can ask why the
+recommendation is25N and walk back to the supporting events. Figure 2
+walks through this same example end-to-end, including the manifest hash
+check that completes once consolidation is done.
+Framework overview.Identity-stable consolidation is realised through four
+elements that together constitute the framework developed in the remainder
+of the paper.(i)A formal model of agent state as a tuple(M,M epA ,M semA ,π )
+that explicitly separates the identity manifestM(the bytes hashed into the
+identity certificate) from the operational substrate the agent uses moment
+to moment (§3.1).(ii)A structural identity-invariance result (Lemma 1)
+that excludes the semantic layerM semA from the manifest&#x27;s hash-input set
+by construction rather than by runtime </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ory as M semA = f (M epA )and prove, via input-set inspection of the
+manifest&#x27;s hash (Lemma 1, Corollary 1), that the cryptographic identity
+hash is byte-equal across arbitrary sequences of consolidation passes,
+5
+by construction rather than by runtime check. The result follows from
+the type signature off and the field set of the manifest dataclass, not
+from a runtime assertion.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>v1consolidationpasswhoseoutputsareplaindatabaserowswithexplicit
+confidence, observation counters, and supporting-event provenance,
+enabling end-to-end traceability from any planner-consulted fact back
+to the supporting episodic evidence. The pass is idempotent, order-
+invariant, and recoverable byte-for-byte from the same inputs under the
+same rule version.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>contribution of consolidation structure against no-memory, uniform-
+confidence, and calibrated Bayesian-shrunk controls on a 1000-decision
+synthetic benchmark across10seeds (Table 1). The calibrated control
+retires the straw-man critique of the no-memory baseline: a mean
+79.82%reduction in unproductive planner attempts (95% BCa CI
+[78.02%, 81.49%]) holds against a held-out Bayesian-shrunk confidence
+estimate, while the cryptographic identity hash remains byte-equal
+across all consolidation passes (verified through SHA-256 recomputation,
+see V2 fixture).
+An LLM-assisted v2 is sketched only as future work (§3.3) because it
+introduces non-determinism that complicates audit; deploying it before v1
+stabilises would inherit the drift problem we are trying to avoid. Planner
+integration is realised through a read-only query interface (§3.4) that exposes
+M semA as grounding facts without giving </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The construction&#x27;s correctness rests on a structural property of the mani-
+fest&#x27;s hash-input set rather than on a runtime check. Concretely, we identify a
+class of operations that, by their signature alone, cannot modify the manifest
+and therefore cannot change the identity hash.
+Lemma 1(Structural identity invariance).Let Fsem denote the class of
+operationsf : M epA →M semA whose only write target is the semantic store.
+11
+For everyf∈F sem and every well-formed agent state(M,M epA ,M semA ,π ),
+applying f leavesM syntactically unchanged. Consequently, by determinism
+of SHA256(·)over canonical serialisations, h = SHA256(M )is byte-equal
+before and after applying anyf∈F sem.
+Proof (by input-set inspection).The hashh is a deterministic digest whose
+input is the canonical serialisation ofM&#x27;s fields. Inspection of the manifest
+dataclass declared in the runtime confirms that the field set is </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>fixed at type-
+design time and does not include any reference toM semA . Operations inFsem
+have M semA in their write footprint andM outside it; their effect on the
+agent state is therefore disjoint from the hash-input set, and the canonical
+serialisation ofM is unchanged. SHA-256 over the same byte string yields
+the same digest. The result is structural: it follows from the type signature
+of f and the field set ofM, not from a runtime assertion. Figure 3 visualises
+the input set and the structural exclusion that the proof rests on.
+Corollary 1(Iterated invariance).For any finite sequence f1,f 2,...,f k∈
+Fsem applied in any order, the identity hash remains byte-equal to its ini-
+tial value.
+The lemma is enforced by construction, not by runtime check: the type of
+f and the field set ofM are fixed at compile time, so the property cannot
+be violated by a well-typed implementation. A </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>input set by manifest field-set construction (it is
+not declared as a manifest field, so no canonical serialisation ofM ever reads its bytes).
+The invariance is therefore structural and compile-time: any operationf∈F sem writes
+only to the semantic store and cannot influence the bytes hashed.
+CREATE TABLE IF NOT EXISTS semantic_facts (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+identity_hash TEXT NOT NULL,
+fact_kind TEXT NOT NULL,
+fact_key TEXT NOT NULL,
+fact_value_json TEXT NOT NULL,
+last_updated TEXT NOT NULL,
+UNIQUE (identity_hash, fact_kind, fact_key)
+);
+The table is partitioned by identity_hash, mirroring the episodic
+store. The triple (identity_hash, fact_kind, fact_key) is unique: ex-
+actly one current fact exists for each stable key, and updates up-
+sert. The four fact_kind values that v1 supports in the shipped
+module are skill_success_rate, object_property, zone_risk, </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The algorithm module reads uncommitted episodic rows past the last
+checkpoint, aggregates them into stable-keyed semantic facts under an explicit
+confidence value, and guarantees that the resulting snapshot is reproducible
+byte-for-byte from the same inputs.
+Aggregation pass.A consolidation pass for one identity hash proceeds in
+five steps. (1)Read: select episodic rows whose timestamp is greater
+than the last consolidation checkpoint for this identity hash; the check-
+point is itself recorded as an episodic event of kind consolidation_run,
+so the next pass resumes cleanly. (2)Extract: project the structured
+fields already present in each row&#x27;s payload (skill_id, target class, envi-
+ronment descriptor, parameter values, success/failure flag, failure reason);
+rows whose payloads lack enough structure are skipped, as v1 deliberately
+does not attempt linguistic abstraction over free-form </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>summaries. (3)Group:
+bucket the records by stable keys; for skill_success_rate the natural
+key is (skill_id, target_class, environment), for interaction_pattern
+it is (skill_id, target_class, failure_reason). (4)Aggregate: compute
+counts, success rates, parameter distributions (mean and a robust band such
+as the IQR), and the most common failure reason per group. (5)Upsert:
+write the aggregated value into the semantic table under the unique key,
+with an updatedn_observations counter (cumulative across passes for this
+key), aconfidence value computed from observation count and variance, and
+a pointer to the last contributing episodic event id; the consolidation rule
+version is recorded insidefact_value_json. §3.2.3 describes the audit-append
+step that closes the pass.
+Determinism and idempotence.By construction, two consecutive consolida-
+tion passes against the same episodic state and </blockquote></details></li><li><strong>Contribution clarity — pages 14–15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the same rule version produce
+byte-equal semantic output. The first pass writes; the second pass observes
+no new episodic rows past the checkpoint and writes nothing new. Idempo-
+tence under partial restart is also preserved: if a pass crashes after writing
+14
+to semantic but before appending theconsolidation_run event, the next
+pass reprocesses the same range, upserts the same values, andthenappends.
+No row leaks, no row double-counts. Order-independence within one pass
+follows because the aggregates are commutative-associative: the order in
+which episodic rows are extracted does not change the upsert&#x27;s final value.
+Section 4 reports a regression test that shuffles insertion order and asserts
+byte-equal semantic output, which the shipped consolidator passes on every
+fixture.
+Confidence.A fact derived from two observations should not have the same
+planner influence as a fact derived </blockquote></details></li><li><strong>Contribution clarity — page 19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The deterministic consolidation pass described in Section 3.2 is imple-
+mented in the underlying runtime as a single module of approximately1040
+lines of Python (reproducibility anchor: commit16b92b7), accompanied by
+a regression suite of roughly760lines and more than20test cases covering
+the four fact_kind categories of Section 3.2.1 together with the identity-
+invariance and idempotence claims of Section 3.2.2. The runtime invokes the
+consolidator at startup and again on each episodic write through a threshold-
+driven post-record hook, so the construction is exercised on the same write
+path that produces the audit trail on which it depends. Two follow-on items
+remain queued for subsequent work: bundle export of the semantic facts
+under the identity-hash partitioning, and a typed event emitted on threshold-
+triggered consolidation passes. The consolidation pass developed in this </blockquote></details></li><li><strong>Contribution clarity — pages 19–20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>paper
+is therefore an in-tree shipped artefact, not a planned one.
+What we defer to a follow-on note isproduction traffic data: a real
+fleet&#x27;s episodic stream long enough to drive non-trivial consolidation has
+not yet accumulated, and we do not fabricate a synthetic substitute for it.
+The validations below are deterministic correctness checks against synthetic
+episodic streams.
+V1: Synthetic deterministic correctness.A synthetic episodic database re-
+ceivesN = 1000 execution_result rows formanipulation.grasp (800success,
+200failure). One pass of SemanticConsolidator.consolidate produces ex-
+actly onesemantic_factsrow of typeskill_success_ratewith value_json =
+{n: 1000, success: 800, rate: 0.8} and source_count = 1000, match-
+ing the Section 3.2.1 schema bit-for-bit. A second pass on the same database
+19
+upserts zero rows and produces a snapshot byte-equal to the first (idempo-
+tence). On </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>a fresh database, the same1000rows inserted in a deterministic-
+shuffle order produce a snapshot byte-equal (modulo source-id ordering) to
+the unshuffled run (order invariance). All six per-field correctness checks pass.
+V2: Identity invariance under consolidation.APersistentAgent-equivalent
+IdentityManifest snapshot is taken; the consolidator runs against an episodic
+stream of100 execution_result rows; semantic_facts ends with1row;
+the manifest is recomputed and the hash is byte-equal to the snapshot
+(5f6c5afc6b3924ba4a328138...). A second consolidation pass produces the
+samehash. Mutatingoneofthesevenmanifestinputs(the ecm_registry_hash,
+simulating a registered- capability addition) flips the manifest hash to
+c778ffffc51d1346bb014770..., confirming the manifest itself is identity-
+bearing and the invariance result is not a degenerate all-zeros artefact.
+V3: Planner-grounding utility </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>across four controls.The driver injects200
+episodic rows formanipulation.grasp.glass_cup (80%success rate hidden
+from the planner) and50rows formanipulation.grasp.unknown_object (20%
+success), then runsN = 1000decisions over a synthetic scene under four
+planner configurations. Theno-memorycontrol attempts every grasp re-
+gardless of skill. The three grounded controls all readsemantic_facts and
+threshold attempts at confidence≥ 0.5, but differ in how the confidence is
+weighted:rawuses the consolidator&#x27;s success-rate as-is;uniformoverrides
+every consolidator-known skill&#x27;s confidence to1.0, isolating the value of the
+structure (a fact exists / does not exist) from the value of any rate signal;
+calibratedapplies Bayesian shrinkage of each per-skill rate against a held-out
+20%slice of its outcome history (prior mean0.5, prior weight10, chosen ex
+ante). Table 1 reports the result.
+The </blockquote></details></li><li><strong>Contribution clarity — pages 20–21</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>headline reduction is the calibrated-vs-no_memory mean across10
+seeds:79 .82%fewer unproductive attemptson N = 1000decisions per
+seed, with95%BCa bootstrap CI[78.02%, 81.49%]over10 000resamples (Fig-
+ure 5). The originally-published single-seed value of74.58%( seed=20260506)
+sits≈4percentage points below the CI lower bound: the published seed turned
+out to be the unfavourable minimum of the10-seed distribution rather than
+a cherry-picked maximum, and so the prior single-seed claim under-stated
+rather than over-stated the effect. The uniform control&#x27;s95%CI straddles
+zero ([−4.7%, +0.4%]), statistically confirming that bare consolidation struc-
+ture (a fact exists / does not exist) does not improve over no-memory when
+20
+Table 1: V3 planner-grounding ablation across10seeds, N = 1000decisions per (seed,
+control). Mean reductions are arithmetic averages over the per-seed reduction; the95%
+CI </blockquote></details></li><li><strong>Contribution clarity — page 21</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>is BCa bootstrap on10 000resamples (random_state=20260524). The calibrated
+control retires the straw-man critique of the no-memory baseline: the mean reduction is
+79.82%with a95%lower bound of78 .02%, comfortably above the65%&quot;robust&quot; threshold.
+The originally-published single-seed value of74.58%( seed=20260506) is theminimumof
+the10-seed distribution, not its centre.
+Control Att. mean Unprod. mean Rate mean Reduction mean95%BCa CI
+no_memory1000.0 497.5 0.498— —
+uniform1000.0 510.2 0.510−2.6% [−4.7%,+0.4%]
+raw544.4 109.7 0.201 79.82% [78.02%,81.49%]
+calibrated544.4 109.7 0.20179.82% [78.02%,81.49%]
+the confidence signal is removed. The calibrated and raw controls produce
+a byte-equal attempt set on every seed in this10-sample sweep because
+the Bayesian-shrunk rate forunknown_object (≈ 0.3) remains below the0.5
+threshold while the shrunk rate forglass_cup (≈ 0.9) remains above, on
+every </blockquote></details></li><li><strong>Contribution clarity — pages 22–23</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>defensible default;
+the chosen defaults sit in the safe interior of the swept landscape.
+Table 2: D sweep, attempt confidence threshold (prior + N fixed at defaults;10seeds;
+calibrated control).
+Threshold Mean reduction95%BCa CI
+0.3−2.6% [−4.7%,+0.4%]
+0.4 55.0% [28.3%,73.0%]
+0.5(default)79.82% [78.0%,81.5%]
+0.6 79.82% [78.0%,81.5%]
+0.7 81.6% [78.8%,88.3%]
+Per-sweep summaries (machine-readable JSON, CSV) and the190per-run
+output files are reproducible from the multi-knob CLI loop described in §4.
+22
+Table 3: D sweep, Bayesian shrinkage prior (threshold + N fixed at defaults;10seeds;
+calibrated control). Mean reduction shown;95%BCa CIs in the prose. The default(0.5, 10)
+cell sits in the safe interior; themean=0.7row shows the prior- dominates-evidence collapse.
+prior_mean\weight5 10(default)20
+0.3 79.82% 79.82% 79.82%
+0.5(default)79.82%79.82% 79.82%
+0.7 63.7% 55.0%−2.6%
+Table 4: D sweep, </blockquote></details></li><li><strong>Contribution clarity — pages 23–24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>content; the SQL query the planner-facing end-
+point would issue (SELECT ... FROM semantic_facts WHERE identity_hash
+= ? AND fact_type = ? ) returns in0.004ms at the99 th percentile across
+1000requests, on both small and large fact tables; and the consolidator
+process holds a stable60MB resident set with a15MB peak delta at10 5
+rows. These numbers make the construction cheap enough to invoke on every
+episodic write through the post-record hook described above, without observ-
+able planner-loop impact. The HTTP wrapper atGET /api/agent/semantic
+is deferred to a follow-on; the reported query latency is the in-process SQLite
+lower bound (HTTP/uvicorn typically adds1–3ms).
+Reproducibility.From a runtime checkout with the [bridge,dev] extras
+installed, .venv/bin/python scripts/consolidation_validation.py writes
+23
+Table 5: G: deterministic v1 consolidation runtime overhead. Single CPU core, </blockquote></details></li><li><strong>Contribution clarity — page 27</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>kinds can change downstream planner behaviour even when
+no episodic row changed. The runtime addresses this by recording the rule
+version on every semantic row, by appending aconsolidation_run event to
+the episodic store on every pass, and (for richer rule deployments) by routing
+rule updates through the same staged-rollout discipline used for capability
+updates. Consolidation is therefore not outside governance; it is another
+governed runtime process.
+Limitations.Several limits are inherent in the deterministic consolidation
+design.Structured aggregates only: the algorithm captures facts expressible as
+counts, success rates, parameter bands, and most-common failure reasons over
+already-structured payload fields; it does not capture narrative lessons or facts
+that require linguistic synthesis (deferred to an LLM-assisted extension, §3.3).
+No decay or forgetting: the algorithm </blockquote></details></li><li><strong>Contribution clarity — page 27</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>hasn_observations and confidence but
+no formal decay model; a fact derived from observations a year old is treated
+identically to a fact derived from observations from last week, given the
+same count and variance.No adversarial defence against poisoned episodic
+rows: the algorithm trusts the episodic store; an attacker who can write
+episodic rows can shift semantic aggregates. Episodic provenance signing is
+the obvious mitigation but is out of scope here.Long- horizon drift in planner
+behaviour: even though identity is invariant, downstream planner behaviour
+can drift over many years of accumulated facts; this is not a contradiction
+(it is the intended effect) but operators should monitor how the fact set
+evolves across long deployments.Episodic payload structure is assumed: the
+algorithm depends on episodic payloads carrying enough structured fields
+for grouping; capabilities emitting </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +398,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

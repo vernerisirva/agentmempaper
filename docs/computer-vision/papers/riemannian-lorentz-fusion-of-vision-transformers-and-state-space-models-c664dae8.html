@@ -59,16 +59,148 @@
             <p>Scaling deep learning faces critical bottlenecks: data exhaustion, exponential training costs, and resource concentration. Model merging combines pre-trained checkpoints without gradient descent, offering orders-of-magnitude savings versus retraining. Combining independently trained vision models is difficult when t...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>AI assessment inconclusive</h2>
+      <p>While the conceptual formulation of curved-space parameter fusion is innovative, the experimental record is missing essential experimental controls, complete procedural specifications, and statistical variance estimates. This extensive scientific uncertainty warrants an uncertain rating.</p>
+      <p>The manuscript candidly acknowledges critical limitations, including the lack of controlled baseline training budgets, incomplete SVD implementation details, missing error bounds, and the hybrid nature requiring retention of both architectures.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-24T14:41:28.478902+00:00.</p>
+        <p>Coverage: 44294 of 44294 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>but
+semantic-role matching alone does not prove functional
+equivalence between attention and SSM dynamics. The
+projection rank, SVD construction data, sign convention,
+treatment of discarded singular directions, and exact decoder
+must be fixed in released code and reported for reproducibil-
+ity; the records available with this manuscript do not specify
+them completely. We consequently present alignment as
+a design heuristic rather than an exact architecture isomor-
+phism.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The reported configuration uses cemb = 1.0 , cmix = 0.1 ,
+cff = 0.001, and cnorm = 0, with λ= 0.2 . These values
+are hyperparameters selected by validation; they are not esti-
+mates of intrinsic sectional curvature. The gate is regularized
+as
+J( bθV, bθS, ϕ) =LCE(z(x), y)+τβϕ(x)−0.52, τ= 0.01.
+(18)
+The second term pulls the gate toward balanced use; calling
+it a diversity penalty would be imprecise. The architecture,
+parameter count, inputs, and training schedule of the gating
+multilayer perceptron are not present in the available records
+and must be supplied before the result is independently re-
+producible.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>respectively, for the CIFAR-10
+models.
+For CIFAR-10, the records state 50 epochs, SGD, learning
+rate 0.1, and batch size 1024. For Oxford-IIIT Pet, they state
+ImageNet initialization, 50 epochs, AdamW, and learning
+rate 10−4. For ImageNet-1K, the records state 50 epochs,
+SGD, learning rate 0.1, and batch size 1024, but they do
+not unambiguously separate parent training, post-fusion fine-
+tuning, and gate training. ImageNet accuracy is top-1; the
+manuscript records only &quot;accuracy&quot; for CIFAR-10 and Pet.
+Baselines.The recorded comparisons are Euclidean av-
+eraging, spherical linear interpolation (SLERP), Poincaré
+gyrovector averaging, a Riemannian barycenter, and Lorentz
+projection. Because incompatible tensors cannot be directly
+averaged, every cross-architecture baseline necessarily de-
+pends on the same alignment/decoding interface or another
+adapter. The available experiment log does </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>not specify this
+interface per baseline. Task arithmetic and TIES are not
+evaluated on the heterogeneous pair because their standard
+forms require aligned architectures such as Task arithmetic
+[14], and TIES [31]. Accordingly, the table does not support
+a direct claim of superiority over those methods.
+RLPF configuration.Unless otherwise indicated, cemb =
+1.0, cmix = 0.1, cff = 0.001, cnorm = 0, λ= 0.2 , T= 3 ,
+and τ= 0.01 . The previous draft stated that three seeds and
+standard deviations were reported, but no standard deviations
+or per-seed results appear in the supplied files. We therefore
+report the recorded point estimates only and do not claim
+5
+Table 1. Recorded classification accuracies (%). RLPF denotes the final fine-tuned, gated ViT–SSM hybrid. Cross-dataset heterogeneous
+merging results: ViT-Tiny + PlainMamba-L1. We report accuracy, improvement over best parent, and </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1 consolidates the internally consistent values from
+the main manuscript. The RLPF row is thefine-tuned gated
+hybrid; it must not be compared as if it were a training-free
+weight merge. The optimization status of each baseline is not
+documented, so the comparison is provisional until identical
+post-fusion training budgets are verified.
+RLPF has the largest recorded point estimate on CIFAR-
+10 and ImageNet-1K and exceeds both parents on all three
+datasets. Poincaré fusion has the largest recorded Pet ac-
+curacy (78.30%), so the earlier statement that RLPF out-
+performs every baseline on every benchmark was incorrect.
+The supplied ImageNet analysis additionally records 77.80%
+immediately after RLPF initialization and 78.58% after fine-
+tuning, compared with a best-parent value of 76.42%. This
+is the only dataset for which the available analysis distin-
+guishes initial and final </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Fusion-method comparison.Figure 6 records an Ima-
+geNet comparison among simple averaging (74.20%), a
+weighted sum (75.30%), Fisher merging (76.80%), Reg-
+Mean (77.10%), and RLPF (78.58%). All four alternatives
+fall below RLPF in this figure, and simple averaging also
+falls below the 76.42% best-parent reference. This is useful
+evidence that the reported result is not reproduced by these
+alternative fusion rules. It is not yet a fully controlled com-
+parison, however: the figure and accompanying report do
+not identify the alignment map, post-fusion optimizer, num-
+ber of epochs, gate, or checkpoint-selection rule for each
+7
+Figure 6. Available ImageNet fusion-method comparison. The
+figure records 74.20% for simple averaging, 75.30% for a weighted
+sum, 76.80% for Fisher merging, 77.10% for RegMean, and 78.58%
+for RLPF. A controlled interpretation requires confirmation that all
+methods </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Available resource accounting.Table 3 transcribes the
+values displayed in the supplied ImageNet efficiency artifact.
+These values are preferable to borrowing DeiT or VMamba
+measurements because they refer to the model names used
+in this study. They should nevertheless be treated as pro-
+Table 3. Resource values displayed in the available ImageNet
+efficiency artifact. Latency is reported as mean ± the plotted
+error bar; the statistic represented by that error bar is not recorded.
+Training cost was not provided.
+Model Params FLOPs Memory Latency
+(M) (G) (MB) (ms)
+ViT/Transformer 22.20 4.60 45018.5±0.8
+PlainMamba/SSM 7.00 3.00 38015.2±0.6
+RLPF hybrid 22.50 4.78 52020.1±0.9
+visional: the artifact does not record hardware, batch size,
+image resolution, numerical precision, FLOP-counting con-
+vention, warm-up, number of timing repetitions, or whether
+RLPF evaluates both branches. The </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>displayed model sizes
+also differ from the 5.7M/7.3M CIFAR-10 parameter counts
+recorded above, indicating a different configuration or an
+unresolved metadata inconsistency.
+Under the displayed measurements, PlainMamba has
+the lowest parameter count, FLOPs, memory, and latency,
+whereas RLPF has the highest values and the highest
+recorded ImageNet accuracy. RLPF is approximately 8.6%
+slower than the displayed ViT latency and 32.2% slower than
+PlainMamba, so these data support an accuracy–resource
+trade-off rather than an inference-speedup claim. A valid
+final comparison requires one fixed protocol covering hard-
+ware, software versions, batch size, precision, image reso-
+lution, warm-up, timing repetitions, and gate policy. If soft
+routing evaluates both branches before logit fusion, it cannot
+realize single-branch latency without a separately defined
+hard-routing mechanism.</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>unavailable unavailable unavailable
+Augmentation / preprocessing unavailable unavailable unavailable
+Checkpoint-selection rule unavailable unavailable unavailable
+Reported metric accuracy accuracy top-1 accuracy
+Table 5. Role-level correspondence between the retained ViT and
+SSM branches.
+Role ViT parameters SSM parameters
+Embedding patch embedding patch embedding
+Sequence mixingW Q, WK, WV , WO A, B, C,∆
+Pointwise map feed-forward layers feed-forward layers
+Normalization scale and shift scale and shift
+Table 6. Recorded component-wise curvature magnitudes. Curva-
+ture is−c g whenc g &gt;0.
+Groupg c g Fusion rule
+Embedding1.0Lorentz
+Sequence mixing0.1Lorentz
+Feed-forward0.001near-Euclidean Lorentz
+Normalization0Euclidean</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +239,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

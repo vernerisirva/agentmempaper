@@ -1,24 +1,23 @@
 {
   "digest_quality_warning_count": 0,
-  "latest_run_date": "2026-11-23",
+  "latest_run_date": "2026-11-24",
   "latest_run_summary": {
-    "Candidates fetched": "2",
-    "Irrelevant": "1",
+    "Candidates fetched": "81",
+    "Irrelevant": "79",
     "Maybe relevant": "0",
-    "New unique papers": "2",
-    "Relevant": "1",
-    "Run ID": "77",
-    "Source summary": "arxiv: 1, semantic_scholar: 1"
+    "New unique papers": "69",
+    "Relevant": "2",
+    "Run ID": "78",
+    "Source summary": "arxiv: 2, openalex: 79, semantic_scholar: 0"
   },
   "newly_discovered_papers": [],
   "source_diagnostics": [
-    "openalex failed for 'DeepSeek Engram': http error for https://api.openalex.org/works?search=DeepSeek+Engram&filter=from_publication_date%3A2026-11-13&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests",
-    "openalex failed for 'hashed memory language model': http error for https://api.openalex.org/works?search=hashed+memory+language+model&filter=from_publication_date%3A2026-11-13&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests",
-    "openalex failed for 'cross-model memory transfer': http error for https://api.openalex.org/works?search=cross-model+memory+transfer&filter=from_publication_date%3A2026-11-13&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests",
-    "openalex failed for 'learned lookup memory language model': http error for https://api.openalex.org/works?search=learned+lookup+memory+language+model&filter=from_publication_date%3A2026-11-13&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests",
+    "openalex: incomplete discovery window for 'hashed memory language model'; single-page record limit reached.",
+    "openalex: incomplete discovery window for 'cross-model memory transfer'; single-page record limit reached.",
+    "openalex: incomplete discovery window for 'learned lookup memory language model'; single-page record limit reached.",
     "semantic_scholar: incomplete discovery window for 'Engram'; single-page record limit reached.",
     "semantic_scholar failed for 'conditional memory language model': Semantic Scholar returned HTTP 429. This can happen when query volume is high, even with an API key. The run continued with other sources.",
-    "semantic_scholar: incomplete discovery window for 'frozen memory reader adaptation'; single-page record limit reached.",
+    "semantic_scholar failed for 'frozen memory reader adaptation': Semantic Scholar returned HTTP 429. This can happen when query volume is high, even with an API key. The run continued with other sources.",
     "semantic_scholar: incomplete discovery window for 'tokenizer-agnostic Engram'; single-page record limit reached."
   ]
 }

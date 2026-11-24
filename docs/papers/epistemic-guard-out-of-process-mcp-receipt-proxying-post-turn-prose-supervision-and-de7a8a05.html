@@ -59,16 +59,401 @@
             <p>Language-model agents using the Model Context Protocol (MCP) face three runtime verification gaps: (i) action fabrication, where post-tool prose narrates side effects that failed, timed out, or never ran; (ii) provenance collapse, where unverified model prose or web text enters durable memory alongside executed tool...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The work presents an adequately scoped, well-architected systems and runtime verification contribution with extensive reproducible conformance and empirical evaluation.</p>
+      <p>The authors clearly outline limitations, including the restriction to stdio MCP transports, reliance on downstream servers not faking ok=true payloads, degradation of deduplication on heavy/abstractive rewrites, and elevated false positive rates on custom unmapped tool stems.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-24T14:42:32.375960+00:00.</p>
+        <p>Coverage: 36869 of 36869 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>presentepistemic-guard(v0.5.2), an open-source Python library and out-of-process
+stdioMCP receipt proxy (15 modules, 0MiB GPU VRAM).epistemic-guardisolates Ed25519 signing keys out
+of process, writes RFC6962 Merkle logs withAER-1receipt translation, checks post-turn prose on CPU with SHA-
+256-verified OpenVINO INT8 encoders (4 models, 279.48MB total; 82.67MB on the supervision path), gates SQLite
+writes across 7 provenance domains, and collapses verbatim and lightly edited wire-syndicated RAG mirrors. On
+conformance suites,epistemic-guardrejects 100.0% of tampered receipts (200 Merkle leaves), passes 58/58 official
+AER-1ingestion vectors and 50/50 reference-verifiedAER-1exports, verifies 100.0% of 40 fault-injected wire calls and
+100 concurrent appends with 0 key leaks, and blocks 100.0% of 100 unauthorized memory writes. AcrossN= 250
+frozen-benchmark traces,epistemic-guardreaches 93.2% </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>accuracy at 17.9ms warm median CPU latency (8.62ms
+single-clause; 921.8ms cold-start load), beating 12B–14B GPU judges by 6.4–6.8 points (p= 0.0259,p= 0.0095) at
+4.26–4.5×lower latency; onN= 60livemcp-proxytraces, it catches 96.15% of hazards at 76.67% accuracy (38.24%
+FPR;+18.34points over Stage-1-only,p= 0.001) in 9.16ms p50.
+Artifacts:Code:https://github.com/AlienatedAliens/epistemic-guard·
+PyPI:https://pypi.org/project/epistemic-guard/·
+INT8 weights:https://huggingface.co/RollSolo/epistemic-guard-int8·
+Benchmarks:https://huggingface.co/datasets/RollSolo/epistemic-guard-benchmarks</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Proxy
+(mcp-proxy):AstdioJSON-RPC2.0 proxy
+that strips signing secrets from child server en-
+vironments, classifies 4 execution and error states,
+appends Ed25519-signed receipts to an OS-locked
+JSONL Merkle log with public-key pinning, and
+translates bidirectionally to the Agent Execution
+Receipt (AER-1) format [25].
+•CPU INT8 Receipt Supervision:A hybrid
+symbolic–neural supervisor (ReceiptSupervisor)
+using the fine-tunedaction_claimOpenVINO
+INT8 cross-encoder (82.67MB of the 279.48MB 4-
+model bundle; 0MiB GPU VRAM) plus Ed25519
+receipt signature and argument-target matching,
+running in 17.9ms median turn CPU latency.
+•Provenance-Gated SQLite Store &amp; RAG
+Mirror Filter:Domain-separated HKDF-
+SHA256 [9] + Ed25519 [8] write-gating with SQLite
+immutability triggers, paired with word-shingle
+Jaccard and SimHash clustering [2, 3] across a
+12-cell hazard-by-proof-standard policy </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(ASI06,ASI08):
+Retrieved web pages often reprint identical wire-
+service copy or SEO mirrors across distinct host-
+names. Naive multi-URL counting treats 3 mirrors
+of one rumor as independent corroboration for high-
+hazard medical, financial, or security claims.
+Trusted Computing Base (TCB) and Key Iso-
+lation.The TCB comprises the host OS kernel, the
+MCP host/orchestratorHinvoking post-turn verifica-
+tion, the out-of-processmcp-proxyprocess holding the
+Ed25519 signing key, the SHA-256 digests of the 16
+INT8 model files (verified by default at every model
+load viaverify_hashes=Trueacross explicit or OS-
+cache paths), and OS permissions on the SQLite store
+and pinned public key. When keys are injected via
+EPISTEMIC_GUARD_MCP_KEY_HEX, the secret stays in
+mcp-proxymemory and is scrubbed before spawning
+child servers; when--key-fileis used on disk (cre-
+ated atomically viaO_CREAT|O_EXCLwith </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Provenance and AER-1 Receipts
+Rather than sharing one symmetric key across com-
+ponents,provenance.pyderives 5 domain-isolated
+RFC8032 Ed25519 [8] keypairs (32-byte keys, 64-byte
+signatures) from a master seed via RFC5869 HKDF-
+SHA256 [9] across 7 provenance domains (Provenance):
+USER_EXPLICIT,USER_CONFIRMED,TOOL_VERIFIED,
+LISP_ASSERTION,INFERRED,LLM_NARRATION, and
+TOOL_CONTENT_UNTRUSTED.SignerFactoryprovides
+no signing constructor forLLM_NARRATIONorTOOL_
+CONTENT_UNTRUSTED, so model prose and untrusted
+tool text cannot produce a signed envelope through the
+public API.
+Each tool call produces a canonicalToolReceipt
+(serialized with sorted keys andallow_nan=Falseso
+NaN/Infinityfloats cannot break cross-runtime canon-
+icalization) containing the call ID, tool name, struc-
+tured arguments, SHA-256 output digest, execution flag
+(executed), outcome flag (ok), error code, optional ses-
+sion </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Proxy
+In-process Python decorators (ReceiptRecorder) pro-
+tect benign agent loops against hallucinated actions, but
+share memory and environment variables with the agent
+runtime. For untrusted or prompt-injected runtimes,
+epistemic-guard mcp-proxyinterposes as an out-of-
+processstdioparent between the MCP host and any
+downstream MCP tool server:
+1.Secret Scrubbing:Before spawning the child
+MCP server,mcp-proxycase-insensitively strips
+signing-secret environment variables (including
+EPISTEMIC_GUARD_MASTER_KEYandEPISTEMIC_
+GUARD_MCP_KEY_HEX) from the child&#x27;s environment
+block so compromised child servers cannot forge re-
+ceipts.
+2.Four-State Wire Classification:As JSON-
+RPC2.0 frames stream overstdin/stdout,
+mcp-proxycorrelatestools/callrequests in
+FIFO order per JSON-RPCidand distinguishes
+4 runtime outcomes: (a) normal tool completion
+(executed=true, ok=true); (b) application-level
+MCP </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>tool failure whereresult.isError=true
+(executed=true, ok=false, mcp_tool_error);
+(c) pre-execution rejection on standard JSON-
+RPC protocol/parameter error codes (-32700,
+-32600,-32601,-32602) or schema-validation
+error markers (executed=false, ok=false);
+and (d) child server crash or EOF mid-call
+(executed=true, ok=false, mcp_server_eof).
+Non-standard server errors default conservatively
+toexecuted=true, ok=falseso neither rejected
+nor failed calls can ground completion prose.
+3.Key-Pinned Append-Only Audit Log:Each
+ReceiptLogEntrycarries both an inner Ed25519
+ToolReceiptsignature and a domain-separated
+Ed25519entry_signatureover(seq, session_
+id, leaf_sha256, prev_chain_sha256, chain_
+sha256, merkle_root), acquires cross-process OS
+file locks for multi-worker concurrency, chains op-
+tionally across rotated Ed25519 keys (--prev-log
+/--prev-pubkey-file), and flushes immediately
+to an </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Prose Supervision
+Regex-only action supervisors miss indirect phrasing,
+nominalizations, and passive-voice state mutations,
+whereas off-the-shelf NLI encoders treatunexecutedtool
+claims against empty receipt logs as neutral [15]. Across
+the full package,epistemic-guarddistributes 4 Open-
+VINO INT8 models (16 SHA-256-pinned files totaling
+279.48MB over HTTPS from Hugging Face Hub or
+GitHub Releases, extracted with symlink/path-traversal
+guards and verified by SHA-256 at every load). Only
+action_claim(82.67MB) runs on the post-turn super-
+vision path, whereReceiptSupervisorexecutes a two-
+stage CPU pipeline:
+1.Speech-Act Action-Claim Detection:Non-
+assertive spans (negations, conditionals, attributed
+quotes, creative/translation prompts, and fenced
+code blocks) are masked while optional Structured
+Output Action Contract (SOAC, explicit[ACTION:
+verb target]tags [15]) declarations are </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>extracted,
+and candidate clauses are scored by the INT8
+action_claimcross-encoder. If no completed ex-
+ternalsideeffectisasserted, theturnpasseswithout
+requiring receipts.
+2.Cryptographic Receipt &amp; Target Matching:
+When a side-effect claim is detected,Receipt
+Supervisorverifies the turn&#x27;sToolReceiptset
+viaProvenanceGate(enforcing Ed25519 signa-
+tures, session binding, and receipt-age bounds
+when configured), excludes any receipt with
+executed=falseorok=false, and matches
+claimed action families, additive claim counts, and
+concrete file/URL/email/identifier targets against
+verified receiptargson path and token bound-
+aries (rejecting substring collisions and bare zero-
+argument receipts when prose names specific tar-
+gets). Ungrounded claims returnSupervision
+Verdict(is_valid=false)with character-offset
+spans andto_retry_prompt()remediation text.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and De-Syndicated RAG
+Storage-Boundary Write Gate.Instore.py,
+SQLiteProvenanceStorewraps SQLite WAL persis-
+tence behind mandatoryProvenanceGateverifica-
+tion and serializedBEGIN IMMEDIATEwrite transac-
+tions. Only 5 provenance domains with valid detached
+Ed25519 signatures are write-eligible; writes carry-
+ingLLM_NARRATION,TOOL_CONTENT_UNTRUSTED, forged
+keys, or mutated payloads raiseProvenanceErroror
+SignatureTamperErrorbefore touching SQLite. Ac-
+cepted envelopes link into a cumulative SHA-256 chain
+digest protected by 2 SQLBEFORE UPDATEandBEFORE
+DELETEtriggers that abort in-place mutation of commit-
+ted rows.
+Syndication Deduplication and Hazard-Tiered
+Corroboration.Before web-retrieved claims are pro-
+moted intoINFERREDmemory or stated without hedg-
+ing,corroboration.pyshards candidate passages
+into word shingles of widthk= 4, drops non-
+evidentiary boilerplate with the MiniLM [23] </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>INT8
+web_evidenceencoder (23.06MB), checks cross-source
+contradictionswiththeDeBERTa-v3[6]INT8nlicross-
+encoder (91.1MB), and merges near-duplicate mir-
+rors across registrable domains using explicit similar-
+ity gates: anchor-token Jaccard≥0.45,3-shingle Jac-
+card≥0.25,4-shingle Jaccard≥0.55[2], or 64-bit
+SimHash Hamming distance≤12[3]. Independent
+source counts are checked against 4 consumer action
+contexts (casual_mention,memory_commit_inferred,
+unhedged_assertion, andirreversible_action) and
+a 3-tier hazard classifier (82.65MB;LOW,MEDIUM,HIGH)
+mapped onto 4 proof standards (12 policy cells). High-
+hazard claims backed only by wire-syndicated mirrors of
+one origin collapse to one cluster and fail corroboration.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>mani-
+fests underresults/(table1_architecture.json,
+table2_conformance.json, andtable3_heldout_
+supervision.json). Binomial proportions use two-
+sided 95% Wilson score confidence intervals [24], and
+paired classifier comparisons use exact two-sided McNe-
+mar tests [16].
+4.1 RQ1: Conformance,
+Fault-Injection, and Paraphrase
+Degradation
+Table 2 reports deterministic conformance and fault-
+injection results fromrun_protocol_conformance.py:
+•Merkle,AER-1, &amp; Replay Integrity:Across 200
+signed receipts, all 200 RFC6962 inclusion proofs
+verify (100.0%) and all 200 payload mutations
+raiseMerkleTamperError(0 false accepts). Eval-
+uated against the officialdraft-zambo-aer1-26
+conformance kit [25],ToolReceipt.from_aer1
+matches 58/58 single-receipt ingestion vec-
+tors (100.0%: 22/22 valid/profile-boundary ac-
+cepted, 36/36 invalid rejected), while all 50/50
+ToolReceipt.to_aer1exports pass the kit&#x27;s </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>refer-
+ence verifier (100.0% across core, version-binding,
+and reference-producer checks), round-trip cleanly
+(50/50, 100.0%), and reject digest edits (50/50,
+100.0%). Under 4-thread contention (100 con-
+current appends to one log), OS file locking pre-
+serves sequential chain hashes across all 100 entries
+(100.0%), while 4/4 cross-session replay, active
+rehashed-reorder, andNaN/Infinitycanonicaliza-
+tion attempts fail closed (100.0%).
+•Out-of-Process MCP Wire Fault Injection:
+Spawning live childstdioMCP servers under
+mcp-proxyacross 40 tool invocations (10 each
+across normal completion,result.isError=true,
+JSON-RPC-32602invalid-parameter rejection,
+and mid-request child crash), all 40 logged receipts
+pass chain and pinned-key verification (1 pinned
+key, 1/1 post-hoc log edit rejected), separating
+30 dispatched/crash calls (10ok=true) from 10
+pre-execution rejections (executed=false) </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>with 0
+child-environment key leaks.
+•SQLite Write Gate &amp; Paraphrase Sensi-
+tivity:Across 300 storage writes, all 200 au-
+thorized envelopes verify along the 200-row hash
+chain (0.0% false rejections), all 100 unauthorized
+writes (50LLM_NARRATION+ 50 forged keys) are
+blocked (100.0%), and 2/2 SQL mutations trigger
+IntegrityError. Across 45 wire-syndication clus-
+ters(135URLs, 3domains/cluster), all90duplicate
+mirrors (2/cluster) collapse to single-origin clus-
+ters (45/45, 100.0%). To locate the lexical evasion
+boundary, a 5-tier sensitivity sweep of 50 clusters
+per rewrite tier shows single-origin collapse holds at
+100.0% under dateline/footer wrappers and 100.0%
+under light (∼15%) lexical edits, tapers to 40.0%
+on intermediate (∼30%) lexical edits, and drops to
+0.0% on moderate (∼45%) clause restructuring and
+0.0% on heavy (&gt;80%) abstractive rewrites, con-
+firming thatk= 4shingling </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>grounded/benign; Hugging Face commit
+73bbc046759e, 2026-11-14, frozen with v0.3.0 weights)
+joins author-labeled speech-act caseslocked_coh_50
+(n= 50) and paraphrasesblind42_coh_100(n= 100)
+withorganic_heldout_h100(n= 100): live tool-
+less chat turns (receipts=[]) fromgemma-4-e4b(50)
+andgemma-4-26b-a4b(50), labeled by blinded LLM
+raters (30/30, 100.0% dual-slice agreement) and author
+audit [15]. Becauseorganic_heldout_h100is tool-
+less, we also generated a post-release end-to-end co-
+hortlive_mcp_e2e_60(N= 60: 30gemma-4-E4Band
+30Nemotron-3.5-30B-A3Bturns, 26 ungrounded and
+34 grounded, labeled against wire state prior to eval-
+uation) routed through livemcp-proxychild servers
+acrossok=truecompletion, target-driftok=truecalls,
+isError=true, JSON-RPC-32602, mid-call crash, and
+compound two-tool turns.
+Accuracy, Ablations, and Live MCP Receipt
+Binding.On theN= 250frozen </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>benchmark,
+epistemic-guardreaches 93.2% accuracy (233/250;
+TP = 118,TN = 115,FP = 13,FN = 4):
+100.0% (50/50, CI [92.87%, 100.0%]) onlocked_coh_
+50, 92.0% (92/100, CI [85.0%, 95.89%]) onblind42_
+5
+Table 2: Deterministic protocol conformance, multi-worker concurrency, and tamper/replay-rejection results across
+runtime enforcement subsystems (run_protocol_conformance.py→results/table2_conformance.json).
+Subsystem Evaluated Invariant / Fault-Injection Workload Trials Verified / Blocked Rate
+RFC6962 Merkle Ledger Valid leaf inclusion proofs verified 200 200 100.0%
+RFC6962 Merkle Ledger Mutated receipt payloads rejected (0 false accepts) 200 200 100.0%
+AER-1Interoperability Officialdraft-zambo-aer1-26ingestion kit (22 valid, 36
+invalid)
+58 58 100.0%
+AER-1Interoperability Reference-verifiedto_aer1()exports, round-trip, &amp;
+tampered-digest rejection
+50 50 100.0%
+Out-of-Processmcp-proxyWire calls </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>classified across 4 modes (10/mode; 0 env key
+leaks)
+40 40 100.0%
+Concurrent Audit Log Multi-worker locked appends verified (4 threads×25
+appends)
+100 100 100.0%
+Replay &amp; Canonicalization Cross-session replay, entry reordering, andNaN/Inffloats
+rejected
+4 4 100.0%
+SQLite Provenance Gate Authorized signed domain writes accepted (0 false
+rejections)
+200 200 100.0%
+SQLite Provenance Gate Unauthorized writes blocked (50LLM_NARRATION+ 50 forged
+keys)
+100 100 100.0%
+SQLite Immutability Direct SQLUPDATEandDELETEmutations aborted by
+triggers
+2 2 100.0%
+RAG Syndication Filter 135 wire-mirror URLs (3/cluster) collapsed; high-hazard
+promotion blocked
+45 45 100.0%
+Table 3: Post-turn action-claim supervision on theN= 250frozen benchmark (122 ungrounded, 128
+grounded/benign; tool-lessOrg-100sub-cohort) andN= 60livemcp-proxytraces (Live-60; latencies in ms,
+GPU VRAM in </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>MiB;results/table3_heldout_supervision.json).
+Supervisor / Baseline Accuracy (95% CI) Recall FPR Org-100 Live-60 p50 p95 VRAM
+epistemic-guardINT8 (CPU) 93.2%[89.38%, 95.71%] 96.72%10.16% 91.0%76.67%17.935.830</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Mistral-NeMo-12B Judge (GPU) 86.8% [82.04%, 90.44%] 87.7% 14.06% 84.0%80.0%80.58 102.15 8,844
+Phi-4-14B Judge (GPU) 86.4% [81.6%, 90.1%]100.0%26.56% 79.0% 65.0% 76.24 102.25 12,214
+DeBERTa-v3-xsmall NLI (CPU) 52.8% [46.62%, 58.9%] 24.59% 20.31% 51.0%80.0%22.432.49 0
+coh_100, and 91.0% (91/100, CI [83.77%, 95.19%])
+onorganic_heldout_h100at 17.9ms median turn la-
+tency (8.62ms single-clause, 19.38ms mean, 35.83ms
+p95). At the v0.3.0 freeze it scored 94.4% (236/250;
+95/100 onblind42_coh_100); v0.5.1–v0.5.2 security
+hardening(rejectingzero-argumentwildcardmatcheson
+named files) cost 3 bare-tool items, so symbolic rules are
+audit-hardened rather than blind while neural weights
+stayed frozen. Regex+receipts scores 64.0% (160/250;
+30.33% recall), and Stage-1-only (receipts=[]) scores
+84.8% (212/250; 27.34% FPR). Stage-1-only exhibits
+a higher median latency (24.98ms vs. 17.9ms) </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>be-
+causeReceiptSupervisorshort-circuits conversational
+clauses lacking action/state signals on multi-clause
+turns whenok_receiptsis non-empty, whereas pass-
+ingreceipts=[]runs OpenVINO on every clause.
+Overall (N= 250),epistemic-guardbeats Mistral-
+NeMo-12B by+6.4pp (86.8%, 217/250; McNemar 31
+vs. 15,p= 0.0259;+7.0pp onOrg-100, 14 vs. 7,
+p= 0.1892; 4.5×faster p50, saving 8,844MiB VRAM)
+and Phi-4-14B by+6.8pp (86.4%, 216/250; McNe-
+mar 28 vs. 11,p= 0.0095;+12.0pp onOrg-100,
+17 vs. 5,p= 0.0169; 4.26×faster p50, saving
+12,214MiB VRAM), while DeBERTa-v3 NLI scores
+52.8% (132/250,+40.4pp gap; 73/92 false negatives,
+79.35%, predictneutral). OnLive-60(zero-shot post-
+release, no custom tool stems), the supervisor delib-
+erately favors recall over false alarms—a false positive
+costs oneto_retry_prompt()retry whereas a missed
+fabrication corrupts state—catching 96.15% of hazards
+(25/26, CI </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>[81.11%, 99.32%], 1 missed retry promise) at
+38.24% FPR (13/34) and 76.67% accuracy (46/60, CI
+[64.56%, 85.56%]) in 9.16ms p50 (23.12ms p95). Stage-
+2 receipt binding adds+18.34pp over Stage-1-only
+(58.33%, 35/60, 70.59% FPR; 11 vs. 0,p= 0.001), while
+Regex+receipts has 0.0% recall (34/60) and DeBERTa-
+v3 NLI shows why accuracy misleads on uneven classes
+(80.0%, 48/60, at 53.85% recall, 12/26 missed). Live
+accuracy gaps vs. GPU judges are non-significant—
+epistemic-guardis nominally+11.67pp above Phi-4-
+14B (65.0%, 39/60, 61.76% FPR; 13 vs. 6,p= 0.1671;
+7.32×faster vs. 67.04ms) and nominally3.33pp below
+Mistral-NeMo-12B (80.0%, 48/60, 35.29% FPR; 6 vs.
+8,p= 0.7905) at 7.83×lower p50 (9.16 vs. 71.69ms)
+and 0MiB VRAM; its 13 FPs comprise 6 custom tool
+names (execute_sql,http_post,git_commit) and 7
+6
+comma-split&quot;attempted X, but failed&quot;clauses.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Validity
+Internal Validity.Protocol conformance workloads
+in Table 2 run real child processes, OS file locks,
+Ed25519/HKDF signing, and OpenVINO INT8 infer-
+ence on deterministic local payloads rather than live
+SaaS endpoints so auditors can runosaudit results
+--rerunoffline without API keys or network variance.
+Supervision labels derive from author rubrics, blinded
+LLM raters plus author audit, and pre-committed
+MCP wire-state rules rather than multi-human inter-
+annotator (κ) studies, and commercial frontier API
+judges were omitted to keep evaluation zero-API-cost
+and offline-reproducible.
+External Validity.Our supervision cohorts (N=
+250frozen,N= 60live MCP) evaluate English replies
+on one workstation; asLive-60shows (6 unmapped-
+stem and 7 cross-clause failure-report FPs), custom
+MCP tool vocabularies and multi-clause&quot;attempted
+X, but failed&quot;reports raise false positives until </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>cus-
+tom tool stems and cross-clause negation propagation
+are configured.
+ConstructandTransportScope.First,mcp-proxy
+in v0.5.2 mediatesstdioMCP servers; Streamable
+HTTP/SSE remote servers require a localstdiobridge
+or in-processReceiptRecorderwrapping. Second, re-
+ceipts prove what a downstream server returned on
+the wire; a buggy or malicious server returning forged
+ok=truepayloads yields a validly signed false receipt,
+and custom servers rejecting calls via non-standard er-
+ror codes are conservatively logged asexecuted=true,
+ok=false. Third, as quantified in Section 4.1,k=
+4shingle/SimHash clustering collapses verbatim and
+lightly edited wire copy (100.0%) but does not collapse
+moderate or abstractive rewrites (0.0%).</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +492,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +508,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-20</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-23 13:58:55</li><li>Last seen by Paper Scout: 2026-11-23 13:59:19</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-20</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-23 13:58:55</li><li>Last seen by Paper Scout: 2026-11-24 14:32:50</li></ul>
             <ul><li>arXiv: 2611.27095</li><li>arXiv IDs: 2611.27095</li></ul>
           </section>
           <section class="detail-panel">

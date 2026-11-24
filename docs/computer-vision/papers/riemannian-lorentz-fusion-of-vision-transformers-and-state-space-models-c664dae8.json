@@ -36,7 +36,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-23 09:08:16",
-    "generated_at": "2026-11-23 14:09:15",
+    "generated_at": "2026-11-24 14:44:27",
     "last_seen_at": "2026-09-23 09:08:16",
     "metadata_sources": [
       "openalex",
@@ -101,36 +101,1284 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-24T14:41:28.478902+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concerns": [
+      "The experimental comparisons are not controlled: baseline optimization status, alignment interface, post-fusion training budget, gate, and checkpoint-selection rule are undocumented, so the reported RLPF advantage cannot be attributed to the proposed geometry.",
+      "Key reproducibility details are missing, including the truncated SVD construction, gate architecture and training schedule, and per-baseline adaptation mechanism.",
+      "Reported point estimates lack repeated-trial uncertainty, and the manuscript explicitly states no statistical significance can be claimed.",
+      "Efficiency claims are internally inconsistent: the displayed resource table shows RLPF has the highest latency and compute, contradicting the inference-speedup claim."
+    ],
+    "concise_summary": "While the conceptual formulation of curved-space parameter fusion is innovative, the experimental record is missing essential experimental controls, complete procedural specifications, and statistical variance estimates. This extensive scientific uncertainty warrants an uncertain rating.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 46287,
+      "assessment_input_sha256": "f23968c46b2023da89e255fe85def0a7843ecda6ec5f45743683adfce379617f",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2609.19384",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 45073,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 44294,
+      "evidence_block_count": 64,
+      "evidence_context_characters": 52371,
+      "evidence_context_id": "92a3e1fb38ad23705219b6a018af7329cf490b31d7bc1556bd532aa9f8da1eb8",
+      "evidence_context_sha256": "5b974f7f406b529af7b114c5d00453cea77a807b5ae45eddb3c0db14648c83bc",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 45095,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "extracted_pages": 12,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "c130d767af51f9eb81e695f8c4ec7c1e6af47874f729caee0abf0ec8e3bc3283",
+        "source_url": "https://arxiv.org/pdf/2609.19384",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 45073,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Riemannian\u2013Lorentz Fusion Of Vision Transformers And State-Space Models",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 127,
+          "supplied_characters": 127
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1668,
+          "supplied_characters": 1668
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2725,
+          "supplied_characters": 2725
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 2442,
+          "supplied_characters": 2442
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 1292,
+          "supplied_characters": 1292
+        },
+        {
+          "heading": "Geometric Preliminaries",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 917,
+          "supplied_characters": 917
+        },
+        {
+          "heading": "Geometric Preliminaries",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 745,
+          "supplied_characters": 745
+        },
+        {
+          "heading": "Problem Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 7,
+          "source_characters": 942,
+          "supplied_characters": 942
+        },
+        {
+          "heading": "Cross-Architecture Alignment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 8,
+          "source_characters": 175,
+          "supplied_characters": 175
+        },
+        {
+          "heading": "Cross-Architecture Alignment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 9,
+          "source_characters": 2083,
+          "supplied_characters": 2083
+        },
+        {
+          "heading": "Lorentz Representation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1173,
+          "supplied_characters": 1173
+        },
+        {
+          "heading": "Anchored Geodesic Fusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 477,
+          "supplied_characters": 477
+        },
+        {
+          "heading": "Anchored Geodesic Fusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1177,
+          "supplied_characters": 1177
+        },
+        {
+          "heading": "Component Geometry And Training",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 13,
+          "source_characters": 618,
+          "supplied_characters": 618
+        },
+        {
+          "heading": "Experimental Setting",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 14,
+          "source_characters": 2453,
+          "supplied_characters": 2453
+        },
+        {
+          "heading": "Experimental Setting",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 954,
+          "supplied_characters": 954
+        },
+        {
+          "heading": "Main Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 16,
+          "source_characters": 1378,
+          "supplied_characters": 1378
+        },
+        {
+          "heading": "Ablations And Sensitivity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 1884,
+          "supplied_characters": 1884
+        },
+        {
+          "heading": "Ablation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 18,
+          "source_characters": 235,
+          "supplied_characters": 235
+        },
+        {
+          "heading": "Ablation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 19,
+          "source_characters": 1954,
+          "supplied_characters": 1954
+        },
+        {
+          "heading": "Fusion Controls And Optimization Stages",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 631,
+          "supplied_characters": 631
+        },
+        {
+          "heading": "Fusion Controls And Optimization Stages",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 1681,
+          "supplied_characters": 1681
+        },
+        {
+          "heading": "Efficiency, Robustness, And Reproducibility",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 1776,
+          "supplied_characters": 1776
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "conclusion",
+          "section_index": 23,
+          "source_characters": 893,
+          "supplied_characters": 893
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1232,
+          "supplied_characters": 1232
+        },
+        {
+          "heading": "In2009 Ieee Conference On Computer Vision And Pattern",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 2337,
+          "supplied_characters": 2337
+        },
+        {
+          "heading": "Seventh Conference On Neural Information Processing Sys-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 130,
+          "supplied_characters": 130
+        },
+        {
+          "heading": "Mamba-Based Architecture For Vision And Multivariate Time",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 27,
+          "source_characters": 224,
+          "supplied_characters": 224
+        },
+        {
+          "heading": "Ceedings Of The Ieee/Cvf Conference On Computer Vision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 897,
+          "supplied_characters": 897
+        },
+        {
+          "heading": "Data-Efficient Image Transformers & Distillation Through At-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 604,
+          "supplied_characters": 604
+        },
+        {
+          "heading": "Fine-Tuned Models Improves Accuracy Without Increasing In-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 250,
+          "supplied_characters": 250
+        },
+        {
+          "heading": "Fine-Tuned Models Improves Accuracy Without Increasing In-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 1043,
+          "supplied_characters": 1043
+        },
+        {
+          "heading": "Appendix: Lorentz Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 32,
+          "source_characters": 749,
+          "supplied_characters": 749
+        },
+        {
+          "heading": "Appendix: Anchor And Objective",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 33,
+          "source_characters": 1403,
+          "supplied_characters": 1403
+        },
+        {
+          "heading": "Appendix: Numerical Implementation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 34,
+          "source_characters": 431,
+          "supplied_characters": 431
+        },
+        {
+          "heading": "Appendix: Numerical Implementation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 35,
+          "source_characters": 556,
+          "supplied_characters": 556
+        },
+        {
+          "heading": "Appendix: Cross-Architecture Alignment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 36,
+          "source_characters": 976,
+          "supplied_characters": 976
+        },
+        {
+          "heading": "Appendix: Component Settings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 37,
+          "source_characters": 471,
+          "supplied_characters": 471
+        },
+        {
+          "heading": "Appendix: Component Settings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 1156,
+          "supplied_characters": 1156
+        },
+        {
+          "heading": "Appendix: Additional Ablation Figures",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 1304,
+          "supplied_characters": 1304
+        },
+        {
+          "heading": "Appendix: Available Training Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 131,
+          "supplied_characters": 131
+        }
+      ],
+      "selected_characters": 44294,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "selected_sections": [
+        {
+          "characters": 127,
+          "heading": "Riemannian\u2013Lorentz Fusion Of Vision Transformers And State-Space Models",
+          "page": 1
+        },
+        {
+          "characters": 1668,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2725,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2442,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1292,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 917,
+          "heading": "Geometric Preliminaries",
+          "page": 2
+        },
+        {
+          "characters": 745,
+          "heading": "Geometric Preliminaries",
+          "page": 3
+        },
+        {
+          "characters": 942,
+          "heading": "Problem Formulation",
+          "page": 3
+        },
+        {
+          "characters": 175,
+          "heading": "Cross-Architecture Alignment",
+          "page": 3
+        },
+        {
+          "characters": 2083,
+          "heading": "Cross-Architecture Alignment",
+          "page": 4
+        },
+        {
+          "characters": 1173,
+          "heading": "Lorentz Representation",
+          "page": 4
+        },
+        {
+          "characters": 477,
+          "heading": "Anchored Geodesic Fusion",
+          "page": 4
+        },
+        {
+          "characters": 1177,
+          "heading": "Anchored Geodesic Fusion",
+          "page": 5
+        },
+        {
+          "characters": 618,
+          "heading": "Component Geometry And Training",
+          "page": 5
+        },
+        {
+          "characters": 2453,
+          "heading": "Experimental Setting",
+          "page": 5
+        },
+        {
+          "characters": 954,
+          "heading": "Experimental Setting",
+          "page": 6
+        },
+        {
+          "characters": 1378,
+          "heading": "Main Results",
+          "page": 6
+        },
+        {
+          "characters": 1884,
+          "heading": "Ablations And Sensitivity",
+          "page": 6
+        },
+        {
+          "characters": 235,
+          "heading": "Ablation",
+          "page": 6
+        },
+        {
+          "characters": 1954,
+          "heading": "Ablation",
+          "page": 7
+        },
+        {
+          "characters": 631,
+          "heading": "Fusion Controls And Optimization Stages",
+          "page": 7
+        },
+        {
+          "characters": 1681,
+          "heading": "Fusion Controls And Optimization Stages",
+          "page": 8
+        },
+        {
+          "characters": 1776,
+          "heading": "Efficiency, Robustness, And Reproducibility",
+          "page": 8
+        },
+        {
+          "characters": 893,
+          "heading": "Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 1232,
+          "heading": "Unclassified body after references",
+          "page": 9
+        },
+        {
+          "characters": 2337,
+          "heading": "In2009 Ieee Conference On Computer Vision And Pattern",
+          "page": 9
+        },
+        {
+          "characters": 130,
+          "heading": "Seventh Conference On Neural Information Processing Sys-",
+          "page": 9
+        },
+        {
+          "characters": 224,
+          "heading": "Mamba-Based Architecture For Vision And Multivariate Time",
+          "page": 9
+        },
+        {
+          "characters": 897,
+          "heading": "Ceedings Of The Ieee/Cvf Conference On Computer Vision",
+          "page": 9
+        },
+        {
+          "characters": 604,
+          "heading": "Data-Efficient Image Transformers & Distillation Through At-",
+          "page": 9
+        },
+        {
+          "characters": 250,
+          "heading": "Fine-Tuned Models Improves Accuracy Without Increasing In-",
+          "page": 9
+        },
+        {
+          "characters": 1043,
+          "heading": "Fine-Tuned Models Improves Accuracy Without Increasing In-",
+          "page": 10
+        },
+        {
+          "characters": 749,
+          "heading": "Appendix: Lorentz Construction",
+          "page": 10
+        },
+        {
+          "characters": 1403,
+          "heading": "Appendix: Anchor And Objective",
+          "page": 10
+        },
+        {
+          "characters": 431,
+          "heading": "Appendix: Numerical Implementation",
+          "page": 10
+        },
+        {
+          "characters": 556,
+          "heading": "Appendix: Numerical Implementation",
+          "page": 11
+        },
+        {
+          "characters": 976,
+          "heading": "Appendix: Cross-Architecture Alignment",
+          "page": 11
+        },
+        {
+          "characters": 471,
+          "heading": "Appendix: Component Settings",
+          "page": 11
+        },
+        {
+          "characters": 1156,
+          "heading": "Appendix: Component Settings",
+          "page": 12
+        },
+        {
+          "characters": 1304,
+          "heading": "Appendix: Additional Ablation Figures",
+          "page": 12
+        },
+        {
+          "characters": 131,
+          "heading": "Appendix: Available Training Protocol",
+          "page": 12
+        }
+      ],
+      "selected_text_sha256": "f23968c46b2023da89e255fe85def0a7843ecda6ec5f45743683adfce379617f",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "c130d767af51f9eb81e695f8c4ec7c1e6af47874f729caee0abf0ec8e3bc3283",
+      "source_pages": 12,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "92a3e1fb38ad23705219b6a018af7329cf490b31d7bc1556bd532aa9f8da1eb8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E92a3e1fb38ad2370-B0018"
+        ],
+        "excerpt": "but\nsemantic-role matching alone does not prove functional\nequivalence between attention and SSM dynamics. The\nprojection rank, SVD construction data, sign convention,\ntreatment of discarded singular directions, and exact decoder\nmust be fixed in released code and reported for reproducibil-\nity; the records available with this manuscript do not specify\nthem completely. We consequently present alignment as\na design heuristic rather than an exact architecture isomor-\nphism.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Cross-Architecture Alignment",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "2c2f7765f9f5e2ffc73ab5fc2d454479274e1a1489f78aac07a72fc076658d8c",
+            "evidence_id": "E92a3e1fb38ad2370-B0018",
+            "pages": [
+              4
+            ],
+            "section": "Cross-Architecture Alignment",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2083,
+                "page": 4,
+                "section": "Cross-Architecture Alignment",
+                "section_index": 9,
+                "start": 1607,
+                "text": "but\nsemantic-role matching alone does not prove functional\nequivalence between attention and SSM dynamics. The\nprojection rank, SVD construction data, sign convention,\ntreatment of discarded singular directions, and exact decoder\nmust be fixed in released code and reported for reproducibil-\nity; the records available with this manuscript do not specify\nthem completely. We consequently present alignment as\na design heuristic rather than an exact architecture isomor-\nphism."
+              }
+            ],
+            "text": "but\nsemantic-role matching alone does not prove functional\nequivalence between attention and SSM dynamics. The\nprojection rank, SVD construction data, sign convention,\ntreatment of discarded singular directions, and exact decoder\nmust be fixed in released code and reported for reproducibil-\nity; the records available with this manuscript do not specify\nthem completely. We consequently present alignment as\na design heuristic rather than an exact architecture isomor-\nphism."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "92a3e1fb38ad23705219b6a018af7329cf490b31d7bc1556bd532aa9f8da1eb8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E92a3e1fb38ad2370-B0023"
+        ],
+        "excerpt": "The reported configuration uses cemb = 1.0 , cmix = 0.1 ,\ncff = 0.001, and cnorm = 0, with \u03bb= 0.2 . These values\nare hyperparameters selected by validation; they are not esti-\nmates of intrinsic sectional curvature. The gate is regularized\nas\nJ( b\u03b8V, b\u03b8S, \u03d5) =LCE(z(x), y)+\u03c4\u0000\u03b2\u03d5(x)\u22120.5\u00012, \u03c4= 0.01.\n(18)\nThe second term pulls the gate toward balanced use; calling\nit a diversity penalty would be imprecise. The architecture,\nparameter count, inputs, and training schedule of the gating\nmultilayer perceptron are not present in the available records\nand must be supplied before the result is independently re-\nproducible.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Component Geometry And Training",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "a96e5685910c393ba88bc415dfd32f9bf0477f144c308ab8df3d818da2c034f4",
+            "evidence_id": "E92a3e1fb38ad2370-B0023",
+            "pages": [
+              5
+            ],
+            "section": "Component Geometry And Training",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 618,
+                "page": 5,
+                "section": "Component Geometry And Training",
+                "section_index": 13,
+                "start": 0,
+                "text": "The reported configuration uses cemb = 1.0 , cmix = 0.1 ,\ncff = 0.001, and cnorm = 0, with \u03bb= 0.2 . These values\nare hyperparameters selected by validation; they are not esti-\nmates of intrinsic sectional curvature. The gate is regularized\nas\nJ( b\u03b8V, b\u03b8S, \u03d5) =LCE(z(x), y)+\u03c4\u0000\u03b2\u03d5(x)\u22120.5\u00012, \u03c4= 0.01.\n(18)\nThe second term pulls the gate toward balanced use; calling\nit a diversity penalty would be imprecise. The architecture,\nparameter count, inputs, and training schedule of the gating\nmultilayer perceptron are not present in the available records\nand must be supplied before the result is independently re-\nproducible."
+              }
+            ],
+            "text": "The reported configuration uses cemb = 1.0 , cmix = 0.1 ,\ncff = 0.001, and cnorm = 0, with \u03bb= 0.2 . These values\nare hyperparameters selected by validation; they are not esti-\nmates of intrinsic sectional curvature. The gate is regularized\nas\nJ( b\u03b8V, b\u03b8S, \u03d5) =LCE(z(x), y)+\u03c4\u0000\u03b2\u03d5(x)\u22120.5\u00012, \u03c4= 0.01.\n(18)\nThe second term pulls the gate toward balanced use; calling\nit a diversity penalty would be imprecise. The architecture,\nparameter count, inputs, and training schedule of the gating\nmultilayer perceptron are not present in the available records\nand must be supplied before the result is independently re-\nproducible."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "92a3e1fb38ad23705219b6a018af7329cf490b31d7bc1556bd532aa9f8da1eb8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E92a3e1fb38ad2370-B0025"
+        ],
+        "excerpt": "respectively, for the CIFAR-10\nmodels.\nFor CIFAR-10, the records state 50 epochs, SGD, learning\nrate 0.1, and batch size 1024. For Oxford-IIIT Pet, they state\nImageNet initialization, 50 epochs, AdamW, and learning\nrate 10\u22124. For ImageNet-1K, the records state 50 epochs,\nSGD, learning rate 0.1, and batch size 1024, but they do\nnot unambiguously separate parent training, post-fusion fine-\ntuning, and gate training. ImageNet accuracy is top-1; the\nmanuscript records only \"accuracy\" for CIFAR-10 and Pet.\nBaselines.The recorded comparisons are Euclidean av-\neraging, spherical linear interpolation (SLERP), Poincar\u00e9\ngyrovector averaging, a Riemannian barycenter, and Lorentz\nprojection. Because incompatible tensors cannot be directly\naveraged, every cross-architecture baseline necessarily de-\npends on the same alignment/decoding interface or another\nadapter. The available experiment log does ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setting",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "1a47806dbf8b06a28edca1022900449219cb1f0fb09c987c69ef1ac456366502",
+            "evidence_id": "E92a3e1fb38ad2370-B0025",
+            "pages": [
+              5
+            ],
+            "section": "Experimental Setting",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1793,
+                "page": 5,
+                "section": "Experimental Setting",
+                "section_index": 14,
+                "start": 895,
+                "text": "respectively, for the CIFAR-10\nmodels.\nFor CIFAR-10, the records state 50 epochs, SGD, learning\nrate 0.1, and batch size 1024. For Oxford-IIIT Pet, they state\nImageNet initialization, 50 epochs, AdamW, and learning\nrate 10\u22124. For ImageNet-1K, the records state 50 epochs,\nSGD, learning rate 0.1, and batch size 1024, but they do\nnot unambiguously separate parent training, post-fusion fine-\ntuning, and gate training. ImageNet accuracy is top-1; the\nmanuscript records only \"accuracy\" for CIFAR-10 and Pet.\nBaselines.The recorded comparisons are Euclidean av-\neraging, spherical linear interpolation (SLERP), Poincar\u00e9\ngyrovector averaging, a Riemannian barycenter, and Lorentz\nprojection. Because incompatible tensors cannot be directly\naveraged, every cross-architecture baseline necessarily de-\npends on the same alignment/decoding interface or another\nadapter. The available experiment log does "
+              }
+            ],
+            "text": "respectively, for the CIFAR-10\nmodels.\nFor CIFAR-10, the records state 50 epochs, SGD, learning\nrate 0.1, and batch size 1024. For Oxford-IIIT Pet, they state\nImageNet initialization, 50 epochs, AdamW, and learning\nrate 10\u22124. For ImageNet-1K, the records state 50 epochs,\nSGD, learning rate 0.1, and batch size 1024, but they do\nnot unambiguously separate parent training, post-fusion fine-\ntuning, and gate training. ImageNet accuracy is top-1; the\nmanuscript records only \"accuracy\" for CIFAR-10 and Pet.\nBaselines.The recorded comparisons are Euclidean av-\neraging, spherical linear interpolation (SLERP), Poincar\u00e9\ngyrovector averaging, a Riemannian barycenter, and Lorentz\nprojection. Because incompatible tensors cannot be directly\naveraged, every cross-architecture baseline necessarily de-\npends on the same alignment/decoding interface or another\nadapter. The available experiment log does "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "92a3e1fb38ad23705219b6a018af7329cf490b31d7bc1556bd532aa9f8da1eb8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E92a3e1fb38ad2370-B0026"
+        ],
+        "excerpt": "not specify this\ninterface per baseline. Task arithmetic and TIES are not\nevaluated on the heterogeneous pair because their standard\nforms require aligned architectures such as Task arithmetic\n[14], and TIES [31]. Accordingly, the table does not support\na direct claim of superiority over those methods.\nRLPF configuration.Unless otherwise indicated, cemb =\n1.0, cmix = 0.1, cff = 0.001, cnorm = 0, \u03bb= 0.2 , T= 3 ,\nand \u03c4= 0.01 . The previous draft stated that three seeds and\nstandard deviations were reported, but no standard deviations\nor per-seed results appear in the supplied files. We therefore\nreport the recorded point estimates only and do not claim\n5\nTable 1. Recorded classification accuracies (%). RLPF denotes the final fine-tuned, gated ViT\u2013SSM hybrid. Cross-dataset heterogeneous\nmerging results: ViT-Tiny + PlainMamba-L1. We report accuracy, improvement over best parent, and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setting",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "f8b1b7e08e743018ff6d03d943f529222920104eda97b9b64ff35e2a5b483043",
+            "evidence_id": "E92a3e1fb38ad2370-B0026",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Experimental Setting",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2453,
+                "page": 5,
+                "section": "Experimental Setting",
+                "section_index": 14,
+                "start": 1793,
+                "text": "not specify this\ninterface per baseline. Task arithmetic and TIES are not\nevaluated on the heterogeneous pair because their standard\nforms require aligned architectures such as Task arithmetic\n[14], and TIES [31]. Accordingly, the table does not support\na direct claim of superiority over those methods.\nRLPF configuration.Unless otherwise indicated, cemb =\n1.0, cmix = 0.1, cff = 0.001, cnorm = 0, \u03bb= 0.2 , T= 3 ,\nand \u03c4= 0.01 . The previous draft stated that three seeds and\nstandard deviations were reported, but no standard deviations\nor per-seed results appear in the supplied files. We therefore\nreport the recorded point estimates only and do not claim\n5"
+              },
+              {
+                "end": 231,
+                "page": 6,
+                "section": "Experimental Setting",
+                "section_index": 15,
+                "start": 0,
+                "text": "Table 1. Recorded classification accuracies (%). RLPF denotes the final fine-tuned, gated ViT\u2013SSM hybrid. Cross-dataset heterogeneous\nmerging results: ViT-Tiny + PlainMamba-L1. We report accuracy, improvement over best parent, and "
+              }
+            ],
+            "text": "not specify this\ninterface per baseline. Task arithmetic and TIES are not\nevaluated on the heterogeneous pair because their standard\nforms require aligned architectures such as Task arithmetic\n[14], and TIES [31]. Accordingly, the table does not support\na direct claim of superiority over those methods.\nRLPF configuration.Unless otherwise indicated, cemb =\n1.0, cmix = 0.1, cff = 0.001, cnorm = 0, \u03bb= 0.2 , T= 3 ,\nand \u03c4= 0.01 . The previous draft stated that three seeds and\nstandard deviations were reported, but no standard deviations\nor per-seed results appear in the supplied files. We therefore\nreport the recorded point estimates only and do not claim\n5\nTable 1. Recorded classification accuracies (%). RLPF denotes the final fine-tuned, gated ViT\u2013SSM hybrid. Cross-dataset heterogeneous\nmerging results: ViT-Tiny + PlainMamba-L1. We report accuracy, improvement over best parent, and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "92a3e1fb38ad23705219b6a018af7329cf490b31d7bc1556bd532aa9f8da1eb8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E92a3e1fb38ad2370-B0028"
+        ],
+        "excerpt": "Table 1 consolidates the internally consistent values from\nthe main manuscript. The RLPF row is thefine-tuned gated\nhybrid; it must not be compared as if it were a training-free\nweight merge. The optimization status of each baseline is not\ndocumented, so the comparison is provisional until identical\npost-fusion training budgets are verified.\nRLPF has the largest recorded point estimate on CIFAR-\n10 and ImageNet-1K and exceeds both parents on all three\ndatasets. Poincar\u00e9 fusion has the largest recorded Pet ac-\ncuracy (78.30%), so the earlier statement that RLPF out-\nperforms every baseline on every benchmark was incorrect.\nThe supplied ImageNet analysis additionally records 77.80%\nimmediately after RLPF initialization and 78.58% after fine-\ntuning, compared with a best-parent value of 76.42%. This\nis the only dataset for which the available analysis distin-\nguishes initial and final ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Results",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "112d59676adb9afea81eff15d1b584c2ff12ab964d91f23bfa9ab25c1a876136",
+            "evidence_id": "E92a3e1fb38ad2370-B0028",
+            "pages": [
+              6
+            ],
+            "section": "Main Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 6,
+                "section": "Main Results",
+                "section_index": 16,
+                "start": 0,
+                "text": "Table 1 consolidates the internally consistent values from\nthe main manuscript. The RLPF row is thefine-tuned gated\nhybrid; it must not be compared as if it were a training-free\nweight merge. The optimization status of each baseline is not\ndocumented, so the comparison is provisional until identical\npost-fusion training budgets are verified.\nRLPF has the largest recorded point estimate on CIFAR-\n10 and ImageNet-1K and exceeds both parents on all three\ndatasets. Poincar\u00e9 fusion has the largest recorded Pet ac-\ncuracy (78.30%), so the earlier statement that RLPF out-\nperforms every baseline on every benchmark was incorrect.\nThe supplied ImageNet analysis additionally records 77.80%\nimmediately after RLPF initialization and 78.58% after fine-\ntuning, compared with a best-parent value of 76.42%. This\nis the only dataset for which the available analysis distin-\nguishes initial and final "
+              }
+            ],
+            "text": "Table 1 consolidates the internally consistent values from\nthe main manuscript. The RLPF row is thefine-tuned gated\nhybrid; it must not be compared as if it were a training-free\nweight merge. The optimization status of each baseline is not\ndocumented, so the comparison is provisional until identical\npost-fusion training budgets are verified.\nRLPF has the largest recorded point estimate on CIFAR-\n10 and ImageNet-1K and exceeds both parents on all three\ndatasets. Poincar\u00e9 fusion has the largest recorded Pet ac-\ncuracy (78.30%), so the earlier statement that RLPF out-\nperforms every baseline on every benchmark was incorrect.\nThe supplied ImageNet analysis additionally records 77.80%\nimmediately after RLPF initialization and 78.58% after fine-\ntuning, compared with a best-parent value of 76.42%. This\nis the only dataset for which the available analysis distin-\nguishes initial and final "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "92a3e1fb38ad23705219b6a018af7329cf490b31d7bc1556bd532aa9f8da1eb8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E92a3e1fb38ad2370-B0036"
+        ],
+        "excerpt": "Fusion-method comparison.Figure 6 records an Ima-\ngeNet comparison among simple averaging (74.20%), a\nweighted sum (75.30%), Fisher merging (76.80%), Reg-\nMean (77.10%), and RLPF (78.58%). All four alternatives\nfall below RLPF in this figure, and simple averaging also\nfalls below the 76.42% best-parent reference. This is useful\nevidence that the reported result is not reproduced by these\nalternative fusion rules. It is not yet a fully controlled com-\nparison, however: the figure and accompanying report do\nnot identify the alignment map, post-fusion optimizer, num-\nber of epochs, gate, or checkpoint-selection rule for each\n7\nFigure 6. Available ImageNet fusion-method comparison. The\nfigure records 74.20% for simple averaging, 75.30% for a weighted\nsum, 76.80% for Fisher merging, 77.10% for RegMean, and 78.58%\nfor RLPF. A controlled interpretation requires confirmation that all\nmethods ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Fusion Controls And Optimization Stages",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "43bdafd7496f69cf79f71534f618cd58c22083ca01c6a4f923593af9ee114c51",
+            "evidence_id": "E92a3e1fb38ad2370-B0036",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Fusion Controls And Optimization Stages",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 631,
+                "page": 7,
+                "section": "Fusion Controls And Optimization Stages",
+                "section_index": 20,
+                "start": 0,
+                "text": "Fusion-method comparison.Figure 6 records an Ima-\ngeNet comparison among simple averaging (74.20%), a\nweighted sum (75.30%), Fisher merging (76.80%), Reg-\nMean (77.10%), and RLPF (78.58%). All four alternatives\nfall below RLPF in this figure, and simple averaging also\nfalls below the 76.42% best-parent reference. This is useful\nevidence that the reported result is not reproduced by these\nalternative fusion rules. It is not yet a fully controlled com-\nparison, however: the figure and accompanying report do\nnot identify the alignment map, post-fusion optimizer, num-\nber of epochs, gate, or checkpoint-selection rule for each\n7"
+              },
+              {
+                "end": 265,
+                "page": 8,
+                "section": "Fusion Controls And Optimization Stages",
+                "section_index": 21,
+                "start": 0,
+                "text": "Figure 6. Available ImageNet fusion-method comparison. The\nfigure records 74.20% for simple averaging, 75.30% for a weighted\nsum, 76.80% for Fisher merging, 77.10% for RegMean, and 78.58%\nfor RLPF. A controlled interpretation requires confirmation that all\nmethods "
+              }
+            ],
+            "text": "Fusion-method comparison.Figure 6 records an Ima-\ngeNet comparison among simple averaging (74.20%), a\nweighted sum (75.30%), Fisher merging (76.80%), Reg-\nMean (77.10%), and RLPF (78.58%). All four alternatives\nfall below RLPF in this figure, and simple averaging also\nfalls below the 76.42% best-parent reference. This is useful\nevidence that the reported result is not reproduced by these\nalternative fusion rules. It is not yet a fully controlled com-\nparison, however: the figure and accompanying report do\nnot identify the alignment map, post-fusion optimizer, num-\nber of epochs, gate, or checkpoint-selection rule for each\n7\nFigure 6. Available ImageNet fusion-method comparison. The\nfigure records 74.20% for simple averaging, 75.30% for a weighted\nsum, 76.80% for Fisher merging, 77.10% for RegMean, and 78.58%\nfor RLPF. A controlled interpretation requires confirmation that all\nmethods "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "92a3e1fb38ad23705219b6a018af7329cf490b31d7bc1556bd532aa9f8da1eb8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E92a3e1fb38ad2370-B0039"
+        ],
+        "excerpt": "Available resource accounting.Table 3 transcribes the\nvalues displayed in the supplied ImageNet efficiency artifact.\nThese values are preferable to borrowing DeiT or VMamba\nmeasurements because they refer to the model names used\nin this study. They should nevertheless be treated as pro-\nTable 3. Resource values displayed in the available ImageNet\nefficiency artifact. Latency is reported as mean \u00b1 the plotted\nerror bar; the statistic represented by that error bar is not recorded.\nTraining cost was not provided.\nModel Params FLOPs Memory Latency\n(M) (G) (MB) (ms)\nViT/Transformer 22.20 4.60 45018.5\u00b10.8\nPlainMamba/SSM 7.00 3.00 38015.2\u00b10.6\nRLPF hybrid 22.50 4.78 52020.1\u00b10.9\nvisional: the artifact does not record hardware, batch size,\nimage resolution, numerical precision, FLOP-counting con-\nvention, warm-up, number of timing repetitions, or whether\nRLPF evaluates both branches. The ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Efficiency, Robustness, And Reproducibility",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "96546f70fe6c1c5c1da4ec876c87b6e08aa3e90763194f0ff8e7fa84c3beb000",
+            "evidence_id": "E92a3e1fb38ad2370-B0039",
+            "pages": [
+              8
+            ],
+            "section": "Efficiency, Robustness, And Reproducibility",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 8,
+                "section": "Efficiency, Robustness, And Reproducibility",
+                "section_index": 22,
+                "start": 0,
+                "text": "Available resource accounting.Table 3 transcribes the\nvalues displayed in the supplied ImageNet efficiency artifact.\nThese values are preferable to borrowing DeiT or VMamba\nmeasurements because they refer to the model names used\nin this study. They should nevertheless be treated as pro-\nTable 3. Resource values displayed in the available ImageNet\nefficiency artifact. Latency is reported as mean \u00b1 the plotted\nerror bar; the statistic represented by that error bar is not recorded.\nTraining cost was not provided.\nModel Params FLOPs Memory Latency\n(M) (G) (MB) (ms)\nViT/Transformer 22.20 4.60 45018.5\u00b10.8\nPlainMamba/SSM 7.00 3.00 38015.2\u00b10.6\nRLPF hybrid 22.50 4.78 52020.1\u00b10.9\nvisional: the artifact does not record hardware, batch size,\nimage resolution, numerical precision, FLOP-counting con-\nvention, warm-up, number of timing repetitions, or whether\nRLPF evaluates both branches. The "
+              }
+            ],
+            "text": "Available resource accounting.Table 3 transcribes the\nvalues displayed in the supplied ImageNet efficiency artifact.\nThese values are preferable to borrowing DeiT or VMamba\nmeasurements because they refer to the model names used\nin this study. They should nevertheless be treated as pro-\nTable 3. Resource values displayed in the available ImageNet\nefficiency artifact. Latency is reported as mean \u00b1 the plotted\nerror bar; the statistic represented by that error bar is not recorded.\nTraining cost was not provided.\nModel Params FLOPs Memory Latency\n(M) (G) (MB) (ms)\nViT/Transformer 22.20 4.60 45018.5\u00b10.8\nPlainMamba/SSM 7.00 3.00 38015.2\u00b10.6\nRLPF hybrid 22.50 4.78 52020.1\u00b10.9\nvisional: the artifact does not record hardware, batch size,\nimage resolution, numerical precision, FLOP-counting con-\nvention, warm-up, number of timing repetitions, or whether\nRLPF evaluates both branches. The "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "92a3e1fb38ad23705219b6a018af7329cf490b31d7bc1556bd532aa9f8da1eb8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E92a3e1fb38ad2370-B0040"
+        ],
+        "excerpt": "displayed model sizes\nalso differ from the 5.7M/7.3M CIFAR-10 parameter counts\nrecorded above, indicating a different configuration or an\nunresolved metadata inconsistency.\nUnder the displayed measurements, PlainMamba has\nthe lowest parameter count, FLOPs, memory, and latency,\nwhereas RLPF has the highest values and the highest\nrecorded ImageNet accuracy. RLPF is approximately 8.6%\nslower than the displayed ViT latency and 32.2% slower than\nPlainMamba, so these data support an accuracy\u2013resource\ntrade-off rather than an inference-speedup claim. A valid\nfinal comparison requires one fixed protocol covering hard-\nware, software versions, batch size, precision, image reso-\nlution, warm-up, timing repetitions, and gate policy. If soft\nrouting evaluates both branches before logit fusion, it cannot\nrealize single-branch latency without a separately defined\nhard-routing mechanism.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Efficiency, Robustness, And Reproducibility",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "eb2a10ecbab488a256d1f959a22bf4c099ede1b06d43fe5e40be1c036f60df7c",
+            "evidence_id": "E92a3e1fb38ad2370-B0040",
+            "pages": [
+              8
+            ],
+            "section": "Efficiency, Robustness, And Reproducibility",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1776,
+                "page": 8,
+                "section": "Efficiency, Robustness, And Reproducibility",
+                "section_index": 22,
+                "start": 891,
+                "text": "displayed model sizes\nalso differ from the 5.7M/7.3M CIFAR-10 parameter counts\nrecorded above, indicating a different configuration or an\nunresolved metadata inconsistency.\nUnder the displayed measurements, PlainMamba has\nthe lowest parameter count, FLOPs, memory, and latency,\nwhereas RLPF has the highest values and the highest\nrecorded ImageNet accuracy. RLPF is approximately 8.6%\nslower than the displayed ViT latency and 32.2% slower than\nPlainMamba, so these data support an accuracy\u2013resource\ntrade-off rather than an inference-speedup claim. A valid\nfinal comparison requires one fixed protocol covering hard-\nware, software versions, batch size, precision, image reso-\nlution, warm-up, timing repetitions, and gate policy. If soft\nrouting evaluates both branches before logit fusion, it cannot\nrealize single-branch latency without a separately defined\nhard-routing mechanism."
+              }
+            ],
+            "text": "displayed model sizes\nalso differ from the 5.7M/7.3M CIFAR-10 parameter counts\nrecorded above, indicating a different configuration or an\nunresolved metadata inconsistency.\nUnder the displayed measurements, PlainMamba has\nthe lowest parameter count, FLOPs, memory, and latency,\nwhereas RLPF has the highest values and the highest\nrecorded ImageNet accuracy. RLPF is approximately 8.6%\nslower than the displayed ViT latency and 32.2% slower than\nPlainMamba, so these data support an accuracy\u2013resource\ntrade-off rather than an inference-speedup claim. A valid\nfinal comparison requires one fixed protocol covering hard-\nware, software versions, batch size, precision, image reso-\nlution, warm-up, timing repetitions, and gate policy. If soft\nrouting evaluates both branches before logit fusion, it cannot\nrealize single-branch latency without a separately defined\nhard-routing mechanism."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "92a3e1fb38ad23705219b6a018af7329cf490b31d7bc1556bd532aa9f8da1eb8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E92a3e1fb38ad2370-B0061"
+        ],
+        "excerpt": "unavailable unavailable unavailable\nAugmentation / preprocessing unavailable unavailable unavailable\nCheckpoint-selection rule unavailable unavailable unavailable\nReported metric accuracy accuracy top-1 accuracy\nTable 5. Role-level correspondence between the retained ViT and\nSSM branches.\nRole ViT parameters SSM parameters\nEmbedding patch embedding patch embedding\nSequence mixingW Q, WK, WV , WO A, B, C,\u2206\nPointwise map feed-forward layers feed-forward layers\nNormalization scale and shift scale and shift\nTable 6. Recorded component-wise curvature magnitudes. Curva-\nture is\u2212c g whenc g >0.\nGroupg c g Fusion rule\nEmbedding1.0Lorentz\nSequence mixing0.1Lorentz\nFeed-forward0.001near-Euclidean Lorentz\nNormalization0Euclidean",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Component Settings",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "d1fa6342393d4645e3d4abc1690142cf7e38cae75f9aa696c5683bab3dbcbc20",
+            "evidence_id": "E92a3e1fb38ad2370-B0061",
+            "pages": [
+              12
+            ],
+            "section": "Appendix: Component Settings",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1156,
+                "page": 12,
+                "section": "Appendix: Component Settings",
+                "section_index": 38,
+                "start": 429,
+                "text": "unavailable unavailable unavailable\nAugmentation / preprocessing unavailable unavailable unavailable\nCheckpoint-selection rule unavailable unavailable unavailable\nReported metric accuracy accuracy top-1 accuracy\nTable 5. Role-level correspondence between the retained ViT and\nSSM branches.\nRole ViT parameters SSM parameters\nEmbedding patch embedding patch embedding\nSequence mixingW Q, WK, WV , WO A, B, C,\u2206\nPointwise map feed-forward layers feed-forward layers\nNormalization scale and shift scale and shift\nTable 6. Recorded component-wise curvature magnitudes. Curva-\nture is\u2212c g whenc g >0.\nGroupg c g Fusion rule\nEmbedding1.0Lorentz\nSequence mixing0.1Lorentz\nFeed-forward0.001near-Euclidean Lorentz\nNormalization0Euclidean"
+              }
+            ],
+            "text": "unavailable unavailable unavailable\nAugmentation / preprocessing unavailable unavailable unavailable\nCheckpoint-selection rule unavailable unavailable unavailable\nReported metric accuracy accuracy top-1 accuracy\nTable 5. Role-level correspondence between the retained ViT and\nSSM branches.\nRole ViT parameters SSM parameters\nEmbedding patch embedding patch embedding\nSequence mixingW Q, WK, WV , WO A, B, C,\u2206\nPointwise map feed-forward layers feed-forward layers\nNormalization scale and shift scale and shift\nTable 6. Recorded component-wise curvature magnitudes. Curva-\nture is\u2212c g whenc g >0.\nGroupg c g Fusion rule\nEmbedding1.0Lorentz\nSequence mixing0.1Lorentz\nFeed-forward0.001near-Euclidean Lorentz\nNormalization0Euclidean"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.19384",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "theoretical",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The experimental comparisons are not controlled: baseline optimization status, alignment interface, post-fusion training budget, gate, and checkpoint-selection rule are undocumented, so the reported RLPF advantage cannot be attributed to the proposed geometry.",
+          "Key reproducibility details are missing, including the truncated SVD construction, gate architecture and training schedule, and per-baseline adaptation mechanism.",
+          "Reported point estimates lack repeated-trial uncertainty, and the manuscript explicitly states no statistical significance can be claimed.",
+          "Efficiency claims are internally inconsistent: the displayed resource table shows RLPF has the highest latency and compute, contradicting the inference-speedup claim."
+        ],
+        "canonical_id": "doi:10.48550/arxiv.2609.19384",
+        "context_id": "92a3e1fb38ad23705219b6a018af7329cf490b31d7bc1556bd532aa9f8da1eb8",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Classification accuracy is measured on standard image benchmark test/validation splits rather than by the optimization objective.",
+          "final_evaluation_signal": "Top-1 classification accuracy on standard test/validation splits of CIFAR-10, Oxford-IIIT Pet, and ImageNet-1K.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Supervised task loss with gate-balance regularization optimizing the hybrid branches and learned gate, plus geodesic barycenter minimization and validation-selected curvature hyperparameters.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E92a3e1fb38ad2370-B0018",
+          "E92a3e1fb38ad2370-B0023",
+          "E92a3e1fb38ad2370-B0025",
+          "E92a3e1fb38ad2370-B0026",
+          "E92a3e1fb38ad2370-B0028",
+          "E92a3e1fb38ad2370-B0036",
+          "E92a3e1fb38ad2370-B0039",
+          "E92a3e1fb38ad2370-B0040",
+          "E92a3e1fb38ad2370-B0061"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "c130d767af51f9eb81e695f8c4ec7c1e6af47874f729caee0abf0ec8e3bc3283"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2609.19384",
+        "claim_evidence_alignment": "Claims regarding convergence rates, guaranteed numerical stability, and inference acceleration are not substantiated by the evidence, as acknowledged in the text itself. In particular, efficiency tables show RLPF incurs higher latency and compute overhead than either individual parent model.",
+        "context_id": "92a3e1fb38ad23705219b6a018af7329cf490b31d7bc1556bd532aa9f8da1eb8",
+        "decision": "uncertain",
+        "evaluation_assessment": "Comparisons across CIFAR-10, Oxford-IIIT Pet, and ImageNet-1K report point estimates without error bars or multi-seed standard deviations. Critically, the fine-tuned hybrid RLPF is compared against baselines whose post-fusion fine-tuning budgets, alignment interfaces, and gate controls are undocumented.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Top-1 classification accuracy evaluated on standard image benchmark test/validation splits.",
+          "final_evaluation_signal": "Standard top-1 classification accuracy on test/validation splits of CIFAR-10, Oxford-IIIT Pet, and ImageNet-1K.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Supervised task loss (cross-entropy plus gate balance regularization) optimizing the hybrid branches and learned gate, along with geodesic barycenter minimization.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E92a3e1fb38ad2370-B0018",
+          "E92a3e1fb38ad2370-B0023",
+          "E92a3e1fb38ad2370-B0025",
+          "E92a3e1fb38ad2370-B0026",
+          "E92a3e1fb38ad2370-B0028",
+          "E92a3e1fb38ad2370-B0036",
+          "E92a3e1fb38ad2370-B0039",
+          "E92a3e1fb38ad2370-B0061"
+        ],
+        "limitations": "The manuscript candidly acknowledges critical limitations, including the lack of controlled baseline training budgets, incomplete SVD implementation details, missing error bounds, and the hybrid nature requiring retention of both architectures.",
+        "method_assessment": "The methodology is mathematically formulated in the Lorentz model, but key experimental details are missing or incomplete. Specifically, the truncated SVD alignment construction, gate architecture and training parameters, and baseline adaptation mechanisms are not fully documented in the manuscript.",
+        "quality_rationale": "While the conceptual formulation of curved-space parameter fusion is innovative, the experimental record is missing essential experimental controls, complete procedural specifications, and statistical variance estimates. This extensive scientific uncertainty warrants an uncertain rating.",
+        "scoped_contribution": "The paper introduces Riemannian-Lorentz Parameter Fusion (RLPF), a method combining Vision Transformers and State-Space Models into a two-branch hybrid via semantic parameter grouping, SVD latent alignment, anchored Lorentz geodesic barycenter calculation, and learned logit gating.",
+        "source_content_hash": "c130d767af51f9eb81e695f8c4ec7c1e6af47874f729caee0abf0ec8e3bc3283"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "While the conceptual formulation of curved-space parameter fusion is innovative, the experimental record is missing essential experimental controls, complete procedural specifications, and statistical variance estimates. This extensive scientific uncertainty warrants an uncertain rating.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "c130d767af51f9eb81e695f8c4ec7c1e6af47874f729caee0abf0ec8e3bc3283",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The manuscript candidly acknowledges critical limitations, including the lack of controlled baseline training budgets, incomplete SVD implementation details, missing error bounds, and the hybrid nature requiring retention of both architectures."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -163,7 +1411,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

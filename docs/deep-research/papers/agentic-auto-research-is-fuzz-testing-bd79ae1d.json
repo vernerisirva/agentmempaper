@@ -40,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-11 07:40:48",
-    "generated_at": "2026-11-23 14:09:12",
+    "generated_at": "2026-11-24 14:44:22",
     "last_seen_at": "2026-08-17 07:19:48",
     "metadata_sources": [
       "openalex",
@@ -103,66 +103,1326 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-08-12T09:39:13+00:00",
-    "assessment_scope": "title_and_abstract",
-    "assessment_version": "quality-v1",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessed_at": "2026-11-24T14:41:47.557595+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
-    "concerns": [],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 78/100, low confidence, based on title and abstract.",
+    "concerns": [
+      "The manuscript is a position paper whose three central predictions are explicitly unvalidated hypotheses, and the only empirical content is a single illustrative worked example described as an existence proof rather than an evaluation.",
+      "The worked example lacks statistical evaluation, baseline comparisons across tasks, or multi-trial testing, so the claimed advantages of feedback-directed search and protected validation are not established with sufficient rigor for admission."
+    ],
+    "concise_summary": "While the conceptual positioning is insightful and thoughtfully draws on fuzzing principles to address fundamental failure modes in LLM agent research, the manuscript is primarily a position paper with an illustrative demonstration rather than a fully evaluated scientific contribution. Under library curation standards, promotion requires stronger empirical or formal validation beyond an existence proof.",
     "confidence": "low",
-    "coverage": {},
-    "curation_note": null,
-    "dimension_scores": {
-      "contribution_clarity": 4,
-      "evaluation_or_validation_strength": null,
-      "evidence_to_claim_alignment": null,
-      "limitations_and_uncertainty_handling": null,
-      "methodological_rigor": null,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": null,
-      "reproducibility_and_transparency": null,
-      "scholarly_novelty_or_value": null
+    "coverage": {
+      "assessment_input_characters": 56498,
+      "assessment_input_sha256": "2be3cb621de39921e19668769f068b737ae411f7c62ab184901cc33a1dd88af8",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2608.09855",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 53486,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 53123,
+      "evidence_block_count": 77,
+      "evidence_context_characters": 64419,
+      "evidence_context_id": "53c59c775448fa5b8dbb737f29dbecbffdbb6429884b2bc4ae34f29c523be04b",
+      "evidence_context_sha256": "b03995312bc0acf63a4b426c485dcec0bfd575b5a1e0f3818a432d8b866563fe",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 53508,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "extracted_pages": 12,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "2e92f9f20a7b33cbf416907e3eaa9355a62425cb0094c859bb0785033a1834e8",
+        "source_url": "https://arxiv.org/pdf/2608.09855",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 53486,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "The Greatness Of Science Cannot Be Planned:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 2117,
+          "supplied_characters": 2117
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 1,
+          "source_characters": 2425,
+          "supplied_characters": 2425
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 3899,
+          "supplied_characters": 3899
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 553,
+          "supplied_characters": 553
+        },
+        {
+          "heading": "The Research Loop Is The Fuzzing Loop",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 2749,
+          "supplied_characters": 2749
+        },
+        {
+          "heading": "Lesson One: Make Research Progress",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 593,
+          "supplied_characters": 593
+        },
+        {
+          "heading": "Lesson One: Make Research Progress",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 3702,
+          "supplied_characters": 3702
+        },
+        {
+          "heading": "Lesson Two: Use Feedback To Search",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1780,
+          "supplied_characters": 1780
+        },
+        {
+          "heading": "Lesson Two: Use Feedback To Search",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1027,
+          "supplied_characters": 1027
+        },
+        {
+          "heading": "Lesson Three: Separate Exploration Signals",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 2341,
+          "supplied_characters": 2341
+        },
+        {
+          "heading": "Lesson Three: Separate Exploration Signals",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 2252,
+          "supplied_characters": 2252
+        },
+        {
+          "heading": "A Worked Example: Instrumenting A",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 3043,
+          "supplied_characters": 3043
+        },
+        {
+          "heading": "A Worked Example: Instrumenting A",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1443,
+          "supplied_characters": 1443
+        },
+        {
+          "heading": "With The Panel, The Agent Reached The Same Plateau. In",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 502,
+          "supplied_characters": 502
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "related",
+          "section_index": 14,
+          "source_characters": 3162,
+          "supplied_characters": 3162
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "related",
+          "section_index": 15,
+          "source_characters": 2220,
+          "supplied_characters": 2220
+        },
+        {
+          "heading": "Alternative Views",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 3393,
+          "supplied_characters": 3393
+        },
+        {
+          "heading": "Alternative Views",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1139,
+          "supplied_characters": 1139
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 18,
+          "source_characters": 1121,
+          "supplied_characters": 1121
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 45,
+          "supplied_characters": 45
+        },
+        {
+          "heading": "Auto-Research Is Moving From Benchmarks To Real-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 20,
+          "source_characters": 172,
+          "supplied_characters": 172
+        },
+        {
+          "heading": "Jerry - Tworek - Core - Automation -",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 36,
+          "supplied_characters": 36
+        },
+        {
+          "heading": "Auto - Research - Is - Moving - From -",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 38,
+          "supplied_characters": 38
+        },
+        {
+          "heading": "Benchmarks- To- Real- World- Loops (Vis-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 23,
+          "source_characters": 109,
+          "supplied_characters": 109
+        },
+        {
+          "heading": "What We Learned Hosting The Auto-Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 124,
+          "supplied_characters": 124
+        },
+        {
+          "heading": "Status / 2083323121713733661 (Visited On",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 370,
+          "supplied_characters": 370
+        },
+        {
+          "heading": "Ceedings Of The 2017 Acm Sigsac Conference",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 239,
+          "supplied_characters": 239
+        },
+        {
+          "heading": "In:Proceedings Of The 2016 Acm Sigsac Confer-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 45,
+          "supplied_characters": 45
+        },
+        {
+          "heading": "Ence On Computer And Communications Security",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 210,
+          "supplied_characters": 210
+        },
+        {
+          "heading": "In:Proceedings Of The 44Th International Conference",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 425,
+          "supplied_characters": 425
+        },
+        {
+          "heading": "Keys: Scaling Inference Compute With Repeated Sam-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 258,
+          "supplied_characters": 258
+        },
+        {
+          "heading": "Ternational Conference On Learning Representations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 220,
+          "supplied_characters": 220
+        },
+        {
+          "heading": "Vances In Neural Information Processing Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 150,
+          "supplied_characters": 150
+        },
+        {
+          "heading": "Vances In Neural Information Processing Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 4680,
+          "supplied_characters": 4680
+        },
+        {
+          "heading": "Vances In Neural Information Processing Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 4540,
+          "supplied_characters": 4540
+        },
+        {
+          "heading": "Vances In Neural Information Processing Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 2001,
+          "supplied_characters": 2001
+        }
+      ],
+      "selected_characters": 53123,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "selected_sections": [
+        {
+          "characters": 2117,
+          "heading": "The Greatness Of Science Cannot Be Planned:",
+          "page": 1
+        },
+        {
+          "characters": 2425,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3899,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 553,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 2749,
+          "heading": "The Research Loop Is The Fuzzing Loop",
+          "page": 3
+        },
+        {
+          "characters": 593,
+          "heading": "Lesson One: Make Research Progress",
+          "page": 3
+        },
+        {
+          "characters": 3702,
+          "heading": "Lesson One: Make Research Progress",
+          "page": 4
+        },
+        {
+          "characters": 1780,
+          "heading": "Lesson Two: Use Feedback To Search",
+          "page": 4
+        },
+        {
+          "characters": 1027,
+          "heading": "Lesson Two: Use Feedback To Search",
+          "page": 5
+        },
+        {
+          "characters": 2341,
+          "heading": "Lesson Three: Separate Exploration Signals",
+          "page": 5
+        },
+        {
+          "characters": 2252,
+          "heading": "Lesson Three: Separate Exploration Signals",
+          "page": 6
+        },
+        {
+          "characters": 3043,
+          "heading": "A Worked Example: Instrumenting A",
+          "page": 6
+        },
+        {
+          "characters": 1443,
+          "heading": "A Worked Example: Instrumenting A",
+          "page": 7
+        },
+        {
+          "characters": 502,
+          "heading": "With The Panel, The Agent Reached The Same Plateau. In",
+          "page": 7
+        },
+        {
+          "characters": 3162,
+          "heading": "Related Work",
+          "page": 7
+        },
+        {
+          "characters": 2220,
+          "heading": "Related Work",
+          "page": 8
+        },
+        {
+          "characters": 3393,
+          "heading": "Alternative Views",
+          "page": 8
+        },
+        {
+          "characters": 1139,
+          "heading": "Alternative Views",
+          "page": 9
+        },
+        {
+          "characters": 1121,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 45,
+          "heading": "Unclassified body after references",
+          "page": 9
+        },
+        {
+          "characters": 172,
+          "heading": "Auto-Research Is Moving From Benchmarks To Real-",
+          "page": 9
+        },
+        {
+          "characters": 36,
+          "heading": "Jerry - Tworek - Core - Automation -",
+          "page": 9
+        },
+        {
+          "characters": 38,
+          "heading": "Auto - Research - Is - Moving - From -",
+          "page": 9
+        },
+        {
+          "characters": 109,
+          "heading": "Benchmarks- To- Real- World- Loops (Vis-",
+          "page": 9
+        },
+        {
+          "characters": 124,
+          "heading": "What We Learned Hosting The Auto-Research",
+          "page": 9
+        },
+        {
+          "characters": 370,
+          "heading": "Status / 2083323121713733661 (Visited On",
+          "page": 9
+        },
+        {
+          "characters": 239,
+          "heading": "Ceedings Of The 2017 Acm Sigsac Conference",
+          "page": 9
+        },
+        {
+          "characters": 45,
+          "heading": "In:Proceedings Of The 2016 Acm Sigsac Confer-",
+          "page": 9
+        },
+        {
+          "characters": 210,
+          "heading": "Ence On Computer And Communications Security",
+          "page": 9
+        },
+        {
+          "characters": 425,
+          "heading": "In:Proceedings Of The 44Th International Conference",
+          "page": 9
+        },
+        {
+          "characters": 258,
+          "heading": "Keys: Scaling Inference Compute With Repeated Sam-",
+          "page": 9
+        },
+        {
+          "characters": 220,
+          "heading": "Ternational Conference On Learning Representations",
+          "page": 9
+        },
+        {
+          "characters": 150,
+          "heading": "Vances In Neural Information Processing Systems",
+          "page": 9
+        },
+        {
+          "characters": 4680,
+          "heading": "Vances In Neural Information Processing Systems",
+          "page": 10
+        },
+        {
+          "characters": 4540,
+          "heading": "Vances In Neural Information Processing Systems",
+          "page": 11
+        },
+        {
+          "characters": 2001,
+          "heading": "Vances In Neural Information Processing Systems",
+          "page": 12
+        }
+      ],
+      "selected_text_sha256": "2be3cb621de39921e19668769f068b737ae411f7c62ab184901cc33a1dd88af8",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "2e92f9f20a7b33cbf416907e3eaa9355a62425cb0094c859bb0785033a1834e8",
+      "source_pages": 12,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
     },
+    "curation_note": null,
+    "dimension_scores": {},
     "downranked": false,
     "evidence": [
       {
         "claim_role": null,
-        "context_id": null,
+        "context_id": "53c59c775448fa5b8dbb737f29dbecbffdbb6429884b2bc4ae34f29c523be04b",
         "dimension": "contribution_clarity",
-        "evidence_ids": [],
-        "excerpt": "ery using evidence protected from adaptive reuse. We propose controlled tests of whether candidate signals predict validated progress, wheth",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "The contribution is stated explicitly.",
-        "section": "Abstract",
-        "signal_type": "positive",
-        "source_blocks": [],
+        "evidence_ids": [
+          "E53c59c775448fa5b-B0002"
+        ],
+        "excerpt": "inputs and allocate effort, rather than merely rank\ncompleted runs. Auto-research needs the same two capabilities. First, each experiment must expose a cheap,\ndense signal of epistemic progress before final scientific validation is available. Second, that signal must\ndetermine the next intervention so the agent searches rather than repeatedly samples. Because the progress signal\nprovides guidance rather than a final verdict, final validation must still evaluate claims using evidence protected\nfrom adaptive reuse. We propose controlled tests to determine whether candidate signals predict validated\nprogress, whether feedback-directed search yields more validated discoveries per unit cost than repeated sampling,\nand whether protected validation reduces false discoveries. In a simulated physics environment, an AI research\nagent that tracks its intermediate epistemic progress discovers a ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "The Greatness Of Science Cannot Be Planned:",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e049b46c2c76af0bc1d90f92544f9ef0d1ebc6297fca31d3e2879009d84fa411",
+            "evidence_id": "E53c59c775448fa5b-B0002",
+            "pages": [
+              1
+            ],
+            "section": "The Greatness Of Science Cannot Be Planned:",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1794,
+                "page": 1,
+                "section": "The Greatness Of Science Cannot Be Planned:",
+                "section_index": 0,
+                "start": 898,
+                "text": "inputs and allocate effort, rather than merely rank\ncompleted runs. Auto-research needs the same two capabilities. First, each experiment must expose a cheap,\ndense signal of epistemic progress before final scientific validation is available. Second, that signal must\ndetermine the next intervention so the agent searches rather than repeatedly samples. Because the progress signal\nprovides guidance rather than a final verdict, final validation must still evaluate claims using evidence protected\nfrom adaptive reuse. We propose controlled tests to determine whether candidate signals predict validated\nprogress, whether feedback-directed search yields more validated discoveries per unit cost than repeated sampling,\nand whether protected validation reduces false discoveries. In a simulated physics environment, an AI research\nagent that tracks its intermediate epistemic progress discovers a "
+              }
+            ],
+            "text": "inputs and allocate effort, rather than merely rank\ncompleted runs. Auto-research needs the same two capabilities. First, each experiment must expose a cheap,\ndense signal of epistemic progress before final scientific validation is available. Second, that signal must\ndetermine the next intervention so the agent searches rather than repeatedly samples. Because the progress signal\nprovides guidance rather than a final verdict, final validation must still evaluate claims using evidence protected\nfrom adaptive reuse. We propose controlled tests to determine whether candidate signals predict validated\nprogress, whether feedback-directed search yields more validated discoveries per unit cost than repeated sampling,\nand whether protected validation reduces false discoveries. In a simulated physics environment, an AI research\nagent that tracks its intermediate epistemic progress discovers a "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "53c59c775448fa5b8dbb737f29dbecbffdbb6429884b2bc4ae34f29c523be04b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E53c59c775448fa5b-B0010"
+        ],
+        "excerpt": "instru-\nmented, feedback-directed search.Within a declared re-\nsearch problem, each experiment should expose a cheap,\ndense measure of epistemic progress; the search policy\nshould use that measure to choose its next intervention;\nand final validation, protected from adaptive reuse of the\nprogress signal, should determine what counts as a discov-\nery. This position makes three separable predictions. First,\ncandidate progress signals should predict protected scientific\noutcomes and improve how a fixed validation budget is allo-\ncated. Second, with the proposer, task, validator, and budget\nfixed, feedback-directed search should yield more validated\ndiscoveries per unit cost than repeated sampling. Third,\nwith the search trace fixed, protected validation should re-\nduce false discoveries relative to reporting the optimized\nproxy. These predictions specify how feedback should guide\nsearch; ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "b57fb1eb3c03bf2e9992aa385761b61724196365f9953a000f7544ed28cda302",
+            "evidence_id": "E53c59c775448fa5b-B0010",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3840,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 2942,
+                "text": "instru-\nmented, feedback-directed search.Within a declared re-\nsearch problem, each experiment should expose a cheap,\ndense measure of epistemic progress; the search policy\nshould use that measure to choose its next intervention;\nand final validation, protected from adaptive reuse of the\nprogress signal, should determine what counts as a discov-\nery. This position makes three separable predictions. First,\ncandidate progress signals should predict protected scientific\noutcomes and improve how a fixed validation budget is allo-\ncated. Second, with the proposer, task, validator, and budget\nfixed, feedback-directed search should yield more validated\ndiscoveries per unit cost than repeated sampling. Third,\nwith the search trace fixed, protected validation should re-\nduce false discoveries relative to reporting the optimized\nproxy. These predictions specify how feedback should guide\nsearch; "
+              }
+            ],
+            "text": "instru-\nmented, feedback-directed search.Within a declared re-\nsearch problem, each experiment should expose a cheap,\ndense measure of epistemic progress; the search policy\nshould use that measure to choose its next intervention;\nand final validation, protected from adaptive reuse of the\nprogress signal, should determine what counts as a discov-\nery. This position makes three separable predictions. First,\ncandidate progress signals should predict protected scientific\noutcomes and improve how a fixed validation budget is allo-\ncated. Second, with the proposer, task, validator, and budget\nfixed, feedback-directed search should yield more validated\ndiscoveries per unit cost than repeated sampling. Third,\nwith the search trace fixed, protected validation should re-\nduce false discoveries relative to reporting the optimized\nproxy. These predictions specify how feedback should guide\nsearch; "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "53c59c775448fa5b8dbb737f29dbecbffdbb6429884b2bc4ae34f29c523be04b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E53c59c775448fa5b-B0020"
+        ],
+        "excerpt": "how well each proxy predicts protected outcomes\nand allocates a fixed validation budget. It can then compare\nthe number of validated discoveries per unit cost. A useful\nproxy must survive both tests.\nThis capability claim makes a falsifiable prediction.Signal\nprediction:with the proposer, task, and candidate pool\nfixed, a useful intermediate metric should predict protected\noutcomes and select more validator-confirmed discoveries\nunder a fixed validation budget than an uninformative or\nterminal-only signal. Whether a selected candidate counts\nas a discovery is a distinct final-validation question ad-\ndressed in section 5. If no candidate signal predicts pro-\ntected progress, this claim is wrong.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Lesson One: Make Research Progress",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "d81ba05f7c7b7640c16a01db3f780e855b5395f9c48655cefce969760fa7eb2b",
+            "evidence_id": "E53c59c775448fa5b-B0020",
+            "pages": [
+              4
+            ],
+            "section": "Lesson One: Make Research Progress",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3702,
+                "page": 4,
+                "section": "Lesson One: Make Research Progress",
+                "section_index": 6,
+                "start": 2999,
+                "text": "how well each proxy predicts protected outcomes\nand allocates a fixed validation budget. It can then compare\nthe number of validated discoveries per unit cost. A useful\nproxy must survive both tests.\nThis capability claim makes a falsifiable prediction.Signal\nprediction:with the proposer, task, and candidate pool\nfixed, a useful intermediate metric should predict protected\noutcomes and select more validator-confirmed discoveries\nunder a fixed validation budget than an uninformative or\nterminal-only signal. Whether a selected candidate counts\nas a discovery is a distinct final-validation question ad-\ndressed in section 5. If no candidate signal predicts pro-\ntected progress, this claim is wrong."
+              }
+            ],
+            "text": "how well each proxy predicts protected outcomes\nand allocates a fixed validation budget. It can then compare\nthe number of validated discoveries per unit cost. A useful\nproxy must survive both tests.\nThis capability claim makes a falsifiable prediction.Signal\nprediction:with the proposer, task, and candidate pool\nfixed, a useful intermediate metric should predict protected\noutcomes and select more validator-confirmed discoveries\nunder a fixed validation budget than an uninformative or\nterminal-only signal. Whether a selected candidate counts\nas a discovery is a distinct final-validation question ad-\ndressed in section 5. If no candidate signal predicts pro-\ntected progress, this claim is wrong."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "53c59c775448fa5b8dbb737f29dbecbffdbb6429884b2bc4ae34f29c523be04b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E53c59c775448fa5b-B0023"
+        ],
+        "excerpt": "Agentic Auto-Research is Fuzz Testing\nFigure 4.A scheduler concentrates a fixed budget on the directions whose progress readings improve, and prunes the rest early. Because\nthe supply does not grow, pruning D3 and D5 frees flow for D2. Directed greybox fuzzers schedule energy the same way, by distance to a\ntarget [4, 5].\nas coverage-guided mutators inside software fuzzing loops\n[30, 56]. We need to determine which operators improve\nprotected, cost-normalized scientific outcomes rather than\nonly the steering proxy.\nResearch agents will not inherit Angora's gains automati-\ncally.Search prediction:with the proposer, task, protected\nvalidator, and total budget fixed, a policy that uses interme-\ndiate experimental feedback to choose its next intervention\nshould yield more validator-confirmed discoveries per unit\ncost than repeated sampling. This comparison definesprin-\ncipled ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Lesson Two: Use Feedback To Search",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "44bd5767e3214f96c88841ce6e3e335ee42891a25b1bdf1dd5345f1f0b02ee05",
+            "evidence_id": "E53c59c775448fa5b-B0023",
+            "pages": [
+              5
+            ],
+            "section": "Lesson Two: Use Feedback To Search",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 884,
+                "page": 5,
+                "section": "Lesson Two: Use Feedback To Search",
+                "section_index": 8,
+                "start": 0,
+                "text": "Agentic Auto-Research is Fuzz Testing\nFigure 4.A scheduler concentrates a fixed budget on the directions whose progress readings improve, and prunes the rest early. Because\nthe supply does not grow, pruning D3 and D5 frees flow for D2. Directed greybox fuzzers schedule energy the same way, by distance to a\ntarget [4, 5].\nas coverage-guided mutators inside software fuzzing loops\n[30, 56]. We need to determine which operators improve\nprotected, cost-normalized scientific outcomes rather than\nonly the steering proxy.\nResearch agents will not inherit Angora's gains automati-\ncally.Search prediction:with the proposer, task, protected\nvalidator, and total budget fixed, a policy that uses interme-\ndiate experimental feedback to choose its next intervention\nshould yield more validator-confirmed discoveries per unit\ncost than repeated sampling. This comparison definesprin-\ncipled "
+              }
+            ],
+            "text": "Agentic Auto-Research is Fuzz Testing\nFigure 4.A scheduler concentrates a fixed budget on the directions whose progress readings improve, and prunes the rest early. Because\nthe supply does not grow, pruning D3 and D5 frees flow for D2. Directed greybox fuzzers schedule energy the same way, by distance to a\ntarget [4, 5].\nas coverage-guided mutators inside software fuzzing loops\n[30, 56]. We need to determine which operators improve\nprotected, cost-normalized scientific outcomes rather than\nonly the steering proxy.\nResearch agents will not inherit Angora's gains automati-\ncally.Search prediction:with the proposer, task, protected\nvalidator, and total budget fixed, a policy that uses interme-\ndiate experimental feedback to choose its next intervention\nshould yield more validator-confirmed discoveries per unit\ncost than repeated sampling. This comparison definesprin-\ncipled "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "53c59c775448fa5b8dbb737f29dbecbffdbb6429884b2bc4ae34f29c523be04b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E53c59c775448fa5b-B0030"
+        ],
+        "excerpt": "reporting the optimized guidance score. This\nis a reliability claim about the final verdict, not another\nsearch capability.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Lesson Three: Separate Exploration Signals",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "02e1148f7fcd29d3f35863dc9a86329c7c507a6d042d2f23627ee83632312e20",
+            "evidence_id": "E53c59c775448fa5b-B0030",
+            "pages": [
+              6
+            ],
+            "section": "Lesson Three: Separate Exploration Signals",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2252,
+                "page": 6,
+                "section": "Lesson Three: Separate Exploration Signals",
+                "section_index": 10,
+                "start": 2129,
+                "text": "reporting the optimized guidance score. This\nis a reliability claim about the final verdict, not another\nsearch capability."
+              }
+            ],
+            "text": "reporting the optimized guidance score. This\nis a reliability claim about the final verdict, not another\nsearch capability."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "53c59c775448fa5b8dbb737f29dbecbffdbb6429884b2bc4ae34f29c523be04b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E53c59c775448fa5b-B0031"
+        ],
+        "excerpt": "Physics-Discovery Agent\nA fuzzer asks two questions after every execution: Did any-\nthing new happen? Where have I not been? Both are cheap\nto answer within a research loop, and both can change what\nan agent discovers. We added both readings to an agent on\nDiscoverPhysics, a benchmark of simulated physics worlds.\nIn each round, the agent designs an experiment, observes\nnoisy trajectories, and fits candidate laws. It ultimately sub-\nmits one law as code with a mechanistic explanation. The\nLoop as deployed\nrefit in place\nbudget spent:\nsubmitted anyway\nWith the fuzzer's two readings\nnothing new\nnothing new\nalready coverednew regime\ngated, then\nsubmitted\nwhere the hidden law shows regimes the experiments have covered\nFigure 5.One budget, two searches. Same hidden terrain, twelve\nexperiments each; orange marks where the hidden law shows, blue\nthe regimes covered. Left: the loop as deployed ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "A Worked Example: Instrumenting A",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "521fe054b5c6f2074785701e16c5b82b9a4b1a85e4ca6c2b8fe9981fe1aedc8b",
+            "evidence_id": "E53c59c775448fa5b-B0031",
+            "pages": [
+              6
+            ],
+            "section": "A Worked Example: Instrumenting A",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 6,
+                "section": "A Worked Example: Instrumenting A",
+                "section_index": 11,
+                "start": 0,
+                "text": "Physics-Discovery Agent\nA fuzzer asks two questions after every execution: Did any-\nthing new happen? Where have I not been? Both are cheap\nto answer within a research loop, and both can change what\nan agent discovers. We added both readings to an agent on\nDiscoverPhysics, a benchmark of simulated physics worlds.\nIn each round, the agent designs an experiment, observes\nnoisy trajectories, and fits candidate laws. It ultimately sub-\nmits one law as code with a mechanistic explanation. The\nLoop as deployed\nrefit in place\nbudget spent:\nsubmitted anyway\nWith the fuzzer's two readings\nnothing new\nnothing new\nalready coverednew regime\ngated, then\nsubmitted\nwhere the hidden law shows regimes the experiments have covered\nFigure 5.One budget, two searches. Same hidden terrain, twelve\nexperiments each; orange marks where the hidden law shows, blue\nthe regimes covered. Left: the loop as deployed "
+              }
+            ],
+            "text": "Physics-Discovery Agent\nA fuzzer asks two questions after every execution: Did any-\nthing new happen? Where have I not been? Both are cheap\nto answer within a research loop, and both can change what\nan agent discovers. We added both readings to an agent on\nDiscoverPhysics, a benchmark of simulated physics worlds.\nIn each round, the agent designs an experiment, observes\nnoisy trajectories, and fits candidate laws. It ultimately sub-\nmits one law as code with a mechanistic explanation. The\nLoop as deployed\nrefit in place\nbudget spent:\nsubmitted anyway\nWith the fuzzer's two readings\nnothing new\nnothing new\nalready coverednew regime\ngated, then\nsubmitted\nwhere the hidden law shows regimes the experiments have covered\nFigure 5.One budget, two searches. Same hidden terrain, twelve\nexperiments each; orange marks where the hidden law shows, blue\nthe regimes covered. Left: the loop as deployed "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "53c59c775448fa5b8dbb737f29dbecbffdbb6429884b2bc4ae34f29c523be04b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E53c59c775448fa5b-B0033"
+        ],
+        "excerpt": "every\nheld-out trajectory within noise, and named the wrong force\nlaw. The first agent never asked whether anything in its data\nwas new; the second never asked where it had not been. We\ncontrast the searches produced by the same budget with and\nwithout the two questions (Figure 5).\nWe instrument the agent as a fuzzer instruments a program.\nThe same design applies beyond physics. The loop has three\nparts. First, it computes readings that answer the two ques-\ntions above using only artifacts the agent has already pro-\nduced. Second, it injects those readings into the control loop\nso that they can influence the next action. Third, it keeps\ncertification outside the loop, as section 5 requires. For\nDiscoverPhysics, our task harness computes two readings.1\nSurpriseis the \u03c3-normalized residual of the current law on\nthe data collected so far; theenveloperecords the range\nexplored for each ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "A Worked Example: Instrumenting A",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "8a3aa3a908a2a5f3c9c6d4be6175a60194183b78671620e4515a917804b91c1e",
+            "evidence_id": "E53c59c775448fa5b-B0033",
+            "pages": [
+              6
+            ],
+            "section": "A Worked Example: Instrumenting A",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2690,
+                "page": 6,
+                "section": "A Worked Example: Instrumenting A",
+                "section_index": 11,
+                "start": 1795,
+                "text": "every\nheld-out trajectory within noise, and named the wrong force\nlaw. The first agent never asked whether anything in its data\nwas new; the second never asked where it had not been. We\ncontrast the searches produced by the same budget with and\nwithout the two questions (Figure 5).\nWe instrument the agent as a fuzzer instruments a program.\nThe same design applies beyond physics. The loop has three\nparts. First, it computes readings that answer the two ques-\ntions above using only artifacts the agent has already pro-\nduced. Second, it injects those readings into the control loop\nso that they can influence the next action. Third, it keeps\ncertification outside the loop, as section 5 requires. For\nDiscoverPhysics, our task harness computes two readings.1\nSurpriseis the \u03c3-normalized residual of the current law on\nthe data collected so far; theenveloperecords the range\nexplored for each "
+              }
+            ],
+            "text": "every\nheld-out trajectory within noise, and named the wrong force\nlaw. The first agent never asked whether anything in its data\nwas new; the second never asked where it had not been. We\ncontrast the searches produced by the same budget with and\nwithout the two questions (Figure 5).\nWe instrument the agent as a fuzzer instruments a program.\nThe same design applies beyond physics. The loop has three\nparts. First, it computes readings that answer the two ques-\ntions above using only artifacts the agent has already pro-\nduced. Second, it injects those readings into the control loop\nso that they can influence the next action. Third, it keeps\ncertification outside the loop, as section 5 requires. For\nDiscoverPhysics, our task harness computes two readings.1\nSurpriseis the \u03c3-normalized residual of the current law on\nthe data collected so far; theenveloperecords the range\nexplored for each "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "53c59c775448fa5b8dbb737f29dbecbffdbb6429884b2bc4ae34f29c523be04b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E53c59c775448fa5b-B0035"
+        ],
+        "excerpt": "decided.\nFigure 6.One world, two runs of the same agent. (a) Fit loss on\nthe agent's own data against the noise floor a correct law reaches;\nthe starred round-four answer redirected the search (the panel was\nacknowledged every round). (b) The protected verdict neither run\ncould see.\nwent unmentioned for an entire run. No protected infor-\nmation crosses the boundary; held-out tests and the judged\nexplanation stay outside the loop.\nIn Figure 6, we compare two runs and trace how the panel\nchanged the verdict. In a world with three hidden particle\nspecies, the agent fit twelve successive laws in both runs.\nWithout the panel, the loss never came within twenty times\nthe noise floor the agent had measured. The submitted law\nalso placed the species in a field of the wrong form. Its\ntrajectory error fell below the benchmark's threshold, but\nthe judged explanation scored 0.4 against a threshold of",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "A Worked Example: Instrumenting A",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "10ea165b1e00706e7246d21111317c0abc6455443f2b3deb4097c8860ea73336",
+            "evidence_id": "E53c59c775448fa5b-B0035",
+            "pages": [
+              7
+            ],
+            "section": "A Worked Example: Instrumenting A",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1443,
+                "page": 7,
+                "section": "A Worked Example: Instrumenting A",
+                "section_index": 12,
+                "start": 543,
+                "text": "decided.\nFigure 6.One world, two runs of the same agent. (a) Fit loss on\nthe agent's own data against the noise floor a correct law reaches;\nthe starred round-four answer redirected the search (the panel was\nacknowledged every round). (b) The protected verdict neither run\ncould see.\nwent unmentioned for an entire run. No protected infor-\nmation crosses the boundary; held-out tests and the judged\nexplanation stay outside the loop.\nIn Figure 6, we compare two runs and trace how the panel\nchanged the verdict. In a world with three hidden particle\nspecies, the agent fit twelve successive laws in both runs.\nWithout the panel, the loss never came within twenty times\nthe noise floor the agent had measured. The submitted law\nalso placed the species in a field of the wrong form. Its\ntrajectory error fell below the benchmark's threshold, but\nthe judged explanation scored 0.4 against a threshold of"
+              }
+            ],
+            "text": "decided.\nFigure 6.One world, two runs of the same agent. (a) Fit loss on\nthe agent's own data against the noise floor a correct law reaches;\nthe starred round-four answer redirected the search (the panel was\nacknowledged every round). (b) The protected verdict neither run\ncould see.\nwent unmentioned for an entire run. No protected infor-\nmation crosses the boundary; held-out tests and the judged\nexplanation stay outside the loop.\nIn Figure 6, we compare two runs and trace how the panel\nchanged the verdict. In a world with three hidden particle\nspecies, the agent fit twelve successive laws in both runs.\nWithout the panel, the loss never came within twenty times\nthe noise floor the agent had measured. The submitted law\nalso placed the species in a field of the wrong form. Its\ntrajectory error fell below the benchmark's threshold, but\nthe judged explanation scored 0.4 against a threshold of"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "53c59c775448fa5b8dbb737f29dbecbffdbb6429884b2bc4ae34f29c523be04b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E53c59c775448fa5b-B0036"
+        ],
+        "excerpt": "round four, it responded: \"the valid-case fit is far above the\nnoise scale; I will therefore test whether the missing struc-\nture is species-dependent source and response charge rather\nthan collect more redundant trajectories.\" Subsequent fits\nintroduced per-species source strengths and reduced the loss\nfrom 19.6 to about twice the noise floor. The submitted law\nnamed the three species in the ratio 1 : 3 :\u22122 and scored\n1.0 on the explanation. Its trajectory error was smaller by a\nfactor of ninety.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "With The Panel, The Agent Reached The Same Plateau. In",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "cf39ec3005f9fc139dcd51fa3fc74456cb4153dd24f3b060aa70484d8e7f3523",
+            "evidence_id": "E53c59c775448fa5b-B0036",
+            "pages": [
+              7
+            ],
+            "section": "With The Panel, The Agent Reached The Same Plateau. In",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 502,
+                "page": 7,
+                "section": "With The Panel, The Agent Reached The Same Plateau. In",
+                "section_index": 13,
+                "start": 0,
+                "text": "round four, it responded: \"the valid-case fit is far above the\nnoise scale; I will therefore test whether the missing struc-\nture is species-dependent source and response charge rather\nthan collect more redundant trajectories.\" Subsequent fits\nintroduced per-species source strengths and reduced the loss\nfrom 19.6 to about twice the noise floor. The submitted law\nnamed the three species in the ratio 1 : 3 :\u22122 and scored\n1.0 on the explanation. Its trajectory error was smaller by a\nfactor of ninety."
+              }
+            ],
+            "text": "round four, it responded: \"the valid-case fit is far above the\nnoise scale; I will therefore test whether the missing struc-\nture is species-dependent source and response charge rather\nthan collect more redundant trajectories.\" Subsequent fits\nintroduced per-species source strengths and reduced the loss\nfrom 19.6 to about twice the noise floor. The submitted law\nnamed the three species in the ratio 1 : 3 :\u22122 and scored\n1.0 on the explanation. Its trajectory error was smaller by a\nfactor of ninety."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "53c59c775448fa5b8dbb737f29dbecbffdbb6429884b2bc4ae34f29c523be04b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E53c59c775448fa5b-B0047"
+        ],
+        "excerpt": "evidence does not justify\nrejecting it universally. Across the benchmarks studied by\nBrown et al. [8], however, the fraction of problems solved\ngrew approximately log-linearly over the measured range\nand produced diminishing marginal returns. We claim that\nadaptive feedback can improve this exchange rate without\nreplacing scalable computation with hand-tuned heuristics.\n\"Open-ended research has no stable search space, so\ncoverage is undefined.\"Coverage does not require an\nenumeration of every reachable behavior, but a fixed tar-\nget and its instrumentation still define what the fuzzer can\nobserve. Research is harder because its hypotheses and\nrepresentations may change during a campaign. Our pro-\n8\nAgentic Auto-Research is Fuzz Testing\nposal therefore assumes a declared problem and an explicit\nprogress representation that can grow as observations accu-\nmulate. It does not cover an agent ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Alternative Views",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "c13802aa8a52708d618417592a91386bb82cf656d823ae7e0ae559c9777d2682",
+            "evidence_id": "E53c59c775448fa5b-B0047",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Alternative Views",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3393,
+                "page": 8,
+                "section": "Alternative Views",
+                "section_index": 16,
+                "start": 2686,
+                "text": "evidence does not justify\nrejecting it universally. Across the benchmarks studied by\nBrown et al. [8], however, the fraction of problems solved\ngrew approximately log-linearly over the measured range\nand produced diminishing marginal returns. We claim that\nadaptive feedback can improve this exchange rate without\nreplacing scalable computation with hand-tuned heuristics.\n\"Open-ended research has no stable search space, so\ncoverage is undefined.\"Coverage does not require an\nenumeration of every reachable behavior, but a fixed tar-\nget and its instrumentation still define what the fuzzer can\nobserve. Research is harder because its hypotheses and\nrepresentations may change during a campaign. Our pro-\n8"
+              },
+              {
+                "end": 192,
+                "page": 9,
+                "section": "Alternative Views",
+                "section_index": 17,
+                "start": 0,
+                "text": "Agentic Auto-Research is Fuzz Testing\nposal therefore assumes a declared problem and an explicit\nprogress representation that can grow as observations accu-\nmulate. It does not cover an agent "
+              }
+            ],
+            "text": "evidence does not justify\nrejecting it universally. Across the benchmarks studied by\nBrown et al. [8], however, the fraction of problems solved\ngrew approximately log-linearly over the measured range\nand produced diminishing marginal returns. We claim that\nadaptive feedback can improve this exchange rate without\nreplacing scalable computation with hand-tuned heuristics.\n\"Open-ended research has no stable search space, so\ncoverage is undefined.\"Coverage does not require an\nenumeration of every reachable behavior, but a fixed tar-\nget and its instrumentation still define what the fuzzer can\nobserve. Research is harder because its hypotheses and\nrepresentations may change during a campaign. Our pro-\n8\nAgentic Auto-Research is Fuzz Testing\nposal therefore assumes a declared problem and an explicit\nprogress representation that can grow as observations accu-\nmulate. It does not cover an agent "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "53c59c775448fa5b8dbb737f29dbecbffdbb6429884b2bc4ae34f29c523be04b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E53c59c775448fa5b-B0048"
+        ],
+        "excerpt": "that redefines what counts\nas a candidate or discovery. Within this boundary, guidance\ncan compare each new experiment with the accumulated\nrecord rather than with an enumerated whole.\n\"Research has no oracle, so the analogy breaks.\"\nFuzzing has its own oracle problem [3], and real campaigns\nuse imperfect, deferred, differential, or human-assisted\nchecks. A typical campaign does not separate oracle and\nguidance by invocation schedule or assume that sanitizer\nchecks inherently cost more. The same instrumented ex-\necution updates coverage and checks relevant operations\nfor violations. The signals differ in role: the oracle judges\nthe current input, while guidance identifies behavior absent\nfrom the campaign history. Guidance cannot certify a bug,\nand the oracle cannot efficiently explore the input space.\nScientific validation may also be expensive or partial, so\nthis semantic separation ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Alternative Views",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "91206f02acdf965041d10e66de6b12ee9306f429300ea94fb4867d2438aa5504",
+            "evidence_id": "E53c59c775448fa5b-B0048",
+            "pages": [
+              9
+            ],
+            "section": "Alternative Views",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1090,
+                "page": 9,
+                "section": "Alternative Views",
+                "section_index": 17,
+                "start": 192,
+                "text": "that redefines what counts\nas a candidate or discovery. Within this boundary, guidance\ncan compare each new experiment with the accumulated\nrecord rather than with an enumerated whole.\n\"Research has no oracle, so the analogy breaks.\"\nFuzzing has its own oracle problem [3], and real campaigns\nuse imperfect, deferred, differential, or human-assisted\nchecks. A typical campaign does not separate oracle and\nguidance by invocation schedule or assume that sanitizer\nchecks inherently cost more. The same instrumented ex-\necution updates coverage and checks relevant operations\nfor violations. The signals differ in role: the oracle judges\nthe current input, while guidance identifies behavior absent\nfrom the campaign history. Guidance cannot certify a bug,\nand the oracle cannot efficiently explore the input space.\nScientific validation may also be expensive or partial, so\nthis semantic separation "
+              }
+            ],
+            "text": "that redefines what counts\nas a candidate or discovery. Within this boundary, guidance\ncan compare each new experiment with the accumulated\nrecord rather than with an enumerated whole.\n\"Research has no oracle, so the analogy breaks.\"\nFuzzing has its own oracle problem [3], and real campaigns\nuse imperfect, deferred, differential, or human-assisted\nchecks. A typical campaign does not separate oracle and\nguidance by invocation schedule or assume that sanitizer\nchecks inherently cost more. The same instrumented ex-\necution updates coverage and checks relevant operations\nfor violations. The signals differ in role: the oracle judges\nthe current input, while guidance identifies behavior absent\nfrom the campaign history. Guidance cannot certify a bug,\nand the oracle cannot efficiently explore the input space.\nScientific validation may also be expensive or partial, so\nthis semantic separation "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "53c59c775448fa5b8dbb737f29dbecbffdbb6429884b2bc4ae34f29c523be04b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E53c59c775448fa5b-B0050"
+        ],
+        "excerpt": "Auto-research should operate as instrumented, feedback-\ndirected search: expose a cheap measure of epistemic\nprogress; let the search policy use that measure to choose the\nnext intervention; and let protected validation decide what\ncounts as a discovery, since an optimized progress signal\ncan no more certify a finding than coverage can certify a bug.\nThe position stands or falls on the three controlled compar-\nisons stated above: candidate signals must predict protected\noutcomes, feedback-directed search must beat repeated sam-\npling per validated discovery, and protected validation must\nreduce false discoveries relative to the optimized proxy. This\ndivision also locates the durable human role: researchers\ndeclare the problem at the front and ground the verdict at\nthe back, while the agent runs the loop between them. Be-\nneath these three lessons, observable progress, principled\nsearch, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "0dd613dd21fc632d60e09a51fa7f946a95e5988ab848a4f3b0116f285126e165",
+            "evidence_id": "E53c59c775448fa5b-B0050",
+            "pages": [
+              9
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 9,
+                "section": "Conclusion",
+                "section_index": 18,
+                "start": 0,
+                "text": "Auto-research should operate as instrumented, feedback-\ndirected search: expose a cheap measure of epistemic\nprogress; let the search policy use that measure to choose the\nnext intervention; and let protected validation decide what\ncounts as a discovery, since an optimized progress signal\ncan no more certify a finding than coverage can certify a bug.\nThe position stands or falls on the three controlled compar-\nisons stated above: candidate signals must predict protected\noutcomes, feedback-directed search must beat repeated sam-\npling per validated discovery, and protected validation must\nreduce false discoveries relative to the optimized proxy. This\ndivision also locates the durable human role: researchers\ndeclare the problem at the front and ground the verdict at\nthe back, while the agent runs the loop between them. Be-\nneath these three lessons, observable progress, principled\nsearch, "
+              }
+            ],
+            "text": "Auto-research should operate as instrumented, feedback-\ndirected search: expose a cheap measure of epistemic\nprogress; let the search policy use that measure to choose the\nnext intervention; and let protected validation decide what\ncounts as a discovery, since an optimized progress signal\ncan no more certify a finding than coverage can certify a bug.\nThe position stands or falls on the three controlled compar-\nisons stated above: candidate signals must predict protected\noutcomes, feedback-directed search must beat repeated sam-\npling per validated discovery, and protected validation must\nreduce false discoveries relative to the optimized proxy. This\ndivision also locates the durable human role: researchers\ndeclare the problem at the front and ground the verdict at\nthe back, while the agent runs the loop between them. Be-\nneath these three lessons, observable progress, principled\nsearch, "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       }
     ],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2608.09855",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": 78,
-    "paper_type": "position_or_conceptual",
-    "positive_signals": [
-      "The contribution is stated explicitly."
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
     ],
-    "promotion": {},
-    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
-    "recommendation": "uncertain",
-    "rubric_version": "scholarly-rubric-v1",
-    "source_content_hash": "e4ebb0d0eb993e12355854a87c77ede11efdaf9f415df8977d13b83cdb097eec",
-    "status": "not_assessed",
+    "overall_quality_score": null,
+    "paper_type": "survey_or_review",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The manuscript is a position paper whose three central predictions are explicitly unvalidated hypotheses, and the only empirical content is a single illustrative worked example described as an existence proof rather than an evaluation.",
+          "The worked example lacks statistical evaluation, baseline comparisons across tasks, or multi-trial testing, so the claimed advantages of feedback-directed search and protected validation are not established with sufficient rigor for admission."
+        ],
+        "canonical_id": "doi:10.48550/arxiv.2608.09855",
+        "context_id": "53c59c775448fa5b8dbb737f29dbecbffdbb6429884b2bc4ae34f29c523be04b",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "In the single worked example, the protected held-out trajectory error and judged explanation score corroborated the instrumented run's success over the uninstrumented run.",
+          "final_evaluation_signal": "Final certification in the worked example is established by DiscoverPhysics held-out test case trajectory error and a judged explanation score, both kept outside the search loop.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The search loop is guided by intermediate epistemic feedback readings: surprise, the sigma-normalized residual of the current law on collected data, and the envelope of explored experimental knob ranges.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E53c59c775448fa5b-B0002",
+          "E53c59c775448fa5b-B0010",
+          "E53c59c775448fa5b-B0020",
+          "E53c59c775448fa5b-B0023",
+          "E53c59c775448fa5b-B0030",
+          "E53c59c775448fa5b-B0031",
+          "E53c59c775448fa5b-B0033",
+          "E53c59c775448fa5b-B0035",
+          "E53c59c775448fa5b-B0036",
+          "E53c59c775448fa5b-B0047",
+          "E53c59c775448fa5b-B0048",
+          "E53c59c775448fa5b-B0050"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "2e92f9f20a7b33cbf416907e3eaa9355a62425cb0094c859bb0785033a1834e8"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2608.09855",
+        "claim_evidence_alignment": "The paper explicitly acknowledges that its worked example is an existence proof rather than an evaluation, but the headline claims and core predictions regarding search efficiency and error reduction remain unvalidated hypotheses. Consequently, the broader claims about feedback architecture superiority in auto-research lack sufficient empirical support.",
+        "context_id": "53c59c775448fa5b8dbb737f29dbecbffdbb6429884b2bc4ae34f29c523be04b",
+        "decision": "uncertain",
+        "evaluation_assessment": "The empirical evaluation is explicitly presented as a single-case existence proof rather than a rigorous experimental validation. While the worked example demonstrates an instrumented agent discovering a hidden law where an uninstrumented run failed, there is no statistical evaluation, baseline suite, or multi-task testing across the three formal predictions proposed in the text.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "In the single worked example, held-out test trajectory error and explanation judgment corroborated the success of the instrumented search over the baseline.",
+          "final_evaluation_signal": "Final discovery certification in the worked example is established via DiscoverPhysics protected held-out test case trajectory error and a judged explanation score.",
+          "independent_corroboration": "present",
+          "optimization_signal": "During the search loop, the agent is guided by intermediate epistemic feedback readings: surprise (normalized residual of the law on observed data) and the envelope of explored experimental knobs.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E53c59c775448fa5b-B0002",
+          "E53c59c775448fa5b-B0010",
+          "E53c59c775448fa5b-B0020",
+          "E53c59c775448fa5b-B0023",
+          "E53c59c775448fa5b-B0030",
+          "E53c59c775448fa5b-B0031",
+          "E53c59c775448fa5b-B0033",
+          "E53c59c775448fa5b-B0035",
+          "E53c59c775448fa5b-B0036",
+          "E53c59c775448fa5b-B0047",
+          "E53c59c775448fa5b-B0048",
+          "E53c59c775448fa5b-B0050"
+        ],
+        "limitations": "The authors clearly delineate limitations, noting the framework applies only within declared problem formulations and representations, cannot account for abductive shifts in problem framing, and leaves rigorous empirical testing of its core predictions as an open question.",
+        "method_assessment": "The conceptual framework maps auto-research onto greybox fuzzing components and defines three testable hypotheses (signal prediction, feedback-directed search advantage, and reduction of false discoveries via protected validation). However, the implementation is provided only as a single illustrative worked example on the DiscoverPhysics environment rather than a general, systematically realized method.",
+        "quality_rationale": "While the conceptual positioning is insightful and thoughtfully draws on fuzzing principles to address fundamental failure modes in LLM agent research, the manuscript is primarily a position paper with an illustrative demonstration rather than a fully evaluated scientific contribution. Under library curation standards, promotion requires stronger empirical or formal validation beyond an existence proof.",
+        "scoped_contribution": "The manuscript presents a conceptual and methodological position arguing that agentic auto-research should be structured like coverage-guided greybox fuzz testing, separating cheap intermediate epistemic progress signals that steer search from protected validation that certifies discoveries.",
+        "source_content_hash": "2e92f9f20a7b33cbf416907e3eaa9355a62425cb0094c859bb0785033a1834e8"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "While the conceptual positioning is insightful and thoughtfully draws on fuzzing principles to address fundamental failure modes in LLM agent research, the manuscript is primarily a position paper with an illustrative demonstration rather than a fully evaluated scientific contribution. Under library curation standards, promotion requires stronger empirical or formal validation beyond an existence proof.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "2e92f9f20a7b33cbf416907e3eaa9355a62425cb0094c859bb0785033a1834e8",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
+    "uncertainty": "The authors clearly delineate limitations, noting the framework applies only within declared problem formulations and representations, cannot account for abductive shifts in problem framing, and leaves rigorous empirical testing of its core predictions as an open question."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -195,7 +1455,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

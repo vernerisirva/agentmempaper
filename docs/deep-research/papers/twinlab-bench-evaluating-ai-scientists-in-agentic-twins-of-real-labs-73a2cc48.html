@@ -59,16 +59,225 @@
             <p>AI agents are increasingly expected to act as AI scientists, which requires three increasingly open abilities: carrying out a given computational workflow correctly, choosing the next measurements from a given design space, and designing their own experiments. Existing benchmarks mainly evaluate the first two abilit...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper provides an exceptionally rigorous, multi-faceted validation of an experimental design benchmark, addressing data contamination, simulation fidelity, judge bias, and exploitability through held-out experiments, counterfactual lab setups, red-teaming, and model-agnostic judge checks. The evidence firmly supports the utility and soundness of the benchmark.</p>
+      <p>The work candidly documents the minor reliance on local extrapolation outside recorded datasets, checks its sensitivity, audits simulator leakages, and discusses failure modes associated with deterministic boundary evaluations [Ee38663f3900beca1-B0036, Ee38663f3900beca1-B0038, Ee38663f3900beca1-B0089, Ee38663f3900beca1-B0109].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-24T14:43:15.920292+00:00.</p>
+        <p>Coverage: 127588 of 127588 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>AI agents are increasingly expected to act as AI scientists, which requires three increasingly open
+abilities: carrying out a given computational workflow correctly, choosing the next measurements
+from a given design space, and designing their own experiments. Existing benchmarks mainly evaluate
+the first two abilities, in a terminal or in a closed loop that selects from predefined candidates.
+Evaluating the third ability requires reliably executing an experiment that an agent designs, with
+readings grounded in a real laboratory. We introduceTwinLab-Bench, which evaluates AI scientists
+on self-designed experiments in 52 tasks from laboratories in the physical sciences, the life sciences,
+and engineering. The benchmark supports more than 100 experimental action types, and the agent&#x27;s
+report is scored by comparison with a hidden answer taken from real laboratory records. Each task
+has its </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>a
+coding agent that serves as the environment, so it
+uses tools to read the files of the laboratory and runs
+programs on them. Each task has its own TwinLab
+agent with the materials and the calculators of its
+laboratory. For an experiment that the laboratory
+performed, the TwinLab agent reads the raw materi-
+als, often combining several records, and returns the
+result that the laboratory recorded. For an exper-
+iment that the laboratory did not perform, it runs
+calculators, which are deterministic programs that
+we write from the data of this laboratory, for exam-
+ple by fitting a physical model to its measurements.
+Each calculator extends the record only to nearby
+settings, with a basis that we write down when we
+build the task.
+TwinLab-Bench consists of 52 tasks, and each task comes from the records of a real laboratory in the physical
+sciences, the life sciences, or engineering. The </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>scene about 10 GPT-4o: 18% challenge
+SciGym 1371 scene 1 Gemini 2.5 Pro: F1 0.34
+Data analysis / compute
+ScienceAgentBench 102 code only o1-preview: 42.2% SR
+BixBench 205 questions code only GPT-5.5: 80.5% accuracy
+TB-Science 0.1 70 code only Fable 5.2: 74.6% resolved
+few tasks few actions
+one scene few actions designed toy world
+no interaction nothing hidden
+Figure 5 Scorecard of science benchmarks.Each row is a benchmark, and each bar splits its tasks by the levels in the
+key of its column. Orange boxes mark the main weakness of each group of benchmarks.
+agent of the task, an agent that serves as the environment and returns the results, as figure 4 shows. The
+actor agent finally submits a report, and a judge agent scores this report by comparing it with the hidden
+truth. All TwinLab agents run the same program, and the materials and the calculators of each task make it
+the twin of its </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Task sources.We select the tasks from about 375 candidate sources, and each task is built on a real research
+record, such as an open laboratory notebook, raw instrument exports, a paper with its supplementary material,
+or a public dataset, as figure 3 shows. Most tasks are adapted from the records of one laboratory. In some of
+them the laboratory itself met the problem and later solved it, and in the others the problem lies in the real
+data of the laboratory. Their answers come from a later notebook entry, a publication, a correction, or a
+reanalysis of the raw data. The few remaining tasks are grounded syntheses, as Appendix I describes.
+Task construction.We choose a cutoff point in the record, which is a date or a clearly defined state of
+the laboratory, and split the record into two parts. The data, protocols, and interim conclusions that the
+laboratory had before the cutoff point </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>are handed to the actor agent. What the source records show after the
+cutoff point is given only to the TwinLab agent and to the judge agent, and we call this part the hidden truth.
+An expert route taken from the record averages a score of 97.8 out of 100 when we replay it in the twin of
+each task. Every task also passes a coverage review, which confirms that the standard experiments of the field
+can be simulated, and Appendix I lists all tasks and their construction.
+Task forms.The tasks take three forms. Most tasks are claim reviews, which ask the actor agent to decide
+which conclusions of the laboratory hold and how to test them. Troubleshooting tasks ask for the cause of a
+clear failure and a working procedure, and research-campaign tasks ask for an executable procedure toward a
+research goal. Some tasks offer no experiments, and the actor agent analyzes only the raw records that </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Rubric.The rubric of each task consists of items with conditions for full and partial credit (Starace et al.,
+2025; Arora et al., 2025). Most items belong to two components. Conclusion items check whether the report
+states the correct answer, and verification items check whether the report reaches this answer from evidence
+that the actor agent obtained in this run, so a key finding of a task is often split into one item of each kind.
+Score and judge.The score of each task is rescaled to 0 to 100, and each task marks a few core items whose
+failure makes the report wrong; when any core item misses full credit, the run scores 0. We report the mean
+score over all tasks. The judge agent is a vision-language model that serves as the judge (Zheng et al., 2023),
+reads the full task, the interaction log, and the report, and cites the report text or the request number for
+every item. Every core </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>item with full credit is checked twice more by independent calls, and the item scores 0
+when either check fails. We freeze the rubric before looking at the final evaluation runs.
+Invalid runs.The judge agent also audits the environment, and a run is invalid when a reading leaks the
+hidden truth, contradicts earlier observations or physics in a way that matters for scoring, or refuses a relevant
+experiment that a real laboratory can run. A deterministic script replays every calculator command to check
+the state, the billing, and the numbers. A static check scans the content that reaches the actor agent through
+its tools, and a run that receives a blocked string of the source is invalid, as Appendix H.1 details.</blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Setup.We evaluate 13 models as actor agents, running the GPT models in Codex and the other models in
+Claude Code. The TwinLab agent and the judge agent run on DeepSeek-flash for every actor agent. We
+report cost together with score following Kapoor et al. (2024); figure 6 counts the cost of the actor agent, and
+the TwinLab agent and the judge agent add about 55 USD for all tasks, as table 10 shows.
+Results.As figure 6 shows, Claude Fable 5.2 scores 45.0 on average and Claude Opus 5.5 scores 40.2, and
+the other actor agents score between 5.4 and 31.7. Table 7 lists the scores by division and task form. For
+7
+Preprint Wan et al.
+127 of the 136 pairs of actor agents, with each reasoning effort of a model counted as one actor agent, the
+actor agent with the higher mean score also scores higher on more tasks than it scores lower, and a paired
+comparison over tasks separates 66 of the 75 pairs </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>whose mean scores differ by at least 10, as Appendix A
+shows. We find that (1) the score tends to rise with the logarithm of the cost, and both a larger model and a
+higher reasoning effort raise the score, and (2) the differences between actor agents hold across many tasks.
+Task scores separate correct and wrong final reports.With a fixed rule, we select 21 tasks whose final reports
+include both correct and wrong ones, which we divide by the hidden truth without looking at their scores. In
+19 of these 21 tasks, every correct report has a higher total score than every wrong report, by 0.46 of the
+maximum score on average, as Appendix B.3 shows. The judge agent is stable, repeating a judgment has
+little effect, and two judge agents agree on the pass verdict in 19 of 20 runs, as Appendix B.1 and B.2 show.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We test along a chain of evidence how far the results that the twin returns can be trusted.
+Most experiment results come from real laboratory data.We trace where the experiment results of the actor
+agents come from and whether the record contains the decisive experiments. Of these experiment results,
+76% come from the record or from calculators calibrated on the same laboratory&#x27;s data, as Appendix D.2
+shows, and the record contains the conditions of 78% of the decisive experiments on the expert routes, as
+Appendix D.3 shows. Thus the conclusions of most tasks depend on recorded data, and the calculators mostly
+fill in details around them.
+Sensitivity to extrapolation.We replace the extrapolation outside the record with another equally plausible
+choice and rerun the actor agents on six tasks, where the replacement changes 12% to 44% of the calculator
+outputs, asAppendixD.4details. </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Wefindthatmostconclusionsdonotdependonwhichplausibleextrapolation
+the calculators use, so a modeling choice that we make when we build a task changes few evaluation outcomes.
+Held-out conditions.We hide recorded conditions of three tasks and rebuild their calculators without seeing
+them. The median error of the hidden readings is 0.74% for interpolated conditions and 2.47% for extrapolated
+ones, and a hidden discrete condition is predicted within 0.6% on average, as Appendix D.5 shows. We find
+that most readings that the calculators compute near the record fall close to the real readings, so the twin
+returns realistic readings for new experiments near the record.
+The twin supports routes beyond the expert route.In successful runs, more than a third of the requests are
+new experiments that the expert route does not contain, such as new combinations of settings and additional
+checks, as </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The tasks of TwinLab-Bench come from public records, so a model may have seen a source during training (Sainz
+et al., 2023; Golchin &amp; Surdeanu, 2024) or may derive part of an answer from prior knowledge, and we test in
+three ways whether the scores come from the agent&#x27;s own experiments.
+Changing the true state of the laboratory.To test whether the answer is determined by the readings that the
+actor agent obtains in its own experiments, we change the true state of the laboratory and keep the handoff
+word for word. We construct the new state from a documented case of the same kind of problem by changing
+only the calculator and the hidden truth, and a model that remembers the source answers according to the
+source (Wu et al., 2024). In 8 of the 10 states that allow a verdict, the conclusion follows the new state, and
+no run mentions the source study, as table 3 and Appendix C.1 show.
+8</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Preprint T winLab-Bench
+Actor agent&#x27;s conclusion in the new state States
+Follows the new state 8
+Follows it in direction only 1
+Consistent, not verified 1
+Never touched the changed part 1
+Table 3 Actor agents&#x27; conclusions when the true state
+changes.We keep the handoff word for word and
+change only the true state of the laboratory.
+Closed-book probe Cases
+yes partial no
+Names the real source
+memory of the record 9 / 21 / 22
+Recalls the source&#x27;s finding
+memory of the answer 0 / 3 / 49
+Derives the answer without data
+prior knowledge 2 / 26 / 24
+Opus 5.5, closed book, no tools; 52 cases.
+Table 4 Closed-book memory probesof Opus 5.5 on all
+tasks. Bars give the number of tasks with a yes, partial, or
+no answer.
+Before the run, the plan Score expectedfrom the plan Score inthe run
+States the decision in full full 87%
+States only the principle partial 66%
+Does not mention it none 62%
+Table 5 </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Knowing-doing gap in experimental decisions.
+Rows group the key decisions by how the plan states
+them. Opus 5.5 writes the plan before each run, and
+each percentage is the score that the run obtains on
+these decisions out of their maximum.
+Failure type Runs
+Experimental decision
+Accepts a mechanism without testing it 7
+Chooses a procedure on weak early evidence 4
+Uses up a scarce material before testing 1
+Reading the results or reporting4
+Runs that score 0 16
+Table 6 Where runs fail.Each run of Opus 5.5 that
+scores 0 on the tasks that need experiments is counted
+once, under the error that caused it.
+Closed-book memory probes.In a closed-book session without tools, Opus 5.5 recalls the conclusion of the
+source for none of the tasks and derives the answer without data for only 2 tasks, and Fable 5.2 recalls the
+conclusion for one task, as table 4 and Appendix C.2 show. The tasks whose </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>source Fable 5.2 names do not
+score higher in its evaluation runs. Prior knowledge gives at most part of an answer on many tasks.
+Pass rate without experiments.With a budget of zero, Opus 5.5 and DeepSeek-flash pass none of the tasks,
+as Appendix C.3 shows. These results show that prior knowledge and the handoff do not earn the core items,
+and the agent has to obtain the evidence through its own experiments.</blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DeepSeek-flash serves as the TwinLab agent, as the judge agent, and as one of the tested actor agents, and a
+language-model judge can favor its own generations (Panickssery et al., 2024), so we check whether the results
+depend on this choice. We choose 10 tasks by a fixed rule from the three groups of tasks that the three runs
+of DeepSeek-flash leave all nonzero, mixed, or all zero, and we run DeepSeek-flash as the actor agent once
+with Sonnet 5.5 as the TwinLab agent and Opus 5.5 as the judge agent. All 10 runs are valid, every score lies
+within the range of the three runs of DeepSeek-flash in the standard setting on the same task, and 5 tasks
+pass, against 5, 6, and 4 in the three standard runs. To separate the judge agent from the TwinLab agent,
+we rejudge the same 10 runs with DeepSeek-flash, and the pass verdict changes on 1 task, where the Opus
+5.5 judge agent gives 0 to a core </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>item with a boundary. We further rejudge 20 runs from the three runs of
+DeepSeek-flash on 9 of these tasks with Opus 5.5 and with DeepSeek-flash under the same judge prompt and
+rubric. The two judge agents agree on pass in 19 runs (Cohen&#x27;sκ = 0.83) and on validity in all runs, and the
+one pass change comes from Opus 5.5 grading a self-contradictory report by its weaker reading.</blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We draw 126 reports from the evaluation runs of all tasks with a hash rule fixed before any model call,
+taking one passing and two failing runs on tasks that have both and one failing run on the other tasks. A
+DeepSeek-flash call classifies each report as correct, plausible but wrong, incomplete, or missing by reading it
+against the hidden truth, without seeing its score, its judgment, or the rubric, and we check 29 labels at the
+boundary by hand and change 1. A report is correct when its main conclusions and deliverables agree with
+the hidden truth, also when its verification is too weak to pass. A report is plausible but wrong when any
+main conclusion, cause, mechanism, recommendation, or deliverable contradicts the hidden truth, or when it
+leaves a main question undetermined although the hidden truth decides it. A report is incomplete when it
+makes no wrong claim on the main line but </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>its deliverable falls short. Of these reports, 43 are correct, 69 are
+plausible but wrong, 6 are incomplete, and 8 runs end without a report. On 19 of the 21 tasks that have
+both correct and wrong reports, the lowest total score of a correct report is above the highest total score of a
+wrong report, and the mean gap is 0.46 of the maximum score.</blockquote></details></li><li><strong>Contribution clarity — page 23</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>For six tasks whose decisive items rely partly on conditions outside the record, we build a variant that changes
+only the extrapolation outside the record to another choice that is physically just as plausible, such as the
+other end of the literature range or another functional form. Three of the tasks are chosen by a rule fixed in
+advance, which takes the real-source tasks where at least two of the three actor agents below score above zero
+and whose earlier runs reach the changed extrapolation. The outputs for recorded conditions stay identical,
+and so do the hidden truth, the rubric, the task description, and the actor agent&#x27;s files. We first replay the
+calculator commands of existing runs on the original and the variant and count how many outputs change, and
+we then run Sonnet 5.5, Kimi K3.1 Pro, and GLM-5.3 once each on every variant, with the DeepSeek-flash
+TwinLab agent and judge </blockquote></details></li><li><strong>Contribution clarity — pages 23–24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We test how close the calculators come to real readings on conditions that the record contains but the
+calculator does not see. We choose three tasks whose calculators extend a measurement along a continuous
+variable, namely phonon bursts in a detector, gliding of kinesin-driven microtubules, and fluorescence blanks
+of clam assays. On each task we hide 2 to 10 recorded conditions together with the measurements that reveal
+them, and the hidden values go to a file that the rebuilder cannot read. A separate session rebuilds each
+23
+Preprint Wan et al.
+calculator from the reduced record and the construction rules alone, without the original calculator, the task
+files, or the rubric. Of the 15 hidden readings, 10 fall within twice the measured repeatability, and the median
+error is 0.74% for interpolated conditions and 2.47% for extrapolated ones. On all three tasks, the rubric
+items that </blockquote></details></li><li><strong>Contribution clarity — page 24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>On 4 tasks, we run Opus 5.5 in three arms. The honest arm is the run of Opus 5.5 at high effort in figure 6.
+The exploit arm is told that the laboratory is simulated, that the score is computed against a hidden answer,
+and that it may exploit weaknesses of the simulation to maximize the score. The flaw-finding arm is asked
+mainly to find flaws of the simulation, such as physically implausible readings, contradictions with the files, or
+leaks, and to submit a report as usual. The red-team instructions appear only in the actor agent&#x27;s workspace,
+so the TwinLab agent sees the original task, and all runs are judged blind with the original rubric. Every
+reported flaw is verified by reading the session and the calculator. The four tasks are a process-window search
+on public data, a synthetic battery task, the fatigue task, and the oyster task; the first two are scored by a
+calculator.
+The </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +316,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +332,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-11-23</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-20 12:28:44</li><li>Last seen by Paper Scout: 2026-11-23 14:00:26</li></ul>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-11-23</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-20 12:28:44</li><li>Last seen by Paper Scout: 2026-11-24 14:37:50</li></ul>
             <ul><li>DOI: 10.48550/arxiv.2611.26248</li><li>arXiv: 2611.26248</li><li>OpenAlex: W7237172281</li><li>OpenAlex IDs: W7237172281</li><li>arXiv IDs: 2611.26248</li></ul>
           </section>
           <section class="detail-panel">

@@ -18,13 +18,13 @@
   "first_seen_at": "2026-11-23 13:58:55",
   "first_seen_date": "2026-11-23",
   "future_date": false,
-  "is_new": true,
-  "last_seen_at": "2026-11-23 13:59:19",
-  "last_seen_date": "2026-11-23",
+  "is_new": false,
+  "last_seen_at": "2026-11-24 14:32:50",
+  "last_seen_date": "2026-11-24",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-11-20",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-11-23 14:00:12",
   "notified_date": "2026-11-23",
   "openalex_id": null,
@@ -34,8 +34,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-11-23 13:58:55",
-    "generated_at": "2026-11-23 14:08:48",
-    "last_seen_at": "2026-11-23 13:59:19",
+    "generated_at": "2026-11-24 14:43:49",
+    "last_seen_at": "2026-11-24 14:32:50",
     "metadata_sources": [
       "arxiv"
     ],
@@ -100,36 +100,1811 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-24T14:42:32.375960+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.99,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The work presents an adequately scoped, well-architected systems and runtime verification contribution with extensive reproducible conformance and empirical evaluation.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 38782,
+      "assessment_input_sha256": "5d907a9d058356f031f263cdd318c1cd5dbac14432abb46d92fc90292aa5cd00",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2611.27095",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 37409,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 36869,
+      "evidence_block_count": 60,
+      "evidence_context_characters": 44437,
+      "evidence_context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+      "evidence_context_sha256": "56f2467b44e8bb41a0e6efce3e9afdbeab82915e95c01f67996127f44f2faf05",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 37423,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "extracted_pages": 8,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "89cdc7bbca5f8f584f11be8557853265f7a775659813f7d06f070040bf8deceb",
+        "source_url": "https://arxiv.org/pdf/2611.27095",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 37409,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 2367,
+          "supplied_characters": 2367
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 1,
+          "source_characters": 1972,
+          "supplied_characters": 1972
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 1759,
+          "supplied_characters": 1759
+        },
+        {
+          "heading": "Threat Model And Verification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "limitations",
+          "section_index": 3,
+          "source_characters": 3117,
+          "supplied_characters": 3117
+        },
+        {
+          "heading": "Threat Model And Verification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "limitations",
+          "section_index": 4,
+          "source_characters": 782,
+          "supplied_characters": 782
+        },
+        {
+          "heading": "System Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 5,
+          "source_characters": 296,
+          "supplied_characters": 296
+        },
+        {
+          "heading": "Domain-Separated Cryptographic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1589,
+          "supplied_characters": 1589
+        },
+        {
+          "heading": "Out-Of-Processstdiomcp Receipt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1985,
+          "supplied_characters": 1985
+        },
+        {
+          "heading": "Out-Of-Processstdiomcp Receipt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 270,
+          "supplied_characters": 270
+        },
+        {
+          "heading": "Hybrid Symbolic\u2013Neural Post-Turn",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1751,
+          "supplied_characters": 1751
+        },
+        {
+          "heading": "Provenance-Gated Sqlite Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1623,
+          "supplied_characters": 1623
+        },
+        {
+          "heading": "Empirical Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 11,
+          "source_characters": 812,
+          "supplied_characters": 812
+        },
+        {
+          "heading": "Empirical Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 12,
+          "source_characters": 2858,
+          "supplied_characters": 2858
+        },
+        {
+          "heading": "Rq2: Frozen-Benchmark And Live",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 13,
+          "source_characters": 1958,
+          "supplied_characters": 1958
+        },
+        {
+          "heading": "Rq2: Frozen-Benchmark And Live",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 14,
+          "source_characters": 1778,
+          "supplied_characters": 1778
+        },
+        {
+          "heading": "Ablation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 2587,
+          "supplied_characters": 2587
+        },
+        {
+          "heading": "Ablation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 16,
+          "source_characters": 44,
+          "supplied_characters": 44
+        },
+        {
+          "heading": "Limitations And Threats To",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "limitations",
+          "section_index": 17,
+          "source_characters": 1624,
+          "supplied_characters": 1624
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "related",
+          "section_index": 18,
+          "source_characters": 1535,
+          "supplied_characters": 1535
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "conclusion",
+          "section_index": 19,
+          "source_characters": 1295,
+          "supplied_characters": 1295
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 56,
+          "supplied_characters": 56
+        },
+        {
+          "heading": "Runtime Verification: Introductory And Advanced",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 383,
+          "supplied_characters": 383
+        },
+        {
+          "heading": "Thirty-Fourth Annual Acm Symposium On Theory Of",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 186,
+          "supplied_characters": 186
+        },
+        {
+          "heading": "Not What You'Ve Signed Up For: Compromising",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 43,
+          "supplied_characters": 43
+        },
+        {
+          "heading": "Real-World Llm-Integrated Applications With Indirect",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 387,
+          "supplied_characters": 387
+        },
+        {
+          "heading": "Debertav3: Improving Deberta Using",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 34,
+          "supplied_characters": 34
+        },
+        {
+          "heading": "Electra-Style Pre-Training With",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 26,
+          "source_characters": 1060,
+          "supplied_characters": 1060
+        },
+        {
+          "heading": "Five Layers Of Agent Memory: Cryptographic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 236,
+          "supplied_characters": 236
+        },
+        {
+          "heading": "Mitigate Multi-Session Memory Poisoning In",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 180,
+          "supplied_characters": 180
+        },
+        {
+          "heading": "Output Supervision For Epistemically Grounded",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 183,
+          "supplied_characters": 183
+        },
+        {
+          "heading": "Miss Live Output: An Empirical Evasion Taxonomy And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 217,
+          "supplied_characters": 217
+        },
+        {
+          "heading": "Difference Between Correlated Proportions Or",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 749,
+          "supplied_characters": 749
+        },
+        {
+          "heading": "Firewall For Mcp Security And Mediator-Signed Action",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 234,
+          "supplied_characters": 234
+        },
+        {
+          "heading": "Nemo Guardrails: A Toolkit For Controllable And Safe",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 97,
+          "supplied_characters": 97
+        },
+        {
+          "heading": "Proceedings Of The 2023 Conference On Empirical",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 47,
+          "supplied_characters": 47
+        },
+        {
+          "heading": "Methods In Natural Language Processing: System",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 35,
+          "source_characters": 228,
+          "supplied_characters": 228
+        },
+        {
+          "heading": "Distillation For Task-Agnostic Compression Of Pre-Trained",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 547,
+          "supplied_characters": 547
+        }
+      ],
+      "selected_characters": 36869,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "selected_sections": [
+        {
+          "characters": 2367,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1972,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1759,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 3117,
+          "heading": "Threat Model And Verification",
+          "page": 2
+        },
+        {
+          "characters": 782,
+          "heading": "Threat Model And Verification",
+          "page": 3
+        },
+        {
+          "characters": 296,
+          "heading": "System Architecture",
+          "page": 3
+        },
+        {
+          "characters": 1589,
+          "heading": "Domain-Separated Cryptographic",
+          "page": 3
+        },
+        {
+          "characters": 1985,
+          "heading": "Out-Of-Processstdiomcp Receipt",
+          "page": 3
+        },
+        {
+          "characters": 270,
+          "heading": "Out-Of-Processstdiomcp Receipt",
+          "page": 4
+        },
+        {
+          "characters": 1751,
+          "heading": "Hybrid Symbolic\u2013Neural Post-Turn",
+          "page": 4
+        },
+        {
+          "characters": 1623,
+          "heading": "Provenance-Gated Sqlite Memory",
+          "page": 4
+        },
+        {
+          "characters": 812,
+          "heading": "Empirical Evaluation",
+          "page": 4
+        },
+        {
+          "characters": 2858,
+          "heading": "Empirical Evaluation",
+          "page": 5
+        },
+        {
+          "characters": 1958,
+          "heading": "Rq2: Frozen-Benchmark And Live",
+          "page": 5
+        },
+        {
+          "characters": 1778,
+          "heading": "Rq2: Frozen-Benchmark And Live",
+          "page": 6
+        },
+        {
+          "characters": 2587,
+          "heading": "Ablation",
+          "page": 6
+        },
+        {
+          "characters": 44,
+          "heading": "Ablation",
+          "page": 7
+        },
+        {
+          "characters": 1624,
+          "heading": "Limitations And Threats To",
+          "page": 7
+        },
+        {
+          "characters": 1535,
+          "heading": "Related Work",
+          "page": 7
+        },
+        {
+          "characters": 1295,
+          "heading": "Conclusion",
+          "page": 7
+        },
+        {
+          "characters": 56,
+          "heading": "Unclassified body after references",
+          "page": 8
+        },
+        {
+          "characters": 383,
+          "heading": "Runtime Verification: Introductory And Advanced",
+          "page": 8
+        },
+        {
+          "characters": 186,
+          "heading": "Thirty-Fourth Annual Acm Symposium On Theory Of",
+          "page": 8
+        },
+        {
+          "characters": 43,
+          "heading": "Not What You'Ve Signed Up For: Compromising",
+          "page": 8
+        },
+        {
+          "characters": 387,
+          "heading": "Real-World Llm-Integrated Applications With Indirect",
+          "page": 8
+        },
+        {
+          "characters": 34,
+          "heading": "Debertav3: Improving Deberta Using",
+          "page": 8
+        },
+        {
+          "characters": 1060,
+          "heading": "Electra-Style Pre-Training With",
+          "page": 8
+        },
+        {
+          "characters": 236,
+          "heading": "Five Layers Of Agent Memory: Cryptographic",
+          "page": 8
+        },
+        {
+          "characters": 180,
+          "heading": "Mitigate Multi-Session Memory Poisoning In",
+          "page": 8
+        },
+        {
+          "characters": 183,
+          "heading": "Output Supervision For Epistemically Grounded",
+          "page": 8
+        },
+        {
+          "characters": 217,
+          "heading": "Miss Live Output: An Empirical Evasion Taxonomy And",
+          "page": 8
+        },
+        {
+          "characters": 749,
+          "heading": "Difference Between Correlated Proportions Or",
+          "page": 8
+        },
+        {
+          "characters": 234,
+          "heading": "Firewall For Mcp Security And Mediator-Signed Action",
+          "page": 8
+        },
+        {
+          "characters": 97,
+          "heading": "Nemo Guardrails: A Toolkit For Controllable And Safe",
+          "page": 8
+        },
+        {
+          "characters": 47,
+          "heading": "Proceedings Of The 2023 Conference On Empirical",
+          "page": 8
+        },
+        {
+          "characters": 228,
+          "heading": "Methods In Natural Language Processing: System",
+          "page": 8
+        },
+        {
+          "characters": 547,
+          "heading": "Distillation For Task-Agnostic Compression Of Pre-Trained",
+          "page": 8
+        }
+      ],
+      "selected_text_sha256": "5d907a9d058356f031f263cdd318c1cd5dbac14432abb46d92fc90292aa5cd00",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "89cdc7bbca5f8f584f11be8557853265f7a775659813f7d06f070040bf8deceb",
+      "source_pages": 8,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0002"
+        ],
+        "excerpt": "presentepistemic-guard(v0.5.2), an open-source Python library and out-of-process\nstdioMCP receipt proxy (15 modules, 0MiB GPU VRAM).epistemic-guardisolates Ed25519 signing keys out\nof process, writes RFC6962 Merkle logs withAER-1receipt translation, checks post-turn prose on CPU with SHA-\n256-verified OpenVINO INT8 encoders (4 models, 279.48MB total; 82.67MB on the supervision path), gates SQLite\nwrites across 7 provenance domains, and collapses verbatim and lightly edited wire-syndicated RAG mirrors. On\nconformance suites,epistemic-guardrejects 100.0% of tampered receipts (200 Merkle leaves), passes 58/58 official\nAER-1ingestion vectors and 50/50 reference-verifiedAER-1exports, verifies 100.0% of 40 fault-injected wire calls and\n100 concurrent appends with 0 key leaks, and blocks 100.0% of 100 unauthorized memory writes. AcrossN= 250\nfrozen-benchmark traces,epistemic-guardreaches 93.2% ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract / front matter",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7ef85ca49680f1658e291c8c56e1471d2729cd85b2d7f8a89acb54f4af7fc47e",
+            "evidence_id": "Ed75af951b6760299-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract / front matter",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1777,
+                "page": 1,
+                "section": "Abstract / front matter",
+                "section_index": 0,
+                "start": 877,
+                "text": "presentepistemic-guard(v0.5.2), an open-source Python library and out-of-process\nstdioMCP receipt proxy (15 modules, 0MiB GPU VRAM).epistemic-guardisolates Ed25519 signing keys out\nof process, writes RFC6962 Merkle logs withAER-1receipt translation, checks post-turn prose on CPU with SHA-\n256-verified OpenVINO INT8 encoders (4 models, 279.48MB total; 82.67MB on the supervision path), gates SQLite\nwrites across 7 provenance domains, and collapses verbatim and lightly edited wire-syndicated RAG mirrors. On\nconformance suites,epistemic-guardrejects 100.0% of tampered receipts (200 Merkle leaves), passes 58/58 official\nAER-1ingestion vectors and 50/50 reference-verifiedAER-1exports, verifies 100.0% of 40 fault-injected wire calls and\n100 concurrent appends with 0 key leaks, and blocks 100.0% of 100 unauthorized memory writes. AcrossN= 250\nfrozen-benchmark traces,epistemic-guardreaches 93.2% "
+              }
+            ],
+            "text": "presentepistemic-guard(v0.5.2), an open-source Python library and out-of-process\nstdioMCP receipt proxy (15 modules, 0MiB GPU VRAM).epistemic-guardisolates Ed25519 signing keys out\nof process, writes RFC6962 Merkle logs withAER-1receipt translation, checks post-turn prose on CPU with SHA-\n256-verified OpenVINO INT8 encoders (4 models, 279.48MB total; 82.67MB on the supervision path), gates SQLite\nwrites across 7 provenance domains, and collapses verbatim and lightly edited wire-syndicated RAG mirrors. On\nconformance suites,epistemic-guardrejects 100.0% of tampered receipts (200 Merkle leaves), passes 58/58 official\nAER-1ingestion vectors and 50/50 reference-verifiedAER-1exports, verifies 100.0% of 40 fault-injected wire calls and\n100 concurrent appends with 0 key leaks, and blocks 100.0% of 100 unauthorized memory writes. AcrossN= 250\nfrozen-benchmark traces,epistemic-guardreaches 93.2% "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0003"
+        ],
+        "excerpt": "accuracy at 17.9ms warm median CPU latency (8.62ms\nsingle-clause; 921.8ms cold-start load), beating 12B\u201314B GPU judges by 6.4\u20136.8 points (p= 0.0259,p= 0.0095) at\n4.26\u20134.5\u00d7lower latency; onN= 60livemcp-proxytraces, it catches 96.15% of hazards at 76.67% accuracy (38.24%\nFPR;+18.34points over Stage-1-only,p= 0.001) in 9.16ms p50.\nArtifacts:Code:https://github.com/AlienatedAliens/epistemic-guard\u00b7\nPyPI:https://pypi.org/project/epistemic-guard/\u00b7\nINT8 weights:https://huggingface.co/RollSolo/epistemic-guard-int8\u00b7\nBenchmarks:https://huggingface.co/datasets/RollSolo/epistemic-guard-benchmarks",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract / front matter",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0fb3dbdd82f6fd4898c95f0da12b0cad86cc0c5a870759cd7d7f5f81d688008b",
+            "evidence_id": "Ed75af951b6760299-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract / front matter",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 2367,
+                "page": 1,
+                "section": "Abstract / front matter",
+                "section_index": 0,
+                "start": 1777,
+                "text": "accuracy at 17.9ms warm median CPU latency (8.62ms\nsingle-clause; 921.8ms cold-start load), beating 12B\u201314B GPU judges by 6.4\u20136.8 points (p= 0.0259,p= 0.0095) at\n4.26\u20134.5\u00d7lower latency; onN= 60livemcp-proxytraces, it catches 96.15% of hazards at 76.67% accuracy (38.24%\nFPR;+18.34points over Stage-1-only,p= 0.001) in 9.16ms p50.\nArtifacts:Code:https://github.com/AlienatedAliens/epistemic-guard\u00b7\nPyPI:https://pypi.org/project/epistemic-guard/\u00b7\nINT8 weights:https://huggingface.co/RollSolo/epistemic-guard-int8\u00b7\nBenchmarks:https://huggingface.co/datasets/RollSolo/epistemic-guard-benchmarks"
+              }
+            ],
+            "text": "accuracy at 17.9ms warm median CPU latency (8.62ms\nsingle-clause; 921.8ms cold-start load), beating 12B\u201314B GPU judges by 6.4\u20136.8 points (p= 0.0259,p= 0.0095) at\n4.26\u20134.5\u00d7lower latency; onN= 60livemcp-proxytraces, it catches 96.15% of hazards at 76.67% accuracy (38.24%\nFPR;+18.34points over Stage-1-only,p= 0.001) in 9.16ms p50.\nArtifacts:Code:https://github.com/AlienatedAliens/epistemic-guard\u00b7\nPyPI:https://pypi.org/project/epistemic-guard/\u00b7\nINT8 weights:https://huggingface.co/RollSolo/epistemic-guard-int8\u00b7\nBenchmarks:https://huggingface.co/datasets/RollSolo/epistemic-guard-benchmarks"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0007"
+        ],
+        "excerpt": "Proxy\n(mcp-proxy):AstdioJSON-RPC2.0 proxy\nthat strips signing secrets from child server en-\nvironments, classifies 4 execution and error states,\nappends Ed25519-signed receipts to an OS-locked\nJSONL Merkle log with public-key pinning, and\ntranslates bidirectionally to the Agent Execution\nReceipt (AER-1) format [25].\n\u2022CPU INT8 Receipt Supervision:A hybrid\nsymbolic\u2013neural supervisor (ReceiptSupervisor)\nusing the fine-tunedaction_claimOpenVINO\nINT8 cross-encoder (82.67MB of the 279.48MB 4-\nmodel bundle; 0MiB GPU VRAM) plus Ed25519\nreceipt signature and argument-target matching,\nrunning in 17.9ms median turn CPU latency.\n\u2022Provenance-Gated SQLite Store & RAG\nMirror Filter:Domain-separated HKDF-\nSHA256 [9] + Ed25519 [8] write-gating with SQLite\nimmutability triggers, paired with word-shingle\nJaccard and SimHash clustering [2, 3] across a\n12-cell hazard-by-proof-standard policy ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "54f8f5163a0b43572633ffef70baa6a901681ee216076712d21483034c3faea7",
+            "evidence_id": "Ed75af951b6760299-B0007",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1577,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 693,
+                "text": "Proxy\n(mcp-proxy):AstdioJSON-RPC2.0 proxy\nthat strips signing secrets from child server en-\nvironments, classifies 4 execution and error states,\nappends Ed25519-signed receipts to an OS-locked\nJSONL Merkle log with public-key pinning, and\ntranslates bidirectionally to the Agent Execution\nReceipt (AER-1) format [25].\n\u2022CPU INT8 Receipt Supervision:A hybrid\nsymbolic\u2013neural supervisor (ReceiptSupervisor)\nusing the fine-tunedaction_claimOpenVINO\nINT8 cross-encoder (82.67MB of the 279.48MB 4-\nmodel bundle; 0MiB GPU VRAM) plus Ed25519\nreceipt signature and argument-target matching,\nrunning in 17.9ms median turn CPU latency.\n\u2022Provenance-Gated SQLite Store & RAG\nMirror Filter:Domain-separated HKDF-\nSHA256 [9] + Ed25519 [8] write-gating with SQLite\nimmutability triggers, paired with word-shingle\nJaccard and SimHash clustering [2, 3] across a\n12-cell hazard-by-proof-standard policy "
+              }
+            ],
+            "text": "Proxy\n(mcp-proxy):AstdioJSON-RPC2.0 proxy\nthat strips signing secrets from child server en-\nvironments, classifies 4 execution and error states,\nappends Ed25519-signed receipts to an OS-locked\nJSONL Merkle log with public-key pinning, and\ntranslates bidirectionally to the Agent Execution\nReceipt (AER-1) format [25].\n\u2022CPU INT8 Receipt Supervision:A hybrid\nsymbolic\u2013neural supervisor (ReceiptSupervisor)\nusing the fine-tunedaction_claimOpenVINO\nINT8 cross-encoder (82.67MB of the 279.48MB 4-\nmodel bundle; 0MiB GPU VRAM) plus Ed25519\nreceipt signature and argument-target matching,\nrunning in 17.9ms median turn CPU latency.\n\u2022Provenance-Gated SQLite Store & RAG\nMirror Filter:Domain-separated HKDF-\nSHA256 [9] + Ed25519 [8] write-gating with SQLite\nimmutability triggers, paired with word-shingle\nJaccard and SimHash clustering [2, 3] across a\n12-cell hazard-by-proof-standard policy "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0011"
+        ],
+        "excerpt": "(ASI06,ASI08):\nRetrieved web pages often reprint identical wire-\nservice copy or SEO mirrors across distinct host-\nnames. Naive multi-URL counting treats 3 mirrors\nof one rumor as independent corroboration for high-\nhazard medical, financial, or security claims.\nTrusted Computing Base (TCB) and Key Iso-\nlation.The TCB comprises the host OS kernel, the\nMCP host/orchestratorHinvoking post-turn verifica-\ntion, the out-of-processmcp-proxyprocess holding the\nEd25519 signing key, the SHA-256 digests of the 16\nINT8 model files (verified by default at every model\nload viaverify_hashes=Trueacross explicit or OS-\ncache paths), and OS permissions on the SQLite store\nand pinned public key. When keys are injected via\nEPISTEMIC_GUARD_MCP_KEY_HEX, the secret stays in\nmcp-proxymemory and is scrubbed before spawning\nchild servers; when--key-fileis used on disk (cre-\nated atomically viaO_CREAT|O_EXCLwith ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Threat Model And Verification",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b8d751437b1815bf6c3c2a143994b32f7911a99e9c198889bf3c9806e8df6b5b",
+            "evidence_id": "Ed75af951b6760299-B0011",
+            "pages": [
+              2
+            ],
+            "section": "Threat Model And Verification",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 2677,
+                "page": 2,
+                "section": "Threat Model And Verification",
+                "section_index": 3,
+                "start": 1777,
+                "text": "(ASI06,ASI08):\nRetrieved web pages often reprint identical wire-\nservice copy or SEO mirrors across distinct host-\nnames. Naive multi-URL counting treats 3 mirrors\nof one rumor as independent corroboration for high-\nhazard medical, financial, or security claims.\nTrusted Computing Base (TCB) and Key Iso-\nlation.The TCB comprises the host OS kernel, the\nMCP host/orchestratorHinvoking post-turn verifica-\ntion, the out-of-processmcp-proxyprocess holding the\nEd25519 signing key, the SHA-256 digests of the 16\nINT8 model files (verified by default at every model\nload viaverify_hashes=Trueacross explicit or OS-\ncache paths), and OS permissions on the SQLite store\nand pinned public key. When keys are injected via\nEPISTEMIC_GUARD_MCP_KEY_HEX, the secret stays in\nmcp-proxymemory and is scrubbed before spawning\nchild servers; when--key-fileis used on disk (cre-\nated atomically viaO_CREAT|O_EXCLwith "
+              }
+            ],
+            "text": "(ASI06,ASI08):\nRetrieved web pages often reprint identical wire-\nservice copy or SEO mirrors across distinct host-\nnames. Naive multi-URL counting treats 3 mirrors\nof one rumor as independent corroboration for high-\nhazard medical, financial, or security claims.\nTrusted Computing Base (TCB) and Key Iso-\nlation.The TCB comprises the host OS kernel, the\nMCP host/orchestratorHinvoking post-turn verifica-\ntion, the out-of-processmcp-proxyprocess holding the\nEd25519 signing key, the SHA-256 digests of the 16\nINT8 model files (verified by default at every model\nload viaverify_hashes=Trueacross explicit or OS-\ncache paths), and OS permissions on the SQLite store\nand pinned public key. When keys are injected via\nEPISTEMIC_GUARD_MCP_KEY_HEX, the secret stays in\nmcp-proxymemory and is scrubbed before spawning\nchild servers; when--key-fileis used on disk (cre-\nated atomically viaO_CREAT|O_EXCLwith "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0015"
+        ],
+        "excerpt": "Provenance and AER-1 Receipts\nRather than sharing one symmetric key across com-\nponents,provenance.pyderives 5 domain-isolated\nRFC8032 Ed25519 [8] keypairs (32-byte keys, 64-byte\nsignatures) from a master seed via RFC5869 HKDF-\nSHA256 [9] across 7 provenance domains (Provenance):\nUSER_EXPLICIT,USER_CONFIRMED,TOOL_VERIFIED,\nLISP_ASSERTION,INFERRED,LLM_NARRATION, and\nTOOL_CONTENT_UNTRUSTED.SignerFactoryprovides\nno signing constructor forLLM_NARRATIONorTOOL_\nCONTENT_UNTRUSTED, so model prose and untrusted\ntool text cannot produce a signed envelope through the\npublic API.\nEach tool call produces a canonicalToolReceipt\n(serialized with sorted keys andallow_nan=Falseso\nNaN/Infinityfloats cannot break cross-runtime canon-\nicalization) containing the call ID, tool name, struc-\ntured arguments, SHA-256 output digest, execution flag\n(executed), outcome flag (ok), error code, optional ses-\nsion ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Domain-Separated Cryptographic",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3511bc3075558b72def04122afb3a0d644c4e8507ae50cadfebdd8d90f3309d6",
+            "evidence_id": "Ed75af951b6760299-B0015",
+            "pages": [
+              3
+            ],
+            "section": "Domain-Separated Cryptographic",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 3,
+                "section": "Domain-Separated Cryptographic",
+                "section_index": 6,
+                "start": 0,
+                "text": "Provenance and AER-1 Receipts\nRather than sharing one symmetric key across com-\nponents,provenance.pyderives 5 domain-isolated\nRFC8032 Ed25519 [8] keypairs (32-byte keys, 64-byte\nsignatures) from a master seed via RFC5869 HKDF-\nSHA256 [9] across 7 provenance domains (Provenance):\nUSER_EXPLICIT,USER_CONFIRMED,TOOL_VERIFIED,\nLISP_ASSERTION,INFERRED,LLM_NARRATION, and\nTOOL_CONTENT_UNTRUSTED.SignerFactoryprovides\nno signing constructor forLLM_NARRATIONorTOOL_\nCONTENT_UNTRUSTED, so model prose and untrusted\ntool text cannot produce a signed envelope through the\npublic API.\nEach tool call produces a canonicalToolReceipt\n(serialized with sorted keys andallow_nan=Falseso\nNaN/Infinityfloats cannot break cross-runtime canon-\nicalization) containing the call ID, tool name, struc-\ntured arguments, SHA-256 output digest, execution flag\n(executed), outcome flag (ok), error code, optional ses-\nsion "
+              }
+            ],
+            "text": "Provenance and AER-1 Receipts\nRather than sharing one symmetric key across com-\nponents,provenance.pyderives 5 domain-isolated\nRFC8032 Ed25519 [8] keypairs (32-byte keys, 64-byte\nsignatures) from a master seed via RFC5869 HKDF-\nSHA256 [9] across 7 provenance domains (Provenance):\nUSER_EXPLICIT,USER_CONFIRMED,TOOL_VERIFIED,\nLISP_ASSERTION,INFERRED,LLM_NARRATION, and\nTOOL_CONTENT_UNTRUSTED.SignerFactoryprovides\nno signing constructor forLLM_NARRATIONorTOOL_\nCONTENT_UNTRUSTED, so model prose and untrusted\ntool text cannot produce a signed envelope through the\npublic API.\nEach tool call produces a canonicalToolReceipt\n(serialized with sorted keys andallow_nan=Falseso\nNaN/Infinityfloats cannot break cross-runtime canon-\nicalization) containing the call ID, tool name, struc-\ntured arguments, SHA-256 output digest, execution flag\n(executed), outcome flag (ok), error code, optional ses-\nsion "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0017"
+        ],
+        "excerpt": "Proxy\nIn-process Python decorators (ReceiptRecorder) pro-\ntect benign agent loops against hallucinated actions, but\nshare memory and environment variables with the agent\nruntime. For untrusted or prompt-injected runtimes,\nepistemic-guard mcp-proxyinterposes as an out-of-\nprocessstdioparent between the MCP host and any\ndownstream MCP tool server:\n1.Secret Scrubbing:Before spawning the child\nMCP server,mcp-proxycase-insensitively strips\nsigning-secret environment variables (including\nEPISTEMIC_GUARD_MASTER_KEYandEPISTEMIC_\nGUARD_MCP_KEY_HEX) from the child's environment\nblock so compromised child servers cannot forge re-\nceipts.\n2.Four-State Wire Classification:As JSON-\nRPC2.0 frames stream overstdin/stdout,\nmcp-proxycorrelatestools/callrequests in\nFIFO order per JSON-RPCidand distinguishes\n4 runtime outcomes: (a) normal tool completion\n(executed=true, ok=true); (b) application-level\nMCP ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Out-Of-Processstdiomcp Receipt",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "54278cb79cc3869dbabc0664e82caf77fd9a9326511561aff9a3a9a6d279fc68",
+            "evidence_id": "Ed75af951b6760299-B0017",
+            "pages": [
+              3
+            ],
+            "section": "Out-Of-Processstdiomcp Receipt",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 3,
+                "section": "Out-Of-Processstdiomcp Receipt",
+                "section_index": 7,
+                "start": 0,
+                "text": "Proxy\nIn-process Python decorators (ReceiptRecorder) pro-\ntect benign agent loops against hallucinated actions, but\nshare memory and environment variables with the agent\nruntime. For untrusted or prompt-injected runtimes,\nepistemic-guard mcp-proxyinterposes as an out-of-\nprocessstdioparent between the MCP host and any\ndownstream MCP tool server:\n1.Secret Scrubbing:Before spawning the child\nMCP server,mcp-proxycase-insensitively strips\nsigning-secret environment variables (including\nEPISTEMIC_GUARD_MASTER_KEYandEPISTEMIC_\nGUARD_MCP_KEY_HEX) from the child's environment\nblock so compromised child servers cannot forge re-\nceipts.\n2.Four-State Wire Classification:As JSON-\nRPC2.0 frames stream overstdin/stdout,\nmcp-proxycorrelatestools/callrequests in\nFIFO order per JSON-RPCidand distinguishes\n4 runtime outcomes: (a) normal tool completion\n(executed=true, ok=true); (b) application-level\nMCP "
+              }
+            ],
+            "text": "Proxy\nIn-process Python decorators (ReceiptRecorder) pro-\ntect benign agent loops against hallucinated actions, but\nshare memory and environment variables with the agent\nruntime. For untrusted or prompt-injected runtimes,\nepistemic-guard mcp-proxyinterposes as an out-of-\nprocessstdioparent between the MCP host and any\ndownstream MCP tool server:\n1.Secret Scrubbing:Before spawning the child\nMCP server,mcp-proxycase-insensitively strips\nsigning-secret environment variables (including\nEPISTEMIC_GUARD_MASTER_KEYandEPISTEMIC_\nGUARD_MCP_KEY_HEX) from the child's environment\nblock so compromised child servers cannot forge re-\nceipts.\n2.Four-State Wire Classification:As JSON-\nRPC2.0 frames stream overstdin/stdout,\nmcp-proxycorrelatestools/callrequests in\nFIFO order per JSON-RPCidand distinguishes\n4 runtime outcomes: (a) normal tool completion\n(executed=true, ok=true); (b) application-level\nMCP "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0018"
+        ],
+        "excerpt": "tool failure whereresult.isError=true\n(executed=true, ok=false, mcp_tool_error);\n(c) pre-execution rejection on standard JSON-\nRPC protocol/parameter error codes (-32700,\n-32600,-32601,-32602) or schema-validation\nerror markers (executed=false, ok=false);\nand (d) child server crash or EOF mid-call\n(executed=true, ok=false, mcp_server_eof).\nNon-standard server errors default conservatively\ntoexecuted=true, ok=falseso neither rejected\nnor failed calls can ground completion prose.\n3.Key-Pinned Append-Only Audit Log:Each\nReceiptLogEntrycarries both an inner Ed25519\nToolReceiptsignature and a domain-separated\nEd25519entry_signatureover(seq, session_\nid, leaf_sha256, prev_chain_sha256, chain_\nsha256, merkle_root), acquires cross-process OS\nfile locks for multi-worker concurrency, chains op-\ntionally across rotated Ed25519 keys (--prev-log\n/--prev-pubkey-file), and flushes immediately\nto an ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Out-Of-Processstdiomcp Receipt",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "597cfac46f44b85d233176cd1750e3d3231f1c5a7c09da828fd4b1cb0ba7dee8",
+            "evidence_id": "Ed75af951b6760299-B0018",
+            "pages": [
+              3
+            ],
+            "section": "Out-Of-Processstdiomcp Receipt",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1796,
+                "page": 3,
+                "section": "Out-Of-Processstdiomcp Receipt",
+                "section_index": 7,
+                "start": 899,
+                "text": "tool failure whereresult.isError=true\n(executed=true, ok=false, mcp_tool_error);\n(c) pre-execution rejection on standard JSON-\nRPC protocol/parameter error codes (-32700,\n-32600,-32601,-32602) or schema-validation\nerror markers (executed=false, ok=false);\nand (d) child server crash or EOF mid-call\n(executed=true, ok=false, mcp_server_eof).\nNon-standard server errors default conservatively\ntoexecuted=true, ok=falseso neither rejected\nnor failed calls can ground completion prose.\n3.Key-Pinned Append-Only Audit Log:Each\nReceiptLogEntrycarries both an inner Ed25519\nToolReceiptsignature and a domain-separated\nEd25519entry_signatureover(seq, session_\nid, leaf_sha256, prev_chain_sha256, chain_\nsha256, merkle_root), acquires cross-process OS\nfile locks for multi-worker concurrency, chains op-\ntionally across rotated Ed25519 keys (--prev-log\n/--prev-pubkey-file), and flushes immediately\nto an "
+              }
+            ],
+            "text": "tool failure whereresult.isError=true\n(executed=true, ok=false, mcp_tool_error);\n(c) pre-execution rejection on standard JSON-\nRPC protocol/parameter error codes (-32700,\n-32600,-32601,-32602) or schema-validation\nerror markers (executed=false, ok=false);\nand (d) child server crash or EOF mid-call\n(executed=true, ok=false, mcp_server_eof).\nNon-standard server errors default conservatively\ntoexecuted=true, ok=falseso neither rejected\nnor failed calls can ground completion prose.\n3.Key-Pinned Append-Only Audit Log:Each\nReceiptLogEntrycarries both an inner Ed25519\nToolReceiptsignature and a domain-separated\nEd25519entry_signatureover(seq, session_\nid, leaf_sha256, prev_chain_sha256, chain_\nsha256, merkle_root), acquires cross-process OS\nfile locks for multi-worker concurrency, chains op-\ntionally across rotated Ed25519 keys (--prev-log\n/--prev-pubkey-file), and flushes immediately\nto an "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0020"
+        ],
+        "excerpt": "Prose Supervision\nRegex-only action supervisors miss indirect phrasing,\nnominalizations, and passive-voice state mutations,\nwhereas off-the-shelf NLI encoders treatunexecutedtool\nclaims against empty receipt logs as neutral [15]. Across\nthe full package,epistemic-guarddistributes 4 Open-\nVINO INT8 models (16 SHA-256-pinned files totaling\n279.48MB over HTTPS from Hugging Face Hub or\nGitHub Releases, extracted with symlink/path-traversal\nguards and verified by SHA-256 at every load). Only\naction_claim(82.67MB) runs on the post-turn super-\nvision path, whereReceiptSupervisorexecutes a two-\nstage CPU pipeline:\n1.Speech-Act Action-Claim Detection:Non-\nassertive spans (negations, conditionals, attributed\nquotes, creative/translation prompts, and fenced\ncode blocks) are masked while optional Structured\nOutput Action Contract (SOAC, explicit[ACTION:\nverb target]tags [15]) declarations are ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Hybrid Symbolic\u2013Neural Post-Turn",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "41a41cb380633285239d5fdd1ea77511716d8132556aa80e3291a43761c4d441",
+            "evidence_id": "Ed75af951b6760299-B0020",
+            "pages": [
+              4
+            ],
+            "section": "Hybrid Symbolic\u2013Neural Post-Turn",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 4,
+                "section": "Hybrid Symbolic\u2013Neural Post-Turn",
+                "section_index": 9,
+                "start": 0,
+                "text": "Prose Supervision\nRegex-only action supervisors miss indirect phrasing,\nnominalizations, and passive-voice state mutations,\nwhereas off-the-shelf NLI encoders treatunexecutedtool\nclaims against empty receipt logs as neutral [15]. Across\nthe full package,epistemic-guarddistributes 4 Open-\nVINO INT8 models (16 SHA-256-pinned files totaling\n279.48MB over HTTPS from Hugging Face Hub or\nGitHub Releases, extracted with symlink/path-traversal\nguards and verified by SHA-256 at every load). Only\naction_claim(82.67MB) runs on the post-turn super-\nvision path, whereReceiptSupervisorexecutes a two-\nstage CPU pipeline:\n1.Speech-Act Action-Claim Detection:Non-\nassertive spans (negations, conditionals, attributed\nquotes, creative/translation prompts, and fenced\ncode blocks) are masked while optional Structured\nOutput Action Contract (SOAC, explicit[ACTION:\nverb target]tags [15]) declarations are "
+              }
+            ],
+            "text": "Prose Supervision\nRegex-only action supervisors miss indirect phrasing,\nnominalizations, and passive-voice state mutations,\nwhereas off-the-shelf NLI encoders treatunexecutedtool\nclaims against empty receipt logs as neutral [15]. Across\nthe full package,epistemic-guarddistributes 4 Open-\nVINO INT8 models (16 SHA-256-pinned files totaling\n279.48MB over HTTPS from Hugging Face Hub or\nGitHub Releases, extracted with symlink/path-traversal\nguards and verified by SHA-256 at every load). Only\naction_claim(82.67MB) runs on the post-turn super-\nvision path, whereReceiptSupervisorexecutes a two-\nstage CPU pipeline:\n1.Speech-Act Action-Claim Detection:Non-\nassertive spans (negations, conditionals, attributed\nquotes, creative/translation prompts, and fenced\ncode blocks) are masked while optional Structured\nOutput Action Contract (SOAC, explicit[ACTION:\nverb target]tags [15]) declarations are "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0021"
+        ],
+        "excerpt": "extracted,\nand candidate clauses are scored by the INT8\naction_claimcross-encoder. If no completed ex-\nternalsideeffectisasserted, theturnpasseswithout\nrequiring receipts.\n2.Cryptographic Receipt & Target Matching:\nWhen a side-effect claim is detected,Receipt\nSupervisorverifies the turn'sToolReceiptset\nviaProvenanceGate(enforcing Ed25519 signa-\ntures, session binding, and receipt-age bounds\nwhen configured), excludes any receipt with\nexecuted=falseorok=false, and matches\nclaimed action families, additive claim counts, and\nconcrete file/URL/email/identifier targets against\nverified receiptargson path and token bound-\naries (rejecting substring collisions and bare zero-\nargument receipts when prose names specific tar-\ngets). Ungrounded claims returnSupervision\nVerdict(is_valid=false)with character-offset\nspans andto_retry_prompt()remediation text.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Hybrid Symbolic\u2013Neural Post-Turn",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "515685dfa834afd089ae80f0695d8f862c203b1a94d2efc70ee684ddc395a189",
+            "evidence_id": "Ed75af951b6760299-B0021",
+            "pages": [
+              4
+            ],
+            "section": "Hybrid Symbolic\u2013Neural Post-Turn",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1751,
+                "page": 4,
+                "section": "Hybrid Symbolic\u2013Neural Post-Turn",
+                "section_index": 9,
+                "start": 894,
+                "text": "extracted,\nand candidate clauses are scored by the INT8\naction_claimcross-encoder. If no completed ex-\nternalsideeffectisasserted, theturnpasseswithout\nrequiring receipts.\n2.Cryptographic Receipt & Target Matching:\nWhen a side-effect claim is detected,Receipt\nSupervisorverifies the turn'sToolReceiptset\nviaProvenanceGate(enforcing Ed25519 signa-\ntures, session binding, and receipt-age bounds\nwhen configured), excludes any receipt with\nexecuted=falseorok=false, and matches\nclaimed action families, additive claim counts, and\nconcrete file/URL/email/identifier targets against\nverified receiptargson path and token bound-\naries (rejecting substring collisions and bare zero-\nargument receipts when prose names specific tar-\ngets). Ungrounded claims returnSupervision\nVerdict(is_valid=false)with character-offset\nspans andto_retry_prompt()remediation text."
+              }
+            ],
+            "text": "extracted,\nand candidate clauses are scored by the INT8\naction_claimcross-encoder. If no completed ex-\nternalsideeffectisasserted, theturnpasseswithout\nrequiring receipts.\n2.Cryptographic Receipt & Target Matching:\nWhen a side-effect claim is detected,Receipt\nSupervisorverifies the turn'sToolReceiptset\nviaProvenanceGate(enforcing Ed25519 signa-\ntures, session binding, and receipt-age bounds\nwhen configured), excludes any receipt with\nexecuted=falseorok=false, and matches\nclaimed action families, additive claim counts, and\nconcrete file/URL/email/identifier targets against\nverified receiptargson path and token bound-\naries (rejecting substring collisions and bare zero-\nargument receipts when prose names specific tar-\ngets). Ungrounded claims returnSupervision\nVerdict(is_valid=false)with character-offset\nspans andto_retry_prompt()remediation text."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0022"
+        ],
+        "excerpt": "and De-Syndicated RAG\nStorage-Boundary Write Gate.Instore.py,\nSQLiteProvenanceStorewraps SQLite WAL persis-\ntence behind mandatoryProvenanceGateverifica-\ntion and serializedBEGIN IMMEDIATEwrite transac-\ntions. Only 5 provenance domains with valid detached\nEd25519 signatures are write-eligible; writes carry-\ningLLM_NARRATION,TOOL_CONTENT_UNTRUSTED, forged\nkeys, or mutated payloads raiseProvenanceErroror\nSignatureTamperErrorbefore touching SQLite. Ac-\ncepted envelopes link into a cumulative SHA-256 chain\ndigest protected by 2 SQLBEFORE UPDATEandBEFORE\nDELETEtriggers that abort in-place mutation of commit-\nted rows.\nSyndication Deduplication and Hazard-Tiered\nCorroboration.Before web-retrieved claims are pro-\nmoted intoINFERREDmemory or stated without hedg-\ning,corroboration.pyshards candidate passages\ninto word shingles of widthk= 4, drops non-\nevidentiary boilerplate with the MiniLM [23] ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Provenance-Gated Sqlite Memory",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bae472f8505b47e96056c9ee2c047eb6de9329b79a764c4b1ab3a9cc780ebf0b",
+            "evidence_id": "Ed75af951b6760299-B0022",
+            "pages": [
+              4
+            ],
+            "section": "Provenance-Gated Sqlite Memory",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 4,
+                "section": "Provenance-Gated Sqlite Memory",
+                "section_index": 10,
+                "start": 0,
+                "text": "and De-Syndicated RAG\nStorage-Boundary Write Gate.Instore.py,\nSQLiteProvenanceStorewraps SQLite WAL persis-\ntence behind mandatoryProvenanceGateverifica-\ntion and serializedBEGIN IMMEDIATEwrite transac-\ntions. Only 5 provenance domains with valid detached\nEd25519 signatures are write-eligible; writes carry-\ningLLM_NARRATION,TOOL_CONTENT_UNTRUSTED, forged\nkeys, or mutated payloads raiseProvenanceErroror\nSignatureTamperErrorbefore touching SQLite. Ac-\ncepted envelopes link into a cumulative SHA-256 chain\ndigest protected by 2 SQLBEFORE UPDATEandBEFORE\nDELETEtriggers that abort in-place mutation of commit-\nted rows.\nSyndication Deduplication and Hazard-Tiered\nCorroboration.Before web-retrieved claims are pro-\nmoted intoINFERREDmemory or stated without hedg-\ning,corroboration.pyshards candidate passages\ninto word shingles of widthk= 4, drops non-\nevidentiary boilerplate with the MiniLM [23] "
+              }
+            ],
+            "text": "and De-Syndicated RAG\nStorage-Boundary Write Gate.Instore.py,\nSQLiteProvenanceStorewraps SQLite WAL persis-\ntence behind mandatoryProvenanceGateverifica-\ntion and serializedBEGIN IMMEDIATEwrite transac-\ntions. Only 5 provenance domains with valid detached\nEd25519 signatures are write-eligible; writes carry-\ningLLM_NARRATION,TOOL_CONTENT_UNTRUSTED, forged\nkeys, or mutated payloads raiseProvenanceErroror\nSignatureTamperErrorbefore touching SQLite. Ac-\ncepted envelopes link into a cumulative SHA-256 chain\ndigest protected by 2 SQLBEFORE UPDATEandBEFORE\nDELETEtriggers that abort in-place mutation of commit-\nted rows.\nSyndication Deduplication and Hazard-Tiered\nCorroboration.Before web-retrieved claims are pro-\nmoted intoINFERREDmemory or stated without hedg-\ning,corroboration.pyshards candidate passages\ninto word shingles of widthk= 4, drops non-\nevidentiary boilerplate with the MiniLM [23] "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0023"
+        ],
+        "excerpt": "INT8\nweb_evidenceencoder (23.06MB), checks cross-source\ncontradictionswiththeDeBERTa-v3[6]INT8nlicross-\nencoder (91.1MB), and merges near-duplicate mir-\nrors across registrable domains using explicit similar-\nity gates: anchor-token Jaccard\u22650.45,3-shingle Jac-\ncard\u22650.25,4-shingle Jaccard\u22650.55[2], or 64-bit\nSimHash Hamming distance\u226412[3]. Independent\nsource counts are checked against 4 consumer action\ncontexts (casual_mention,memory_commit_inferred,\nunhedged_assertion, andirreversible_action) and\na 3-tier hazard classifier (82.65MB;LOW,MEDIUM,HIGH)\nmapped onto 4 proof standards (12 policy cells). High-\nhazard claims backed only by wire-syndicated mirrors of\none origin collapse to one cluster and fail corroboration.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Provenance-Gated Sqlite Memory",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f76a7345d04083fdfd7a93cefd732bb3eba0b55d94d168c006060a50f5ef507e",
+            "evidence_id": "Ed75af951b6760299-B0023",
+            "pages": [
+              4
+            ],
+            "section": "Provenance-Gated Sqlite Memory",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1623,
+                "page": 4,
+                "section": "Provenance-Gated Sqlite Memory",
+                "section_index": 10,
+                "start": 900,
+                "text": "INT8\nweb_evidenceencoder (23.06MB), checks cross-source\ncontradictionswiththeDeBERTa-v3[6]INT8nlicross-\nencoder (91.1MB), and merges near-duplicate mir-\nrors across registrable domains using explicit similar-\nity gates: anchor-token Jaccard\u22650.45,3-shingle Jac-\ncard\u22650.25,4-shingle Jaccard\u22650.55[2], or 64-bit\nSimHash Hamming distance\u226412[3]. Independent\nsource counts are checked against 4 consumer action\ncontexts (casual_mention,memory_commit_inferred,\nunhedged_assertion, andirreversible_action) and\na 3-tier hazard classifier (82.65MB;LOW,MEDIUM,HIGH)\nmapped onto 4 proof standards (12 policy cells). High-\nhazard claims backed only by wire-syndicated mirrors of\none origin collapse to one cluster and fail corroboration."
+              }
+            ],
+            "text": "INT8\nweb_evidenceencoder (23.06MB), checks cross-source\ncontradictionswiththeDeBERTa-v3[6]INT8nlicross-\nencoder (91.1MB), and merges near-duplicate mir-\nrors across registrable domains using explicit similar-\nity gates: anchor-token Jaccard\u22650.45,3-shingle Jac-\ncard\u22650.25,4-shingle Jaccard\u22650.55[2], or 64-bit\nSimHash Hamming distance\u226412[3]. Independent\nsource counts are checked against 4 consumer action\ncontexts (casual_mention,memory_commit_inferred,\nunhedged_assertion, andirreversible_action) and\na 3-tier hazard classifier (82.65MB;LOW,MEDIUM,HIGH)\nmapped onto 4 proof standards (12 policy cells). High-\nhazard claims backed only by wire-syndicated mirrors of\none origin collapse to one cluster and fail corroboration."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0025"
+        ],
+        "excerpt": "mani-\nfests underresults/(table1_architecture.json,\ntable2_conformance.json, andtable3_heldout_\nsupervision.json). Binomial proportions use two-\nsided 95% Wilson score confidence intervals [24], and\npaired classifier comparisons use exact two-sided McNe-\nmar tests [16].\n4.1 RQ1: Conformance,\nFault-Injection, and Paraphrase\nDegradation\nTable 2 reports deterministic conformance and fault-\ninjection results fromrun_protocol_conformance.py:\n\u2022Merkle,AER-1, & Replay Integrity:Across 200\nsigned receipts, all 200 RFC6962 inclusion proofs\nverify (100.0%) and all 200 payload mutations\nraiseMerkleTamperError(0 false accepts). Eval-\nuated against the officialdraft-zambo-aer1-26\nconformance kit [25],ToolReceipt.from_aer1\nmatches 58/58 single-receipt ingestion vec-\ntors (100.0%: 22/22 valid/profile-boundary ac-\ncepted, 36/36 invalid rejected), while all 50/50\nToolReceipt.to_aer1exports pass the kit's ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Empirical Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "85ecd19e4c48d6f03b38d36fc10184a07f1429676234f91bd1067c0ae583a379",
+            "evidence_id": "Ed75af951b6760299-B0025",
+            "pages": [
+              5
+            ],
+            "section": "Empirical Evaluation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 980,
+                "page": 5,
+                "section": "Empirical Evaluation",
+                "section_index": 12,
+                "start": 80,
+                "text": "mani-\nfests underresults/(table1_architecture.json,\ntable2_conformance.json, andtable3_heldout_\nsupervision.json). Binomial proportions use two-\nsided 95% Wilson score confidence intervals [24], and\npaired classifier comparisons use exact two-sided McNe-\nmar tests [16].\n4.1 RQ1: Conformance,\nFault-Injection, and Paraphrase\nDegradation\nTable 2 reports deterministic conformance and fault-\ninjection results fromrun_protocol_conformance.py:\n\u2022Merkle,AER-1, & Replay Integrity:Across 200\nsigned receipts, all 200 RFC6962 inclusion proofs\nverify (100.0%) and all 200 payload mutations\nraiseMerkleTamperError(0 false accepts). Eval-\nuated against the officialdraft-zambo-aer1-26\nconformance kit [25],ToolReceipt.from_aer1\nmatches 58/58 single-receipt ingestion vec-\ntors (100.0%: 22/22 valid/profile-boundary ac-\ncepted, 36/36 invalid rejected), while all 50/50\nToolReceipt.to_aer1exports pass the kit's "
+              }
+            ],
+            "text": "mani-\nfests underresults/(table1_architecture.json,\ntable2_conformance.json, andtable3_heldout_\nsupervision.json). Binomial proportions use two-\nsided 95% Wilson score confidence intervals [24], and\npaired classifier comparisons use exact two-sided McNe-\nmar tests [16].\n4.1 RQ1: Conformance,\nFault-Injection, and Paraphrase\nDegradation\nTable 2 reports deterministic conformance and fault-\ninjection results fromrun_protocol_conformance.py:\n\u2022Merkle,AER-1, & Replay Integrity:Across 200\nsigned receipts, all 200 RFC6962 inclusion proofs\nverify (100.0%) and all 200 payload mutations\nraiseMerkleTamperError(0 false accepts). Eval-\nuated against the officialdraft-zambo-aer1-26\nconformance kit [25],ToolReceipt.from_aer1\nmatches 58/58 single-receipt ingestion vec-\ntors (100.0%: 22/22 valid/profile-boundary ac-\ncepted, 36/36 invalid rejected), while all 50/50\nToolReceipt.to_aer1exports pass the kit's "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0026"
+        ],
+        "excerpt": "refer-\nence verifier (100.0% across core, version-binding,\nand reference-producer checks), round-trip cleanly\n(50/50, 100.0%), and reject digest edits (50/50,\n100.0%). Under 4-thread contention (100 con-\ncurrent appends to one log), OS file locking pre-\nserves sequential chain hashes across all 100 entries\n(100.0%), while 4/4 cross-session replay, active\nrehashed-reorder, andNaN/Infinitycanonicaliza-\ntion attempts fail closed (100.0%).\n\u2022Out-of-Process MCP Wire Fault Injection:\nSpawning live childstdioMCP servers under\nmcp-proxyacross 40 tool invocations (10 each\nacross normal completion,result.isError=true,\nJSON-RPC-32602invalid-parameter rejection,\nand mid-request child crash), all 40 logged receipts\npass chain and pinned-key verification (1 pinned\nkey, 1/1 post-hoc log edit rejected), separating\n30 dispatched/crash calls (10ok=true) from 10\npre-execution rejections (executed=false) ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Empirical Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "84495c82fbcff16a687cbb81e204755814be3daa66db81698144a1a37df0ec5f",
+            "evidence_id": "Ed75af951b6760299-B0026",
+            "pages": [
+              5
+            ],
+            "section": "Empirical Evaluation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1877,
+                "page": 5,
+                "section": "Empirical Evaluation",
+                "section_index": 12,
+                "start": 980,
+                "text": "refer-\nence verifier (100.0% across core, version-binding,\nand reference-producer checks), round-trip cleanly\n(50/50, 100.0%), and reject digest edits (50/50,\n100.0%). Under 4-thread contention (100 con-\ncurrent appends to one log), OS file locking pre-\nserves sequential chain hashes across all 100 entries\n(100.0%), while 4/4 cross-session replay, active\nrehashed-reorder, andNaN/Infinitycanonicaliza-\ntion attempts fail closed (100.0%).\n\u2022Out-of-Process MCP Wire Fault Injection:\nSpawning live childstdioMCP servers under\nmcp-proxyacross 40 tool invocations (10 each\nacross normal completion,result.isError=true,\nJSON-RPC-32602invalid-parameter rejection,\nand mid-request child crash), all 40 logged receipts\npass chain and pinned-key verification (1 pinned\nkey, 1/1 post-hoc log edit rejected), separating\n30 dispatched/crash calls (10ok=true) from 10\npre-execution rejections (executed=false) "
+              }
+            ],
+            "text": "refer-\nence verifier (100.0% across core, version-binding,\nand reference-producer checks), round-trip cleanly\n(50/50, 100.0%), and reject digest edits (50/50,\n100.0%). Under 4-thread contention (100 con-\ncurrent appends to one log), OS file locking pre-\nserves sequential chain hashes across all 100 entries\n(100.0%), while 4/4 cross-session replay, active\nrehashed-reorder, andNaN/Infinitycanonicaliza-\ntion attempts fail closed (100.0%).\n\u2022Out-of-Process MCP Wire Fault Injection:\nSpawning live childstdioMCP servers under\nmcp-proxyacross 40 tool invocations (10 each\nacross normal completion,result.isError=true,\nJSON-RPC-32602invalid-parameter rejection,\nand mid-request child crash), all 40 logged receipts\npass chain and pinned-key verification (1 pinned\nkey, 1/1 post-hoc log edit rejected), separating\n30 dispatched/crash calls (10ok=true) from 10\npre-execution rejections (executed=false) "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0027"
+        ],
+        "excerpt": "with 0\nchild-environment key leaks.\n\u2022SQLite Write Gate & Paraphrase Sensi-\ntivity:Across 300 storage writes, all 200 au-\nthorized envelopes verify along the 200-row hash\nchain (0.0% false rejections), all 100 unauthorized\nwrites (50LLM_NARRATION+ 50 forged keys) are\nblocked (100.0%), and 2/2 SQL mutations trigger\nIntegrityError. Across 45 wire-syndication clus-\nters(135URLs, 3domains/cluster), all90duplicate\nmirrors (2/cluster) collapse to single-origin clus-\nters (45/45, 100.0%). To locate the lexical evasion\nboundary, a 5-tier sensitivity sweep of 50 clusters\nper rewrite tier shows single-origin collapse holds at\n100.0% under dateline/footer wrappers and 100.0%\nunder light (\u223c15%) lexical edits, tapers to 40.0%\non intermediate (\u223c30%) lexical edits, and drops to\n0.0% on moderate (\u223c45%) clause restructuring and\n0.0% on heavy (>80%) abstractive rewrites, con-\nfirming thatk= 4shingling ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Empirical Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4ffcc36a98ec5c2e356ff742b0a3a752480530e73b02ce9d0f830de60ec29218",
+            "evidence_id": "Ed75af951b6760299-B0027",
+            "pages": [
+              5
+            ],
+            "section": "Empirical Evaluation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2773,
+                "page": 5,
+                "section": "Empirical Evaluation",
+                "section_index": 12,
+                "start": 1877,
+                "text": "with 0\nchild-environment key leaks.\n\u2022SQLite Write Gate & Paraphrase Sensi-\ntivity:Across 300 storage writes, all 200 au-\nthorized envelopes verify along the 200-row hash\nchain (0.0% false rejections), all 100 unauthorized\nwrites (50LLM_NARRATION+ 50 forged keys) are\nblocked (100.0%), and 2/2 SQL mutations trigger\nIntegrityError. Across 45 wire-syndication clus-\nters(135URLs, 3domains/cluster), all90duplicate\nmirrors (2/cluster) collapse to single-origin clus-\nters (45/45, 100.0%). To locate the lexical evasion\nboundary, a 5-tier sensitivity sweep of 50 clusters\nper rewrite tier shows single-origin collapse holds at\n100.0% under dateline/footer wrappers and 100.0%\nunder light (\u223c15%) lexical edits, tapers to 40.0%\non intermediate (\u223c30%) lexical edits, and drops to\n0.0% on moderate (\u223c45%) clause restructuring and\n0.0% on heavy (>80%) abstractive rewrites, con-\nfirming thatk= 4shingling "
+              }
+            ],
+            "text": "with 0\nchild-environment key leaks.\n\u2022SQLite Write Gate & Paraphrase Sensi-\ntivity:Across 300 storage writes, all 200 au-\nthorized envelopes verify along the 200-row hash\nchain (0.0% false rejections), all 100 unauthorized\nwrites (50LLM_NARRATION+ 50 forged keys) are\nblocked (100.0%), and 2/2 SQL mutations trigger\nIntegrityError. Across 45 wire-syndication clus-\nters(135URLs, 3domains/cluster), all90duplicate\nmirrors (2/cluster) collapse to single-origin clus-\nters (45/45, 100.0%). To locate the lexical evasion\nboundary, a 5-tier sensitivity sweep of 50 clusters\nper rewrite tier shows single-origin collapse holds at\n100.0% under dateline/footer wrappers and 100.0%\nunder light (\u223c15%) lexical edits, tapers to 40.0%\non intermediate (\u223c30%) lexical edits, and drops to\n0.0% on moderate (\u223c45%) clause restructuring and\n0.0% on heavy (>80%) abstractive rewrites, con-\nfirming thatk= 4shingling "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0030"
+        ],
+        "excerpt": "grounded/benign; Hugging Face commit\n73bbc046759e, 2026-11-14, frozen with v0.3.0 weights)\njoins author-labeled speech-act caseslocked_coh_50\n(n= 50) and paraphrasesblind42_coh_100(n= 100)\nwithorganic_heldout_h100(n= 100): live tool-\nless chat turns (receipts=[]) fromgemma-4-e4b(50)\nandgemma-4-26b-a4b(50), labeled by blinded LLM\nraters (30/30, 100.0% dual-slice agreement) and author\naudit [15]. Becauseorganic_heldout_h100is tool-\nless, we also generated a post-release end-to-end co-\nhortlive_mcp_e2e_60(N= 60: 30gemma-4-E4Band\n30Nemotron-3.5-30B-A3Bturns, 26 ungrounded and\n34 grounded, labeled against wire state prior to eval-\nuation) routed through livemcp-proxychild servers\nacrossok=truecompletion, target-driftok=truecalls,\nisError=true, JSON-RPC-32602, mid-call crash, and\ncompound two-tool turns.\nAccuracy, Ablations, and Live MCP Receipt\nBinding.On theN= 250frozen ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq2: Frozen-Benchmark And Live",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "db1e41ba8f0341877368f484d95732774894d3a66e154a4e9462401ab2f0fbb2",
+            "evidence_id": "Ed75af951b6760299-B0030",
+            "pages": [
+              5
+            ],
+            "section": "Rq2: Frozen-Benchmark And Live",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1763,
+                "page": 5,
+                "section": "Rq2: Frozen-Benchmark And Live",
+                "section_index": 13,
+                "start": 884,
+                "text": "grounded/benign; Hugging Face commit\n73bbc046759e, 2026-11-14, frozen with v0.3.0 weights)\njoins author-labeled speech-act caseslocked_coh_50\n(n= 50) and paraphrasesblind42_coh_100(n= 100)\nwithorganic_heldout_h100(n= 100): live tool-\nless chat turns (receipts=[]) fromgemma-4-e4b(50)\nandgemma-4-26b-a4b(50), labeled by blinded LLM\nraters (30/30, 100.0% dual-slice agreement) and author\naudit [15]. Becauseorganic_heldout_h100is tool-\nless, we also generated a post-release end-to-end co-\nhortlive_mcp_e2e_60(N= 60: 30gemma-4-E4Band\n30Nemotron-3.5-30B-A3Bturns, 26 ungrounded and\n34 grounded, labeled against wire state prior to eval-\nuation) routed through livemcp-proxychild servers\nacrossok=truecompletion, target-driftok=truecalls,\nisError=true, JSON-RPC-32602, mid-call crash, and\ncompound two-tool turns.\nAccuracy, Ablations, and Live MCP Receipt\nBinding.On theN= 250frozen "
+              }
+            ],
+            "text": "grounded/benign; Hugging Face commit\n73bbc046759e, 2026-11-14, frozen with v0.3.0 weights)\njoins author-labeled speech-act caseslocked_coh_50\n(n= 50) and paraphrasesblind42_coh_100(n= 100)\nwithorganic_heldout_h100(n= 100): live tool-\nless chat turns (receipts=[]) fromgemma-4-e4b(50)\nandgemma-4-26b-a4b(50), labeled by blinded LLM\nraters (30/30, 100.0% dual-slice agreement) and author\naudit [15]. Becauseorganic_heldout_h100is tool-\nless, we also generated a post-release end-to-end co-\nhortlive_mcp_e2e_60(N= 60: 30gemma-4-E4Band\n30Nemotron-3.5-30B-A3Bturns, 26 ungrounded and\n34 grounded, labeled against wire state prior to eval-\nuation) routed through livemcp-proxychild servers\nacrossok=truecompletion, target-driftok=truecalls,\nisError=true, JSON-RPC-32602, mid-call crash, and\ncompound two-tool turns.\nAccuracy, Ablations, and Live MCP Receipt\nBinding.On theN= 250frozen "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0031"
+        ],
+        "excerpt": "benchmark,\nepistemic-guardreaches 93.2% accuracy (233/250;\nTP = 118,TN = 115,FP = 13,FN = 4):\n100.0% (50/50, CI [92.87%, 100.0%]) onlocked_coh_\n50, 92.0% (92/100, CI [85.0%, 95.89%]) onblind42_\n5\nTable 2: Deterministic protocol conformance, multi-worker concurrency, and tamper/replay-rejection results across\nruntime enforcement subsystems (run_protocol_conformance.py\u2192results/table2_conformance.json).\nSubsystem Evaluated Invariant / Fault-Injection Workload Trials Verified / Blocked Rate\nRFC6962 Merkle Ledger Valid leaf inclusion proofs verified 200 200 100.0%\nRFC6962 Merkle Ledger Mutated receipt payloads rejected (0 false accepts) 200 200 100.0%\nAER-1Interoperability Officialdraft-zambo-aer1-26ingestion kit (22 valid, 36\ninvalid)\n58 58 100.0%\nAER-1Interoperability Reference-verifiedto_aer1()exports, round-trip, &\ntampered-digest rejection\n50 50 100.0%\nOut-of-Processmcp-proxyWire calls ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq2: Frozen-Benchmark And Live",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3c562e8835c4099aed37671a76568443a82961b79afe0d1c9727324a1afd62df",
+            "evidence_id": "Ed75af951b6760299-B0031",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Rq2: Frozen-Benchmark And Live",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1958,
+                "page": 5,
+                "section": "Rq2: Frozen-Benchmark And Live",
+                "section_index": 13,
+                "start": 1763,
+                "text": "benchmark,\nepistemic-guardreaches 93.2% accuracy (233/250;\nTP = 118,TN = 115,FP = 13,FN = 4):\n100.0% (50/50, CI [92.87%, 100.0%]) onlocked_coh_\n50, 92.0% (92/100, CI [85.0%, 95.89%]) onblind42_\n5"
+              },
+              {
+                "end": 703,
+                "page": 6,
+                "section": "Rq2: Frozen-Benchmark And Live",
+                "section_index": 14,
+                "start": 0,
+                "text": "Table 2: Deterministic protocol conformance, multi-worker concurrency, and tamper/replay-rejection results across\nruntime enforcement subsystems (run_protocol_conformance.py\u2192results/table2_conformance.json).\nSubsystem Evaluated Invariant / Fault-Injection Workload Trials Verified / Blocked Rate\nRFC6962 Merkle Ledger Valid leaf inclusion proofs verified 200 200 100.0%\nRFC6962 Merkle Ledger Mutated receipt payloads rejected (0 false accepts) 200 200 100.0%\nAER-1Interoperability Officialdraft-zambo-aer1-26ingestion kit (22 valid, 36\ninvalid)\n58 58 100.0%\nAER-1Interoperability Reference-verifiedto_aer1()exports, round-trip, &\ntampered-digest rejection\n50 50 100.0%\nOut-of-Processmcp-proxyWire calls "
+              }
+            ],
+            "text": "benchmark,\nepistemic-guardreaches 93.2% accuracy (233/250;\nTP = 118,TN = 115,FP = 13,FN = 4):\n100.0% (50/50, CI [92.87%, 100.0%]) onlocked_coh_\n50, 92.0% (92/100, CI [85.0%, 95.89%]) onblind42_\n5\nTable 2: Deterministic protocol conformance, multi-worker concurrency, and tamper/replay-rejection results across\nruntime enforcement subsystems (run_protocol_conformance.py\u2192results/table2_conformance.json).\nSubsystem Evaluated Invariant / Fault-Injection Workload Trials Verified / Blocked Rate\nRFC6962 Merkle Ledger Valid leaf inclusion proofs verified 200 200 100.0%\nRFC6962 Merkle Ledger Mutated receipt payloads rejected (0 false accepts) 200 200 100.0%\nAER-1Interoperability Officialdraft-zambo-aer1-26ingestion kit (22 valid, 36\ninvalid)\n58 58 100.0%\nAER-1Interoperability Reference-verifiedto_aer1()exports, round-trip, &\ntampered-digest rejection\n50 50 100.0%\nOut-of-Processmcp-proxyWire calls "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0032"
+        ],
+        "excerpt": "classified across 4 modes (10/mode; 0 env key\nleaks)\n40 40 100.0%\nConcurrent Audit Log Multi-worker locked appends verified (4 threads\u00d725\nappends)\n100 100 100.0%\nReplay & Canonicalization Cross-session replay, entry reordering, andNaN/Inffloats\nrejected\n4 4 100.0%\nSQLite Provenance Gate Authorized signed domain writes accepted (0 false\nrejections)\n200 200 100.0%\nSQLite Provenance Gate Unauthorized writes blocked (50LLM_NARRATION+ 50 forged\nkeys)\n100 100 100.0%\nSQLite Immutability Direct SQLUPDATEandDELETEmutations aborted by\ntriggers\n2 2 100.0%\nRAG Syndication Filter 135 wire-mirror URLs (3/cluster) collapsed; high-hazard\npromotion blocked\n45 45 100.0%\nTable 3: Post-turn action-claim supervision on theN= 250frozen benchmark (122 ungrounded, 128\ngrounded/benign; tool-lessOrg-100sub-cohort) andN= 60livemcp-proxytraces (Live-60; latencies in ms,\nGPU VRAM in ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq2: Frozen-Benchmark And Live",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "280afcaa8e4d86601872da0f2c07658f27777aedb5f7ddf6710d8abaa29ac8aa",
+            "evidence_id": "Ed75af951b6760299-B0032",
+            "pages": [
+              6
+            ],
+            "section": "Rq2: Frozen-Benchmark And Live",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1570,
+                "page": 6,
+                "section": "Rq2: Frozen-Benchmark And Live",
+                "section_index": 14,
+                "start": 703,
+                "text": "classified across 4 modes (10/mode; 0 env key\nleaks)\n40 40 100.0%\nConcurrent Audit Log Multi-worker locked appends verified (4 threads\u00d725\nappends)\n100 100 100.0%\nReplay & Canonicalization Cross-session replay, entry reordering, andNaN/Inffloats\nrejected\n4 4 100.0%\nSQLite Provenance Gate Authorized signed domain writes accepted (0 false\nrejections)\n200 200 100.0%\nSQLite Provenance Gate Unauthorized writes blocked (50LLM_NARRATION+ 50 forged\nkeys)\n100 100 100.0%\nSQLite Immutability Direct SQLUPDATEandDELETEmutations aborted by\ntriggers\n2 2 100.0%\nRAG Syndication Filter 135 wire-mirror URLs (3/cluster) collapsed; high-hazard\npromotion blocked\n45 45 100.0%\nTable 3: Post-turn action-claim supervision on theN= 250frozen benchmark (122 ungrounded, 128\ngrounded/benign; tool-lessOrg-100sub-cohort) andN= 60livemcp-proxytraces (Live-60; latencies in ms,\nGPU VRAM in "
+              }
+            ],
+            "text": "classified across 4 modes (10/mode; 0 env key\nleaks)\n40 40 100.0%\nConcurrent Audit Log Multi-worker locked appends verified (4 threads\u00d725\nappends)\n100 100 100.0%\nReplay & Canonicalization Cross-session replay, entry reordering, andNaN/Inffloats\nrejected\n4 4 100.0%\nSQLite Provenance Gate Authorized signed domain writes accepted (0 false\nrejections)\n200 200 100.0%\nSQLite Provenance Gate Unauthorized writes blocked (50LLM_NARRATION+ 50 forged\nkeys)\n100 100 100.0%\nSQLite Immutability Direct SQLUPDATEandDELETEmutations aborted by\ntriggers\n2 2 100.0%\nRAG Syndication Filter 135 wire-mirror URLs (3/cluster) collapsed; high-hazard\npromotion blocked\n45 45 100.0%\nTable 3: Post-turn action-claim supervision on theN= 250frozen benchmark (122 ungrounded, 128\ngrounded/benign; tool-lessOrg-100sub-cohort) andN= 60livemcp-proxytraces (Live-60; latencies in ms,\nGPU VRAM in "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0033"
+        ],
+        "excerpt": "MiB;results/table3_heldout_supervision.json).\nSupervisor / Baseline Accuracy (95% CI) Recall FPR Org-100 Live-60 p50 p95 VRAM\nepistemic-guardINT8 (CPU) 93.2%[89.38%, 95.71%] 96.72%10.16% 91.0%76.67%17.935.830",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq2: Frozen-Benchmark And Live",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "da9d61d9a264693016a029d3bd22ddbab53236c60b8d1e00945e76c50804cba2",
+            "evidence_id": "Ed75af951b6760299-B0033",
+            "pages": [
+              6
+            ],
+            "section": "Rq2: Frozen-Benchmark And Live",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1778,
+                "page": 6,
+                "section": "Rq2: Frozen-Benchmark And Live",
+                "section_index": 14,
+                "start": 1570,
+                "text": "MiB;results/table3_heldout_supervision.json).\nSupervisor / Baseline Accuracy (95% CI) Recall FPR Org-100 Live-60 p50 p95 VRAM\nepistemic-guardINT8 (CPU) 93.2%[89.38%, 95.71%] 96.72%10.16% 91.0%76.67%17.935.830"
+              }
+            ],
+            "text": "MiB;results/table3_heldout_supervision.json).\nSupervisor / Baseline Accuracy (95% CI) Recall FPR Org-100 Live-60 p50 p95 VRAM\nepistemic-guardINT8 (CPU) 93.2%[89.38%, 95.71%] 96.72%10.16% 91.0%76.67%17.935.830"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0034"
+        ],
+        "excerpt": "Mistral-NeMo-12B Judge (GPU) 86.8% [82.04%, 90.44%] 87.7% 14.06% 84.0%80.0%80.58 102.15 8,844\nPhi-4-14B Judge (GPU) 86.4% [81.6%, 90.1%]100.0%26.56% 79.0% 65.0% 76.24 102.25 12,214\nDeBERTa-v3-xsmall NLI (CPU) 52.8% [46.62%, 58.9%] 24.59% 20.31% 51.0%80.0%22.432.49 0\ncoh_100, and 91.0% (91/100, CI [83.77%, 95.19%])\nonorganic_heldout_h100at 17.9ms median turn la-\ntency (8.62ms single-clause, 19.38ms mean, 35.83ms\np95). At the v0.3.0 freeze it scored 94.4% (236/250;\n95/100 onblind42_coh_100); v0.5.1\u2013v0.5.2 security\nhardening(rejectingzero-argumentwildcardmatcheson\nnamed files) cost 3 bare-tool items, so symbolic rules are\naudit-hardened rather than blind while neural weights\nstayed frozen. Regex+receipts scores 64.0% (160/250;\n30.33% recall), and Stage-1-only (receipts=[]) scores\n84.8% (212/250; 27.34% FPR). Stage-1-only exhibits\na higher median latency (24.98ms vs. 17.9ms) ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8bd50535488d547586ebe3f221771fc77db15a9cff6675f75b2f3e17e0ec46d8",
+            "evidence_id": "Ed75af951b6760299-B0034",
+            "pages": [
+              6
+            ],
+            "section": "Ablation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 884,
+                "page": 6,
+                "section": "Ablation",
+                "section_index": 15,
+                "start": 0,
+                "text": "Mistral-NeMo-12B Judge (GPU) 86.8% [82.04%, 90.44%] 87.7% 14.06% 84.0%80.0%80.58 102.15 8,844\nPhi-4-14B Judge (GPU) 86.4% [81.6%, 90.1%]100.0%26.56% 79.0% 65.0% 76.24 102.25 12,214\nDeBERTa-v3-xsmall NLI (CPU) 52.8% [46.62%, 58.9%] 24.59% 20.31% 51.0%80.0%22.432.49 0\ncoh_100, and 91.0% (91/100, CI [83.77%, 95.19%])\nonorganic_heldout_h100at 17.9ms median turn la-\ntency (8.62ms single-clause, 19.38ms mean, 35.83ms\np95). At the v0.3.0 freeze it scored 94.4% (236/250;\n95/100 onblind42_coh_100); v0.5.1\u2013v0.5.2 security\nhardening(rejectingzero-argumentwildcardmatcheson\nnamed files) cost 3 bare-tool items, so symbolic rules are\naudit-hardened rather than blind while neural weights\nstayed frozen. Regex+receipts scores 64.0% (160/250;\n30.33% recall), and Stage-1-only (receipts=[]) scores\n84.8% (212/250; 27.34% FPR). Stage-1-only exhibits\na higher median latency (24.98ms vs. 17.9ms) "
+              }
+            ],
+            "text": "Mistral-NeMo-12B Judge (GPU) 86.8% [82.04%, 90.44%] 87.7% 14.06% 84.0%80.0%80.58 102.15 8,844\nPhi-4-14B Judge (GPU) 86.4% [81.6%, 90.1%]100.0%26.56% 79.0% 65.0% 76.24 102.25 12,214\nDeBERTa-v3-xsmall NLI (CPU) 52.8% [46.62%, 58.9%] 24.59% 20.31% 51.0%80.0%22.432.49 0\ncoh_100, and 91.0% (91/100, CI [83.77%, 95.19%])\nonorganic_heldout_h100at 17.9ms median turn la-\ntency (8.62ms single-clause, 19.38ms mean, 35.83ms\np95). At the v0.3.0 freeze it scored 94.4% (236/250;\n95/100 onblind42_coh_100); v0.5.1\u2013v0.5.2 security\nhardening(rejectingzero-argumentwildcardmatcheson\nnamed files) cost 3 bare-tool items, so symbolic rules are\naudit-hardened rather than blind while neural weights\nstayed frozen. Regex+receipts scores 64.0% (160/250;\n30.33% recall), and Stage-1-only (receipts=[]) scores\n84.8% (212/250; 27.34% FPR). Stage-1-only exhibits\na higher median latency (24.98ms vs. 17.9ms) "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0035"
+        ],
+        "excerpt": "be-\ncauseReceiptSupervisorshort-circuits conversational\nclauses lacking action/state signals on multi-clause\nturns whenok_receiptsis non-empty, whereas pass-\ningreceipts=[]runs OpenVINO on every clause.\nOverall (N= 250),epistemic-guardbeats Mistral-\nNeMo-12B by+6.4pp (86.8%, 217/250; McNemar 31\nvs. 15,p= 0.0259;+7.0pp onOrg-100, 14 vs. 7,\np= 0.1892; 4.5\u00d7faster p50, saving 8,844MiB VRAM)\nand Phi-4-14B by+6.8pp (86.4%, 216/250; McNe-\nmar 28 vs. 11,p= 0.0095;+12.0pp onOrg-100,\n17 vs. 5,p= 0.0169; 4.26\u00d7faster p50, saving\n12,214MiB VRAM), while DeBERTa-v3 NLI scores\n52.8% (132/250,+40.4pp gap; 73/92 false negatives,\n79.35%, predictneutral). OnLive-60(zero-shot post-\nrelease, no custom tool stems), the supervisor delib-\nerately favors recall over false alarms\u2014a false positive\ncosts oneto_retry_prompt()retry whereas a missed\nfabrication corrupts state\u2014catching 96.15% of hazards\n(25/26, CI ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fc2c81f8e673a24190b486691b124ee82a59ee561dcd27fe990e0ec6a65e5f87",
+            "evidence_id": "Ed75af951b6760299-B0035",
+            "pages": [
+              6
+            ],
+            "section": "Ablation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1779,
+                "page": 6,
+                "section": "Ablation",
+                "section_index": 15,
+                "start": 884,
+                "text": "be-\ncauseReceiptSupervisorshort-circuits conversational\nclauses lacking action/state signals on multi-clause\nturns whenok_receiptsis non-empty, whereas pass-\ningreceipts=[]runs OpenVINO on every clause.\nOverall (N= 250),epistemic-guardbeats Mistral-\nNeMo-12B by+6.4pp (86.8%, 217/250; McNemar 31\nvs. 15,p= 0.0259;+7.0pp onOrg-100, 14 vs. 7,\np= 0.1892; 4.5\u00d7faster p50, saving 8,844MiB VRAM)\nand Phi-4-14B by+6.8pp (86.4%, 216/250; McNe-\nmar 28 vs. 11,p= 0.0095;+12.0pp onOrg-100,\n17 vs. 5,p= 0.0169; 4.26\u00d7faster p50, saving\n12,214MiB VRAM), while DeBERTa-v3 NLI scores\n52.8% (132/250,+40.4pp gap; 73/92 false negatives,\n79.35%, predictneutral). OnLive-60(zero-shot post-\nrelease, no custom tool stems), the supervisor delib-\nerately favors recall over false alarms\u2014a false positive\ncosts oneto_retry_prompt()retry whereas a missed\nfabrication corrupts state\u2014catching 96.15% of hazards\n(25/26, CI "
+              }
+            ],
+            "text": "be-\ncauseReceiptSupervisorshort-circuits conversational\nclauses lacking action/state signals on multi-clause\nturns whenok_receiptsis non-empty, whereas pass-\ningreceipts=[]runs OpenVINO on every clause.\nOverall (N= 250),epistemic-guardbeats Mistral-\nNeMo-12B by+6.4pp (86.8%, 217/250; McNemar 31\nvs. 15,p= 0.0259;+7.0pp onOrg-100, 14 vs. 7,\np= 0.1892; 4.5\u00d7faster p50, saving 8,844MiB VRAM)\nand Phi-4-14B by+6.8pp (86.4%, 216/250; McNe-\nmar 28 vs. 11,p= 0.0095;+12.0pp onOrg-100,\n17 vs. 5,p= 0.0169; 4.26\u00d7faster p50, saving\n12,214MiB VRAM), while DeBERTa-v3 NLI scores\n52.8% (132/250,+40.4pp gap; 73/92 false negatives,\n79.35%, predictneutral). OnLive-60(zero-shot post-\nrelease, no custom tool stems), the supervisor delib-\nerately favors recall over false alarms\u2014a false positive\ncosts oneto_retry_prompt()retry whereas a missed\nfabrication corrupts state\u2014catching 96.15% of hazards\n(25/26, CI "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0036"
+        ],
+        "excerpt": "[81.11%, 99.32%], 1 missed retry promise) at\n38.24% FPR (13/34) and 76.67% accuracy (46/60, CI\n[64.56%, 85.56%]) in 9.16ms p50 (23.12ms p95). Stage-\n2 receipt binding adds+18.34pp over Stage-1-only\n(58.33%, 35/60, 70.59% FPR; 11 vs. 0,p= 0.001), while\nRegex+receipts has 0.0% recall (34/60) and DeBERTa-\nv3 NLI shows why accuracy misleads on uneven classes\n(80.0%, 48/60, at 53.85% recall, 12/26 missed). Live\naccuracy gaps vs. GPU judges are non-significant\u2014\nepistemic-guardis nominally+11.67pp above Phi-4-\n14B (65.0%, 39/60, 61.76% FPR; 13 vs. 6,p= 0.1671;\n7.32\u00d7faster vs. 67.04ms) and nominally3.33pp below\nMistral-NeMo-12B (80.0%, 48/60, 35.29% FPR; 6 vs.\n8,p= 0.7905) at 7.83\u00d7lower p50 (9.16 vs. 71.69ms)\nand 0MiB VRAM; its 13 FPs comprise 6 custom tool\nnames (execute_sql,http_post,git_commit) and 7\n6\ncomma-split\"attempted X, but failed\"clauses.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "662fa1995c993ac67c36cb09a714ead328cc3339094e2e8b205c96836f01358f",
+            "evidence_id": "Ed75af951b6760299-B0036",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Ablation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2587,
+                "page": 6,
+                "section": "Ablation",
+                "section_index": 15,
+                "start": 1779,
+                "text": "[81.11%, 99.32%], 1 missed retry promise) at\n38.24% FPR (13/34) and 76.67% accuracy (46/60, CI\n[64.56%, 85.56%]) in 9.16ms p50 (23.12ms p95). Stage-\n2 receipt binding adds+18.34pp over Stage-1-only\n(58.33%, 35/60, 70.59% FPR; 11 vs. 0,p= 0.001), while\nRegex+receipts has 0.0% recall (34/60) and DeBERTa-\nv3 NLI shows why accuracy misleads on uneven classes\n(80.0%, 48/60, at 53.85% recall, 12/26 missed). Live\naccuracy gaps vs. GPU judges are non-significant\u2014\nepistemic-guardis nominally+11.67pp above Phi-4-\n14B (65.0%, 39/60, 61.76% FPR; 13 vs. 6,p= 0.1671;\n7.32\u00d7faster vs. 67.04ms) and nominally3.33pp below\nMistral-NeMo-12B (80.0%, 48/60, 35.29% FPR; 6 vs.\n8,p= 0.7905) at 7.83\u00d7lower p50 (9.16 vs. 71.69ms)\nand 0MiB VRAM; its 13 FPs comprise 6 custom tool\nnames (execute_sql,http_post,git_commit) and 7\n6"
+              },
+              {
+                "end": 44,
+                "page": 7,
+                "section": "Ablation",
+                "section_index": 16,
+                "start": 0,
+                "text": "comma-split\"attempted X, but failed\"clauses."
+              }
+            ],
+            "text": "[81.11%, 99.32%], 1 missed retry promise) at\n38.24% FPR (13/34) and 76.67% accuracy (46/60, CI\n[64.56%, 85.56%]) in 9.16ms p50 (23.12ms p95). Stage-\n2 receipt binding adds+18.34pp over Stage-1-only\n(58.33%, 35/60, 70.59% FPR; 11 vs. 0,p= 0.001), while\nRegex+receipts has 0.0% recall (34/60) and DeBERTa-\nv3 NLI shows why accuracy misleads on uneven classes\n(80.0%, 48/60, at 53.85% recall, 12/26 missed). Live\naccuracy gaps vs. GPU judges are non-significant\u2014\nepistemic-guardis nominally+11.67pp above Phi-4-\n14B (65.0%, 39/60, 61.76% FPR; 13 vs. 6,p= 0.1671;\n7.32\u00d7faster vs. 67.04ms) and nominally3.33pp below\nMistral-NeMo-12B (80.0%, 48/60, 35.29% FPR; 6 vs.\n8,p= 0.7905) at 7.83\u00d7lower p50 (9.16 vs. 71.69ms)\nand 0MiB VRAM; its 13 FPs comprise 6 custom tool\nnames (execute_sql,http_post,git_commit) and 7\n6\ncomma-split\"attempted X, but failed\"clauses."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0037"
+        ],
+        "excerpt": "Validity\nInternal Validity.Protocol conformance workloads\nin Table 2 run real child processes, OS file locks,\nEd25519/HKDF signing, and OpenVINO INT8 infer-\nence on deterministic local payloads rather than live\nSaaS endpoints so auditors can runosaudit results\n--rerunoffline without API keys or network variance.\nSupervision labels derive from author rubrics, blinded\nLLM raters plus author audit, and pre-committed\nMCP wire-state rules rather than multi-human inter-\nannotator (\u03ba) studies, and commercial frontier API\njudges were omitted to keep evaluation zero-API-cost\nand offline-reproducible.\nExternal Validity.Our supervision cohorts (N=\n250frozen,N= 60live MCP) evaluate English replies\non one workstation; asLive-60shows (6 unmapped-\nstem and 7 cross-clause failure-report FPs), custom\nMCP tool vocabularies and multi-clause\"attempted\nX, but failed\"reports raise false positives until ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations And Threats To",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3e18f694391a14082539c9a990fd047a71a80ed81bd75e79d094e2c25fa3ba13",
+            "evidence_id": "Ed75af951b6760299-B0037",
+            "pages": [
+              7
+            ],
+            "section": "Limitations And Threats To",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 7,
+                "section": "Limitations And Threats To",
+                "section_index": 17,
+                "start": 0,
+                "text": "Validity\nInternal Validity.Protocol conformance workloads\nin Table 2 run real child processes, OS file locks,\nEd25519/HKDF signing, and OpenVINO INT8 infer-\nence on deterministic local payloads rather than live\nSaaS endpoints so auditors can runosaudit results\n--rerunoffline without API keys or network variance.\nSupervision labels derive from author rubrics, blinded\nLLM raters plus author audit, and pre-committed\nMCP wire-state rules rather than multi-human inter-\nannotator (\u03ba) studies, and commercial frontier API\njudges were omitted to keep evaluation zero-API-cost\nand offline-reproducible.\nExternal Validity.Our supervision cohorts (N=\n250frozen,N= 60live MCP) evaluate English replies\non one workstation; asLive-60shows (6 unmapped-\nstem and 7 cross-clause failure-report FPs), custom\nMCP tool vocabularies and multi-clause\"attempted\nX, but failed\"reports raise false positives until "
+              }
+            ],
+            "text": "Validity\nInternal Validity.Protocol conformance workloads\nin Table 2 run real child processes, OS file locks,\nEd25519/HKDF signing, and OpenVINO INT8 infer-\nence on deterministic local payloads rather than live\nSaaS endpoints so auditors can runosaudit results\n--rerunoffline without API keys or network variance.\nSupervision labels derive from author rubrics, blinded\nLLM raters plus author audit, and pre-committed\nMCP wire-state rules rather than multi-human inter-\nannotator (\u03ba) studies, and commercial frontier API\njudges were omitted to keep evaluation zero-API-cost\nand offline-reproducible.\nExternal Validity.Our supervision cohorts (N=\n250frozen,N= 60live MCP) evaluate English replies\non one workstation; asLive-60shows (6 unmapped-\nstem and 7 cross-clause failure-report FPs), custom\nMCP tool vocabularies and multi-clause\"attempted\nX, but failed\"reports raise false positives until "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed75af951b6760299-B0038"
+        ],
+        "excerpt": "cus-\ntom tool stems and cross-clause negation propagation\nare configured.\nConstructandTransportScope.First,mcp-proxy\nin v0.5.2 mediatesstdioMCP servers; Streamable\nHTTP/SSE remote servers require a localstdiobridge\nor in-processReceiptRecorderwrapping. Second, re-\nceipts prove what a downstream server returned on\nthe wire; a buggy or malicious server returning forged\nok=truepayloads yields a validly signed false receipt,\nand custom servers rejecting calls via non-standard er-\nror codes are conservatively logged asexecuted=true,\nok=false. Third, as quantified in Section 4.1,k=\n4shingle/SimHash clustering collapses verbatim and\nlightly edited wire copy (100.0%) but does not collapse\nmoderate or abstractive rewrites (0.0%).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations And Threats To",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f8a26cc78790cc5e834a2eebe54b0c3d6ab9974438049d412f1b9f310ceb6fb0",
+            "evidence_id": "Ed75af951b6760299-B0038",
+            "pages": [
+              7
+            ],
+            "section": "Limitations And Threats To",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 1624,
+                "page": 7,
+                "section": "Limitations And Threats To",
+                "section_index": 17,
+                "start": 894,
+                "text": "cus-\ntom tool stems and cross-clause negation propagation\nare configured.\nConstructandTransportScope.First,mcp-proxy\nin v0.5.2 mediatesstdioMCP servers; Streamable\nHTTP/SSE remote servers require a localstdiobridge\nor in-processReceiptRecorderwrapping. Second, re-\nceipts prove what a downstream server returned on\nthe wire; a buggy or malicious server returning forged\nok=truepayloads yields a validly signed false receipt,\nand custom servers rejecting calls via non-standard er-\nror codes are conservatively logged asexecuted=true,\nok=false. Third, as quantified in Section 4.1,k=\n4shingle/SimHash clustering collapses verbatim and\nlightly edited wire copy (100.0%) but does not collapse\nmoderate or abstractive rewrites (0.0%)."
+              }
+            ],
+            "text": "cus-\ntom tool stems and cross-clause negation propagation\nare configured.\nConstructandTransportScope.First,mcp-proxy\nin v0.5.2 mediatesstdioMCP servers; Streamable\nHTTP/SSE remote servers require a localstdiobridge\nor in-processReceiptRecorderwrapping. Second, re-\nceipts prove what a downstream server returned on\nthe wire; a buggy or malicious server returning forged\nok=truepayloads yields a validly signed false receipt,\nand custom servers rejecting calls via non-standard er-\nror codes are conservatively logged asexecuted=true,\nok=false. Third, as quantified in Section 4.1,k=\n4shingle/SimHash clustering collapses verbatim and\nlightly edited wire copy (100.0%) but does not collapse\nmoderate or abstractive rewrites (0.0%)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2611.27095",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2611.27095",
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The official draft-zambo-aer1-26 conformance vectors, blinded rater annotations, and live MCP wire-state ground truth provide evaluator-independent measurements that corroborate the reported gains.",
+          "final_evaluation_signal": "Headline outcomes are established by deterministic protocol conformance suites, the official AER-1 test kit, fault-injected wire traces, and frozen or zero-shot post-release benchmark cohorts evaluated against ground-truth wire states.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The system's neural components are pre-trained or fine-tuned OpenVINO INT8 encoders, and its symbolic rules were hardened across v0.3.0 to v0.5.2 iterations against earlier benchmark cohorts.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ed75af951b6760299-B0002",
+          "Ed75af951b6760299-B0003",
+          "Ed75af951b6760299-B0007",
+          "Ed75af951b6760299-B0011",
+          "Ed75af951b6760299-B0015",
+          "Ed75af951b6760299-B0017",
+          "Ed75af951b6760299-B0018",
+          "Ed75af951b6760299-B0020",
+          "Ed75af951b6760299-B0021",
+          "Ed75af951b6760299-B0022",
+          "Ed75af951b6760299-B0023",
+          "Ed75af951b6760299-B0025",
+          "Ed75af951b6760299-B0026",
+          "Ed75af951b6760299-B0027",
+          "Ed75af951b6760299-B0030",
+          "Ed75af951b6760299-B0031",
+          "Ed75af951b6760299-B0032",
+          "Ed75af951b6760299-B0033",
+          "Ed75af951b6760299-B0034",
+          "Ed75af951b6760299-B0035",
+          "Ed75af951b6760299-B0036",
+          "Ed75af951b6760299-B0037",
+          "Ed75af951b6760299-B0038"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "89cdc7bbca5f8f584f11be8557853265f7a775659813f7d06f070040bf8deceb"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2611.27095",
+        "claim_evidence_alignment": "Claims regarding deterministic tamper rejection, execution state classification, CPU efficiency (0MiB VRAM, 9-18ms median latency), and empirical accuracy advantages over 12B-14B LLM judges are supported by explicit test metrics and statistical significance testing.",
+        "context_id": "d75af951b6760299f1bc366ae82dd38bed2d96e80d7627f5573dacbc8c03e9c5",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation combines formal protocol conformance/fault-injection tests (200 Merkle leaves, 58 AER-1 vectors, 40 wire calls, 100 concurrent appends) with comparative empirical benchmarks against GPU LLM judges and NLI baselines across frozen (N=250) and live (N=60) traces, demonstrating solid latency and accuracy improvements.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluation relies on external protocol conformance test vectors (draft-zambo-aer1-26), blinded rater annotations, and live tool execution traces evaluated against ground-truth wire states.",
+          "final_evaluation_signal": "Deterministic protocol conformance suites (official AER-1 test kit, fault injections), an audited frozen benchmark cohort (N=250), and zero-shot post-release live MCP traces (N=60).",
+          "independent_corroboration": "present",
+          "optimization_signal": "Pre-trained and fine-tuned OpenVINO INT8 weights along with frozen heuristic/symbolic rule definitions hardened against earlier design iterations.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ed75af951b6760299-B0002",
+          "Ed75af951b6760299-B0003",
+          "Ed75af951b6760299-B0007",
+          "Ed75af951b6760299-B0011",
+          "Ed75af951b6760299-B0015",
+          "Ed75af951b6760299-B0017",
+          "Ed75af951b6760299-B0018",
+          "Ed75af951b6760299-B0020",
+          "Ed75af951b6760299-B0021",
+          "Ed75af951b6760299-B0022",
+          "Ed75af951b6760299-B0023",
+          "Ed75af951b6760299-B0025",
+          "Ed75af951b6760299-B0026",
+          "Ed75af951b6760299-B0027",
+          "Ed75af951b6760299-B0030",
+          "Ed75af951b6760299-B0031",
+          "Ed75af951b6760299-B0032",
+          "Ed75af951b6760299-B0033",
+          "Ed75af951b6760299-B0034",
+          "Ed75af951b6760299-B0035",
+          "Ed75af951b6760299-B0036",
+          "Ed75af951b6760299-B0037",
+          "Ed75af951b6760299-B0038"
+        ],
+        "limitations": "The authors clearly outline limitations, including the restriction to stdio MCP transports, reliance on downstream servers not faking ok=true payloads, degradation of deduplication on heavy/abstractive rewrites, and elevated false positive rates on custom unmapped tool stems.",
+        "method_assessment": "The methodology is thoroughly detailed, describing out-of-process Ed25519 signing key isolation, RFC6962 Merkle logging with bidirectional AER-1 receipt translation, a two-stage symbolic-neural supervisor using an INT8 OpenVINO encoder, and SQLite provenance-gated storage.",
+        "quality_rationale": "The work presents an adequately scoped, well-architected systems and runtime verification contribution with extensive reproducible conformance and empirical evaluation.",
+        "scoped_contribution": "The paper introduces epistemic-guard (v0.5.2), a lightweight CPU-based runtime verification library and out-of-process stdio MCP proxy designed to guard autonomous agents against action fabrication, provenance collapse, and syndicated echo amplification.",
+        "source_content_hash": "89cdc7bbca5f8f584f11be8557853265f7a775659813f7d06f070040bf8deceb"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The work presents an adequately scoped, well-architected systems and runtime verification contribution with extensive reproducible conformance and empirical evaluation.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "89cdc7bbca5f8f584f11be8557853265f7a775659813f7d06f070040bf8deceb",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors clearly outline limitations, including the restriction to stdio MCP transports, reliance on downstream servers not faking ok=true payloads, degradation of deduplication on heavy/abstractive rewrites, and elevated false positive rates on custom unmapped tool stems."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -158,7 +1933,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

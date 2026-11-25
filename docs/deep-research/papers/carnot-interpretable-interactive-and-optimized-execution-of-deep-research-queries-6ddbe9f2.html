@@ -59,16 +59,104 @@
             <p>Enterprises increasingly seek to query data lakes using natural language via AI-driven tools like semantic operators or deep research agents. However, the latter operates as an opaque black box, hiding its intermediate reasoning and data retrieval steps, and failing to expose controls for managing API costs and exec...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not been assessed under the manuscript evidence gate.</p>
-      <p>Legacy assessment retained; manuscript review is required before promotion.</p>
+      <h2>AI assessment inconclusive</h2>
+      <p>While the system concept is interesting and clearly described as a demonstration track paper, the absence of systematic experimental evaluations, comparative benchmarks, and detailed technical validation creates significant scientific uncertainty regarding its performance and optimization effectiveness.</p>
+      <p>The authors explicitly note that Carnot offers no statistical guarantees on plan accuracy or correctness and currently lacks web search and general tool-calling capabilities.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: partial_full_text.</p>
-        <p>Assessor: deterministic. Assessment version: quality-v1. Gate: not assessed.</p>
-        <p>Assessed: 2026-08-17T07:20:09+00:00.</p>
-
-        <ul><li>The contribution is stated explicitly. — page 1</li><li>Code, data, or research artifacts are described as available. — page 1</li><li>Dataset documentation, quality control, licensing, or ethics is discussed. — page 1</li></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-25T13:54:12.931198+00:00.</p>
+        <p>Coverage: 22132 of 22132 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Enterprises increasingly seek to query data lakes using natural
+language via AI-driven tools like semantic operators or deep re-
+search agents. However, the latter operates as an opaque black
+box, hiding its intermediate reasoning and data retrieval steps, and
+failing to expose controls for managing API costs and execution
+latency. Meanwhile, the former can be prohibitively expensive for
+enterprise-scale data lakes. Consequently, analysts using these sys-
+tems lack the agency to intercept hallucinated premises, verify
+intermediate results, or correct the system&#x27;s trajectory. We present
+Carnot, an interactive execution engine for AI-driven analytics.
+Carnotcompiles natural language requests into physical execu-
+tion graphs and surfaces them through an interactive notebook
+interface. Rather than waiting blindly for a final output, users can
+critique the plan, incrementally execute </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>operators, inspect interme-
+diate data, or directly edit the underlying code or semantic operator
+instructions.Carnot&#x27;s query optimizer will optimize the query
+with respect to cost or latency constraints provided by the user.
+Our demo will showcase howCarnothelps users achieve efficient
+and verifiable insights on workloads motivated by real enterprise
+use cases.
+PVLDB Reference Format:
+Matthew Russo, Yash Agarwal, Tianyu Li, Zhuohan Gu, Michael Cafarella,
+Omar Khattab, Tim Kraska, and Samuel Madden. Carnot: Interpretable,
+Interactive, and Optimized Execution of Deep Research Queries. PVLDB,
+19(12): 4642 - 4645, 2026.
+doi:10.14778/3827998.3828086
+PVLDB Artifact Availability:
+The source code, data, and/or other artifacts have been made available at
+https://github.com/mitdbg/carnot.
+This work is licensed under the Creative Commons BY-NC-ND 4.0 International
+License. Visit </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>feedback provided in the chat and / or edits made to
+the notebook will be sent toCarnot&#x27;s query planner which will re-optimize the query plan in response (Steps 4 and 5).
+(Figure 1), an interactive execution engine for NL queries over un-
+structured data lakes. When a user issues a natural language query,
+Carnot&#x27;s automated planner compiles it into a Directed Acyclic
+Graph (DAG) of physical operators, combining semantic operators
+(e.g., LLM-based filters and extractors) with agentic operators (e.g.,
+data exploration, Python code generation and execution). Unlike
+prior semantic operator systems,Carnotmaterializes the DAG as a
+notebook interface where each cell corresponds to a single operator.
+Users can inspect any cell at multiple levels of abstraction—a sum-
+mary of the operator&#x27;s intent, the generated code or prompt, or the
+raw input/output data pairs—and execute the graph one </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>human in the loop at every step.
+Our demo showcasesCarnot&#x27;s interactive planning and execu-
+tion over datasets from academic benchmarks [3] and enterprise
+workloads motivated by industry partners. To see transparent exe-
+cution in action, attendees will issue queries and inspect the result-
+ing DAGs before any computation begins; they may drill into any
+operator to view its generated code, prompt, or a natural language
+summary of its intent. To experience steerability, attendees will
+execute a query step-by-step, intercept a faulty intermediate result,
+and edit the corresponding notebook cell;Carnotwill then resume
+execution from the corrected point without re-running upstream
+operators. Finally, to highlightCarnot&#x27;s cost-aware optimization,
+attendees will configure explicit cost and latency constraints in the
+interface;Carnotwill show how the planner dynamically swaps
+operator </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the user critique the proposed plan
+before any additional tokens are spent. The user may issue follow-
+up instructions to revise the plan, execute it end-to-end with results
+streamed back to the chat, or open it as an interactivenotebook.
+The notebook is the primary vehicle forCarnot&#x27;s visibility and
+steerability guarantees. Each cell corresponds to a single physical
+operator in the DAG, obtained by topologically sorting the plan
+so that data-source operators appear first. Users can inspect any
+cell at three levels of abstraction: a natural language summary
+of the operator&#x27;s intent, the generated code or LLM prompt, and
+the raw input/output data pairs. Operators can be executed one
+cell at a time, and any cell may be edited in-place—for instance,
+to revise a semantic filter&#x27;s predicate or to swap an LLM call for
+a deterministic Python expression. When the user commits </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>expensive LLM operators, the planner first
+invokes adata discoverysubagent that samples the dataset, per-
+forms schema analysis, and summarizes dataset structure. The
+QueryOptimizer follows, inspired by the Cascades-style optimizer
+of Abacus [8]. It shares a similar set of implementation and transfor-
+mation rules, but differs in its use of an LLM agent to select the final
+physical plan from the estimated Pareto frontier of cost, latency,
+and quality. The library also contains a streaming and notebook
+execution layer, a storage engine with caching support, and an
+index catalog for managing semantic indices.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our demonstration is organized around three scenarios that let at-
+tendees experience Carnot&#x27;s capabilities first-hand on the provided
+datasets, using the interface shown in Figure 2.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Carnotdoes not provide guarantees on plan accuracy or correct-
+ness. We could modify the optimizer to provide statistical guaran-
+tees with respect to an oracle [6], but this is a soft guarantee since
+the oracle can also be wrong. Alternatively, better interfaces may
+improve users&#x27; ability to verify plan correctness. In the future, we
+also plan to extendCarnotto support search over the web (akin to
+traditional Deep Research) and general tool calling. We also aim to
+explore improvements to the notebook interface which can better
+highlight the non-linear nature of most plan DAGs.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

@@ -24,7 +24,7 @@
   "last_seen_date": "2026-09-25",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-09-24",
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-25 13:55:40",
   "notified_date": "2026-09-25",
@@ -35,7 +35,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-25 13:55:26",
-    "generated_at": "2026-11-24 14:44:27",
+    "generated_at": "2026-11-25 13:55:55",
     "last_seen_at": "2026-09-25 13:55:26",
     "metadata_sources": [
       "arxiv"
@@ -100,36 +100,1402 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-25T13:53:57.601813+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.98,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a sound, rigorously ablated, and scoped contribution to tool-augmented VLM spatial reasoning. Claims are conservative, failure modes are analyzed in detail, and experimental comparisons are controlled and informative.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 54931,
+      "assessment_input_sha256": "c0caa8708735e3a89cc09e669ba9394c0480c43a179553ea269305b08ea6ccc3",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2609.29073",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 53459,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 52877,
+      "evidence_block_count": 75,
+      "evidence_context_characters": 62484,
+      "evidence_context_id": "c99ef6d434ec4b3a44f524a032aaf163da9ad02a5dbf08b6dad9ba113f0586ae",
+      "evidence_context_sha256": "cf9d4a93bece9a4726edd7b1b8d55b87160b9d64668abd5ea01cbca446f9f411",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 53485,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "extracted_pages": 14,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "373d6ddc0455cc4f04a0e6be90f2914d874716ca4f9acef11c33661791ea60ca",
+        "source_url": "https://arxiv.org/pdf/2609.29073",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 53459,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Seeing Is Not Measuring: Tool-Augmented Metric Spatial Reasoning For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 184,
+          "supplied_characters": 184
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1498,
+          "supplied_characters": 1498
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2314,
+          "supplied_characters": 2314
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 1718,
+          "supplied_characters": 1718
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 2112,
+          "supplied_characters": 2112
+        },
+        {
+          "heading": "Dataset",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 884,
+          "supplied_characters": 884
+        },
+        {
+          "heading": "Frame Selection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 471,
+          "supplied_characters": 471
+        },
+        {
+          "heading": "Frame Selection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 291,
+          "supplied_characters": 291
+        },
+        {
+          "heading": "Tool-Use Loop",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 652,
+          "supplied_characters": 652
+        },
+        {
+          "heading": "Toolsets And Pipelines",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1540,
+          "supplied_characters": 1540
+        },
+        {
+          "heading": "Predictor-Agnostic Detector Backends",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 296,
+          "supplied_characters": 296
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 11,
+          "source_characters": 169,
+          "supplied_characters": 169
+        },
+        {
+          "heading": "Baselines And Model Scale",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 143,
+          "supplied_characters": 143
+        },
+        {
+          "heading": "Main Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 13,
+          "source_characters": 1053,
+          "supplied_characters": 1053
+        },
+        {
+          "heading": "Multiple-Choice Tasks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 604,
+          "supplied_characters": 604
+        },
+        {
+          "heading": "Multiple-Choice Tasks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 2064,
+          "supplied_characters": 2064
+        },
+        {
+          "heading": "No-Recipe Autonomous Probe",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1491,
+          "supplied_characters": 1491
+        },
+        {
+          "heading": "Mra On Distance And 12.5 Points Of Relative-Distance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 164,
+          "supplied_characters": 164
+        },
+        {
+          "heading": "Conclusion And Next Steps",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "conclusion",
+          "section_index": 18,
+          "source_characters": 287,
+          "supplied_characters": 287
+        },
+        {
+          "heading": "Mra, While A Weak Detector Is Worse Than No Tool At",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1043,
+          "supplied_characters": 1043
+        },
+        {
+          "heading": "Back matter: Acknowledgments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 47,
+          "supplied_characters": 47
+        },
+        {
+          "heading": "For His Guidance And Feedback Throughout This",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 54,
+          "supplied_characters": 54
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 2705,
+          "supplied_characters": 2705
+        },
+        {
+          "heading": "Proceedings Of The Ieee/Cvf Conference On Computer Vi-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 548,
+          "supplied_characters": 548
+        },
+        {
+          "heading": "Dataset For Real-World Visual Reasoning And Compositional",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1091,
+          "supplied_characters": 1091
+        },
+        {
+          "heading": "Capabilities Of Vision-Language Models Through Prompting And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 234,
+          "supplied_characters": 234
+        },
+        {
+          "heading": "Video-Based Spatial Reasoning Agent For Multi-Modal Large",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 587,
+          "supplied_characters": 587
+        },
+        {
+          "heading": "Ings Of The Ieee/Cvf International Conference On Computer",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 341,
+          "supplied_characters": 341
+        },
+        {
+          "heading": "Spatial-Mllm: Boosting Mllm Capabilities In Visual-Based",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 120,
+          "supplied_characters": 120
+        },
+        {
+          "heading": "Spatial-Mllm: Boosting Mllm Capabilities In Visual-Based",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 1375,
+          "supplied_characters": 1375
+        },
+        {
+          "heading": "Seeing Is Not Measuring: Tool-Augmented Metric Spatial Reasoning For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 91,
+          "supplied_characters": 91
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "appendix",
+          "section_index": 31,
+          "source_characters": 3558,
+          "supplied_characters": 3558
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "appendix",
+          "section_index": 32,
+          "source_characters": 4515,
+          "supplied_characters": 4515
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "appendix",
+          "section_index": 33,
+          "source_characters": 4413,
+          "supplied_characters": 4413
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 34,
+          "source_characters": 2342,
+          "supplied_characters": 2342
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 35,
+          "source_characters": 2316,
+          "supplied_characters": 2316
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 36,
+          "source_characters": 3940,
+          "supplied_characters": 3940
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 37,
+          "source_characters": 2985,
+          "supplied_characters": 2985
+        },
+        {
+          "heading": "Terse Tool Errors 0.729 0.575 0.883 138 5/80",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 2282,
+          "supplied_characters": 2282
+        },
+        {
+          "heading": "Terse Tool Errors 0.729 0.575 0.883 138 5/80",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 355,
+          "supplied_characters": 355
+        }
+      ],
+      "selected_characters": 52877,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "selected_sections": [
+        {
+          "characters": 184,
+          "heading": "Seeing Is Not Measuring: Tool-Augmented Metric Spatial Reasoning For",
+          "page": 1
+        },
+        {
+          "characters": 1498,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2314,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1718,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 2112,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 884,
+          "heading": "Dataset",
+          "page": 2
+        },
+        {
+          "characters": 471,
+          "heading": "Frame Selection",
+          "page": 2
+        },
+        {
+          "characters": 291,
+          "heading": "Frame Selection",
+          "page": 3
+        },
+        {
+          "characters": 652,
+          "heading": "Tool-Use Loop",
+          "page": 3
+        },
+        {
+          "characters": 1540,
+          "heading": "Toolsets And Pipelines",
+          "page": 3
+        },
+        {
+          "characters": 296,
+          "heading": "Predictor-Agnostic Detector Backends",
+          "page": 3
+        },
+        {
+          "characters": 169,
+          "heading": "Experiments",
+          "page": 3
+        },
+        {
+          "characters": 143,
+          "heading": "Baselines And Model Scale",
+          "page": 3
+        },
+        {
+          "characters": 1053,
+          "heading": "Main Results",
+          "page": 3
+        },
+        {
+          "characters": 604,
+          "heading": "Multiple-Choice Tasks",
+          "page": 3
+        },
+        {
+          "characters": 2064,
+          "heading": "Multiple-Choice Tasks",
+          "page": 4
+        },
+        {
+          "characters": 1491,
+          "heading": "No-Recipe Autonomous Probe",
+          "page": 4
+        },
+        {
+          "characters": 164,
+          "heading": "Mra On Distance And 12.5 Points Of Relative-Distance",
+          "page": 4
+        },
+        {
+          "characters": 287,
+          "heading": "Conclusion And Next Steps",
+          "page": 4
+        },
+        {
+          "characters": 1043,
+          "heading": "Mra, While A Weak Detector Is Worse Than No Tool At",
+          "page": 4
+        },
+        {
+          "characters": 47,
+          "heading": "Back matter: Acknowledgments",
+          "page": 5
+        },
+        {
+          "characters": 54,
+          "heading": "For His Guidance And Feedback Throughout This",
+          "page": 5
+        },
+        {
+          "characters": 2705,
+          "heading": "Unclassified body after references",
+          "page": 5
+        },
+        {
+          "characters": 548,
+          "heading": "Proceedings Of The Ieee/Cvf Conference On Computer Vi-",
+          "page": 5
+        },
+        {
+          "characters": 1091,
+          "heading": "Dataset For Real-World Visual Reasoning And Compositional",
+          "page": 5
+        },
+        {
+          "characters": 234,
+          "heading": "Capabilities Of Vision-Language Models Through Prompting And",
+          "page": 5
+        },
+        {
+          "characters": 587,
+          "heading": "Video-Based Spatial Reasoning Agent For Multi-Modal Large",
+          "page": 5
+        },
+        {
+          "characters": 341,
+          "heading": "Ings Of The Ieee/Cvf International Conference On Computer",
+          "page": 5
+        },
+        {
+          "characters": 120,
+          "heading": "Spatial-Mllm: Boosting Mllm Capabilities In Visual-Based",
+          "page": 5
+        },
+        {
+          "characters": 1375,
+          "heading": "Spatial-Mllm: Boosting Mllm Capabilities In Visual-Based",
+          "page": 6
+        },
+        {
+          "characters": 91,
+          "heading": "Seeing Is Not Measuring: Tool-Augmented Metric Spatial Reasoning For",
+          "page": 7
+        },
+        {
+          "characters": 3558,
+          "heading": "Appendix: Implementation Details",
+          "page": 7
+        },
+        {
+          "characters": 4515,
+          "heading": "Appendix: Implementation Details",
+          "page": 8
+        },
+        {
+          "characters": 4413,
+          "heading": "Appendix: Implementation Details",
+          "page": 9
+        },
+        {
+          "characters": 2342,
+          "heading": "Appendix: Implementation Details",
+          "page": 10
+        },
+        {
+          "characters": 2316,
+          "heading": "Appendix: Implementation Details",
+          "page": 11
+        },
+        {
+          "characters": 3940,
+          "heading": "Appendix: Implementation Details",
+          "page": 12
+        },
+        {
+          "characters": 2985,
+          "heading": "Appendix: Implementation Details",
+          "page": 13
+        },
+        {
+          "characters": 2282,
+          "heading": "Terse Tool Errors 0.729 0.575 0.883 138 5/80",
+          "page": 13
+        },
+        {
+          "characters": 355,
+          "heading": "Terse Tool Errors 0.729 0.575 0.883 138 5/80",
+          "page": 14
+        }
+      ],
+      "selected_text_sha256": "c0caa8708735e3a89cc09e669ba9394c0480c43a179553ea269305b08ea6ccc3",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "373d6ddc0455cc4f04a0e6be90f2914d874716ca4f9acef11c33661791ea60ca",
+      "source_pages": 14,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "c99ef6d434ec4b3a44f524a032aaf163da9ad02a5dbf08b6dad9ba113f0586ae",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec99ef6d434ec4b3a-B0002"
+        ],
+        "excerpt": "Vision-Language Models (VLMs) describe scenes well but\nreason poorly about metric 3D structure such as absolute dis-\ntances, physical sizes, or egocentric directions. We present\na modular, predictor-agnostic, tool-augmented framework\nthat equips a small VLM (Qwen3.5-4B) with geometric tools:\n3D object detection, metric depth estimation, and determin-\nistic solvers for distance, size and bearing. Each object is\ndetected in the camera frame of its own best view, and the\ntools use that frame's pose to lift every detection into one\nshared world frame. Moving metric computation out of the\nmodel's weights and into explicit solvers yields large gains\non three of four ReVSI-Bench tasks: with a strong monocular\ndetector (WildDet3D), absolute distance rises from 0.46 to\n0.74 Mean Relative Accuracy (MRA), relative distance from\n39.1% to 67.4%, and relative direction from a below-chance\n25.9% to ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "131a98faa51ea2b68f1c1bb00a5ed10a5249a1ee302990a5d0f5395cb79a1be9",
+            "evidence_id": "Ec99ef6d434ec4b3a-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Vision-Language Models (VLMs) describe scenes well but\nreason poorly about metric 3D structure such as absolute dis-\ntances, physical sizes, or egocentric directions. We present\na modular, predictor-agnostic, tool-augmented framework\nthat equips a small VLM (Qwen3.5-4B) with geometric tools:\n3D object detection, metric depth estimation, and determin-\nistic solvers for distance, size and bearing. Each object is\ndetected in the camera frame of its own best view, and the\ntools use that frame's pose to lift every detection into one\nshared world frame. Moving metric computation out of the\nmodel's weights and into explicit solvers yields large gains\non three of four ReVSI-Bench tasks: with a strong monocular\ndetector (WildDet3D), absolute distance rises from 0.46 to\n0.74 Mean Relative Accuracy (MRA), relative distance from\n39.1% to 67.4%, and relative direction from a below-chance\n25.9% to "
+              }
+            ],
+            "text": "Vision-Language Models (VLMs) describe scenes well but\nreason poorly about metric 3D structure such as absolute dis-\ntances, physical sizes, or egocentric directions. We present\na modular, predictor-agnostic, tool-augmented framework\nthat equips a small VLM (Qwen3.5-4B) with geometric tools:\n3D object detection, metric depth estimation, and determin-\nistic solvers for distance, size and bearing. Each object is\ndetected in the camera frame of its own best view, and the\ntools use that frame's pose to lift every detection into one\nshared world frame. Moving metric computation out of the\nmodel's weights and into explicit solvers yields large gains\non three of four ReVSI-Bench tasks: with a strong monocular\ndetector (WildDet3D), absolute distance rises from 0.46 to\n0.74 Mean Relative Accuracy (MRA), relative distance from\n39.1% to 67.4%, and relative direction from a below-chance\n25.9% to "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c99ef6d434ec4b3a44f524a032aaf163da9ad02a5dbf08b6dad9ba113f0586ae",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec99ef6d434ec4b3a-B0005"
+        ],
+        "excerpt": "Qwen3.5-4B [18]\nreaches only 0.46 Mean Relative Accuracy (MRA) on abso-\nlute distance, and smaller models fall further, to 0.21 (2B)\nand 0.00 (0.8B). Simply supplying the missing information\ndoes not help: appending the camera intrinsics to the prompt\nas text lowers MRA to0.17. Metric geometry is better encap-\nsulated behind something the model can call than verbalized\ninto its context window.\nWe present a modular, predictor-agnostic framework\n(Fig. 1) that equips Qwen3.5-4B with geometric tools to de-\ntect camera-space 3D boxes, project them into a shared world\ncoordinate system, and compute distances, sizes, and bearing\nangles, orchestrated through a chain-of-thought (CoT) tool-\ncalling loop. Unlike prior tool-augmented work (Sec. 2), we\nask whether a single, off-the-shelf small VLM can orches-\ntrate such tools on its own, and when it fails, whether the\nfault lies in its tool-calling ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a42740298e7e7a4a6186bed0142ad2629142ff776912afa57ab7c66087a30c2f",
+            "evidence_id": "Ec99ef6d434ec4b3a-B0005",
+            "pages": [
+              1
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1797,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 898,
+                "text": "Qwen3.5-4B [18]\nreaches only 0.46 Mean Relative Accuracy (MRA) on abso-\nlute distance, and smaller models fall further, to 0.21 (2B)\nand 0.00 (0.8B). Simply supplying the missing information\ndoes not help: appending the camera intrinsics to the prompt\nas text lowers MRA to0.17. Metric geometry is better encap-\nsulated behind something the model can call than verbalized\ninto its context window.\nWe present a modular, predictor-agnostic framework\n(Fig. 1) that equips Qwen3.5-4B with geometric tools to de-\ntect camera-space 3D boxes, project them into a shared world\ncoordinate system, and compute distances, sizes, and bearing\nangles, orchestrated through a chain-of-thought (CoT) tool-\ncalling loop. Unlike prior tool-augmented work (Sec. 2), we\nask whether a single, off-the-shelf small VLM can orches-\ntrate such tools on its own, and when it fails, whether the\nfault lies in its tool-calling "
+              }
+            ],
+            "text": "Qwen3.5-4B [18]\nreaches only 0.46 Mean Relative Accuracy (MRA) on abso-\nlute distance, and smaller models fall further, to 0.21 (2B)\nand 0.00 (0.8B). Simply supplying the missing information\ndoes not help: appending the camera intrinsics to the prompt\nas text lowers MRA to0.17. Metric geometry is better encap-\nsulated behind something the model can call than verbalized\ninto its context window.\nWe present a modular, predictor-agnostic framework\n(Fig. 1) that equips Qwen3.5-4B with geometric tools to de-\ntect camera-space 3D boxes, project them into a shared world\ncoordinate system, and compute distances, sizes, and bearing\nangles, orchestrated through a chain-of-thought (CoT) tool-\ncalling loop. Unlike prior tool-augmented work (Sec. 2), we\nask whether a single, off-the-shelf small VLM can orches-\ntrate such tools on its own, and when it fails, whether the\nfault lies in its tool-calling "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c99ef6d434ec4b3a44f524a032aaf163da9ad02a5dbf08b6dad9ba113f0586ae",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec99ef6d434ec4b3a-B0006"
+        ],
+        "excerpt": "or in the underlying 3D percep-\ntion. The perception backend swaps freely behind the same\ntool interface: a ground-truth (GT) oracle, real monocular\n3D detectors (Cube R-CNN [ 3], OVMono3D [ 26], Wild-\nDet3D [11]), or a 2D grounding plus metric-depth pipeline\n(Grounding DINO [15] with Depth Pro [2]).\nWith a strong detector the tools improve the small model\non all four tasks, though only marginally on object size\n(Sec. 4). The largest gain is on relative direction, where\n1\narXiv:2609.29073v1  [cs.CV]  24 Sep 2026\nthe unaided model scores 25.9% against a chance rate of\n29.3%, no better than a blind model that never sees the\nframes (28.3%); with tools it reaches 73.4%. Substituting\nthe GT oracle behind the same tool chain then localizes\nthe residual error: absolute distance climbs to 0.94 MRA,\n0.03 below thegeometric ceiling, the score the same tools\nreach when a script rather than the VLM ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "870706d96cc91a9b67c3780fc4bf345054797efbf8c8d5c107290562caa66b2e",
+            "evidence_id": "Ec99ef6d434ec4b3a-B0006",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2314,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 1797,
+                "text": "or in the underlying 3D percep-\ntion. The perception backend swaps freely behind the same\ntool interface: a ground-truth (GT) oracle, real monocular\n3D detectors (Cube R-CNN [ 3], OVMono3D [ 26], Wild-\nDet3D [11]), or a 2D grounding plus metric-depth pipeline\n(Grounding DINO [15] with Depth Pro [2]).\nWith a strong detector the tools improve the small model\non all four tasks, though only marginally on object size\n(Sec. 4). The largest gain is on relative direction, where\n1\narXiv:2609.29073v1  [cs.CV]  24 Sep 2026"
+              },
+              {
+                "end": 382,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 0,
+                "text": "the unaided model scores 25.9% against a chance rate of\n29.3%, no better than a blind model that never sees the\nframes (28.3%); with tools it reaches 73.4%. Substituting\nthe GT oracle behind the same tool chain then localizes\nthe residual error: absolute distance climbs to 0.94 MRA,\n0.03 below thegeometric ceiling, the score the same tools\nreach when a script rather than the VLM "
+              }
+            ],
+            "text": "or in the underlying 3D percep-\ntion. The perception backend swaps freely behind the same\ntool interface: a ground-truth (GT) oracle, real monocular\n3D detectors (Cube R-CNN [ 3], OVMono3D [ 26], Wild-\nDet3D [11]), or a 2D grounding plus metric-depth pipeline\n(Grounding DINO [15] with Depth Pro [2]).\nWith a strong detector the tools improve the small model\non all four tasks, though only marginally on object size\n(Sec. 4). The largest gain is on relative direction, where\n1\narXiv:2609.29073v1  [cs.CV]  24 Sep 2026\nthe unaided model scores 25.9% against a chance rate of\n29.3%, no better than a blind model that never sees the\nframes (28.3%); with tools it reaches 73.4%. Substituting\nthe GT oracle behind the same tool chain then localizes\nthe residual error: absolute distance climbs to 0.94 MRA,\n0.03 below thegeometric ceiling, the score the same tools\nreach when a script rather than the VLM "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c99ef6d434ec4b3a44f524a032aaf163da9ad02a5dbf08b6dad9ba113f0586ae",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec99ef6d434ec4b3a-B0007"
+        ],
+        "excerpt": "calls them. This\nleaves the monocular detector as the binding constraint, and\nit binds hard. On object size the tools are near-exact on\nground-truth boxes (0.97), yet the best real detector only just\nclears the 0.58 no-tool baseline (0.61); on absolute distance\nevery backend but one fallsbelowthe 0.46 baseline. Relative\ndirection is the one task limited by the model rather than\nperception: it caps at80%against a100%ceiling, skipping\nthe tools on23%of questions.\nContributions.\n\u2022 Apredictor-agnostic tool frameworkthat lifts camera-\nspace detections into a shared, oriented world frame using\nthe camera poses, letting a small VLM reason metrically\nacross views. The same tool chain runs on monocular 3D\ndetectors or on 2D grounding with metric depth.\n\u2022 Anorchestration-perception error decompositionover\nfour ReVSI-Bench tasks. Comparing each detector back-\nend, behind a fixed tool chain, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e67ba8d5e27e453401c288cdc02298f48a51dde526d48d5704321fb0927f1849",
+            "evidence_id": "Ec99ef6d434ec4b3a-B0007",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1275,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 382,
+                "text": "calls them. This\nleaves the monocular detector as the binding constraint, and\nit binds hard. On object size the tools are near-exact on\nground-truth boxes (0.97), yet the best real detector only just\nclears the 0.58 no-tool baseline (0.61); on absolute distance\nevery backend but one fallsbelowthe 0.46 baseline. Relative\ndirection is the one task limited by the model rather than\nperception: it caps at80%against a100%ceiling, skipping\nthe tools on23%of questions.\nContributions.\n\u2022 Apredictor-agnostic tool frameworkthat lifts camera-\nspace detections into a shared, oriented world frame using\nthe camera poses, letting a small VLM reason metrically\nacross views. The same tool chain runs on monocular 3D\ndetectors or on 2D grounding with metric depth.\n\u2022 Anorchestration-perception error decompositionover\nfour ReVSI-Bench tasks. Comparing each detector back-\nend, behind a fixed tool chain, "
+              }
+            ],
+            "text": "calls them. This\nleaves the monocular detector as the binding constraint, and\nit binds hard. On object size the tools are near-exact on\nground-truth boxes (0.97), yet the best real detector only just\nclears the 0.58 no-tool baseline (0.61); on absolute distance\nevery backend but one fallsbelowthe 0.46 baseline. Relative\ndirection is the one task limited by the model rather than\nperception: it caps at80%against a100%ceiling, skipping\nthe tools on23%of questions.\nContributions.\n\u2022 Apredictor-agnostic tool frameworkthat lifts camera-\nspace detections into a shared, oriented world frame using\nthe camera poses, letting a small VLM reason metrically\nacross views. The same tool chain runs on monocular 3D\ndetectors or on 2D grounding with metric depth.\n\u2022 Anorchestration-perception error decompositionover\nfour ReVSI-Bench tasks. Comparing each detector back-\nend, behind a fixed tool chain, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c99ef6d434ec4b3a44f524a032aaf163da9ad02a5dbf08b6dad9ba113f0586ae",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec99ef6d434ec4b3a-B0012"
+        ],
+        "excerpt": "We evaluate on the ARKitScenes subset of ReVSI-\nBench [28] across four question categories: absolute dis-\ntance (401 questions), object size (423), relative distance\n(215), and relative direction (290), each question coming\nwith 16 candidate frames sampled from the scene's video.\nUnlike VSI-Bench [23], ReVSI-Bench verifies the queried\nobjects are actually visible across these frames, guaranteeing\nthe question is answerable in the first place. We merge this\nwith the original ARKitScenes camera intrinsics and extrin-\nsics for all 16 frames and the ground-truth 3D boxes of the\nobjects relevant to each question, provided by ReVSI-Bench.\nNumeric tasks (distance, size) use the benchmark's Mean\nRelative Accuracy,MRA= 1|C| P\u03b8\u2208C 1[|\u02c6x\u2212x|/x <1\u2212\u03b8]\nover the confidence thresholds C={0.5,0.55, . . . ,0.95};\nclassification tasks (relative distance, direction) use exact-\nletter accuracy.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Dataset",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7fcebc71dcce9906aa58e20bee7bbdc68212ad44a38ad8ff6c5edfc2ee9a5c96",
+            "evidence_id": "Ec99ef6d434ec4b3a-B0012",
+            "pages": [
+              2
+            ],
+            "section": "Dataset",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 884,
+                "page": 2,
+                "section": "Dataset",
+                "section_index": 5,
+                "start": 0,
+                "text": "We evaluate on the ARKitScenes subset of ReVSI-\nBench [28] across four question categories: absolute dis-\ntance (401 questions), object size (423), relative distance\n(215), and relative direction (290), each question coming\nwith 16 candidate frames sampled from the scene's video.\nUnlike VSI-Bench [23], ReVSI-Bench verifies the queried\nobjects are actually visible across these frames, guaranteeing\nthe question is answerable in the first place. We merge this\nwith the original ARKitScenes camera intrinsics and extrin-\nsics for all 16 frames and the ground-truth 3D boxes of the\nobjects relevant to each question, provided by ReVSI-Bench.\nNumeric tasks (distance, size) use the benchmark's Mean\nRelative Accuracy,MRA= 1|C| P\u03b8\u2208C 1[|\u02c6x\u2212x|/x <1\u2212\u03b8]\nover the confidence thresholds C={0.5,0.55, . . . ,0.95};\nclassification tasks (relative distance, direction) use exact-\nletter accuracy."
+              }
+            ],
+            "text": "We evaluate on the ARKitScenes subset of ReVSI-\nBench [28] across four question categories: absolute dis-\ntance (401 questions), object size (423), relative distance\n(215), and relative direction (290), each question coming\nwith 16 candidate frames sampled from the scene's video.\nUnlike VSI-Bench [23], ReVSI-Bench verifies the queried\nobjects are actually visible across these frames, guaranteeing\nthe question is answerable in the first place. We merge this\nwith the original ARKitScenes camera intrinsics and extrin-\nsics for all 16 frames and the ground-truth 3D boxes of the\nobjects relevant to each question, provided by ReVSI-Bench.\nNumeric tasks (distance, size) use the benchmark's Mean\nRelative Accuracy,MRA= 1|C| P\u03b8\u2208C 1[|\u02c6x\u2212x|/x <1\u2212\u03b8]\nover the confidence thresholds C={0.5,0.55, . . . ,0.95};\nclassification tasks (relative distance, direction) use exact-\nletter accuracy."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c99ef6d434ec4b3a44f524a032aaf163da9ad02a5dbf08b6dad9ba113f0586ae",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec99ef6d434ec4b3a-B0013"
+        ],
+        "excerpt": "Rather than handing all 16 frames to the VLM, we select\nonly the frames a question needs: two for a distance com-\nparison, one for object size. For each relevant object we\nproject its ground-truth 3D box corners into every candidate\nframe using that frame's camera pose and intrinsics, and\nkeep the frame(s) where the projected corners stay furthest\ninside the image bounds, i.e. where the object is most visi-\nble. Passing all 16 frames per question is computationally\n2\nimpractical, and the 3D detector fails outright on an object a\nframe does not clearly show. Letting the VLM pick its own\nframes proved unreliable, so selection happens up front; it is\ntherefore load-bearing rather than preprocessing, and Sec. 5\nreturns to its reliance on ground-truth boxes.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Frame Selection",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "90e7a70384e53928cdf7ca5d86fe59f5958fefbd939f274c234373e6a553592b",
+            "evidence_id": "Ec99ef6d434ec4b3a-B0013",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Frame Selection",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 471,
+                "page": 2,
+                "section": "Frame Selection",
+                "section_index": 6,
+                "start": 0,
+                "text": "Rather than handing all 16 frames to the VLM, we select\nonly the frames a question needs: two for a distance com-\nparison, one for object size. For each relevant object we\nproject its ground-truth 3D box corners into every candidate\nframe using that frame's camera pose and intrinsics, and\nkeep the frame(s) where the projected corners stay furthest\ninside the image bounds, i.e. where the object is most visi-\nble. Passing all 16 frames per question is computationally\n2"
+              },
+              {
+                "end": 291,
+                "page": 3,
+                "section": "Frame Selection",
+                "section_index": 7,
+                "start": 0,
+                "text": "impractical, and the 3D detector fails outright on an object a\nframe does not clearly show. Letting the VLM pick its own\nframes proved unreliable, so selection happens up front; it is\ntherefore load-bearing rather than preprocessing, and Sec. 5\nreturns to its reliance on ground-truth boxes."
+              }
+            ],
+            "text": "Rather than handing all 16 frames to the VLM, we select\nonly the frames a question needs: two for a distance com-\nparison, one for object size. For each relevant object we\nproject its ground-truth 3D box corners into every candidate\nframe using that frame's camera pose and intrinsics, and\nkeep the frame(s) where the projected corners stay furthest\ninside the image bounds, i.e. where the object is most visi-\nble. Passing all 16 frames per question is computationally\n2\nimpractical, and the 3D detector fails outright on an object a\nframe does not clearly show. Letting the VLM pick its own\nframes proved unreliable, so selection happens up front; it is\ntherefore load-bearing rather than preprocessing, and Sec. 5\nreturns to its reliance on ground-truth boxes."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c99ef6d434ec4b3a44f524a032aaf163da9ad02a5dbf08b6dad9ba113f0586ae",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec99ef6d434ec4b3a-B0015"
+        ],
+        "excerpt": "A per-task toolset (Tab. A4, Sec. C) exposes the tools the\nquestion needs and hints at the order to chain them.\nAbsolute Distance.The baseline gdino depthpro\nabs dist pipeline detects a 2D box (Grounding\nDINO [ 15]), estimates depth (Depth Pro [ 2]), and\ncomputes center-to-center distance. Since ReVSI-\nBench ground truth measures surface-to-surface distance,\nbbox 3d abs dist instead detects 3D camera-space\nOBBs (detect object 3d), lifts them to world space\n(project box to world), and computes the minimum\nsurface distance (calculate object distance). The\nchoice of geometry accounts for most of the achievable ac-\ncuracy: on GT boxes, center-to-center distance has an MAE\nof 0.644 m against the benchmark answer, versus 0.077 m\nfor surface-to-surface.\nObject Size.Object size is the longest dimension of\nthe oriented 3D extent. The bbox 3d size pipeline\ndetects the camera-space box and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Toolsets And Pipelines",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "27fef455c57b6fa33e1123df3f07957b329165f3d0f6aab96f6ccdf7e8f2386a",
+            "evidence_id": "Ec99ef6d434ec4b3a-B0015",
+            "pages": [
+              3
+            ],
+            "section": "Toolsets And Pipelines",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 3,
+                "section": "Toolsets And Pipelines",
+                "section_index": 9,
+                "start": 0,
+                "text": "A per-task toolset (Tab. A4, Sec. C) exposes the tools the\nquestion needs and hints at the order to chain them.\nAbsolute Distance.The baseline gdino depthpro\nabs dist pipeline detects a 2D box (Grounding\nDINO [ 15]), estimates depth (Depth Pro [ 2]), and\ncomputes center-to-center distance. Since ReVSI-\nBench ground truth measures surface-to-surface distance,\nbbox 3d abs dist instead detects 3D camera-space\nOBBs (detect object 3d), lifts them to world space\n(project box to world), and computes the minimum\nsurface distance (calculate object distance). The\nchoice of geometry accounts for most of the achievable ac-\ncuracy: on GT boxes, center-to-center distance has an MAE\nof 0.644 m against the benchmark answer, versus 0.077 m\nfor surface-to-surface.\nObject Size.Object size is the longest dimension of\nthe oriented 3D extent. The bbox 3d size pipeline\ndetects the camera-space box and "
+              }
+            ],
+            "text": "A per-task toolset (Tab. A4, Sec. C) exposes the tools the\nquestion needs and hints at the order to chain them.\nAbsolute Distance.The baseline gdino depthpro\nabs dist pipeline detects a 2D box (Grounding\nDINO [ 15]), estimates depth (Depth Pro [ 2]), and\ncomputes center-to-center distance. Since ReVSI-\nBench ground truth measures surface-to-surface distance,\nbbox 3d abs dist instead detects 3D camera-space\nOBBs (detect object 3d), lifts them to world space\n(project box to world), and computes the minimum\nsurface distance (calculate object distance). The\nchoice of geometry accounts for most of the achievable ac-\ncuracy: on GT boxes, center-to-center distance has an MAE\nof 0.644 m against the benchmark answer, versus 0.077 m\nfor surface-to-surface.\nObject Size.Object size is the longest dimension of\nthe oriented 3D extent. The bbox 3d size pipeline\ndetects the camera-space box and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c99ef6d434ec4b3a44f524a032aaf163da9ad02a5dbf08b6dad9ba113f0586ae",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec99ef6d434ec4b3a-B0020"
+        ],
+        "excerpt": "Under the GT oracle, our framework reaches0.94/0.97 VLM\nMRA against a tool ceiling of 0.97/1.00: orchestration costs\n0.03MRA, and the rest is perception.\nReal detectors bear this out: every backend but one falls\nbelow the 0.46 no-tool baseline. OVMono3D reaches 0.26,\nCube R-CNN 0.32, and the 2D+depth pipeline 0.32, the last\nundone by depth outliers of up to 10 187m. A bad box is\nworse than no box at all (Sec. E); where a backend misses\nobjects, the model's fallback guess can even push its MRA\nabove its own ceiling (Sec. A). Only WildDet3D pays off,\nlifting distance from0.46to0.74at full coverage.\nObject size is bounded by the detector alone. The tools\nare near-exact given good boxes ( 0.97 against a 1.00 ceil-\ning), yet the best real detector barely converts that into a\ngain: WildDet3D reaches 0.61 against the 0.58 baseline, be-\ncause size reads straight off the box extent and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fe7dc22815fabbd4fc24d5e52c88ee8a59f2273e05f50be7d5d32ed14576d76c",
+            "evidence_id": "Ec99ef6d434ec4b3a-B0020",
+            "pages": [
+              3
+            ],
+            "section": "Main Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 890,
+                "page": 3,
+                "section": "Main Results",
+                "section_index": 13,
+                "start": 0,
+                "text": "Under the GT oracle, our framework reaches0.94/0.97 VLM\nMRA against a tool ceiling of 0.97/1.00: orchestration costs\n0.03MRA, and the rest is perception.\nReal detectors bear this out: every backend but one falls\nbelow the 0.46 no-tool baseline. OVMono3D reaches 0.26,\nCube R-CNN 0.32, and the 2D+depth pipeline 0.32, the last\nundone by depth outliers of up to 10 187m. A bad box is\nworse than no box at all (Sec. E); where a backend misses\nobjects, the model's fallback guess can even push its MRA\nabove its own ceiling (Sec. A). Only WildDet3D pays off,\nlifting distance from0.46to0.74at full coverage.\nObject size is bounded by the detector alone. The tools\nare near-exact given good boxes ( 0.97 against a 1.00 ceil-\ning), yet the best real detector barely converts that into a\ngain: WildDet3D reaches 0.61 against the 0.58 baseline, be-\ncause size reads straight off the box extent and "
+              }
+            ],
+            "text": "Under the GT oracle, our framework reaches0.94/0.97 VLM\nMRA against a tool ceiling of 0.97/1.00: orchestration costs\n0.03MRA, and the rest is perception.\nReal detectors bear this out: every backend but one falls\nbelow the 0.46 no-tool baseline. OVMono3D reaches 0.26,\nCube R-CNN 0.32, and the 2D+depth pipeline 0.32, the last\nundone by depth outliers of up to 10 187m. A bad box is\nworse than no box at all (Sec. E); where a backend misses\nobjects, the model's fallback guess can even push its MRA\nabove its own ceiling (Sec. A). Only WildDet3D pays off,\nlifting distance from0.46to0.74at full coverage.\nObject size is bounded by the detector alone. The tools\nare near-exact given good boxes ( 0.97 against a 1.00 ceil-\ning), yet the best real detector barely converts that into a\ngain: WildDet3D reaches 0.61 against the 0.58 baseline, be-\ncause size reads straight off the box extent and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c99ef6d434ec4b3a44f524a032aaf163da9ad02a5dbf08b6dad9ba113f0586ae",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec99ef6d434ec4b3a-B0023"
+        ],
+        "excerpt": "help.\nMethod MRA\u2191Ceiling\u2191\nAbsolute distance (401 Q)\nNo tools (visual) 0.46 \u2013\nTools, 2D + depth 0.32 0.29\nTools, 3D boxes (OVMono3D) 0.26 0.26\nTools, 3D boxes (Cube R-CNN) 0.32 0.28\nTools, 3D boxes (WildDet3D) 0.74 0.74\nTools, 3D boxes (GT oracle)0.94 0.97\nObject size (423 Q)\nNo tools (visual) 0.58 \u2013\nTools, 2D + depth 0.34 0.34\nTools, 3D boxes (Cube R-CNN) 0.34 0.34\nTools, 3D boxes (WildDet3D) 0.61 0.62\nTools, 3D boxes (GT oracle)0.97 1.00\nTable 2. Absolute distance and object size results (ReVSI-Bench\nARKitScenes); the toolset behind each row is given in Tab. A4.\n\"Ceiling\" runs the geometric tools directly on the boxes, without a\nVLM, so it measures what the perception backend allows before\nany orchestration.\nMethod Acc.\u2191Parse Ceiling\nRelative distance (215 Q, chance25.0%)\nNo tools (blind) 30.2% 100.0% \u2013\nNo tools (visual) 39.1% 100.0% \u2013\nTools, 3D boxes (WildDet3D) 67.4% 100.0% ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Multiple-Choice Tasks",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ec301103fbc90c6187a5f7a1e4494acc6c3edd485d818c9b2406c21d7e5762c7",
+            "evidence_id": "Ec99ef6d434ec4b3a-B0023",
+            "pages": [
+              4
+            ],
+            "section": "Multiple-Choice Tasks",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1179,
+                "page": 4,
+                "section": "Multiple-Choice Tasks",
+                "section_index": 15,
+                "start": 289,
+                "text": "help.\nMethod MRA\u2191Ceiling\u2191\nAbsolute distance (401 Q)\nNo tools (visual) 0.46 \u2013\nTools, 2D + depth 0.32 0.29\nTools, 3D boxes (OVMono3D) 0.26 0.26\nTools, 3D boxes (Cube R-CNN) 0.32 0.28\nTools, 3D boxes (WildDet3D) 0.74 0.74\nTools, 3D boxes (GT oracle)0.94 0.97\nObject size (423 Q)\nNo tools (visual) 0.58 \u2013\nTools, 2D + depth 0.34 0.34\nTools, 3D boxes (Cube R-CNN) 0.34 0.34\nTools, 3D boxes (WildDet3D) 0.61 0.62\nTools, 3D boxes (GT oracle)0.97 1.00\nTable 2. Absolute distance and object size results (ReVSI-Bench\nARKitScenes); the toolset behind each row is given in Tab. A4.\n\"Ceiling\" runs the geometric tools directly on the boxes, without a\nVLM, so it measures what the perception backend allows before\nany orchestration.\nMethod Acc.\u2191Parse Ceiling\nRelative distance (215 Q, chance25.0%)\nNo tools (blind) 30.2% 100.0% \u2013\nNo tools (visual) 39.1% 100.0% \u2013\nTools, 3D boxes (WildDet3D) 67.4% 100.0% "
+              }
+            ],
+            "text": "help.\nMethod MRA\u2191Ceiling\u2191\nAbsolute distance (401 Q)\nNo tools (visual) 0.46 \u2013\nTools, 2D + depth 0.32 0.29\nTools, 3D boxes (OVMono3D) 0.26 0.26\nTools, 3D boxes (Cube R-CNN) 0.32 0.28\nTools, 3D boxes (WildDet3D) 0.74 0.74\nTools, 3D boxes (GT oracle)0.94 0.97\nObject size (423 Q)\nNo tools (visual) 0.58 \u2013\nTools, 2D + depth 0.34 0.34\nTools, 3D boxes (Cube R-CNN) 0.34 0.34\nTools, 3D boxes (WildDet3D) 0.61 0.62\nTools, 3D boxes (GT oracle)0.97 1.00\nTable 2. Absolute distance and object size results (ReVSI-Bench\nARKitScenes); the toolset behind each row is given in Tab. A4.\n\"Ceiling\" runs the geometric tools directly on the boxes, without a\nVLM, so it measures what the perception backend allows before\nany orchestration.\nMethod Acc.\u2191Parse Ceiling\nRelative distance (215 Q, chance25.0%)\nNo tools (blind) 30.2% 100.0% \u2013\nNo tools (visual) 39.1% 100.0% \u2013\nTools, 3D boxes (WildDet3D) 67.4% 100.0% "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c99ef6d434ec4b3a44f524a032aaf163da9ad02a5dbf08b6dad9ba113f0586ae",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec99ef6d434ec4b3a-B0024"
+        ],
+        "excerpt": "69.3%\nTools, 3D boxes (GT oracle)92.1%100.0% 94.9%\nRelative direction (290 Q, chance29.3%)\nNo tools (blind) 28.3% 100.0% \u2013\nNo tools (visual) 25.9% 100.0% \u2013\nTools, 3D boxes (WildDet3D) 73.4% 98.3% 89.0%\nTools, 3D boxes (GT oracle)80.0%96.6% 100.0%\nTable 3. Multiple-choice results on ReVSI-Bench. \"Parse\" is the\nshare of runs emitting a usable option letter (Sec. A); unparseable\nanswers score wrong. Both no-tool baselines parse at 100%, so\ntheir at-or-below-chance relative-direction accuracy is a real rea-\nsoning failure and not a formatting artifact.\nseparate the error sources: perception costs 11 points here\n(100.0\u219289.0% ) against 25.6 on relative distance, since a\nbearing reads object centers and never their extents (Sec. G).\nOrchestration costs more, 15.6 points below the WildDet3D\nceiling, because on 23% of questions the model calls no tool\nand answers directly (Sec. D).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Multiple-Choice Tasks",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "22284cd4c40a0f5850a1b160b6eeaecae5e0ca7bbe501b1d079975a45dc3d15a",
+            "evidence_id": "Ec99ef6d434ec4b3a-B0024",
+            "pages": [
+              4
+            ],
+            "section": "Multiple-Choice Tasks",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2064,
+                "page": 4,
+                "section": "Multiple-Choice Tasks",
+                "section_index": 15,
+                "start": 1179,
+                "text": "69.3%\nTools, 3D boxes (GT oracle)92.1%100.0% 94.9%\nRelative direction (290 Q, chance29.3%)\nNo tools (blind) 28.3% 100.0% \u2013\nNo tools (visual) 25.9% 100.0% \u2013\nTools, 3D boxes (WildDet3D) 73.4% 98.3% 89.0%\nTools, 3D boxes (GT oracle)80.0%96.6% 100.0%\nTable 3. Multiple-choice results on ReVSI-Bench. \"Parse\" is the\nshare of runs emitting a usable option letter (Sec. A); unparseable\nanswers score wrong. Both no-tool baselines parse at 100%, so\ntheir at-or-below-chance relative-direction accuracy is a real rea-\nsoning failure and not a formatting artifact.\nseparate the error sources: perception costs 11 points here\n(100.0\u219289.0% ) against 25.6 on relative distance, since a\nbearing reads object centers and never their extents (Sec. G).\nOrchestration costs more, 15.6 points below the WildDet3D\nceiling, because on 23% of questions the model calls no tool\nand answers directly (Sec. D)."
+              }
+            ],
+            "text": "69.3%\nTools, 3D boxes (GT oracle)92.1%100.0% 94.9%\nRelative direction (290 Q, chance29.3%)\nNo tools (blind) 28.3% 100.0% \u2013\nNo tools (visual) 25.9% 100.0% \u2013\nTools, 3D boxes (WildDet3D) 73.4% 98.3% 89.0%\nTools, 3D boxes (GT oracle)80.0%96.6% 100.0%\nTable 3. Multiple-choice results on ReVSI-Bench. \"Parse\" is the\nshare of runs emitting a usable option letter (Sec. A); unparseable\nanswers score wrong. Both no-tool baselines parse at 100%, so\ntheir at-or-below-chance relative-direction accuracy is a real rea-\nsoning failure and not a formatting artifact.\nseparate the error sources: perception costs 11 points here\n(100.0\u219289.0% ) against 25.6 on relative distance, since a\nbearing reads object centers and never their extents (Sec. G).\nOrchestration costs more, 15.6 points below the WildDet3D\nceiling, because on 23% of questions the model calls no tool\nand answers directly (Sec. D)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c99ef6d434ec4b3a44f524a032aaf163da9ad02a5dbf08b6dad9ba113f0586ae",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec99ef6d434ec4b3a-B0025"
+        ],
+        "excerpt": "We expose all tools at once behind a generic prompt that\nnames them but prescribes no order, over 40 questions from\neach of the four tasks, with the most generous of the scripted\nbudgets (20steps,2048tokens; Sec. A).\nReaching a working autonomous loop meant fixing the\ntools, not the prompt. The original error strings were terse\n(\"No 3D box found for [tv, sink]\"), so a mis-ordered call told\nthe model nothing about what to do next and it simply re-\nMRA\u2191Acc.\u2191\nMethod Dist. Size R. dist R. dir\nNo recipe (generic prompt)0.940.9792.570.0\n+ few-shot order examples 0.891.0080.0 75.0\nScripted recipe (Tabs. 2 and 3)0.940.97 92.180.0\nTable 4. Autonomous probe: every tool exposed at once, no per-\ntask recipe (160 questions, 40 per task, GT backend). Distance and\nsize are scored by MRA, the two relative tasks by accuracy. The\nscripted-recipe row repeats the GT-oracle results of Tabs. 2 and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "No-Recipe Autonomous Probe",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "205663ed74985d4dd64036be30c93df60272ddc8ded94655acc9f81012aa0fc7",
+            "evidence_id": "Ec99ef6d434ec4b3a-B0025",
+            "pages": [
+              4
+            ],
+            "section": "No-Recipe Autonomous Probe",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 889,
+                "page": 4,
+                "section": "No-Recipe Autonomous Probe",
+                "section_index": 16,
+                "start": 0,
+                "text": "We expose all tools at once behind a generic prompt that\nnames them but prescribes no order, over 40 questions from\neach of the four tasks, with the most generous of the scripted\nbudgets (20steps,2048tokens; Sec. A).\nReaching a working autonomous loop meant fixing the\ntools, not the prompt. The original error strings were terse\n(\"No 3D box found for [tv, sink]\"), so a mis-ordered call told\nthe model nothing about what to do next and it simply re-\nMRA\u2191Acc.\u2191\nMethod Dist. Size R. dist R. dir\nNo recipe (generic prompt)0.940.9792.570.0\n+ few-shot order examples 0.891.0080.0 75.0\nScripted recipe (Tabs. 2 and 3)0.940.97 92.180.0\nTable 4. Autonomous probe: every tool exposed at once, no per-\ntask recipe (160 questions, 40 per task, GT backend). Distance and\nsize are scored by MRA, the two relative tasks by accuracy. The\nscripted-recipe row repeats the GT-oracle results of Tabs. 2 and "
+              }
+            ],
+            "text": "We expose all tools at once behind a generic prompt that\nnames them but prescribes no order, over 40 questions from\neach of the four tasks, with the most generous of the scripted\nbudgets (20steps,2048tokens; Sec. A).\nReaching a working autonomous loop meant fixing the\ntools, not the prompt. The original error strings were terse\n(\"No 3D box found for [tv, sink]\"), so a mis-ordered call told\nthe model nothing about what to do next and it simply re-\nMRA\u2191Acc.\u2191\nMethod Dist. Size R. dist R. dir\nNo recipe (generic prompt)0.940.9792.570.0\n+ few-shot order examples 0.891.0080.0 75.0\nScripted recipe (Tabs. 2 and 3)0.940.97 92.180.0\nTable 4. Autonomous probe: every tool exposed at once, no per-\ntask recipe (160 questions, 40 per task, GT backend). Distance and\nsize are scored by MRA, the two relative tasks by accuracy. The\nscripted-recipe row repeats the GT-oracle results of Tabs. 2 and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c99ef6d434ec4b3a44f524a032aaf163da9ad02a5dbf08b6dad9ba113f0586ae",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec99ef6d434ec4b3a-B0029"
+        ],
+        "excerpt": "all.\nLimitations.Our framework selects one \"best frame\" per\nobjectusing the ground-truth boxes, and never triangulates\nacross views. The no-tool baselines also see all 16 frames\nwhile the tool runs see only the selected one or two, so part of\nthe gain may come from framing rather than from the tools;\nthe GT-oracle numbers are invariant to the frame chosen. For\nrelative distance we map each name to a single predicted\nbox (5.1% ceiling penalty). All three detectors are trained\non Omni3D [3], which contains the ARKitScenes training\nsplit; our 161 scenes come from the validation fold, so none\nis seen in training, but perception stays in-domain.\nNext steps.Frame selection is the first oracle to remove:\nthe visibility score should become a tool the model calls,\nscored by the open-vocabulary 2D detector we already ex-\npose. A feed-forward pose predictor [21] would remove the\nsecond oracle, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mra, While A Weak Detector Is Worse Than No Tool At",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2cabed1ae67920fd50d30bb23f17c1499c84d9f74c8ae79b6a2fda15ba0a07ce",
+            "evidence_id": "Ec99ef6d434ec4b3a-B0029",
+            "pages": [
+              4
+            ],
+            "section": "Mra, While A Weak Detector Is Worse Than No Tool At",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 4,
+                "section": "Mra, While A Weak Detector Is Worse Than No Tool At",
+                "section_index": 19,
+                "start": 0,
+                "text": "all.\nLimitations.Our framework selects one \"best frame\" per\nobjectusing the ground-truth boxes, and never triangulates\nacross views. The no-tool baselines also see all 16 frames\nwhile the tool runs see only the selected one or two, so part of\nthe gain may come from framing rather than from the tools;\nthe GT-oracle numbers are invariant to the frame chosen. For\nrelative distance we map each name to a single predicted\nbox (5.1% ceiling penalty). All three detectors are trained\non Omni3D [3], which contains the ARKitScenes training\nsplit; our 161 scenes come from the validation fold, so none\nis seen in training, but perception stays in-domain.\nNext steps.Frame selection is the first oracle to remove:\nthe visibility score should become a tool the model calls,\nscored by the open-vocabulary 2D detector we already ex-\npose. A feed-forward pose predictor [21] would remove the\nsecond oracle, "
+              }
+            ],
+            "text": "all.\nLimitations.Our framework selects one \"best frame\" per\nobjectusing the ground-truth boxes, and never triangulates\nacross views. The no-tool baselines also see all 16 frames\nwhile the tool runs see only the selected one or two, so part of\nthe gain may come from framing rather than from the tools;\nthe GT-oracle numbers are invariant to the frame chosen. For\nrelative distance we map each name to a single predicted\nbox (5.1% ceiling penalty). All three detectors are trained\non Omni3D [3], which contains the ARKitScenes training\nsplit; our 161 scenes come from the validation fold, so none\nis seen in training, but perception stays in-domain.\nNext steps.Frame selection is the first oracle to remove:\nthe visibility score should become a tool the model calls,\nscored by the open-vocabulary 2D detector we already ex-\npose. A feed-forward pose predictor [21] would remove the\nsecond oracle, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.29073",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No suitable baseline comparison was detected in the available text."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "empirical_research",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2609.29073",
+        "context_id": "c99ef6d434ec4b3a44f524a032aaf163da9ad02a5dbf08b6dad9ba113f0586ae",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline outcomes are measured against ReVSI-Bench ground-truth annotations and deterministic geometric ceilings, which are independent of the prompt and tool-error engineering used to shape the system.",
+          "final_evaluation_signal": "ReVSI-Bench ground-truth MRA and exact multiple-choice accuracy, plus deterministic geometric ceilings computed directly on boxes.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Prompt scaffolding, pipeline hints, and rewritten tool error messages, tuned without model weight updates.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ec99ef6d434ec4b3a-B0002",
+          "Ec99ef6d434ec4b3a-B0005",
+          "Ec99ef6d434ec4b3a-B0006",
+          "Ec99ef6d434ec4b3a-B0007",
+          "Ec99ef6d434ec4b3a-B0012",
+          "Ec99ef6d434ec4b3a-B0013",
+          "Ec99ef6d434ec4b3a-B0015",
+          "Ec99ef6d434ec4b3a-B0020",
+          "Ec99ef6d434ec4b3a-B0023",
+          "Ec99ef6d434ec4b3a-B0024",
+          "Ec99ef6d434ec4b3a-B0025",
+          "Ec99ef6d434ec4b3a-B0029"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "373d6ddc0455cc4f04a0e6be90f2914d874716ca4f9acef11c33661791ea60ca"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2609.29073",
+        "claim_evidence_alignment": "The claims are well supported by the experimental data; the paper demonstrates that while strong detectors substantially improve metric reasoning, detector bounding-box inaccuracies and model discipline lapses (zero-tool guessing) represent the primary residual performance bottlenecks.",
+        "context_id": "c99ef6d434ec4b3a44f524a032aaf163da9ad02a5dbf08b6dad9ba113f0586ae",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluations across four ReVSI-Bench tasks (absolute distance, object size, relative distance, and relative direction) rigorously benchmark multiple monocular 3D detector backends against no-tool baselines, a ground-truth oracle, and geometric upper bounds, clearly isolating perception errors from orchestration errors.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluations rely on established external benchmark ground truth annotations (MRA and exact multiple-choice answers) evaluated independently of model prompts.",
+          "final_evaluation_signal": "Deterministic benchmark ground-truth metrics (Mean Relative Accuracy and exact multiple-choice accuracy) on ReVSI-Bench ARKitScenes splits.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Prompt and tool error message engineering, including actionable failure instructions and pipeline hints, evaluated iteratively without weight updates.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ec99ef6d434ec4b3a-B0002",
+          "Ec99ef6d434ec4b3a-B0005",
+          "Ec99ef6d434ec4b3a-B0006",
+          "Ec99ef6d434ec4b3a-B0007",
+          "Ec99ef6d434ec4b3a-B0012",
+          "Ec99ef6d434ec4b3a-B0013",
+          "Ec99ef6d434ec4b3a-B0015",
+          "Ec99ef6d434ec4b3a-B0020",
+          "Ec99ef6d434ec4b3a-B0023",
+          "Ec99ef6d434ec4b3a-B0024",
+          "Ec99ef6d434ec4b3a-B0025",
+          "Ec99ef6d434ec4b3a-B0029"
+        ],
+        "limitations": "The authors transparently disclose limitations, including reliance on ground-truth boxes to pre-select candidate best frames, the requirement for calibrated camera poses, and the in-domain detector pretraining on Omni3D.",
+        "method_assessment": "The methodology is described thoroughly, detailing the prompt scaffold, tool schemas, deterministic geometric solvers for surface-to-surface distance and egocentric bearing, and the lifting of camera-frame 3D boxes to world space using camera extrinsics.",
+        "quality_rationale": "The manuscript presents a sound, rigorously ablated, and scoped contribution to tool-augmented VLM spatial reasoning. Claims are conservative, failure modes are analyzed in detail, and experimental comparisons are controlled and informative.",
+        "scoped_contribution": "The paper introduces a modular, predictor-agnostic, training-free tool-augmented framework enabling a small vision-language model (Qwen3.5-4B) to perform multi-view metric spatial reasoning by decoupling perception backends, pose-based 3D world projections, and deterministic metric solvers.",
+        "source_content_hash": "373d6ddc0455cc4f04a0e6be90f2914d874716ca4f9acef11c33661791ea60ca"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a sound, rigorously ablated, and scoped contribution to tool-augmented VLM spatial reasoning. Claims are conservative, failure modes are analyzed in detail, and experimental comparisons are controlled and informative.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "373d6ddc0455cc4f04a0e6be90f2914d874716ca4f9acef11c33661791ea60ca",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors transparently disclose limitations, including reliance on ground-truth boxes to pre-select candidate best frames, the requirement for calibrated camera poses, and the in-domain detector pretraining on Omni3D."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -158,7 +1524,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

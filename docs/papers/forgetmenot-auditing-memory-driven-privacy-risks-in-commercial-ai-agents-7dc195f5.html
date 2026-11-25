@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FORGETMENOT: Auditing Memory Driven Privacy Risks in Commercial AI Agents</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>FORGETMENOT: Auditing Memory Driven Privacy Risks in Commercial AI Agents</h1>
+          <p class="hero-copy">Ismat Jarin, Tu Le, Athina P. Markopoulou</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://doi.org/10.48550/arxiv.2611.29804">Open paper</a>
+            <a class="paper-detail-link" href="forgetmenot-auditing-memory-driven-privacy-risks-in-commercial-ai-agents-7dc195f5.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Ismat Jarin, Tu Le, Athina P. Markopoulou</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-11-22</dd></div>
+              <div><dt>Publication date</dt><dd>2026-11-22</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2611.29804v1">arXiv</a><a href="https://arxiv.org/abs/2611.29804">arXiv</a><a href="https://openalex.org/W7239433574">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Focuses on persistent or long-term memory for agent behavior.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Commercial AI agents increasingly incorporate long-term memory (both persistent and chat-history) to enable more accurate and personalized responses, raises significant privacy and policy concerns. Yet little is known about user privacy risks associated with memory behavior, in particular, about memory storage, disc...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The study provides a rigorous, well-controlled measurement audit of black-box commercial agent memory systems, addressing key methodological hurdles like attribution via canary values and evaluator verification against human agreement.</p>
+      <p>The authors document scope limitations honestly, noting reliance on two synthetic personas, free-tier interfaces, platform evolution over time, and non-exhaustive adversarial prompt exploration rather than adaptive worst-case jailbreaks.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-25T13:54:57.286358+00:00.</p>
+        <p>Coverage: 113457 of 113457 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>users [23], [26], [36],
+[37], [38]. These concerns are supported by user reports,
+such as memory leakage after deletion and storage beyond
+visible memory [39], [40] as well as research findings: 96%
+of ChatGPT memory entries were not initiated by the users,
+while 28% contained personal information [30].
+Problem and Contributions.Despite ongoing concerns,
+to the best of our knowledge, no prior work has assessed
+how commercial AI agents manage their long-term memo-
+ries, and the privacy implications associated with them. In
+this paper, we present the firstsystematic privacy audit of
+long-term memory across multiple commercial AI agents,
+including evaluating storage, disclosure, transparency, and
+deletion.2 To that end, we make two sets of contributions.
+First, we design anauditing framework, that includes a
+reusable, reproducible benchmark and prompting strategies
+for auditing privacy, </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>with personal and sensitive attribute, and have
+those personas interact with agents. Details are as follows:
+First, we introduce a reusablesynthetic benchmark for
+memory privacy study(see Section 4) that contains struc-
+tured synthetic &quot;personas&quot; spanning 11 categories and83
+personal attributes3 grounded in the definition of CCPA per-
+sonal information [17], [43]. A major challenge is generating
+plausible and distinct attribute values for these personas.
+We design canary-inspired values [9], [18] to distinguish
+genuine disclosure from general model knowledge. More-
+over, generating sensitive values is challenging due to model
+guardrails, which we address with crafted prompts and tem-
+plates. Next, based on personas, we construct two types of
+multi-turn chat datasets to train the persona&#x27;s account (Sec-
+tion 4.1.4): one that we refer to as&quot;naive&quot;(Section 4.2.1)
+that naturally disclose </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ogy with approximately 83 attributes across 11 categories,
+drawing from prior privacy and memory benchmarks [5],
+[7], [66], [71], [83]. We adopt existing categories when
+available [7], [83],e.g.,&quot;sensitive and challenging events&quot;
+categories and attributes directly from DecodingTrust [66],
+map un-categorized attributes (e.g.,[5]) into our existing
+categories. When no category exists, we use the CCPA-
+grounded profiling taxonomy from [43] to define new ones.
+Finally, we merge overlapping attributes, remove duplicates,
+and organize the final ontology into 11 categories and 83
+attributes for controlled persona and ground truth generation.
+4.1.2. Persona Seed Value Generation.For each persona,
+we sample approximately 83 attributes across 11 cate-
+gories (Appendix Table 7). Following canary-inspired prin-
+ciples [52], we generate rare but plausible, high-perplexity
+values while preserving </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>realistic attribute formats and com-
+binations. For identifiers such as SSNs and credit card
+numbers, we additionally enforce constraints to prevent gen-
+erated values from corresponding to real credentials. These
+choices reduce overlap with pre-existing model knowledge
+while maintaining realistic synthetic personas. More details
+about canary validation can be found in Appendix 10.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We select commercial AI agents using two criteria: (1)
+their popularity and large user base among general-purpose
+agents [8] and (2) support for long-term memory across
+interactions, through persistent memory, cross-chat memory,
+or both; and Based on these criteria, we initially selected:
+ChatGPT (OpenAI) [2], Gemini (Google) [25], Copilot
+(Microsoft) [24], Claude (Anthropic) [27], Perplexity [88],
+Grok [23], Meta AI [89], Mistral AI or Le Chat [26] and
+Replika (Luka Inc.) [28]. These agents span distinct use
+cases, from general purpose chat to productivity tools to
+emotional companionship, allowing our audit to capture var-
+ied memory architectures and privacy behaviors. The evalu-
+ated set changed as platforms evolved during our study. For
+example, although both Meta AI [89] and Perplexity [88]
+supported long-term memory in early 2026 but dropped
+these features during our study, so we </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>5.3.1. Memory Settings.Following naive or SMI training,
+we conduct our audit methods (see Section 4.3) under three
+memory configurations that progressively remove stored
+information, as follows:
+Full Memory Enabled (S 1).This baseline configuration
+preserves all available long-term memory (both conversation
+history and persistent memory) and no deletion performed.
+Persistent Memory Only (S2).In this setting, we delete the
+chat history while keeping persistent memory enabled, iso-
+lating information stored in internal/visible memory module.
+Result for this setting is reported in Section 6.2.
+Complete Memory Deletion (S 3).Finally, we delete chat
+history and persistent memory to test whether memory
+remains recoverable after complete deletion to audit effec-
+tiveness of theuser facing deletion control. Result for this
+setting is reported in Section 6.5.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>experimentas evaluating one agent per persona per training
+(naive or adversarial) under one memory setting (e.g.,S 1)
+using complete audit (two audit family, five prompt types)
+repeat three times. Overall, we evaluate5agents×2
+personas×2training methods×3memory settings×2
+audit methods (5distinct query types). After completing
+each full experiment, we additionally capture the visible
+memory module, when available (see Appendix 11), under
+the corresponding memory setting, as shown in figure 3. A
+working example is provided in Table 1.</blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>based LLM as a Judge approaches [5], we analyze each
+response against the corresponding ground truth using GPT-
+4.1 and GPT-4.1omini via the OpenAI API [91]. We use
+leakage/disclosure labels (l0tol 3), two refusal labels (u 0 to
+u1), and two auxiliary flags forOther LeakageandPolicy
+Refusal. Moreover, we create a validation dataset, where
+two annotators independently labeled500responses, where
+dataset were evenly chosen random samples from all agents
+and training method. We measured inter-annotator agree-
+ment using Cohen&#x27;s Kappa, which is0.93; then we resolved
+disagreements through discussion and use that as final val-
+idation dataset. Against our validation dataset, GPT 4.1
+achieves 99% accuracy, while GPT 4.1 mini achieves 94%,
+respectively (More details are provided in Appendix 12.) We
+evaluated our results based on following metrics:
+Disclosure or Leakage Rate (LR).We define LR </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Gemini
+retains all sensitive events (0% to 100%).
+TABLE 3: Leakage rate (left 2) and storage (right) in (%)
+under naive and SMI training forS 2.∆= SMI−naive (%).
+Att. Specific Adversarial Storage (U)
+Agent N SMI∆ N SMI∆ N SMI∆
+ChatGPT 35.0 45.5 +10.5 18.2 23.9 +5.7 80.7 84.3 +3.6
+Gemini 10.3 21.4 +11.1 6.1 16.8 +10.7 33.7 44.6 +10.8
+Copilot 24.8 33.3 +8.5 14.5 20.3 +5.8 39.8 65.1 +25.3
+Claude 10.1 19.4 +9.4 6.9 13.9 +6.9 31.3 47.0 +15.7
+Replika 26.5 20.7 -5.8 24.2 18.4 -5.8 59.0 47.0 -12.0
+Mean21.3 28.1 +6.7 14.0 18.7 +4.7 48.9 57.6 +8.7
+Key-Takeaways (RQ.1).Commercial agents store a
+wide range of personal and sensitive attributes, including
+demographics, location, health, finances, and sensitive
+events, even without user intend (under our naive train-
+ing) and initiated by the system. Under SMI, storage
+increases compared to naive, notably introducing previ-
+ously unstored sensitive </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>+31.3 +39.8 +34.9 +47.0
+Gemini +30.1 +13.3 +42.2 +12.0
+Copilot +34.9 +16.9 +18.1 +12.0
+Claude +0.0 +19.3 +3.6 +3.6
+Replika +9.6 +6.0 +28.9 +4.8
+Mean +21.2 +19.0 +25.5 +15.9
+General Query.Compared to naive, SMI increases storage
+in general-query with Claude (28.9%), Copilot (27.7%),
+Gemini (13.3%), and ChatGPT (2.4%) (Fig. 6).
+Granular or Attribute-Specific Query.For SMI, still at-
+tribute specific queries disclose more stored attributes than
+others (see figure 6 in Appendix 12). As shown in Ta-
+ble 4, the gap still exists, despite SMI containing memory-
+triggering cues that agents may interpret as explicit requests
+to store memory, however, many personal information still
+may not be visible to users;e.g.,ChatGPT shows the largest
+gap compared to general (47.0%) and visible (34.9%), Gem-
+ini shows gaps of 42.2% and 12.0%,and Claude, the lowest,
+3.6% and 3.6%. On average, visible disclose </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Claude show substantially lower
+post-deletion leakage (0% and 0.6%).
+TABLE 5: Effectiveness of deletion (S 3) across agents.
+Naive Train SMI Train
+Agent Att. Audit A Audit Att. Audit A Audit Mean
+ChatGPT 26.7% 6.4% 28.3% 9.9% 17.8%
+Gemini 0.0% 2.9% 7.9% 3.9% 3.7%
+Copilot 23.8% 13.7% 1.9% 2.3% 10.4%
+Claude 0.6% 0.3% 5.0% 2.5% 2.1%
+Replika 13.4% 12.1% 17.8% 18.2% 15.4%
+Att. = Attribute specific, A=Adversarial
+Under SMI training, leakage remains high for Rep-
+lika (18.1%) and ChatGPT (14.5%), compared to Gem-
+ini (4.9%), Claude (3.1%), and Copilot (2.2%). ChatGPT
+primarily leaks sexual orientation, relationship status, al-
+cohol use, and household information. Replika shows high
+leakage across mental-health (100%), alcohol use (∼92%)
+and medical conditions (∼75%). It also reveals bisexual
+identity and suicidal ideation, the later appearing only under
+SMI. Copilot drops sharply to2.2%but </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(RQ.6)
+We further demonstrate the feasibility of memory disclo-
+sure to 3rd-party recipient through agentic tool calls, as a
+proof of concept. Gemini leaked 59 attributes (71%) at least
+once, with a 31.9% 3rd party leakage rate, even though these
+values were not explicitly provided in the corresponding
+conversations, as shown in Figure 5, several categories ex-
+hibited near total unique attribute exposure, while identifiers
+remained largely protected (10%). Importantly, the leaked
+0 20 40 60 80 100
+3rd-party LR = #leak/#attempt (%)
+Identifiers
+Financial
+Preferences
+Personal History
+Family &amp; Rel.
+Life Events
+Demographics
+Health
+Location
+Sensitive Events
+Harmful Pref
+Attribute Category
+10%
+15%
+22%
+31%
+33%
+33%
+35%
+35%
+42%
+56%
+58%
+Figure 5: 3rd party memory leakage rate for Gemini&#x27;s
+autonomous action (sending email).
+attributes include highly private and sensitive information:
+educational </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Memory and Personalization.We acknowledge that users
+may intentionally share personal and sensitive information
+for personalization without explicit memory storage request.
+However, we argue that, such information can be also shared
+unintentionally or complete an immediate task. Thus stor-
+ing personal/sensitive information on user&#x27;s behalf, without
+user&#x27;s explicit request remains a privacy problem worth
+exploring, which our study focused. Understanding users&#x27;
+intend for sharing personal information for personalization,
+without explicit memory storage request, requires a separate
+study, which we encourage as a future work.
+Auditing Methodology.Our findings are specific to our
+methodology;e.g.,data collection timeline, ontology, audit
+datasets. As commercial agents evolve, changes in their
+memory, privacy controls, and underlying models may affect
+the generalizability of our findings. We </blockquote></details></li><li><strong>Contribution clarity — page 18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>As discussed in Section 6.1, we adopt a reference based
+LLM-as-a-Judge approach, motivated by prior work [5],
+where each response is evaluated against the correspond-
+ing attribute values. We use GPT-4.1 and GPT-4.1-mini as
+judges through OpenAI API [91]. For cost effectiveness (by
+25%), we use a two stage LaaJ pipeline. Stage-1 evaluates
+every response using only the ground-truth of the queried
+attribute, assigning labels while flagging responses that
+may contain other leakage. Stage-2 analyzes only flagged
+responses using a retrieved subset of the persona&#x27;s cate-
+gorized memory. We embed responses and memory facts
+withtext-embedding-3-small, store attributes above
+a cosine-similarity threshold (0.3), and fall back to the top-
+k; The queried attribute is always included, and the Stage-
+2 judge identifies any additional attribute disclosures. We
+compare their predictions against </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Memory architecture / system</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to agentic memory</dt>
+              <dd>Studies memory mechanisms or governance for LLM agents</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 100/100</li>
+              <li>Screening category: Memory architecture or policy</li>
+              <li>Tags: long-term-memory, memory-policy, agent-memory, memory-systems, llm-agents</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-11-25</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-24 14:32:49</li><li>Last seen by Paper Scout: 2026-11-25 13:51:08</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2611.29804</li><li>arXiv: 2611.29804</li><li>OpenAlex: W7239433574</li><li>OpenAlex IDs: W7239433574</li><li>arXiv IDs: 2611.29804</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="forgetmenot-auditing-memory-driven-privacy-risks-in-commercial-ai-agents-7dc195f5.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>FORGETMENOT: Auditing Memory Driven Privacy Risks in Commercial AI Agents. Ismat Jarin, Tu Le, Athina P. Markopoulou. 2026-11-22. https://doi.org/10.48550/arxiv.2611.29804</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

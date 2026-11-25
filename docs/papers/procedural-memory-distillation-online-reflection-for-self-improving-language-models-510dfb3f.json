@@ -34,7 +34,7 @@
   "last_seen_date": "2026-08-09",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-07-01",
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-07-14 16:44:38",
   "notified_date": "2026-07-14",
@@ -45,7 +45,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-07-06 11:09:44",
-    "generated_at": "2026-11-24 14:43:49",
+    "generated_at": "2026-11-25 13:55:27",
     "last_seen_at": "2026-08-09 06:27:29",
     "metadata_sources": [
       "arxiv",
@@ -131,122 +131,2011 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-08-09T06:27:34+00:00",
-    "assessment_scope": "title_and_abstract",
-    "assessment_version": "quality-v1",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessed_at": "2026-11-25T13:54:25.370972+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 1.0,
-    "concerns": [
-      "Comparative claims were detected without a suitable baseline in the available text."
-    ],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 78/100, low confidence, based on title and abstract.",
-    "confidence": "low",
-    "coverage": {},
-    "curation_note": null,
-    "dimension_scores": {
-      "contribution_clarity": 4,
-      "evaluation_or_validation_strength": null,
-      "evidence_to_claim_alignment": null,
-      "limitations_and_uncertainty_handling": null,
-      "methodological_rigor": null,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": null,
-      "reproducibility_and_transparency": null,
-      "scholarly_novelty_or_value": null
+    "concerns": [],
+    "concise_summary": "The work addresses a relevant shortcoming in episode-local RLVR and on-policy distillation by demonstrating how multi-tiered procedural memory can be accumulated and distilled into weights. The paper provides extensive ablations, clear algorithmic specifications, and tests on established external verifiable benchmarks without circularity.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 91332,
+      "assessment_input_sha256": "147f5b168d9e3e42beca22fdb80309a0c77b994bfc5c6a54cd60943082e5dccb",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2607.01480",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 88989,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 87343,
+      "evidence_block_count": 129,
+      "evidence_context_characters": 104876,
+      "evidence_context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
+      "evidence_context_sha256": "35f8ec46bca81bb8bc2d19cca8906fd638671d7695c1ee47fe3a8dd0aa687d2b",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 89035,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "extracted_pages": 24,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "d47de0d2442e9b341123686fea9062c6d0070d8296b0d90639432fa25b87af8e",
+        "source_url": "https://arxiv.org/pdf/2607.01480",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 88989,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Procedural Memory Distillation: Online Reflection For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 261,
+          "supplied_characters": 261
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1745,
+          "supplied_characters": 1745
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 1418,
+          "supplied_characters": 1418
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 2915,
+          "supplied_characters": 2915
+        },
+        {
+          "heading": "Opcd [47]\u2713 \u2713 \u2717 \u2717 \u2717",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 18,
+          "supplied_characters": 18
+        },
+        {
+          "heading": "Oel [46]\u2713 \u2713 \u2713 \u2717 \u2717",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 55,
+          "supplied_characters": 55
+        },
+        {
+          "heading": "Pmd\u2713 \u2713 \u2713 \u2713 \u2713",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 449,
+          "supplied_characters": 449
+        },
+        {
+          "heading": "Procedural Memory Distillation (Pmd). We Propose A Self-Distillation Framework That Turns",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 234,
+          "supplied_characters": 234
+        },
+        {
+          "heading": "Co-Evolution As The Design Principle.Pmd Updates Policy And Memory Jointly: Rollouts From",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 187,
+          "supplied_characters": 187
+        },
+        {
+          "heading": "A Three-Level Procedural Memory Hierarchy.We Propose Experience, Insight, And Behavior",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 184,
+          "supplied_characters": 184
+        },
+        {
+          "heading": "Empirical Validation On Two Verifiable Domains.Pmd Improves Over Grpo And Sdpo With",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "results",
+          "section_index": 10,
+          "source_characters": 234,
+          "supplied_characters": 234
+        },
+        {
+          "heading": "Better Test-Time Compute Scaling.We Show That Pmd Continues To Gain From Additional Rollouts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 121,
+          "supplied_characters": 121
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 12,
+          "source_characters": 2609,
+          "supplied_characters": 2609
+        },
+        {
+          "heading": "Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 13,
+          "source_characters": 1625,
+          "supplied_characters": 1625
+        },
+        {
+          "heading": "Procedural Memory-Conditioned Self-Distillation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 342,
+          "supplied_characters": 342
+        },
+        {
+          "heading": "Student Attempts Tasks 2 Online Memory Formation 3 Teacher Coaching With Memory 4 Distill Into The Student",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 3833,
+          "supplied_characters": 3833
+        },
+        {
+          "heading": "Student Attempts Tasks 2 Online Memory Formation 3 Teacher Coaching With Memory 4 Distill Into The Student",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1575,
+          "supplied_characters": 1575
+        },
+        {
+          "heading": "Online Construction Of Procedural Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 2529,
+          "supplied_characters": 2529
+        },
+        {
+          "heading": "Online Construction Of Procedural Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 1771,
+          "supplied_characters": 1771
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 19,
+          "source_characters": 1656,
+          "supplied_characters": 1656
+        },
+        {
+          "heading": "Procedural Memory Provides Strong Self-Learning Signal",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 812,
+          "supplied_characters": 812
+        },
+        {
+          "heading": "Procedural Memory Provides Strong Self-Learning Signal",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 4138,
+          "supplied_characters": 4138
+        },
+        {
+          "heading": "Procedural Memory Provides Strong Self-Learning Signal",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 688,
+          "supplied_characters": 688
+        },
+        {
+          "heading": "Transferability And Utility Of Learned Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 1992,
+          "supplied_characters": 1992
+        },
+        {
+          "heading": "Test-Time Scaling: Pmd Preserves The Coverage That Sdpo Trades Away",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1202,
+          "supplied_characters": 1202
+        },
+        {
+          "heading": "Additional Analyses",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 281,
+          "supplied_characters": 281
+        },
+        {
+          "heading": "Additional Analyses",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 732,
+          "supplied_characters": 732
+        },
+        {
+          "heading": "Pmd  76%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Sdpo  66%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 48,
+          "supplied_characters": 48
+        },
+        {
+          "heading": "Pmd  90%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Sdpo  85%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 47,
+          "supplied_characters": 47
+        },
+        {
+          "heading": "Pmd  91%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Sdpo  81%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 46,
+          "supplied_characters": 46
+        },
+        {
+          "heading": "Pmd  94%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Sdpo  85%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 1085,
+          "supplied_characters": 1085
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 35,
+          "source_characters": 1913,
+          "supplied_characters": 1913
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 3913,
+          "supplied_characters": 3913
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 4208,
+          "supplied_characters": 4208
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 4206,
+          "supplied_characters": 4206
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 316,
+          "supplied_characters": 316
+        },
+        {
+          "heading": "Setting Memory Level Biology Chemistry Physics Materials A Vg",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 61,
+          "supplied_characters": 61
+        },
+        {
+          "heading": "Evolving Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 330,
+          "supplied_characters": 330
+        },
+        {
+          "heading": "Training Epoch",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "methods",
+          "section_index": 42,
+          "source_characters": 619,
+          "supplied_characters": 619
+        },
+        {
+          "heading": "Appendix: A More Experiment Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 43,
+          "source_characters": 26,
+          "supplied_characters": 26
+        },
+        {
+          "heading": "Appendix: Ablation On Memory Granularity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 1621,
+          "supplied_characters": 1621
+        },
+        {
+          "heading": "Appendix: Internalization Of Procedural Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 298,
+          "supplied_characters": 298
+        },
+        {
+          "heading": "Appendix: Internalization Of Procedural Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 46,
+          "source_characters": 3252,
+          "supplied_characters": 3252
+        },
+        {
+          "heading": "Appendix: Length And Discourse-Level Evidence Of Internalization.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 47,
+          "source_characters": 1287,
+          "supplied_characters": 1287
+        },
+        {
+          "heading": "Appendix: Length And Discourse-Level Evidence Of Internalization.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 2201,
+          "supplied_characters": 2201
+        },
+        {
+          "heading": "Appendix: Memory Bank Size Dynamics.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 1079,
+          "supplied_characters": 1079
+        },
+        {
+          "heading": "Appendix: Compute Overhead",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 526,
+          "supplied_characters": 526
+        },
+        {
+          "heading": "Appendix: Additional Method Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 529,
+          "supplied_characters": 529
+        },
+        {
+          "heading": "Appendix: Memory Store And Update Rules",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 4060,
+          "supplied_characters": 4060
+        },
+        {
+          "heading": "Appendix: Memory Store And Update Rules",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 53,
+          "source_characters": 425,
+          "supplied_characters": 425
+        },
+        {
+          "heading": "Appendix: Teacher Reprompt Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 54,
+          "source_characters": 2640,
+          "supplied_characters": 2640
+        },
+        {
+          "heading": "Appendix: Prompt Templates For Insight Extraction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 55,
+          "source_characters": 2673,
+          "supplied_characters": 2673
+        },
+        {
+          "heading": "Appendix: Prompt Templates For Insight Extraction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 56,
+          "source_characters": 1366,
+          "supplied_characters": 1366
+        },
+        {
+          "heading": "Appendix: Prompt Templates For Behavior Extraction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 57,
+          "source_characters": 1206,
+          "supplied_characters": 1206
+        },
+        {
+          "heading": "Appendix: Prompt Templates For Behavior Extraction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 58,
+          "source_characters": 250,
+          "supplied_characters": 250
+        },
+        {
+          "heading": "Avoid Problem-Specific Wording, Option-Letter Shortcuts, And References To",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "introduction",
+          "section_index": 59,
+          "source_characters": 1582,
+          "supplied_characters": 1582
+        },
+        {
+          "heading": "Appendix: Behavior Retrieval And Persistence",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 60,
+          "source_characters": 1119,
+          "supplied_characters": 1119
+        },
+        {
+          "heading": "Appendix: Behavior Retrieval And Persistence",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 61,
+          "source_characters": 1449,
+          "supplied_characters": 1449
+        },
+        {
+          "heading": "Appendix: Qualitative Examples Of Procedural Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 62,
+          "source_characters": 1361,
+          "supplied_characters": 1361
+        },
+        {
+          "heading": "Appendix: Algorithm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 63,
+          "source_characters": 573,
+          "supplied_characters": 573
+        },
+        {
+          "heading": "Appendix: Algorithm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 64,
+          "source_characters": 1808,
+          "supplied_characters": 1808
+        },
+        {
+          "heading": "Appendix: Experimental Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 65,
+          "source_characters": 347,
+          "supplied_characters": 347
+        },
+        {
+          "heading": "Appendix: Backbone And Infrastructure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 66,
+          "source_characters": 1031,
+          "supplied_characters": 1031
+        },
+        {
+          "heading": "Appendix: Datasets And Rewards",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 67,
+          "source_characters": 415,
+          "supplied_characters": 415
+        },
+        {
+          "heading": "Appendix: Datasets And Rewards",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 68,
+          "source_characters": 1349,
+          "supplied_characters": 1349
+        },
+        {
+          "heading": "Appendix: Training Hyperparameters",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 69,
+          "source_characters": 262,
+          "supplied_characters": 262
+        },
+        {
+          "heading": "Appendix: Memory Module And Bank Operating Modes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 70,
+          "source_characters": 1129,
+          "supplied_characters": 1129
+        },
+        {
+          "heading": "Appendix: Memory Module And Bank Operating Modes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 71,
+          "source_characters": 1049,
+          "supplied_characters": 1049
+        }
+      ],
+      "selected_characters": 87343,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "selected_sections": [
+        {
+          "characters": 261,
+          "heading": "Procedural Memory Distillation: Online Reflection For",
+          "page": 1
+        },
+        {
+          "characters": 1745,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1418,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2915,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 18,
+          "heading": "Opcd [47]\u2713 \u2713 \u2717 \u2717 \u2717",
+          "page": 2
+        },
+        {
+          "characters": 55,
+          "heading": "Oel [46]\u2713 \u2713 \u2713 \u2717 \u2717",
+          "page": 2
+        },
+        {
+          "characters": 449,
+          "heading": "Pmd\u2713 \u2713 \u2713 \u2713 \u2713",
+          "page": 2
+        },
+        {
+          "characters": 234,
+          "heading": "Procedural Memory Distillation (Pmd). We Propose A Self-Distillation Framework That Turns",
+          "page": 2
+        },
+        {
+          "characters": 187,
+          "heading": "Co-Evolution As The Design Principle.Pmd Updates Policy And Memory Jointly: Rollouts From",
+          "page": 2
+        },
+        {
+          "characters": 184,
+          "heading": "A Three-Level Procedural Memory Hierarchy.We Propose Experience, Insight, And Behavior",
+          "page": 2
+        },
+        {
+          "characters": 234,
+          "heading": "Empirical Validation On Two Verifiable Domains.Pmd Improves Over Grpo And Sdpo With",
+          "page": 2
+        },
+        {
+          "characters": 121,
+          "heading": "Better Test-Time Compute Scaling.We Show That Pmd Continues To Gain From Additional Rollouts",
+          "page": 2
+        },
+        {
+          "characters": 2609,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 1625,
+          "heading": "Method",
+          "page": 3
+        },
+        {
+          "characters": 342,
+          "heading": "Procedural Memory-Conditioned Self-Distillation",
+          "page": 3
+        },
+        {
+          "characters": 3833,
+          "heading": "Student Attempts Tasks 2 Online Memory Formation 3 Teacher Coaching With Memory 4 Distill Into The Student",
+          "page": 4
+        },
+        {
+          "characters": 1575,
+          "heading": "Student Attempts Tasks 2 Online Memory Formation 3 Teacher Coaching With Memory 4 Distill Into The Student",
+          "page": 5
+        },
+        {
+          "characters": 2529,
+          "heading": "Online Construction Of Procedural Memory",
+          "page": 5
+        },
+        {
+          "characters": 1771,
+          "heading": "Online Construction Of Procedural Memory",
+          "page": 6
+        },
+        {
+          "characters": 1656,
+          "heading": "Experimental Setup",
+          "page": 6
+        },
+        {
+          "characters": 812,
+          "heading": "Procedural Memory Provides Strong Self-Learning Signal",
+          "page": 6
+        },
+        {
+          "characters": 4138,
+          "heading": "Procedural Memory Provides Strong Self-Learning Signal",
+          "page": 7
+        },
+        {
+          "characters": 688,
+          "heading": "Procedural Memory Provides Strong Self-Learning Signal",
+          "page": 8
+        },
+        {
+          "characters": 1992,
+          "heading": "Transferability And Utility Of Learned Memory",
+          "page": 8
+        },
+        {
+          "characters": 1202,
+          "heading": "Test-Time Scaling: Pmd Preserves The Coverage That Sdpo Trades Away",
+          "page": 8
+        },
+        {
+          "characters": 281,
+          "heading": "Additional Analyses",
+          "page": 8
+        },
+        {
+          "characters": 732,
+          "heading": "Additional Analyses",
+          "page": 9
+        },
+        {
+          "characters": 8,
+          "heading": "Pmd  76%",
+          "page": 9
+        },
+        {
+          "characters": 48,
+          "heading": "Sdpo  66%",
+          "page": 9
+        },
+        {
+          "characters": 8,
+          "heading": "Pmd  90%",
+          "page": 9
+        },
+        {
+          "characters": 47,
+          "heading": "Sdpo  85%",
+          "page": 9
+        },
+        {
+          "characters": 8,
+          "heading": "Pmd  91%",
+          "page": 9
+        },
+        {
+          "characters": 46,
+          "heading": "Sdpo  81%",
+          "page": 9
+        },
+        {
+          "characters": 8,
+          "heading": "Pmd  94%",
+          "page": 9
+        },
+        {
+          "characters": 1085,
+          "heading": "Sdpo  85%",
+          "page": 9
+        },
+        {
+          "characters": 1913,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 3913,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 4208,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 4206,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 316,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 61,
+          "heading": "Setting Memory Level Biology Chemistry Physics Materials A Vg",
+          "page": 13
+        },
+        {
+          "characters": 330,
+          "heading": "Evolving Memory",
+          "page": 13
+        },
+        {
+          "characters": 619,
+          "heading": "Training Epoch",
+          "page": 13
+        },
+        {
+          "characters": 26,
+          "heading": "Appendix: A More Experiment Analysis",
+          "page": 13
+        },
+        {
+          "characters": 1621,
+          "heading": "Appendix: Ablation On Memory Granularity",
+          "page": 13
+        },
+        {
+          "characters": 298,
+          "heading": "Appendix: Internalization Of Procedural Memory",
+          "page": 13
+        },
+        {
+          "characters": 3252,
+          "heading": "Appendix: Internalization Of Procedural Memory",
+          "page": 14
+        },
+        {
+          "characters": 1287,
+          "heading": "Appendix: Length And Discourse-Level Evidence Of Internalization.",
+          "page": 14
+        },
+        {
+          "characters": 2201,
+          "heading": "Appendix: Length And Discourse-Level Evidence Of Internalization.",
+          "page": 15
+        },
+        {
+          "characters": 1079,
+          "heading": "Appendix: Memory Bank Size Dynamics.",
+          "page": 15
+        },
+        {
+          "characters": 526,
+          "heading": "Appendix: Compute Overhead",
+          "page": 15
+        },
+        {
+          "characters": 529,
+          "heading": "Appendix: Additional Method Details",
+          "page": 16
+        },
+        {
+          "characters": 4060,
+          "heading": "Appendix: Memory Store And Update Rules",
+          "page": 16
+        },
+        {
+          "characters": 425,
+          "heading": "Appendix: Memory Store And Update Rules",
+          "page": 17
+        },
+        {
+          "characters": 2640,
+          "heading": "Appendix: Teacher Reprompt Construction",
+          "page": 17
+        },
+        {
+          "characters": 2673,
+          "heading": "Appendix: Prompt Templates For Insight Extraction",
+          "page": 18
+        },
+        {
+          "characters": 1366,
+          "heading": "Appendix: Prompt Templates For Insight Extraction",
+          "page": 19
+        },
+        {
+          "characters": 1206,
+          "heading": "Appendix: Prompt Templates For Behavior Extraction",
+          "page": 19
+        },
+        {
+          "characters": 250,
+          "heading": "Appendix: Prompt Templates For Behavior Extraction",
+          "page": 20
+        },
+        {
+          "characters": 1582,
+          "heading": "Avoid Problem-Specific Wording, Option-Letter Shortcuts, And References To",
+          "page": 20
+        },
+        {
+          "characters": 1119,
+          "heading": "Appendix: Behavior Retrieval And Persistence",
+          "page": 20
+        },
+        {
+          "characters": 1449,
+          "heading": "Appendix: Behavior Retrieval And Persistence",
+          "page": 21
+        },
+        {
+          "characters": 1361,
+          "heading": "Appendix: Qualitative Examples Of Procedural Memory",
+          "page": 21
+        },
+        {
+          "characters": 573,
+          "heading": "Appendix: Algorithm",
+          "page": 21
+        },
+        {
+          "characters": 1808,
+          "heading": "Appendix: Algorithm",
+          "page": 22
+        },
+        {
+          "characters": 347,
+          "heading": "Appendix: Experimental Details",
+          "page": 22
+        },
+        {
+          "characters": 1031,
+          "heading": "Appendix: Backbone And Infrastructure",
+          "page": 22
+        },
+        {
+          "characters": 415,
+          "heading": "Appendix: Datasets And Rewards",
+          "page": 22
+        },
+        {
+          "characters": 1349,
+          "heading": "Appendix: Datasets And Rewards",
+          "page": 23
+        },
+        {
+          "characters": 262,
+          "heading": "Appendix: Training Hyperparameters",
+          "page": 23
+        },
+        {
+          "characters": 1129,
+          "heading": "Appendix: Memory Module And Bank Operating Modes",
+          "page": 23
+        },
+        {
+          "characters": 1049,
+          "heading": "Appendix: Memory Module And Bank Operating Modes",
+          "page": 24
+        }
+      ],
+      "selected_text_sha256": "147f5b168d9e3e42beca22fdb80309a0c77b994bfc5c6a54cd60943082e5dccb",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "d47de0d2442e9b341123686fea9062c6d0070d8296b0d90639432fa25b87af8e",
+      "source_pages": 24,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
     },
+    "curation_note": null,
+    "dimension_scores": {},
     "downranked": false,
     "evidence": [
       {
         "claim_role": null,
-        "context_id": null,
+        "context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
         "dimension": "contribution_clarity",
-        "evidence_ids": [],
-        "excerpt": "hich failure modes persist, which patterns recur. We propose Procedural Memory Distillation (PMD), which converts these crossepisode signals",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "The contribution is stated explicitly.",
+        "evidence_ids": [
+          "Ea69fc1af67c2c9a1-B0002"
+        ],
+        "excerpt": "Reinforcement learning with verifiable rewards (RLVR), along with recent self-\ndistillation variants such as SDPO, evaluates each rollout against a verifier and\nupdates the policy from that episode-level signal. However, the richer procedural in-\nformation in the rollout is rarely retained or reused. Across episodes and epochs, the\nmodel repeatedly encounters related problems under a changing policy, producing\ncross-episode signals that episode-local updates cannot capture: which strategies\nconsistently pass verification, which failure modes persist, which patterns recur.\nWe proposeProcedural Memory Distillation (PMD), which converts these cross-\nepisode signals intoreusable procedural memoryand distills it into the policy's\nweights during training. This memory functions as a training scaffold, absorbed\ninto the policy itself, yielding a memory-free model at inference. PMD organizes\nthe ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
         "section": "Abstract",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "b5de1c06c71291b362268f26ac08fa4599276f0fc6c2885b0cef0c333ee6585c",
+            "evidence_id": "Ea69fc1af67c2c9a1-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Reinforcement learning with verifiable rewards (RLVR), along with recent self-\ndistillation variants such as SDPO, evaluates each rollout against a verifier and\nupdates the policy from that episode-level signal. However, the richer procedural in-\nformation in the rollout is rarely retained or reused. Across episodes and epochs, the\nmodel repeatedly encounters related problems under a changing policy, producing\ncross-episode signals that episode-local updates cannot capture: which strategies\nconsistently pass verification, which failure modes persist, which patterns recur.\nWe proposeProcedural Memory Distillation (PMD), which converts these cross-\nepisode signals intoreusable procedural memoryand distills it into the policy's\nweights during training. This memory functions as a training scaffold, absorbed\ninto the policy itself, yielding a memory-free model at inference. PMD organizes\nthe "
+              }
+            ],
+            "text": "Reinforcement learning with verifiable rewards (RLVR), along with recent self-\ndistillation variants such as SDPO, evaluates each rollout against a verifier and\nupdates the policy from that episode-level signal. However, the richer procedural in-\nformation in the rollout is rarely retained or reused. Across episodes and epochs, the\nmodel repeatedly encounters related problems under a changing policy, producing\ncross-episode signals that episode-local updates cannot capture: which strategies\nconsistently pass verification, which failure modes persist, which patterns recur.\nWe proposeProcedural Memory Distillation (PMD), which converts these cross-\nepisode signals intoreusable procedural memoryand distills it into the policy's\nweights during training. This memory functions as a training scaffold, absorbed\ninto the policy itself, yielding a memory-free model at inference. PMD organizes\nthe "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "No suitable baseline comparison was detected in the available text.",
-        "section": null,
-        "signal_type": "missing",
-        "source_blocks": [],
+        "context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea69fc1af67c2c9a1-B0003"
+        ],
+        "excerpt": "memory at three levels of abstraction: raw trajectories, self-reflected strate-\ngies and lessons, and higher-level behavioral patterns that recur across problems,\nall extracted online from the model's own trajectories. A memory-conditioned\nself-teacher draws on the accumulated experience to supervise the student on its\nown rollouts, enabling student to progressively internalize procedural knowledge\nwithin its parameters. The central design principle is co-evolution: the policy\ngenerates rollouts that update the memory, and memory shapes the supervision\nthat updates the policy. Empirically, across Qwen3-8B and OLMo3-Instruct-7B,\nPMD improves over SDPO by 3.8\u20135.5% on SCIKNOWEVALand 7.9\u201313.6% on\nLIVECODEBENCH. Co-evolution powers these gains: freezing either the memory\nor the policy trails PMD by more than 10% across SCIKNOWEVALdomains.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f900d5d898bb206915ce27996924cf218b964079986f87a776407e2574a2e911",
+            "evidence_id": "Ea69fc1af67c2c9a1-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1745,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 900,
+                "text": "memory at three levels of abstraction: raw trajectories, self-reflected strate-\ngies and lessons, and higher-level behavioral patterns that recur across problems,\nall extracted online from the model's own trajectories. A memory-conditioned\nself-teacher draws on the accumulated experience to supervise the student on its\nown rollouts, enabling student to progressively internalize procedural knowledge\nwithin its parameters. The central design principle is co-evolution: the policy\ngenerates rollouts that update the memory, and memory shapes the supervision\nthat updates the policy. Empirically, across Qwen3-8B and OLMo3-Instruct-7B,\nPMD improves over SDPO by 3.8\u20135.5% on SCIKNOWEVALand 7.9\u201313.6% on\nLIVECODEBENCH. Co-evolution powers these gains: freezing either the memory\nor the policy trails PMD by more than 10% across SCIKNOWEVALdomains."
+              }
+            ],
+            "text": "memory at three levels of abstraction: raw trajectories, self-reflected strate-\ngies and lessons, and higher-level behavioral patterns that recur across problems,\nall extracted online from the model's own trajectories. A memory-conditioned\nself-teacher draws on the accumulated experience to supervise the student on its\nown rollouts, enabling student to progressively internalize procedural knowledge\nwithin its parameters. The central design principle is co-evolution: the policy\ngenerates rollouts that update the memory, and memory shapes the supervision\nthat updates the policy. Empirically, across Qwen3-8B and OLMo3-Instruct-7B,\nPMD improves over SDPO by 3.8\u20135.5% on SCIKNOWEVALand 7.9\u201313.6% on\nLIVECODEBENCH. Co-evolution powers these gains: freezing either the memory\nor the policy trails PMD by more than 10% across SCIKNOWEVALdomains."
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
-        "section": null,
-        "signal_type": "missing",
-        "source_blocks": [],
+        "context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea69fc1af67c2c9a1-B0006"
+        ],
+        "excerpt": "converts these repeated\nattempts into reusable procedural memory and distills it into the policy's weights during training.\nPMD builds the memory online from the model's own rollouts, organized into three levels: experience\n(raw trajectories), insight (per-problem strategies and lessons), and behavior (cross-problem reasoning\npatterns). This memory conditions an on-policy self-teacher: the student continues to learn from\ntrajectories sampled from the current policy, as in SDPO, but the teacher is additionally informed\nby what the model has discovered in prior epochs. Memory thus functions as a training scaffold: it\nenriches the teacher during learning and is gradually internalized into the student's parameters, so the\nresulting model reasons natively at inference.\nA central design principle of PMD is theco-evolution of policy and memory. At each stage of training,\nthe current policy ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "793c6b96351e98f486c617587110420d6f986534123a082e6bae3962320e977d",
+            "evidence_id": "Ea69fc1af67c2c9a1-B0006",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1261,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 365,
+                "text": "converts these repeated\nattempts into reusable procedural memory and distills it into the policy's weights during training.\nPMD builds the memory online from the model's own rollouts, organized into three levels: experience\n(raw trajectories), insight (per-problem strategies and lessons), and behavior (cross-problem reasoning\npatterns). This memory conditions an on-policy self-teacher: the student continues to learn from\ntrajectories sampled from the current policy, as in SDPO, but the teacher is additionally informed\nby what the model has discovered in prior epochs. Memory thus functions as a training scaffold: it\nenriches the teacher during learning and is gradually internalized into the student's parameters, so the\nresulting model reasons natively at inference.\nA central design principle of PMD is theco-evolution of policy and memory. At each stage of training,\nthe current policy "
+              }
+            ],
+            "text": "converts these repeated\nattempts into reusable procedural memory and distills it into the policy's weights during training.\nPMD builds the memory online from the model's own rollouts, organized into three levels: experience\n(raw trajectories), insight (per-problem strategies and lessons), and behavior (cross-problem reasoning\npatterns). This memory conditions an on-policy self-teacher: the student continues to learn from\ntrajectories sampled from the current policy, as in SDPO, but the teacher is additionally informed\nby what the model has discovered in prior epochs. Memory thus functions as a training scaffold: it\nenriches the teacher during learning and is gradually internalized into the student's parameters, so the\nresulting model reasons natively at inference.\nA central design principle of PMD is theco-evolution of policy and memory. At each stage of training,\nthe current policy "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evidence_to_claim_alignment",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
-        "section": null,
-        "signal_type": "concern",
-        "source_blocks": [],
+        "context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea69fc1af67c2c9a1-B0015"
+        ],
+        "excerpt": "both Qwen3-8B and OLMo3-Instruct-7B by 3.8\u20135.5% on SCIKNOWEVALand 7.9\u201313.6% on\nLIVECODEBENCH. Freezing either the memory or the policy alone costs more than 10% drop on\nSCIKNOWEVAL, isolating co-evolution as the source of PMD's gains.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Empirical Validation On Two Verifiable Domains.Pmd Improves Over Grpo And Sdpo With",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9f8181a17bf1f406e8d861067856bb99cc4f90969c72bb9f97fb1853f343463f",
+            "evidence_id": "Ea69fc1af67c2c9a1-B0015",
+            "pages": [
+              2
+            ],
+            "section": "Empirical Validation On Two Verifiable Domains.Pmd Improves Over Grpo And Sdpo With",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 234,
+                "page": 2,
+                "section": "Empirical Validation On Two Verifiable Domains.Pmd Improves Over Grpo And Sdpo With",
+                "section_index": 10,
+                "start": 0,
+                "text": "both Qwen3-8B and OLMo3-Instruct-7B by 3.8\u20135.5% on SCIKNOWEVALand 7.9\u201313.6% on\nLIVECODEBENCH. Freezing either the memory or the policy alone costs more than 10% drop on\nSCIKNOWEVAL, isolating co-evolution as the source of PMD's gains."
+              }
+            ],
+            "text": "both Qwen3-8B and OLMo3-Instruct-7B by 3.8\u20135.5% on SCIKNOWEVALand 7.9\u201313.6% on\nLIVECODEBENCH. Freezing either the memory or the policy alone costs more than 10% drop on\nSCIKNOWEVAL, isolating co-evolution as the source of PMD's gains."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea69fc1af67c2c9a1-B0021"
+        ],
+        "excerpt": "captures\ninformation about the dynamics of how the model solves the same or similar problems over times,\naccumulating a rich source of self-learning signals.\nWe extend this setup by introducingonline procedural memory distillation. As shown in Figure 1,\nthis corresponds to a four-stage loop: (1) the student makes attempts to a problem and receives\nverifier feedback; (2) self-reflection summarizes these successes and failures into different levels of\nprocedural memory in the form of strategies, lessons, and behaviors; (3) the teacher leverages these\nproblem-specific and global memory items to produce memory-conditioned supervision; and (4) this\nguidance is distilled back into the student, through self-distillation, for the next epoch.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Method",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2e2259949615ddb30efb4be936485c809b886cee7013ee3a4749fa84c8bf0792",
+            "evidence_id": "Ea69fc1af67c2c9a1-B0021",
+            "pages": [
+              3
+            ],
+            "section": "Method",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1625,
+                "page": 3,
+                "section": "Method",
+                "section_index": 13,
+                "start": 882,
+                "text": "captures\ninformation about the dynamics of how the model solves the same or similar problems over times,\naccumulating a rich source of self-learning signals.\nWe extend this setup by introducingonline procedural memory distillation. As shown in Figure 1,\nthis corresponds to a four-stage loop: (1) the student makes attempts to a problem and receives\nverifier feedback; (2) self-reflection summarizes these successes and failures into different levels of\nprocedural memory in the form of strategies, lessons, and behaviors; (3) the teacher leverages these\nproblem-specific and global memory items to produce memory-conditioned supervision; and (4) this\nguidance is distilled back into the student, through self-distillation, for the next epoch."
+              }
+            ],
+            "text": "captures\ninformation about the dynamics of how the model solves the same or similar problems over times,\naccumulating a rich source of self-learning signals.\nWe extend this setup by introducingonline procedural memory distillation. As shown in Figure 1,\nthis corresponds to a four-stage loop: (1) the student makes attempts to a problem and receives\nverifier feedback; (2) self-reflection summarizes these successes and failures into different levels of\nprocedural memory in the form of strategies, lessons, and behaviors; (3) the teacher leverages these\nproblem-specific and global memory items to produce memory-conditioned supervision; and (4) this\nguidance is distilled back into the student, through self-distillation, for the next epoch."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea69fc1af67c2c9a1-B0028"
+        ],
+        "excerpt": "current\npolicy and matches the memory-conditioned teacher on the same prefix states:\nLPMD(\u03b8;\u03b8 t, Mt) =E xi,yi\n\uf8ee\n\uf8f0\n|yi|X\ns=1\nKL(\u03c0\u03b8(\u00b7 |xi, yi,<s)\u2225stopgrad (q \u03b8t (\u00b7 |xi, mi,t, gi,t, yi,<s)))\n\uf8f9\n\uf8fb ,\n(7)\nwherex i \u2208B t andy i is a rollout fromT i,t. The policy is updated as\n\u03b8t+1 \u2190\u03b8 t \u2212\u03b7\u2207 \u03b8LPMD(\u03b8;\u03b8 t, Mt).(8)\nFeedback from the current rollout explains a local error or success, while procedural memory\nsummarizes what the learner has discovered across repeated attempts: recurring mistakes, reusable\nstrategies, and higher-level behaviors that may not be visible from a single batch. Because the policy\nchanges during training, the memory that guides the teacher must also evolve. A memory bank\nwritten once by an earlier policy can drift out of sync with the learner's current policy. This motivates\nbuilding memory online, so that the teacher remains compatible with the policy it supervises [14] ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Student Attempts Tasks 2 Online Memory Formation 3 Teacher Coaching With Memory 4 Distill Into The Student",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "30b35424e228f61874cf2e6e4eb989faa1c0dd2cf761ac89fa49d3a4e1cd5f9f",
+            "evidence_id": "Ea69fc1af67c2c9a1-B0028",
+            "pages": [
+              5
+            ],
+            "section": "Student Attempts Tasks 2 Online Memory Formation 3 Teacher Coaching With Memory 4 Distill Into The Student",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1484,
+                "page": 5,
+                "section": "Student Attempts Tasks 2 Online Memory Formation 3 Teacher Coaching With Memory 4 Distill Into The Student",
+                "section_index": 16,
+                "start": 591,
+                "text": "current\npolicy and matches the memory-conditioned teacher on the same prefix states:\nLPMD(\u03b8;\u03b8 t, Mt) =E xi,yi\n\uf8ee\n\uf8f0\n|yi|X\ns=1\nKL(\u03c0\u03b8(\u00b7 |xi, yi,<s)\u2225stopgrad (q \u03b8t (\u00b7 |xi, mi,t, gi,t, yi,<s)))\n\uf8f9\n\uf8fb ,\n(7)\nwherex i \u2208B t andy i is a rollout fromT i,t. The policy is updated as\n\u03b8t+1 \u2190\u03b8 t \u2212\u03b7\u2207 \u03b8LPMD(\u03b8;\u03b8 t, Mt).(8)\nFeedback from the current rollout explains a local error or success, while procedural memory\nsummarizes what the learner has discovered across repeated attempts: recurring mistakes, reusable\nstrategies, and higher-level behaviors that may not be visible from a single batch. Because the policy\nchanges during training, the memory that guides the teacher must also evolve. A memory bank\nwritten once by an earlier policy can drift out of sync with the learner's current policy. This motivates\nbuilding memory online, so that the teacher remains compatible with the policy it supervises [14] "
+              }
+            ],
+            "text": "current\npolicy and matches the memory-conditioned teacher on the same prefix states:\nLPMD(\u03b8;\u03b8 t, Mt) =E xi,yi\n\uf8ee\n\uf8f0\n|yi|X\ns=1\nKL(\u03c0\u03b8(\u00b7 |xi, yi,<s)\u2225stopgrad (q \u03b8t (\u00b7 |xi, mi,t, gi,t, yi,<s)))\n\uf8f9\n\uf8fb ,\n(7)\nwherex i \u2208B t andy i is a rollout fromT i,t. The policy is updated as\n\u03b8t+1 \u2190\u03b8 t \u2212\u03b7\u2207 \u03b8LPMD(\u03b8;\u03b8 t, Mt).(8)\nFeedback from the current rollout explains a local error or success, while procedural memory\nsummarizes what the learner has discovered across repeated attempts: recurring mistakes, reusable\nstrategies, and higher-level behaviors that may not be visible from a single batch. Because the policy\nchanges during training, the memory that guides the teacher must also evolve. A memory bank\nwritten once by an earlier policy can drift out of sync with the learner's current policy. This motivates\nbuilding memory online, so that the teacher remains compatible with the policy it supervises [14] "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea69fc1af67c2c9a1-B0035"
+        ],
+        "excerpt": "Data and MetricsWe evaluate PMD in two verifiable domains:SCIKNOWEVAL, a science\nmultiple-choice reasoning benchmark[4] covering biology, chemistry, physics, and materials science,\nandLiveCodeBench, a contamination-aware code-generation benchmark with execution-based\nunit-test feedback [11]. Following SDPO [10], we reportavg@16on SCIKNOWEVAL, where each\nrollout is scored as 1.0 if the extracted answer letter matches the ground truth and 0.0 otherwise,\nandscore@4on LiveCodeBench, where sparse reward assigns 1.0 only when all unit tests pass.\nBoth settings produce repeated successes, failures, and feedback across epochs, allowing us to study\nwhether episode experience can be compressed into memory and distilled into the policy.\nModel and TrainingWe evaluate PMD with two open-source instruction-tuned policies, Qwen3-\n8B [43] and OLMo3-Instruct-7B [18]. Unless otherwise stated, all ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "669dec627d42e925ac0443a6e767737838b81612fca717abcbd927a323ac32b5",
+            "evidence_id": "Ea69fc1af67c2c9a1-B0035",
+            "pages": [
+              6
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 6,
+                "section": "Experimental Setup",
+                "section_index": 19,
+                "start": 0,
+                "text": "Data and MetricsWe evaluate PMD in two verifiable domains:SCIKNOWEVAL, a science\nmultiple-choice reasoning benchmark[4] covering biology, chemistry, physics, and materials science,\nandLiveCodeBench, a contamination-aware code-generation benchmark with execution-based\nunit-test feedback [11]. Following SDPO [10], we reportavg@16on SCIKNOWEVAL, where each\nrollout is scored as 1.0 if the extracted answer letter matches the ground truth and 0.0 otherwise,\nandscore@4on LiveCodeBench, where sparse reward assigns 1.0 only when all unit tests pass.\nBoth settings produce repeated successes, failures, and feedback across epochs, allowing us to study\nwhether episode experience can be compressed into memory and distilled into the policy.\nModel and TrainingWe evaluate PMD with two open-source instruction-tuned policies, Qwen3-\n8B [43] and OLMo3-Instruct-7B [18]. Unless otherwise stated, all "
+              }
+            ],
+            "text": "Data and MetricsWe evaluate PMD in two verifiable domains:SCIKNOWEVAL, a science\nmultiple-choice reasoning benchmark[4] covering biology, chemistry, physics, and materials science,\nandLiveCodeBench, a contamination-aware code-generation benchmark with execution-based\nunit-test feedback [11]. Following SDPO [10], we reportavg@16on SCIKNOWEVAL, where each\nrollout is scored as 1.0 if the extracted answer letter matches the ground truth and 0.0 otherwise,\nandscore@4on LiveCodeBench, where sparse reward assigns 1.0 only when all unit tests pass.\nBoth settings produce repeated successes, failures, and feedback across epochs, allowing us to study\nwhether episode experience can be compressed into memory and distilled into the policy.\nModel and TrainingWe evaluate PMD with two open-source instruction-tuned policies, Qwen3-\n8B [43] and OLMo3-Instruct-7B [18]. Unless otherwise stated, all "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea69fc1af67c2c9a1-B0037"
+        ],
+        "excerpt": "Main results.In Table 2, we show that PMD consistently outperforms both GRPO and SDPO\nacross model families and benchmarks. Relative to SDPO, PMD improves SCIKNOWEVALA VG\nfrom 74.4 to 77.2 for Qwen3-8B and from 69.5 to 73.3 for OLMo3-Instruct-7B, corresponding to\nrelative gains of 3.8% and 5.5%, respectively. On LIVECODEBENCH, PMD improves over SDPO\nfrom 47.9 to 51.7 for Qwen3-8B and from 45.0 to 51.1 for OLMo3-Instruct-7B, yielding relative\ngains of 7.9% and 13.6%. Since the key difference between PMD and SDPO is whether model\nrollouts are accumulated as memory during training, these results suggest that training-time memories\nprovide a valuable self-learning signal that SDPO does not exploit. In the rest of this section, we\npresent analytical studies to better understand the source of these gains.\n6\nTable 2:Main results on SCIKNOWEVALand LiveCodeBench.We compare PMD with the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Procedural Memory Provides Strong Self-Learning Signal",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ec9802fdfec28daa4b7c0cdd201be4d6e280108b77112cf7e723194d6a71ed09",
+            "evidence_id": "Ea69fc1af67c2c9a1-B0037",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Procedural Memory Provides Strong Self-Learning Signal",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 812,
+                "page": 6,
+                "section": "Procedural Memory Provides Strong Self-Learning Signal",
+                "section_index": 20,
+                "start": 0,
+                "text": "Main results.In Table 2, we show that PMD consistently outperforms both GRPO and SDPO\nacross model families and benchmarks. Relative to SDPO, PMD improves SCIKNOWEVALA VG\nfrom 74.4 to 77.2 for Qwen3-8B and from 69.5 to 73.3 for OLMo3-Instruct-7B, corresponding to\nrelative gains of 3.8% and 5.5%, respectively. On LIVECODEBENCH, PMD improves over SDPO\nfrom 47.9 to 51.7 for Qwen3-8B and from 45.0 to 51.1 for OLMo3-Instruct-7B, yielding relative\ngains of 7.9% and 13.6%. Since the key difference between PMD and SDPO is whether model\nrollouts are accumulated as memory during training, these results suggest that training-time memories\nprovide a valuable self-learning signal that SDPO does not exploit. In the rest of this section, we\npresent analytical studies to better understand the source of these gains.\n6"
+              },
+              {
+                "end": 77,
+                "page": 7,
+                "section": "Procedural Memory Provides Strong Self-Learning Signal",
+                "section_index": 21,
+                "start": 0,
+                "text": "Table 2:Main results on SCIKNOWEVALand LiveCodeBench.We compare PMD with the "
+              }
+            ],
+            "text": "Main results.In Table 2, we show that PMD consistently outperforms both GRPO and SDPO\nacross model families and benchmarks. Relative to SDPO, PMD improves SCIKNOWEVALA VG\nfrom 74.4 to 77.2 for Qwen3-8B and from 69.5 to 73.3 for OLMo3-Instruct-7B, corresponding to\nrelative gains of 3.8% and 5.5%, respectively. On LIVECODEBENCH, PMD improves over SDPO\nfrom 47.9 to 51.7 for Qwen3-8B and from 45.0 to 51.1 for OLMo3-Instruct-7B, yielding relative\ngains of 7.9% and 13.6%. Since the key difference between PMD and SDPO is whether model\nrollouts are accumulated as memory during training, these results suggest that training-time memories\nprovide a valuable self-learning signal that SDPO does not exploit. In the rest of this section, we\npresent analytical studies to better understand the source of these gains.\n6\nTable 2:Main results on SCIKNOWEVALand LiveCodeBench.We compare PMD with the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea69fc1af67c2c9a1-B0038"
+        ],
+        "excerpt": "base\npolicy, GRPO, and SDPO. All experiments use thinking-mode disabled (think-off). SCIKNOWEVAL\nreports avg@16, where each rollout is scored as correct if the extracted answer letter matches the\nground truth. LiveCodeBench reports score@4 with sparse unit-test rewards, where a rollout receives\nscore 1.0 only if all unit tests pass. SCIKNOWEVALA VG is the mean over biology, chemistry,\nphysics, and materials. Best results are shown in bold.\nModel Method SciKnowEval LiveCodeBench\nBiology Chemistry Physics Materials A VG v6\nQwen3-8B\nBase Policy [43] 32.4 41.6 58.5 59.2 47.9 27.1\nGRPO [26, 6] 63.2 73.2 70.6 70.7 69.4 41.2\nSDPO [10] 63.6 80.6 72.8 80.4 74.4 47.9\nPMD 68.5 82.8 74.7 82.9 77.2 51.7\nOLMo3-Instruct-7B\nBase Policy [18] 15.4 22.6 35.9 36.7 27.7 27.7\nGRPO [26, 6] 45.8 70.1 63.3 76.5 63.9 36.1\nSDPO [10] 54.1 79.0 66.1 76.8 69.5 45.0\nPMD 66.1 81.3 68.2 77.4 73.3 51.1\nTable ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Procedural Memory Provides Strong Self-Learning Signal",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7b18d69f3432be97ecf92e79b793a4733c2868025c78e22d315cebe8dd3f60aa",
+            "evidence_id": "Ea69fc1af67c2c9a1-B0038",
+            "pages": [
+              7
+            ],
+            "section": "Procedural Memory Provides Strong Self-Learning Signal",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 965,
+                "page": 7,
+                "section": "Procedural Memory Provides Strong Self-Learning Signal",
+                "section_index": 21,
+                "start": 77,
+                "text": "base\npolicy, GRPO, and SDPO. All experiments use thinking-mode disabled (think-off). SCIKNOWEVAL\nreports avg@16, where each rollout is scored as correct if the extracted answer letter matches the\nground truth. LiveCodeBench reports score@4 with sparse unit-test rewards, where a rollout receives\nscore 1.0 only if all unit tests pass. SCIKNOWEVALA VG is the mean over biology, chemistry,\nphysics, and materials. Best results are shown in bold.\nModel Method SciKnowEval LiveCodeBench\nBiology Chemistry Physics Materials A VG v6\nQwen3-8B\nBase Policy [43] 32.4 41.6 58.5 59.2 47.9 27.1\nGRPO [26, 6] 63.2 73.2 70.6 70.7 69.4 41.2\nSDPO [10] 63.6 80.6 72.8 80.4 74.4 47.9\nPMD 68.5 82.8 74.7 82.9 77.2 51.7\nOLMo3-Instruct-7B\nBase Policy [18] 15.4 22.6 35.9 36.7 27.7 27.7\nGRPO [26, 6] 45.8 70.1 63.3 76.5 63.9 36.1\nSDPO [10] 54.1 79.0 66.1 76.8 69.5 45.0\nPMD 66.1 81.3 68.2 77.4 73.3 51.1\nTable "
+              }
+            ],
+            "text": "base\npolicy, GRPO, and SDPO. All experiments use thinking-mode disabled (think-off). SCIKNOWEVAL\nreports avg@16, where each rollout is scored as correct if the extracted answer letter matches the\nground truth. LiveCodeBench reports score@4 with sparse unit-test rewards, where a rollout receives\nscore 1.0 only if all unit tests pass. SCIKNOWEVALA VG is the mean over biology, chemistry,\nphysics, and materials. Best results are shown in bold.\nModel Method SciKnowEval LiveCodeBench\nBiology Chemistry Physics Materials A VG v6\nQwen3-8B\nBase Policy [43] 32.4 41.6 58.5 59.2 47.9 27.1\nGRPO [26, 6] 63.2 73.2 70.6 70.7 69.4 41.2\nSDPO [10] 63.6 80.6 72.8 80.4 74.4 47.9\nPMD 68.5 82.8 74.7 82.9 77.2 51.7\nOLMo3-Instruct-7B\nBase Policy [18] 15.4 22.6 35.9 36.7 27.7 27.7\nGRPO [26, 6] 45.8 70.1 63.3 76.5 63.9 36.1\nSDPO [10] 54.1 79.0 66.1 76.8 69.5 45.0\nPMD 66.1 81.3 68.2 77.4 73.3 51.1\nTable "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea69fc1af67c2c9a1-B0039"
+        ],
+        "excerpt": "3:Decomposing PMD's gain into interacting mechanisms.PMD-Transientis identical to\nPMDbut discards memory after every step, isolating within-step reflection from cross-step persistence.\nEvolving Memory + Frozen Policyupdates memory while keeping the policy fixed.Frozen Memory +\nSDPOdistills from a fixed memory bank, built once and held fixed. SCIKNOWEVALreports avg@16\nand LiveCodeBench reports score@4.\nModel Method SciKnowEval LiveCodeBench\nBiology Chemistry Physics Materials A VG v6\nQwen3-8B\nBase Policy [43] 32.4 41.6 58.5 59.2 47.9 27.1\nSDPO [10] 63.6 80.6 72.8 80.4 74.4 47.9\nEvolving Memory + Frozen Policy 34.3 49.8 60.9 70.8 54.0 35.9\nFrozen Memory + Evolving Policy 44.6 77.7 63.1 74.5 65.0 47.5\nPMD-Transient 67.4 81.8 73.8 79.8 75.7 48.1\nPMD 68.5 82.8 74.7 82.9 77.2 51.7\nDecomposing the gain: reflection, persistence and co-evolution.PMD improves learning through\nthree interacting ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Procedural Memory Provides Strong Self-Learning Signal",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3caff8c1784adb855a4a8d2dd502ad8a9339a0068e23c93f1c5fbb0722d8820e",
+            "evidence_id": "Ea69fc1af67c2c9a1-B0039",
+            "pages": [
+              7
+            ],
+            "section": "Procedural Memory Provides Strong Self-Learning Signal",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1862,
+                "page": 7,
+                "section": "Procedural Memory Provides Strong Self-Learning Signal",
+                "section_index": 21,
+                "start": 965,
+                "text": "3:Decomposing PMD's gain into interacting mechanisms.PMD-Transientis identical to\nPMDbut discards memory after every step, isolating within-step reflection from cross-step persistence.\nEvolving Memory + Frozen Policyupdates memory while keeping the policy fixed.Frozen Memory +\nSDPOdistills from a fixed memory bank, built once and held fixed. SCIKNOWEVALreports avg@16\nand LiveCodeBench reports score@4.\nModel Method SciKnowEval LiveCodeBench\nBiology Chemistry Physics Materials A VG v6\nQwen3-8B\nBase Policy [43] 32.4 41.6 58.5 59.2 47.9 27.1\nSDPO [10] 63.6 80.6 72.8 80.4 74.4 47.9\nEvolving Memory + Frozen Policy 34.3 49.8 60.9 70.8 54.0 35.9\nFrozen Memory + Evolving Policy 44.6 77.7 63.1 74.5 65.0 47.5\nPMD-Transient 67.4 81.8 73.8 79.8 75.7 48.1\nPMD 68.5 82.8 74.7 82.9 77.2 51.7\nDecomposing the gain: reflection, persistence and co-evolution.PMD improves learning through\nthree interacting "
+              }
+            ],
+            "text": "3:Decomposing PMD's gain into interacting mechanisms.PMD-Transientis identical to\nPMDbut discards memory after every step, isolating within-step reflection from cross-step persistence.\nEvolving Memory + Frozen Policyupdates memory while keeping the policy fixed.Frozen Memory +\nSDPOdistills from a fixed memory bank, built once and held fixed. SCIKNOWEVALreports avg@16\nand LiveCodeBench reports score@4.\nModel Method SciKnowEval LiveCodeBench\nBiology Chemistry Physics Materials A VG v6\nQwen3-8B\nBase Policy [43] 32.4 41.6 58.5 59.2 47.9 27.1\nSDPO [10] 63.6 80.6 72.8 80.4 74.4 47.9\nEvolving Memory + Frozen Policy 34.3 49.8 60.9 70.8 54.0 35.9\nFrozen Memory + Evolving Policy 44.6 77.7 63.1 74.5 65.0 47.5\nPMD-Transient 67.4 81.8 73.8 79.8 75.7 48.1\nPMD 68.5 82.8 74.7 82.9 77.2 51.7\nDecomposing the gain: reflection, persistence and co-evolution.PMD improves learning through\nthree interacting "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea69fc1af67c2c9a1-B0047"
+        ],
+        "excerpt": "We sample n=16 rollouts per validation question and reportmaj@k (majority vote, random tie-break)\nandbest@k(oracle pass-any). In Fig. 3, the shaded band betweenmaj@kandbest@kisverifier\nheadroom: the additional accuracy a perfect verifier could recover beyond self-consistency voting (an-\nnotated at k=16 as +\u2206). Across all SCIKNOWEVALsubjects, PMD preserves answer-space coverage\nthat SDPO collapses. PMD is already better at k=1 by 2\u20135 pp, and the gap grows to7\u201310 pp at k=16,\nbecause PMD continues improving with k while SDPO saturates early. Themaj@k\u2192best@k band\nis consistently wider for PMD (about 2\u20134\u00d7), indicating more recoverable accuracy for downstream\nreranking; on Material, SDPO's headroom collapses to zero (best@16(=)maj@16), a direct signa-\nture of mode collapse. Consistently, Fig.4 shows that PMD solves a strictly larger set of problems\n(coverage (+9)\u2013(14%) vs. SDPO, with only ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Test-Time Scaling: Pmd Preserves The Coverage That Sdpo Trades Away",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3c848a0c25f02d798dd271acb3282fe44b1368f8e70d0bfe83bb0cdc77cdbcdf",
+            "evidence_id": "Ea69fc1af67c2c9a1-B0047",
+            "pages": [
+              8
+            ],
+            "section": "Test-Time Scaling: Pmd Preserves The Coverage That Sdpo Trades Away",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 8,
+                "section": "Test-Time Scaling: Pmd Preserves The Coverage That Sdpo Trades Away",
+                "section_index": 24,
+                "start": 0,
+                "text": "We sample n=16 rollouts per validation question and reportmaj@k (majority vote, random tie-break)\nandbest@k(oracle pass-any). In Fig. 3, the shaded band betweenmaj@kandbest@kisverifier\nheadroom: the additional accuracy a perfect verifier could recover beyond self-consistency voting (an-\nnotated at k=16 as +\u2206). Across all SCIKNOWEVALsubjects, PMD preserves answer-space coverage\nthat SDPO collapses. PMD is already better at k=1 by 2\u20135 pp, and the gap grows to7\u201310 pp at k=16,\nbecause PMD continues improving with k while SDPO saturates early. Themaj@k\u2192best@k band\nis consistently wider for PMD (about 2\u20134\u00d7), indicating more recoverable accuracy for downstream\nreranking; on Material, SDPO's headroom collapses to zero (best@16(=)maj@16), a direct signa-\nture of mode collapse. Consistently, Fig.4 shows that PMD solves a strictly larger set of problems\n(coverage (+9)\u2013(14%) vs. SDPO, with only "
+              }
+            ],
+            "text": "We sample n=16 rollouts per validation question and reportmaj@k (majority vote, random tie-break)\nandbest@k(oracle pass-any). In Fig. 3, the shaded band betweenmaj@kandbest@kisverifier\nheadroom: the additional accuracy a perfect verifier could recover beyond self-consistency voting (an-\nnotated at k=16 as +\u2206). Across all SCIKNOWEVALsubjects, PMD preserves answer-space coverage\nthat SDPO collapses. PMD is already better at k=1 by 2\u20135 pp, and the gap grows to7\u201310 pp at k=16,\nbecause PMD continues improving with k while SDPO saturates early. Themaj@k\u2192best@k band\nis consistently wider for PMD (about 2\u20134\u00d7), indicating more recoverable accuracy for downstream\nreranking; on Material, SDPO's headroom collapses to zero (best@16(=)maj@16), a direct signa-\nture of mode collapse. Consistently, Fig.4 shows that PMD solves a strictly larger set of problems\n(coverage (+9)\u2013(14%) vs. SDPO, with only "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea69fc1af67c2c9a1-B0061"
+        ],
+        "excerpt": "memory that records what they have tried, reflects on what worked\nor failed, and distills reusable behaviors into the model itself.\nLimitations.Our current evaluation focuses on repeated training over fixed task distributions, where\nproblem-local experience can be accumulated across epochs. Although we evaluate two different\nverifiable domains, science reasoning and code generation, this setting is still narrower than long-\nhorizon agentic environments in which memory, tools, and skills must evolve across heterogeneous\ntasks [32, 3, 37]. We therefore do not claim that PMD fully solves online agent self-improvement\nacross domains. Rather, our results isolate a more specific question: whether procedural knowledge\nextracted from repeated attempts can co-evolve with the policy and be distilled into memory-free\ninference behavior. Extending PMD from problem-local memory to broader behavior ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5eabb486cc22267e6eeb2a7450f70d5bb9030b6e012ba71bf90a2fa453ad947f",
+            "evidence_id": "Ea69fc1af67c2c9a1-B0061",
+            "pages": [
+              9
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 1794,
+                "page": 9,
+                "section": "Conclusion",
+                "section_index": 35,
+                "start": 896,
+                "text": "memory that records what they have tried, reflects on what worked\nor failed, and distills reusable behaviors into the model itself.\nLimitations.Our current evaluation focuses on repeated training over fixed task distributions, where\nproblem-local experience can be accumulated across epochs. Although we evaluate two different\nverifiable domains, science reasoning and code generation, this setting is still narrower than long-\nhorizon agentic environments in which memory, tools, and skills must evolve across heterogeneous\ntasks [32, 3, 37]. We therefore do not claim that PMD fully solves online agent self-improvement\nacross domains. Rather, our results isolate a more specific question: whether procedural knowledge\nextracted from repeated attempts can co-evolve with the policy and be distilled into memory-free\ninference behavior. Extending PMD from problem-local memory to broader behavior "
+              }
+            ],
+            "text": "memory that records what they have tried, reflects on what worked\nor failed, and distills reusable behaviors into the model itself.\nLimitations.Our current evaluation focuses on repeated training over fixed task distributions, where\nproblem-local experience can be accumulated across epochs. Although we evaluate two different\nverifiable domains, science reasoning and code generation, this setting is still narrower than long-\nhorizon agentic environments in which memory, tools, and skills must evolve across heterogeneous\ntasks [32, 3, 37]. We therefore do not claim that PMD fully solves online agent self-improvement\nacross domains. Rather, our results isolate a more specific question: whether procedural knowledge\nextracted from repeated attempts can co-evolve with the policy and be distilled into memory-free\ninference behavior. Extending PMD from problem-local memory to broader behavior "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea69fc1af67c2c9a1-B0122"
+        ],
+        "excerpt": "We train and evaluate two open-source instruction-tuned policies: Qwen3-8B [43] and OLMo3-\nInstruct-7B [18]. Unless otherwise stated, both model families use the same PMD training recipe,\nreward functions, memory construction pipeline, and evaluation protocol. All runs use a single node\nwith 8\u00d7H200-143GB GPUs. The policy is FSDP-sharded across all eight GPUs, and rollouts are\nserved with SGLang v0.4 using the same shard. We colocate a second model server on GPU 7 in\nbf16 mode without CUDA graph to serve the student-contrastive memory extractor; this extractor\nuses the same backbone family as the policy being trained and shares the rollout/FSDP GPU through\nmem-fraction-static=0.2. Optimization uses AdamW in fp32, and rollout serving uses\ngpu_memory_utilization=0.5. For experiments with an evolving global behavior bank, the\nbehavior-bank evolver is GPT-5.4 and is called at most once per ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 22,
+        "pages": [
+          22
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Backbone And Infrastructure",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5163ac1f747a240f7bdd11be1166501af5f8479fb3d49232b607c98522cebd20",
+            "evidence_id": "Ea69fc1af67c2c9a1-B0122",
+            "pages": [
+              22
+            ],
+            "section": "Appendix: Backbone And Infrastructure",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 22,
+                "section": "Appendix: Backbone And Infrastructure",
+                "section_index": 66,
+                "start": 0,
+                "text": "We train and evaluate two open-source instruction-tuned policies: Qwen3-8B [43] and OLMo3-\nInstruct-7B [18]. Unless otherwise stated, both model families use the same PMD training recipe,\nreward functions, memory construction pipeline, and evaluation protocol. All runs use a single node\nwith 8\u00d7H200-143GB GPUs. The policy is FSDP-sharded across all eight GPUs, and rollouts are\nserved with SGLang v0.4 using the same shard. We colocate a second model server on GPU 7 in\nbf16 mode without CUDA graph to serve the student-contrastive memory extractor; this extractor\nuses the same backbone family as the policy being trained and shares the rollout/FSDP GPU through\nmem-fraction-static=0.2. Optimization uses AdamW in fp32, and rollout serving uses\ngpu_memory_utilization=0.5. For experiments with an evolving global behavior bank, the\nbehavior-bank evolver is GPT-5.4 and is called at most once per "
+              }
+            ],
+            "text": "We train and evaluate two open-source instruction-tuned policies: Qwen3-8B [43] and OLMo3-\nInstruct-7B [18]. Unless otherwise stated, both model families use the same PMD training recipe,\nreward functions, memory construction pipeline, and evaluation protocol. All runs use a single node\nwith 8\u00d7H200-143GB GPUs. The policy is FSDP-sharded across all eight GPUs, and rollouts are\nserved with SGLang v0.4 using the same shard. We colocate a second model server on GPU 7 in\nbf16 mode without CUDA graph to serve the student-contrastive memory extractor; this extractor\nuses the same backbone family as the policy being trained and shares the rollout/FSDP GPU through\nmem-fraction-static=0.2. Optimization uses AdamW in fp32, and rollout serving uses\ngpu_memory_utilization=0.5. For experiments with an evolving global behavior bank, the\nbehavior-bank evolver is GPT-5.4 and is called at most once per "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea69fc1af67c2c9a1-B0125"
+        ],
+        "excerpt": "cluster related problems by semantic\nsimilarity\n11:Update behavior memoryM beh by abstracting cluster-level experience and insight\n12:foreach problemi\u2208Bdo\n13:Accessm expi =M exp[i]andm insi =M ins[i]\n14:Retrievem behi =R(M beh, xi)using embedding model\n15:Compose teacher memorym i = Compose(mexpi , minsi , mbehi )\n16:Construct teacher contextreprompt(x i, fi, mi)\n17:end for\n18:ComputeL PMD and update\u03b8\n19:end for\n20:end for\n21:Return:distilled policy\u03c0 \u03b8\nTable 10: Dataset splits and reward used in our experiments.\nBenchmark Domain #Train #Test Reward\nSciKnowEval\u2014Biology MCQ 450 50 Rule-based final choice A\u2013D\nSciKnowEval\u2014Chemistry MCQ 1,890 210 Rule-based final choice A\u2013D\nSciKnowEval\u2014Materials MCQ 841 94 Rule-based final choice A\u2013D\nSciKnowEval\u2014Physics MCQ 720 80 Rule-based final choice A\u2013D\nLiveCodeBench v6 train / test Code 924 131 Per-unit-test pass rate",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 23,
+        "pages": [
+          23
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Datasets And Rewards",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "50d6ce9a7d5934ad2ce7214876938f629de0e95005e44efc947434d447e25ce1",
+            "evidence_id": "Ea69fc1af67c2c9a1-B0125",
+            "pages": [
+              23
+            ],
+            "section": "Appendix: Datasets And Rewards",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1349,
+                "page": 23,
+                "section": "Appendix: Datasets And Rewards",
+                "section_index": 68,
+                "start": 485,
+                "text": "cluster related problems by semantic\nsimilarity\n11:Update behavior memoryM beh by abstracting cluster-level experience and insight\n12:foreach problemi\u2208Bdo\n13:Accessm expi =M exp[i]andm insi =M ins[i]\n14:Retrievem behi =R(M beh, xi)using embedding model\n15:Compose teacher memorym i = Compose(mexpi , minsi , mbehi )\n16:Construct teacher contextreprompt(x i, fi, mi)\n17:end for\n18:ComputeL PMD and update\u03b8\n19:end for\n20:end for\n21:Return:distilled policy\u03c0 \u03b8\nTable 10: Dataset splits and reward used in our experiments.\nBenchmark Domain #Train #Test Reward\nSciKnowEval\u2014Biology MCQ 450 50 Rule-based final choice A\u2013D\nSciKnowEval\u2014Chemistry MCQ 1,890 210 Rule-based final choice A\u2013D\nSciKnowEval\u2014Materials MCQ 841 94 Rule-based final choice A\u2013D\nSciKnowEval\u2014Physics MCQ 720 80 Rule-based final choice A\u2013D\nLiveCodeBench v6 train / test Code 924 131 Per-unit-test pass rate"
+              }
+            ],
+            "text": "cluster related problems by semantic\nsimilarity\n11:Update behavior memoryM beh by abstracting cluster-level experience and insight\n12:foreach problemi\u2208Bdo\n13:Accessm expi =M exp[i]andm insi =M ins[i]\n14:Retrievem behi =R(M beh, xi)using embedding model\n15:Compose teacher memorym i = Compose(mexpi , minsi , mbehi )\n16:Construct teacher contextreprompt(x i, fi, mi)\n17:end for\n18:ComputeL PMD and update\u03b8\n19:end for\n20:end for\n21:Return:distilled policy\u03c0 \u03b8\nTable 10: Dataset splits and reward used in our experiments.\nBenchmark Domain #Train #Test Reward\nSciKnowEval\u2014Biology MCQ 450 50 Rule-based final choice A\u2013D\nSciKnowEval\u2014Chemistry MCQ 1,890 210 Rule-based final choice A\u2013D\nSciKnowEval\u2014Materials MCQ 841 94 Rule-based final choice A\u2013D\nSciKnowEval\u2014Physics MCQ 720 80 Rule-based final choice A\u2013D\nLiveCodeBench v6 train / test Code 924 131 Per-unit-test pass rate"
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       }
     ],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2607.01480",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [
-      "No suitable baseline comparison was detected in the available text.",
-      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+      "No reproducible review or selection methodology was detected."
     ],
-    "overall_quality_score": 78,
-    "paper_type": "empirical_research",
-    "positive_signals": [
-      "The contribution is stated explicitly."
-    ],
-    "promotion": {},
-    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
-    "recommendation": "uncertain",
-    "rubric_version": "scholarly-rubric-v1",
-    "source_content_hash": "cbd0df748270babfc41436b3f5ca5a5fe0cd03651ff59067d89c5a7fef8b9419",
-    "status": "not_assessed",
+    "overall_quality_score": null,
+    "paper_type": "survey_or_review",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2607.01480",
+        "context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The final metrics are objective external verifiers on held-out data and do not reuse the memory-conditioned teacher or LLM extractor that shaped training.",
+          "final_evaluation_signal": "Headline outcomes are measured on held-out test splits using objective verifiers: ground-truth answer-letter matching for SciKnowEval and executed unit-test pass rates for LiveCodeBench, with the student decoded without any memory prompt.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The policy is optimized against a memory-conditioned self-teacher distribution via reverse-KL self-distillation, where the teacher reprompt is built from the model's own rollouts, verifier feedback, and LLM-extracted insight/behavior memories.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ea69fc1af67c2c9a1-B0002",
+          "Ea69fc1af67c2c9a1-B0003",
+          "Ea69fc1af67c2c9a1-B0015",
+          "Ea69fc1af67c2c9a1-B0021",
+          "Ea69fc1af67c2c9a1-B0028",
+          "Ea69fc1af67c2c9a1-B0035",
+          "Ea69fc1af67c2c9a1-B0037",
+          "Ea69fc1af67c2c9a1-B0038",
+          "Ea69fc1af67c2c9a1-B0039",
+          "Ea69fc1af67c2c9a1-B0047",
+          "Ea69fc1af67c2c9a1-B0061",
+          "Ea69fc1af67c2c9a1-B0122",
+          "Ea69fc1af67c2c9a1-B0125"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "d47de0d2442e9b341123686fea9062c6d0070d8296b0d90639432fa25b87af8e"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2607.01480",
+        "claim_evidence_alignment": "Reported improvements (e.g., 3.8\u20135.5% on SciKnowEval and 7.9\u201313.6% on LiveCodeBench over SDPO) are supported by empirical tables and controlled ablations isolating the benefits of co-evolving memory and policy updates.",
+        "context_id": "a69fc1af67c2c9a1c79bfc811fe0505bc9b7348a4a402b30f6df05fe7050dc1b",
+        "decision": "pass",
+        "evaluation_assessment": "The empirical evaluation assesses Qwen3-8B and OLMo3-Instruct-7B on verifiable reasoning and coding benchmarks (SciKnowEval and LiveCodeBench). The experimental protocol includes proper baseline comparisons (base policy, GRPO, SDPO), rigorous ablations dissecting persistence, reflection, and co-evolution, and detailed analysis of test-time scaling and response characteristics.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline outcomes are established on held-out test splits using objective unit test passes and ground-truth answer verification without inference-time memory access or judge reuse.",
+          "final_evaluation_signal": "Objective test-set execution metrics (avg@16 ground-truth MCQ accuracy on SciKnowEval and score@4 unit-test pass rate on LiveCodeBench) evaluated on memory-free student rollouts.",
+          "independent_corroboration": "present",
+          "optimization_signal": "On-policy self-distillation loss guided by memory-conditioned teacher reprompts alongside verifier rewards (exact string answer matching for SciKnowEval and unit test execution for LiveCodeBench).",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ea69fc1af67c2c9a1-B0002",
+          "Ea69fc1af67c2c9a1-B0003",
+          "Ea69fc1af67c2c9a1-B0006",
+          "Ea69fc1af67c2c9a1-B0015",
+          "Ea69fc1af67c2c9a1-B0021",
+          "Ea69fc1af67c2c9a1-B0028",
+          "Ea69fc1af67c2c9a1-B0035",
+          "Ea69fc1af67c2c9a1-B0037",
+          "Ea69fc1af67c2c9a1-B0038",
+          "Ea69fc1af67c2c9a1-B0039",
+          "Ea69fc1af67c2c9a1-B0047",
+          "Ea69fc1af67c2c9a1-B0061",
+          "Ea69fc1af67c2c9a1-B0122",
+          "Ea69fc1af67c2c9a1-B0125"
+        ],
+        "limitations": "The authors clearly acknowledge the scope limitation to repeated training over fixed verifiable task distributions rather than heterogeneous long-horizon agent environments, and note the increased training-time compute overhead.",
+        "method_assessment": "The methodology is thoroughly detailed, describing a 3-tier hierarchical memory model (raw trajectories, contrastive problem-level insights, and clustered global behaviors) combined with an on-policy reverse-KL distillation loss. Concrete implementation choices\u2014including contrastive extraction templates, anti-shortcut filters, and asynchronous updates\u2014are documented clearly.",
+        "quality_rationale": "The work addresses a relevant shortcoming in episode-local RLVR and on-policy distillation by demonstrating how multi-tiered procedural memory can be accumulated and distilled into weights. The paper provides extensive ablations, clear algorithmic specifications, and tests on established external verifiable benchmarks without circularity.",
+        "scoped_contribution": "The paper introduces Procedural Memory Distillation (PMD), an on-policy self-distillation framework that extracts structured procedural memory (experiences, insights, and behaviors) online from training rollouts to condition a self-teacher, enabling the student policy to internalize reusable reasoning without requiring external memory at inference time.",
+        "source_content_hash": "d47de0d2442e9b341123686fea9062c6d0070d8296b0d90639432fa25b87af8e"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The work addresses a relevant shortcoming in episode-local RLVR and on-policy distillation by demonstrating how multi-tiered procedural memory can be accumulated and distilled into weights. The paper provides extensive ablations, clear algorithmic specifications, and tests on established external verifiable benchmarks without circularity.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "d47de0d2442e9b341123686fea9062c6d0070d8296b0d90639432fa25b87af8e",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
+    "uncertainty": "The authors clearly acknowledge the scope limitation to repeated training over fixed verifiable task distributions rather than heterogeneous long-horizon agent environments, and note the increased training-time compute overhead."
   },
   "semantic_scholar_id": "7e542f0d9e83c39599a3589125f5c71d0e63bc47",
   "source": "arxiv",
@@ -284,7 +2173,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

@@ -59,16 +59,214 @@
             <p>Vision-Language Models (VLMs) describe scenes well but reason poorly about metric 3D structure such as absolute distances, physical sizes, or egocentric directions. We present a modular, predictor agnostic, tool-augmented framework that equips a small VLM (Qwen3.5-4B) with geometric tools: 3D object detection, metri...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a sound, rigorously ablated, and scoped contribution to tool-augmented VLM spatial reasoning. Claims are conservative, failure modes are analyzed in detail, and experimental comparisons are controlled and informative.</p>
+      <p>The authors transparently disclose limitations, including reliance on ground-truth boxes to pre-select candidate best frames, the requirement for calibrated camera poses, and the in-domain detector pretraining on Omni3D.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-25T13:53:57.601813+00:00.</p>
+        <p>Coverage: 52877 of 52877 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Vision-Language Models (VLMs) describe scenes well but
+reason poorly about metric 3D structure such as absolute dis-
+tances, physical sizes, or egocentric directions. We present
+a modular, predictor-agnostic, tool-augmented framework
+that equips a small VLM (Qwen3.5-4B) with geometric tools:
+3D object detection, metric depth estimation, and determin-
+istic solvers for distance, size and bearing. Each object is
+detected in the camera frame of its own best view, and the
+tools use that frame&#x27;s pose to lift every detection into one
+shared world frame. Moving metric computation out of the
+model&#x27;s weights and into explicit solvers yields large gains
+on three of four ReVSI-Bench tasks: with a strong monocular
+detector (WildDet3D), absolute distance rises from 0.46 to
+0.74 Mean Relative Accuracy (MRA), relative distance from
+39.1% to 67.4%, and relative direction from a below-chance
+25.9% to </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Qwen3.5-4B [18]
+reaches only 0.46 Mean Relative Accuracy (MRA) on abso-
+lute distance, and smaller models fall further, to 0.21 (2B)
+and 0.00 (0.8B). Simply supplying the missing information
+does not help: appending the camera intrinsics to the prompt
+as text lowers MRA to0.17. Metric geometry is better encap-
+sulated behind something the model can call than verbalized
+into its context window.
+We present a modular, predictor-agnostic framework
+(Fig. 1) that equips Qwen3.5-4B with geometric tools to de-
+tect camera-space 3D boxes, project them into a shared world
+coordinate system, and compute distances, sizes, and bearing
+angles, orchestrated through a chain-of-thought (CoT) tool-
+calling loop. Unlike prior tool-augmented work (Sec. 2), we
+ask whether a single, off-the-shelf small VLM can orches-
+trate such tools on its own, and when it fails, whether the
+fault lies in its tool-calling </blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>or in the underlying 3D percep-
+tion. The perception backend swaps freely behind the same
+tool interface: a ground-truth (GT) oracle, real monocular
+3D detectors (Cube R-CNN [ 3], OVMono3D [ 26], Wild-
+Det3D [11]), or a 2D grounding plus metric-depth pipeline
+(Grounding DINO [15] with Depth Pro [2]).
+With a strong detector the tools improve the small model
+on all four tasks, though only marginally on object size
+(Sec. 4). The largest gain is on relative direction, where
+1
+arXiv:2609.29073v1  [cs.CV]  24 Sep 2026
+the unaided model scores 25.9% against a chance rate of
+29.3%, no better than a blind model that never sees the
+frames (28.3%); with tools it reaches 73.4%. Substituting
+the GT oracle behind the same tool chain then localizes
+the residual error: absolute distance climbs to 0.94 MRA,
+0.03 below thegeometric ceiling, the score the same tools
+reach when a script rather than the VLM </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>calls them. This
+leaves the monocular detector as the binding constraint, and
+it binds hard. On object size the tools are near-exact on
+ground-truth boxes (0.97), yet the best real detector only just
+clears the 0.58 no-tool baseline (0.61); on absolute distance
+every backend but one fallsbelowthe 0.46 baseline. Relative
+direction is the one task limited by the model rather than
+perception: it caps at80%against a100%ceiling, skipping
+the tools on23%of questions.
+Contributions.
+• Apredictor-agnostic tool frameworkthat lifts camera-
+space detections into a shared, oriented world frame using
+the camera poses, letting a small VLM reason metrically
+across views. The same tool chain runs on monocular 3D
+detectors or on 2D grounding with metric depth.
+• Anorchestration-perception error decompositionover
+four ReVSI-Bench tasks. Comparing each detector back-
+end, behind a fixed tool chain, </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate on the ARKitScenes subset of ReVSI-
+Bench [28] across four question categories: absolute dis-
+tance (401 questions), object size (423), relative distance
+(215), and relative direction (290), each question coming
+with 16 candidate frames sampled from the scene&#x27;s video.
+Unlike VSI-Bench [23], ReVSI-Bench verifies the queried
+objects are actually visible across these frames, guaranteeing
+the question is answerable in the first place. We merge this
+with the original ARKitScenes camera intrinsics and extrin-
+sics for all 16 frames and the ground-truth 3D boxes of the
+objects relevant to each question, provided by ReVSI-Bench.
+Numeric tasks (distance, size) use the benchmark&#x27;s Mean
+Relative Accuracy,MRA= 1|C| Pθ∈C 1[|ˆx−x|/x &lt;1−θ]
+over the confidence thresholds C={0.5,0.55, . . . ,0.95};
+classification tasks (relative distance, direction) use exact-
+letter accuracy.</blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Rather than handing all 16 frames to the VLM, we select
+only the frames a question needs: two for a distance com-
+parison, one for object size. For each relevant object we
+project its ground-truth 3D box corners into every candidate
+frame using that frame&#x27;s camera pose and intrinsics, and
+keep the frame(s) where the projected corners stay furthest
+inside the image bounds, i.e. where the object is most visi-
+ble. Passing all 16 frames per question is computationally
+2
+impractical, and the 3D detector fails outright on an object a
+frame does not clearly show. Letting the VLM pick its own
+frames proved unreliable, so selection happens up front; it is
+therefore load-bearing rather than preprocessing, and Sec. 5
+returns to its reliance on ground-truth boxes.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A per-task toolset (Tab. A4, Sec. C) exposes the tools the
+question needs and hints at the order to chain them.
+Absolute Distance.The baseline gdino depthpro
+abs dist pipeline detects a 2D box (Grounding
+DINO [ 15]), estimates depth (Depth Pro [ 2]), and
+computes center-to-center distance. Since ReVSI-
+Bench ground truth measures surface-to-surface distance,
+bbox 3d abs dist instead detects 3D camera-space
+OBBs (detect object 3d), lifts them to world space
+(project box to world), and computes the minimum
+surface distance (calculate object distance). The
+choice of geometry accounts for most of the achievable ac-
+curacy: on GT boxes, center-to-center distance has an MAE
+of 0.644 m against the benchmark answer, versus 0.077 m
+for surface-to-surface.
+Object Size.Object size is the longest dimension of
+the oriented 3D extent. The bbox 3d size pipeline
+detects the camera-space box and </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Under the GT oracle, our framework reaches0.94/0.97 VLM
+MRA against a tool ceiling of 0.97/1.00: orchestration costs
+0.03MRA, and the rest is perception.
+Real detectors bear this out: every backend but one falls
+below the 0.46 no-tool baseline. OVMono3D reaches 0.26,
+Cube R-CNN 0.32, and the 2D+depth pipeline 0.32, the last
+undone by depth outliers of up to 10 187m. A bad box is
+worse than no box at all (Sec. E); where a backend misses
+objects, the model&#x27;s fallback guess can even push its MRA
+above its own ceiling (Sec. A). Only WildDet3D pays off,
+lifting distance from0.46to0.74at full coverage.
+Object size is bounded by the detector alone. The tools
+are near-exact given good boxes ( 0.97 against a 1.00 ceil-
+ing), yet the best real detector barely converts that into a
+gain: WildDet3D reaches 0.61 against the 0.58 baseline, be-
+cause size reads straight off the box extent and </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>help.
+Method MRA↑Ceiling↑
+Absolute distance (401 Q)
+No tools (visual) 0.46 –
+Tools, 2D + depth 0.32 0.29
+Tools, 3D boxes (OVMono3D) 0.26 0.26
+Tools, 3D boxes (Cube R-CNN) 0.32 0.28
+Tools, 3D boxes (WildDet3D) 0.74 0.74
+Tools, 3D boxes (GT oracle)0.94 0.97
+Object size (423 Q)
+No tools (visual) 0.58 –
+Tools, 2D + depth 0.34 0.34
+Tools, 3D boxes (Cube R-CNN) 0.34 0.34
+Tools, 3D boxes (WildDet3D) 0.61 0.62
+Tools, 3D boxes (GT oracle)0.97 1.00
+Table 2. Absolute distance and object size results (ReVSI-Bench
+ARKitScenes); the toolset behind each row is given in Tab. A4.
+&quot;Ceiling&quot; runs the geometric tools directly on the boxes, without a
+VLM, so it measures what the perception backend allows before
+any orchestration.
+Method Acc.↑Parse Ceiling
+Relative distance (215 Q, chance25.0%)
+No tools (blind) 30.2% 100.0% –
+No tools (visual) 39.1% 100.0% –
+Tools, 3D boxes (WildDet3D) 67.4% 100.0% </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>69.3%
+Tools, 3D boxes (GT oracle)92.1%100.0% 94.9%
+Relative direction (290 Q, chance29.3%)
+No tools (blind) 28.3% 100.0% –
+No tools (visual) 25.9% 100.0% –
+Tools, 3D boxes (WildDet3D) 73.4% 98.3% 89.0%
+Tools, 3D boxes (GT oracle)80.0%96.6% 100.0%
+Table 3. Multiple-choice results on ReVSI-Bench. &quot;Parse&quot; is the
+share of runs emitting a usable option letter (Sec. A); unparseable
+answers score wrong. Both no-tool baselines parse at 100%, so
+their at-or-below-chance relative-direction accuracy is a real rea-
+soning failure and not a formatting artifact.
+separate the error sources: perception costs 11 points here
+(100.0→89.0% ) against 25.6 on relative distance, since a
+bearing reads object centers and never their extents (Sec. G).
+Orchestration costs more, 15.6 points below the WildDet3D
+ceiling, because on 23% of questions the model calls no tool
+and answers directly (Sec. D).</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We expose all tools at once behind a generic prompt that
+names them but prescribes no order, over 40 questions from
+each of the four tasks, with the most generous of the scripted
+budgets (20steps,2048tokens; Sec. A).
+Reaching a working autonomous loop meant fixing the
+tools, not the prompt. The original error strings were terse
+(&quot;No 3D box found for [tv, sink]&quot;), so a mis-ordered call told
+the model nothing about what to do next and it simply re-
+MRA↑Acc.↑
+Method Dist. Size R. dist R. dir
+No recipe (generic prompt)0.940.9792.570.0
++ few-shot order examples 0.891.0080.0 75.0
+Scripted recipe (Tabs. 2 and 3)0.940.97 92.180.0
+Table 4. Autonomous probe: every tool exposed at once, no per-
+task recipe (160 questions, 40 per task, GT backend). Distance and
+size are scored by MRA, the two relative tasks by accuracy. The
+scripted-recipe row repeats the GT-oracle results of Tabs. 2 and </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>all.
+Limitations.Our framework selects one &quot;best frame&quot; per
+objectusing the ground-truth boxes, and never triangulates
+across views. The no-tool baselines also see all 16 frames
+while the tool runs see only the selected one or two, so part of
+the gain may come from framing rather than from the tools;
+the GT-oracle numbers are invariant to the frame chosen. For
+relative distance we map each name to a single predicted
+box (5.1% ceiling penalty). All three detectors are trained
+on Omni3D [3], which contains the ARKitScenes training
+split; our 161 scenes come from the validation fold, so none
+is seen in training, but perception stays in-domain.
+Next steps.Frame selection is the first oracle to remove:
+the visibility score should become a tool the model calls,
+scored by the open-vocabulary 2D detector we already ex-
+pose. A feed-forward pose predictor [21] would remove the
+second oracle, </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +305,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

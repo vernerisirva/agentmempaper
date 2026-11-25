@@ -44,7 +44,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-11 07:40:45",
-    "generated_at": "2026-11-24 14:44:22",
+    "generated_at": "2026-11-25 13:55:52",
     "last_seen_at": "2026-08-17 07:19:48",
     "metadata_sources": [
       "openalex",
@@ -107,102 +107,870 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-08-17T07:20:09+00:00",
-    "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v1",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessed_at": "2026-11-25T13:54:12.931198+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
-    "concerns": [],
-    "concise_summary": "The available evidence suggests weak or incomplete scholarly validation. Automated score 54/100, medium confidence, based on partial full text.",
-    "confidence": "medium",
-    "coverage": {},
-    "curation_note": null,
-    "dimension_scores": {
-      "contribution_clarity": 4,
-      "evaluation_or_validation_strength": 0,
-      "evidence_to_claim_alignment": 4,
-      "limitations_and_uncertainty_handling": 1,
-      "methodological_rigor": 3,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 2,
-      "reproducibility_and_transparency": 4,
-      "scholarly_novelty_or_value": 4
+    "concerns": [
+      "The manuscript is a demonstration proposal with no empirical evaluation, comparative benchmarks, or quantitative measurements of accuracy, latency, cost, or optimization effectiveness.",
+      "Technical details of the query optimizer, cost-latency modeling, and LLM-driven plan selection are only summarized at a high level without validation.",
+      "The authors explicitly state that Carnot provides no guarantees on plan accuracy or correctness, leaving the core system claims unverified."
+    ],
+    "concise_summary": "While the system concept is interesting and clearly described as a demonstration track paper, the absence of systematic experimental evaluations, comparative benchmarks, and detailed technical validation creates significant scientific uncertainty regarding its performance and optimization effectiveness.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 23162,
+      "assessment_input_sha256": "6c5b8ca7e08c845357ea120e3fdeb10fb1908b292904ad3d1e6dc77019e260d7",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2608.09532",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 22405,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 22132,
+      "evidence_block_count": 34,
+      "evidence_context_characters": 26327,
+      "evidence_context_id": "c5a25e170507cffecbbd77cfe619ff17c4b721addb5c0a337202404874f6774d",
+      "evidence_context_sha256": "e09f7006f54aa3fabb6b7ba310604ab85a28246238f65fd1a4bf8fa8c7923c32",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 22411,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "extracted_pages": 4,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "ed4f3f1bcff3db840463b5e52d881ce41ed3df5b1c9104d4a1c3a8363aa5578d",
+        "source_url": "https://arxiv.org/pdf/2608.09532",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 22405,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 363,
+          "supplied_characters": 363
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 2140,
+          "supplied_characters": 2140
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2445,
+          "supplied_characters": 2445
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 3848,
+          "supplied_characters": 3848
+        },
+        {
+          "heading": "System Overview",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 1463,
+          "supplied_characters": 1463
+        },
+        {
+          "heading": "System Overview",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 2717,
+          "supplied_characters": 2717
+        },
+        {
+          "heading": "Putting It Together",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 748,
+          "supplied_characters": 748
+        },
+        {
+          "heading": "Demonstration Scenarios",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 183,
+          "supplied_characters": 183
+        },
+        {
+          "heading": "Datasets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 554,
+          "supplied_characters": 554
+        },
+        {
+          "heading": "Transparent Plan Inspection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 796,
+          "supplied_characters": 796
+        },
+        {
+          "heading": "Steering Via The Chat Interface",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 800,
+          "supplied_characters": 800
+        },
+        {
+          "heading": "Editing Via The Notebook Interface",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 397,
+          "supplied_characters": 397
+        },
+        {
+          "heading": "Editing Via The Notebook Interface",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1192,
+          "supplied_characters": 1192
+        },
+        {
+          "heading": "Limitations And Future Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "limitations",
+          "section_index": 13,
+          "source_characters": 584,
+          "supplied_characters": 584
+        },
+        {
+          "heading": "We Are Grateful For The Support From The Darpa Askem Award",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 444,
+          "supplied_characters": 444
+        },
+        {
+          "heading": "Air Force Research Laboratory And The Department Of The Air Force",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 65,
+          "supplied_characters": 65
+        },
+        {
+          "heading": "Artificial Intelligence Accelerator And Was Accomplished Under",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 123,
+          "supplied_characters": 123
+        },
+        {
+          "heading": "Conclusions Contained In This Document Are Those Of The Authors And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "conclusion",
+          "section_index": 17,
+          "source_characters": 271,
+          "supplied_characters": 271
+        },
+        {
+          "heading": "Distribute Reprints For Government Purposes Notwithstanding Any",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 90,
+          "supplied_characters": 90
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 2909,
+          "supplied_characters": 2909
+        }
+      ],
+      "selected_characters": 22132,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "selected_sections": [
+        {
+          "characters": 363,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 2140,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2445,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3848,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1463,
+          "heading": "System Overview",
+          "page": 2
+        },
+        {
+          "characters": 2717,
+          "heading": "System Overview",
+          "page": 3
+        },
+        {
+          "characters": 748,
+          "heading": "Putting It Together",
+          "page": 3
+        },
+        {
+          "characters": 183,
+          "heading": "Demonstration Scenarios",
+          "page": 3
+        },
+        {
+          "characters": 554,
+          "heading": "Datasets",
+          "page": 3
+        },
+        {
+          "characters": 796,
+          "heading": "Transparent Plan Inspection",
+          "page": 3
+        },
+        {
+          "characters": 800,
+          "heading": "Steering Via The Chat Interface",
+          "page": 3
+        },
+        {
+          "characters": 397,
+          "heading": "Editing Via The Notebook Interface",
+          "page": 3
+        },
+        {
+          "characters": 1192,
+          "heading": "Editing Via The Notebook Interface",
+          "page": 4
+        },
+        {
+          "characters": 584,
+          "heading": "Limitations And Future Work",
+          "page": 4
+        },
+        {
+          "characters": 444,
+          "heading": "We Are Grateful For The Support From The Darpa Askem Award",
+          "page": 4
+        },
+        {
+          "characters": 65,
+          "heading": "Air Force Research Laboratory And The Department Of The Air Force",
+          "page": 4
+        },
+        {
+          "characters": 123,
+          "heading": "Artificial Intelligence Accelerator And Was Accomplished Under",
+          "page": 4
+        },
+        {
+          "characters": 271,
+          "heading": "Conclusions Contained In This Document Are Those Of The Authors And",
+          "page": 4
+        },
+        {
+          "characters": 90,
+          "heading": "Distribute Reprints For Government Purposes Notwithstanding Any",
+          "page": 4
+        },
+        {
+          "characters": 2909,
+          "heading": "Unclassified body after references",
+          "page": 4
+        }
+      ],
+      "selected_text_sha256": "6c5b8ca7e08c845357ea120e3fdeb10fb1908b292904ad3d1e6dc77019e260d7",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "ed4f3f1bcff3db840463b5e52d881ce41ed3df5b1c9104d4a1c3a8363aa5578d",
+      "source_pages": 4,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
     },
+    "curation_note": null,
+    "dimension_scores": {},
     "downranked": false,
     "evidence": [
       {
         "claim_role": null,
-        "context_id": null,
+        "context_id": "c5a25e170507cffecbbd77cfe619ff17c4b721addb5c0a337202404874f6774d",
         "dimension": "contribution_clarity",
-        "evidence_ids": [],
-        "excerpt": "iate results, or correct the system\u2019s trajectory. We present Carnot, an interactive execution engine for AI-driven analytics. Carnotcompiles",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "evidence_ids": [
+          "Ec5a25e170507cffe-B0002"
+        ],
+        "excerpt": "Enterprises increasingly seek to query data lakes using natural\nlanguage via AI-driven tools like semantic operators or deep re-\nsearch agents. However, the latter operates as an opaque black\nbox, hiding its intermediate reasoning and data retrieval steps, and\nfailing to expose controls for managing API costs and execution\nlatency. Meanwhile, the former can be prohibitively expensive for\nenterprise-scale data lakes. Consequently, analysts using these sys-\ntems lack the agency to intercept hallucinated premises, verify\nintermediate results, or correct the system's trajectory. We present\nCarnot, an interactive execution engine for AI-driven analytics.\nCarnotcompiles natural language requests into physical execu-\ntion graphs and surfaces them through an interactive notebook\ninterface. Rather than waiting blindly for a final output, users can\ncritique the plan, incrementally execute ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
         "page": 1,
-        "pages": [],
-        "paraphrase": "The contribution is stated explicitly.",
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
         "section": "Abstract",
-        "signal_type": "positive",
-        "source_blocks": [],
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "b0b19325a387724b038b21cfdc46aab37d4dfc4b2ad552290ffddc3cd78ba7f8",
+            "evidence_id": "Ec5a25e170507cffe-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Enterprises increasingly seek to query data lakes using natural\nlanguage via AI-driven tools like semantic operators or deep re-\nsearch agents. However, the latter operates as an opaque black\nbox, hiding its intermediate reasoning and data retrieval steps, and\nfailing to expose controls for managing API costs and execution\nlatency. Meanwhile, the former can be prohibitively expensive for\nenterprise-scale data lakes. Consequently, analysts using these sys-\ntems lack the agency to intercept hallucinated premises, verify\nintermediate results, or correct the system's trajectory. We present\nCarnot, an interactive execution engine for AI-driven analytics.\nCarnotcompiles natural language requests into physical execu-\ntion graphs and surfaces them through an interactive notebook\ninterface. Rather than waiting blindly for a final output, users can\ncritique the plan, incrementally execute "
+              }
+            ],
+            "text": "Enterprises increasingly seek to query data lakes using natural\nlanguage via AI-driven tools like semantic operators or deep re-\nsearch agents. However, the latter operates as an opaque black\nbox, hiding its intermediate reasoning and data retrieval steps, and\nfailing to expose controls for managing API costs and execution\nlatency. Meanwhile, the former can be prohibitively expensive for\nenterprise-scale data lakes. Consequently, analysts using these sys-\ntems lack the agency to intercept hallucinated premises, verify\nintermediate results, or correct the system's trajectory. We present\nCarnot, an interactive execution engine for AI-driven analytics.\nCarnotcompiles natural language requests into physical execu-\ntion graphs and surfaces them through an interactive notebook\ninterface. Rather than waiting blindly for a final output, users can\ncritique the plan, incrementally execute "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "reproducibility_and_transparency",
-        "evidence_ids": [],
-        "excerpt": "her artifacts have been made available at https://github.com/mitdbg/carnot. This work is licensed under the Creative Commons BY-NC-ND 4.0 In",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "context_id": "c5a25e170507cffecbbd77cfe619ff17c4b721addb5c0a337202404874f6774d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec5a25e170507cffe-B0003"
+        ],
+        "excerpt": "operators, inspect interme-\ndiate data, or directly edit the underlying code or semantic operator\ninstructions.Carnot's query optimizer will optimize the query\nwith respect to cost or latency constraints provided by the user.\nOur demo will showcase howCarnothelps users achieve efficient\nand verifiable insights on workloads motivated by real enterprise\nuse cases.\nPVLDB Reference Format:\nMatthew Russo, Yash Agarwal, Tianyu Li, Zhuohan Gu, Michael Cafarella,\nOmar Khattab, Tim Kraska, and Samuel Madden. Carnot: Interpretable,\nInteractive, and Optimized Execution of Deep Research Queries. PVLDB,\n19(12): 4642 - 4645, 2026.\ndoi:10.14778/3827998.3828086\nPVLDB Artifact Availability:\nThe source code, data, and/or other artifacts have been made available at\nhttps://github.com/mitdbg/carnot.\nThis work is licensed under the Creative Commons BY-NC-ND 4.0 International\nLicense. Visit ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
         "page": 1,
-        "pages": [],
-        "paraphrase": "Code, data, or research artifacts are described as available.",
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
         "section": "Abstract",
-        "signal_type": "positive",
-        "source_blocks": [],
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "6f7cc9b47f051625985c40061d16510d15933796c5b93c21ffa7fba357aae12f",
+            "evidence_id": "Ec5a25e170507cffe-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1774,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 892,
+                "text": "operators, inspect interme-\ndiate data, or directly edit the underlying code or semantic operator\ninstructions.Carnot's query optimizer will optimize the query\nwith respect to cost or latency constraints provided by the user.\nOur demo will showcase howCarnothelps users achieve efficient\nand verifiable insights on workloads motivated by real enterprise\nuse cases.\nPVLDB Reference Format:\nMatthew Russo, Yash Agarwal, Tianyu Li, Zhuohan Gu, Michael Cafarella,\nOmar Khattab, Tim Kraska, and Samuel Madden. Carnot: Interpretable,\nInteractive, and Optimized Execution of Deep Research Queries. PVLDB,\n19(12): 4642 - 4645, 2026.\ndoi:10.14778/3827998.3828086\nPVLDB Artifact Availability:\nThe source code, data, and/or other artifacts have been made available at\nhttps://github.com/mitdbg/carnot.\nThis work is licensed under the Creative Commons BY-NC-ND 4.0 International\nLicense. Visit "
+              }
+            ],
+            "text": "operators, inspect interme-\ndiate data, or directly edit the underlying code or semantic operator\ninstructions.Carnot's query optimizer will optimize the query\nwith respect to cost or latency constraints provided by the user.\nOur demo will showcase howCarnothelps users achieve efficient\nand verifiable insights on workloads motivated by real enterprise\nuse cases.\nPVLDB Reference Format:\nMatthew Russo, Yash Agarwal, Tianyu Li, Zhuohan Gu, Michael Cafarella,\nOmar Khattab, Tim Kraska, and Samuel Madden. Carnot: Interpretable,\nInteractive, and Optimized Execution of Deep Research Queries. PVLDB,\n19(12): 4642 - 4645, 2026.\ndoi:10.14778/3827998.3828086\nPVLDB Artifact Availability:\nThe source code, data, and/or other artifacts have been made available at\nhttps://github.com/mitdbg/carnot.\nThis work is licensed under the Creative Commons BY-NC-ND 4.0 International\nLicense. Visit "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "reproducibility_and_transparency",
-        "evidence_ids": [],
-        "excerpt": "r the Creative Commons BY-NC-ND 4.0 International License. Visit https://creativecommons.org/licenses/by-nc-nd/4.0/ to view a copy of thi",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 1,
-        "pages": [],
-        "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
-        "section": "Abstract",
-        "signal_type": "positive",
-        "source_blocks": [],
+        "context_id": "c5a25e170507cffecbbd77cfe619ff17c4b721addb5c0a337202404874f6774d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec5a25e170507cffe-B0009"
+        ],
+        "excerpt": "feedback provided in the chat and / or edits made to\nthe notebook will be sent toCarnot's query planner which will re-optimize the query plan in response (Steps 4 and 5).\n(Figure 1), an interactive execution engine for NL queries over un-\nstructured data lakes. When a user issues a natural language query,\nCarnot's automated planner compiles it into a Directed Acyclic\nGraph (DAG) of physical operators, combining semantic operators\n(e.g., LLM-based filters and extractors) with agentic operators (e.g.,\ndata exploration, Python code generation and execution). Unlike\nprior semantic operator systems,Carnotmaterializes the DAG as a\nnotebook interface where each cell corresponds to a single operator.\nUsers can inspect any cell at multiple levels of abstraction\u2014a sum-\nmary of the operator's intent, the generated code or prompt, or the\nraw input/output data pairs\u2014and execute the graph one ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "00664e47ea453befff1badc82efbc1757dc330e893a67f98bd9ac0875f6b854b",
+            "evidence_id": "Ec5a25e170507cffe-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2023,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 1131,
+                "text": "feedback provided in the chat and / or edits made to\nthe notebook will be sent toCarnot's query planner which will re-optimize the query plan in response (Steps 4 and 5).\n(Figure 1), an interactive execution engine for NL queries over un-\nstructured data lakes. When a user issues a natural language query,\nCarnot's automated planner compiles it into a Directed Acyclic\nGraph (DAG) of physical operators, combining semantic operators\n(e.g., LLM-based filters and extractors) with agentic operators (e.g.,\ndata exploration, Python code generation and execution). Unlike\nprior semantic operator systems,Carnotmaterializes the DAG as a\nnotebook interface where each cell corresponds to a single operator.\nUsers can inspect any cell at multiple levels of abstraction\u2014a sum-\nmary of the operator's intent, the generated code or prompt, or the\nraw input/output data pairs\u2014and execute the graph one "
+              }
+            ],
+            "text": "feedback provided in the chat and / or edits made to\nthe notebook will be sent toCarnot's query planner which will re-optimize the query plan in response (Steps 4 and 5).\n(Figure 1), an interactive execution engine for NL queries over un-\nstructured data lakes. When a user issues a natural language query,\nCarnot's automated planner compiles it into a Directed Acyclic\nGraph (DAG) of physical operators, combining semantic operators\n(e.g., LLM-based filters and extractors) with agentic operators (e.g.,\ndata exploration, Python code generation and execution). Unlike\nprior semantic operator systems,Carnotmaterializes the DAG as a\nnotebook interface where each cell corresponds to a single operator.\nUsers can inspect any cell at multiple levels of abstraction\u2014a sum-\nmary of the operator's intent, the generated code or prompt, or the\nraw input/output data pairs\u2014and execute the graph one "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c5a25e170507cffecbbd77cfe619ff17c4b721addb5c0a337202404874f6774d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec5a25e170507cffe-B0011"
+        ],
+        "excerpt": "human in the loop at every step.\nOur demo showcasesCarnot's interactive planning and execu-\ntion over datasets from academic benchmarks [3] and enterprise\nworkloads motivated by industry partners. To see transparent exe-\ncution in action, attendees will issue queries and inspect the result-\ning DAGs before any computation begins; they may drill into any\noperator to view its generated code, prompt, or a natural language\nsummary of its intent. To experience steerability, attendees will\nexecute a query step-by-step, intercept a faulty intermediate result,\nand edit the corresponding notebook cell;Carnotwill then resume\nexecution from the corrected point without re-running upstream\noperators. Finally, to highlightCarnot's cost-aware optimization,\nattendees will configure explicit cost and latency constraints in the\ninterface;Carnotwill show how the planner dynamically swaps\noperator ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "6ef22bba493e1438b887da173eb512bc828a1a9ae85416d3b843f8f06b83c925",
+            "evidence_id": "Ec5a25e170507cffe-B0011",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3811,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 2920,
+                "text": "human in the loop at every step.\nOur demo showcasesCarnot's interactive planning and execu-\ntion over datasets from academic benchmarks [3] and enterprise\nworkloads motivated by industry partners. To see transparent exe-\ncution in action, attendees will issue queries and inspect the result-\ning DAGs before any computation begins; they may drill into any\noperator to view its generated code, prompt, or a natural language\nsummary of its intent. To experience steerability, attendees will\nexecute a query step-by-step, intercept a faulty intermediate result,\nand edit the corresponding notebook cell;Carnotwill then resume\nexecution from the corrected point without re-running upstream\noperators. Finally, to highlightCarnot's cost-aware optimization,\nattendees will configure explicit cost and latency constraints in the\ninterface;Carnotwill show how the planner dynamically swaps\noperator "
+              }
+            ],
+            "text": "human in the loop at every step.\nOur demo showcasesCarnot's interactive planning and execu-\ntion over datasets from academic benchmarks [3] and enterprise\nworkloads motivated by industry partners. To see transparent exe-\ncution in action, attendees will issue queries and inspect the result-\ning DAGs before any computation begins; they may drill into any\noperator to view its generated code, prompt, or a natural language\nsummary of its intent. To experience steerability, attendees will\nexecute a query step-by-step, intercept a faulty intermediate result,\nand edit the corresponding notebook cell;Carnotwill then resume\nexecution from the corrected point without re-running upstream\noperators. Finally, to highlightCarnot's cost-aware optimization,\nattendees will configure explicit cost and latency constraints in the\ninterface;Carnotwill show how the planner dynamically swaps\noperator "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c5a25e170507cffecbbd77cfe619ff17c4b721addb5c0a337202404874f6774d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec5a25e170507cffe-B0014"
+        ],
+        "excerpt": "the user critique the proposed plan\nbefore any additional tokens are spent. The user may issue follow-\nup instructions to revise the plan, execute it end-to-end with results\nstreamed back to the chat, or open it as an interactivenotebook.\nThe notebook is the primary vehicle forCarnot's visibility and\nsteerability guarantees. Each cell corresponds to a single physical\noperator in the DAG, obtained by topologically sorting the plan\nso that data-source operators appear first. Users can inspect any\ncell at three levels of abstraction: a natural language summary\nof the operator's intent, the generated code or LLM prompt, and\nthe raw input/output data pairs. Operators can be executed one\ncell at a time, and any cell may be edited in-place\u2014for instance,\nto revise a semantic filter's predicate or to swap an LLM call for\na deterministic Python expression. When the user commits ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "System Overview",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "4fa0f9e8695a156e74bb71c9b06ca13f6b21748a253a92c6918b7cc9a81d6f76",
+            "evidence_id": "Ec5a25e170507cffe-B0014",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "System Overview",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1463,
+                "page": 2,
+                "section": "System Overview",
+                "section_index": 4,
+                "start": 900,
+                "text": "the user critique the proposed plan\nbefore any additional tokens are spent. The user may issue follow-\nup instructions to revise the plan, execute it end-to-end with results\nstreamed back to the chat, or open it as an interactivenotebook.\nThe notebook is the primary vehicle forCarnot's visibility and\nsteerability guarantees. Each cell corresponds to a single physical\noperator in the DAG, obtained by topologically sorting the plan\nso that data-source operators appear first. Users can inspect any\ncell at three levels of abstraction: a natural language summary"
+              },
+              {
+                "end": 317,
+                "page": 3,
+                "section": "System Overview",
+                "section_index": 5,
+                "start": 0,
+                "text": "of the operator's intent, the generated code or LLM prompt, and\nthe raw input/output data pairs. Operators can be executed one\ncell at a time, and any cell may be edited in-place\u2014for instance,\nto revise a semantic filter's predicate or to swap an LLM call for\na deterministic Python expression. When the user commits "
+              }
+            ],
+            "text": "the user critique the proposed plan\nbefore any additional tokens are spent. The user may issue follow-\nup instructions to revise the plan, execute it end-to-end with results\nstreamed back to the chat, or open it as an interactivenotebook.\nThe notebook is the primary vehicle forCarnot's visibility and\nsteerability guarantees. Each cell corresponds to a single physical\noperator in the DAG, obtained by topologically sorting the plan\nso that data-source operators appear first. Users can inspect any\ncell at three levels of abstraction: a natural language summary\nof the operator's intent, the generated code or LLM prompt, and\nthe raw input/output data pairs. Operators can be executed one\ncell at a time, and any cell may be edited in-place\u2014for instance,\nto revise a semantic filter's predicate or to swap an LLM call for\na deterministic Python expression. When the user commits "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c5a25e170507cffecbbd77cfe619ff17c4b721addb5c0a337202404874f6774d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec5a25e170507cffe-B0017"
+        ],
+        "excerpt": "expensive LLM operators, the planner first\ninvokes adata discoverysubagent that samples the dataset, per-\nforms schema analysis, and summarizes dataset structure. The\nQueryOptimizer follows, inspired by the Cascades-style optimizer\nof Abacus [8]. It shares a similar set of implementation and transfor-\nmation rules, but differs in its use of an LLM agent to select the final\nphysical plan from the estimated Pareto frontier of cost, latency,\nand quality. The library also contains a streaming and notebook\nexecution layer, a storage engine with caching support, and an\nindex catalog for managing semantic indices.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "System Overview",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "857148451eb1809a36814fcce4a6ef4e4984a2efd40b8102e60db899db658e5d",
+            "evidence_id": "Ec5a25e170507cffe-B0017",
+            "pages": [
+              3
+            ],
+            "section": "System Overview",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2717,
+                "page": 3,
+                "section": "System Overview",
+                "section_index": 5,
+                "start": 2103,
+                "text": "expensive LLM operators, the planner first\ninvokes adata discoverysubagent that samples the dataset, per-\nforms schema analysis, and summarizes dataset structure. The\nQueryOptimizer follows, inspired by the Cascades-style optimizer\nof Abacus [8]. It shares a similar set of implementation and transfor-\nmation rules, but differs in its use of an LLM agent to select the final\nphysical plan from the estimated Pareto frontier of cost, latency,\nand quality. The library also contains a streaming and notebook\nexecution layer, a storage engine with caching support, and an\nindex catalog for managing semantic indices."
+              }
+            ],
+            "text": "expensive LLM operators, the planner first\ninvokes adata discoverysubagent that samples the dataset, per-\nforms schema analysis, and summarizes dataset structure. The\nQueryOptimizer follows, inspired by the Cascades-style optimizer\nof Abacus [8]. It shares a similar set of implementation and transfor-\nmation rules, but differs in its use of an LLM agent to select the final\nphysical plan from the estimated Pareto frontier of cost, latency,\nand quality. The library also contains a streaming and notebook\nexecution layer, a storage engine with caching support, and an\nindex catalog for managing semantic indices."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c5a25e170507cffecbbd77cfe619ff17c4b721addb5c0a337202404874f6774d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec5a25e170507cffe-B0019"
+        ],
+        "excerpt": "Our demonstration is organized around three scenarios that let at-\ntendees experience Carnot's capabilities first-hand on the provided\ndatasets, using the interface shown in Figure 2.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Demonstration Scenarios",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "f8672e83f1068317c16b3b5a4618332cc91f66a61b44c77b9da5d64085d1efb0",
+            "evidence_id": "Ec5a25e170507cffe-B0019",
+            "pages": [
+              3
+            ],
+            "section": "Demonstration Scenarios",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 183,
+                "page": 3,
+                "section": "Demonstration Scenarios",
+                "section_index": 7,
+                "start": 0,
+                "text": "Our demonstration is organized around three scenarios that let at-\ntendees experience Carnot's capabilities first-hand on the provided\ndatasets, using the interface shown in Figure 2."
+              }
+            ],
+            "text": "Our demonstration is organized around three scenarios that let at-\ntendees experience Carnot's capabilities first-hand on the provided\ndatasets, using the interface shown in Figure 2."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c5a25e170507cffecbbd77cfe619ff17c4b721addb5c0a337202404874f6774d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec5a25e170507cffe-B0025"
+        ],
+        "excerpt": "Carnotdoes not provide guarantees on plan accuracy or correct-\nness. We could modify the optimizer to provide statistical guaran-\ntees with respect to an oracle [6], but this is a soft guarantee since\nthe oracle can also be wrong. Alternatively, better interfaces may\nimprove users' ability to verify plan correctness. In the future, we\nalso plan to extendCarnotto support search over the web (akin to\ntraditional Deep Research) and general tool calling. We also aim to\nexplore improvements to the notebook interface which can better\nhighlight the non-linear nature of most plan DAGs.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations And Future Work",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "34256b2143cbb11f965516a22117469fd92c9784e7db2a3af4494d48cfad029e",
+            "evidence_id": "Ec5a25e170507cffe-B0025",
+            "pages": [
+              4
+            ],
+            "section": "Limitations And Future Work",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 584,
+                "page": 4,
+                "section": "Limitations And Future Work",
+                "section_index": 13,
+                "start": 0,
+                "text": "Carnotdoes not provide guarantees on plan accuracy or correct-\nness. We could modify the optimizer to provide statistical guaran-\ntees with respect to an oracle [6], but this is a soft guarantee since\nthe oracle can also be wrong. Alternatively, better interfaces may\nimprove users' ability to verify plan correctness. In the future, we\nalso plan to extendCarnotto support search over the web (akin to\ntraditional Deep Research) and general tool calling. We also aim to\nexplore improvements to the notebook interface which can better\nhighlight the non-linear nature of most plan DAGs."
+              }
+            ],
+            "text": "Carnotdoes not provide guarantees on plan accuracy or correct-\nness. We could modify the optimizer to provide statistical guaran-\ntees with respect to an oracle [6], but this is a soft guarantee since\nthe oracle can also be wrong. Alternatively, better interfaces may\nimprove users' ability to verify plan correctness. In the future, we\nalso plan to extendCarnotto support search over the web (akin to\ntraditional Deep Research) and general tool calling. We also aim to\nexplore improvements to the notebook interface which can better\nhighlight the non-linear nature of most plan DAGs."
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       }
     ],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2608.09532",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": 54,
-    "paper_type": "unclear",
-    "positive_signals": [
-      "The contribution is stated explicitly.",
-      "Code, data, or research artifacts are described as available.",
-      "Dataset documentation, quality control, licensing, or ethics is discussed."
+    "missing_information": [
+      "No suitable baseline comparison was detected in the available text."
     ],
-    "promotion": {},
-    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
-    "recommendation": "weak",
-    "rubric_version": "scholarly-rubric-v1",
+    "overall_quality_score": null,
+    "paper_type": "empirical_research",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The manuscript is a demonstration proposal with no empirical evaluation, comparative benchmarks, or quantitative measurements of accuracy, latency, cost, or optimization effectiveness.",
+          "Technical details of the query optimizer, cost-latency modeling, and LLM-driven plan selection are only summarized at a high level without validation.",
+          "The authors explicitly state that Carnot provides no guarantees on plan accuracy or correctness, leaving the core system claims unverified."
+        ],
+        "canonical_id": "doi:10.48550/arxiv.2608.09532",
+        "context_id": "c5a25e170507cffecbbd77cfe619ff17c4b721addb5c0a337202404874f6774d",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No formal quantitative evaluation or comparative benchmark metrics are reported in this demo track paper.",
+          "final_evaluation_signal": "Qualitative demonstration walkthrough scenarios with sample dataset queries.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "An LLM agent selects the final physical plan from an estimated Pareto frontier of cost, latency, and quality.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "Ec5a25e170507cffe-B0002",
+          "Ec5a25e170507cffe-B0003",
+          "Ec5a25e170507cffe-B0009",
+          "Ec5a25e170507cffe-B0011",
+          "Ec5a25e170507cffe-B0014",
+          "Ec5a25e170507cffe-B0017",
+          "Ec5a25e170507cffe-B0019",
+          "Ec5a25e170507cffe-B0025"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "ed4f3f1bcff3db840463b5e52d881ce41ed3df5b1c9104d4a1c3a8363aa5578d"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2608.09532",
+        "claim_evidence_alignment": "Claims regarding interactive plan inspection, steering, and partial re-execution are illustrated through scenario walkthroughs and UI figures, but no empirical quantitative evidence or comparative experimental data are provided to substantiate general system claims.",
+        "context_id": "c5a25e170507cffecbbd77cfe619ff17c4b721addb5c0a337202404874f6774d",
+        "decision": "uncertain",
+        "evaluation_assessment": "The paper is a four-page demonstration proposal describing three planned interactive user scenarios rather than a controlled empirical evaluation or benchmark assessment of system performance, accuracy, latency, or cost trade-offs.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No formal quantitative evaluation or comparative benchmark metrics are reported in this demo track paper.",
+          "final_evaluation_signal": "Qualitative demonstration walkthrough scenarios with sample dataset queries.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "An LLM agent selects the final physical plan from an estimated Pareto frontier of cost, latency, and quality.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "Ec5a25e170507cffe-B0002",
+          "Ec5a25e170507cffe-B0003",
+          "Ec5a25e170507cffe-B0009",
+          "Ec5a25e170507cffe-B0011",
+          "Ec5a25e170507cffe-B0014",
+          "Ec5a25e170507cffe-B0017",
+          "Ec5a25e170507cffe-B0019",
+          "Ec5a25e170507cffe-B0025"
+        ],
+        "limitations": "The authors explicitly note that Carnot offers no statistical guarantees on plan accuracy or correctness and currently lacks web search and general tool-calling capabilities.",
+        "method_assessment": "The system architecture connects a chat frontend, notebook interface, and backend query planner and optimizer based on Cascades-style rules, but technical details on cost-latency modeling, plan pruning, and LLM-driven adaptation are only summarized at a high level for a demo presentation.",
+        "quality_rationale": "While the system concept is interesting and clearly described as a demonstration track paper, the absence of systematic experimental evaluations, comparative benchmarks, and detailed technical validation creates significant scientific uncertainty regarding its performance and optimization effectiveness.",
+        "scoped_contribution": "The manuscript presents Carnot, an interactive execution engine that compiles natural language deep research queries into physical Directed Acyclic Graphs presented via chat and notebook interfaces for inspection, steering, and re-execution.",
+        "source_content_hash": "ed4f3f1bcff3db840463b5e52d881ce41ed3df5b1c9104d4a1c3a8363aa5578d"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "While the system concept is interesting and clearly described as a demonstration track paper, the absence of systematic experimental evaluations, comparative benchmarks, and detailed technical validation creates significant scientific uncertainty regarding its performance and optimization effectiveness.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
     "source_content_hash": "ed4f3f1bcff3db840463b5e52d881ce41ed3df5b1c9104d4a1c3a8363aa5578d",
-    "status": "not_assessed",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
+    "uncertainty": "The authors explicitly note that Carnot offers no statistical guarantees on plan accuracy or correctness and currently lacks web search and general tool-calling capabilities."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

@@ -59,16 +59,173 @@
             <p>Reinforcement learning with verifiable rewards (RLVR), along with recent selfdistillation variants such as SDPO, evaluates each rollout against a verifier and updates the policy from that episode-level signal. However, the richer procedural information in the rollout is rarely retained or reused. Across episodes and...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not been assessed under the manuscript evidence gate.</p>
-      <p>Legacy assessment retained; manuscript review is required before promotion.</p>
+      <h2>Quality reviewed</h2>
+      <p>The work addresses a relevant shortcoming in episode-local RLVR and on-policy distillation by demonstrating how multi-tiered procedural memory can be accumulated and distilled into weights. The paper provides extensive ablations, clear algorithmic specifications, and tests on established external verifiable benchmarks without circularity.</p>
+      <p>The authors clearly acknowledge the scope limitation to repeated training over fixed verifiable task distributions rather than heterogeneous long-horizon agent environments, and note the increased training-time compute overhead.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: title_and_abstract.</p>
-        <p>Assessor: deterministic. Assessment version: quality-v1. Gate: not assessed.</p>
-        <p>Assessed: 2026-08-09T06:27:34+00:00.</p>
-
-        <ul><li>The contribution is stated explicitly.</li><li>No suitable baseline comparison was detected in the available text.</li><li>No quantitative, user, expert, or operational evaluation was detected in the available text.</li><li>Comparative claims were detected without a suitable baseline in the available text.</li></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-25T13:54:25.370972+00:00.</p>
+        <p>Coverage: 87343 of 87343 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Reinforcement learning with verifiable rewards (RLVR), along with recent self-
+distillation variants such as SDPO, evaluates each rollout against a verifier and
+updates the policy from that episode-level signal. However, the richer procedural in-
+formation in the rollout is rarely retained or reused. Across episodes and epochs, the
+model repeatedly encounters related problems under a changing policy, producing
+cross-episode signals that episode-local updates cannot capture: which strategies
+consistently pass verification, which failure modes persist, which patterns recur.
+We proposeProcedural Memory Distillation (PMD), which converts these cross-
+episode signals intoreusable procedural memoryand distills it into the policy&#x27;s
+weights during training. This memory functions as a training scaffold, absorbed
+into the policy itself, yielding a memory-free model at inference. PMD organizes
+the </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>memory at three levels of abstraction: raw trajectories, self-reflected strate-
+gies and lessons, and higher-level behavioral patterns that recur across problems,
+all extracted online from the model&#x27;s own trajectories. A memory-conditioned
+self-teacher draws on the accumulated experience to supervise the student on its
+own rollouts, enabling student to progressively internalize procedural knowledge
+within its parameters. The central design principle is co-evolution: the policy
+generates rollouts that update the memory, and memory shapes the supervision
+that updates the policy. Empirically, across Qwen3-8B and OLMo3-Instruct-7B,
+PMD improves over SDPO by 3.8–5.5% on SCIKNOWEVALand 7.9–13.6% on
+LIVECODEBENCH. Co-evolution powers these gains: freezing either the memory
+or the policy trails PMD by more than 10% across SCIKNOWEVALdomains.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>converts these repeated
+attempts into reusable procedural memory and distills it into the policy&#x27;s weights during training.
+PMD builds the memory online from the model&#x27;s own rollouts, organized into three levels: experience
+(raw trajectories), insight (per-problem strategies and lessons), and behavior (cross-problem reasoning
+patterns). This memory conditions an on-policy self-teacher: the student continues to learn from
+trajectories sampled from the current policy, as in SDPO, but the teacher is additionally informed
+by what the model has discovered in prior epochs. Memory thus functions as a training scaffold: it
+enriches the teacher during learning and is gradually internalized into the student&#x27;s parameters, so the
+resulting model reasons natively at inference.
+A central design principle of PMD is theco-evolution of policy and memory. At each stage of training,
+the current policy </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>both Qwen3-8B and OLMo3-Instruct-7B by 3.8–5.5% on SCIKNOWEVALand 7.9–13.6% on
+LIVECODEBENCH. Freezing either the memory or the policy alone costs more than 10% drop on
+SCIKNOWEVAL, isolating co-evolution as the source of PMD&#x27;s gains.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>captures
+information about the dynamics of how the model solves the same or similar problems over times,
+accumulating a rich source of self-learning signals.
+We extend this setup by introducingonline procedural memory distillation. As shown in Figure 1,
+this corresponds to a four-stage loop: (1) the student makes attempts to a problem and receives
+verifier feedback; (2) self-reflection summarizes these successes and failures into different levels of
+procedural memory in the form of strategies, lessons, and behaviors; (3) the teacher leverages these
+problem-specific and global memory items to produce memory-conditioned supervision; and (4) this
+guidance is distilled back into the student, through self-distillation, for the next epoch.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>current
+policy and matches the memory-conditioned teacher on the same prefix states:
+LPMD(θ;θ t, Mt) =E xi,yi
+
+
+|yi|X
+s=1
+KL(πθ(· |xi, yi,&lt;s)∥stopgrad (q θt (· |xi, mi,t, gi,t, yi,&lt;s)))
+
+ ,
+(7)
+wherex i ∈B t andy i is a rollout fromT i,t. The policy is updated as
+θt+1 ←θ t −η∇ θLPMD(θ;θ t, Mt).(8)
+Feedback from the current rollout explains a local error or success, while procedural memory
+summarizes what the learner has discovered across repeated attempts: recurring mistakes, reusable
+strategies, and higher-level behaviors that may not be visible from a single batch. Because the policy
+changes during training, the memory that guides the teacher must also evolve. A memory bank
+written once by an earlier policy can drift out of sync with the learner&#x27;s current policy. This motivates
+building memory online, so that the teacher remains compatible with the policy it supervises [14] </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Data and MetricsWe evaluate PMD in two verifiable domains:SCIKNOWEVAL, a science
+multiple-choice reasoning benchmark[4] covering biology, chemistry, physics, and materials science,
+andLiveCodeBench, a contamination-aware code-generation benchmark with execution-based
+unit-test feedback [11]. Following SDPO [10], we reportavg@16on SCIKNOWEVAL, where each
+rollout is scored as 1.0 if the extracted answer letter matches the ground truth and 0.0 otherwise,
+andscore@4on LiveCodeBench, where sparse reward assigns 1.0 only when all unit tests pass.
+Both settings produce repeated successes, failures, and feedback across epochs, allowing us to study
+whether episode experience can be compressed into memory and distilled into the policy.
+Model and TrainingWe evaluate PMD with two open-source instruction-tuned policies, Qwen3-
+8B [43] and OLMo3-Instruct-7B [18]. Unless otherwise stated, all </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Main results.In Table 2, we show that PMD consistently outperforms both GRPO and SDPO
+across model families and benchmarks. Relative to SDPO, PMD improves SCIKNOWEVALA VG
+from 74.4 to 77.2 for Qwen3-8B and from 69.5 to 73.3 for OLMo3-Instruct-7B, corresponding to
+relative gains of 3.8% and 5.5%, respectively. On LIVECODEBENCH, PMD improves over SDPO
+from 47.9 to 51.7 for Qwen3-8B and from 45.0 to 51.1 for OLMo3-Instruct-7B, yielding relative
+gains of 7.9% and 13.6%. Since the key difference between PMD and SDPO is whether model
+rollouts are accumulated as memory during training, these results suggest that training-time memories
+provide a valuable self-learning signal that SDPO does not exploit. In the rest of this section, we
+present analytical studies to better understand the source of these gains.
+6
+Table 2:Main results on SCIKNOWEVALand LiveCodeBench.We compare PMD with the </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>base
+policy, GRPO, and SDPO. All experiments use thinking-mode disabled (think-off). SCIKNOWEVAL
+reports avg@16, where each rollout is scored as correct if the extracted answer letter matches the
+ground truth. LiveCodeBench reports score@4 with sparse unit-test rewards, where a rollout receives
+score 1.0 only if all unit tests pass. SCIKNOWEVALA VG is the mean over biology, chemistry,
+physics, and materials. Best results are shown in bold.
+Model Method SciKnowEval LiveCodeBench
+Biology Chemistry Physics Materials A VG v6
+Qwen3-8B
+Base Policy [43] 32.4 41.6 58.5 59.2 47.9 27.1
+GRPO [26, 6] 63.2 73.2 70.6 70.7 69.4 41.2
+SDPO [10] 63.6 80.6 72.8 80.4 74.4 47.9
+PMD 68.5 82.8 74.7 82.9 77.2 51.7
+OLMo3-Instruct-7B
+Base Policy [18] 15.4 22.6 35.9 36.7 27.7 27.7
+GRPO [26, 6] 45.8 70.1 63.3 76.5 63.9 36.1
+SDPO [10] 54.1 79.0 66.1 76.8 69.5 45.0
+PMD 66.1 81.3 68.2 77.4 73.3 51.1
+Table </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>3:Decomposing PMD&#x27;s gain into interacting mechanisms.PMD-Transientis identical to
+PMDbut discards memory after every step, isolating within-step reflection from cross-step persistence.
+Evolving Memory + Frozen Policyupdates memory while keeping the policy fixed.Frozen Memory +
+SDPOdistills from a fixed memory bank, built once and held fixed. SCIKNOWEVALreports avg@16
+and LiveCodeBench reports score@4.
+Model Method SciKnowEval LiveCodeBench
+Biology Chemistry Physics Materials A VG v6
+Qwen3-8B
+Base Policy [43] 32.4 41.6 58.5 59.2 47.9 27.1
+SDPO [10] 63.6 80.6 72.8 80.4 74.4 47.9
+Evolving Memory + Frozen Policy 34.3 49.8 60.9 70.8 54.0 35.9
+Frozen Memory + Evolving Policy 44.6 77.7 63.1 74.5 65.0 47.5
+PMD-Transient 67.4 81.8 73.8 79.8 75.7 48.1
+PMD 68.5 82.8 74.7 82.9 77.2 51.7
+Decomposing the gain: reflection, persistence and co-evolution.PMD improves learning through
+three interacting </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We sample n=16 rollouts per validation question and reportmaj@k (majority vote, random tie-break)
+andbest@k(oracle pass-any). In Fig. 3, the shaded band betweenmaj@kandbest@kisverifier
+headroom: the additional accuracy a perfect verifier could recover beyond self-consistency voting (an-
+notated at k=16 as +∆). Across all SCIKNOWEVALsubjects, PMD preserves answer-space coverage
+that SDPO collapses. PMD is already better at k=1 by 2–5 pp, and the gap grows to7–10 pp at k=16,
+because PMD continues improving with k while SDPO saturates early. Themaj@k→best@k band
+is consistently wider for PMD (about 2–4×), indicating more recoverable accuracy for downstream
+reranking; on Material, SDPO&#x27;s headroom collapses to zero (best@16(=)maj@16), a direct signa-
+ture of mode collapse. Consistently, Fig.4 shows that PMD solves a strictly larger set of problems
+(coverage (+9)–(14%) vs. SDPO, with only </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>memory that records what they have tried, reflects on what worked
+or failed, and distills reusable behaviors into the model itself.
+Limitations.Our current evaluation focuses on repeated training over fixed task distributions, where
+problem-local experience can be accumulated across epochs. Although we evaluate two different
+verifiable domains, science reasoning and code generation, this setting is still narrower than long-
+horizon agentic environments in which memory, tools, and skills must evolve across heterogeneous
+tasks [32, 3, 37]. We therefore do not claim that PMD fully solves online agent self-improvement
+across domains. Rather, our results isolate a more specific question: whether procedural knowledge
+extracted from repeated attempts can co-evolve with the policy and be distilled into memory-free
+inference behavior. Extending PMD from problem-local memory to broader behavior </blockquote></details></li><li><strong>Contribution clarity — page 22</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We train and evaluate two open-source instruction-tuned policies: Qwen3-8B [43] and OLMo3-
+Instruct-7B [18]. Unless otherwise stated, both model families use the same PMD training recipe,
+reward functions, memory construction pipeline, and evaluation protocol. All runs use a single node
+with 8×H200-143GB GPUs. The policy is FSDP-sharded across all eight GPUs, and rollouts are
+served with SGLang v0.4 using the same shard. We colocate a second model server on GPU 7 in
+bf16 mode without CUDA graph to serve the student-contrastive memory extractor; this extractor
+uses the same backbone family as the policy being trained and shares the rollout/FSDP GPU through
+mem-fraction-static=0.2. Optimization uses AdamW in fp32, and rollout serving uses
+gpu_memory_utilization=0.5. For experiments with an evolving global behavior bank, the
+behavior-bank evolver is GPT-5.4 and is called at most once per </blockquote></details></li><li><strong>Contribution clarity — page 23</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>cluster related problems by semantic
+similarity
+11:Update behavior memoryM beh by abstracting cluster-level experience and insight
+12:foreach problemi∈Bdo
+13:Accessm expi =M exp[i]andm insi =M ins[i]
+14:Retrievem behi =R(M beh, xi)using embedding model
+15:Compose teacher memorym i = Compose(mexpi , minsi , mbehi )
+16:Construct teacher contextreprompt(x i, fi, mi)
+17:end for
+18:ComputeL PMD and updateθ
+19:end for
+20:end for
+21:Return:distilled policyπ θ
+Table 10: Dataset splits and reward used in our experiments.
+Benchmark Domain #Train #Test Reward
+SciKnowEval—Biology MCQ 450 50 Rule-based final choice A–D
+SciKnowEval—Chemistry MCQ 1,890 210 Rule-based final choice A–D
+SciKnowEval—Materials MCQ 841 94 Rule-based final choice A–D
+SciKnowEval—Physics MCQ 720 80 Rule-based final choice A–D
+LiveCodeBench v6 train / test Code 924 131 Per-unit-test pass rate</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +264,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

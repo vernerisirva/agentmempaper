@@ -59,16 +59,261 @@
             <p>We present DOPER, an RGB pose estimation framework that shares a visual backbone across object detection, segmentation, and keypoint prediction to recover the 6D pose of known objects through Perspective-n-Point. Starting from synthetic training, DOPER adapts to real observations using partial supervision while reta...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The methodology is thoroughly documented, technically sound, and evaluated against established baselines and official challenge benchmarks with granular ablations, meeting the standard for admission.</p>
+      <p>The authors explicitly acknowledge limitations including the requirement of known metric scale, per-object training and refinement overhead, dependence on annotated poses for reconstruction-based onboarding, and reliance on approximate CAD models.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-26T13:36:05.803781+00:00.</p>
+        <p>Coverage: 99178 of 99178 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>object detection, segmentation, and keypoint prediction to recover the 6D pose of known objects through
+Perspective-𝑛-Point. Starting from synthetic training, DOPER adapts to real observations using partial
+supervision while retaining synthetic keypoint labels. Calibrated multi-view observations provide geometric
+constraints for keypoint supervision. During inference, optional heatmap refinement fits a rigid pose directly
+to the predicted keypoint distributions, resolving ambiguous correspondences without depth input or a
+learned pose refiner. Starting from underspecified CAD models, DOPER progressively refines the object
+representation and pose estimator. Results on SPEED+ and SHIRT further demonstrate effective adaptation
+to illumination changes and accurate temporal pose estimation. Across the evaluated single-view and multi-
+view configurations, DOPER achieves state-of-the-art </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DOPER: Deep Object Pose Estimation Revisited
+We usemonocularormulti-viewadaptation to
+generate supervision from the deployment environ-
+ment. For monocular observations, we keep only la-
+bels that do not require a precise metric pose: bound-
+ing boxes, segmentation masks, and quantized ori-
+entations. With multi-view observations, obtained
+from stereo cameras or a moving camera, geometric
+constraints additionally support reliable keypoint su-
+pervision through triangulation. We then fine-tune
+the estimator using the resulting supervision. The up-
+dated model can generate further pseudo-labels or be
+deployed. This iterative process is key for real-world
+deployment. We make the following contributions:
+• We introduce DOPER, an object-specific frame-
+work that jointly predicts detections and pose
+keypoints supporting real-time 6D pose estima-
+tion.
+• We propose an adaptation protocol from </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Overview and problem formulation.DOPER
+combines synthetic supervision and real observations
+to adapt an object-specific pose estimator (Figure 2).
+Given a calibrated RGB image, an approximate CAD
+model, and ordered object-frame keypoints, we esti-
+mate object rotation and translation relative to the
+camera. The CAD appearance and surface details
+may be incomplete, but metric scale must be known.
+Keypoint identities and their coordinate frame remain
+fixed throughout adaptation.
+Shared visual representation and geometric
+pose estimation.Following the correspondence-
+based formulation of DOPE [60], we predict image
+locations of known object points and recover pose
+with P𝑛P. Our implementation shares a DINOv3-
+pretrained ConvNeXt backbone [53] between a full-
+image branch and an object-crop branch. The full-
+image branch combines multi-scale features at stride
+four and predicts object </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>centers, bounding-box di-
+mensions, center offsets, and a foreground mask. De-
+tection follows the CenterNet formulation [76]. For
+each detected box, the crop branch resamples the
+original image at higher resolution and applies the
+same backbone weights, followed by a keypoint head.
+This preserves small-object detail while sharing de-
+tection and segmentation supervision with keypoint
+localization. The head predicts a spatial distribu-
+tion per keypoint; decoded coordinates are mapped
+to the original image by the inverse crop transform.
+Confidence filtering and robust P𝑛P select consistent
+2D–3D correspondences and minimize squared repro-
+jection error, accounting for camera calibration and
+lens distortion.
+2</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>render the initial CAD model under variations
+in viewpoint, distance, lighting, material appearance,
+backgrounds, and distractors, following domain ran-
+domization [59, 60]. Each synthetic sample provides
+a bounding box, a visible-object mask, and projected
+keypoints in the fixed object frame. Photometric aug-
+mentation models additional appearance variation,
+while crop translation, scale, and rotation augmen-
+tation expose the keypoint branch to imperfect de-
+tections. All geometric augmentations are applied
+consistently to the keypoint targets. We optimize
+a weighted sum of detection, mask, and keypoint
+objectives jointly. The detection term combines a
+center-heatmapfocallosswithabsolute-errorlossesfor
+box dimensions and offsets; the mask term combines
+binary cross-entropy and soft Dice losses [36]. For
+keypoints, we use cross-entropy between normalized
+Gaussian target heatmaps and </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>spatially normalized
+predictions, equivalent to minimizing their KL diver-
+gence up to a target-dependent constant. Losses are
+normalized over available supervision, with validity-
+weighted keypoint terms and zero contribution from
+missing annotations. This allows fully labeled syn-
+thetic and partially labeled real images to train one
+model.
+Monocular adaptation.We retain high-confidence
+detections from unlabeled real images and use their
+bounding boxes to prompt a general-purpose seg-
+mentation model [51]. Alternatively, a reliable pose
+supplies a projected CAD mask when the model ade-
+quately represents the object and external occlusions
+are absent.
+Optionally, a rotation quantization head provides
+additional supervision from monocular observations
+by predicting a distribution over reference orienta-
+tions, with soft targets reflecting their angular prox-
+imity. Agreement between </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>this distribution and the
+P𝑛P estimate helps select reliable pseudo-orientations
+for adapting the shared representation.
+Monocular targets comprise boxes, masks, and ac-
+cepted coarse orientations. Although the teacher uses
+keypoints and P𝑛P to assess predictions, we exclude
+its projected keypoints from real training labels: low
+reprojection error can conceal an incorrect symmet-
+ric pose or localization bias. Auxiliary targets adapt
+the shared representation to real appearance, while
+synthetic samples retain keypoint supervision.
+Multi-view supervision.We jointly fit one object
+pose to confident teacher keypoints in paired images
+with known intrinsics and fixed relative camera poses,
+using a robust reprojection objective. Fits must sat-
+isfy per-view reprojection-error and correspondence-
+count thresholds. Reprojecting accepted model key-
+points into each camera gives geometrically </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>consistent
+targets instead of copying independent teacher pre-
+dictions. For mesh-based exports, CAD projection
+also supplies silhouette masks and enclosing boxes,
+supervising detection, segmentation, and keypoint
+prediction.
+Iterative adaptation and deployment.Each
+round fine-tunes the current estimator with a fresh
+optimizer and a fixed mixture of synthetic, monocu-
+lar, and multi-view data. Every batch retains exact
+synthetic keypoint labels; other sources contribute
+only their available targets. The backbone uses a
+learning rate one tenth that of the prediction heads
+3</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DOPER: Deep Object Pose Estimation Revisited
+Figure 3 | Heatmap refinement: ambiguous heatmaps for
+eight CAD corners (1), sampled P𝑛P hypotheses (2), and
+pose optimization from hypothesis C (3). The optimizer
+scores projected keypoints jointly. Cyan cuboids and
+yellow boxes show pose projections.
+in the reference training recipe. The updated model
+can then label additional captures for a subsequent
+round or be deployed using the same detection–crop–
+keypoint–P𝑛P pipeline. Unlike source-free online
+adaptation [33], this procedure retains synthetic re-
+hearsal and includes review of generated labels.
+Heatmap keypoint selection.Symmetries and
+uncertain image evidence can produce multiple peaks
+in a keypoint heatmap, making independent selection
+of image locations ambiguous, see Figure 3. Using
+heatmap optimization, we can project the CAD key-
+points into their corresponding heatmaps and </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate synthetic-to-real transfer on HAN-
+DAL [17], HOPEv2 [41, 61], and HOT3D [1] using the
+BOP releases and their object onboarding sequences.
+We report controlled onboarding experiments on offi-
+cial BOP test evaluations of the synthetic base and
+adapted on onboarding data model set, see Table 1,
+Figure 4 and supplemental material with per object
+break down.
+Metrics.We evaluate pose accuracy using BOP&#x27;s
+symmetry-aware MSSD and MSPD errors [41]. Intu-
+itively, MSSD measures how far the estimated object
+is displaced in 3D, whereas MSPD measures how far
+its projection is displaced in the image. Both use
+the largest pointwise discrepancy after accounting for
+object symmetries. MSPD is normalized to a 640-
+pixel image width. For all four datasets, including
+T-LESS, we report official BOP test detection AP,
+computed as the mean of the MSSD and MSPD AP
+scores. We report mean runtime </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DOPER: Deep Object Pose Estimation Revisited
+Table 1 | HANDAL, HOPEv2, HOT3D, and T-LESS test results (%, higher is better).1st 2nd 3rd 4th 5th
+ranks the five highest distinct values in each accuracy column; ties share a color. DOPER time is mean seconds per
+image with all object models of the dataset (40, 28, 33, and 30 models) on one GB300; timings are unshaded.†: On
+HANDAL, HOPEv2, and HOT3D, HccePose was trained on PBR images and used BOP-provided CNOS/FastSAM
+detections at inference using recommended method settings.‡: The same PBR-trained pose models use DOPER
+detections (see Appendix D).
+HANDAL [17] HOPEv2 [41, 61] HOT3D [1] T-LESS [23]
+Method Input AP MSSD MSPD Time (s) AP MSSD MSPD Time (s) AP MSSD MSPD Time (s) AP MSSD MSPD Time (s)
+Model-based, unseen objects
+FoundPose [43] RGB – – – – – – – – – – – – – – – –
+GigaPose [40] RGB 4.1 1.8 6.5 0.82 16.7 4.6 28.8 1.14 7.2 1.6 12.9 </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>–
+NeMO-Pose [28] RGB-D 23.5 18.1 29.0 0.95 30.2 29.1 31.2 5.15 – – – – – – – –
+Model-based, seen objects
+HccePose(BF) [69]† RGB 33.2 28.0 38.3 – 41.4 31.7 51.1 – 32.9 26.4 39.5 – 87.3 81.5 93.0 0.10
+HccePose + DOPER boxes‡ RGB 55.1 45.2 65.1 – 56.6 41.2 72.1 – 45.7 35.6 55.7 – – – – –
+DOPER: model-based, seen objects
+DOPER base RGB 76.1 68.6 83.5 1.20 63.0 47.6 78.3 1.09 55.2 46.3 64.1 1.03 74.7 65.1 84.2 0.85
+DOPER base + heatmap RGB 77.0 69.7 84.2 1.23 62.9 47.4 78.3 1.13 57.2 49.2 65.2 1.06 76.3 67.7 85.0 0.89
+DOPER base + MV MV RGB – – – – 71.4 64.2 78.7 2.99 57.1 49.6 64.6 2.48 83.0 80.8 85.2 3.43
+DOPER base + MV + heatmap MV RGB – – – – 71.7 64.7 78.7 3.16 57.3 49.8 64.7 2.62 83.3 81.4 85.3 3.63
+DOPER adapted RGB 80.5 73.5 87.5 1.18 62.3 46.7 78.0 1.07 63.5 55.0 72.0 1.11 81.4 74.6 88.2 0.79
+DOPER adapted + heatmap RGB 81.4 74.6 88.2 1.21 62.2 46.4 77.9 1.11 65.3 57.7 73.0 1.15 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate DOPER on SPEED+ [46], which tests
+transfer from synthetic training images to pho-
+tographs of the Tango spacecraft mockup under two
+illumination conditions.
+Metrics.We evaluate all 6,740 Lightbox and 2,791
+Sunlamp images using DOPER&#x27;s predicted bounding
+boxes. Adaptation uses these same images without
+their pose labels, following the transductive setting of
+SPEC2021 [47]. Scores are the mean sum of rotation
+error in radians and translation error normalized by
+ground-truth distance, where lower is better.
+6</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate the frozen generation 7 model on both
+SHIRT Lightbox trajectories [44], using all 2,371
+frames per sequence. Table 4 reports framewise pre-
+dictions, forward unscented Kalman filtering (UKF),
+and offline Rauch–Tung–Striebel (RTS) smoothing,
+which incorporates future observations. Both UKF
+variants reduce mean rotation error below one degree,
+demonstrating that DOPER predictions support accu-
+rate temporal pose estimation. DOPER&#x27;s P𝑛P UKF
+achieves lower second-orbit mean axial and lateral po-
+sition errors than SPNv2 UKF+ASNC [44] on both
+trajectories.
+Table 4 | SHIRT tracking pose errors ( ↓ best).
+1st 2nd 3rd 4th 5th marks the five lowest distinct
+errors per column among SPNv2 and DOPER; ties share
+a color. ROE1 (hold) and ROE2 (approach) refer to two
+spacecraft-motion sequences.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Full texture
+ No texture
+ 20% removed
+Figure 8 | Underspecified CAD variants of HANDAL
+object 27 (spatula) [17]: original textured model (left),
+texture removed (middle), and 20% removed from one
+end along the principal axis (right).
+To test whether real observations can compensate
+for CAD deficiencies, we remove texture or part of
+the geometry from 19 HANDAL objects (Figure 8).
+We reconstruct the objects from onboarding videos
+with NuRec [42] and replace half of the synthetic
+training images with NuRec composites. Compared
+with matched composites of the degraded CAD model,
+NuRec improves validation AR by an estimated 23.6
+and 16.3 points in the two settings, respectively.
+These gains are consistent across most objects; Ap-
+pendix B details the training protocol, statistical anal-
+ysis, and results.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We present DOPER, which learns detection and key-
+points jointly and uses geometric fitting to estimate
+object pose. The same keypoints support multi-view
+estimation and heatmap refinement, while synthetic
+initialization and partial real supervision enable adap-
+tation. DOPER achieves strong RGB results across
+four object-pose benchmarks and supports illumina-
+tion adaptation and temporal pose estimation on
+SPEED+ and SHIRT. Our HANDAL study further
+shows that reconstructions from onboarding videos
+can compensate for missing texture and incomplete
+CAD geometry.
+These results leave several challenges open: reduc-
+ing per-object training and refinement costs, and mak-
+ing reconstruction-based adaptation independent of
+annotated poses. Furthermore, a universal metric key-
+point detector could help streamline object onboard-
+ing and reduce reliance on object-specific training
+data </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +352,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

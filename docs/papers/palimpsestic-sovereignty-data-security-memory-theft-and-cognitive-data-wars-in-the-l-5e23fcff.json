@@ -19,12 +19,12 @@
   "first_seen_date": "2026-11-25",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-11-25 13:51:08",
-  "last_seen_date": "2026-11-25",
+  "last_seen_at": "2026-11-26 13:31:37",
+  "last_seen_date": "2026-11-26",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
   "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-11-25 13:51:43",
   "notified_date": "2026-11-25",
   "openalex_id": "W7239409431",
@@ -34,8 +34,8 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-11-25 13:51:08",
-    "generated_at": "2026-11-25 13:55:27",
-    "last_seen_at": "2026-11-25 13:51:08",
+    "generated_at": "2026-11-26 13:36:24",
+    "last_seen_at": "2026-11-26 13:31:37",
     "metadata_sources": [
       "openalex"
     ],
@@ -100,36 +100,64 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-11-26T13:35:41.414719+00:00",
+    "assessment_scope": "title_and_abstract",
+    "assessment_version": "quality-promotion-v2",
     "assessor_model": null,
-    "assessor_type": null,
+    "assessor_type": "deterministic",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "Manuscript unavailable; no scientific decision.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 3298,
+      "extraction_complete": false,
+      "version": "coverage-v1"
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
     "evidence": [],
     "full_text_assessed": false,
     "full_text_url": null,
-    "gate_version": null,
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No suitable baseline comparison was detected in the available text.",
+      "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+      "No extractable manuscript text was available."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "case_study",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "manuscript_unavailable",
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google"
+    },
+    "rationale": "Manuscript unavailable; no scientific decision.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "ac75d8d355fe515c09c2f7f6d8a21785facca73c9d54d891495ba1d29e3157ae",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "No promotion; review candidates may remain pending indefinitely."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -139,7 +167,7 @@
       "W7239409431"
     ]
   },
-  "source_updated_date": "2026-11-25",
+  "source_updated_date": "2026-11-26",
   "sources": [
     "openalex"
   ],

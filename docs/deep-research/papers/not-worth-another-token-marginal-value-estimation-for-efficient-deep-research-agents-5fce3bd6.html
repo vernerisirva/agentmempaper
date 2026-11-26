@@ -59,16 +59,286 @@
             <p>Long-horizon research agents solve open-ended tasks through iterative retrieval, aggregation, and synthesis, but context grows rapidly while the marginal value of additional evidence often declines. This leads to unnecessary token cost, higher latency, and noisier inputs for final report generation. We study margina...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not been assessed under the manuscript evidence gate.</p>
-      <p>Legacy assessment retained; manuscript review is required before promotion.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper presents a well-structured, reproducible, and thorough empirical investigation of context pruning in multi-step agent architectures with balanced claims and rigorous token and runtime profiling.</p>
+      <p>The authors transparently report the lack of a matched-budget shallow-search baseline, sensitivity of absolute rubric scores across LLM judges, and variance across benchmarks.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: partial_full_text.</p>
-        <p>Assessor: deterministic. Assessment version: quality-v1. Gate: not assessed.</p>
-        <p>Assessed: 2026-08-15T07:00:42+00:00.</p>
-
-        <ul><li>The available text identifies data or a benchmark used by the work. — page 5</li><li>A baseline or comparison system is described. — page 5</li><li>Quantitative evaluation signals were detected. — page 1</li><li>Robustness or statistical analysis is reported. — page 5</li><li>Limitations or threats to validity are acknowledged. — page 8</li></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-26T13:34:48.011408+00:00.</p>
+        <p>Coverage: 97762 of 97762 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Long-horizon research agents solve open-
+ended tasks through iterative retrieval, aggrega-
+tion, and synthesis, but context grows rapidly
+while the marginal value of additional evidence
+often declines. This leads to unnecessary to-
+ken costs, higher latency, and noisier inputs
+for final report generation. We studymarginal
+value estimationfor context management in a
+GPT-Researcher-style deep research pipeline,
+comparing pruning strategies at pre-retrieval,
+post-retrieval, and pre-synthesis stages. Across
+lightweight heuristic criteria, LLM-based prun-
+ing, and an exploratory learned controller, we
+find that pruning effectiveness depends strongly
+onwherepruning is applied: early pruning
+yields the largest end-to-end savings, while
+later pruning mainly refines the final synthe-
+sis context. Lightweight heuristics reduce to-
+ken usage by up to 73% while approximately
+preserving judged </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>3-5).
+Stage placement is often more consequential
+than the specific scoring rule. Post-Retrieval MMR
+reduces token cost from 375.4k to 114.6k and ex-
+plored nodes from 29.0 to 8.84 with modest quality
+loss; Pre-Synthesis pruning is generally too late to
+recover upstream costs but can improve report qual-
+ity. Two-stage pruning yields the strongest quality-
+efficiency trade-offs; three-stage MMR achieves
+73.3% token reduction. No single strategy dom-
+inates: relevance–redundancy heuristics excel at
+early cost control, while richer methods are more
+competitive when targeting report quality or source
+grounding.
+The main contributions of this work are:
+• We formulate marginal value estimation as a
+stage-aware pruning problem for deep research
+pipelines, covering three intervention points:Pre-
+1
+arXiv:2608.08389v2  [cs.AI]  1 Sep 2026</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>seek a policy that maximizes quality subject to
+a cost budgetB:
+max
+CT ⊆St Cst R(CT , Q)s.t.Cost(C T )≤B,
+or equivalently, via Lagrangian relaxation,
+max
+CT
+R(CT , Q)−ηCost(C T ),
+where η≥0 selects an operating point on the
+quality-efficiency frontier. (We use η to avoid over-
+loading λ, which later denotes the MMR trade-off
+parameter.)
+Joint optimization over all subsets is intractable,
+so we decompose the problem into local pruning
+decisions at three intervention points:
+• Pre-Retrieval.A candidate subquery st ∈ Sis
+scored by predicted marginal value; low-value
+subqueries are filtered before incurring retrieval
+cost.
+• Post-Retrieval.Each retrieved item c∈C st is
+evaluated against Ct; low-value items are dis-
+carded before influencing further branch expan-
+sion.
+• Pre-Synthesis.The final context CT is pruned
+to retain only high-value evidence before report
+generation.
+Stage </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Problem
+At each pruning point, the system decides whether
+candidate x contributes sufficient marginal value
+to retain, given query Q and accumulated context
+Ct: atPre-Retrieval, x is a subquery s∈ S; at
+Post-RetrievalandPre-Synthesis, x is a context
+item c. We formalize this through a unified scor-
+ing function V(x|C t, Q), retaining x if its score
+exceeds a stage-specific threshold ( τpre, τpost, or
+τsyn). Because relevance, novelty, diversity, and
+coverage may matter differently at different stages,
+selecting the right instantiation of V motivates the
+cross-stage comparison in Section 5. Algorithm 1
+shows the full pipeline.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate pruning strategies onDeepResearch-
+Gym(Coelho et al., 2025), an open-source evalu-
+ation sandbox for deep research systems. Its eval-
+uation protocol is built on1,000complex, high-
+engagement queries from theResearchy Questions
+dataset (Rosset et al., 2024). Because evaluating
+every configuration on the full benchmark is com-
+putationally expensive, we report results on a fixed
+sample of 100 queries.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our experiments are built on theGPT-Researcher
+framework, which performs multi-step query de-
+composition, retrieval, aggregation, and report
+generation. The baseline is the standardGPT-
+Researcherpipelinewithout any explicit pruning
+policy, including the framework&#x27;s default late-stage
+context trimming before synthesis. All pruning
+variants are implemented on top of the same under-
+lying search policy, and where applicable, we reuse
+cached subqueries and retrieved evidence across
+runs, so observed differences are attributable to
+pruning decisions under this fixed execution frame-
+work. This design isolates the effect of pruning
+stage and scoring rule, but does not fully separate
+adaptive pruning from a static reduction in search
+budget; a matched-budget shallow-search baseline
+is therefore an important control for future work.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate methods along four dimensions:qual-
+ity,relevance,faithfulness/source grounding, and
+efficiency.
+• Quality(§ A.2): Measured with a fixed rubric-
+based LLM judge applied uniformly across all
+methods. Because absolute rubric scores can
+shift across judges, we interpret these values pri-
+marily asrelative comparisons under a fixed in-
+dependent judge. Appendix Table 4 reports a
+judge-sensitivity analysis.
+• Relevance(§ A.2): KPR+KPC (Key Point Recall
++ Key Point Contradiction), measuring coverage
+of key informational points from ground-truth
+documents while penalizing conflicting state-
+ments.
+• Source grounding(§ A.2): Citation Recall (Cit.),
+an evidence-retention proxy measuring the frac-
+tion of report claims linked to a retrievable source.
+This metric does not by itself establish factual
+correctness.
+• Efficiency(§ A.3): Node count (Nodes), total
+token cost in thousands </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(Tokens), and wall-clock
+runtime (Time).
+5
+Table 1: One-stage pruning results. Full metric break-
+down appears in the appendix. Tokens are reported
+in thousands (k). Bold denotes the best value among
+pruned methods within each stage block.
+Method Nodes Tokens Time Ov.Quality KPR+KPC Cit.
+Baseline 29.0 375.4 3422.6 57.83 70.23 95.54
+Post-Retrieval Pruning
+MMR (§B.1)8.84 114.6 1379.856.62 63.49 91.70
+GRN (§B.1) 13.31 175.7 2087.9 57.02 42.89 94.40
+CD (§B.1) 10.47 137.5 1605.7 56.84 41.29 92.48
+SC (§B.1) 10.82 141.9 1737.2 55.22 47.94 91.97
+DPP (§B.1) 9.88 129.6 1520.6 54.51 43.3395.62
+Combined (§B.1) 9.00 117.8 1399.5 56.03 64.13 92.59
+Hybrid (§B.1) 9.28 121.3 1449.5 57.6365.2392.16
+LLM (§B.2) 14.90 211.8 2310.759.6549.65 93.54
+Pre-Synthesis Pruning
+MMR (§B.1) 29.0 366.0 4446.9 57.77 65.26 90.41
+GRN (§B.1) 29.0 374.1 4493.3 55.98 41.67 90.38
+CD (§B.1) 29.0 374.5 4562.4 52.38 43.75 90.19
+SC </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Pre-Synthesis
+Best quality vs. best efficiency.Table 2 shows
+that combining early and late pruning yields the
+strongest practical trade-offs in the study. Under
+the fixed rubric-based LLM judge used in the main
+experiments, the highest quality point among the
+evaluated two-stage variants isCD + SC, which
+reaches 59.47 overall quality, improving on the
+baseline by +1.64 points while reducing token cost
+by 63.4%, runtime by 53.3%, and node count from
+29.0 to 10.45. This shows that multi-stage prun-
+6
+Table 2: Two-stage pruning results. The full metric
+breakdown appears in Appendix Table 5. Tokens are
+reported in thousands (k). Bold denotes the best value
+within each subsection among pruned methods. A single
+method name indicates that the same pruning rule is
+used at bothPost-RetrievalandPre-Synthesis; &quot;A + B&quot;
+indicates method A atPost-Retrievaland method B at
+Pre-Synthesis.
+Method Nodes </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Post-Retrieval + Pre-Synthesis
+In the three-stage setting, we compare the main
+heuristic families against a small set of richer or
+Table 3: Three-stage pruning results. The full metric
+breakdown appears in Appendix Table 5. Tokens are
+reported in thousands (k). Bold denotes the best value
+within each subsection among pruned methods. A sin-
+gle method name means the same pruning rule is used
+atPre-Retrieval,Post-Retrieval, andPre-Synthesis; a
+notation of the form &quot;A + B + C&quot; indicates method A at
+Pre-Retrieval, method B atPost-Retrieval, and method
+C atPre-Synthesis.
+Method Nodes Tokens Time Ov.Quality KPR+KPC Cit.
+Baseline 29.0 375.4 3422.6 57.83 70.23 95.54
+Main heuristic families
+MMR (§B.1)7.82 100.1 1157.755.90 63.43 91.84
+GRN (§B.1) 11.57 150.0 1937.7 56.68 45.13 91.33
+CD (§B.1) 9.27 120.6 1669.8 56.00 43.64 93.30
+SC (§B.1) 9.35 121.8 1438.9 55.5265.7992.03
+DPP (§B.1) 8.68 113.3 </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This study has several limitations. First, our em-
+pirical analysis is conducted within a fixed deep
+research pipeline and benchmark setup, so the exact
+trade-offs may change under different agent archi-
+tectures, retrieval systems, or underlying language
+models. Our conclusions are therefore strongest as
+a comparative study of pruning strategies within
+this setting rather than as universal claims about all
+long-horizon agents. Although supplementary ex-
+periments on DeepResearch Bench (Appendix B.5,
+Tables 13 and 14) support the broad efficiency ad-
+vantage of earlier pruning, method-level quality
+rankings are less stable across benchmarks, sug-
+gesting that quality-sensitive conclusions depend
+more strongly on the evaluation protocol and task
+formulation than the basic stage-ordering effect.
+Our quality metric is also judge-dependent. Ap-
+pendix Table 4 shows that absolute rubric </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>scores
+can shift substantially across judge choices, even
+for the same generated reports. We therefore inter-
+pret quality-sensitive conclusions more cautiously
+than efficiency results, and treat the reported qual-
+ity values primarily as relative comparisons under
+a fixed independent judge rather than as stable ab-
+solute measurements. Relatedly, as discussed in
+Section 6.2, our comparison does not include a
+matched-budget shallow-search baseline; thus, the
+efficiency gains should be interpreted as gains from
+stage-aware pruning under a fixed search policy,
+rather than as evidence that pruning dominates all
+static budget-reduction strategies.
+Second, several pruning methods require thresh-
+old or hyperparameter choices, and the best oper-
+ating point remains task-dependent. Appendix B.7
+reports local threshold sweeps for five representa-
+tive post-retrieval methods and shows that the </blockquote></details></li><li><strong>Contribution clarity — pages 17–18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>response (e.g., golden response asks for clarification, but
+the candidate provides a direct answer).
+Instructions:
+• Judge semantic meaning, not surface wording.
+• Be strict: only credit what the golden response explicitly or implicitly
+contains.
+• Output only a single integer from 0 to 5 with no additional explanation.
+Inputs:
+Candidate question:&lt;question&gt;
+Golden response:&lt;golden_clarifying&gt;
+Candidate response:&lt;candidate_response&gt;
+(b) LLM-as-a-judge evaluation instructions.
+Figure 2: Prompts used in our pipeline.
+17
+Table 4: Judge-sensitivity analysis for rubric-based quality evaluation. Absolute scores vary substantially with judge
+choice, so main-paper quality results should be interpreted as relative comparisons under a fixed judge rather than
+as judge-invariant quality values.
+Model Judge Overall Clarity Depth Balance Breadth Support Insight KPR + KPC Cit. Recall
+gpt-5-mini </blockquote></details></li><li><strong>Contribution clarity — pages 18–19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>gpt-5-mini 58.47 57.20 61.50 59.90 67.40 41.50 63.30 61.70 92.98
+gpt-4.1-mini gpt-4.1-mini 91.50 89.00 96.00 90.00 96.60 91.00 87.00 72.24 99.52
+gpt-4.1-mini gpt-5-mini 47.67 50.00 45.00 48.00 61.00 32.00 50.00 72.25 90.56
+Qwen2-7B-Instruct (32k) gpt-5-mini 34.37 35.71 35.24 39.05 42.86 21.43 31.90 72.55 75.45
+Figure 3: Overall quality versus token usage in thousands (averaged over the 100 reports) for all pruning strategies
+reported in Table 5. Each point corresponds to one method configuration, with marker style and color indicating the
+pruning stage. The baseline is highlighted separately, and labels use shortened method names for readability.
+18
+Table 5: Performance comparison across all pruning strategies. Tokens are reported in thousands (k) (§ A.4). Values
+are mean ± standard error over 100 reports (§ A.1). Quality, relevance, and faithfulness metrics were obtained </blockquote></details></li><li><strong>Contribution clarity — pages 26–27</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This breakdown reveals where pruning
+occurs within the pipeline, distinguishing methods that act early at the pre-retrieval stage from those relying primarily on
+post-retrieval or pre-synthesis reduction.
+26
+Table 13: DeepResearch Bench overall quality across pruning criteria and stage placement. Scores are RACE-style
+report-quality metrics. Bold denotes the best pruned value in each stage column.
+Criterion Branch-only Root-only Two-stage Three-stage
+Baseline 0.4798 0.4798 0.4798 0.4798
+DPP 0.4584 0.4774 0.4648 0.4591
+Centroid Drift 0.4567 0.4759 0.4676 0.4590
+GRN0.46880.47940.4716 0.4612
+MMR 0.4541 0.4766 0.4605 0.4523
+Submodular 0.45570.48110.4561 0.4534
+Table 14: DeepResearch Bench efficiency across pruning criteria and stage placement. Tokens are reported in
+thousands (k), and savings are relative to the unpruned baseline. Bold denotes the best pruned value in each </blockquote></details></li><li><strong>Contribution clarity — page 27</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>stage
+column.
+Branch-only Root-only Two-stage Three-stage
+Criterion Tokens Tok. Sav. Run. Sav. Tokens Tok. Sav. Run. Sav. Tokens Tok. Sav. Run. Sav. Tokens Tok. Sav. Run. Sav.
+DPP89.42 72.65% 81.14% 281.98 13.77% 32.54% 89.81 72.53% 80.95% 25.60 92.17% 93.60%
+Centroid Drift95.50 70.79% 78.01% 300.54 8.09% 28.62% 92.62 71.68% 80.32% 81.41 75.10% 79.93%
+GRN110.72 66.14% 74.77% 286.25 12.46% 28.75% 90.57 72.30% 82.89% 27.27 91.66% 93.44%
+MMR86.05 73.68% 81.94% 301.83 7.69% 28.49% 89.03 72.77% 81.76% 25.13 92.32% 94.30%
+Submodular96.62 70.45% 79.77% 312.15 4.54% 24.78% 97.68 70.13% 67.35% 84.03 74.30% 82.92%
+Table 15: Local threshold sweeps for representative post-retrieval pruning methods. ∆Qrel is the percent change in
+overall quality relative to the published threshold setting for that method. Rows satisfying the 2% stability criterion
+are marked with ✓. Tokens are reported in thousands </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

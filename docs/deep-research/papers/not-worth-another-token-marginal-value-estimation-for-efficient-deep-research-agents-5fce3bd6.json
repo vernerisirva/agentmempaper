@@ -34,7 +34,7 @@
   "last_seen_date": "2026-08-16",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-11 07:41:08",
   "notified_date": "2026-08-11",
@@ -45,7 +45,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-11 07:40:45",
-    "generated_at": "2026-11-25 13:55:52",
+    "generated_at": "2026-11-26 13:36:49",
     "last_seen_at": "2026-08-16 07:03:47",
     "metadata_sources": [
       "openalex",
@@ -108,138 +108,2200 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-08-15T07:00:42+00:00",
-    "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v1",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessed_at": "2026-11-26T13:34:48.011408+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 63/100, medium confidence, based on partial full text.",
-    "confidence": "medium",
-    "coverage": {},
-    "curation_note": null,
-    "dimension_scores": {
-      "contribution_clarity": 2,
-      "evaluation_or_validation_strength": 3,
-      "evidence_to_claim_alignment": 4,
-      "limitations_and_uncertainty_handling": 4,
-      "methodological_rigor": 4,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 3,
-      "reproducibility_and_transparency": 2,
-      "scholarly_novelty_or_value": 3
+    "concise_summary": "The paper presents a well-structured, reproducible, and thorough empirical investigation of context pruning in multi-step agent architectures with balanced claims and rigorous token and runtime profiling.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 101298,
+      "assessment_input_sha256": "3a43264ba321ae06761e64f551b147236e809ac962e447916e34e23cc69ecafc",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2608.08389",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 98912,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 97762,
+      "evidence_block_count": 140,
+      "evidence_context_characters": 114885,
+      "evidence_context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+      "evidence_context_sha256": "d0332510d88d951389582716424b80954c2a21e7983bbd52a09c5b0246d5a176",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 98964,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "extracted_pages": 27,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "42d9bc44eb1fc0d39554d076951a341962222fbdb555940cbd3e4a12c472efd2",
+        "source_url": "https://arxiv.org/pdf/2608.08389",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 98912,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Not Worth Another Token:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 417,
+          "supplied_characters": 417
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1148,
+          "supplied_characters": 1148
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2631,
+          "supplied_characters": 2631
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 438,
+          "supplied_characters": 438
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 1615,
+          "supplied_characters": 1615
+        },
+        {
+          "heading": "Deep Research Pipeline With Pruning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 2068,
+          "supplied_characters": 2068
+        },
+        {
+          "heading": "User Query",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1388,
+          "supplied_characters": 1388
+        },
+        {
+          "heading": "Marginal Value Estimation As A Decision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 633,
+          "supplied_characters": 633
+        },
+        {
+          "heading": "Motivating Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1436,
+          "supplied_characters": 1436
+        },
+        {
+          "heading": "Pruning Strategies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 997,
+          "supplied_characters": 997
+        },
+        {
+          "heading": "Compared Strategies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1984,
+          "supplied_characters": 1984
+        },
+        {
+          "heading": "Compared Strategies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1279,
+          "supplied_characters": 1279
+        },
+        {
+          "heading": "Benchmark",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 12,
+          "source_characters": 415,
+          "supplied_characters": 415
+        },
+        {
+          "heading": "Pipeline And Baseline",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 838,
+          "supplied_characters": 838
+        },
+        {
+          "heading": "Compared Configurations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 838,
+          "supplied_characters": 838
+        },
+        {
+          "heading": "Evaluation Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 938,
+          "supplied_characters": 938
+        },
+        {
+          "heading": "Evaluation Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 16,
+          "source_characters": 1657,
+          "supplied_characters": 1657
+        },
+        {
+          "heading": "Results And Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 2568,
+          "supplied_characters": 2568
+        },
+        {
+          "heading": "Two-Stage Pruning: Post-Retrieval +",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 503,
+          "supplied_characters": 503
+        },
+        {
+          "heading": "Two-Stage Pruning: Post-Retrieval +",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 2311,
+          "supplied_characters": 2311
+        },
+        {
+          "heading": "Three-Stage Pruning: Pre-Retrieval +",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 2558,
+          "supplied_characters": 2558
+        },
+        {
+          "heading": "Cross-Stage Findings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 131,
+          "supplied_characters": 131
+        },
+        {
+          "heading": "Cross-Stage Findings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 4901,
+          "supplied_characters": 4901
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 23,
+          "source_characters": 1131,
+          "supplied_characters": 1131
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "limitations",
+          "section_index": 24,
+          "source_characters": 2529,
+          "supplied_characters": 2529
+        },
+        {
+          "heading": "Ethics Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 998,
+          "supplied_characters": 998
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 902,
+          "supplied_characters": 902
+        },
+        {
+          "heading": "Prompts For Accelerated Inference Of Large Language",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 99,
+          "supplied_characters": 99
+        },
+        {
+          "heading": "Empirical Methods In Natural Language Process-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "methods",
+          "section_index": 28,
+          "source_characters": 258,
+          "supplied_characters": 258
+        },
+        {
+          "heading": "Longllmlingua: Accelerating And Enhancing Llms",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 641,
+          "supplied_characters": 641
+        },
+        {
+          "heading": "Llms: Enhancing Context Efficiency Of Llms With",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 212,
+          "supplied_characters": 212
+        },
+        {
+          "heading": "Ings Of The 49Th Annual Meeting Of The Association For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 54,
+          "supplied_characters": 54
+        },
+        {
+          "heading": "Computational Linguistics: Human Language Tech-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 408,
+          "supplied_characters": 408
+        },
+        {
+          "heading": "Agent W Arpp: Workflow Adherence Via Runtime Par-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 360,
+          "supplied_characters": 360
+        },
+        {
+          "heading": "Aware Resource Pooling And Scheduling For Agentic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 673,
+          "supplied_characters": 673
+        },
+        {
+          "heading": "Flexion: Language Agents With Verbal Reinforcement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 98,
+          "supplied_characters": 98
+        },
+        {
+          "heading": "Cessing Systems 36: Annual Conference On Neural",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 192,
+          "supplied_characters": 192
+        },
+        {
+          "heading": "Recovery From Random Measurements Via Orthog-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 158,
+          "supplied_characters": 158
+        },
+        {
+          "heading": "Recomp: Improving Retrieval-Augmented Lms With",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 307,
+          "supplied_characters": 307
+        },
+        {
+          "heading": "Information Processing Systems 36: Annual Confer-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 453,
+          "supplied_characters": 453
+        },
+        {
+          "heading": "Appendix: A Appendix",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 953,
+          "supplied_characters": 953
+        },
+        {
+          "heading": "Appendix: Metric Computation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 41,
+          "source_characters": 1430,
+          "supplied_characters": 1430
+        },
+        {
+          "heading": "Appendix: Token Cost:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 42,
+          "source_characters": 553,
+          "supplied_characters": 553
+        },
+        {
+          "heading": "Appendix: Estimated Tokens Saved By Pruning:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 43,
+          "source_characters": 292,
+          "supplied_characters": 292
+        },
+        {
+          "heading": "Appendix: Estimated Token Reduction:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 480,
+          "supplied_characters": 480
+        },
+        {
+          "heading": "Appendix: Savings Vs. Baseline:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 553,
+          "supplied_characters": 553
+        },
+        {
+          "heading": "Appendix: Token Breakdown And Token Share By",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 46,
+          "source_characters": 582,
+          "supplied_characters": 582
+        },
+        {
+          "heading": "Appendix: Runtime Metrics:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 47,
+          "source_characters": 1746,
+          "supplied_characters": 1746
+        },
+        {
+          "heading": "Appendix: Pruning-Stage Effectiveness:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 321,
+          "supplied_characters": 321
+        },
+        {
+          "heading": "Appendix: Pruning-Stage Effectiveness:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 614,
+          "supplied_characters": 614
+        },
+        {
+          "heading": "Appendix: Additional Method Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 1180,
+          "supplied_characters": 1180
+        },
+        {
+          "heading": "Appendix: Heuristic Strategies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 1904,
+          "supplied_characters": 1904
+        },
+        {
+          "heading": "Appendix: Heuristic Strategies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 3795,
+          "supplied_characters": 3795
+        },
+        {
+          "heading": "Appendix: Heuristic Strategies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 53,
+          "source_characters": 2390,
+          "supplied_characters": 2390
+        },
+        {
+          "heading": "Appendix: Llm-Based Pruning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 54,
+          "source_characters": 810,
+          "supplied_characters": 810
+        },
+        {
+          "heading": "Appendix: Learning-Based Pruning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 55,
+          "source_characters": 870,
+          "supplied_characters": 870
+        },
+        {
+          "heading": "Appendix: Learning-Based Pruning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 56,
+          "source_characters": 1856,
+          "supplied_characters": 1856
+        },
+        {
+          "heading": "Appendix: Stage-Specific Application",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 57,
+          "source_characters": 996,
+          "supplied_characters": 996
+        },
+        {
+          "heading": "Appendix: Supplementary Cross-Benchmark Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 58,
+          "source_characters": 1413,
+          "supplied_characters": 1413
+        },
+        {
+          "heading": "Appendix: Judge Sensitivity Of Absolute Quality",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 59,
+          "source_characters": 108,
+          "supplied_characters": 108
+        },
+        {
+          "heading": "Appendix: Judge Sensitivity Of Absolute Quality",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 60,
+          "source_characters": 570,
+          "supplied_characters": 570
+        },
+        {
+          "heading": "Appendix: Sensitivity To Threshold Choice",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 61,
+          "source_characters": 152,
+          "supplied_characters": 152
+        },
+        {
+          "heading": "Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "methods",
+          "section_index": 62,
+          "source_characters": 2254,
+          "supplied_characters": 2254
+        },
+        {
+          "heading": "Query: <Candidate_1_Query>",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 63,
+          "source_characters": 24,
+          "supplied_characters": 24
+        },
+        {
+          "heading": "Query: <Candidate_2_Query>",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 64,
+          "source_characters": 1421,
+          "supplied_characters": 1421
+        },
+        {
+          "heading": "Query: <Candidate_2_Query>",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 65,
+          "source_characters": 1026,
+          "supplied_characters": 1026
+        },
+        {
+          "heading": "Query: <Candidate_2_Query>",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 66,
+          "source_characters": 4638,
+          "supplied_characters": 4638
+        },
+        {
+          "heading": "Query: <Candidate_2_Query>",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 67,
+          "source_characters": 2351,
+          "supplied_characters": 2351
+        },
+        {
+          "heading": "Query: <Candidate_2_Query>",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "body",
+          "section_index": 68,
+          "source_characters": 4103,
+          "supplied_characters": 4103
+        },
+        {
+          "heading": "Query: <Candidate_2_Query>",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 69,
+          "source_characters": 2554,
+          "supplied_characters": 2554
+        },
+        {
+          "heading": "Query: <Candidate_2_Query>",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 70,
+          "source_characters": 1905,
+          "supplied_characters": 1905
+        },
+        {
+          "heading": "Query: <Candidate_2_Query>",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "body",
+          "section_index": 71,
+          "source_characters": 2802,
+          "supplied_characters": 2802
+        },
+        {
+          "heading": "Query: <Candidate_2_Query>",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 72,
+          "source_characters": 2627,
+          "supplied_characters": 2627
+        },
+        {
+          "heading": "Query: <Candidate_2_Query>",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 73,
+          "source_characters": 2661,
+          "supplied_characters": 2661
+        },
+        {
+          "heading": "Query: <Candidate_2_Query>",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 74,
+          "source_characters": 2663,
+          "supplied_characters": 2663
+        }
+      ],
+      "selected_characters": 97762,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "selected_sections": [
+        {
+          "characters": 417,
+          "heading": "Not Worth Another Token:",
+          "page": 1
+        },
+        {
+          "characters": 1148,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2631,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 438,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1615,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 2068,
+          "heading": "Deep Research Pipeline With Pruning",
+          "page": 2
+        },
+        {
+          "characters": 1388,
+          "heading": "User Query",
+          "page": 3
+        },
+        {
+          "characters": 633,
+          "heading": "Marginal Value Estimation As A Decision",
+          "page": 3
+        },
+        {
+          "characters": 1436,
+          "heading": "Motivating Analysis",
+          "page": 3
+        },
+        {
+          "characters": 997,
+          "heading": "Pruning Strategies",
+          "page": 4
+        },
+        {
+          "characters": 1984,
+          "heading": "Compared Strategies",
+          "page": 4
+        },
+        {
+          "characters": 1279,
+          "heading": "Compared Strategies",
+          "page": 5
+        },
+        {
+          "characters": 415,
+          "heading": "Benchmark",
+          "page": 5
+        },
+        {
+          "characters": 838,
+          "heading": "Pipeline And Baseline",
+          "page": 5
+        },
+        {
+          "characters": 838,
+          "heading": "Compared Configurations",
+          "page": 5
+        },
+        {
+          "characters": 938,
+          "heading": "Evaluation Metrics",
+          "page": 5
+        },
+        {
+          "characters": 1657,
+          "heading": "Evaluation Metrics",
+          "page": 6
+        },
+        {
+          "characters": 2568,
+          "heading": "Results And Discussion",
+          "page": 6
+        },
+        {
+          "characters": 503,
+          "heading": "Two-Stage Pruning: Post-Retrieval +",
+          "page": 6
+        },
+        {
+          "characters": 2311,
+          "heading": "Two-Stage Pruning: Post-Retrieval +",
+          "page": 7
+        },
+        {
+          "characters": 2558,
+          "heading": "Three-Stage Pruning: Pre-Retrieval +",
+          "page": 7
+        },
+        {
+          "characters": 131,
+          "heading": "Cross-Stage Findings",
+          "page": 7
+        },
+        {
+          "characters": 4901,
+          "heading": "Cross-Stage Findings",
+          "page": 8
+        },
+        {
+          "characters": 1131,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 2529,
+          "heading": "Limitations",
+          "page": 9
+        },
+        {
+          "characters": 998,
+          "heading": "Ethics Statement",
+          "page": 9
+        },
+        {
+          "characters": 902,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 99,
+          "heading": "Prompts For Accelerated Inference Of Large Language",
+          "page": 10
+        },
+        {
+          "characters": 258,
+          "heading": "Empirical Methods In Natural Language Process-",
+          "page": 10
+        },
+        {
+          "characters": 641,
+          "heading": "Longllmlingua: Accelerating And Enhancing Llms",
+          "page": 10
+        },
+        {
+          "characters": 212,
+          "heading": "Llms: Enhancing Context Efficiency Of Llms With",
+          "page": 10
+        },
+        {
+          "characters": 54,
+          "heading": "Ings Of The 49Th Annual Meeting Of The Association For",
+          "page": 10
+        },
+        {
+          "characters": 408,
+          "heading": "Computational Linguistics: Human Language Tech-",
+          "page": 10
+        },
+        {
+          "characters": 360,
+          "heading": "Agent W Arpp: Workflow Adherence Via Runtime Par-",
+          "page": 10
+        },
+        {
+          "characters": 673,
+          "heading": "Aware Resource Pooling And Scheduling For Agentic",
+          "page": 10
+        },
+        {
+          "characters": 98,
+          "heading": "Flexion: Language Agents With Verbal Reinforcement",
+          "page": 10
+        },
+        {
+          "characters": 192,
+          "heading": "Cessing Systems 36: Annual Conference On Neural",
+          "page": 10
+        },
+        {
+          "characters": 158,
+          "heading": "Recovery From Random Measurements Via Orthog-",
+          "page": 10
+        },
+        {
+          "characters": 307,
+          "heading": "Recomp: Improving Retrieval-Augmented Lms With",
+          "page": 10
+        },
+        {
+          "characters": 453,
+          "heading": "Information Processing Systems 36: Annual Confer-",
+          "page": 10
+        },
+        {
+          "characters": 953,
+          "heading": "Appendix: A Appendix",
+          "page": 11
+        },
+        {
+          "characters": 1430,
+          "heading": "Appendix: Metric Computation Details",
+          "page": 11
+        },
+        {
+          "characters": 553,
+          "heading": "Appendix: Token Cost:",
+          "page": 11
+        },
+        {
+          "characters": 292,
+          "heading": "Appendix: Estimated Tokens Saved By Pruning:",
+          "page": 11
+        },
+        {
+          "characters": 480,
+          "heading": "Appendix: Estimated Token Reduction:",
+          "page": 12
+        },
+        {
+          "characters": 553,
+          "heading": "Appendix: Savings Vs. Baseline:",
+          "page": 12
+        },
+        {
+          "characters": 582,
+          "heading": "Appendix: Token Breakdown And Token Share By",
+          "page": 12
+        },
+        {
+          "characters": 1746,
+          "heading": "Appendix: Runtime Metrics:",
+          "page": 12
+        },
+        {
+          "characters": 321,
+          "heading": "Appendix: Pruning-Stage Effectiveness:",
+          "page": 12
+        },
+        {
+          "characters": 614,
+          "heading": "Appendix: Pruning-Stage Effectiveness:",
+          "page": 13
+        },
+        {
+          "characters": 1180,
+          "heading": "Appendix: Additional Method Details",
+          "page": 13
+        },
+        {
+          "characters": 1904,
+          "heading": "Appendix: Heuristic Strategies",
+          "page": 13
+        },
+        {
+          "characters": 3795,
+          "heading": "Appendix: Heuristic Strategies",
+          "page": 14
+        },
+        {
+          "characters": 2390,
+          "heading": "Appendix: Heuristic Strategies",
+          "page": 15
+        },
+        {
+          "characters": 810,
+          "heading": "Appendix: Llm-Based Pruning",
+          "page": 15
+        },
+        {
+          "characters": 870,
+          "heading": "Appendix: Learning-Based Pruning",
+          "page": 15
+        },
+        {
+          "characters": 1856,
+          "heading": "Appendix: Learning-Based Pruning",
+          "page": 16
+        },
+        {
+          "characters": 996,
+          "heading": "Appendix: Stage-Specific Application",
+          "page": 16
+        },
+        {
+          "characters": 1413,
+          "heading": "Appendix: Supplementary Cross-Benchmark Results",
+          "page": 16
+        },
+        {
+          "characters": 108,
+          "heading": "Appendix: Judge Sensitivity Of Absolute Quality",
+          "page": 16
+        },
+        {
+          "characters": 570,
+          "heading": "Appendix: Judge Sensitivity Of Absolute Quality",
+          "page": 17
+        },
+        {
+          "characters": 152,
+          "heading": "Appendix: Sensitivity To Threshold Choice",
+          "page": 17
+        },
+        {
+          "characters": 2254,
+          "heading": "Methods",
+          "page": 17
+        },
+        {
+          "characters": 24,
+          "heading": "Query: <Candidate_1_Query>",
+          "page": 17
+        },
+        {
+          "characters": 1421,
+          "heading": "Query: <Candidate_2_Query>",
+          "page": 17
+        },
+        {
+          "characters": 1026,
+          "heading": "Query: <Candidate_2_Query>",
+          "page": 18
+        },
+        {
+          "characters": 4638,
+          "heading": "Query: <Candidate_2_Query>",
+          "page": 19
+        },
+        {
+          "characters": 2351,
+          "heading": "Query: <Candidate_2_Query>",
+          "page": 20
+        },
+        {
+          "characters": 4103,
+          "heading": "Query: <Candidate_2_Query>",
+          "page": 21
+        },
+        {
+          "characters": 2554,
+          "heading": "Query: <Candidate_2_Query>",
+          "page": 22
+        },
+        {
+          "characters": 1905,
+          "heading": "Query: <Candidate_2_Query>",
+          "page": 23
+        },
+        {
+          "characters": 2802,
+          "heading": "Query: <Candidate_2_Query>",
+          "page": 24
+        },
+        {
+          "characters": 2627,
+          "heading": "Query: <Candidate_2_Query>",
+          "page": 25
+        },
+        {
+          "characters": 2661,
+          "heading": "Query: <Candidate_2_Query>",
+          "page": 26
+        },
+        {
+          "characters": 2663,
+          "heading": "Query: <Candidate_2_Query>",
+          "page": 27
+        }
+      ],
+      "selected_text_sha256": "3a43264ba321ae06761e64f551b147236e809ac962e447916e34e23cc69ecafc",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "42d9bc44eb1fc0d39554d076951a341962222fbdb555940cbd3e4a12c472efd2",
+      "source_pages": 27,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
     },
+    "curation_note": null,
+    "dimension_scores": {},
     "downranked": false,
     "evidence": [
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "methodological_rigor",
-        "evidence_ids": [],
-        "excerpt": "6.1 Benchmark We evaluate pruning strategies onDeepResearch- Gym(Coelho et al., 2025), an ope",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 5,
-        "pages": [],
-        "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Experimental Setup",
-        "signal_type": "positive",
-        "source_blocks": [],
-        "statement_kind": null,
-        "support_status": null,
-        "support_verification": {}
-      },
-      {
-        "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": "n a fixed sample of 100 queries. 6.2 Pipeline and Baseline Our experiments are built on theGPT-Researcher framework, which performs multi-",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 5,
-        "pages": [],
-        "paraphrase": "A baseline or comparison system is described.",
-        "section": "Experimental Setup",
-        "signal_type": "positive",
-        "source_blocks": [],
-        "statement_kind": null,
-        "support_status": null,
-        "support_verification": {}
-      },
-      {
-        "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": "ic scoring rule. Post-Retrieval MMR reduces token cost from 375.4k to 114.6k and ex- plored nodes from 29.0 to 8.84 with modest quality loss; Pre-Synthesis pruning is generally too",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0002"
+        ],
+        "excerpt": "Long-horizon research agents solve open-\nended tasks through iterative retrieval, aggrega-\ntion, and synthesis, but context grows rapidly\nwhile the marginal value of additional evidence\noften declines. This leads to unnecessary to-\nken costs, higher latency, and noisier inputs\nfor final report generation. We studymarginal\nvalue estimationfor context management in a\nGPT-Researcher-style deep research pipeline,\ncomparing pruning strategies at pre-retrieval,\npost-retrieval, and pre-synthesis stages. Across\nlightweight heuristic criteria, LLM-based prun-\ning, and an exploratory learned controller, we\nfind that pruning effectiveness depends strongly\nonwherepruning is applied: early pruning\nyields the largest end-to-end savings, while\nlater pruning mainly refines the final synthe-\nsis context. Lightweight heuristics reduce to-\nken usage by up to 73% while approximately\npreserving judged ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
         "page": 1,
-        "pages": [],
-        "paraphrase": "Quantitative evaluation signals were detected.",
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "aa00407146c3739d086e36df282c4fcc441cf064e4d370e508ef53884442a205",
+            "evidence_id": "Eda7403cadf5149dc-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Long-horizon research agents solve open-\nended tasks through iterative retrieval, aggrega-\ntion, and synthesis, but context grows rapidly\nwhile the marginal value of additional evidence\noften declines. This leads to unnecessary to-\nken costs, higher latency, and noisier inputs\nfor final report generation. We studymarginal\nvalue estimationfor context management in a\nGPT-Researcher-style deep research pipeline,\ncomparing pruning strategies at pre-retrieval,\npost-retrieval, and pre-synthesis stages. Across\nlightweight heuristic criteria, LLM-based prun-\ning, and an exploratory learned controller, we\nfind that pruning effectiveness depends strongly\nonwherepruning is applied: early pruning\nyields the largest end-to-end savings, while\nlater pruning mainly refines the final synthe-\nsis context. Lightweight heuristics reduce to-\nken usage by up to 73% while approximately\npreserving judged "
+              }
+            ],
+            "text": "Long-horizon research agents solve open-\nended tasks through iterative retrieval, aggrega-\ntion, and synthesis, but context grows rapidly\nwhile the marginal value of additional evidence\noften declines. This leads to unnecessary to-\nken costs, higher latency, and noisier inputs\nfor final report generation. We studymarginal\nvalue estimationfor context management in a\nGPT-Researcher-style deep research pipeline,\ncomparing pruning strategies at pre-retrieval,\npost-retrieval, and pre-synthesis stages. Across\nlightweight heuristic criteria, LLM-based prun-\ning, and an exploratory learned controller, we\nfind that pruning effectiveness depends strongly\nonwherepruning is applied: early pruning\nyields the largest end-to-end savings, while\nlater pruning mainly refines the final synthe-\nsis context. Lightweight heuristics reduce to-\nken usage by up to 73% while approximately\npreserving judged "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0006"
+        ],
+        "excerpt": "3-5).\nStage placement is often more consequential\nthan the specific scoring rule. Post-Retrieval MMR\nreduces token cost from 375.4k to 114.6k and ex-\nplored nodes from 29.0 to 8.84 with modest quality\nloss; Pre-Synthesis pruning is generally too late to\nrecover upstream costs but can improve report qual-\nity. Two-stage pruning yields the strongest quality-\nefficiency trade-offs; three-stage MMR achieves\n73.3% token reduction. No single strategy dom-\ninates: relevance\u2013redundancy heuristics excel at\nearly cost control, while richer methods are more\ncompetitive when targeting report quality or source\ngrounding.\nThe main contributions of this work are:\n\u2022 We formulate marginal value estimation as a\nstage-aware pruning problem for deep research\npipelines, covering three intervention points:Pre-\n1\narXiv:2608.08389v2  [cs.AI]  1 Sep 2026",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
         "section": "Introduction",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "fbc8a1eb31ca6baa39eae3f32b33701ce44be13361bd4b0baba8c252eca506eb",
+            "evidence_id": "Eda7403cadf5149dc-B0006",
+            "pages": [
+              1
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2631,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 1790,
+                "text": "3-5).\nStage placement is often more consequential\nthan the specific scoring rule. Post-Retrieval MMR\nreduces token cost from 375.4k to 114.6k and ex-\nplored nodes from 29.0 to 8.84 with modest quality\nloss; Pre-Synthesis pruning is generally too late to\nrecover upstream costs but can improve report qual-\nity. Two-stage pruning yields the strongest quality-\nefficiency trade-offs; three-stage MMR achieves\n73.3% token reduction. No single strategy dom-\ninates: relevance\u2013redundancy heuristics excel at\nearly cost control, while richer methods are more\ncompetitive when targeting report quality or source\ngrounding.\nThe main contributions of this work are:\n\u2022 We formulate marginal value estimation as a\nstage-aware pruning problem for deep research\npipelines, covering three intervention points:Pre-\n1\narXiv:2608.08389v2  [cs.AI]  1 Sep 2026"
+              }
+            ],
+            "text": "3-5).\nStage placement is often more consequential\nthan the specific scoring rule. Post-Retrieval MMR\nreduces token cost from 375.4k to 114.6k and ex-\nplored nodes from 29.0 to 8.84 with modest quality\nloss; Pre-Synthesis pruning is generally too late to\nrecover upstream costs but can improve report qual-\nity. Two-stage pruning yields the strongest quality-\nefficiency trade-offs; three-stage MMR achieves\n73.3% token reduction. No single strategy dom-\ninates: relevance\u2013redundancy heuristics excel at\nearly cost control, while richer methods are more\ncompetitive when targeting report quality or source\ngrounding.\nThe main contributions of this work are:\n\u2022 We formulate marginal value estimation as a\nstage-aware pruning problem for deep research\npipelines, covering three intervention points:Pre-\n1\narXiv:2608.08389v2  [cs.AI]  1 Sep 2026"
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "methodological_rigor",
-        "evidence_ids": [],
-        "excerpt": "dependent judge. Appendix Table 4 reports a judge-sensitivity analysis. \u2022 Relevance(\u00a7 A.2): KPR+KPC (Key Point Recall + Key Point Contradiction), meas",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 5,
-        "pages": [],
-        "paraphrase": "Robustness or statistical analysis is reported.",
-        "section": "Experimental Setup",
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0011"
+        ],
+        "excerpt": "seek a policy that maximizes quality subject to\na cost budgetB:\nmax\nCT \u2286St Cst R(CT , Q)s.t.Cost(C T )\u2264B,\nor equivalently, via Lagrangian relaxation,\nmax\nCT\nR(CT , Q)\u2212\u03b7Cost(C T ),\nwhere \u03b7\u22650 selects an operating point on the\nquality-efficiency frontier. (We use \u03b7 to avoid over-\nloading \u03bb, which later denotes the MMR trade-off\nparameter.)\nJoint optimization over all subsets is intractable,\nso we decompose the problem into local pruning\ndecisions at three intervention points:\n\u2022 Pre-Retrieval.A candidate subquery st \u2208 Sis\nscored by predicted marginal value; low-value\nsubqueries are filtered before incurring retrieval\ncost.\n\u2022 Post-Retrieval.Each retrieved item c\u2208C st is\nevaluated against Ct; low-value items are dis-\ncarded before influencing further branch expan-\nsion.\n\u2022 Pre-Synthesis.The final context CT is pruned\nto retain only high-value evidence before report\ngeneration.\nStage ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Deep Research Pipeline With Pruning",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "ed3bd1ff9025b306ab1afa4cf62eb3867e5e72620d9f57389b05e2ec2f7acf94",
+            "evidence_id": "Eda7403cadf5149dc-B0011",
+            "pages": [
+              2
+            ],
+            "section": "Deep Research Pipeline With Pruning",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1788,
+                "page": 2,
+                "section": "Deep Research Pipeline With Pruning",
+                "section_index": 5,
+                "start": 899,
+                "text": "seek a policy that maximizes quality subject to\na cost budgetB:\nmax\nCT \u2286St Cst R(CT , Q)s.t.Cost(C T )\u2264B,\nor equivalently, via Lagrangian relaxation,\nmax\nCT\nR(CT , Q)\u2212\u03b7Cost(C T ),\nwhere \u03b7\u22650 selects an operating point on the\nquality-efficiency frontier. (We use \u03b7 to avoid over-\nloading \u03bb, which later denotes the MMR trade-off\nparameter.)\nJoint optimization over all subsets is intractable,\nso we decompose the problem into local pruning\ndecisions at three intervention points:\n\u2022 Pre-Retrieval.A candidate subquery st \u2208 Sis\nscored by predicted marginal value; low-value\nsubqueries are filtered before incurring retrieval\ncost.\n\u2022 Post-Retrieval.Each retrieved item c\u2208C st is\nevaluated against Ct; low-value items are dis-\ncarded before influencing further branch expan-\nsion.\n\u2022 Pre-Synthesis.The final context CT is pruned\nto retain only high-value evidence before report\ngeneration.\nStage "
+              }
+            ],
+            "text": "seek a policy that maximizes quality subject to\na cost budgetB:\nmax\nCT \u2286St Cst R(CT , Q)s.t.Cost(C T )\u2264B,\nor equivalently, via Lagrangian relaxation,\nmax\nCT\nR(CT , Q)\u2212\u03b7Cost(C T ),\nwhere \u03b7\u22650 selects an operating point on the\nquality-efficiency frontier. (We use \u03b7 to avoid over-\nloading \u03bb, which later denotes the MMR trade-off\nparameter.)\nJoint optimization over all subsets is intractable,\nso we decompose the problem into local pruning\ndecisions at three intervention points:\n\u2022 Pre-Retrieval.A candidate subquery st \u2208 Sis\nscored by predicted marginal value; low-value\nsubqueries are filtered before incurring retrieval\ncost.\n\u2022 Post-Retrieval.Each retrieved item c\u2208C st is\nevaluated against Ct; low-value items are dis-\ncarded before influencing further branch expan-\nsion.\n\u2022 Pre-Synthesis.The final context CT is pruned\nto retain only high-value evidence before report\ngeneration.\nStage "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "limitations_and_uncertainty_handling",
-        "evidence_ids": [],
-        "excerpt": "This study has several limitations. First, our em- pirical analysis is conducted within a fixed deep 8",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 8,
-        "pages": [],
-        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0015"
+        ],
+        "excerpt": "Problem\nAt each pruning point, the system decides whether\ncandidate x contributes sufficient marginal value\nto retain, given query Q and accumulated context\nCt: atPre-Retrieval, x is a subquery s\u2208 S; at\nPost-RetrievalandPre-Synthesis, x is a context\nitem c. We formalize this through a unified scor-\ning function V(x|C t, Q), retaining x if its score\nexceeds a stage-specific threshold ( \u03c4pre, \u03c4post, or\n\u03c4syn). Because relevance, novelty, diversity, and\ncoverage may matter differently at different stages,\nselecting the right instantiation of V motivates the\ncross-stage comparison in Section 5. Algorithm 1\nshows the full pipeline.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Marginal Value Estimation As A Decision",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "403c0a1b128452feb2af56eafee1f29db83343f12ead9800a7104a4da3e06246",
+            "evidence_id": "Eda7403cadf5149dc-B0015",
+            "pages": [
+              3
+            ],
+            "section": "Marginal Value Estimation As A Decision",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 633,
+                "page": 3,
+                "section": "Marginal Value Estimation As A Decision",
+                "section_index": 7,
+                "start": 0,
+                "text": "Problem\nAt each pruning point, the system decides whether\ncandidate x contributes sufficient marginal value\nto retain, given query Q and accumulated context\nCt: atPre-Retrieval, x is a subquery s\u2208 S; at\nPost-RetrievalandPre-Synthesis, x is a context\nitem c. We formalize this through a unified scor-\ning function V(x|C t, Q), retaining x if its score\nexceeds a stage-specific threshold ( \u03c4pre, \u03c4post, or\n\u03c4syn). Because relevance, novelty, diversity, and\ncoverage may matter differently at different stages,\nselecting the right instantiation of V motivates the\ncross-stage comparison in Section 5. Algorithm 1\nshows the full pipeline."
+              }
+            ],
+            "text": "Problem\nAt each pruning point, the system decides whether\ncandidate x contributes sufficient marginal value\nto retain, given query Q and accumulated context\nCt: atPre-Retrieval, x is a subquery s\u2208 S; at\nPost-RetrievalandPre-Synthesis, x is a context\nitem c. We formalize this through a unified scor-\ning function V(x|C t, Q), retaining x if its score\nexceeds a stage-specific threshold ( \u03c4pre, \u03c4post, or\n\u03c4syn). Because relevance, novelty, diversity, and\ncoverage may matter differently at different stages,\nselecting the right instantiation of V motivates the\ncross-stage comparison in Section 5. Algorithm 1\nshows the full pipeline."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0024"
+        ],
+        "excerpt": "We evaluate pruning strategies onDeepResearch-\nGym(Coelho et al., 2025), an open-source evalu-\nation sandbox for deep research systems. Its eval-\nuation protocol is built on1,000complex, high-\nengagement queries from theResearchy Questions\ndataset (Rosset et al., 2024). Because evaluating\nevery configuration on the full benchmark is com-\nputationally expensive, we report results on a fixed\nsample of 100 queries.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmark",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "49faf4391f0cec577c647b796f1d9b92b4e52b071e62da0b843ffa9392fd7e02",
+            "evidence_id": "Eda7403cadf5149dc-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Benchmark",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 415,
+                "page": 5,
+                "section": "Benchmark",
+                "section_index": 12,
+                "start": 0,
+                "text": "We evaluate pruning strategies onDeepResearch-\nGym(Coelho et al., 2025), an open-source evalu-\nation sandbox for deep research systems. Its eval-\nuation protocol is built on1,000complex, high-\nengagement queries from theResearchy Questions\ndataset (Rosset et al., 2024). Because evaluating\nevery configuration on the full benchmark is com-\nputationally expensive, we report results on a fixed\nsample of 100 queries."
+              }
+            ],
+            "text": "We evaluate pruning strategies onDeepResearch-\nGym(Coelho et al., 2025), an open-source evalu-\nation sandbox for deep research systems. Its eval-\nuation protocol is built on1,000complex, high-\nengagement queries from theResearchy Questions\ndataset (Rosset et al., 2024). Because evaluating\nevery configuration on the full benchmark is com-\nputationally expensive, we report results on a fixed\nsample of 100 queries."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0025"
+        ],
+        "excerpt": "Our experiments are built on theGPT-Researcher\nframework, which performs multi-step query de-\ncomposition, retrieval, aggregation, and report\ngeneration. The baseline is the standardGPT-\nResearcherpipelinewithout any explicit pruning\npolicy, including the framework's default late-stage\ncontext trimming before synthesis. All pruning\nvariants are implemented on top of the same under-\nlying search policy, and where applicable, we reuse\ncached subqueries and retrieved evidence across\nruns, so observed differences are attributable to\npruning decisions under this fixed execution frame-\nwork. This design isolates the effect of pruning\nstage and scoring rule, but does not fully separate\nadaptive pruning from a static reduction in search\nbudget; a matched-budget shallow-search baseline\nis therefore an important control for future work.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Pipeline And Baseline",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2ef47d90cb9e38de35d719713f2bc72e860c3ccd997e12726acb3dea18cd8c3e",
+            "evidence_id": "Eda7403cadf5149dc-B0025",
+            "pages": [
+              5
+            ],
+            "section": "Pipeline And Baseline",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 838,
+                "page": 5,
+                "section": "Pipeline And Baseline",
+                "section_index": 13,
+                "start": 0,
+                "text": "Our experiments are built on theGPT-Researcher\nframework, which performs multi-step query de-\ncomposition, retrieval, aggregation, and report\ngeneration. The baseline is the standardGPT-\nResearcherpipelinewithout any explicit pruning\npolicy, including the framework's default late-stage\ncontext trimming before synthesis. All pruning\nvariants are implemented on top of the same under-\nlying search policy, and where applicable, we reuse\ncached subqueries and retrieved evidence across\nruns, so observed differences are attributable to\npruning decisions under this fixed execution frame-\nwork. This design isolates the effect of pruning\nstage and scoring rule, but does not fully separate\nadaptive pruning from a static reduction in search\nbudget; a matched-budget shallow-search baseline\nis therefore an important control for future work."
+              }
+            ],
+            "text": "Our experiments are built on theGPT-Researcher\nframework, which performs multi-step query de-\ncomposition, retrieval, aggregation, and report\ngeneration. The baseline is the standardGPT-\nResearcherpipelinewithout any explicit pruning\npolicy, including the framework's default late-stage\ncontext trimming before synthesis. All pruning\nvariants are implemented on top of the same under-\nlying search policy, and where applicable, we reuse\ncached subqueries and retrieved evidence across\nruns, so observed differences are attributable to\npruning decisions under this fixed execution frame-\nwork. This design isolates the effect of pruning\nstage and scoring rule, but does not fully separate\nadaptive pruning from a static reduction in search\nbudget; a matched-budget shallow-search baseline\nis therefore an important control for future work."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0027"
+        ],
+        "excerpt": "We evaluate methods along four dimensions:qual-\nity,relevance,faithfulness/source grounding, and\nefficiency.\n\u2022 Quality(\u00a7 A.2): Measured with a fixed rubric-\nbased LLM judge applied uniformly across all\nmethods. Because absolute rubric scores can\nshift across judges, we interpret these values pri-\nmarily asrelative comparisons under a fixed in-\ndependent judge. Appendix Table 4 reports a\njudge-sensitivity analysis.\n\u2022 Relevance(\u00a7 A.2): KPR+KPC (Key Point Recall\n+ Key Point Contradiction), measuring coverage\nof key informational points from ground-truth\ndocuments while penalizing conflicting state-\nments.\n\u2022 Source grounding(\u00a7 A.2): Citation Recall (Cit.),\nan evidence-retention proxy measuring the frac-\ntion of report claims linked to a retrievable source.\nThis metric does not by itself establish factual\ncorrectness.\n\u2022 Efficiency(\u00a7 A.3): Node count (Nodes), total\ntoken cost in thousands ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Metrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "66cb32b2886dc878a2c5919b5e4c11d25ef99947ee8961c3a28b57b48dcf0047",
+            "evidence_id": "Eda7403cadf5149dc-B0027",
+            "pages": [
+              5
+            ],
+            "section": "Evaluation Metrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 5,
+                "section": "Evaluation Metrics",
+                "section_index": 15,
+                "start": 0,
+                "text": "We evaluate methods along four dimensions:qual-\nity,relevance,faithfulness/source grounding, and\nefficiency.\n\u2022 Quality(\u00a7 A.2): Measured with a fixed rubric-\nbased LLM judge applied uniformly across all\nmethods. Because absolute rubric scores can\nshift across judges, we interpret these values pri-\nmarily asrelative comparisons under a fixed in-\ndependent judge. Appendix Table 4 reports a\njudge-sensitivity analysis.\n\u2022 Relevance(\u00a7 A.2): KPR+KPC (Key Point Recall\n+ Key Point Contradiction), measuring coverage\nof key informational points from ground-truth\ndocuments while penalizing conflicting state-\nments.\n\u2022 Source grounding(\u00a7 A.2): Citation Recall (Cit.),\nan evidence-retention proxy measuring the frac-\ntion of report claims linked to a retrievable source.\nThis metric does not by itself establish factual\ncorrectness.\n\u2022 Efficiency(\u00a7 A.3): Node count (Nodes), total\ntoken cost in thousands "
+              }
+            ],
+            "text": "We evaluate methods along four dimensions:qual-\nity,relevance,faithfulness/source grounding, and\nefficiency.\n\u2022 Quality(\u00a7 A.2): Measured with a fixed rubric-\nbased LLM judge applied uniformly across all\nmethods. Because absolute rubric scores can\nshift across judges, we interpret these values pri-\nmarily asrelative comparisons under a fixed in-\ndependent judge. Appendix Table 4 reports a\njudge-sensitivity analysis.\n\u2022 Relevance(\u00a7 A.2): KPR+KPC (Key Point Recall\n+ Key Point Contradiction), measuring coverage\nof key informational points from ground-truth\ndocuments while penalizing conflicting state-\nments.\n\u2022 Source grounding(\u00a7 A.2): Citation Recall (Cit.),\nan evidence-retention proxy measuring the frac-\ntion of report claims linked to a retrievable source.\nThis metric does not by itself establish factual\ncorrectness.\n\u2022 Efficiency(\u00a7 A.3): Node count (Nodes), total\ntoken cost in thousands "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0028"
+        ],
+        "excerpt": "(Tokens), and wall-clock\nruntime (Time).\n5\nTable 1: One-stage pruning results. Full metric break-\ndown appears in the appendix. Tokens are reported\nin thousands (k). Bold denotes the best value among\npruned methods within each stage block.\nMethod Nodes Tokens Time Ov.Quality KPR+KPC Cit.\nBaseline 29.0 375.4 3422.6 57.83 70.23 95.54\nPost-Retrieval Pruning\nMMR (\u00a7B.1)8.84 114.6 1379.856.62 63.49 91.70\nGRN (\u00a7B.1) 13.31 175.7 2087.9 57.02 42.89 94.40\nCD (\u00a7B.1) 10.47 137.5 1605.7 56.84 41.29 92.48\nSC (\u00a7B.1) 10.82 141.9 1737.2 55.22 47.94 91.97\nDPP (\u00a7B.1) 9.88 129.6 1520.6 54.51 43.3395.62\nCombined (\u00a7B.1) 9.00 117.8 1399.5 56.03 64.13 92.59\nHybrid (\u00a7B.1) 9.28 121.3 1449.5 57.6365.2392.16\nLLM (\u00a7B.2) 14.90 211.8 2310.759.6549.65 93.54\nPre-Synthesis Pruning\nMMR (\u00a7B.1) 29.0 366.0 4446.9 57.77 65.26 90.41\nGRN (\u00a7B.1) 29.0 374.1 4493.3 55.98 41.67 90.38\nCD (\u00a7B.1) 29.0 374.5 4562.4 52.38 43.75 90.19\nSC ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Metrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7a82fe6fc6c3296ec9ebeaf757205747291299b8e4207b00e4373218c0c1aaf9",
+            "evidence_id": "Eda7403cadf5149dc-B0028",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Evaluation Metrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 938,
+                "page": 5,
+                "section": "Evaluation Metrics",
+                "section_index": 15,
+                "start": 896,
+                "text": "(Tokens), and wall-clock\nruntime (Time).\n5"
+              },
+              {
+                "end": 858,
+                "page": 6,
+                "section": "Evaluation Metrics",
+                "section_index": 16,
+                "start": 0,
+                "text": "Table 1: One-stage pruning results. Full metric break-\ndown appears in the appendix. Tokens are reported\nin thousands (k). Bold denotes the best value among\npruned methods within each stage block.\nMethod Nodes Tokens Time Ov.Quality KPR+KPC Cit.\nBaseline 29.0 375.4 3422.6 57.83 70.23 95.54\nPost-Retrieval Pruning\nMMR (\u00a7B.1)8.84 114.6 1379.856.62 63.49 91.70\nGRN (\u00a7B.1) 13.31 175.7 2087.9 57.02 42.89 94.40\nCD (\u00a7B.1) 10.47 137.5 1605.7 56.84 41.29 92.48\nSC (\u00a7B.1) 10.82 141.9 1737.2 55.22 47.94 91.97\nDPP (\u00a7B.1) 9.88 129.6 1520.6 54.51 43.3395.62\nCombined (\u00a7B.1) 9.00 117.8 1399.5 56.03 64.13 92.59\nHybrid (\u00a7B.1) 9.28 121.3 1449.5 57.6365.2392.16\nLLM (\u00a7B.2) 14.90 211.8 2310.759.6549.65 93.54\nPre-Synthesis Pruning\nMMR (\u00a7B.1) 29.0 366.0 4446.9 57.77 65.26 90.41\nGRN (\u00a7B.1) 29.0 374.1 4493.3 55.98 41.67 90.38\nCD (\u00a7B.1) 29.0 374.5 4562.4 52.38 43.75 90.19\nSC "
+              }
+            ],
+            "text": "(Tokens), and wall-clock\nruntime (Time).\n5\nTable 1: One-stage pruning results. Full metric break-\ndown appears in the appendix. Tokens are reported\nin thousands (k). Bold denotes the best value among\npruned methods within each stage block.\nMethod Nodes Tokens Time Ov.Quality KPR+KPC Cit.\nBaseline 29.0 375.4 3422.6 57.83 70.23 95.54\nPost-Retrieval Pruning\nMMR (\u00a7B.1)8.84 114.6 1379.856.62 63.49 91.70\nGRN (\u00a7B.1) 13.31 175.7 2087.9 57.02 42.89 94.40\nCD (\u00a7B.1) 10.47 137.5 1605.7 56.84 41.29 92.48\nSC (\u00a7B.1) 10.82 141.9 1737.2 55.22 47.94 91.97\nDPP (\u00a7B.1) 9.88 129.6 1520.6 54.51 43.3395.62\nCombined (\u00a7B.1) 9.00 117.8 1399.5 56.03 64.13 92.59\nHybrid (\u00a7B.1) 9.28 121.3 1449.5 57.6365.2392.16\nLLM (\u00a7B.2) 14.90 211.8 2310.759.6549.65 93.54\nPre-Synthesis Pruning\nMMR (\u00a7B.1) 29.0 366.0 4446.9 57.77 65.26 90.41\nGRN (\u00a7B.1) 29.0 374.1 4493.3 55.98 41.67 90.38\nCD (\u00a7B.1) 29.0 374.5 4562.4 52.38 43.75 90.19\nSC "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0033"
+        ],
+        "excerpt": "Pre-Synthesis\nBest quality vs. best efficiency.Table 2 shows\nthat combining early and late pruning yields the\nstrongest practical trade-offs in the study. Under\nthe fixed rubric-based LLM judge used in the main\nexperiments, the highest quality point among the\nevaluated two-stage variants isCD + SC, which\nreaches 59.47 overall quality, improving on the\nbaseline by +1.64 points while reducing token cost\nby 63.4%, runtime by 53.3%, and node count from\n29.0 to 10.45. This shows that multi-stage prun-\n6\nTable 2: Two-stage pruning results. The full metric\nbreakdown appears in Appendix Table 5. Tokens are\nreported in thousands (k). Bold denotes the best value\nwithin each subsection among pruned methods. A single\nmethod name indicates that the same pruning rule is\nused at bothPost-RetrievalandPre-Synthesis; \"A + B\"\nindicates method A atPost-Retrievaland method B at\nPre-Synthesis.\nMethod Nodes ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Two-Stage Pruning: Post-Retrieval +",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a4883a0fe3db3433ebf1520f456282f3b6376ab03777c29d2e1c49cadf4651ef",
+            "evidence_id": "Eda7403cadf5149dc-B0033",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Two-Stage Pruning: Post-Retrieval +",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 503,
+                "page": 6,
+                "section": "Two-Stage Pruning: Post-Retrieval +",
+                "section_index": 18,
+                "start": 0,
+                "text": "Pre-Synthesis\nBest quality vs. best efficiency.Table 2 shows\nthat combining early and late pruning yields the\nstrongest practical trade-offs in the study. Under\nthe fixed rubric-based LLM judge used in the main\nexperiments, the highest quality point among the\nevaluated two-stage variants isCD + SC, which\nreaches 59.47 overall quality, improving on the\nbaseline by +1.64 points while reducing token cost\nby 63.4%, runtime by 53.3%, and node count from\n29.0 to 10.45. This shows that multi-stage prun-\n6"
+              },
+              {
+                "end": 394,
+                "page": 7,
+                "section": "Two-Stage Pruning: Post-Retrieval +",
+                "section_index": 19,
+                "start": 0,
+                "text": "Table 2: Two-stage pruning results. The full metric\nbreakdown appears in Appendix Table 5. Tokens are\nreported in thousands (k). Bold denotes the best value\nwithin each subsection among pruned methods. A single\nmethod name indicates that the same pruning rule is\nused at bothPost-RetrievalandPre-Synthesis; \"A + B\"\nindicates method A atPost-Retrievaland method B at\nPre-Synthesis.\nMethod Nodes "
+              }
+            ],
+            "text": "Pre-Synthesis\nBest quality vs. best efficiency.Table 2 shows\nthat combining early and late pruning yields the\nstrongest practical trade-offs in the study. Under\nthe fixed rubric-based LLM judge used in the main\nexperiments, the highest quality point among the\nevaluated two-stage variants isCD + SC, which\nreaches 59.47 overall quality, improving on the\nbaseline by +1.64 points while reducing token cost\nby 63.4%, runtime by 53.3%, and node count from\n29.0 to 10.45. This shows that multi-stage prun-\n6\nTable 2: Two-stage pruning results. The full metric\nbreakdown appears in Appendix Table 5. Tokens are\nreported in thousands (k). Bold denotes the best value\nwithin each subsection among pruned methods. A single\nmethod name indicates that the same pruning rule is\nused at bothPost-RetrievalandPre-Synthesis; \"A + B\"\nindicates method A atPost-Retrievaland method B at\nPre-Synthesis.\nMethod Nodes "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0037"
+        ],
+        "excerpt": "Post-Retrieval + Pre-Synthesis\nIn the three-stage setting, we compare the main\nheuristic families against a small set of richer or\nTable 3: Three-stage pruning results. The full metric\nbreakdown appears in Appendix Table 5. Tokens are\nreported in thousands (k). Bold denotes the best value\nwithin each subsection among pruned methods. A sin-\ngle method name means the same pruning rule is used\natPre-Retrieval,Post-Retrieval, andPre-Synthesis; a\nnotation of the form \"A + B + C\" indicates method A at\nPre-Retrieval, method B atPost-Retrieval, and method\nC atPre-Synthesis.\nMethod Nodes Tokens Time Ov.Quality KPR+KPC Cit.\nBaseline 29.0 375.4 3422.6 57.83 70.23 95.54\nMain heuristic families\nMMR (\u00a7B.1)7.82 100.1 1157.755.90 63.43 91.84\nGRN (\u00a7B.1) 11.57 150.0 1937.7 56.68 45.13 91.33\nCD (\u00a7B.1) 9.27 120.6 1669.8 56.00 43.64 93.30\nSC (\u00a7B.1) 9.35 121.8 1438.9 55.5265.7992.03\nDPP (\u00a7B.1) 8.68 113.3 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Three-Stage Pruning: Pre-Retrieval +",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f0732b0a437ab653635b32993644eb888bcfc2c631f7c6bd823ab784d90e0df7",
+            "evidence_id": "Eda7403cadf5149dc-B0037",
+            "pages": [
+              7
+            ],
+            "section": "Three-Stage Pruning: Pre-Retrieval +",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 7,
+                "section": "Three-Stage Pruning: Pre-Retrieval +",
+                "section_index": 20,
+                "start": 0,
+                "text": "Post-Retrieval + Pre-Synthesis\nIn the three-stage setting, we compare the main\nheuristic families against a small set of richer or\nTable 3: Three-stage pruning results. The full metric\nbreakdown appears in Appendix Table 5. Tokens are\nreported in thousands (k). Bold denotes the best value\nwithin each subsection among pruned methods. A sin-\ngle method name means the same pruning rule is used\natPre-Retrieval,Post-Retrieval, andPre-Synthesis; a\nnotation of the form \"A + B + C\" indicates method A at\nPre-Retrieval, method B atPost-Retrieval, and method\nC atPre-Synthesis.\nMethod Nodes Tokens Time Ov.Quality KPR+KPC Cit.\nBaseline 29.0 375.4 3422.6 57.83 70.23 95.54\nMain heuristic families\nMMR (\u00a7B.1)7.82 100.1 1157.755.90 63.43 91.84\nGRN (\u00a7B.1) 11.57 150.0 1937.7 56.68 45.13 91.33\nCD (\u00a7B.1) 9.27 120.6 1669.8 56.00 43.64 93.30\nSC (\u00a7B.1) 9.35 121.8 1438.9 55.5265.7992.03\nDPP (\u00a7B.1) 8.68 113.3 "
+              }
+            ],
+            "text": "Post-Retrieval + Pre-Synthesis\nIn the three-stage setting, we compare the main\nheuristic families against a small set of richer or\nTable 3: Three-stage pruning results. The full metric\nbreakdown appears in Appendix Table 5. Tokens are\nreported in thousands (k). Bold denotes the best value\nwithin each subsection among pruned methods. A sin-\ngle method name means the same pruning rule is used\natPre-Retrieval,Post-Retrieval, andPre-Synthesis; a\nnotation of the form \"A + B + C\" indicates method A at\nPre-Retrieval, method B atPost-Retrieval, and method\nC atPre-Synthesis.\nMethod Nodes Tokens Time Ov.Quality KPR+KPC Cit.\nBaseline 29.0 375.4 3422.6 57.83 70.23 95.54\nMain heuristic families\nMMR (\u00a7B.1)7.82 100.1 1157.755.90 63.43 91.84\nGRN (\u00a7B.1) 11.57 150.0 1937.7 56.68 45.13 91.33\nCD (\u00a7B.1) 9.27 120.6 1669.8 56.00 43.64 93.30\nSC (\u00a7B.1) 9.35 121.8 1438.9 55.5265.7992.03\nDPP (\u00a7B.1) 8.68 113.3 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0048"
+        ],
+        "excerpt": "This study has several limitations. First, our em-\npirical analysis is conducted within a fixed deep\nresearch pipeline and benchmark setup, so the exact\ntrade-offs may change under different agent archi-\ntectures, retrieval systems, or underlying language\nmodels. Our conclusions are therefore strongest as\na comparative study of pruning strategies within\nthis setting rather than as universal claims about all\nlong-horizon agents. Although supplementary ex-\nperiments on DeepResearch Bench (Appendix B.5,\nTables 13 and 14) support the broad efficiency ad-\nvantage of earlier pruning, method-level quality\nrankings are less stable across benchmarks, sug-\ngesting that quality-sensitive conclusions depend\nmore strongly on the evaluation protocol and task\nformulation than the basic stage-ordering effect.\nOur quality metric is also judge-dependent. Ap-\npendix Table 4 shows that absolute rubric ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
         "section": "Limitations",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "34cf03676abbd690655ccb2bc642b1bd8263b3302b5c8d678e4d91c5cede68c5",
+            "evidence_id": "Eda7403cadf5149dc-B0048",
+            "pages": [
+              9
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 9,
+                "section": "Limitations",
+                "section_index": 24,
+                "start": 0,
+                "text": "This study has several limitations. First, our em-\npirical analysis is conducted within a fixed deep\nresearch pipeline and benchmark setup, so the exact\ntrade-offs may change under different agent archi-\ntectures, retrieval systems, or underlying language\nmodels. Our conclusions are therefore strongest as\na comparative study of pruning strategies within\nthis setting rather than as universal claims about all\nlong-horizon agents. Although supplementary ex-\nperiments on DeepResearch Bench (Appendix B.5,\nTables 13 and 14) support the broad efficiency ad-\nvantage of earlier pruning, method-level quality\nrankings are less stable across benchmarks, sug-\ngesting that quality-sensitive conclusions depend\nmore strongly on the evaluation protocol and task\nformulation than the basic stage-ordering effect.\nOur quality metric is also judge-dependent. Ap-\npendix Table 4 shows that absolute rubric "
+              }
+            ],
+            "text": "This study has several limitations. First, our em-\npirical analysis is conducted within a fixed deep\nresearch pipeline and benchmark setup, so the exact\ntrade-offs may change under different agent archi-\ntectures, retrieval systems, or underlying language\nmodels. Our conclusions are therefore strongest as\na comparative study of pruning strategies within\nthis setting rather than as universal claims about all\nlong-horizon agents. Although supplementary ex-\nperiments on DeepResearch Bench (Appendix B.5,\nTables 13 and 14) support the broad efficiency ad-\nvantage of earlier pruning, method-level quality\nrankings are less stable across benchmarks, sug-\ngesting that quality-sensitive conclusions depend\nmore strongly on the evaluation protocol and task\nformulation than the basic stage-ordering effect.\nOur quality metric is also judge-dependent. Ap-\npendix Table 4 shows that absolute rubric "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0049"
+        ],
+        "excerpt": "scores\ncan shift substantially across judge choices, even\nfor the same generated reports. We therefore inter-\npret quality-sensitive conclusions more cautiously\nthan efficiency results, and treat the reported qual-\nity values primarily as relative comparisons under\na fixed independent judge rather than as stable ab-\nsolute measurements. Relatedly, as discussed in\nSection 6.2, our comparison does not include a\nmatched-budget shallow-search baseline; thus, the\nefficiency gains should be interpreted as gains from\nstage-aware pruning under a fixed search policy,\nrather than as evidence that pruning dominates all\nstatic budget-reduction strategies.\nSecond, several pruning methods require thresh-\nold or hyperparameter choices, and the best oper-\nating point remains task-dependent. Appendix B.7\nreports local threshold sweeps for five representa-\ntive post-retrieval methods and shows that the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c5b41ecff9d2068368a5f40161db191552d302ddfb6aa91b20e72434cd546994",
+            "evidence_id": "Eda7403cadf5149dc-B0049",
+            "pages": [
+              9
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 1793,
+                "page": 9,
+                "section": "Limitations",
+                "section_index": 24,
+                "start": 895,
+                "text": "scores\ncan shift substantially across judge choices, even\nfor the same generated reports. We therefore inter-\npret quality-sensitive conclusions more cautiously\nthan efficiency results, and treat the reported qual-\nity values primarily as relative comparisons under\na fixed independent judge rather than as stable ab-\nsolute measurements. Relatedly, as discussed in\nSection 6.2, our comparison does not include a\nmatched-budget shallow-search baseline; thus, the\nefficiency gains should be interpreted as gains from\nstage-aware pruning under a fixed search policy,\nrather than as evidence that pruning dominates all\nstatic budget-reduction strategies.\nSecond, several pruning methods require thresh-\nold or hyperparameter choices, and the best oper-\nating point remains task-dependent. Appendix B.7\nreports local threshold sweeps for five representa-\ntive post-retrieval methods and shows that the "
+              }
+            ],
+            "text": "scores\ncan shift substantially across judge choices, even\nfor the same generated reports. We therefore inter-\npret quality-sensitive conclusions more cautiously\nthan efficiency results, and treat the reported qual-\nity values primarily as relative comparisons under\na fixed independent judge rather than as stable ab-\nsolute measurements. Relatedly, as discussed in\nSection 6.2, our comparison does not include a\nmatched-budget shallow-search baseline; thus, the\nefficiency gains should be interpreted as gains from\nstage-aware pruning under a fixed search policy,\nrather than as evidence that pruning dominates all\nstatic budget-reduction strategies.\nSecond, several pruning methods require thresh-\nold or hyperparameter choices, and the best oper-\nating point remains task-dependent. Appendix B.7\nreports local threshold sweeps for five representa-\ntive post-retrieval methods and shows that the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0109"
+        ],
+        "excerpt": "response (e.g., golden response asks for clarification, but\nthe candidate provides a direct answer).\nInstructions:\n\u2022 Judge semantic meaning, not surface wording.\n\u2022 Be strict: only credit what the golden response explicitly or implicitly\ncontains.\n\u2022 Output only a single integer from 0 to 5 with no additional explanation.\nInputs:\nCandidate question:<question>\nGolden response:<golden_clarifying>\nCandidate response:<candidate_response>\n(b) LLM-as-a-judge evaluation instructions.\nFigure 2: Prompts used in our pipeline.\n17\nTable 4: Judge-sensitivity analysis for rubric-based quality evaluation. Absolute scores vary substantially with judge\nchoice, so main-paper quality results should be interpreted as relative comparisons under a fixed judge rather than\nas judge-invariant quality values.\nModel Judge Overall Clarity Depth Balance Breadth Support Insight KPR + KPC Cit. Recall\ngpt-5-mini ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 17,
+        "pages": [
+          17,
+          18
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Query: <Candidate_2_Query>",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "de3ed8eb40edba6d054c8005636d35f573043d29705fc70edf3fe7edaf382988",
+            "evidence_id": "Eda7403cadf5149dc-B0109",
+            "pages": [
+              17,
+              18
+            ],
+            "section": "Query: <Candidate_2_Query>",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1421,
+                "page": 17,
+                "section": "Query: <Candidate_2_Query>",
+                "section_index": 64,
+                "start": 899,
+                "text": "response (e.g., golden response asks for clarification, but\nthe candidate provides a direct answer).\nInstructions:\n\u2022 Judge semantic meaning, not surface wording.\n\u2022 Be strict: only credit what the golden response explicitly or implicitly\ncontains.\n\u2022 Output only a single integer from 0 to 5 with no additional explanation.\nInputs:\nCandidate question:<question>\nGolden response:<golden_clarifying>\nCandidate response:<candidate_response>\n(b) LLM-as-a-judge evaluation instructions.\nFigure 2: Prompts used in our pipeline.\n17"
+              },
+              {
+                "end": 369,
+                "page": 18,
+                "section": "Query: <Candidate_2_Query>",
+                "section_index": 65,
+                "start": 0,
+                "text": "Table 4: Judge-sensitivity analysis for rubric-based quality evaluation. Absolute scores vary substantially with judge\nchoice, so main-paper quality results should be interpreted as relative comparisons under a fixed judge rather than\nas judge-invariant quality values.\nModel Judge Overall Clarity Depth Balance Breadth Support Insight KPR + KPC Cit. Recall\ngpt-5-mini "
+              }
+            ],
+            "text": "response (e.g., golden response asks for clarification, but\nthe candidate provides a direct answer).\nInstructions:\n\u2022 Judge semantic meaning, not surface wording.\n\u2022 Be strict: only credit what the golden response explicitly or implicitly\ncontains.\n\u2022 Output only a single integer from 0 to 5 with no additional explanation.\nInputs:\nCandidate question:<question>\nGolden response:<golden_clarifying>\nCandidate response:<candidate_response>\n(b) LLM-as-a-judge evaluation instructions.\nFigure 2: Prompts used in our pipeline.\n17\nTable 4: Judge-sensitivity analysis for rubric-based quality evaluation. Absolute scores vary substantially with judge\nchoice, so main-paper quality results should be interpreted as relative comparisons under a fixed judge rather than\nas judge-invariant quality values.\nModel Judge Overall Clarity Depth Balance Breadth Support Insight KPR + KPC Cit. Recall\ngpt-5-mini "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0110"
+        ],
+        "excerpt": "gpt-5-mini 58.47 57.20 61.50 59.90 67.40 41.50 63.30 61.70 92.98\ngpt-4.1-mini gpt-4.1-mini 91.50 89.00 96.00 90.00 96.60 91.00 87.00 72.24 99.52\ngpt-4.1-mini gpt-5-mini 47.67 50.00 45.00 48.00 61.00 32.00 50.00 72.25 90.56\nQwen2-7B-Instruct (32k) gpt-5-mini 34.37 35.71 35.24 39.05 42.86 21.43 31.90 72.55 75.45\nFigure 3: Overall quality versus token usage in thousands (averaged over the 100 reports) for all pruning strategies\nreported in Table 5. Each point corresponds to one method configuration, with marker style and color indicating the\npruning stage. The baseline is highlighted separately, and labels use shortened method names for readability.\n18\nTable 5: Performance comparison across all pruning strategies. Tokens are reported in thousands (k) (\u00a7 A.4). Values\nare mean \u00b1 standard error over 100 reports (\u00a7 A.1). Quality, relevance, and faithfulness metrics were obtained ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 18,
+        "pages": [
+          18,
+          19
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Query: <Candidate_2_Query>",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cd05125401c582363097090e2b06cc2fd263af15c1a9d9aa6dd40aaa5ec4e61e",
+            "evidence_id": "Eda7403cadf5149dc-B0110",
+            "pages": [
+              18,
+              19
+            ],
+            "section": "Query: <Candidate_2_Query>",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1026,
+                "page": 18,
+                "section": "Query: <Candidate_2_Query>",
+                "section_index": 65,
+                "start": 369,
+                "text": "gpt-5-mini 58.47 57.20 61.50 59.90 67.40 41.50 63.30 61.70 92.98\ngpt-4.1-mini gpt-4.1-mini 91.50 89.00 96.00 90.00 96.60 91.00 87.00 72.24 99.52\ngpt-4.1-mini gpt-5-mini 47.67 50.00 45.00 48.00 61.00 32.00 50.00 72.25 90.56\nQwen2-7B-Instruct (32k) gpt-5-mini 34.37 35.71 35.24 39.05 42.86 21.43 31.90 72.55 75.45\nFigure 3: Overall quality versus token usage in thousands (averaged over the 100 reports) for all pruning strategies\nreported in Table 5. Each point corresponds to one method configuration, with marker style and color indicating the\npruning stage. The baseline is highlighted separately, and labels use shortened method names for readability.\n18"
+              },
+              {
+                "end": 227,
+                "page": 19,
+                "section": "Query: <Candidate_2_Query>",
+                "section_index": 66,
+                "start": 0,
+                "text": "Table 5: Performance comparison across all pruning strategies. Tokens are reported in thousands (k) (\u00a7 A.4). Values\nare mean \u00b1 standard error over 100 reports (\u00a7 A.1). Quality, relevance, and faithfulness metrics were obtained "
+              }
+            ],
+            "text": "gpt-5-mini 58.47 57.20 61.50 59.90 67.40 41.50 63.30 61.70 92.98\ngpt-4.1-mini gpt-4.1-mini 91.50 89.00 96.00 90.00 96.60 91.00 87.00 72.24 99.52\ngpt-4.1-mini gpt-5-mini 47.67 50.00 45.00 48.00 61.00 32.00 50.00 72.25 90.56\nQwen2-7B-Instruct (32k) gpt-5-mini 34.37 35.71 35.24 39.05 42.86 21.43 31.90 72.55 75.45\nFigure 3: Overall quality versus token usage in thousands (averaged over the 100 reports) for all pruning strategies\nreported in Table 5. Each point corresponds to one method configuration, with marker style and color indicating the\npruning stage. The baseline is highlighted separately, and labels use shortened method names for readability.\n18\nTable 5: Performance comparison across all pruning strategies. Tokens are reported in thousands (k) (\u00a7 A.4). Values\nare mean \u00b1 standard error over 100 reports (\u00a7 A.1). Quality, relevance, and faithfulness metrics were obtained "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0137"
+        ],
+        "excerpt": "This breakdown reveals where pruning\noccurs within the pipeline, distinguishing methods that act early at the pre-retrieval stage from those relying primarily on\npost-retrieval or pre-synthesis reduction.\n26\nTable 13: DeepResearch Bench overall quality across pruning criteria and stage placement. Scores are RACE-style\nreport-quality metrics. Bold denotes the best pruned value in each stage column.\nCriterion Branch-only Root-only Two-stage Three-stage\nBaseline 0.4798 0.4798 0.4798 0.4798\nDPP 0.4584 0.4774 0.4648 0.4591\nCentroid Drift 0.4567 0.4759 0.4676 0.4590\nGRN0.46880.47940.4716 0.4612\nMMR 0.4541 0.4766 0.4605 0.4523\nSubmodular 0.45570.48110.4561 0.4534\nTable 14: DeepResearch Bench efficiency across pruning criteria and stage placement. Tokens are reported in\nthousands (k), and savings are relative to the unpruned baseline. Bold denotes the best pruned value in each ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 26,
+        "pages": [
+          26,
+          27
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Query: <Candidate_2_Query>",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2e2dcff469ba83a6b9a120da9859986bae406e67242497bf4197f7776944398d",
+            "evidence_id": "Eda7403cadf5149dc-B0137",
+            "pages": [
+              26,
+              27
+            ],
+            "section": "Query: <Candidate_2_Query>",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2661,
+                "page": 26,
+                "section": "Query: <Candidate_2_Query>",
+                "section_index": 73,
+                "start": 2454,
+                "text": "This breakdown reveals where pruning\noccurs within the pipeline, distinguishing methods that act early at the pre-retrieval stage from those relying primarily on\npost-retrieval or pre-synthesis reduction.\n26"
+              },
+              {
+                "end": 674,
+                "page": 27,
+                "section": "Query: <Candidate_2_Query>",
+                "section_index": 74,
+                "start": 0,
+                "text": "Table 13: DeepResearch Bench overall quality across pruning criteria and stage placement. Scores are RACE-style\nreport-quality metrics. Bold denotes the best pruned value in each stage column.\nCriterion Branch-only Root-only Two-stage Three-stage\nBaseline 0.4798 0.4798 0.4798 0.4798\nDPP 0.4584 0.4774 0.4648 0.4591\nCentroid Drift 0.4567 0.4759 0.4676 0.4590\nGRN0.46880.47940.4716 0.4612\nMMR 0.4541 0.4766 0.4605 0.4523\nSubmodular 0.45570.48110.4561 0.4534\nTable 14: DeepResearch Bench efficiency across pruning criteria and stage placement. Tokens are reported in\nthousands (k), and savings are relative to the unpruned baseline. Bold denotes the best pruned value in each "
+              }
+            ],
+            "text": "This breakdown reveals where pruning\noccurs within the pipeline, distinguishing methods that act early at the pre-retrieval stage from those relying primarily on\npost-retrieval or pre-synthesis reduction.\n26\nTable 13: DeepResearch Bench overall quality across pruning criteria and stage placement. Scores are RACE-style\nreport-quality metrics. Bold denotes the best pruned value in each stage column.\nCriterion Branch-only Root-only Two-stage Three-stage\nBaseline 0.4798 0.4798 0.4798 0.4798\nDPP 0.4584 0.4774 0.4648 0.4591\nCentroid Drift 0.4567 0.4759 0.4676 0.4590\nGRN0.46880.47940.4716 0.4612\nMMR 0.4541 0.4766 0.4605 0.4523\nSubmodular 0.45570.48110.4561 0.4534\nTable 14: DeepResearch Bench efficiency across pruning criteria and stage placement. Tokens are reported in\nthousands (k), and savings are relative to the unpruned baseline. Bold denotes the best pruned value in each "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0138"
+        ],
+        "excerpt": "stage\ncolumn.\nBranch-only Root-only Two-stage Three-stage\nCriterion Tokens Tok. Sav. Run. Sav. Tokens Tok. Sav. Run. Sav. Tokens Tok. Sav. Run. Sav. Tokens Tok. Sav. Run. Sav.\nDPP89.42 72.65% 81.14% 281.98 13.77% 32.54% 89.81 72.53% 80.95% 25.60 92.17% 93.60%\nCentroid Drift95.50 70.79% 78.01% 300.54 8.09% 28.62% 92.62 71.68% 80.32% 81.41 75.10% 79.93%\nGRN110.72 66.14% 74.77% 286.25 12.46% 28.75% 90.57 72.30% 82.89% 27.27 91.66% 93.44%\nMMR86.05 73.68% 81.94% 301.83 7.69% 28.49% 89.03 72.77% 81.76% 25.13 92.32% 94.30%\nSubmodular96.62 70.45% 79.77% 312.15 4.54% 24.78% 97.68 70.13% 67.35% 84.03 74.30% 82.92%\nTable 15: Local threshold sweeps for representative post-retrieval pruning methods. \u2206Qrel is the percent change in\noverall quality relative to the published threshold setting for that method. Rows satisfying the 2% stability criterion\nare marked with \u2713. Tokens are reported in thousands ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 27,
+        "pages": [
+          27
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Query: <Candidate_2_Query>",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3df56bbda5fac70de3727e29d644ecec75950f50615ef7f160d064bd384271a5",
+            "evidence_id": "Eda7403cadf5149dc-B0138",
+            "pages": [
+              27
+            ],
+            "section": "Query: <Candidate_2_Query>",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1573,
+                "page": 27,
+                "section": "Query: <Candidate_2_Query>",
+                "section_index": 74,
+                "start": 674,
+                "text": "stage\ncolumn.\nBranch-only Root-only Two-stage Three-stage\nCriterion Tokens Tok. Sav. Run. Sav. Tokens Tok. Sav. Run. Sav. Tokens Tok. Sav. Run. Sav. Tokens Tok. Sav. Run. Sav.\nDPP89.42 72.65% 81.14% 281.98 13.77% 32.54% 89.81 72.53% 80.95% 25.60 92.17% 93.60%\nCentroid Drift95.50 70.79% 78.01% 300.54 8.09% 28.62% 92.62 71.68% 80.32% 81.41 75.10% 79.93%\nGRN110.72 66.14% 74.77% 286.25 12.46% 28.75% 90.57 72.30% 82.89% 27.27 91.66% 93.44%\nMMR86.05 73.68% 81.94% 301.83 7.69% 28.49% 89.03 72.77% 81.76% 25.13 92.32% 94.30%\nSubmodular96.62 70.45% 79.77% 312.15 4.54% 24.78% 97.68 70.13% 67.35% 84.03 74.30% 82.92%\nTable 15: Local threshold sweeps for representative post-retrieval pruning methods. \u2206Qrel is the percent change in\noverall quality relative to the published threshold setting for that method. Rows satisfying the 2% stability criterion\nare marked with \u2713. Tokens are reported in thousands "
+              }
+            ],
+            "text": "stage\ncolumn.\nBranch-only Root-only Two-stage Three-stage\nCriterion Tokens Tok. Sav. Run. Sav. Tokens Tok. Sav. Run. Sav. Tokens Tok. Sav. Run. Sav. Tokens Tok. Sav. Run. Sav.\nDPP89.42 72.65% 81.14% 281.98 13.77% 32.54% 89.81 72.53% 80.95% 25.60 92.17% 93.60%\nCentroid Drift95.50 70.79% 78.01% 300.54 8.09% 28.62% 92.62 71.68% 80.32% 81.41 75.10% 79.93%\nGRN110.72 66.14% 74.77% 286.25 12.46% 28.75% 90.57 72.30% 82.89% 27.27 91.66% 93.44%\nMMR86.05 73.68% 81.94% 301.83 7.69% 28.49% 89.03 72.77% 81.76% 25.13 92.32% 94.30%\nSubmodular96.62 70.45% 79.77% 312.15 4.54% 24.78% 97.68 70.13% 67.35% 84.03 74.30% 82.92%\nTable 15: Local threshold sweeps for representative post-retrieval pruning methods. \u2206Qrel is the percent change in\noverall quality relative to the published threshold setting for that method. Rows satisfying the 2% stability criterion\nare marked with \u2713. Tokens are reported in thousands "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       }
     ],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2608.08389",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": 63,
-    "paper_type": "empirical_research",
-    "positive_signals": [
-      "The available text identifies data or a benchmark used by the work.",
-      "A baseline or comparison system is described.",
-      "Quantitative evaluation signals were detected.",
-      "Robustness or statistical analysis is reported.",
-      "Limitations or threats to validity are acknowledged."
-    ],
-    "promotion": {},
-    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
-    "recommendation": "uncertain",
-    "rubric_version": "scholarly-rubric-v1",
-    "source_content_hash": "c867d795f08db568d930290ed9bce50b1878764c94d3d4fffd0cf2285ac2e838",
-    "status": "not_assessed",
+    "overall_quality_score": null,
+    "paper_type": "position_or_conceptual",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2608.08389",
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Objective token, node, and runtime accounting, reference-document KPR+KPC, citation recall, and supplementary RACE-style cross-benchmark results corroborate the efficiency and coverage trade-offs independently of the rubric judge.",
+          "final_evaluation_signal": "Headline outcomes are established by a fixed rubric-based LLM judge, automated KPR+KPC against reference documents, citation recall, and objective token, node, and runtime measurements.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Pruning decisions are made by fixed heuristic scoring rules, lexical proxies, prompt-based LLM gating, or an offline learned controller trained on submodular-family execution logs; no end-to-end tuning against the reported quality metrics is described.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0002",
+          "Eda7403cadf5149dc-B0006",
+          "Eda7403cadf5149dc-B0011",
+          "Eda7403cadf5149dc-B0015",
+          "Eda7403cadf5149dc-B0024",
+          "Eda7403cadf5149dc-B0025",
+          "Eda7403cadf5149dc-B0027",
+          "Eda7403cadf5149dc-B0028",
+          "Eda7403cadf5149dc-B0033",
+          "Eda7403cadf5149dc-B0037",
+          "Eda7403cadf5149dc-B0048",
+          "Eda7403cadf5149dc-B0049",
+          "Eda7403cadf5149dc-B0109",
+          "Eda7403cadf5149dc-B0110",
+          "Eda7403cadf5149dc-B0137",
+          "Eda7403cadf5149dc-B0138"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "42d9bc44eb1fc0d39554d076951a341962222fbdb555940cbd3e4a12c472efd2"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2608.08389",
+        "claim_evidence_alignment": "Claims that early post-retrieval pruning generates the bulk of token savings while pre-synthesis primarily refines quality are solidly supported by detailed stage-wise logging and token/node accounting.",
+        "context_id": "da7403cadf5149dc3ef706a1f2834f40804d8709ae7d7793b3ece30df624227d",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation across 100 benchmark queries from DeepResearchGym measures objective efficiency metrics (node count, token cost, wall-clock time) alongside report quality, key point recall/contradiction, and citation recall, complemented by supplementary runs on DeepResearch Bench.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Objective token counts, node tracking, runtime profiling, reference-document key point recall (KPR+KPC), and cross-benchmark RACE evaluations corroborate the efficiency and coverage trade-offs independently of the LLM rubric judge.",
+          "final_evaluation_signal": "Final pipeline outputs are evaluated using an independent LLM rubric judge, automated KPR+KPC key point coverage against reference documents, citation recall, and exact token/runtime measurements.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Pruning decisions use fixed heuristic scoring rules, rule-based embedding metrics, prompt-based LLM gating, or offline learned controllers without end-to-end policy tuning on the evaluation metrics.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Eda7403cadf5149dc-B0002",
+          "Eda7403cadf5149dc-B0006",
+          "Eda7403cadf5149dc-B0011",
+          "Eda7403cadf5149dc-B0015",
+          "Eda7403cadf5149dc-B0024",
+          "Eda7403cadf5149dc-B0025",
+          "Eda7403cadf5149dc-B0027",
+          "Eda7403cadf5149dc-B0028",
+          "Eda7403cadf5149dc-B0033",
+          "Eda7403cadf5149dc-B0037",
+          "Eda7403cadf5149dc-B0048",
+          "Eda7403cadf5149dc-B0049",
+          "Eda7403cadf5149dc-B0109",
+          "Eda7403cadf5149dc-B0110",
+          "Eda7403cadf5149dc-B0137",
+          "Eda7403cadf5149dc-B0138"
+        ],
+        "limitations": "The authors transparently report the lack of a matched-budget shallow-search baseline, sensitivity of absolute rubric scores across LLM judges, and variance across benchmarks.",
+        "method_assessment": "The methodology systematically compares heuristic criteria (MMR, centroid drift, geometric residual novelty, submodular coverage, DPP), lexical variants, LLM prompting, and learned gating on top of a consistent GPT-Researcher baseline.",
+        "quality_rationale": "The paper presents a well-structured, reproducible, and thorough empirical investigation of context pruning in multi-step agent architectures with balanced claims and rigorous token and runtime profiling.",
+        "scoped_contribution": "The manuscript formulates and empirically evaluates stage-aware marginal-value pruning across pre-retrieval, post-retrieval, and pre-synthesis stages in a multi-step deep research agent pipeline.",
+        "source_content_hash": "42d9bc44eb1fc0d39554d076951a341962222fbdb555940cbd3e4a12c472efd2"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The paper presents a well-structured, reproducible, and thorough empirical investigation of context pruning in multi-step agent architectures with balanced claims and rigorous token and runtime profiling.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "42d9bc44eb1fc0d39554d076951a341962222fbdb555940cbd3e4a12c472efd2",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
+    "uncertainty": "The authors transparently report the lack of a matched-budget shallow-search baseline, sensitivity of absolute rubric scores across LLM judges, and variance across benchmarks."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

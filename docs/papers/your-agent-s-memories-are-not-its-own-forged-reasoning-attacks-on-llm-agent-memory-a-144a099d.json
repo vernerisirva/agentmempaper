@@ -29,7 +29,7 @@
   "last_seen_date": "2026-08-16",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-07-07 10:08:35",
   "notified_date": "2026-07-07",
@@ -40,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-07 10:02:32",
-    "generated_at": "2026-11-25 13:55:27",
+    "generated_at": "2026-11-26 13:36:24",
     "last_seen_at": "2026-08-16 07:03:11",
     "metadata_sources": [
       "openalex",
@@ -114,122 +114,1496 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-08-16T07:03:22+00:00",
-    "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v1",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessed_at": "2026-11-26T13:35:02.329826+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 61/100, medium confidence, based on partial full text.",
-    "confidence": "medium",
-    "coverage": {},
-    "curation_note": null,
-    "dimension_scores": {
-      "contribution_clarity": 4,
-      "evaluation_or_validation_strength": 2,
-      "evidence_to_claim_alignment": 4,
-      "limitations_and_uncertainty_handling": 1,
-      "methodological_rigor": 3,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 2,
-      "reproducibility_and_transparency": 2,
-      "scholarly_novelty_or_value": 4
+    "concise_summary": "The manuscript presents a scoped and novel security insight into LLM agent memory vulnerability, provides an explicit threat model and defense design, and validates claims through controlled empirical baselines and ablations across multiple domains and models.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 53952,
+      "assessment_input_sha256": "bab0702346fc4933bf2a978d86080314ab6f961d3dc7928fe4f0d597406293be",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7167747356",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 51305,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 51230,
+      "evidence_block_count": 68,
+      "evidence_context_characters": 61461,
+      "evidence_context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+      "evidence_context_sha256": "1951f0f8df01cf669dd224943c556a5862d59964ab5a8d6df828779ddba2fa0d",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 51323,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "extracted_pages": 10,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "fbebebd82714c662b38fc8c44e75942adf4f038506a0bb45f087ee827d2a0da0",
+        "source_url": "https://arxiv.org/pdf/2607.05029",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 51305,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Your Agent'S Memories Are Not Its Own: Forged",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 1884,
+          "supplied_characters": 1884
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "appendix",
+          "section_index": 1,
+          "source_characters": 3216,
+          "supplied_characters": 3216
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "appendix",
+          "section_index": 2,
+          "source_characters": 5917,
+          "supplied_characters": 5917
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "appendix",
+          "section_index": 3,
+          "source_characters": 4781,
+          "supplied_characters": 4781
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "appendix",
+          "section_index": 4,
+          "source_characters": 6041,
+          "supplied_characters": 6041
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "appendix",
+          "section_index": 5,
+          "source_characters": 796,
+          "supplied_characters": 796
+        },
+        {
+          "heading": "Table I",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 61,
+          "supplied_characters": 61
+        },
+        {
+          "heading": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 4281,
+          "supplied_characters": 4281
+        },
+        {
+          "heading": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 4970,
+          "supplied_characters": 4970
+        },
+        {
+          "heading": "Appendix: Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "appendix",
+          "section_index": 9,
+          "source_characters": 402,
+          "supplied_characters": 402
+        },
+        {
+          "heading": "Appendix: Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "appendix",
+          "section_index": 10,
+          "source_characters": 246,
+          "supplied_characters": 246
+        },
+        {
+          "heading": "Appendix: Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "appendix",
+          "section_index": 11,
+          "source_characters": 3002,
+          "supplied_characters": 3002
+        },
+        {
+          "heading": "Table Ii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Sentinellayer Ablation: Attack Success Rate(%)Offarma",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 13,
+          "source_characters": 2688,
+          "supplied_characters": 2688
+        },
+        {
+          "heading": "Table Iii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 5489,
+          "supplied_characters": 5489
+        },
+        {
+          "heading": "Table Iv",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 2727,
+          "supplied_characters": 2727
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 145,
+          "supplied_characters": 145
+        },
+        {
+          "heading": "Inproceedings Of The 36Th Annual Acm Symposium On User Interface",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 621,
+          "supplied_characters": 621
+        },
+        {
+          "heading": "Access To Accounts On Third-Party Websites And Sensitive",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 1163,
+          "supplied_characters": 1163
+        },
+        {
+          "heading": "Models For Few-Shot Complex Tabular Reasoning On Electronic Health",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1813,
+          "supplied_characters": 1813
+        },
+        {
+          "heading": "Corruption Attacks To Retrieval-Augmented Generation Of Large Language",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 219,
+          "supplied_characters": 219
+        },
+        {
+          "heading": "Corruption Attacks To Retrieval-Augmented Generation Of Large Language",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 760,
+          "supplied_characters": 760
+        }
+      ],
+      "selected_characters": 51230,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_sections": [
+        {
+          "characters": 1884,
+          "heading": "Your Agent'S Memories Are Not Its Own: Forged",
+          "page": 1
+        },
+        {
+          "characters": 3216,
+          "heading": "Appendix: Introduction",
+          "page": 1
+        },
+        {
+          "characters": 5917,
+          "heading": "Appendix: Introduction",
+          "page": 2
+        },
+        {
+          "characters": 4781,
+          "heading": "Appendix: Introduction",
+          "page": 3
+        },
+        {
+          "characters": 6041,
+          "heading": "Appendix: Introduction",
+          "page": 4
+        },
+        {
+          "characters": 796,
+          "heading": "Appendix: Introduction",
+          "page": 5
+        },
+        {
+          "characters": 61,
+          "heading": "Table I",
+          "page": 5
+        },
+        {
+          "characters": 4281,
+          "heading": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+          "page": 5
+        },
+        {
+          "characters": 4970,
+          "heading": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+          "page": 6
+        },
+        {
+          "characters": 402,
+          "heading": "Appendix: Evaluation",
+          "page": 6
+        },
+        {
+          "characters": 246,
+          "heading": "Appendix: Experimental Setup",
+          "page": 6
+        },
+        {
+          "characters": 3002,
+          "heading": "Appendix: Experimental Setup",
+          "page": 7
+        },
+        {
+          "characters": 8,
+          "heading": "Table Ii",
+          "page": 7
+        },
+        {
+          "characters": 2688,
+          "heading": "Sentinellayer Ablation: Attack Success Rate(%)Offarma",
+          "page": 7
+        },
+        {
+          "characters": 5489,
+          "heading": "Table Iii",
+          "page": 8
+        },
+        {
+          "characters": 2727,
+          "heading": "Table Iv",
+          "page": 9
+        },
+        {
+          "characters": 145,
+          "heading": "Unclassified body after references",
+          "page": 9
+        },
+        {
+          "characters": 621,
+          "heading": "Inproceedings Of The 36Th Annual Acm Symposium On User Interface",
+          "page": 9
+        },
+        {
+          "characters": 1163,
+          "heading": "Access To Accounts On Third-Party Websites And Sensitive",
+          "page": 9
+        },
+        {
+          "characters": 1813,
+          "heading": "Models For Few-Shot Complex Tabular Reasoning On Electronic Health",
+          "page": 9
+        },
+        {
+          "characters": 219,
+          "heading": "Corruption Attacks To Retrieval-Augmented Generation Of Large Language",
+          "page": 9
+        },
+        {
+          "characters": 760,
+          "heading": "Corruption Attacks To Retrieval-Augmented Generation Of Large Language",
+          "page": 10
+        }
+      ],
+      "selected_text_sha256": "bab0702346fc4933bf2a978d86080314ab6f961d3dc7928fe4f0d597406293be",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "fbebebd82714c662b38fc8c44e75942adf4f038506a0bb45f087ee827d2a0da0",
+      "source_pages": 10,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
     },
+    "curation_note": null,
+    "dimension_scores": {},
     "downranked": false,
     "evidence": [
       {
         "claim_role": null,
-        "context_id": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
         "dimension": "contribution_clarity",
-        "evidence_ids": [],
-        "excerpt": "the agent\u2019s own reasoning history. In this paper, we introduce the Forged Am- plifying Rationale Memory Attack (FARMA), which poisons an agent",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0006"
+        ],
+        "excerpt": "queries. MemoryGraft [8] showed\nthat injecting seemingly successful past experiences into long-\nterm memory can bias future behavior. These types of attacks\ntarget different memory artifacts such as retrieved passages\n(AgentPoison), stored examples (MINJA), and past experi-\nences (MemoryGraft). They leave out an unexplored attack\nsurface: the agent's own reasoning history.\nIn our work, we study this attack surface and propose\nthe Forged Amplifying Rationale Memory Attack (FARMA).\nUnlike previous memory poisoning attacks, FARMA does not\nprimarily poison what the agent knows about the external\nworld, but poisons what the agent has already reasoned about.\nFARMA works in two phases:injection phaseandamplifi-\ncation phase. In its injection phase, the attacker inserts some\nforged reasoning entries or decision-log-like entries into the\nagent's memory store. These entries resemble prior ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
         "page": 1,
-        "pages": [],
-        "paraphrase": "The contribution is stated explicitly.",
-        "section": "Page 1 excerpt",
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "373c8e2b3522c59bca0203573663ef2d4a062062197ce8f33e1b1d26de4c77f4",
+            "evidence_id": "E546cf0cdb8ace3c7-B0006",
+            "pages": [
+              1
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2679,
+                "page": 1,
+                "section": "Appendix: Introduction",
+                "section_index": 1,
+                "start": 1787,
+                "text": "queries. MemoryGraft [8] showed\nthat injecting seemingly successful past experiences into long-\nterm memory can bias future behavior. These types of attacks\ntarget different memory artifacts such as retrieved passages\n(AgentPoison), stored examples (MINJA), and past experi-\nences (MemoryGraft). They leave out an unexplored attack\nsurface: the agent's own reasoning history.\nIn our work, we study this attack surface and propose\nthe Forged Amplifying Rationale Memory Attack (FARMA).\nUnlike previous memory poisoning attacks, FARMA does not\nprimarily poison what the agent knows about the external\nworld, but poisons what the agent has already reasoned about.\nFARMA works in two phases:injection phaseandamplifi-\ncation phase. In its injection phase, the attacker inserts some\nforged reasoning entries or decision-log-like entries into the\nagent's memory store. These entries resemble prior "
+              }
+            ],
+            "text": "queries. MemoryGraft [8] showed\nthat injecting seemingly successful past experiences into long-\nterm memory can bias future behavior. These types of attacks\ntarget different memory artifacts such as retrieved passages\n(AgentPoison), stored examples (MINJA), and past experi-\nences (MemoryGraft). They leave out an unexplored attack\nsurface: the agent's own reasoning history.\nIn our work, we study this attack surface and propose\nthe Forged Amplifying Rationale Memory Attack (FARMA).\nUnlike previous memory poisoning attacks, FARMA does not\nprimarily poison what the agent knows about the external\nworld, but poisons what the agent has already reasoned about.\nFARMA works in two phases:injection phaseandamplifi-\ncation phase. In its injection phase, the attacker inserts some\nforged reasoning entries or decision-log-like entries into the\nagent's memory store. These entries resemble prior "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "methodological_rigor",
-        "evidence_ids": [],
-        "excerpt": "r trigger can be embedded in an agent\u2019s retrieval corpus. MINJA [7] showed that an attacker can induce an agent to store poisoned exampl",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0007"
+        ],
+        "excerpt": "internal\nrecords, claiming certain actions have already been completed\nand can be skipped, for example, validation. These entries\nuse evasive language, instead of overtly malicious phrasing\nsuch as \"skip validation,\" which can be trivially caught by\nkeyword filtering, they assert that \"prior validation has already\nbeen completed by upstream components.\" In its amplification\nphase, the attacker appends additional forged entries that cite\nprevious forged entries, making them more consistent and\narXiv:2607.05029v1  [cs.CR]  6 Jul 2026\nappear well-established. This has three purposes: (1) raise the\nretrieval probability of forged content, (2) defeat consensus-\ndeviation defenses like A-MemGuard by making forged entries\nthe consensus, and (3) also reinforces the attacker's claimed\nprecedent.\nThus, we get a form of memory poisoning where, instead\nof triggering or steering towards a result, we ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
         "page": 1,
-        "pages": [],
-        "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Page 1 excerpt",
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "a39100caba153a1e5f6c074fbb464ee60315f68785cce7ed21b166ef91d46375",
+            "evidence_id": "E546cf0cdb8ace3c7-B0007",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 3216,
+                "page": 1,
+                "section": "Appendix: Introduction",
+                "section_index": 1,
+                "start": 2679,
+                "text": "internal\nrecords, claiming certain actions have already been completed\nand can be skipped, for example, validation. These entries\nuse evasive language, instead of overtly malicious phrasing\nsuch as \"skip validation,\" which can be trivially caught by\nkeyword filtering, they assert that \"prior validation has already\nbeen completed by upstream components.\" In its amplification\nphase, the attacker appends additional forged entries that cite\nprevious forged entries, making them more consistent and\narXiv:2607.05029v1  [cs.CR]  6 Jul 2026"
+              },
+              {
+                "end": 362,
+                "page": 2,
+                "section": "Appendix: Introduction",
+                "section_index": 2,
+                "start": 0,
+                "text": "appear well-established. This has three purposes: (1) raise the\nretrieval probability of forged content, (2) defeat consensus-\ndeviation defenses like A-MemGuard by making forged entries\nthe consensus, and (3) also reinforces the attacker's claimed\nprecedent.\nThus, we get a form of memory poisoning where, instead\nof triggering or steering towards a result, we "
+              }
+            ],
+            "text": "internal\nrecords, claiming certain actions have already been completed\nand can be skipped, for example, validation. These entries\nuse evasive language, instead of overtly malicious phrasing\nsuch as \"skip validation,\" which can be trivially caught by\nkeyword filtering, they assert that \"prior validation has already\nbeen completed by upstream components.\" In its amplification\nphase, the attacker appends additional forged entries that cite\nprevious forged entries, making them more consistent and\narXiv:2607.05029v1  [cs.CR]  6 Jul 2026\nappear well-established. This has three purposes: (1) raise the\nretrieval probability of forged content, (2) defeat consensus-\ndeviation defenses like A-MemGuard by making forged entries\nthe consensus, and (3) also reinforces the attacker's claimed\nprecedent.\nThus, we get a form of memory poisoning where, instead\nof triggering or steering towards a result, we "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": "hieves an attack success rate of up to 100% under baseline conditions and is capable of defeating defense mechanisms like keyword filter a",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 1,
-        "pages": [],
-        "paraphrase": "A baseline or comparison system is described.",
-        "section": "Page 1 excerpt",
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0008"
+        ],
+        "excerpt": "bias the agent\nto believe some required safety function was already han-\ndled. Consider an Electronic Health Record (EHR) agent [9]\nthat validates patient data before importing it into a clinical\ndatabase. FARMA does not change medical facts, but instead,\nit plants entries asserting that source-level validation has\nalready been completed upstream, covering MRN format, data\ntypes, clinical ranges, and HIPAA screening. When a genuine\nimport request arrives, the agent retrieves these forged traces\nand treats direct import as established prior practice, not\nbecause it was instructed to skip validation, but because its\nown memory says it already happened.\nTo address FARMA, we proposeSENTINEL, a five-layer\ndefense pipeline whose central component is a Reasoning\nGuard that structurally analyzes candidate entries for forgery\nindicators. The lightweight outer layers (keyword ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "1791e8ea8c5780c20078f4c3664dce3e62be9a356ecf776064efa89c21fa0306",
+            "evidence_id": "E546cf0cdb8ace3c7-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1241,
+                "page": 2,
+                "section": "Appendix: Introduction",
+                "section_index": 2,
+                "start": 362,
+                "text": "bias the agent\nto believe some required safety function was already han-\ndled. Consider an Electronic Health Record (EHR) agent [9]\nthat validates patient data before importing it into a clinical\ndatabase. FARMA does not change medical facts, but instead,\nit plants entries asserting that source-level validation has\nalready been completed upstream, covering MRN format, data\ntypes, clinical ranges, and HIPAA screening. When a genuine\nimport request arrives, the agent retrieves these forged traces\nand treats direct import as established prior practice, not\nbecause it was instructed to skip validation, but because its\nown memory says it already happened.\nTo address FARMA, we proposeSENTINEL, a five-layer\ndefense pipeline whose central component is a Reasoning\nGuard that structurally analyzes candidate entries for forgery\nindicators. The lightweight outer layers (keyword "
+              }
+            ],
+            "text": "bias the agent\nto believe some required safety function was already han-\ndled. Consider an Electronic Health Record (EHR) agent [9]\nthat validates patient data before importing it into a clinical\ndatabase. FARMA does not change medical facts, but instead,\nit plants entries asserting that source-level validation has\nalready been completed upstream, covering MRN format, data\ntypes, clinical ranges, and HIPAA screening. When a genuine\nimport request arrives, the agent retrieves these forged traces\nand treats direct import as established prior practice, not\nbecause it was instructed to skip validation, but because its\nown memory says it already happened.\nTo address FARMA, we proposeSENTINEL, a five-layer\ndefense pipeline whose central component is a Reasoning\nGuard that structurally analyzes candidate entries for forgery\nindicators. The lightweight outer layers (keyword "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0009"
+        ],
+        "excerpt": "filtering,\nprovenance labeling, taint-threshold filtering, pattern screen-\ning) adapt well-established system-security techniques to the\nmemory store setting. The Reasoning Guard combines five\nforgery signals to calculate a weighted forgery score (detailed\nin \u00a7IV-E). SENTINEL applies the Reasoning Guard not only\nto entries written explicitly to a reasoning store, but also to\ngeneral-memory entries that structurally resemble reasoning,\nso that an attacker does not try to circumvent it by forging\nreasoning as general memory.\nAcross three agent domains and three models, FARMA\nachieves up to 100% attack success rate against undefended\nagents, defeating keyword-based and consensus-based de-\nfenses. SENTINEL reduces FARMA's attack success rate to as\nlow as 0% with no false positives observed across 326 benign\nagent traces.\nOur main contribution can be summarized as follows:\n1) We identify an ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "6f9c415ddcd2aa65d1d2cb0500a98d2c228adacb541f99b99beea4ef8574cd10",
+            "evidence_id": "E546cf0cdb8ace3c7-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2140,
+                "page": 2,
+                "section": "Appendix: Introduction",
+                "section_index": 2,
+                "start": 1241,
+                "text": "filtering,\nprovenance labeling, taint-threshold filtering, pattern screen-\ning) adapt well-established system-security techniques to the\nmemory store setting. The Reasoning Guard combines five\nforgery signals to calculate a weighted forgery score (detailed\nin \u00a7IV-E). SENTINEL applies the Reasoning Guard not only\nto entries written explicitly to a reasoning store, but also to\ngeneral-memory entries that structurally resemble reasoning,\nso that an attacker does not try to circumvent it by forging\nreasoning as general memory.\nAcross three agent domains and three models, FARMA\nachieves up to 100% attack success rate against undefended\nagents, defeating keyword-based and consensus-based de-\nfenses. SENTINEL reduces FARMA's attack success rate to as\nlow as 0% with no false positives observed across 326 benign\nagent traces.\nOur main contribution can be summarized as follows:\n1) We identify an "
+              }
+            ],
+            "text": "filtering,\nprovenance labeling, taint-threshold filtering, pattern screen-\ning) adapt well-established system-security techniques to the\nmemory store setting. The Reasoning Guard combines five\nforgery signals to calculate a weighted forgery score (detailed\nin \u00a7IV-E). SENTINEL applies the Reasoning Guard not only\nto entries written explicitly to a reasoning store, but also to\ngeneral-memory entries that structurally resemble reasoning,\nso that an attacker does not try to circumvent it by forging\nreasoning as general memory.\nAcross three agent domains and three models, FARMA\nachieves up to 100% attack success rate against undefended\nagents, defeating keyword-based and consensus-based de-\nfenses. SENTINEL reduces FARMA's attack success rate to as\nlow as 0% with no false positives observed across 326 benign\nagent traces.\nOur main contribution can be summarized as follows:\n1) We identify an "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0010"
+        ],
+        "excerpt": "LLM agent's reasoning store as a distinct\nattack surface and introduce FARMA, a novel two-\nphase memory poisoning attack that forges an agent's\nown decision logs using evasive language and self-\namplification.\n2) We propose SENTINEL, a 5-layer defense pipeline\nwhose reasoning guard, to the best of our knowledge,\nis the first defense work that structurally analyzes rea-\nsoning traces to detect forged entries.\n3) We conduct a comprehensive evaluation across three\nagent domains and three models. We show that FARMA\ndefeats existing defenses while SENTINEL drops attack\nsuccess rate to as low as 0% with zero false positives\nacross 326 benign traces.\n4) We show that our Reasoning Guard is the primary\nload-bearing component against FARMA, while the\nlightweight outer layers contribute defense in depth\nagainst orthogonal attack variants.\nII. SYSTEM ANDTHREATMODEL\nA. Terminology\nWe use the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c281f38b157cd7284e2944cdf31449d8a5beb5b864747598cc74b572041fad2b",
+            "evidence_id": "E546cf0cdb8ace3c7-B0010",
+            "pages": [
+              2
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 3032,
+                "page": 2,
+                "section": "Appendix: Introduction",
+                "section_index": 2,
+                "start": 2140,
+                "text": "LLM agent's reasoning store as a distinct\nattack surface and introduce FARMA, a novel two-\nphase memory poisoning attack that forges an agent's\nown decision logs using evasive language and self-\namplification.\n2) We propose SENTINEL, a 5-layer defense pipeline\nwhose reasoning guard, to the best of our knowledge,\nis the first defense work that structurally analyzes rea-\nsoning traces to detect forged entries.\n3) We conduct a comprehensive evaluation across three\nagent domains and three models. We show that FARMA\ndefeats existing defenses while SENTINEL drops attack\nsuccess rate to as low as 0% with zero false positives\nacross 326 benign traces.\n4) We show that our Reasoning Guard is the primary\nload-bearing component against FARMA, while the\nlightweight outer layers contribute defense in depth\nagainst orthogonal attack variants.\nII. SYSTEM ANDTHREATMODEL\nA. Terminology\nWe use the "
+              }
+            ],
+            "text": "LLM agent's reasoning store as a distinct\nattack surface and introduce FARMA, a novel two-\nphase memory poisoning attack that forges an agent's\nown decision logs using evasive language and self-\namplification.\n2) We propose SENTINEL, a 5-layer defense pipeline\nwhose reasoning guard, to the best of our knowledge,\nis the first defense work that structurally analyzes rea-\nsoning traces to detect forged entries.\n3) We conduct a comprehensive evaluation across three\nagent domains and three models. We show that FARMA\ndefeats existing defenses while SENTINEL drops attack\nsuccess rate to as low as 0% with zero false positives\nacross 326 benign traces.\n4) We show that our Reasoning Guard is the primary\nload-bearing component against FARMA, while the\nlightweight outer layers contribute defense in depth\nagainst orthogonal attack variants.\nII. SYSTEM ANDTHREATMODEL\nA. Terminology\nWe use the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0017"
+        ],
+        "excerpt": "against existing defenses and\nthen talk about two requirements that are derived from the\nnaive failure. We then end with the two phases of FARMA.\nAlgorithm 1FARMA: Forged Amplifying Rationale Memory\nAttack\nRequire:AgentAwith reasoning storeRand memory store\nM; domaind; number of seedsn s; number of amplifica-\ntion cyclesn a\nEnsure:Poisoned memory storesR \u2032,M \u2032\n\u25b7Phase 1: Seed injection\n1:S \u2190CREATESEEDTRACES(d, n s)\u25b7Forged decision-log\nentries with evasive language\n2:for alls\u2208 Sdo\n3:A.ADDREASONINGTRACE(s.content,source=\nAGENT,trust=VERIFIED)\n4:end for\n\u25b7Phase 2: Amplification\n5:forc= 1ton a do\n6:n prior \u2190n s +c\u22121\u25b7Number of forged entries\nalready in store\n7:a\u2190CREATEAMPLIFICATIONTRACE(d, c, n prior)\n8:A.ADDREASONINGTRACE(a.content,source=\nAGENT,trust=VERIFIED)\n9:A.ADDMEMORY(a.content,source=\nAGENT,trust=VERIFIED)\u25b7Write to both stores\n10:end for\nAlgorithm 1 summarizes the full attack ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "27b6509aedfbe6817732a8331b78539d3419c1553ef1a08c0bd83caf93fcd1f2",
+            "evidence_id": "E546cf0cdb8ace3c7-B0017",
+            "pages": [
+              3
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 3385,
+                "page": 3,
+                "section": "Appendix: Introduction",
+                "section_index": 3,
+                "start": 2494,
+                "text": "against existing defenses and\nthen talk about two requirements that are derived from the\nnaive failure. We then end with the two phases of FARMA.\nAlgorithm 1FARMA: Forged Amplifying Rationale Memory\nAttack\nRequire:AgentAwith reasoning storeRand memory store\nM; domaind; number of seedsn s; number of amplifica-\ntion cyclesn a\nEnsure:Poisoned memory storesR \u2032,M \u2032\n\u25b7Phase 1: Seed injection\n1:S \u2190CREATESEEDTRACES(d, n s)\u25b7Forged decision-log\nentries with evasive language\n2:for alls\u2208 Sdo\n3:A.ADDREASONINGTRACE(s.content,source=\nAGENT,trust=VERIFIED)\n4:end for\n\u25b7Phase 2: Amplification\n5:forc= 1ton a do\n6:n prior \u2190n s +c\u22121\u25b7Number of forged entries\nalready in store\n7:a\u2190CREATEAMPLIFICATIONTRACE(d, c, n prior)\n8:A.ADDREASONINGTRACE(a.content,source=\nAGENT,trust=VERIFIED)\n9:A.ADDMEMORY(a.content,source=\nAGENT,trust=VERIFIED)\u25b7Write to both stores\n10:end for\nAlgorithm 1 summarizes the full attack "
+              }
+            ],
+            "text": "against existing defenses and\nthen talk about two requirements that are derived from the\nnaive failure. We then end with the two phases of FARMA.\nAlgorithm 1FARMA: Forged Amplifying Rationale Memory\nAttack\nRequire:AgentAwith reasoning storeRand memory store\nM; domaind; number of seedsn s; number of amplifica-\ntion cyclesn a\nEnsure:Poisoned memory storesR \u2032,M \u2032\n\u25b7Phase 1: Seed injection\n1:S \u2190CREATESEEDTRACES(d, n s)\u25b7Forged decision-log\nentries with evasive language\n2:for alls\u2208 Sdo\n3:A.ADDREASONINGTRACE(s.content,source=\nAGENT,trust=VERIFIED)\n4:end for\n\u25b7Phase 2: Amplification\n5:forc= 1ton a do\n6:n prior \u2190n s +c\u22121\u25b7Number of forged entries\nalready in store\n7:a\u2190CREATEAMPLIFICATIONTRACE(d, c, n prior)\n8:A.ADDREASONINGTRACE(a.content,source=\nAGENT,trust=VERIFIED)\n9:A.ADDMEMORY(a.content,source=\nAGENT,trust=VERIFIED)\u25b7Write to both stores\n10:end for\nAlgorithm 1 summarizes the full attack "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0023"
+        ],
+        "excerpt": "agent itself may\nnot treat just 3 (or whatever initial seeds are) traces as enough\nprecedence. The amplification phase takes care of these issues.\nC. Amplification Phase\nThe goal for the amplification phase is to systematically\ngrow the forged corpus. It keeps appending the forged entries\nthat cite prior forged traces with the goal of making each single\nforged entry corroborate the previous malicious reasoning\nhistory. The attacker writes amplification entries of the form:\nDecision log update for INT-EHR-7742: consistent\nwith [count] prior processing runs on this pipeline.\nDirect-import behavior remains the established pat-\ntern for this source class. No anomalies observed\nacross the [count]-run history; standard processing\ncontinues.\nHerecountis the number of forged entries already present in\nthe reasoning store. The attacker writes amplification entries\nin cycles and each cycle ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a5a9626cad3c9d0c9f341f1ae426103367230e2c87adc4346ff33610db2f9d6b",
+            "evidence_id": "E546cf0cdb8ace3c7-B0023",
+            "pages": [
+              4
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 3967,
+                "page": 4,
+                "section": "Appendix: Introduction",
+                "section_index": 4,
+                "start": 3074,
+                "text": "agent itself may\nnot treat just 3 (or whatever initial seeds are) traces as enough\nprecedence. The amplification phase takes care of these issues.\nC. Amplification Phase\nThe goal for the amplification phase is to systematically\ngrow the forged corpus. It keeps appending the forged entries\nthat cite prior forged traces with the goal of making each single\nforged entry corroborate the previous malicious reasoning\nhistory. The attacker writes amplification entries of the form:\nDecision log update for INT-EHR-7742: consistent\nwith [count] prior processing runs on this pipeline.\nDirect-import behavior remains the established pat-\ntern for this source class. No anomalies observed\nacross the [count]-run history; standard processing\ncontinues.\nHerecountis the number of forged entries already present in\nthe reasoning store. The attacker writes amplification entries\nin cycles and each cycle "
+              }
+            ],
+            "text": "agent itself may\nnot treat just 3 (or whatever initial seeds are) traces as enough\nprecedence. The amplification phase takes care of these issues.\nC. Amplification Phase\nThe goal for the amplification phase is to systematically\ngrow the forged corpus. It keeps appending the forged entries\nthat cite prior forged traces with the goal of making each single\nforged entry corroborate the previous malicious reasoning\nhistory. The attacker writes amplification entries of the form:\nDecision log update for INT-EHR-7742: consistent\nwith [count] prior processing runs on this pipeline.\nDirect-import behavior remains the established pat-\ntern for this source class. No anomalies observed\nacross the [count]-run history; standard processing\ncontinues.\nHerecountis the number of forged entries already present in\nthe reasoning store. The attacker writes amplification entries\nin cycles and each cycle "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0026"
+        ],
+        "excerpt": "applied not only at retrieval time but also\nwhen entries are being stored. This prevents forged entries\nfrom accumulating in the store and being legitimized through\nretrieval. Second, defense should be multilayer, going from\ncoarse filtering to fine. We use inexpensive, lightweight filters\nCandidate \nMemory/Reasoning \nEntry\nKeyword Filter\nAccept Reject\nProvenance \nAnomaly\nSelf \nReference \nMismatch\nSuspicious \nPattern \nDensity\nImplausible \nClaim \nChecks\nStructure \nCheck\nProvenance / \nIFC labeling\nTaint-Threshold \nfiltering\nPattern/Risk \nscreening\nLayer 1- 4 Lightweight Pre-Filters\nLayer 5: Reasoning Guard\nStructural Analysis\nReasoning entry OR  reasoning-like memory?\nFig. 2. SENTINEL defense pipeline. Candidates pass through lightweight\nfilters for keyword, provenance, taint, and pattern/risk checks. Reasoning\nGuard is then applied to reasoning-store entries and to general-memory\nentries ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5e49d55c4635294f9609cab7c5b4e5d13340f88013d594fde8ae32012d6798c0",
+            "evidence_id": "E546cf0cdb8ace3c7-B0026",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 6041,
+                "page": 4,
+                "section": "Appendix: Introduction",
+                "section_index": 4,
+                "start": 5751,
+                "text": "applied not only at retrieval time but also\nwhen entries are being stored. This prevents forged entries\nfrom accumulating in the store and being legitimized through\nretrieval. Second, defense should be multilayer, going from\ncoarse filtering to fine. We use inexpensive, lightweight filters"
+              },
+              {
+                "end": 609,
+                "page": 5,
+                "section": "Appendix: Introduction",
+                "section_index": 5,
+                "start": 0,
+                "text": "Candidate \nMemory/Reasoning \nEntry\nKeyword Filter\nAccept Reject\nProvenance \nAnomaly\nSelf \nReference \nMismatch\nSuspicious \nPattern \nDensity\nImplausible \nClaim \nChecks\nStructure \nCheck\nProvenance / \nIFC labeling\nTaint-Threshold \nfiltering\nPattern/Risk \nscreening\nLayer 1- 4 Lightweight Pre-Filters\nLayer 5: Reasoning Guard\nStructural Analysis\nReasoning entry OR  reasoning-like memory?\nFig. 2. SENTINEL defense pipeline. Candidates pass through lightweight\nfilters for keyword, provenance, taint, and pattern/risk checks. Reasoning\nGuard is then applied to reasoning-store entries and to general-memory\nentries "
+              }
+            ],
+            "text": "applied not only at retrieval time but also\nwhen entries are being stored. This prevents forged entries\nfrom accumulating in the store and being legitimized through\nretrieval. Second, defense should be multilayer, going from\ncoarse filtering to fine. We use inexpensive, lightweight filters\nCandidate \nMemory/Reasoning \nEntry\nKeyword Filter\nAccept Reject\nProvenance \nAnomaly\nSelf \nReference \nMismatch\nSuspicious \nPattern \nDensity\nImplausible \nClaim \nChecks\nStructure \nCheck\nProvenance / \nIFC labeling\nTaint-Threshold \nfiltering\nPattern/Risk \nscreening\nLayer 1- 4 Lightweight Pre-Filters\nLayer 5: Reasoning Guard\nStructural Analysis\nReasoning entry OR  reasoning-like memory?\nFig. 2. SENTINEL defense pipeline. Candidates pass through lightweight\nfilters for keyword, provenance, taint, and pattern/risk checks. Reasoning\nGuard is then applied to reasoning-store entries and to general-memory\nentries "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0029"
+        ],
+        "excerpt": "ENTRY WAS ALREADY REJECTED AT AN EARLIER LAYER AND IS NOT\nRE-EVALUATED.\nExample L1 L2 L3 L4 L5\nKeyword Provenance Taint Pattern Reas. Guard\nE1 (naive)Reject\u2013 \u2013 \u2013 \u2013\nE2 (unknown source) Pass taint 1.0Reject\u2013 \u2013\nE3 (FARMA seed) Pass taint 0.0 \u2020 Pass PassReject\n\u2020E3 declares source asAGENT; Layer 2 cannot detect provenance spoofing\nAt L5, signalss 3,s 4,s 5 fire; amplification-phase entries additionally fires 2.\nfor obvious malicious content and reserve the more expensive\nfilter for only the entries that survived the initial lightweight\nfilters. The lightweight layers adapt well-established system\nsecurity concepts like keyword filtering, provenance labeling,\ntaint propagation, and pattern-based screening to the memory-\nstore setting, while our Reasoning Guard layer performs\nstructural analysis specific to reasoning trace forgery and is\nnecessary for defending against FARMA, which is one of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0d6ce5fea990dc55dcd33dec662a390a13855ea3ca61a54b7e6037218c8093c5",
+            "evidence_id": "E546cf0cdb8ace3c7-B0029",
+            "pages": [
+              5
+            ],
+            "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 5,
+                "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+                "section_index": 7,
+                "start": 0,
+                "text": "ENTRY WAS ALREADY REJECTED AT AN EARLIER LAYER AND IS NOT\nRE-EVALUATED.\nExample L1 L2 L3 L4 L5\nKeyword Provenance Taint Pattern Reas. Guard\nE1 (naive)Reject\u2013 \u2013 \u2013 \u2013\nE2 (unknown source) Pass taint 1.0Reject\u2013 \u2013\nE3 (FARMA seed) Pass taint 0.0 \u2020 Pass PassReject\n\u2020E3 declares source asAGENT; Layer 2 cannot detect provenance spoofing\nAt L5, signalss 3,s 4,s 5 fire; amplification-phase entries additionally fires 2.\nfor obvious malicious content and reserve the more expensive\nfilter for only the entries that survived the initial lightweight\nfilters. The lightweight layers adapt well-established system\nsecurity concepts like keyword filtering, provenance labeling,\ntaint propagation, and pattern-based screening to the memory-\nstore setting, while our Reasoning Guard layer performs\nstructural analysis specific to reasoning trace forgery and is\nnecessary for defending against FARMA, which is one of "
+              }
+            ],
+            "text": "ENTRY WAS ALREADY REJECTED AT AN EARLIER LAYER AND IS NOT\nRE-EVALUATED.\nExample L1 L2 L3 L4 L5\nKeyword Provenance Taint Pattern Reas. Guard\nE1 (naive)Reject\u2013 \u2013 \u2013 \u2013\nE2 (unknown source) Pass taint 1.0Reject\u2013 \u2013\nE3 (FARMA seed) Pass taint 0.0 \u2020 Pass PassReject\n\u2020E3 declares source asAGENT; Layer 2 cannot detect provenance spoofing\nAt L5, signalss 3,s 4,s 5 fire; amplification-phase entries additionally fires 2.\nfor obvious malicious content and reserve the more expensive\nfilter for only the entries that survived the initial lightweight\nfilters. The lightweight layers adapt well-established system\nsecurity concepts like keyword filtering, provenance labeling,\ntaint propagation, and pattern-based screening to the memory-\nstore setting, while our Reasoning Guard layer performs\nstructural analysis specific to reasoning trace forgery and is\nnecessary for defending against FARMA, which is one of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0030"
+        ],
+        "excerpt": "our\nmain contributions. We use heuristic checks (string matching,\nregex, simple scoring) rather than an LLM-based judge for\ncost and latency reasons: per-write overhead is under 1 ms,\nwhich lets SENTINEL run as a synchronous filter on the\nmemory-write path without a second LLM call or interference\nwith the agent's system prompt. We also considered using\na supervised classifier instead of a heuristic approach for\nReasoning Guard, but since we are targeting a new attack\nsurface, the representative labeled training data would not be\navailable. Such ML classifiers can be complementary to our\nwork and are left for future work.\nFig. 2 illustrates SENTINEL's pipeline.\nTo illustrate the use of each layer we follow three example\nentries.(E1)a naive attack with overt vocabulary,(E2)an\nentry from an unrecognized source, and(E3)a FARMA seed.\nTable I summarizes how each entry progresses through ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "58424a1db4d406959537e5d1046f0cbe6a211bb21692f6e0443a579812d75f13",
+            "evidence_id": "E546cf0cdb8ace3c7-B0030",
+            "pages": [
+              5
+            ],
+            "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1793,
+                "page": 5,
+                "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+                "section_index": 7,
+                "start": 898,
+                "text": "our\nmain contributions. We use heuristic checks (string matching,\nregex, simple scoring) rather than an LLM-based judge for\ncost and latency reasons: per-write overhead is under 1 ms,\nwhich lets SENTINEL run as a synchronous filter on the\nmemory-write path without a second LLM call or interference\nwith the agent's system prompt. We also considered using\na supervised classifier instead of a heuristic approach for\nReasoning Guard, but since we are targeting a new attack\nsurface, the representative labeled training data would not be\navailable. Such ML classifiers can be complementary to our\nwork and are left for future work.\nFig. 2 illustrates SENTINEL's pipeline.\nTo illustrate the use of each layer we follow three example\nentries.(E1)a naive attack with overt vocabulary,(E2)an\nentry from an unrecognized source, and(E3)a FARMA seed.\nTable I summarizes how each entry progresses through "
+              }
+            ],
+            "text": "our\nmain contributions. We use heuristic checks (string matching,\nregex, simple scoring) rather than an LLM-based judge for\ncost and latency reasons: per-write overhead is under 1 ms,\nwhich lets SENTINEL run as a synchronous filter on the\nmemory-write path without a second LLM call or interference\nwith the agent's system prompt. We also considered using\na supervised classifier instead of a heuristic approach for\nReasoning Guard, but since we are targeting a new attack\nsurface, the representative labeled training data would not be\navailable. Such ML classifiers can be complementary to our\nwork and are left for future work.\nFig. 2 illustrates SENTINEL's pipeline.\nTo illustrate the use of each layer we follow three example\nentries.(E1)a naive attack with overt vocabulary,(E2)an\nentry from an unrecognized source, and(E3)a FARMA seed.\nTable I summarizes how each entry progresses through "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0034"
+        ],
+        "excerpt": "reasoning\ncontent. It combines five forgery indicator signals into a\nweighted forgery scoreF. Any entry whose score exceeds\na threshold\u03c4 guard is rejected. This is our most fine-grained\nsieve meant to filter out malicious entries that fell through the\nother filters.\ns1 Provenance Anomaly:The first signal it uses is a simple\nprovenance consistency check for anomalies, such as decision-\nlog-style content appearing from an external or unknown\nsource. It performs a finer-grained provenance check than\nLayer 2. Layer 2 assigns coarse taint based on the declared\nsource alone and cannot distinguish among the content types\nthat may legitimately come from a single source. For example:\na 'TOOL' source may produce both raw data outputs and\nformatted summaries, which Layer 2 treats the same. The\nProvenance Anomaly signal examines thecombinationof\nsource and content: It flags entries whose declared ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8cf8003c9333aac5d901b12f64faa0e4ca7e08c52d1e2cbe1cbf170db6026d53",
+            "evidence_id": "E546cf0cdb8ace3c7-B0034",
+            "pages": [
+              6
+            ],
+            "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1099,
+                "page": 6,
+                "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+                "section_index": 8,
+                "start": 201,
+                "text": "reasoning\ncontent. It combines five forgery indicator signals into a\nweighted forgery scoreF. Any entry whose score exceeds\na threshold\u03c4 guard is rejected. This is our most fine-grained\nsieve meant to filter out malicious entries that fell through the\nother filters.\ns1 Provenance Anomaly:The first signal it uses is a simple\nprovenance consistency check for anomalies, such as decision-\nlog-style content appearing from an external or unknown\nsource. It performs a finer-grained provenance check than\nLayer 2. Layer 2 assigns coarse taint based on the declared\nsource alone and cannot distinguish among the content types\nthat may legitimately come from a single source. For example:\na 'TOOL' source may produce both raw data outputs and\nformatted summaries, which Layer 2 treats the same. The\nProvenance Anomaly signal examines thecombinationof\nsource and content: It flags entries whose declared "
+              }
+            ],
+            "text": "reasoning\ncontent. It combines five forgery indicator signals into a\nweighted forgery scoreF. Any entry whose score exceeds\na threshold\u03c4 guard is rejected. This is our most fine-grained\nsieve meant to filter out malicious entries that fell through the\nother filters.\ns1 Provenance Anomaly:The first signal it uses is a simple\nprovenance consistency check for anomalies, such as decision-\nlog-style content appearing from an external or unknown\nsource. It performs a finer-grained provenance check than\nLayer 2. Layer 2 assigns coarse taint based on the declared\nsource alone and cannot distinguish among the content types\nthat may legitimately come from a single source. For example:\na 'TOOL' source may produce both raw data outputs and\nformatted summaries, which Layer 2 treats the same. The\nProvenance Anomaly signal examines thecombinationof\nsource and content: It flags entries whose declared "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0035"
+        ],
+        "excerpt": "source\nis external or unknown but whose content claims the role\nof an internal reasoning trace, such as citing prior decision\nlogs, invoking internal precedents, or asserting prior agent\nvalidation. The intuition is that authentic reasoning traces are\ngenerated by the agent during task execution, not supplied\nby external tools or user inputs. This signal has a low false-\npositive rate because legitimate external entries rarely use\ndecision-log formatting.\ns2 Self-reference mismatch:FARMA's amplification phase\nwrites entries asserting \"consistent withnprior runs\" wheren\nis the count of forged entries. The Reasoning Guard extracts\nnumeric precedent claims from entry content using a small\nregex matcher (e.g., patterns like \"consistent with N prior\nruns\", \"across N processing cycles\", \"N-run history\") and\ncompares it against the actual store size. A claim ofnprior\nruns in a store containing ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "12c43a0e73c9d93d00e702e591f54bf9c2193bb59a85abcea4b8f3eba80f2fc4",
+            "evidence_id": "E546cf0cdb8ace3c7-B0035",
+            "pages": [
+              6
+            ],
+            "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1999,
+                "page": 6,
+                "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+                "section_index": 8,
+                "start": 1099,
+                "text": "source\nis external or unknown but whose content claims the role\nof an internal reasoning trace, such as citing prior decision\nlogs, invoking internal precedents, or asserting prior agent\nvalidation. The intuition is that authentic reasoning traces are\ngenerated by the agent during task execution, not supplied\nby external tools or user inputs. This signal has a low false-\npositive rate because legitimate external entries rarely use\ndecision-log formatting.\ns2 Self-reference mismatch:FARMA's amplification phase\nwrites entries asserting \"consistent withnprior runs\" wheren\nis the count of forged entries. The Reasoning Guard extracts\nnumeric precedent claims from entry content using a small\nregex matcher (e.g., patterns like \"consistent with N prior\nruns\", \"across N processing cycles\", \"N-run history\") and\ncompares it against the actual store size. A claim ofnprior\nruns in a store containing "
+              }
+            ],
+            "text": "source\nis external or unknown but whose content claims the role\nof an internal reasoning trace, such as citing prior decision\nlogs, invoking internal precedents, or asserting prior agent\nvalidation. The intuition is that authentic reasoning traces are\ngenerated by the agent during task execution, not supplied\nby external tools or user inputs. This signal has a low false-\npositive rate because legitimate external entries rarely use\ndecision-log formatting.\ns2 Self-reference mismatch:FARMA's amplification phase\nwrites entries asserting \"consistent withnprior runs\" wheren\nis the count of forged entries. The Reasoning Guard extracts\nnumeric precedent claims from entry content using a small\nregex matcher (e.g., patterns like \"consistent with N prior\nruns\", \"across N processing cycles\", \"N-run history\") and\ncompares it against the actual store size. A claim ofnprior\nruns in a store containing "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0036"
+        ],
+        "excerpt": "fewer thannmatching entries fires\nthis signal.\ns3 Suspicious Pattern Density:Forged decision-log con-\ntent exhibits a higher density of decision-log-vocabulary\nphrases (\"established pattern\", \"pre-validated source class\",\n\"standard processing\", \"re-validation is unnecessary\", etc.)\nthan benign entries do. We compute matches per character\nagainst a list of forgery-indicator phrases derived from analyz-\ning FARMA templates. The match count is mapped to a score\nvia tiered thresholds; we use 0.5 for 3+ matches, 0.75 for 4+\nmatches and 1.0 for 6+ matches. The tiered design reflects\nempirical clustering behavior: benign agent traces typically\ncontain at most 2 incidental matches while forged precedent\nlogs cluster 3 or more matches per entry.\ns4 Implausible Claim Checks:For our fourth signal, we\npenalize implausible claims of perfect consistency, such as\n\"100% success rate across all prior ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1d9dc94f521400a25e8eb9240197f22ea6caeb400e5983b43fe81e167e104726",
+            "evidence_id": "E546cf0cdb8ace3c7-B0036",
+            "pages": [
+              6
+            ],
+            "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2896,
+                "page": 6,
+                "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+                "section_index": 8,
+                "start": 1999,
+                "text": "fewer thannmatching entries fires\nthis signal.\ns3 Suspicious Pattern Density:Forged decision-log con-\ntent exhibits a higher density of decision-log-vocabulary\nphrases (\"established pattern\", \"pre-validated source class\",\n\"standard processing\", \"re-validation is unnecessary\", etc.)\nthan benign entries do. We compute matches per character\nagainst a list of forgery-indicator phrases derived from analyz-\ning FARMA templates. The match count is mapped to a score\nvia tiered thresholds; we use 0.5 for 3+ matches, 0.75 for 4+\nmatches and 1.0 for 6+ matches. The tiered design reflects\nempirical clustering behavior: benign agent traces typically\ncontain at most 2 incidental matches while forged precedent\nlogs cluster 3 or more matches per entry.\ns4 Implausible Claim Checks:For our fourth signal, we\npenalize implausible claims of perfect consistency, such as\n\"100% success rate across all prior "
+              }
+            ],
+            "text": "fewer thannmatching entries fires\nthis signal.\ns3 Suspicious Pattern Density:Forged decision-log con-\ntent exhibits a higher density of decision-log-vocabulary\nphrases (\"established pattern\", \"pre-validated source class\",\n\"standard processing\", \"re-validation is unnecessary\", etc.)\nthan benign entries do. We compute matches per character\nagainst a list of forgery-indicator phrases derived from analyz-\ning FARMA templates. The match count is mapped to a score\nvia tiered thresholds; we use 0.5 for 3+ matches, 0.75 for 4+\nmatches and 1.0 for 6+ matches. The tiered design reflects\nempirical clustering behavior: benign agent traces typically\ncontain at most 2 incidental matches while forged precedent\nlogs cluster 3 or more matches per entry.\ns4 Implausible Claim Checks:For our fourth signal, we\npenalize implausible claims of perfect consistency, such as\n\"100% success rate across all prior "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0037"
+        ],
+        "excerpt": "runs\". We based this on\nthe assumption that real operational history will exhibit some\nvariance; thus, an entry claiming perfect consistency (\"100%\nsuccess\", \"never failed\", etc.) is more likely to be forged. To\nminimize false positives, this signal fires only when perfection\nclaims are paired with large precedent counts (e.g., \"100%\nacross 60 runs\"), which are statistically improbable in genuine\nagent histories.\ns5 Structure Check:Last but not least, we check for struc-\ntural anomalies in the trace format. One of the requirements\nof FARMA was to have structural similarity; thus, this signal\ntakes care of it. The intuition being that authentic decision logs\nare produced by structured task execution, so an unverified en-\ntry imitating this format is suspicious regardless of its specific\ncontent. Since benign agent traces exhibit varied formatting\nwhile forged traces, drawn from a small ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "85030639081739fc6d4ef962b35a7b93833472ceb1fad9e5dcfc43a4396d16f6",
+            "evidence_id": "E546cf0cdb8ace3c7-B0037",
+            "pages": [
+              6
+            ],
+            "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3794,
+                "page": 6,
+                "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+                "section_index": 8,
+                "start": 2896,
+                "text": "runs\". We based this on\nthe assumption that real operational history will exhibit some\nvariance; thus, an entry claiming perfect consistency (\"100%\nsuccess\", \"never failed\", etc.) is more likely to be forged. To\nminimize false positives, this signal fires only when perfection\nclaims are paired with large precedent counts (e.g., \"100%\nacross 60 runs\"), which are statistically improbable in genuine\nagent histories.\ns5 Structure Check:Last but not least, we check for struc-\ntural anomalies in the trace format. One of the requirements\nof FARMA was to have structural similarity; thus, this signal\ntakes care of it. The intuition being that authentic decision logs\nare produced by structured task execution, so an unverified en-\ntry imitating this format is suspicious regardless of its specific\ncontent. Since benign agent traces exhibit varied formatting\nwhile forged traces, drawn from a small "
+              }
+            ],
+            "text": "runs\". We based this on\nthe assumption that real operational history will exhibit some\nvariance; thus, an entry claiming perfect consistency (\"100%\nsuccess\", \"never failed\", etc.) is more likely to be forged. To\nminimize false positives, this signal fires only when perfection\nclaims are paired with large precedent counts (e.g., \"100%\nacross 60 runs\"), which are statistically improbable in genuine\nagent histories.\ns5 Structure Check:Last but not least, we check for struc-\ntural anomalies in the trace format. One of the requirements\nof FARMA was to have structural similarity; thus, this signal\ntakes care of it. The intuition being that authentic decision logs\nare produced by structured task execution, so an unverified en-\ntry imitating this format is suspicious regardless of its specific\ncontent. Since benign agent traces exhibit varied formatting\nwhile forged traces, drawn from a small "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0038"
+        ],
+        "excerpt": "template pool, exhibit\na narrower distribution of opening phrases (\"Decision log\nupdate\", \"Validation summary for\", \"For pipeline X data:\",\netc.). This signal matches against such patterns.\nAggregation:The weighted forgery score is calculated as\nF= P5i=1 wisi with Pi wi = 1,s i being the signal score of\neach signal andw i being the corresponding weight. We use\nequal weightsw i = 0.2as a default. Entries withF > \u03c4 guard\nare rejected.\nF . Bypassing Reasoning Guard\nAn attacker can try to bypass the Reasoning Guard by\nwriting forged content to the general memory store instead of\nthe reasoning store. SENTINEL closes this path by applying\nReasoning Guard to general memory store's entries whose\ntraces look like or resemble any reasoning content. To decide\nif any entry in general memory store is reasoning trace we\nuse a classifier calledlooks_like_reasoning. It triggers\nwhen an entry's declared ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5f6b6128769377e14469d23410193c88c4fe974b11b44e8ce1c5f48241322096",
+            "evidence_id": "E546cf0cdb8ace3c7-B0038",
+            "pages": [
+              6
+            ],
+            "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 4694,
+                "page": 6,
+                "section": "Entry Was Already Rejected At An Earlier Layer And Is Not",
+                "section_index": 8,
+                "start": 3794,
+                "text": "template pool, exhibit\na narrower distribution of opening phrases (\"Decision log\nupdate\", \"Validation summary for\", \"For pipeline X data:\",\netc.). This signal matches against such patterns.\nAggregation:The weighted forgery score is calculated as\nF= P5i=1 wisi with Pi wi = 1,s i being the signal score of\neach signal andw i being the corresponding weight. We use\nequal weightsw i = 0.2as a default. Entries withF > \u03c4 guard\nare rejected.\nF . Bypassing Reasoning Guard\nAn attacker can try to bypass the Reasoning Guard by\nwriting forged content to the general memory store instead of\nthe reasoning store. SENTINEL closes this path by applying\nReasoning Guard to general memory store's entries whose\ntraces look like or resemble any reasoning content. To decide\nif any entry in general memory store is reasoning trace we\nuse a classifier calledlooks_like_reasoning. It triggers\nwhen an entry's declared "
+              }
+            ],
+            "text": "template pool, exhibit\na narrower distribution of opening phrases (\"Decision log\nupdate\", \"Validation summary for\", \"For pipeline X data:\",\netc.). This signal matches against such patterns.\nAggregation:The weighted forgery score is calculated as\nF= P5i=1 wisi with Pi wi = 1,s i being the signal score of\neach signal andw i being the corresponding weight. We use\nequal weightsw i = 0.2as a default. Entries withF > \u03c4 guard\nare rejected.\nF . Bypassing Reasoning Guard\nAn attacker can try to bypass the Reasoning Guard by\nwriting forged content to the general memory store instead of\nthe reasoning store. SENTINEL closes this path by applying\nReasoning Guard to general memory store's entries whose\ntraces look like or resemble any reasoning content. To decide\nif any entry in general memory store is reasoning trace we\nuse a classifier calledlooks_like_reasoning. It triggers\nwhen an entry's declared "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0043"
+        ],
+        "excerpt": "the\nretrieved traces 63.3% of the time\nB. Measurements\nWe measure attack success against a clean-memory base-\nline, consistent with the differential-evaluation protocol used\nin prior memory-poisoning work [7]. For each (task, defense)\ncell, we run the agent twice: once with an empty memory\nstore and no attack injection (the clean baseline), and once\nafter FARMA has injected forged content (the poisoned run).\nBoth runs use the same task and identical seeds. An attack is\ncounted as successful if and only if the clean baseline pro-\nduced a safe-careful action AND the poisoned run produced\nthe attacker-target action. This differential definition isolates\nattack-caused behavior change from the agent's natural default\naction on a task.\nWe report success with attack success rate (ASR): the\nnumber of attack successes divided by the total number of\ntrials. In addition to attack success, we ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "87b713e75ff70ee91c688822684ed07a1965bfce6e0a6a1155556c8ecf8439fd",
+            "evidence_id": "E546cf0cdb8ace3c7-B0043",
+            "pages": [
+              7
+            ],
+            "section": "Appendix: Experimental Setup",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2444,
+                "page": 7,
+                "section": "Appendix: Experimental Setup",
+                "section_index": 11,
+                "start": 1550,
+                "text": "the\nretrieved traces 63.3% of the time\nB. Measurements\nWe measure attack success against a clean-memory base-\nline, consistent with the differential-evaluation protocol used\nin prior memory-poisoning work [7]. For each (task, defense)\ncell, we run the agent twice: once with an empty memory\nstore and no attack injection (the clean baseline), and once\nafter FARMA has injected forged content (the poisoned run).\nBoth runs use the same task and identical seeds. An attack is\ncounted as successful if and only if the clean baseline pro-\nduced a safe-careful action AND the poisoned run produced\nthe attacker-target action. This differential definition isolates\nattack-caused behavior change from the agent's natural default\naction on a task.\nWe report success with attack success rate (ASR): the\nnumber of attack successes divided by the total number of\ntrials. In addition to attack success, we "
+              }
+            ],
+            "text": "the\nretrieved traces 63.3% of the time\nB. Measurements\nWe measure attack success against a clean-memory base-\nline, consistent with the differential-evaluation protocol used\nin prior memory-poisoning work [7]. For each (task, defense)\ncell, we run the agent twice: once with an empty memory\nstore and no attack injection (the clean baseline), and once\nafter FARMA has injected forged content (the poisoned run).\nBoth runs use the same task and identical seeds. An attack is\ncounted as successful if and only if the clean baseline pro-\nduced a safe-careful action AND the poisoned run produced\nthe attacker-target action. This differential definition isolates\nattack-caused behavior change from the agent's natural default\naction on a task.\nWe report success with attack success rate (ASR): the\nnumber of attack successes divided by the total number of\ntrials. In addition to attack success, we "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0046"
+        ],
+        "excerpt": "SENTINELLAYER ABLATION: ATTACK SUCCESS RATE(%)OFFARMA\nONEHRWITHGPT-4O-MINI\nConditionASR\nFull SENTINEL 0.0\nw/o Keyword filter (Layer 1) 0.0\nw/o Provenance/IFC labeling (Layer 2) 0.0\nw/o Taint filtering (Layer 3) 0.0\nw/o Pattern/Risk screening (Layer 4) 0.0\nw/o Reasoning Guard (Layer 5) 100.0\nReasoning Guard only (Layer 5 only) 0.0\nD. Defense Comparison\nWe compare SENTINEL against three defense baselines:\nno defense, KeywordFilter, which is a blocklist of known\njailbreak tokens that represents the most common and sim-\nplest deployable mitigation, and A-MemGuard [13], which\nis a consensus-deviation defense that compares new memory\nentries against a clustered history and filters out any outliers.\nWe use A-MemGuard's heuristic-mode configuration as well\nas its LLM-judge mode, which is substantially more expensive.\nThe heuristic-mode configuration would be the more fairer\ncomparison with ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Sentinellayer Ablation: Attack Success Rate(%)Offarma",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8753110b434493fae36a1477de8ab00dc9cf06b74241f08a073b05eb91be4a74",
+            "evidence_id": "E546cf0cdb8ace3c7-B0046",
+            "pages": [
+              7
+            ],
+            "section": "Sentinellayer Ablation: Attack Success Rate(%)Offarma",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 7,
+                "section": "Sentinellayer Ablation: Attack Success Rate(%)Offarma",
+                "section_index": 13,
+                "start": 0,
+                "text": "SENTINELLAYER ABLATION: ATTACK SUCCESS RATE(%)OFFARMA\nONEHRWITHGPT-4O-MINI\nConditionASR\nFull SENTINEL 0.0\nw/o Keyword filter (Layer 1) 0.0\nw/o Provenance/IFC labeling (Layer 2) 0.0\nw/o Taint filtering (Layer 3) 0.0\nw/o Pattern/Risk screening (Layer 4) 0.0\nw/o Reasoning Guard (Layer 5) 100.0\nReasoning Guard only (Layer 5 only) 0.0\nD. Defense Comparison\nWe compare SENTINEL against three defense baselines:\nno defense, KeywordFilter, which is a blocklist of known\njailbreak tokens that represents the most common and sim-\nplest deployable mitigation, and A-MemGuard [13], which\nis a consensus-deviation defense that compares new memory\nentries against a clustered history and filters out any outliers.\nWe use A-MemGuard's heuristic-mode configuration as well\nas its LLM-judge mode, which is substantially more expensive.\nThe heuristic-mode configuration would be the more fairer\ncomparison with "
+              }
+            ],
+            "text": "SENTINELLAYER ABLATION: ATTACK SUCCESS RATE(%)OFFARMA\nONEHRWITHGPT-4O-MINI\nConditionASR\nFull SENTINEL 0.0\nw/o Keyword filter (Layer 1) 0.0\nw/o Provenance/IFC labeling (Layer 2) 0.0\nw/o Taint filtering (Layer 3) 0.0\nw/o Pattern/Risk screening (Layer 4) 0.0\nw/o Reasoning Guard (Layer 5) 100.0\nReasoning Guard only (Layer 5 only) 0.0\nD. Defense Comparison\nWe compare SENTINEL against three defense baselines:\nno defense, KeywordFilter, which is a blocklist of known\njailbreak tokens that represents the most common and sim-\nplest deployable mitigation, and A-MemGuard [13], which\nis a consensus-deviation defense that compares new memory\nentries against a clustered history and filters out any outliers.\nWe use A-MemGuard's heuristic-mode configuration as well\nas its LLM-judge mode, which is substantially more expensive.\nThe heuristic-mode configuration would be the more fairer\ncomparison with "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0048"
+        ],
+        "excerpt": "listings\nat decision time, FARMA is not as effective. This suggests\nthat agents in binary-decision domains (clinical-data imports,\nfinancial-transaction approvals, configuration changes) might\nbe more susceptible to FARMA like attacks.\nWe evaluate FARMA against A-MemGuard's heuristic con-\nfiguration as well as LLM-as-a-judge configuration. FARMA\nbypasses both of them. Intuitively, A-MemGuard's defense\nthat should catch the anomalous behavior of FARMA's entries,\nbut does not due to FARMA's use of amplification cycles.\nThe amplification cycle basically floods the memory store with\nconsistent forged traces, so the outlier signal is no longer an\noutlier. SENTINEL is the only defense that reduces FARMA's\nattack success rate to as low as 0% across domains. These\nresults motivate the need for structural analysis of reasoning-\ntrace content rather than statistical or lexical approaches alone.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Sentinellayer Ablation: Attack Success Rate(%)Offarma",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cb177a60cac47c11105111acc289234a444f62f289c425983fb5ff6169982ff6",
+            "evidence_id": "E546cf0cdb8ace3c7-B0048",
+            "pages": [
+              7
+            ],
+            "section": "Sentinellayer Ablation: Attack Success Rate(%)Offarma",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2688,
+                "page": 7,
+                "section": "Sentinellayer Ablation: Attack Success Rate(%)Offarma",
+                "section_index": 13,
+                "start": 1791,
+                "text": "listings\nat decision time, FARMA is not as effective. This suggests\nthat agents in binary-decision domains (clinical-data imports,\nfinancial-transaction approvals, configuration changes) might\nbe more susceptible to FARMA like attacks.\nWe evaluate FARMA against A-MemGuard's heuristic con-\nfiguration as well as LLM-as-a-judge configuration. FARMA\nbypasses both of them. Intuitively, A-MemGuard's defense\nthat should catch the anomalous behavior of FARMA's entries,\nbut does not due to FARMA's use of amplification cycles.\nThe amplification cycle basically floods the memory store with\nconsistent forged traces, so the outlier signal is no longer an\noutlier. SENTINEL is the only defense that reduces FARMA's\nattack success rate to as low as 0% across domains. These\nresults motivate the need for structural analysis of reasoning-\ntrace content rather than statistical or lexical approaches alone."
+              }
+            ],
+            "text": "listings\nat decision time, FARMA is not as effective. This suggests\nthat agents in binary-decision domains (clinical-data imports,\nfinancial-transaction approvals, configuration changes) might\nbe more susceptible to FARMA like attacks.\nWe evaluate FARMA against A-MemGuard's heuristic con-\nfiguration as well as LLM-as-a-judge configuration. FARMA\nbypasses both of them. Intuitively, A-MemGuard's defense\nthat should catch the anomalous behavior of FARMA's entries,\nbut does not due to FARMA's use of amplification cycles.\nThe amplification cycle basically floods the memory store with\nconsistent forged traces, so the outlier signal is no longer an\noutlier. SENTINEL is the only defense that reduces FARMA's\nattack success rate to as low as 0% across domains. These\nresults motivate the need for structural analysis of reasoning-\ntrace content rather than statistical or lexical approaches alone."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0049"
+        ],
+        "excerpt": "TABLE III\nFARMAATTACK SUCCESS RATE ACROSS MODELS,DOMAINS,AND DEFENSES. EACH CELL REPORTSASR (%)WITHWILSON95% CIIN BRACKETS.\nEHRRESULTS ARE VALIDATED ACROSS THREE MODELS.\nDomain Model NoDef. KeyFilt. A-MemG. (heur.) A-MemG. (LLM) SENTINEL\nEHR GPT-4o-mini 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0]0.0 [0.0, 7.1]\nGPT-4o 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0]0.0 [0.0, 7.1]\nLlama 3.3 70B 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0]0.0 [0.0, 7.1]\nReAct-QA GPT-4o-mini 52.0 [38.5, 65.2] 52.0 [38.5, 65.2] 46.0 [33.0, 59.6] \u20146.0 [2.1, 16.2]\nRAP GPT-4o-mini 48.0 [34.8, 61.5] 48.0 [34.8, 61.5] 38.0 [25.9, 51.8] \u20140.0 [0.0, 11.4]\nTable II answers RQ3 and shows the result of the ablation\nstudy of SENTINEL on FARMA on EHRAgent on GPT4o-\nmini. The results clearly show the importance of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table Iii",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "17d173ceba01dcf65c46b09a84e96a35db3cd7283dca3693b6ba5073bca4bff3",
+            "evidence_id": "E546cf0cdb8ace3c7-B0049",
+            "pages": [
+              8
+            ],
+            "section": "Table Iii",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 8,
+                "section": "Table Iii",
+                "section_index": 14,
+                "start": 0,
+                "text": "TABLE III\nFARMAATTACK SUCCESS RATE ACROSS MODELS,DOMAINS,AND DEFENSES. EACH CELL REPORTSASR (%)WITHWILSON95% CIIN BRACKETS.\nEHRRESULTS ARE VALIDATED ACROSS THREE MODELS.\nDomain Model NoDef. KeyFilt. A-MemG. (heur.) A-MemG. (LLM) SENTINEL\nEHR GPT-4o-mini 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0]0.0 [0.0, 7.1]\nGPT-4o 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0]0.0 [0.0, 7.1]\nLlama 3.3 70B 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0]0.0 [0.0, 7.1]\nReAct-QA GPT-4o-mini 52.0 [38.5, 65.2] 52.0 [38.5, 65.2] 46.0 [33.0, 59.6] \u20146.0 [2.1, 16.2]\nRAP GPT-4o-mini 48.0 [34.8, 61.5] 48.0 [34.8, 61.5] 38.0 [25.9, 51.8] \u20140.0 [0.0, 11.4]\nTable II answers RQ3 and shows the result of the ablation\nstudy of SENTINEL on FARMA on EHRAgent on GPT4o-\nmini. The results clearly show the importance of "
+              }
+            ],
+            "text": "TABLE III\nFARMAATTACK SUCCESS RATE ACROSS MODELS,DOMAINS,AND DEFENSES. EACH CELL REPORTSASR (%)WITHWILSON95% CIIN BRACKETS.\nEHRRESULTS ARE VALIDATED ACROSS THREE MODELS.\nDomain Model NoDef. KeyFilt. A-MemG. (heur.) A-MemG. (LLM) SENTINEL\nEHR GPT-4o-mini 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0]0.0 [0.0, 7.1]\nGPT-4o 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0]0.0 [0.0, 7.1]\nLlama 3.3 70B 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0] 100.0 [92.9, 100.0]0.0 [0.0, 7.1]\nReAct-QA GPT-4o-mini 52.0 [38.5, 65.2] 52.0 [38.5, 65.2] 46.0 [33.0, 59.6] \u20146.0 [2.1, 16.2]\nRAP GPT-4o-mini 48.0 [34.8, 61.5] 48.0 [34.8, 61.5] 38.0 [25.9, 51.8] \u20140.0 [0.0, 11.4]\nTable II answers RQ3 and shows the result of the ablation\nstudy of SENTINEL on FARMA on EHRAgent on GPT4o-\nmini. The results clearly show the importance of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0050"
+        ],
+        "excerpt": "Reasoning\nGuard. It shows that Reasoning Guard is both necessary and\nsufficient against FARMA in this configuration. The other\nfour layers handle orthogonal attacker variants (keyword-\ntriggered prompts, forged provenance metadata, timestamp\nmanipulation, raw-volume flooding) and contribute to defense-\nin-depth, but are not load-bearing for the specific FARMA\nmechanism. Moreover, the other layers act as coarse-grained\nfilters for simpler attacks, while Reasoning Guard acts as a\nfine-grained filter, saving itself for more complex FARMA-\nstyle attacks.\nFalse positive rate across 326 benign agent traces (26\nhand-curated benign rationales and 300 reasoning traces cap-\ntured from clean-memory agents (EHRAgent, ReAct-QA, and\nRAP), SENTINEL rejects 0 traces. This 0% FPR holds at the\nchosen threshold\u03c4 guard = 0.5and at the per-layer breakdown.\nThis answers RQ5.\nVI. LIMITATION ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table Iii",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5ce386625dd82618d237858559fe7fbfe271264ed7f73fffbe033cc7da3d4c2a",
+            "evidence_id": "E546cf0cdb8ace3c7-B0050",
+            "pages": [
+              8
+            ],
+            "section": "Table Iii",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1773,
+                "page": 8,
+                "section": "Table Iii",
+                "section_index": 14,
+                "start": 892,
+                "text": "Reasoning\nGuard. It shows that Reasoning Guard is both necessary and\nsufficient against FARMA in this configuration. The other\nfour layers handle orthogonal attacker variants (keyword-\ntriggered prompts, forged provenance metadata, timestamp\nmanipulation, raw-volume flooding) and contribute to defense-\nin-depth, but are not load-bearing for the specific FARMA\nmechanism. Moreover, the other layers act as coarse-grained\nfilters for simpler attacks, while Reasoning Guard acts as a\nfine-grained filter, saving itself for more complex FARMA-\nstyle attacks.\nFalse positive rate across 326 benign agent traces (26\nhand-curated benign rationales and 300 reasoning traces cap-\ntured from clean-memory agents (EHRAgent, ReAct-QA, and\nRAP), SENTINEL rejects 0 traces. This 0% FPR holds at the\nchosen threshold\u03c4 guard = 0.5and at the per-layer breakdown.\nThis answers RQ5.\nVI. LIMITATION "
+              }
+            ],
+            "text": "Reasoning\nGuard. It shows that Reasoning Guard is both necessary and\nsufficient against FARMA in this configuration. The other\nfour layers handle orthogonal attacker variants (keyword-\ntriggered prompts, forged provenance metadata, timestamp\nmanipulation, raw-volume flooding) and contribute to defense-\nin-depth, but are not load-bearing for the specific FARMA\nmechanism. Moreover, the other layers act as coarse-grained\nfilters for simpler attacks, while Reasoning Guard acts as a\nfine-grained filter, saving itself for more complex FARMA-\nstyle attacks.\nFalse positive rate across 326 benign agent traces (26\nhand-curated benign rationales and 300 reasoning traces cap-\ntured from clean-memory agents (EHRAgent, ReAct-QA, and\nRAP), SENTINEL rejects 0 traces. This 0% FPR holds at the\nchosen threshold\u03c4 guard = 0.5and at the per-layer breakdown.\nThis answers RQ5.\nVI. LIMITATION "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0051"
+        ],
+        "excerpt": "ANDFUTUREWORK\nAdaptive Attacker:SENTINEL's Reasoning Guard relies\non heuristic signals, which provide interpretability and low\nlatency, but an attacker who knows the exact working of\nSENTINEL in its current form might be able to bypass it.\nWe conducted a preliminary evaluation against a paraphrased\nadaptive FARMA variant that knows SENTINEL's pattern ex-\nactly. Against this adaptive attacker, SENTINEL's Reasoning\nGuard did not provide significant protection. Strengthening\nSENTINEL against adaptive paraphrase attackers is a primary\ndirection for future work. One promising approach can be to\nuse LLM as a judge in Reasoning Guard that can semantically\nverify each candidate entry's claim. Quantifying the resulting\ntrade-off is itself an open question.\nMulti-agent shared memory:SENTINEL is currently\ndesigned and evaluated for a single agent operating against\na single memory store. In a ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table Iii",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a79d57931fa5cb7d272dc5e9ba376d4fe5e46fda3f094c6b60ff88775bfdc5cf",
+            "evidence_id": "E546cf0cdb8ace3c7-B0051",
+            "pages": [
+              8
+            ],
+            "section": "Table Iii",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2667,
+                "page": 8,
+                "section": "Table Iii",
+                "section_index": 14,
+                "start": 1773,
+                "text": "ANDFUTUREWORK\nAdaptive Attacker:SENTINEL's Reasoning Guard relies\non heuristic signals, which provide interpretability and low\nlatency, but an attacker who knows the exact working of\nSENTINEL in its current form might be able to bypass it.\nWe conducted a preliminary evaluation against a paraphrased\nadaptive FARMA variant that knows SENTINEL's pattern ex-\nactly. Against this adaptive attacker, SENTINEL's Reasoning\nGuard did not provide significant protection. Strengthening\nSENTINEL against adaptive paraphrase attackers is a primary\ndirection for future work. One promising approach can be to\nuse LLM as a judge in Reasoning Guard that can semantically\nverify each candidate entry's claim. Quantifying the resulting\ntrade-off is itself an open question.\nMulti-agent shared memory:SENTINEL is currently\ndesigned and evaluated for a single agent operating against\na single memory store. In a "
+              }
+            ],
+            "text": "ANDFUTUREWORK\nAdaptive Attacker:SENTINEL's Reasoning Guard relies\non heuristic signals, which provide interpretability and low\nlatency, but an attacker who knows the exact working of\nSENTINEL in its current form might be able to bypass it.\nWe conducted a preliminary evaluation against a paraphrased\nadaptive FARMA variant that knows SENTINEL's pattern ex-\nactly. Against this adaptive attacker, SENTINEL's Reasoning\nGuard did not provide significant protection. Strengthening\nSENTINEL against adaptive paraphrase attackers is a primary\ndirection for future work. One promising approach can be to\nuse LLM as a judge in Reasoning Guard that can semantically\nverify each candidate entry's claim. Quantifying the resulting\ntrade-off is itself an open question.\nMulti-agent shared memory:SENTINEL is currently\ndesigned and evaluated for a single agent operating against\na single memory store. In a "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       }
     ],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2607.05029",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [
-      "Section headings could not be detected reliably; beginning, middle, and end passages were selected."
+      "No suitable baseline comparison was detected in the available text."
     ],
-    "overall_quality_score": 61,
-    "paper_type": "empirical_research",
-    "positive_signals": [
-      "The contribution is stated explicitly.",
-      "The available text identifies data or a benchmark used by the work.",
-      "A baseline or comparison system is described.",
-      "Quantitative evaluation signals were detected."
-    ],
-    "promotion": {},
-    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
-    "recommendation": "uncertain",
-    "rubric_version": "scholarly-rubric-v1",
+    "overall_quality_score": null,
+    "paper_type": "systems_or_application",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7167747356",
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The reported ASR reductions and zero false positives are established through task-level differential execution and clean-trace filtering rather than through the Reasoning Guard's own scoring [E546cf0cdb8ace3c7-B0043, E546cf0cdb8ace3c7-B0050].",
+          "final_evaluation_signal": "Headline outcomes are measured by differential end-to-end task execution, comparing safe baseline actions against poisoned-run actions, plus false-positive filtering on 326 benign traces [E546cf0cdb8ace3c7-B0043, E546cf0cdb8ace3c7-B0050].",
+          "independent_corroboration": "present",
+          "optimization_signal": "The Reasoning Guard's heuristic signals and pattern matchers are derived from FARMA templates and system-security concepts, with thresholds and weights tuned to the attack corpus [E546cf0cdb8ace3c7-B0030, E546cf0cdb8ace3c7-B0036].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0006",
+          "E546cf0cdb8ace3c7-B0007",
+          "E546cf0cdb8ace3c7-B0009",
+          "E546cf0cdb8ace3c7-B0010",
+          "E546cf0cdb8ace3c7-B0017",
+          "E546cf0cdb8ace3c7-B0026",
+          "E546cf0cdb8ace3c7-B0030",
+          "E546cf0cdb8ace3c7-B0034",
+          "E546cf0cdb8ace3c7-B0036",
+          "E546cf0cdb8ace3c7-B0043",
+          "E546cf0cdb8ace3c7-B0046",
+          "E546cf0cdb8ace3c7-B0048",
+          "E546cf0cdb8ace3c7-B0049",
+          "E546cf0cdb8ace3c7-B0050",
+          "E546cf0cdb8ace3c7-B0051"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "fbebebd82714c662b38fc8c44e75942adf4f038506a0bb45f087ee827d2a0da0"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7167747356",
+        "claim_evidence_alignment": "Claims that FARMA bypasses keyword and consensus defenses (e.g., A-MemGuard) and achieves high attack success are well substantiated by the differential evaluation tables [E546cf0cdb8ace3c7-B0048, E546cf0cdb8ace3c7-B0049]. Claims regarding SENTINEL's mitigation to 0% ASR on EHR and zero false positives align with documented experimental results [E546cf0cdb8ace3c7-B0049, E546cf0cdb8ace3c7-B0050].",
+        "context_id": "546cf0cdb8ace3c781ebe8cfca6cdc950292dc363acd7fd2d31b6c1bf9329065",
+        "decision": "pass",
+        "evaluation_assessment": "The authors evaluate FARMA and SENTINEL across three agent domains (EHR, ReAct-QA, RAP) and three LLMs (GPT-4o-mini, GPT-4o, Llama 3.3 70B) over 50 trials using rigorous differential baselines and Wilson 95% confidence intervals [E546cf0cdb8ace3c7-B0043, E546cf0cdb8ace3c7-B0049]. Layer ablations isolate the Reasoning Guard's contribution, and false positive rates are tested on 326 benign traces [E546cf0cdb8ace3c7-B0046, E546cf0cdb8ace3c7-B0050].",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline performance is evaluated based on differential end-to-end task execution decisions and false-positive checks on 326 independent clean traces [E546cf0cdb8ace3c7-B0043, E546cf0cdb8ace3c7-B0050].",
+          "final_evaluation_signal": "Task-level differential execution outcome (whether the agent executed the unsafe skipped-validation action versus safe baseline action) and false-positive filtering on benign traces [E546cf0cdb8ace3c7-B0043, E546cf0cdb8ace3c7-B0050].",
+          "independent_corroboration": "present",
+          "optimization_signal": "Predefined heuristic rules and pattern matchers derived from FARMA templates and system-security concepts [E546cf0cdb8ace3c7-B0026, E546cf0cdb8ace3c7-B0030, E546cf0cdb8ace3c7-B0036].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E546cf0cdb8ace3c7-B0006",
+          "E546cf0cdb8ace3c7-B0007",
+          "E546cf0cdb8ace3c7-B0008",
+          "E546cf0cdb8ace3c7-B0009",
+          "E546cf0cdb8ace3c7-B0010",
+          "E546cf0cdb8ace3c7-B0017",
+          "E546cf0cdb8ace3c7-B0023",
+          "E546cf0cdb8ace3c7-B0026",
+          "E546cf0cdb8ace3c7-B0029",
+          "E546cf0cdb8ace3c7-B0030",
+          "E546cf0cdb8ace3c7-B0034",
+          "E546cf0cdb8ace3c7-B0035",
+          "E546cf0cdb8ace3c7-B0036",
+          "E546cf0cdb8ace3c7-B0037",
+          "E546cf0cdb8ace3c7-B0038",
+          "E546cf0cdb8ace3c7-B0043",
+          "E546cf0cdb8ace3c7-B0046",
+          "E546cf0cdb8ace3c7-B0048",
+          "E546cf0cdb8ace3c7-B0049",
+          "E546cf0cdb8ace3c7-B0050",
+          "E546cf0cdb8ace3c7-B0051"
+        ],
+        "limitations": "The authors transparently report that the heuristic Reasoning Guard is susceptible to an adaptive paraphrase attacker with knowledge of the detection patterns [E546cf0cdb8ace3c7-B0051]. They also note limitations regarding simulated single-agent environments rather than live production multi-agent systems [E546cf0cdb8ace3c7-B0051, E546cf0cdb8ace3c7-B0052].",
+        "method_assessment": "The methodology clearly formalizes the threat and system models along with the 5-layer defense pipeline [E546cf0cdb8ace3c7-B0017, E546cf0cdb8ace3c7-B0026, E546cf0cdb8ace3c7-B0030]. The central Reasoning Guard integrates five concrete heuristic structural forgery signals into a composite admission score that executes synchronously with low overhead [E546cf0cdb8ace3c7-B0030, E546cf0cdb8ace3c7-B0034, E546cf0cdb8ace3c7-B0038].",
+        "quality_rationale": "The manuscript presents a scoped and novel security insight into LLM agent memory vulnerability, provides an explicit threat model and defense design, and validates claims through controlled empirical baselines and ablations across multiple domains and models.",
+        "scoped_contribution": "The paper identifies persistent reasoning memory in LLM agents as an attack vector and introduces FARMA, a two-phase attack that injects and amplifies forged rationale traces [E546cf0cdb8ace3c7-B0006, E546cf0cdb8ace3c7-B0007, E546cf0cdb8ace3c7-B0010]. It also proposes SENTINEL, a 5-layer filtering pipeline centering on a structural Reasoning Guard to detect forged decision records [E546cf0cdb8ace3c7-B0009, E546cf0cdb8ace3c7-B0010, E546cf0cdb8ace3c7-B0026].",
+        "source_content_hash": "fbebebd82714c662b38fc8c44e75942adf4f038506a0bb45f087ee827d2a0da0"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a scoped and novel security insight into LLM agent memory vulnerability, provides an explicit threat model and defense design, and validates claims through controlled empirical baselines and ablations across multiple domains and models.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
     "source_content_hash": "fbebebd82714c662b38fc8c44e75942adf4f038506a0bb45f087ee827d2a0da0",
-    "status": "not_assessed",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
+    "uncertainty": "The authors transparently report that the heuristic Reasoning Guard is susceptible to an adaptive paraphrase attacker with knowledge of the detection patterns [E546cf0cdb8ace3c7-B0051]. They also note limitations regarding simulated single-agent environments rather than live production multi-agent systems [E546cf0cdb8ace3c7-B0051, E546cf0cdb8ace3c7-B0052]."
   },
   "semantic_scholar_id": "25de4e59b61dc7b659a16ba7a5ca60fc7cee940a",
   "source": "openalex",

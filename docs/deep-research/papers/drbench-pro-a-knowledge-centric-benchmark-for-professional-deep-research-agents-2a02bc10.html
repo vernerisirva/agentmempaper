@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DRBench Pro: A Knowledge-Centric Benchmark for Professional Deep Research Agents</title>
+  <meta name="description" content="Daily Paper Scout briefing for autonomous research agents, AI-scientist systems, and deep research workflows.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory Library</a> <a href="../../engram/index.html">Engram</a> <a href="../../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>DRBench Pro: A Knowledge-Centric Benchmark for Professional Deep Research Agents</h1>
+          <p class="hero-copy">Han Huang, Yuchen Yan, Xingyu Wu, Yijun Li, Chao Deng, Jie Liu, Jin Ma, Yongliang Shen</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2611.34852v1">Open paper</a>
+            <a class="paper-detail-link" href="drbench-pro-a-knowledge-centric-benchmark-for-professional-deep-research-agents-2a02bc10.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Han Huang, Yuchen Yan, Xingyu Wu, Yijun Li, Chao Deng, Jie Liu, Jin Ma, Yongliang Shen</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-11-25</dd></div>
+              <div><dt>Publication date</dt><dd>2026-11-25</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>arxiv</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>high</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2611.34852">arXiv</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies source-grounded research workflows, citation verification, or evidence-backed research reports.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Deep research agents gather information from multiple sources and synthesize it into reports on complex, open-ended questions. Existing benchmarks assess report quality along several dimensions, but lack a dedicated knowledge-centric evaluation of which research directions a report covers and how deeply it explores...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The study presents a rigorously formulated and thoroughly validated benchmark contribution with substantial scope, clear mathematical definitions, and extensive human-grounded calibration. The experimental controls and evaluations are exemplary.</p>
+      <p>The evaluation relies on Wikipedia-derived knowledge structures which may favor certain entity types, and automated judge scoring requires careful thresholding, though validated extensively against human annotations.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-26T13:35:22.903977+00:00.</p>
+        <p>Coverage: 152927 of 152927 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>breadth of coverage across research directions and the depth of coverage along related knowledge chains
+insufficiently characterized (Table 1).
+To fill this gap, we introduceDRBench Pro, a knowledge-centric benchmark that treats structured knowledge
+coverage as its primary evaluation target. Our automated pipeline builds a local entity–relation tree through
+multi-hop expansion from a Wikipedia root entity and samples coherent subgraphs defining distinct research
+scopes. Each subgraph is used to generate both a root-centered research query and a rubric set. Every
+retained edge defines a rubric grounded in Wikipedia evidence, preserving its structural position in the
+reference tree. Thisshared construction aligns task scope with evaluation unitsand makes each judgment
+traceable to its originating relation and structural position.
+We further propose topology-aware metrics that aggregate </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>coverage, followed by
+Grok 4.5 at 50.98%, leaving substantial room for improvement even among frontier agents. Rubric judgments
+agree with human labels at a Macro-F1 of 0.893, and agent rankings remain stable under perturbations of all
+metric parameters.
+Our main contributions are as follows:
+• We introduce DRBench Pro, a knowledge-centric benchmark dedicated to structured knowledge coverage
+in deep research reports, comprising 144 cases across 24 domains and 44,102 evidence-grounded rubrics,
+built by an automated pipeline that jointly generates each research query and its hidden rubrics from the
+same Wikipedia-derived subgraph while preserving the evidence provenance and structural position of
+every rubric.
+• We propose topology-aware breadth and depth metrics, together with overall coverage, to distinguish
+coverage across research directions from progression along related knowledge </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A reference space for knowledge coverage needs to connect research topics with supporting evidence. Wikipedia
+provides linked entities whose relationships can be examined in their source context. To span diverse domains,
+we adopt all 24 topic categories from WebOrganizer (Wettig et al., 2025) and select two root entities per
+category. Each root has a sufficiently detailed, reliably parseable article and enough outgoing links to support
+expansion.
+Starting from each root, we expand Wikipedia links breadth-first. Nodes represent entities, and edges
+represent relationships supported by link anchors and surrounding text. We organize the retained expansion
+as a rooted tree, with one parent per non-root node and a unique path from the root. This structure gives
+each relation an identifiable position for subsequent rubric construction and coverage aggregation. Distance
+from the root is </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A full knowledge tree spans more material than a single research request can reasonably target. We therefore
+sample smaller subgraphs, each defining the scope of one research case. A branch consists of one child of the
+root and all its descendants: it represents a research direction, while paths within it capture chains of related
+knowledge. Each case retains the root and 10 complete branches, preserving the knowledge structure within
+the selected directions.
+To make each scope coherent, Claude Opus 4.8 jointly selects three groups of branches from each tree, using
+the candidate entities&#x27; page summaries, relations to the root, and descendant information. Branches within
+a group are selected to provide complementary perspectives on a common research task; the three groups
+do not share root branches. Retaining complete branches preserves the deeper relations needed to evaluate
+coverage </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The research request and its evaluation criteria should refer to the same knowledge scope. We therefore
+use Claude Opus 4.8 to generate both the query and the rubrics from each sampled subgraph. For query
+generation, the model receives the root entity and the sampled knowledge scope, and is instructed to frame
+a natural research request around their broader themes. The prompt discourages listing hidden entities or
+restating the subgraph as a checklist, so the agent is asked to investigate a topic rather than reproduce an
+explicit answer outline.
+To make the expected coverage traceable to evidence, we create one rubric per retained relation edge. Each
+rubric asks whether the report covers the relationship between its source and target entities. The generator
+uses only the supplied evidence: page summaries, the anchor sentence, relevant paragraphs, and available
+backlink context from the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Counting satisfied rubrics alone can give similar scores to reports with different coverage patterns. We
+therefore retain the reference tree when aggregating judgments, distinguishing coverage across research
+directions from coverage along related knowledge chains. An LLM judge assigns each hidden rubric one
+of three verdicts:Satisfied,Partially Satisfied, orNot Satisfied. For coverage metric computation, we map
+Satisfiedto1(covered) and bothPartially SatisfiedandNot Satisfiedto0(uncovered). These binary values
+are then aggregated over the reference tree.
+Breadth.Breadth measures how comprehensively a report covers the selected research directions. We give
+these directions equal weight so that a branch with more rubrics does not dominate the score. Within a
+branch, deeper relations can demonstrate coverage of a direction even when a shallower relation is missing.
+We preserve each </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>satisfied rubrics.
+Overall coverage.We combine case-level breadthB c and depthDc through their geometric mean,
+Sc =
+√
+BcDc,(1)
+so weak coverage in either dimension lowers the combined score. Each of the three metrics is then averaged
+separately across the 144 cases.
+Both metrics are computed from the leaves toward the root, starting with the direct rubric scores and
+recursively combining them with descendant coverage. Appendix B provides the complete procedure in
+Algorithm 1, together with the equations, parameter definitions, and boundary conventions.</blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>sample.
+Implementation details.The evaluated reports were collected during the periods listed in Appendix G.
+We use Gemini 2.5 Pro as the judge for the formal evaluation. It assigns each rubric one of three verdicts:
+Satisfied,Partially Satisfied, orNot Satisfied. We retain these original judgments and convert them into
+binary rubric scores of0or1for the metrics in Section 3.4. Appendix H reports the recorded model-call
+costs for report generation and judge evaluation.
+6
+Table 2Main results on DRBench Pro (%).Boldand underlined values indicate the best and second-best scores
+across all agents, respectively, based on unrounded values.
+Deep Research Agent Overall Coverage Breadth Depth
+(1) Deep Research Systems
+o3 Deep Research 49.45 45.77 54.32
+Perplexity Sonar Deep Research 46.06 40.00 54.08
+Qwen Deep Research 35.16 29.33 43.37
+(2) Native Search LLMs
+Claude Opus 557.04 53.09 61.91
+Grok </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Because each research query is generated from a sampled subgraph, we manually review all 144 queries using
+three criteria: research value, public answerability, and alignment with their assigned domains (Table 3). All
+are rated Good on the first two criteria; 141 are Good and three Medium on domain match.
+The three Medium cases arise from natural cross-domain overlap, as subgraph sampling produces topic-specific
+research scopes that are not necessarily confined to a single domain; the queries nevertheless remain coherent,
+publicly answerable, and sufficiently aligned with their assigned domains for benchmark evaluation.
+We also check whether queries reveal the hidden entity information used for evaluation. For each of 24 sampled
+cases (one per domain), we compare its query with every non-root entity title in its subgraph, yielding 7,385
+query–entity comparisons, and manually review </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Validating the design of evaluation metrics.At the report level, we compare our final metrics with
+independent expert assessments of 72 reports from six agents across 12 cases.
+Table 5Agreement with expert assessments. Kendall&#x27;s
+τb and Spearman&#x27;sρs are computed within each case and
+averaged across cases.
+Dimension Scoring schemeτ b↑ρ s↑
+OverallFinal metrics 0.751 0.833
+Level-balanced coverage 0.615 0.718
+Flat coverage 0.508 0.597
+BreadthFinal metrics 0.696 0.777
+Branch coverage 0.533 0.592
+w/o descendant fusion 0.643 0.714
+DepthFinal metrics 0.727 0.813
+Within-path pair coverage 0.577 0.664
+w/o continuity discount 0.668 0.761
+Three experts independently rate each report&#x27;s
+breadth, depth, and overall quality on a 1–10 scale,
+and their mean ratings serve as the human refer-
+ence (Appendix I.2). Holding the evaluated reports
+and their corresponding rubric judgments fixed, we
+compare these </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.718
+DeepSeek V4 Pro 0.865 0.630
+At the rubric level, we compare three LLM judges with human-
+reviewed labels on 3,695 rubric judgments from 12 reports, each
+representing a different domain. Gemini 2.5 Pro, Qwen 3.8 Max, and
+DeepSeek V4 Pro assignSatisfied,Partially Satisfied, orNot Satisfied
+verdicts. For binary agreement, we mapSatisfiedto1(covered) and
+the other two verdicts to0(uncovered) for both human and judge
+labels. We compute Macro-F1 separately for each report and average
+it across the 12 reports. Table 6 presents the results for both binary
+and ternary scoring. Appendix I.1 details the human annotation
+protocol.
+9
+Binary versus ternary scoring.In our benchmark, binary scoring yields higher mean Macro-F1 than ternary
+scoring for all three judges. This finding aligns with the trend reported by ResearchRubrics (Sharma et al.,
+2026). We therefore adopt binary rubric scores for </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 7 Sensitivity of agent rankings to metric hy-
+perparameters.Spearman correlations compare each
+ranking with the default; exact and practical reversals
+are counted over 120 agent pairs. All paired values are
+breadth/depth (B/D), with breadth first.
+Parameter configuration Ranking stability
+Variantα η ρ βSpearmanr s Exact Practical
+Default 0.25 0.75 0.50 0.60 1.000/1.000 0/0 0/0
+α-Low0.100.75 0.50 0.60 1.000/0.979 0/5 0/2
+α-High0.400.75 0.50 0.60 1.000/0.976 0/6 0/1
+η-Low 0.250.500.50 0.60 1.000/0.997 0/1 0/0
+η-High 0.250.900.50 0.60 1.000/1.000 0/0 0/0
+ρ-Low 0.25 0.750.400.60 1.000/0.994 0/2 0/0
+ρ-High 0.25 0.750.600.60 1.000/0.985 0/4 0/0
+β-Low 0.25 0.75 0.500.501.000/1.000 0/0 0/0
+β-High 0.25 0.75 0.500.750.997/1.000 1/0 0/0
+We test ranking sensitivity by varying aggregation pa-
+rameter and recomputing each deep research agent&#x27;s
+mean breadth and depth over all 144 cases. Table </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>While several related benchmarks, such as DeepResearchEval (Wang et al., 2026d) and DeepResearch Bench
+II (Li et al., 2026b), assess robustness across judge models, we additionally examine potential sensitivity to
+the model used to construct the tasks and rubrics. To this end, we reconstructed reference graphs, queries,
+and rubrics with Kimi K2.6. On 10 sampled cases, we compare Claude Opus 5 with three Native Search
+LLMs that performed relatively close to Claude in the original evaluation. We compare the performance of
+the same four models on the Kimi-constructed benchmark and the original benchmark constructed by Claude
+Opus 4.8, using corresponding roots.
+Table 8 Sensitivity to the benchmark construction model.Ranks are computed among the four models within each
+case and averaged across cases. Positive gaps favor Claude.
+Evaluated model Mean Overall (%) Mean rank Claude&#x27;s </blockquote></details></li><li><strong>Contribution clarity — pages 16–17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>of coverage. Their contribution propagates upward through the
+recursion to the branch-level breadth score.
+16
+Algorithm 1Bottom-up recursive evaluation of structured knowledge coverage
+Input:Rooted treeTwith rootsand child setsCh(v); binary incoming-edge scoresx(v)∈{0,1}forv̸=s
+Input:Parametersβ= 0.60,α= 0.25,η= 0.75,ρ= 0.50
+Output:Case-level breadthB c, depthD c, and overall coverageSc
+Main procedure
+1:A←Ch(s) Selected research directions
+2:foreachb∈Ado(B(b),D(b))←Evaluate(b)
+3:B c← 1|A|∑b∈AB(b);D c←RankAgg((D(b))b∈A,ρ)
+4:S c←√BcDc;return(B c,D c,S c)
+Recursive evaluation
+5:functionEvaluate(v),v̸=s:
+6:C←Ch(v)
+7:ifC=∅,return(x(v),x(v)) Leaf initialization
+8:foreachw∈Cdo(B(w),D(w))←Evaluate(w)
+9:B(v)←βx(v) + (1−β) 1|C|∑w∈CB(w)Local-descendant coverage fusion
+10:d←RankAgg
+(
+(D(w))w∈C,ρ
+)
+11:D(v)←αx(v) + (1−α)d
+[
+η+ (1−η)x(v)
+]
+Chain continuity reward
+12:return(B(v),D(v))
+13:end </blockquote></details></li><li><strong>Contribution clarity — page 18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In fact, we initially constructed 720 research cases, covering 10 root entities in each of 24 domains and three
+cases per root. We then evaluated o3 Deep Research, Perplexity Sonar Deep Research, and Qwen Deep
+Research on all 720 cases. To determine whether a smaller benchmark could maintain stable results, we
+compare different numbers of sampled roots per domain. Table 12 summarizes score stability across sample
+sizes.
+Table 12 Sample-size stability of the
+overall score.MAE and mean SD are
+in percentage points.
+kCases MAE↓SD↓Within±2pp↑
+1 72 1.481 1.610 75.0%
+2 144 0.768 0.926 96.7%
+3 216 0.570 0.740 98.3%
+4 288 0.458 0.533 100.0%
+5 360 0.350 0.448 100.0%
+We usek to denote the number of roots sampled from each domain.
+One sample is constructed by selectingk roots from each of the 24
+domains and retaining all three cases under every selected root. For
+each value ofk, we independently </blockquote></details></li><li><strong>Contribution clarity — page 22</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>α: 0.25→0Depth Removes direct non-leaf credit but retains the
+continuity factor.
+All variants preserve actual-leaf initializationB(v) =D(v) =x(v)and case-level aggregation rules.
+Complete results
+Table 15 Agreement of scoring schemes with expert assessments.Kendall&#x27;sτb and Spearman&#x27;sρs are computed
+within each case and averaged across 12 cases. Tie rate is the percentage of report pairs with equal metric scores
+within each case, averaged across cases. F0 denotes final metrics; A-prefixed IDs denote ablations.
+Metric ID Scoring schemeτ b↑ρ s↑Tie rate (%)
+Overall F0 Final metrics0.751 0.8330.56
+S2 Level-balanced coverage 0.615 0.718 0.56
+S1 Flat coverage 0.508 0.597 4.44
+Breadth F0 Final metrics0.696 0.7770.56
+B1 Branch coverage 0.533 0.592 26.11
+B2 Multi-level direction coverage 0.463 0.545 8.89
+A-B1 w/o descendant fusion 0.643 0.714 16.11
+Depth F0 Final metrics0.727 0.8130.56
+D2 </blockquote></details></li><li><strong>Contribution clarity — page 42</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Annotators and annotation procedure.The annotations support the rubric-level human–judge comparison
+in Section 4.5. Ten PhD-level annotators participated in the human evaluation. The annotation sample
+comprised 3,695 report–rubric pairs from 12 reports, with each report representing a different benchmark
+domain. Under the annotation protocol, each pair receives two independent initial labels. Annotators do not
+have access to one another&#x27;s labels or the LLM judges&#x27; verdicts. A third annotator adjudicates disagreements
+using the relevant report passages and the same annotation criteria, producing the final human reference.
+Annotation criteria.Each report–rubric pair received one of three labels:Satisfied,Partially Satisfied, or
+Not Satisfied.Satisfiedindicates that the report explicitly states or clearly paraphrases the rubric&#x27;s required
+knowledge, including its essential relation and </blockquote></details></li><li><strong>Contribution clarity — page 43</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The report-level assessment in Section 4.5 comprises 72 reports from six deep research agents across 12
+cases from distinct domains. Each case includes six reports answering the same research query. Ten PhD-
+level annotators participate in this assessment. For each case, the same three annotators from this pool
+independently rate all six reports on breadth, depth, and overall quality using a 1–10 integer scale, and their
+mean ratings serve as the human reference. Annotators assess reports without access to agent identities,
+automatically computed scores, or one another&#x27;s ratings. Differences among annotators are reflected in the
+mean rating.</blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to autonomous/deep research workflows based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Source-grounded research workflow</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to deep research / autonomous research</dt>
+              <dd>Supports evidence-grounded deep research or autonomous research review workflows</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 98/100</li>
+              <li>Screening category: Research-agent benchmark/evaluation</li>
+              <li>Tags: deep-research-agents, citation-grounding, benchmark</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-25</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-26 13:32:18</li><li>Last seen by Paper Scout: 2026-11-26 13:32:18</li></ul>
+            <ul><li>arXiv: 2611.34852</li><li>arXiv IDs: 2611.34852</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="drbench-pro-a-knowledge-centric-benchmark-for-professional-deep-research-agents-2a02bc10.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>DRBench Pro: A Knowledge-Centric Benchmark for Professional Deep Research Agents. Han Huang, Yuchen Yan, Xingyu Wu, Yijun Li, Chao Deng, Jie Liu, Jin Ma, Yongliang Shen. 2026-11-25. https://arxiv.org/abs/2611.34852v1</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

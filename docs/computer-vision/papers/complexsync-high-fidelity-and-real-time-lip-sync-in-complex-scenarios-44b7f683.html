@@ -59,16 +59,295 @@
             <p>Lip synchronization aims to generate visual lip dynamics that align precisely with speech audio. Despite the high generation quality of diffusion models, they often struggle in complex scenarios and suffer from prohibitive inference latency, limiting real-world deployment. We present ComplexSync, a unified diffusion...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper presents clear algorithmic contributions, extensive quantitative comparisons against modern competitive baselines, transparent component-level ablations, and a corroborating 50-participant human study.</p>
+      <p>The work relies on external pre-trained supervisors (StableSyncNet, DINOv3) and lacks ground-truth FID/FVD evaluation on the in-the-wild ComplexSync-Val benchmark due to the absence of aligned ground-truth target video.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-26T13:34:28.094171+00:00.</p>
+        <p>Coverage: 55144 of 55144 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Lip synchronization aims to generate visual lip dynamics
+that align precisely with speech audio. Despite the high
+generation quality of diffusion models, they often strug-
+gle in complex scenarios and suffer from prohibitive infer-
+ence latency, limiting real-world deployment. We present
+ComplexSync, a unified diffusion-based framework that en-
+ables real-time, high-fidelity lip sync under complex condi-
+tions. First, we introduce a dual-stream joint training strat-
+egy to mitigate information leakage from reference frames
+while preserving natural dynamics. Second, we develop a
+distillation-based acceleration scheme for single-step de-
+noising, achieving a throughput of over 70 FPS. Third, we
+propose a relational alignment loss that leverages struc-
+tural priors from Vision Foundation Models (VFMs) to en-
+hance robustness against complex scene factors. Further-
+more, we present the </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>gap toward truly realistic and deployable lip synchro-
+nization.
+To bridge this gap, we propose ComplexSync, a
+diffusion-based framework for high-fidelity, real-time lip
+synchronization in unconstrained environments. First, we
+introduce a dual-stream joint training strategy: two func-
+tionally distinct yet architecturally identical experts are
+trained jointly with periodic weight fusion, effectively sup-
+pressing reference-inherited artifacts while preserving nat-
+ural dynamics. Second, building on Score Distillation Sam-
+pling (SDS) [39], we develop a distillation-based accelera-
+tion scheme that enables single-step denoising, achieving
+over 70 FPS. Third, we introduce a relational alignment
+loss that leverages structural priors from Vision Founda-
+tion Models (VFMs) [21, 33, 41, 63] to implicitly encode
+complex scene factors, such as occlusions and illumination
+variations, thereby </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Motivation and Dual-Stream Strategy.A primary chal-
+lenge in diffusion-based lip synchronization is spatial in-
+formation leakage [1, 20], where the model over-prioritizes
+structural cues from reference frames at the expense of au-
+dio conditioning, thereby inducing spurious facial motion
+artifacts. While recent methods (e.g., LatentSync [20],
+KeySync [1]) attempt to mitigate this, they often struggle
+in complex scenarios. To address this, we propose a dual-
+stream joint training strategy comprising a synchronization
+stream optimized for precise audio-visual alignment and a
+fidelity stream dedicated to identity and background consis-
+tency.
+Task Definition and Backbone.LetVdenote the
+ground-truth video. Our framework generates ˆVcondi-
+tioned on speechAand reference framesV ref. As shown in
+Fig. 2(a), we build upon Stable Diffusion (initialized from
+SD 1.5) with a pre-trained Whisper </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DDIM [51]:
+ˆz0 = zt − √1− αtϵθ (zt,E(V ref),A(A), t)√αt , (1)
+whereAandAdenote the input audio and the audio en-coder, respectively;ϵ θ is the predicted noise parameterized
+byθ; andV ref andErepresent the reference frames and the
+V AE [17] encoder, respectively. To mitigate information
+leakage, we randomly select a single reference frame asVref
+during this stage. Only the audio cross-attention layers and
+temporal attention module are optimized; the rest of the U-
+Net is frozen. Given 16 decoded framesD(ˆz 0)i:i+16 and
+their corresponding audio segmentA i:i+16, the sync loss is
+formulated as:
+Lsync =E z0,A,t,ϵ,i
 
-        <ul></ul>
+StableSyncNet
+
+D(ˆz0)i:i+16 , Ai:i+16
+
+,
+(2)
+whereDrepresents the V AE decoder.
+Fidelity Stream.To preserve identity consistency and
+background integrity, this stream optimizes all parameters
+except the audio cross-attention layers. This ensures that
+the model focuses on </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>spatial-temporal consistency without
+being adversely influenced by acoustic features. The objec-
+tive combines a latent-space reconstruction loss and a pixel-
+space perceptual loss. The former is:
+Llatent =E A,Vref,t,ϵ
+h
+∥ϵ−ϵ θ (zt,E(V ref),A(A), t)∥ 22
+i
+,
+(3)
+whereϵis additive Gaussian noise. To further refine visual
+fidelity, we employ a VGG-based [50] perceptual loss:
+Lperceptual =E z0,x,ϵ,t,i
+
+∥V(D(ˆz0)i)− V(xi)∥1
+
+,(4)
+whereVdenotes the VGG-19 feature extractor andide-
+notes the frame index. The joint objective is:
+Ltotal =λ 1Llatent +λ 2Lperceptual,(5)
+whereλ 1 = 1.0andλ 2 = 1.5.
+Joint Training Strategy.In contrast to the conventional
+two-stage training used in methods like KeySync and La-
+tentSync, we propose a unified joint training strategy that
+enables faster convergence and effectively suppresses in-
+formation leakage. Specifically, upon establishing the two
+aforementioned </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>streams, both branches are optimized in
+parallel. To facilitate synergistic learning, we introduce a
+periodic weight fusion mechanism. After a predefined num-
+ber of iterations, the parameters of both expert branches
+are averaged and updated with their fused weights. The
+rationale is that each branch serves as a domain-specific
+expert—optimizing for either lip synchronization or iden-
+tity preservation. By periodically averaging weights, each
+expert internalizes complementary representations from its
+counterpart, fostering multi-modal proficiency. Further-
+more, this fusion mechanism ensures a smooth optimization
+trajectory, effectively mitigating catastrophic forgetting and
+steering the model toward a stable global optimum.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>we adopt single-step distillation withN= 1
+and fixedτ 1 = 1000. Inspired by ADD [44], we perturb
+the student&#x27;s outputˆzθ(zs, s)via forward diffusion to ob-
+tainˆzθ,t =α t ˆzθ(zs, s) +σtϵ′. This perturbed latent serves
+as input to both teacher and anchor models. Their denois-
+ing predictions,ˆzψ(ˆzθ,t, t)andˆzϕ(ˆzθ,t, t), act as distillation
+targets, supervising the student through a latent-space con-
+sistency loss.
+We define the distance function asd(x, y) :=∥x−y∥ 22,
+yielding the original SDS loss:
+LSDS =E z0,ϵ,ϵ′,s,t [w(t)d(ˆzθ (zs, s),ˆzψ (sg (ˆzθ,t), t))]
+=E z0,ϵ,ϵ′,s,t
+h
+w(t)∥ˆzθ (zs, s)−ˆzψ (sg (ˆzθ,t), t)∥22
+i
+,
+(6)
+wheresg(·)denotes stop-gradient. We employ the weight-
+ing factorw(t) =α t to de-emphasize high-noise compo-
+nents, thereby prioritizing the refinement of clean structural
+details.
+Intuitively, SDS optimization aligns the student&#x27;s gener-
+ated distribution with the </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>anchor as the distillation target. This design
+acts as a structural regularizer that shields the student from
+noisy gradients caused by the teacher&#x27;s hallucinated latents
+under high CFG scales. Our final distillation objective is
+formulated as:
+Ldistill =E
+h
+w(t)∥ˆzψ (sg (ˆzθ,t), t)−ˆzϕ (ˆzθ,t, t)∥22
+i
+=E
+h
+σt (ˆzψ (sg (ˆzθ,t), t)−ˆzϕ (ˆzθ,t, t))T (ˆzψ (sg (ˆzθ,t), t)−ˆzθ (zs, s))i , (7)
+where the expectation is taken over{z 0, ϵ, ϵ′, s, t}.
+The derivation of Eq. (7) proceeds as follows. Under the
+diffusion framework and without loss of generality, we set
+αt = 1, so thatzt =z 0 +σtϵandq(z t |z 0) =N
+
+z0, σ2t I.
+This yields:
+q(z t |z 0)∝exp
+
+− 12σ2t ∥zt −z 0∥2
+
+,(8)
+∇zt logq(z t |z 0) =− zt −z 0σ2t ,(9)
+∇zt q(z t |z 0) =q(z t |z 0)∇ zt logq(z t |z 0)
+=−q(z t |z 0) zt −z 0σ2t . (10)
+The marginal distribution of the noisy data is
+p(z t) =
+R
+q(z t |z 0)p(z 0)dz 0, with gradient∇ zt p(z </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>knowledge
+(e.g., occlusion patterns and illumination dynamics) into the
+lip-sync model via targeted fine-tuning.
+As shown in Fig. 2(c), we employ a frozen VFM en-
+coderE v to extract spatiotemporal featuresf v ∈R f×N×D
+from a videoV∈R F×C×H×W , whereN=h×wis the
+number of tokens and(F/f, H/h, W/w)denote the tempo-
+ral and spatial compression ratios. Specifically, we sample
+a video clipV ab and two distinct audio segmentsA ab and
+Acd, indexed by non-overlapping intervals(a:b)and(c:d).
+TreatingV ab as the reference, we condition the generator on
+Aab andA cd to synthesize ˆVab and ˆVcd, respectively. The
+resulting featuresf Vab,f ˆVab, andf ˆVcd are then obtained viathe same frozenE v. The relational alignment loss is defined
+as:
+LRA =
+
+
+
+G(f Vab )−G f ˆVab
+
+
+1 +
+
+
+G(f Vab )−G f ˆVcd
+
+
+1 −
+
+
+G f ˆVab  −G f ˆVcd
+
+
+1 . (16)
+Here,G(f) =Concat(S 1, S2, . . . , Sf )∈R f×N×N , </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Methods HDTF ComplexSync-Val FPS↑
+FID↓FVD↓CSIM↑Sync-C↑Sync-D↓LipLeak↓ Sync-C↑Sync-D↓VFM-FD↓Occ-RC↑
+DINet 10.14 59.72 0.835 4.62 9.17 0.0596 3.52 7.69 0.086 87.70 57.74
+Musetalk 7.26 40.90 0.909 4.36 9.93 0.1822 2.83 9.60 0.074 78.80 20.16
+LatentSync 7.37 54.27 0.900 4.99 9.50 0.0685 6.73 7.37 0.064 93.10 2.13
+KeySync 17.90 40.04 0.801 6.41 7.98 0.0708 1.67 9.81 0.075 87.20 1.14
+Ditto 8.43 37.55 0.916 5.52 8.90 0.6048 4.26 9.61 0.075 83.80 16.6
+OmniSync 11.01 47.98 0.826 5.48 8.89 0.4236 3.86 10.55 0.066 90.70 -
+Ours 7.13 35.07 0.927 6.95 7.56 0.0213 8.87 6.28 0.049 95.20 72.73
+Table 1. Quantitative comparisons with existing methods on two test datasets. The best results are inbold, and the second-best are in
+underlined.
+The first term of Eq. (16),
+
+
+
+G(f Vab )−G f ˆVab
+
+
+1,primarily enforces similarity in non-mouth regions be-
+tween the ground-truth video and the generation </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>a bal-
+anced mix of real-world recordings and AI-generated con-
+tent. It features a wide array of demanding conditions, in-
+cluding physical occlusions, dynamic backgrounds, and in-
+tricate lighting variations, and is specifically designed to as-
+sess the robustness of generative models in unconstrained,
+open-domain scenes.
+Implementation Details.We train our model at512×
+512resolution using the AdamW optimizer with a fixed
+learning rate of1×10 −5. Training proceeds in three stages:
+in the first stage (Sec. 3.1), we train for 200K steps on 8
+NVIDIA A100 GPUs with a per-GPU batch size of 2; in the
+second stage (Sec. 3.2), we train for 50K steps on 4 A100
+GPUs with a per-GPU batch size of 4; and in the final stage
+(Sec. 3.3), we train for 10K steps using the same setup as
+the second stage.
+Evaluation Metrics.We evaluate our method using
+a suite of established metrics: Fréchet Inception </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>3.214 3.429 3.375 3.429
+OmniSync 3.554 3.768 3.143 3.232
+Ours 4.239 4.128 4.312 4.129
+Table 2. User Study results. The best results are inbold, and the
+second-best are in underlined.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Datasets Methods FID↓FVD↓Sync-C↑Sync-D↓LipLeak↓Occ-RC↑
+HDTF
+w/o Dual-Stream 7.92 40.73 4.95 9.35 0.0246 -
+w/o weight fusion
+(Sync Stream) 10.05 59.94 8.18 6.71 0.0110 -
+w/o weight fusion
+(Fidelity Stream) 8.04 119.48 1.18 13.83 0.3116 -
+w/ Dual-Stream 7.89 36.73 6.95 7.57 0.0153 -
+w/o EMA anchor 8.69 53.38 6.08 8.52 0.0698 -
+DMD2 distillation 8.62 39.45 5.42 9.03 0.1144 -
+w/ EMA anchor 8.11 38.56 7.85 6.81 0.0103 -
+ComplexSync
+Val
+w/o RA loss 10.43 66.60 9.07 6.24 - 82.70
+w/o Gram in RA 5.48 35.92 1.69 11.94 - 98.90
+w/ Gram in RA 8.49 41.88 8.87 6.28 - 95.20
+Table 3. Quantitative ablation study. Rows 1-4 evaluate dual-
+stream strategy (w/o Stages 2-3). Rows 5-7, starting from dual-
+stream, compare distillation schemes to verify our EMA anchor.
+Final three rows validate RA loss and Gram operation.
+Figure 4. Ablation Study for the Dual-stream Joint Training Strat-
+egy.
+duce two </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>specialized metrics. First, VFM Feature Distance
+(VFM-FD) measures fidelity to complex scene factors by
+computing theℓ 1 distance between spatiotemporal features
+extracted via the frozen VFM described in Sec. 3.3, analo-
+gous to the first term in Eq. (16). Second, Occlusion Re-
+covery Capability (Occ RC) evaluates occlusion handling
+by calculating the Intersection-over-Union (IoU) between
+ground-truth occlusion masks and those extracted from syn-
+thesized frames, both obtained via SAM3 [2].</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>outperforming existing solu-
+tions in visual fidelity. For additional comparative details,
+please refer to the Appendix. Given that static images can-
+not fully capture critical temporal attributes such as syn-
+chronization, naturalness, and stability, we provide compre-
+hensive video comparisons in the supplementary materials.
+User Study.To further validate the effectiveness of
+ComplexSync, we conducted a comprehensive user study
+involving 50 participants. Users were tasked with evalu-
+ating 29 sets of videos, covering both standard scenarios
+and challenging conditions, using a 5-point Mean Opinion
+Score (MOS) scale. The evaluation spanned four critical di-
+mensions: Lip Synchronization, Video Definition, Natural-
+ness, and Visual Appeal. As summarized in Tab. 2, Com-
+plexSync consistently outperforms all competing methods
+across all metrics. This holistic evaluation underscores </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +386,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

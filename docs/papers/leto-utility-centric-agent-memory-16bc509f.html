@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leto: Utility-Centric Agent Memory</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Leto: Utility-Centric Agent Memory</h1>
+          <p class="hero-copy">Shuguang Chen, Salman Paracha</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://doi.org/10.48550/arxiv.2611.33005">Open paper</a>
+            <a class="paper-detail-link" href="leto-utility-centric-agent-memory-16bc509f.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Shuguang Chen, Salman Paracha</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-11-24</dd></div>
+              <div><dt>Publication date</dt><dd>2026-11-24</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li><li>Semantic Scholar</li></ul>
+            <div class="secondary-links"><a href="https://www.semanticscholar.org/paper/c8dd09c7e45f8a01cfe20596acf66d279b02b548">Semantic Scholar</a><a href="https://arxiv.org/abs/2611.33005">arXiv</a><a href="https://openalex.org/W7239887866">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies memory systems or memory modules for LLM agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Large language model (LLM) agents rely on external memory to retain and reuse information across interactions. Existing memory systems treat memory as a record of the past and evaluate it by fidelity to the conversation. However, the value of memory lies in whether it improves the agent&#x27;s response. A memory system d...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The manuscript offers a coherent conceptual framing, clear system formulation, and rigorous comparative evaluation across multiple diverse multi-session benchmarks without signs of artificial inflation or circular validation.</p>
+      <p>The authors explicitly document key constraints, including dependency on initial fact-extraction recall, coarse outcome attribution across concurrently served memories, and agent-specific utility dependencies.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-26T13:35:41.959571+00:00.</p>
+        <p>Coverage: 46408 of 46408 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Large language model (LLM) agents rely on
+external memory to retain and reuse informa-
+tion across interactions. Existing memory sys-
+tems treat memory as a record of the past and
+evaluate it by fidelity to the conversation. How-
+ever, the value of memory lies in whether it im-
+proves the agent&#x27;s response. A memory system
+decides what to memorize and what to serve
+before that response exists, and fidelity checks
+neither decision against it. Faithful memory
+can therefore fail to improve the response. We
+instead view memory as a prediction problem
+and presentLeto, a memory system for LLM
+agents that focuses on the utility of memory to
+the future rather than on its fidelity to the past.
+Because future requests are unknown,Letopre-
+serves access to conversation details through
+memory indexing, allowing information to re-
+main available through its sources. When a
+request arrives, memory </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>replay draws on this
+index to anticipate and supply the context the
+agent needs beyond what the request explic-
+itly states. The utility of the served context
+remains uncertain until the response is gen-
+erated, motivating a utility loop that uses re-
+sponse outcomes to refine future memory se-
+lection. We evaluate our system against six
+memory systems on five benchmarks across
+three scenarios. In personalization, it outper-
+forms the strongest compared memory system
+by 16.3 percentage points in accuracy on PrefE-
+val and by 3.1 points in task completion on
+PERMA. For long-horizon tasks, it achieves
+the best overall performance on MemoryArena
+averaged over five environments with a gain
+that increases with the chain depth. In long-
+context understanding, it is on par with retrieval
+over the raw history while serving fewer con-
+text tokens.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>outcomes.
+Let y(x, M)∈ {0,1}denote the graded task out-
+come for request x when memory M is supplied
+to the agent. We define the utility of the served
+memory as
+U(x, M) =y(x, M)−y(x,∅),(1)
+where y(x,∅) is the outcome without memory.
+This objective captures whether the served memory
+improves or hurts task performance, or leaves it
+unchanged. It connects both memory decisions to
+task performance. The write decision determines
+what information remains available, and the serv-
+ing decision determines what reaches the agent.
+Utility depends on both the request and how the
+agent uses the served memory. Relevant informa-
+tion may provide no benefit if it is redundant or
+unused, and may hurt performance if it misleads
+the agent. The system must therefore anticipate
+what the served memory contributes to the response
+when deciding what to serve. Future requests are
+unknown at write time, so </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Letomanages memory through three mechanisms,
+memory indexing and memory replay followed by
+the utility loop. Figure 2 summarizes this workflow.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>NEGATIVE OUTCOME
+B
+A
+B
+C
+τ
+Figure 2:Letoworkflow. Memory indexing stores atomic facts as keys to their retained source. Memory replay
+composes the profile and task state that give context across requests. The utility loop gives each new memory a
+forecastu 0(m)and serves retrieved memory whose index satisfiesu≥τ, then updates the index from feedback.
+Chen et al., 2024). An atomic fact states a single
+claim in self-contained form. This allows it to be
+matched to a request precisely and compared with
+other facts on the same subject. Existing memory
+systems commonly serve the extracted facts them-
+selves as the memory.Letoinstead uses each fact
+as a key whose value is its source, the span of adja-
+cent messages that the fact was extracted from. A
+source reaches the agent only when a fact match-
+ing the request points to it, so the context carries
+less noise than retrieval over raw chunks. </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Retrieval can miss relevant preferences and con-
+straints that a request leaves unstated.Letothere-
+fore replays stored memory between conversations.
+It re-reads what the store holds and composes the
+standing context that the next conversation starts
+with. The standing context consists of a user pro-
+file and a task state if a task is declared. Both are
+composed before any request arrives.
+Profile rewrite.Profile rewrite maintains a user
+profile that carries what holds for the user regard-
+less of the request, such as standing preferences
+and constraints or instructions on how to act. After
+new sessions are indexed,Letorewrites the pro-
+file from the current facts about the user and the
+session summaries. The rewrite keeps the profile
+concise by merging related facts into one statement
+and leaving out superseded preferences.
+Task rendering.A later step of a long-horizon
+task depends on </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Whether a memory will improve a response cannot
+be observed at write time.Letotherefore forecasts
+a utility index u(m)∈[0,1] for each memory and
+revises it with the outcome observed each time the
+memory is served. This cycle forms the utility loop.
+Utility forecast.Each new memory receives an
+initial utility forecast u0(m) as its utility index. A
+low forecast does not delete the memory. The fact
+and its source remain in the store. Retention and
+serving are separate decisions, which allows serv-
+ing priorities to change as feedback accumulates.
+Outcome observations.The forecast is made
+before a memory is used, and whether the mem-
+4
+ory helps becomes evident only after it is served.
+Letotherefore observes the outcome of each served
+memory to obtain evidence of its utility. We use the
+interaction signals from Chen et al. (2026) as the
+observations, which are detected in the conversa-
+tion </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>by lexical rules. Each signal marks a positive
+outcome (e.g., a confirmation or a use of the mem-
+ory) or a negative outcome (e.g., a correction) for a
+memory, encoded as 1 and 0, respectively. When
+a graded task outcome is available, it can also be
+recorded for the memory served during the task.
+These signals provide evidence of memory utility
+without directly measuring an individual memory&#x27;s
+contribution to the outcome.
+Utility update.Given observations o1, . . . , on
+and the initial forecast weighted as k observations,
+the index is
+u(m) =k u0(m) +Pni=1 oi
+k+n .(2)
+Here, k &gt;0 controls the weight of the initial fore-
+cast relative to feedback. The updated index then
+closes the loop. A retrieved memory passes the util-
+ity gate only if its index meets a threshold τ. When
+the retrieved memory exceeds the context budget,
+memory with a higher utility index is prioritized.
+The utility index </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>is a heuristic serving priority, not
+an estimate of Equation 1. It combines observable
+signals to guide memory selection, while paired
+evaluation measures whether the system as a whole
+improves task outcomes.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Benchmarks.We use five benchmarks grouped
+into three scenarios: PERMA (Liu et al., 2026) and
+PrefEval (Zhao et al., 2025) forpersonalization;
+MemoryArena (He et al., 2026) forlong-horizon
+tasks; and LoCoMo (Maharana et al., 2024) and
+LongMemEvalS (Wu et al., 2025) forlong-context
+understanding. Table 4 in Appendix A summarizes
+the sample counts and evaluation metrics as well
+as each memory store&#x27;s scope.
+Compared methods.We compareLetowith
+six memory systems:Mem0(Chhikara et al.,
+2025),LangMem 1,Hindsight(Latimer et al., 2025),
+Letta(Packer et al., 2023),Zep(Rasmussen et al.,
+2025), andMemobase 2. Each system uses the con-
+figuration provided by the benchmark when avail-
+able and follows its own documented setup other-
+wise. We also include aRAGbaseline that retains
+the complete history and retrieves raw conversa-
+tion chunks by embedding similarity to the current
+request (Lewis et al., </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>PrefEval PERMA C-S PERMA C-M
+System Unaware Halluc. Incons. Unhelp. Acc. MCQ Comp. MS MCQ Comp. MS
+No History
+No Memory 74.00 24.20 0.00 0.40 1.40 53.66 74.23 1.00 56.69 60.51 1.00
+Full History
+Standalone (gpt-4o-mini) 65.40 31.00 0.20 0.10 3.30 78.01 81.56 1.17 71.34 63.69 1.62
+RAG 54.20 31.70 1.00 0.00 13.10 70.45 83.69 1.87 68.15 61.78 1.73
+Compared Memory Systems
+Mem0 45.7018.801.80 0.20 33.50 69.98 80.38 1.85 67.52 62.42 1.78
+LangMem 32.10 25.40 1.60 0.20 40.70 74.70 81.56 1.80 67.52 62.42 1.84
+Hindsight 33.80 19.90 1.90 0.20 44.20 69.03 80.142.06 66.24 59.87 1.90
+Letta 47.00 34.100.100.20 18.60 56.50 74.472.06 54.78 54.782.28
+Zep 68.10 20.90 0.60 1.00 9.40 68.32 78.49 1.57 58.60 63.69 1.46
+Memobase 45.80 24.30 1.50 0.20 28.20 73.2981.801.78 67.52 64.97 1.73
+Our System
+Leto 19.10 18.80 1.60 0.00 60.50 79.43 80.38 1.96 71.97 72.61 2.15
+Table 1: Personalization results. PrefEval </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Environment Overall
+System Shopping Travel Search Math Physics PS SR
+No History
+No Memory 44.24 / 0.00 0.00 / 0.00 3.26 / 8.14 24.81 / 15.00 44.75 / 30.00 23.41 10.63
+Full History
+Standalone (gpt-5-mini) 53.94 / 0.67 2.30 / 0.00 3.03 / 3.17 31.07 / 20.00 61.39 / 50.00 30.34 14.77
+RAG 49.69 / 0.00 1.50 / 0.00 5.85 / 13.57 33.07 / 22.50 57.85 / 45.00 29.59 16.21
+Compared Memory Systems
+Mem0 41.56 / 0.00 0.00 / 0.00 4.84 / 11.31 28.97 / 17.50 59.72 / 45.00 27.02 14.76
+LangMem 50.56 / 0.67 0.00 / 0.00 5.03 / 13.57 25.51 / 12.50 43.22 / 20.00 24.86 9.35
+Hindsight 43.05 / 0.00 0.00 / 0.00 4.19 / 9.95 30.31 / 17.50 54.26 / 30.00 26.36 11.49
+Letta 54.78 / 0.670.00 / 0.00 5.11 / 16.74 31.71 / 17.5064.58 / 55.00 31.24 17.98
+Zep 46.63 / 0.00 0.00 / 0.00 6.99 / 21.27 27.27 / 12.50 44.47 / 20.00 25.07 10.75
+Memobase 48.55 / 0.00 0.00 / 0.00 5.21 / 14.03 23.92 / 0.00 47.18 / 20.00 24.97 6.81
+Our </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>System
+Leto 53.22 / 0.00 2.73 / 0.37 7.97 / 21.27 31.77 / 20.00 64.35 / 50.00 32.01 18.33
+Table 2: MemoryArena progress score (PS) and success rate (SR) in percent, as PS / SR per environment. Overall
+columns average the five environments equally. SR measures full-chain completion except in search, where it
+measures final-question success. Bold: best value among the memory systems.
+single-domain (C-S) and clean multi-domain (C-
+M) conditions. As shown in Table 1,Letoachieves
+the highest MCQ accuracy in both conditions. Its
+clearest advantage is in C-M completion, where
+it exceeds the strongest compared systemMemo-
+baseby 7.64 percentage points. This advantage
+does not extend to C-S completion, whereRAG
+performs best.Letocompletes 76.5% of tasks av-
+eraged over the two conditions, 3.1 points above
+Memobase. Organizing the history matters most
+when a task draws on preferences from </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>memory
+organization varies with how explicitly the request
+identifies the relevant history. Results by question
+category are in Appendix C.
+Evidence coverage.Evidence recall is the frac-
+tion of an annotated evidence message&#x27;s content
+words that appear in the served context, a lexical
+proxy for whether the supporting evidence reaches
+the agent (Appendix C).Letohas the highest re-
+call on both benchmarks, 86.58% on LoCoMo and
+95.38% on LongMemEval. The other memory sys-
+tems reach at most 56.69% and 79.18%. Serving
+the source of the retrieved facts therefore keeps
+most of the evidence in a small context. The re-
+LoCoMo LongMemEval
+System Tokens Recall Acc. Tokens Recall Acc.
+No History
+No Memory – – 4.55 – – 6.40
+Full History
+Standalone 27,834 – 74.42 111,569 – 51.60
+RAG 1,999 – 74.61 9,813 – 66.40
+Compared Memory Systems
+Mem0 745 56.69 67.86 1,113 79.18 69.20
+LangMem 1,757 43.07 32.08 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>1,735 67.80 37.60
+Hindsight 608 46.51 65.13 701 70.61 70.00
+Letta 55 26.24 51.36 86 29.59 36.60
+Zep 479 29.79 41.36 2,039 69.36 48.00
+Memobase 1,027 24.79 13.18 1,025 34.40 15.00
+Our System
+Leto 1,192 86.58 71.82 1,185 95.38 73.20
+Table 3: Long-context understanding on LoCoMo and
+LongMemEvalS. Tokens: average tokens of retrieved
+memory per question (the full history forStandalone,
+which uses gpt-4o-mini). Recall: evidence recall (%),
+measured for the memory systems. Acc.: accuracy (%).
+Bold: best value among the memory systems.
+maining difference fromRAGon LoCoMo is con-
+centrated in single-hop questions. Approximately
+40% of those answered correctly byRAGbut not
+byLetohave an evidence message that no extracted
+fact points to, so access through the fact index still
+depends on extraction coverage.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Letotrades storage and write-time computation for
+the ability to recover what extraction did not predict
+would matter. Keeping every conversation beneath
+the fact index removes the loss of discarded de-
+tail, but it does not make every detail reachable: a
+message that no fact points to is served only when
+another fact&#x27;s source contains it. Extraction cov-
+erage therefore remains the bound on how far the
+memorization gap can be closed. Serving standing
+information before the request bridges the serving
+gap where a request leaves a standing constraint
+unstated, at the cost of context that a given request
+may not need. The profile and task state are gen-
+erated summaries that can misstate what the con-
+versations established. The utility index is updated
+from outcomes, but an outcome is shared by ev-
+ery memory served for that response. The signal
+is therefore coarse: an unnecessary memory </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>can
+be rewarded and a correct one penalized. A mem-
+ory that is never served never earns an observation.
+More generally, utility is a property of the memory
+system together with the agent it serves. The same
+served memory can help one agent and not another,
+so whatLetolearns about a memory&#x27;s utility is spe-
+cific to the agent and the tasks it was observed on.
+Finally, the approach addresses what to memorize
+and what to serve but not how the agent uses what it
+is served; an agent can still overlook useful served
+memory (Liu et al., 2024).</blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Memory architecture / system</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to agentic memory</dt>
+              <dd>Studies memory mechanisms or governance for LLM agents</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 90/100</li>
+              <li>Screening category: Memory benchmark/evaluation</li>
+              <li>Tags: agent-memory, llm-agents, memory-systems, evaluation</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv, semantic_scholar</li><li>Latest revision / source update: 2026-11-26</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-25 13:50:38</li><li>Last seen by Paper Scout: 2026-11-26 13:31:47</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2611.33005</li><li>arXiv: 2611.33005</li><li>Semantic Scholar: c8dd09c7e45f8a01cfe20596acf66d279b02b548</li><li>OpenAlex: W7239887866</li><li>OpenAlex IDs: W7239887866</li><li>arXiv IDs: 2611.33005</li><li>Semantic Scholar IDs: c8dd09c7e45f8a01cfe20596acf66d279b02b548</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="leto-utility-centric-agent-memory-16bc509f.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Leto: Utility-Centric Agent Memory. Shuguang Chen, Salman Paracha. 2026-11-24. https://doi.org/10.48550/arxiv.2611.33005</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

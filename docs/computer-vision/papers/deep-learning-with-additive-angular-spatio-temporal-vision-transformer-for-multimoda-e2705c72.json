@@ -35,7 +35,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-25 13:55:30",
-    "generated_at": "2026-11-26 13:36:52",
+    "generated_at": "2026-11-27 13:32:55",
     "last_seen_at": "2026-10-01 10:43:40",
     "metadata_sources": [
       "openalex"
@@ -94,36 +94,1352 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-27T13:31:01.427627+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concerns": [
+      "The manuscript contains severe contextual incongruities that undermine scientific validity: the novelty section claims improvements in packet delivery ratio, end-to-end delay, energy consumption, throughput, and network lifetime, which are wireless sensor network metrics irrelevant to biometric recognition.",
+      "The statistical test section describes ANOVA for student performance prediction and references an unrelated model acronym (LKMILBDC), indicating copy-paste text from an unrelated domain and casting doubt on the reported statistical validation.",
+      "The evaluation uses PSNR, an image reconstruction quality metric, as a primary performance measure for a biometric classification model without scientific justification, and the results text mislabels PSNR values as sensitivity, indicating unreliable reporting.",
+      "The manuscript does not establish evaluator independence: the same AAM-Softmax loss optimized during training is used to shape the embedding space, and the reported classification metrics are derived from the same model's decision outputs without independent human or external benchmark validation."
+    ],
+    "concise_summary": "The manuscript displays major scientific flaws, including incongruous text from wireless sensor networking (packet delivery ratio, network lifetime) and educational data mining (student performance prediction ANOVA), as well as evaluating recognition models on image reconstruction metrics (PSNR) without clear scientific justification. These severe inconsistencies preclude confidence in the technical execution and validity of the results.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 50712,
+      "assessment_input_sha256": "178a0b43ad4d93ce81b02d6cd4b780888f71a4c33379536e7473232eedb7bd42",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.17485/ijst/v19i33.1128",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 49434,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 48530,
+      "evidence_block_count": 74,
+      "evidence_context_characters": 58143,
+      "evidence_context_id": "00be50bcaeb07111500e7e089d8897f4078f47b97346e0ab5b299368da3d6cfc",
+      "evidence_context_sha256": "e4db497d260c40299c0fb43d86cfa58eb55e0c3873f9ba9921412dd7b3af1367",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 49460,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "extracted_pages": 14,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "e632c92a1c07a5f3e78c689e823307bd3855b9e059baa95c68a2b773f242e8e8",
+        "source_url": "https://sciresol.s3.us-east-2.amazonaws.com/IJST/Articles/2026/Issue-33/IJST-2026-1128.pdf",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 49434,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Indian Journal Of Science And Technology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 40,
+          "supplied_characters": 40
+        },
+        {
+          "heading": "Original Article",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 1,
+          "source_characters": 16,
+          "supplied_characters": 16
+        },
+        {
+          "heading": "Open Access",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 2,
+          "source_characters": 1305,
+          "supplied_characters": 1305
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 3,
+          "source_characters": 1876,
+          "supplied_characters": 1876
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "abstract",
+          "section_index": 4,
+          "source_characters": 89,
+          "supplied_characters": 89
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 5,
+          "source_characters": 5712,
+          "supplied_characters": 5712
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 6,
+          "source_characters": 89,
+          "supplied_characters": 89
+        },
+        {
+          "heading": "Research Gap",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1150,
+          "supplied_characters": 1150
+        },
+        {
+          "heading": "Novelty And Contributing Remarks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1503,
+          "supplied_characters": 1503
+        },
+        {
+          "heading": "Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 9,
+          "source_characters": 1033,
+          "supplied_characters": 1033
+        },
+        {
+          "heading": "Dataset Acquisition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1013,
+          "supplied_characters": 1013
+        },
+        {
+          "heading": "Dataset Acquisition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 172,
+          "supplied_characters": 172
+        },
+        {
+          "heading": "Face And Voice Feature Vector Formalization And Pre-Processing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 952,
+          "supplied_characters": 952
+        },
+        {
+          "heading": "Face Feature Vector Formalization And Pre-Processing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 1177,
+          "supplied_characters": 1177
+        },
+        {
+          "heading": "Voice Feature Vector Formalization And Pre-Processing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 523,
+          "supplied_characters": 523
+        },
+        {
+          "heading": "Voice Feature Vector Formalization And Pre-Processing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 884,
+          "supplied_characters": 884
+        },
+        {
+          "heading": "Hybrid Cnn With Spatio Temporal Vit-Based Feature Extraction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1984,
+          "supplied_characters": 1984
+        },
+        {
+          "heading": "Hybrid Cnn With Spatio Temporal Vit-Based Feature Extraction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 3482,
+          "supplied_characters": 3482
+        },
+        {
+          "heading": "Additive Angular Margin-Based Vision Transformer",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 992,
+          "supplied_characters": 992
+        },
+        {
+          "heading": "Additive Angular Margin-Based Vision Transformer",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 89,
+          "supplied_characters": 89
+        },
+        {
+          "heading": "Patch Linear Embedding And Positional Encoding",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 1265,
+          "supplied_characters": 1265
+        },
+        {
+          "heading": "Cross Modal Fusion-Based Transformer Encoder",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 2115,
+          "supplied_characters": 2115
+        },
+        {
+          "heading": "Cross Modal Fusion-Based Transformer Encoder",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 89,
+          "supplied_characters": 89
+        },
+        {
+          "heading": "Additive Angular Margin Classification For Multimodal Biometric Recognition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 3198,
+          "supplied_characters": 3198
+        },
+        {
+          "heading": "Additive Angular Margin Classification For Multimodal Biometric Recognition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 2048,
+          "supplied_characters": 2048
+        },
+        {
+          "heading": "Additive Angular Margin Classification For Multimodal Biometric Recognition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 931,
+          "supplied_characters": 931
+        },
+        {
+          "heading": "Results And Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 26,
+          "source_characters": 235,
+          "supplied_characters": 235
+        },
+        {
+          "heading": "Case Scenario 1: Psnr Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 440,
+          "supplied_characters": 440
+        },
+        {
+          "heading": "Brs [1]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 1072,
+          "supplied_characters": 1072
+        },
+        {
+          "heading": "Brs [1]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 89,
+          "supplied_characters": 89
+        },
+        {
+          "heading": "Case Scenario 2: Precision Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 765,
+          "supplied_characters": 765
+        },
+        {
+          "heading": "Case Scenario 3: Sensitivity Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 430,
+          "supplied_characters": 430
+        },
+        {
+          "heading": "Brs [1]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 1066,
+          "supplied_characters": 1066
+        },
+        {
+          "heading": "Brs [1]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 89,
+          "supplied_characters": 89
+        },
+        {
+          "heading": "Case Scenario 4: Specificity 'Spe' Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 697,
+          "supplied_characters": 697
+        },
+        {
+          "heading": "Case Scenario 5: Accuracy 'Acc' Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 337,
+          "supplied_characters": 337
+        },
+        {
+          "heading": "Brs [1]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 974,
+          "supplied_characters": 974
+        },
+        {
+          "heading": "Brs [1]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 89,
+          "supplied_characters": 89
+        },
+        {
+          "heading": "Statistical Test",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 936,
+          "supplied_characters": 936
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "conclusion",
+          "section_index": 39,
+          "source_characters": 1882,
+          "supplied_characters": 1882
+        },
+        {
+          "heading": "Back matter: Acknowledgements",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 254,
+          "supplied_characters": 254
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 257,
+          "supplied_characters": 257
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 5191,
+          "supplied_characters": 5191
+        }
+      ],
+      "selected_characters": 48530,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "selected_sections": [
+        {
+          "characters": 40,
+          "heading": "Indian Journal Of Science And Technology",
+          "page": 1
+        },
+        {
+          "characters": 16,
+          "heading": "Original Article",
+          "page": 1
+        },
+        {
+          "characters": 1305,
+          "heading": "Open Access",
+          "page": 1
+        },
+        {
+          "characters": 1876,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 89,
+          "heading": "Abstract",
+          "page": 2
+        },
+        {
+          "characters": 5712,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 89,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 1150,
+          "heading": "Research Gap",
+          "page": 3
+        },
+        {
+          "characters": 1503,
+          "heading": "Novelty And Contributing Remarks",
+          "page": 3
+        },
+        {
+          "characters": 1033,
+          "heading": "Methodology",
+          "page": 3
+        },
+        {
+          "characters": 1013,
+          "heading": "Dataset Acquisition",
+          "page": 3
+        },
+        {
+          "characters": 172,
+          "heading": "Dataset Acquisition",
+          "page": 4
+        },
+        {
+          "characters": 952,
+          "heading": "Face And Voice Feature Vector Formalization And Pre-Processing",
+          "page": 4
+        },
+        {
+          "characters": 1177,
+          "heading": "Face Feature Vector Formalization And Pre-Processing",
+          "page": 4
+        },
+        {
+          "characters": 523,
+          "heading": "Voice Feature Vector Formalization And Pre-Processing",
+          "page": 4
+        },
+        {
+          "characters": 884,
+          "heading": "Voice Feature Vector Formalization And Pre-Processing",
+          "page": 5
+        },
+        {
+          "characters": 1984,
+          "heading": "Hybrid Cnn With Spatio Temporal Vit-Based Feature Extraction",
+          "page": 5
+        },
+        {
+          "characters": 3482,
+          "heading": "Hybrid Cnn With Spatio Temporal Vit-Based Feature Extraction",
+          "page": 6
+        },
+        {
+          "characters": 992,
+          "heading": "Additive Angular Margin-Based Vision Transformer",
+          "page": 6
+        },
+        {
+          "characters": 89,
+          "heading": "Additive Angular Margin-Based Vision Transformer",
+          "page": 7
+        },
+        {
+          "characters": 1265,
+          "heading": "Patch Linear Embedding And Positional Encoding",
+          "page": 7
+        },
+        {
+          "characters": 2115,
+          "heading": "Cross Modal Fusion-Based Transformer Encoder",
+          "page": 7
+        },
+        {
+          "characters": 89,
+          "heading": "Cross Modal Fusion-Based Transformer Encoder",
+          "page": 8
+        },
+        {
+          "characters": 3198,
+          "heading": "Additive Angular Margin Classification For Multimodal Biometric Recognition",
+          "page": 8
+        },
+        {
+          "characters": 2048,
+          "heading": "Additive Angular Margin Classification For Multimodal Biometric Recognition",
+          "page": 9
+        },
+        {
+          "characters": 931,
+          "heading": "Additive Angular Margin Classification For Multimodal Biometric Recognition",
+          "page": 10
+        },
+        {
+          "characters": 235,
+          "heading": "Results And Discussion",
+          "page": 10
+        },
+        {
+          "characters": 440,
+          "heading": "Case Scenario 1: Psnr Analysis",
+          "page": 10
+        },
+        {
+          "characters": 1072,
+          "heading": "Brs [1]",
+          "page": 10
+        },
+        {
+          "characters": 89,
+          "heading": "Brs [1]",
+          "page": 11
+        },
+        {
+          "characters": 765,
+          "heading": "Case Scenario 2: Precision Analysis",
+          "page": 11
+        },
+        {
+          "characters": 430,
+          "heading": "Case Scenario 3: Sensitivity Analysis",
+          "page": 11
+        },
+        {
+          "characters": 1066,
+          "heading": "Brs [1]",
+          "page": 11
+        },
+        {
+          "characters": 89,
+          "heading": "Brs [1]",
+          "page": 12
+        },
+        {
+          "characters": 697,
+          "heading": "Case Scenario 4: Specificity 'Spe' Analysis",
+          "page": 12
+        },
+        {
+          "characters": 337,
+          "heading": "Case Scenario 5: Accuracy 'Acc' Analysis",
+          "page": 12
+        },
+        {
+          "characters": 974,
+          "heading": "Brs [1]",
+          "page": 12
+        },
+        {
+          "characters": 89,
+          "heading": "Brs [1]",
+          "page": 13
+        },
+        {
+          "characters": 936,
+          "heading": "Statistical Test",
+          "page": 13
+        },
+        {
+          "characters": 1882,
+          "heading": "Conclusion",
+          "page": 13
+        },
+        {
+          "characters": 254,
+          "heading": "Back matter: Acknowledgements",
+          "page": 13
+        },
+        {
+          "characters": 257,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 5191,
+          "heading": "Unclassified body after references",
+          "page": 14
+        }
+      ],
+      "selected_text_sha256": "178a0b43ad4d93ce81b02d6cd4b780888f71a4c33379536e7473232eedb7bd42",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "e632c92a1c07a5f3e78c689e823307bd3855b9e059baa95c68a2b773f242e8e8",
+      "source_pages": 14,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "00be50bcaeb07111500e7e089d8897f4078f47b97346e0ab5b299368da3d6cfc",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E00be50bcaeb07111-B0005"
+        ],
+        "excerpt": "Objectives: To achieve audio-visual multimodal biometric recognition with\nhigher accuracy. Method: Deep learning method that incorporates CNN and\nViT into a unified framework, called, hybrid convolutional neural network\nwith additive angular vision transformer (CNN-AAViT) introduced for audio-\nvisual multimodal biometric recognition. The key contribution of the proposed\nmethod is the deep feature fusion layer that incorporates local spatial features\nand global context features in one shared feature space. This enables the\nimplementation of face detection and audio recognition utilizing streamlined\nframework. Findings: results of CNN-AAViT improved in PSNR by 84dB,\nprecision by 0.91, sensitivity by 0.90 and specificity by 0.80 and accuracy by 0.91\nusing face images. Proposed CNN-AAViT enhanced PSNR by 84dB, precision\nby 0.89, sensitivity by 0.89 and specificity by 0.87 and accuracy by ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "aa20a84d3fca7e2f4af71051e8a3288824b11d728a0e36a99e6f6aa8cad958f0",
+            "evidence_id": "E00be50bcaeb07111-B0005",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 3,
+                "start": 0,
+                "text": "Objectives: To achieve audio-visual multimodal biometric recognition with\nhigher accuracy. Method: Deep learning method that incorporates CNN and\nViT into a unified framework, called, hybrid convolutional neural network\nwith additive angular vision transformer (CNN-AAViT) introduced for audio-\nvisual multimodal biometric recognition. The key contribution of the proposed\nmethod is the deep feature fusion layer that incorporates local spatial features\nand global context features in one shared feature space. This enables the\nimplementation of face detection and audio recognition utilizing streamlined\nframework. Findings: results of CNN-AAViT improved in PSNR by 84dB,\nprecision by 0.91, sensitivity by 0.90 and specificity by 0.80 and accuracy by 0.91\nusing face images. Proposed CNN-AAViT enhanced PSNR by 84dB, precision\nby 0.89, sensitivity by 0.89 and specificity by 0.87 and accuracy by "
+              }
+            ],
+            "text": "Objectives: To achieve audio-visual multimodal biometric recognition with\nhigher accuracy. Method: Deep learning method that incorporates CNN and\nViT into a unified framework, called, hybrid convolutional neural network\nwith additive angular vision transformer (CNN-AAViT) introduced for audio-\nvisual multimodal biometric recognition. The key contribution of the proposed\nmethod is the deep feature fusion layer that incorporates local spatial features\nand global context features in one shared feature space. This enables the\nimplementation of face detection and audio recognition utilizing streamlined\nframework. Findings: results of CNN-AAViT improved in PSNR by 84dB,\nprecision by 0.91, sensitivity by 0.90 and specificity by 0.80 and accuracy by 0.91\nusing face images. Proposed CNN-AAViT enhanced PSNR by 84dB, precision\nby 0.89, sensitivity by 0.89 and specificity by 0.87 and accuracy by "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "00be50bcaeb07111500e7e089d8897f4078f47b97346e0ab5b299368da3d6cfc",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E00be50bcaeb07111-B0018"
+        ],
+        "excerpt": "the\nrobustness of biometric feature extraction and enhance sensitivity and specificity.\n\u2022 Additive Angular Margin Classification is utilized for multimodal biometric recognition that aids in maximizing inter-\nclass distance and minimizing intra-class variations via geodesic distance therefore improving the overall recognition\naccuracy.\n\u2022 Finally, the quantitative analysis results of performance evaluation represent that the packet delivery ratio in addition to\nend-to-end delay with energy consumption, throughput and network lifetime of the proposed CNN-AAViT method are\nbetter than existing methods.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Novelty And Contributing Remarks",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "b3b26815d161784b3e62dc4bd107584131acc5eaaca027515e25274805708242",
+            "evidence_id": "E00be50bcaeb07111-B0018",
+            "pages": [
+              3
+            ],
+            "section": "Novelty And Contributing Remarks",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1503,
+                "page": 3,
+                "section": "Novelty And Contributing Remarks",
+                "section_index": 8,
+                "start": 898,
+                "text": "the\nrobustness of biometric feature extraction and enhance sensitivity and specificity.\n\u2022 Additive Angular Margin Classification is utilized for multimodal biometric recognition that aids in maximizing inter-\nclass distance and minimizing intra-class variations via geodesic distance therefore improving the overall recognition\naccuracy.\n\u2022 Finally, the quantitative analysis results of performance evaluation represent that the packet delivery ratio in addition to\nend-to-end delay with energy consumption, throughput and network lifetime of the proposed CNN-AAViT method are\nbetter than existing methods."
+              }
+            ],
+            "text": "the\nrobustness of biometric feature extraction and enhance sensitivity and specificity.\n\u2022 Additive Angular Margin Classification is utilized for multimodal biometric recognition that aids in maximizing inter-\nclass distance and minimizing intra-class variations via geodesic distance therefore improving the overall recognition\naccuracy.\n\u2022 Finally, the quantitative analysis results of performance evaluation represent that the packet delivery ratio in addition to\nend-to-end delay with energy consumption, throughput and network lifetime of the proposed CNN-AAViT method are\nbetter than existing methods."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "00be50bcaeb07111500e7e089d8897f4078f47b97346e0ab5b299368da3d6cfc",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E00be50bcaeb07111-B0045"
+        ],
+        "excerpt": "and visual elements into a shared hyper-spherical space. With\nthis function matching audio and visual data naturally cluster together while distinctly separating from unrelated samples. The\nAdditive Angular Margin Loss function is defined as given below.\n\u2112\ud835\udc34\ud835\udc34\ud835\udc40 = \u2212 1\ud835\udc41 \ud835\udc41\u2211\ud835\udc56=1 log \ud835\udc52\ud835\udf11.(cos(\ud835\udf03\ud835\udc45\ud835\udc52\ud835\udc60\ud835\udc39 \ud835\udc62\ud835\udc60\ud835\udc56\ud835\udc5c\ud835\udc5b\ud835\udc56 +\ud835\udc4e\ud835\udc5a))\ud835\udc52\ud835\udf11.(cos(\ud835\udf03\ud835\udc45\ud835\udc52\ud835\udc60\ud835\udc39 \ud835\udc62\ud835\udc60\ud835\udc56\ud835\udc5c\ud835\udc5b\ud835\udc56 +\ud835\udc4e\ud835\udc5a))+\u2211\ud835\udc57\u2260 \ud835\udf03\ud835\udc45\ud835\udc52\ud835\udc60\ud835\udc39 \ud835\udc62\ud835\udc60\ud835\udc56\ud835\udc5c\ud835\udc5b\ud835\udc56 \ud835\udc52\ud835\udf11\ud835\udc50\ud835\udc5c\ud835\udc60\ud835\udf03\ud835\udc45\ud835\udc52\ud835\udc60\ud835\udc39 \ud835\udc62\ud835\udc60\ud835\udc56\ud835\udc5c\ud835\udc5b\ud835\udc57 (16)\nWith the generated results from equation (16) the Additive Angular Margin Loss applied in our work involving audio-visual\ndata implements a geometric margin in the angular space between feature embeddings. The loss function by mapping both\naudioandvisualdataontoahypersphereinturngeneratesextremelydiscriminativegroupsthatenhancemultimodalbiometric\nrecognition.ThepseudocoderepresentationofhybridCNN-AAViTforaudio-visualmultimodalbiometricrecognitionisgiven\nbelow.\nAlgorithm Hybrid convolutional neural network with additive ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Additive Angular Margin Classification For Multimodal Biometric Recognition",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "0e77c8eeaf09082c801c919f367841b5dec699ed7f387c694c27a454bc9a61ea",
+            "evidence_id": "E00be50bcaeb07111-B0045",
+            "pages": [
+              8
+            ],
+            "section": "Additive Angular Margin Classification For Multimodal Biometric Recognition",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2690,
+                "page": 8,
+                "section": "Additive Angular Margin Classification For Multimodal Biometric Recognition",
+                "section_index": 23,
+                "start": 1795,
+                "text": "and visual elements into a shared hyper-spherical space. With\nthis function matching audio and visual data naturally cluster together while distinctly separating from unrelated samples. The\nAdditive Angular Margin Loss function is defined as given below.\n\u2112\ud835\udc34\ud835\udc34\ud835\udc40 = \u2212 1\ud835\udc41 \ud835\udc41\u2211\ud835\udc56=1 log \ud835\udc52\ud835\udf11.(cos(\ud835\udf03\ud835\udc45\ud835\udc52\ud835\udc60\ud835\udc39 \ud835\udc62\ud835\udc60\ud835\udc56\ud835\udc5c\ud835\udc5b\ud835\udc56 +\ud835\udc4e\ud835\udc5a))\ud835\udc52\ud835\udf11.(cos(\ud835\udf03\ud835\udc45\ud835\udc52\ud835\udc60\ud835\udc39 \ud835\udc62\ud835\udc60\ud835\udc56\ud835\udc5c\ud835\udc5b\ud835\udc56 +\ud835\udc4e\ud835\udc5a))+\u2211\ud835\udc57\u2260 \ud835\udf03\ud835\udc45\ud835\udc52\ud835\udc60\ud835\udc39 \ud835\udc62\ud835\udc60\ud835\udc56\ud835\udc5c\ud835\udc5b\ud835\udc56 \ud835\udc52\ud835\udf11\ud835\udc50\ud835\udc5c\ud835\udc60\ud835\udf03\ud835\udc45\ud835\udc52\ud835\udc60\ud835\udc39 \ud835\udc62\ud835\udc60\ud835\udc56\ud835\udc5c\ud835\udc5b\ud835\udc57 (16)\nWith the generated results from equation (16) the Additive Angular Margin Loss applied in our work involving audio-visual\ndata implements a geometric margin in the angular space between feature embeddings. The loss function by mapping both\naudioandvisualdataontoahypersphereinturngeneratesextremelydiscriminativegroupsthatenhancemultimodalbiometric\nrecognition.ThepseudocoderepresentationofhybridCNN-AAViTforaudio-visualmultimodalbiometricrecognitionisgiven\nbelow.\nAlgorithm Hybrid convolutional neural network with additive "
+              }
+            ],
+            "text": "and visual elements into a shared hyper-spherical space. With\nthis function matching audio and visual data naturally cluster together while distinctly separating from unrelated samples. The\nAdditive Angular Margin Loss function is defined as given below.\n\u2112\ud835\udc34\ud835\udc34\ud835\udc40 = \u2212 1\ud835\udc41 \ud835\udc41\u2211\ud835\udc56=1 log \ud835\udc52\ud835\udf11.(cos(\ud835\udf03\ud835\udc45\ud835\udc52\ud835\udc60\ud835\udc39 \ud835\udc62\ud835\udc60\ud835\udc56\ud835\udc5c\ud835\udc5b\ud835\udc56 +\ud835\udc4e\ud835\udc5a))\ud835\udc52\ud835\udf11.(cos(\ud835\udf03\ud835\udc45\ud835\udc52\ud835\udc60\ud835\udc39 \ud835\udc62\ud835\udc60\ud835\udc56\ud835\udc5c\ud835\udc5b\ud835\udc56 +\ud835\udc4e\ud835\udc5a))+\u2211\ud835\udc57\u2260 \ud835\udf03\ud835\udc45\ud835\udc52\ud835\udc60\ud835\udc39 \ud835\udc62\ud835\udc60\ud835\udc56\ud835\udc5c\ud835\udc5b\ud835\udc56 \ud835\udc52\ud835\udf11\ud835\udc50\ud835\udc5c\ud835\udc60\ud835\udf03\ud835\udc45\ud835\udc52\ud835\udc60\ud835\udc39 \ud835\udc62\ud835\udc60\ud835\udc56\ud835\udc5c\ud835\udc5b\ud835\udc57 (16)\nWith the generated results from equation (16) the Additive Angular Margin Loss applied in our work involving audio-visual\ndata implements a geometric margin in the angular space between feature embeddings. The loss function by mapping both\naudioandvisualdataontoahypersphereinturngeneratesextremelydiscriminativegroupsthatenhancemultimodalbiometric\nrecognition.ThepseudocoderepresentationofhybridCNN-AAViTforaudio-visualmultimodalbiometricrecognitionisgiven\nbelow.\nAlgorithm Hybrid convolutional neural network with additive "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "00be50bcaeb07111500e7e089d8897f4078f47b97346e0ab5b299368da3d6cfc",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E00be50bcaeb07111-B0049"
+        ],
+        "excerpt": "the class imbalance issue to compute the performance of the model ability to carry out\nunseen data. By using cross-validation, the dataset is divided into three sets such as training and testing and validation. Most\ndatasamples(70%)wereusedfortrainingandthelesserdatasamples(20%)weretakenfortestingandremainingsamples(10%)\nweretakenforvalidation.Inourwork,the10-foldcross-validationisutilizedformeasuringtheresults.Toconductandvalidate\nand ensure fair benchmark comparison on the MSU-AVIS dataset, proposed CNN-AAViT and conventional Multimodal BRS\n[1],ANN+fuzzy-NL-SVM[2]andCNNsandRNNs[3]areimplementedinPythonlanguage.SeveralparameterssuchasPSNR,\nprecision, sensitivity, specificity and accuracy are utilized. To conduct the experimental purpose, the samples in the range from\n226-2260 are considered.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Additive Angular Margin Classification For Multimodal Biometric Recognition",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "d82a6e9d95ec90b4c34e263218182d17ded1f362243c90c9f6b99c9ca1d0b7b1",
+            "evidence_id": "E00be50bcaeb07111-B0049",
+            "pages": [
+              10
+            ],
+            "section": "Additive Angular Margin Classification For Multimodal Biometric Recognition",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 931,
+                "page": 10,
+                "section": "Additive Angular Margin Classification For Multimodal Biometric Recognition",
+                "section_index": 25,
+                "start": 128,
+                "text": "the class imbalance issue to compute the performance of the model ability to carry out\nunseen data. By using cross-validation, the dataset is divided into three sets such as training and testing and validation. Most\ndatasamples(70%)wereusedfortrainingandthelesserdatasamples(20%)weretakenfortestingandremainingsamples(10%)\nweretakenforvalidation.Inourwork,the10-foldcross-validationisutilizedformeasuringtheresults.Toconductandvalidate\nand ensure fair benchmark comparison on the MSU-AVIS dataset, proposed CNN-AAViT and conventional Multimodal BRS\n[1],ANN+fuzzy-NL-SVM[2]andCNNsandRNNs[3]areimplementedinPythonlanguage.SeveralparameterssuchasPSNR,\nprecision, sensitivity, specificity and accuracy are utilized. To conduct the experimental purpose, the samples in the range from\n226-2260 are considered."
+              }
+            ],
+            "text": "the class imbalance issue to compute the performance of the model ability to carry out\nunseen data. By using cross-validation, the dataset is divided into three sets such as training and testing and validation. Most\ndatasamples(70%)wereusedfortrainingandthelesserdatasamples(20%)weretakenfortestingandremainingsamples(10%)\nweretakenforvalidation.Inourwork,the10-foldcross-validationisutilizedformeasuringtheresults.Toconductandvalidate\nand ensure fair benchmark comparison on the MSU-AVIS dataset, proposed CNN-AAViT and conventional Multimodal BRS\n[1],ANN+fuzzy-NL-SVM[2]andCNNsandRNNs[3]areimplementedinPythonlanguage.SeveralparameterssuchasPSNR,\nprecision, sensitivity, specificity and accuracy are utilized. To conduct the experimental purpose, the samples in the range from\n226-2260 are considered."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "00be50bcaeb07111500e7e089d8897f4078f47b97346e0ab5b299368da3d6cfc",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E00be50bcaeb07111-B0051"
+        ],
+        "excerpt": "PSNR involved in audio-visual data is validated. The PSNR rate is evaluated as\n\ud835\udc43 \ud835\udc46\ud835\udc41 \ud835\udc45 = 10 log10 ( \ud835\udc40 \ud835\udc34\ud835\udc4b2\ud835\udc3c\ud835\udc40 \ud835\udc46\ud835\udc38 ) (17)\n\ud835\udc40 \ud835\udc46\ud835\udc38 = 1\ud835\udc5a 1\ud835\udc5b \ud835\udc5a\u2211\ud835\udc56=1 \ud835\udc5b\u2211\ud835\udc57=1 [\ud835\udc3c(\ud835\udc56, \ud835\udc57) \u2212 \ud835\udc3e(\ud835\udc56, \ud835\udc57)]2 (18)\nWhere,peaksignal-tonoiseratio' \ud835\udc43 \ud835\udc46\ud835\udc41 \ud835\udc45'isevaluatedbasedonsquaredsumofthemeansquareerror' \ud835\udc40 \ud835\udc46\ud835\udc38'betweenoriginal\nand reconstructed image.\nTable 2.Results of PSNR for face image and voice signals\nSamples PSNR (dB) for face image PSNR (dB) for voice signalsCNN-\nAAViT\nMultimodal",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Case Scenario 1: Psnr Analysis",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "f63ed522590d02d2f3cd6d2caebbd782e1f9c7a7ea3aab03814ad226af97b488",
+            "evidence_id": "E00be50bcaeb07111-B0051",
+            "pages": [
+              10
+            ],
+            "section": "Case Scenario 1: Psnr Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 440,
+                "page": 10,
+                "section": "Case Scenario 1: Psnr Analysis",
+                "section_index": 27,
+                "start": 0,
+                "text": "PSNR involved in audio-visual data is validated. The PSNR rate is evaluated as\n\ud835\udc43 \ud835\udc46\ud835\udc41 \ud835\udc45 = 10 log10 ( \ud835\udc40 \ud835\udc34\ud835\udc4b2\ud835\udc3c\ud835\udc40 \ud835\udc46\ud835\udc38 ) (17)\n\ud835\udc40 \ud835\udc46\ud835\udc38 = 1\ud835\udc5a 1\ud835\udc5b \ud835\udc5a\u2211\ud835\udc56=1 \ud835\udc5b\u2211\ud835\udc57=1 [\ud835\udc3c(\ud835\udc56, \ud835\udc57) \u2212 \ud835\udc3e(\ud835\udc56, \ud835\udc57)]2 (18)\nWhere,peaksignal-tonoiseratio' \ud835\udc43 \ud835\udc46\ud835\udc41 \ud835\udc45'isevaluatedbasedonsquaredsumofthemeansquareerror' \ud835\udc40 \ud835\udc46\ud835\udc38'betweenoriginal\nand reconstructed image.\nTable 2.Results of PSNR for face image and voice signals\nSamples PSNR (dB) for face image PSNR (dB) for voice signalsCNN-\nAAViT\nMultimodal"
+              }
+            ],
+            "text": "PSNR involved in audio-visual data is validated. The PSNR rate is evaluated as\n\ud835\udc43 \ud835\udc46\ud835\udc41 \ud835\udc45 = 10 log10 ( \ud835\udc40 \ud835\udc34\ud835\udc4b2\ud835\udc3c\ud835\udc40 \ud835\udc46\ud835\udc38 ) (17)\n\ud835\udc40 \ud835\udc46\ud835\udc38 = 1\ud835\udc5a 1\ud835\udc5b \ud835\udc5a\u2211\ud835\udc56=1 \ud835\udc5b\u2211\ud835\udc57=1 [\ud835\udc3c(\ud835\udc56, \ud835\udc57) \u2212 \ud835\udc3e(\ud835\udc56, \ud835\udc57)]2 (18)\nWhere,peaksignal-tonoiseratio' \ud835\udc43 \ud835\udc46\ud835\udc41 \ud835\udc45'isevaluatedbasedonsquaredsumofthemeansquareerror' \ud835\udc40 \ud835\udc46\ud835\udc38'betweenoriginal\nand reconstructed image.\nTable 2.Results of PSNR for face image and voice signals\nSamples PSNR (dB) for face image PSNR (dB) for voice signalsCNN-\nAAViT\nMultimodal"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "00be50bcaeb07111500e7e089d8897f4078f47b97346e0ab5b299368da3d6cfc",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E00be50bcaeb07111-B0052"
+        ],
+        "excerpt": "BRS [1]\nANN+fuzzy-\nNL-SVM\n[2]\nCNNs and\nRNNs [3]\nCNN-\nAAViT\nMultimodal\n\nBRS [1]\nANN+fuzzy-\nNL-SVM\n[2]\nCNNs and\nRNNs [3]\n226 62.15 59.35 56.25 53.14 69.35 59.25 54.15 51.35\n452 68.35 55.35 52.15 49.25 72.55 62.15 57.85 54.55\n678 72.55 57.95 55.45 52.15 75.85 65.35 60.35 57.85\n904 81.35 68.35 66.25 63.15 79.25 69.15 64.25 59.35\n1130 85.89 70.98 68.15 65.25 83.35 73.25 68.15 63.25\n1356 89.35 75.65 73.25 71.55 88.15 78.55 73.15 68.55\n1582 92.15 78.56 76.15 73.25 90.45 80.25 75.55 70.25\n1808 95.45 80.35 78.35 75.35 93.25 82.15 77.23 72.15\n2034 96.35 82.45 80.55 77.15 94.55 84.35 79.25 74.55\n2260 98.25 85.65 83.25 81.35 97 87 82 77\nTable2 shows PSNR. PSNR of CNN-AAViT of voice signals improved by 12%, 18% 23% and 15%, 12% and 22% for face\nimages over [1], [2], [3]. When the experiment was conducted with 226 samples, PSNR was obtained as 62.12dB, 59.35dB,\n56.25dB and53.14dB usingface ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Brs [1]",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "1477f246a7ec5926aaec3068103a2840d8f48d98e5a24e28c87dcb3d7b778cd8",
+            "evidence_id": "E00be50bcaeb07111-B0052",
+            "pages": [
+              10
+            ],
+            "section": "Brs [1]",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 889,
+                "page": 10,
+                "section": "Brs [1]",
+                "section_index": 28,
+                "start": 0,
+                "text": "BRS [1]\nANN+fuzzy-\nNL-SVM\n[2]\nCNNs and\nRNNs [3]\nCNN-\nAAViT\nMultimodal\n\nBRS [1]\nANN+fuzzy-\nNL-SVM\n[2]\nCNNs and\nRNNs [3]\n226 62.15 59.35 56.25 53.14 69.35 59.25 54.15 51.35\n452 68.35 55.35 52.15 49.25 72.55 62.15 57.85 54.55\n678 72.55 57.95 55.45 52.15 75.85 65.35 60.35 57.85\n904 81.35 68.35 66.25 63.15 79.25 69.15 64.25 59.35\n1130 85.89 70.98 68.15 65.25 83.35 73.25 68.15 63.25\n1356 89.35 75.65 73.25 71.55 88.15 78.55 73.15 68.55\n1582 92.15 78.56 76.15 73.25 90.45 80.25 75.55 70.25\n1808 95.45 80.35 78.35 75.35 93.25 82.15 77.23 72.15\n2034 96.35 82.45 80.55 77.15 94.55 84.35 79.25 74.55\n2260 98.25 85.65 83.25 81.35 97 87 82 77\nTable2 shows PSNR. PSNR of CNN-AAViT of voice signals improved by 12%, 18% 23% and 15%, 12% and 22% for face\nimages over [1], [2], [3]. When the experiment was conducted with 226 samples, PSNR was obtained as 62.12dB, 59.35dB,\n56.25dB and53.14dB usingface "
+              }
+            ],
+            "text": "BRS [1]\nANN+fuzzy-\nNL-SVM\n[2]\nCNNs and\nRNNs [3]\nCNN-\nAAViT\nMultimodal\n\nBRS [1]\nANN+fuzzy-\nNL-SVM\n[2]\nCNNs and\nRNNs [3]\n226 62.15 59.35 56.25 53.14 69.35 59.25 54.15 51.35\n452 68.35 55.35 52.15 49.25 72.55 62.15 57.85 54.55\n678 72.55 57.95 55.45 52.15 75.85 65.35 60.35 57.85\n904 81.35 68.35 66.25 63.15 79.25 69.15 64.25 59.35\n1130 85.89 70.98 68.15 65.25 83.35 73.25 68.15 63.25\n1356 89.35 75.65 73.25 71.55 88.15 78.55 73.15 68.55\n1582 92.15 78.56 76.15 73.25 90.45 80.25 75.55 70.25\n1808 95.45 80.35 78.35 75.35 93.25 82.15 77.23 72.15\n2034 96.35 82.45 80.55 77.15 94.55 84.35 79.25 74.55\n2260 98.25 85.65 83.25 81.35 97 87 82 77\nTable2 shows PSNR. PSNR of CNN-AAViT of voice signals improved by 12%, 18% 23% and 15%, 12% and 22% for face\nimages over [1], [2], [3]. When the experiment was conducted with 226 samples, PSNR was obtained as 62.12dB, 59.35dB,\n56.25dB and53.14dB usingface "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "00be50bcaeb07111500e7e089d8897f4078f47b97346e0ab5b299368da3d6cfc",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E00be50bcaeb07111-B0053"
+        ],
+        "excerpt": "imagesforCNN-AAViT,[1], [2] and[3]. Sensitivity wasobtained as69.35dB,59.35dB,54.15dB\nand 51.35dB using voice signals for the CNN-AAViT, [1], [2] and [3].\nhttps://www.indjst.org/ 2353\nPreethi & Joseph Charles / Indian Journal of Science and Technology 2026;19(33):2344\u20132357",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10,
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Brs [1]",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "78cf883de6b4cc4458e74ef42cd47a383358cd79f8d5d4d0a87a7741f7a295d6",
+            "evidence_id": "E00be50bcaeb07111-B0053",
+            "pages": [
+              10,
+              11
+            ],
+            "section": "Brs [1]",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1072,
+                "page": 10,
+                "section": "Brs [1]",
+                "section_index": 28,
+                "start": 889,
+                "text": "imagesforCNN-AAViT,[1], [2] and[3]. Sensitivity wasobtained as69.35dB,59.35dB,54.15dB\nand 51.35dB using voice signals for the CNN-AAViT, [1], [2] and [3].\nhttps://www.indjst.org/ 2353"
+              },
+              {
+                "end": 89,
+                "page": 11,
+                "section": "Brs [1]",
+                "section_index": 29,
+                "start": 0,
+                "text": "Preethi & Joseph Charles / Indian Journal of Science and Technology 2026;19(33):2344\u20132357"
+              }
+            ],
+            "text": "imagesforCNN-AAViT,[1], [2] and[3]. Sensitivity wasobtained as69.35dB,59.35dB,54.15dB\nand 51.35dB using voice signals for the CNN-AAViT, [1], [2] and [3].\nhttps://www.indjst.org/ 2353\nPreethi & Joseph Charles / Indian Journal of Science and Technology 2026;19(33):2344\u20132357"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "00be50bcaeb07111500e7e089d8897f4078f47b97346e0ab5b299368da3d6cfc",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E00be50bcaeb07111-B0062"
+        ],
+        "excerpt": "ANOVA (Analysis of Variance) is a statistical test employed to evaluate whether there is a major dissimilarity among multiple\nstudent data classes within a dataset. In the context of student performance prediction, ANOVA test is applied to assess whether\nthe mean values of a dependent variable (accuracy) differ significantly across different groups defined by a categorical variable\n(face image and voice signals). Anova test is conducted for proposed LKMILBDC and the existing [1] and [2] and [3] using\nMSU-AVIS dataset based on accuracy value.\nFig 5. Paired t-tests Outcome\nIn Figure5, paired t-tests outcome is described. CNN-AAViT method achieved statistically significant improvements over\n[1], [2] and [3] with all p-values below 0.05. The highest t-statistic was observed for indicating the strongest performance\ndifference. The paired t-test results show that CNN-AAViT performed ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Statistical Test",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e122c338459aa3ad862cde021a3a46fc00025bab40e4a7b5fdb9780c0ad62eae",
+            "evidence_id": "E00be50bcaeb07111-B0062",
+            "pages": [
+              13
+            ],
+            "section": "Statistical Test",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 890,
+                "page": 13,
+                "section": "Statistical Test",
+                "section_index": 38,
+                "start": 0,
+                "text": "ANOVA (Analysis of Variance) is a statistical test employed to evaluate whether there is a major dissimilarity among multiple\nstudent data classes within a dataset. In the context of student performance prediction, ANOVA test is applied to assess whether\nthe mean values of a dependent variable (accuracy) differ significantly across different groups defined by a categorical variable\n(face image and voice signals). Anova test is conducted for proposed LKMILBDC and the existing [1] and [2] and [3] using\nMSU-AVIS dataset based on accuracy value.\nFig 5. Paired t-tests Outcome\nIn Figure5, paired t-tests outcome is described. CNN-AAViT method achieved statistically significant improvements over\n[1], [2] and [3] with all p-values below 0.05. The highest t-statistic was observed for indicating the strongest performance\ndifference. The paired t-test results show that CNN-AAViT performed "
+              }
+            ],
+            "text": "ANOVA (Analysis of Variance) is a statistical test employed to evaluate whether there is a major dissimilarity among multiple\nstudent data classes within a dataset. In the context of student performance prediction, ANOVA test is applied to assess whether\nthe mean values of a dependent variable (accuracy) differ significantly across different groups defined by a categorical variable\n(face image and voice signals). Anova test is conducted for proposed LKMILBDC and the existing [1] and [2] and [3] using\nMSU-AVIS dataset based on accuracy value.\nFig 5. Paired t-tests Outcome\nIn Figure5, paired t-tests outcome is described. CNN-AAViT method achieved statistically significant improvements over\n[1], [2] and [3] with all p-values below 0.05. The highest t-statistic was observed for indicating the strongest performance\ndifference. The paired t-test results show that CNN-AAViT performed "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "00be50bcaeb07111500e7e089d8897f4078f47b97346e0ab5b299368da3d6cfc",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E00be50bcaeb07111-B0064"
+        ],
+        "excerpt": "Proposed hybrid CNN-AAViT is introduced for obtaining audio-visual multimodal biometric recognition with maximum\naccuracy. The integration of these complementary biometric modalities helps overcome the limitations associated with relying\non a single biometric trait and consequently improves the reliability and security of biometric verification. Novelty of proposed\nmethod lies in the incorporation of CNN with spatio temporal ViT for multimodal biometric recognition. This combination\nalongwiththeAdditiveAngularMarginLossfunctionallowsthemethodtoverifywhetherthebiometricdataoriginatesfroma\nsingle source,significantly enhancingsecurity. Moreover,the studyincorporatesSpatio Temporal ViT-based FeatureExtraction\nto enhance classes parability, followed by feature-level fusion and classification using an Additive Angular Margin classifier.\nFor face images, the quantitative results indicate of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "5a7802e1effae774fbb1c2cc1e33b2f461787137d54cc8d24ba9d0fa08f8c8d2",
+            "evidence_id": "E00be50bcaeb07111-B0064",
+            "pages": [
+              13
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 13,
+                "section": "Conclusion",
+                "section_index": 39,
+                "start": 0,
+                "text": "Proposed hybrid CNN-AAViT is introduced for obtaining audio-visual multimodal biometric recognition with maximum\naccuracy. The integration of these complementary biometric modalities helps overcome the limitations associated with relying\non a single biometric trait and consequently improves the reliability and security of biometric verification. Novelty of proposed\nmethod lies in the incorporation of CNN with spatio temporal ViT for multimodal biometric recognition. This combination\nalongwiththeAdditiveAngularMarginLossfunctionallowsthemethodtoverifywhetherthebiometricdataoriginatesfroma\nsingle source,significantly enhancingsecurity. Moreover,the studyincorporatesSpatio Temporal ViT-based FeatureExtraction\nto enhance classes parability, followed by feature-level fusion and classification using an Additive Angular Margin classifier.\nFor face images, the quantitative results indicate of "
+              }
+            ],
+            "text": "Proposed hybrid CNN-AAViT is introduced for obtaining audio-visual multimodal biometric recognition with maximum\naccuracy. The integration of these complementary biometric modalities helps overcome the limitations associated with relying\non a single biometric trait and consequently improves the reliability and security of biometric verification. Novelty of proposed\nmethod lies in the incorporation of CNN with spatio temporal ViT for multimodal biometric recognition. This combination\nalongwiththeAdditiveAngularMarginLossfunctionallowsthemethodtoverifywhetherthebiometricdataoriginatesfroma\nsingle source,significantly enhancingsecurity. Moreover,the studyincorporatesSpatio Temporal ViT-based FeatureExtraction\nto enhance classes parability, followed by feature-level fusion and classification using an Additive Angular Margin classifier.\nFor face images, the quantitative results indicate of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "00be50bcaeb07111500e7e089d8897f4078f47b97346e0ab5b299368da3d6cfc",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E00be50bcaeb07111-B0065"
+        ],
+        "excerpt": "CNN-AAViT enhancement in PSNR by 84dB, precision by 0.91,\nsensitivity by 0.90 and specificity by 0.80 and accuracy by 0.91. For voice signals, proposed CNN-AAViT enhanced PSNR\nby 84dB, precision by 0.89, sensitivity by 0.89 and specificity by 0.87 and accuracy by 0.88 when compared to traditional\nbaseline techniques. The proposed method has used in several applications in secure authentication, access control, identity\nverification, and other multimodal biometric security systems where improved robustness and recognition reliability are\nrequired. Nevertheless, proposed method considers only one dataset. Various metrics such as time and memory was not\nconsidered. In future work, the proposed work will be extended to apply adaptive multimodal fusion, and privacy-preserving\nbiometric learning to improve computational efficiency and scalability. Also, the several metrics such as time and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "31c01f90bb38bb6e6ec8d8f70a89471d193a3448df34225701d31cc50ae8a61a",
+            "evidence_id": "E00be50bcaeb07111-B0065",
+            "pages": [
+              13
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 1795,
+                "page": 13,
+                "section": "Conclusion",
+                "section_index": 39,
+                "start": 898,
+                "text": "CNN-AAViT enhancement in PSNR by 84dB, precision by 0.91,\nsensitivity by 0.90 and specificity by 0.80 and accuracy by 0.91. For voice signals, proposed CNN-AAViT enhanced PSNR\nby 84dB, precision by 0.89, sensitivity by 0.89 and specificity by 0.87 and accuracy by 0.88 when compared to traditional\nbaseline techniques. The proposed method has used in several applications in secure authentication, access control, identity\nverification, and other multimodal biometric security systems where improved robustness and recognition reliability are\nrequired. Nevertheless, proposed method considers only one dataset. Various metrics such as time and memory was not\nconsidered. In future work, the proposed work will be extended to apply adaptive multimodal fusion, and privacy-preserving\nbiometric learning to improve computational efficiency and scalability. Also, the several metrics such as time and "
+              }
+            ],
+            "text": "CNN-AAViT enhancement in PSNR by 84dB, precision by 0.91,\nsensitivity by 0.90 and specificity by 0.80 and accuracy by 0.91. For voice signals, proposed CNN-AAViT enhanced PSNR\nby 84dB, precision by 0.89, sensitivity by 0.89 and specificity by 0.87 and accuracy by 0.88 when compared to traditional\nbaseline techniques. The proposed method has used in several applications in secure authentication, access control, identity\nverification, and other multimodal biometric security systems where improved robustness and recognition reliability are\nrequired. Nevertheless, proposed method considers only one dataset. Various metrics such as time and memory was not\nconsidered. In future work, the proposed work will be extended to apply adaptive multimodal fusion, and privacy-preserving\nbiometric learning to improve computational efficiency and scalability. Also, the several metrics such as time and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://sciresol.s3.us-east-2.amazonaws.com/IJST/Articles/2026/Issue-33/IJST-2026-1128.pdf",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The manuscript contains severe contextual incongruities that undermine scientific validity: the novelty section claims improvements in packet delivery ratio, end-to-end delay, energy consumption, throughput, and network lifetime, which are wireless sensor network metrics irrelevant to biometric recognition.",
+          "The statistical test section describes ANOVA for student performance prediction and references an unrelated model acronym (LKMILBDC), indicating copy-paste text from an unrelated domain and casting doubt on the reported statistical validation.",
+          "The evaluation uses PSNR, an image reconstruction quality metric, as a primary performance measure for a biometric classification model without scientific justification, and the results text mislabels PSNR values as sensitivity, indicating unreliable reporting.",
+          "The manuscript does not establish evaluator independence: the same AAM-Softmax loss optimized during training is used to shape the embedding space, and the reported classification metrics are derived from the same model's decision outputs without independent human or external benchmark validation."
+        ],
+        "canonical_id": "doi:10.17485/ijst/v19i33.1128",
+        "context_id": "00be50bcaeb07111500e7e089d8897f4078f47b97346e0ab5b299368da3d6cfc",
+        "evaluation_independence": {
+          "concern": "major",
+          "corroboration_direction": "contradicts",
+          "corroboration_summary": "The reported statistical test section references student performance prediction and an unrelated model acronym, while the results text mislabels PSNR values as sensitivity, so the reported measurements do not reliably corroborate the headline biometric recognition gains.",
+          "final_evaluation_signal": "Classification metrics (accuracy, precision, sensitivity, specificity) and PSNR computed on cross-validation splits.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Additive Angular Margin Loss (AAM-Softmax) optimized with Adam backpropagation on face and voice spectrogram features.",
+          "signal_reuse": "materially_reused"
+        },
+        "evidence_ids": [
+          "E00be50bcaeb07111-B0018",
+          "E00be50bcaeb07111-B0049",
+          "E00be50bcaeb07111-B0051",
+          "E00be50bcaeb07111-B0052",
+          "E00be50bcaeb07111-B0053",
+          "E00be50bcaeb07111-B0062",
+          "E00be50bcaeb07111-B0064",
+          "E00be50bcaeb07111-B0065"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "e632c92a1c07a5f3e78c689e823307bd3855b9e059baa95c68a2b773f242e8e8"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.17485/ijst/v19i33.1128",
+        "claim_evidence_alignment": "The reported results show substantial improvements, but the alignment with the biometric authentication claims is severely undermined by nonsensical metric claims (e.g., packet delivery ratio, end-to-end delay) and copy-paste text from unrelated domains.",
+        "context_id": "00be50bcaeb07111500e7e089d8897f4078f47b97346e0ab5b299368da3d6cfc",
+        "decision": "uncertain",
+        "evaluation_assessment": "The experimental evaluation reports PSNR for face images and voice signals without explaining why a reconstruction/image quality metric applies to a classification model, alongside precision, sensitivity, specificity, and accuracy across varying sample sizes. The tables and text exhibit anomalous descriptions, and the ANOVA description specifically references student performance prediction instead of biometric authentication.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Standard classification evaluation metrics (accuracy, sensitivity, specificity) were computed on held-out test splits from 10-fold cross-validation.",
+          "final_evaluation_signal": "Classification accuracy, precision, sensitivity, specificity, and PSNR across cross-validation splits.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Additive Angular Margin Loss (AAM-Softmax) optimized with Adam backpropagation on face and voice spectrogram features.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E00be50bcaeb07111-B0005",
+          "E00be50bcaeb07111-B0018",
+          "E00be50bcaeb07111-B0045",
+          "E00be50bcaeb07111-B0049",
+          "E00be50bcaeb07111-B0051",
+          "E00be50bcaeb07111-B0052",
+          "E00be50bcaeb07111-B0062"
+        ],
+        "limitations": "The authors note testing on only a single dataset and omitting time and memory benchmarks, but do not address the pervasive conceptual contradictions and incongruent metrics in the text.",
+        "method_assessment": "The methodology presents architectural descriptions combining CNN feature extractors, ViT self-attention, cross-modal attention, and additive angular margin softmax loss. However, the manuscript contains severe contextual incongruities, such as claiming network lifetime and packet delivery ratio improvements for biometric recognition, and referring to student performance prediction and an unrelated model acronym (LKMILBDC) in the statistical test section.",
+        "quality_rationale": "The manuscript displays major scientific flaws, including incongruous text from wireless sensor networking (packet delivery ratio, network lifetime) and educational data mining (student performance prediction ANOVA), as well as evaluating recognition models on image reconstruction metrics (PSNR) without clear scientific justification. These severe inconsistencies preclude confidence in the technical execution and validity of the results.",
+        "scoped_contribution": "The paper proposes CNN-AAViT, a hybrid convolutional neural network and vision transformer architecture using additive angular margin loss for audio-visual multimodal biometric recognition evaluated on the MSU-AVIS dataset.",
+        "source_content_hash": "e632c92a1c07a5f3e78c689e823307bd3855b9e059baa95c68a2b773f242e8e8"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript displays major scientific flaws, including incongruous text from wireless sensor networking (packet delivery ratio, network lifetime) and educational data mining (student performance prediction ANOVA), as well as evaluating recognition models on image reconstruction metrics (PSNR) without clear scientific justification. These severe inconsistencies preclude confidence in the technical execution and validity of the results.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "e632c92a1c07a5f3e78c689e823307bd3855b9e059baa95c68a2b773f242e8e8",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors note testing on only a single dataset and omitting time and memory benchmarks, but do not address the pervasive conceptual contradictions and incongruent metrics in the text."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -152,7 +1468,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Failure Broadens, Success Sharpens: Continual Adaptation of Tool-Use Agents Across Diverse Tasks with Dual-Polarity Memory</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Failure Broadens, Success Sharpens: Continual Adaptation of Tool-Use Agents Across Diverse Tasks with Dual-Polarity Memory</h1>
+          <p class="hero-copy">Tianmai M. Zhang, Hoda Shajari, Amr Hendy, Xiaohu Liu, Piyush Behre, Omar Zia Khan, Ankur Gupta</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://doi.org/10.48550/arxiv.2611.33612">Open paper</a>
+            <a class="paper-detail-link" href="failure-broadens-success-sharpens-continual-adaptation-of-tool-use-agents-across-div-3c6d59e3.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Tianmai M. Zhang, Hoda Shajari, Amr Hendy, Xiaohu Liu, Piyush Behre, Omar Zia Khan, Ankur Gupta</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-11-25</dd></div>
+              <div><dt>Publication date</dt><dd>2026-11-25</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li><li>Semantic Scholar</li></ul>
+            <div class="secondary-links"><a href="https://www.semanticscholar.org/paper/5f3084938159ff67265cd2fbf3ff234fbb2f480d">Semantic Scholar</a><a href="https://arxiv.org/abs/2611.33612">arXiv</a><a href="https://openalex.org/W7240101448">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies memory storage, retrieval, update, or consolidation for LLM agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Large language model agents can self-improve over time by utilizing procedural memory derived from prior task trajectories, yet the distinct utilities of memories derived from local successes and failures remain underexplored. This work studies this question in a realistic setting with heterogeneous streams of multi...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The study offers a well-motivated, methodologically sound framework evaluated across diverse tasks and benchmarks with appropriate statistical testing and clear separation of deterministic environment outcomes from reflection prompts.</p>
+      <p>The authors explicitly acknowledge limitations including reliance on single ground-truth benchmark trajectories, static domain distributions across blocks, unisolated coupling between trajectory outcomes and derived guidance, and fixed hyperparameter choices.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-27T13:31:37.119041+00:00.</p>
+        <p>Coverage: 70387 of 70387 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Large language model agents can self-improve over time by utilizing procedural
+memory derived from prior task trajectories, yet the distinct utilities of memories
+derived from local successes and failures remain underexplored. This work studies
+this question in a realistic setting with heterogeneous streams of multi-domain
+tool-use tasks and various environment constraints common in real-world scenarios.
+We developDual-Polarity Memory with Periodic Maintenance(DualPM), a simple,
+retrieval-free memory workflow characterized by (1) customizable reflection and
+procedural memory generation from both local successes and failures within each
+trajectory, and (2) periodic memory consolidation over long task streams under
+a given memory capacity, preventing memory explosion. Online prequential
+evaluation with fine-grained metrics reveals that failure memory more strongly
+broadens coverage, </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Problem formulationWe consider memory-driven cross-session continual learning over an ordered
+task sequence{t i}ni=1 = (t1, t2, . . . , tn). For each taskt i, an agent produces an observed trajectory
+τi ∼π(t i,M i), conditioned on an active memory context Mi. The objective of a test-time memory
+workflow is to transform earlier trajectories {τj}j&lt;i into a memory context Mi that improves the
+execution of subsequent tasks {tj}j≥i, without updating the agent model, harness, or environment
+settings.Dual-Polarity Memory with Periodic Maintenance(DualPM) operationalizes this process
+through periodic memory generation and parallel maintenance of success memory M+ and failure
+memoryM −.
+Blockwise task–reflection–maintenance cycleDualPM partitions the task sequence {ti}ni=1 into
+consecutive blocks of size b, Bk ={t (k−1)b+1, . . . , tmin(kb,n)} for k= 1,2, . . . ,⌈n/b⌉. Each block
+follows three </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>sequential phases (Figure 1). During thetask phase, every task in Bk is executed with
+the same frozen memory context Mk−1, producing trajectories {τi :t i ∈ Bk}. During thereflection
+2
+Task stream
+Block 1, 𝑏 task episodes
+1.
+Task
+Frozen memory ℳ0 = ∅
+2.
+Reflect
+3.
+Maintain
+Task
+1
+Traject.
+…
+Memory
+drafts
+𝒟1,1+
+𝒟1,1−
+Task
+2
+Traject.
+Memory
+drafts
+𝒟1,2+
+𝒟1,2−
+…
+Success
+memory
+ℳ1+
+Failure
+memory
+ℳ1−
+Block 2 , 𝑏 task episodes
+1.
+Task
+Frozen memory ℳ1
+2.
+Reflect
+3.
+Maintain
+Task
+1
+Traject.
+…
+Memory
+drafts
+𝒟2,1+
+𝒟2,1−
+Task
+2
+Traject.
+Memory
+drafts
+𝒟2,2+
+𝒟2,2−
+…
+Success
+memory
+ℳ2+
+Failure
+memory
+ℳ2−
+Block 3
+ℳ2
+…
+…
+…
+…
+Figure 1: Blockwise task–reflection–maintenance workflow of DualPM.
+phase, DualPM employs an LLM to first reflect on each completed trajectory, and then generate
+drafts of success and failure memories, denoted as D+k and D−k . During themaintenance phase, these
+memory </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>drafts are consolidated independently into success and failure memory lists, producing M+k
+and M−k . The aggregated memory list Mk =M +k S M−k becomes the memory context for tasks inthe next blockB k+1. The initial blockB 1 cold-starts with no memoryM 0 =∅.
+Reflection and memory draftingDuring the reflection phase, DualPM makes two sequential LLM
+calls for each completed trajectory τi associated with task ti ∈ Bk. The first call performs reflection
+on the observed trajectory τi, including the agent-visible instructions, user request, agent actions,
+tool responses, and final agent answer. Task ground truth, such as the golden trajectory and reference
+answer, is never exposed to the reflection model. The reflection prompt includes a customizable
+feedback signal section specifying what constitutes granular success or failure within the trajectory,
+thereby guiding the reflection </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>drafting model&#x27;s confidence in deriving the guidance.
+Each draft additionally records a draft index and source-episode reference for provenance. All
+prompts are available in Appendix A.1.
+Memory maintenanceAfter reflection on block Bk, DualPM consolidates the resulting drafts
+while maintaining the two memory polarities independently. For each polarityp∈ {+,−}, a separate
+LLM call receives the previous memory list Mpk−1 together with the new drafts Dpk, then returns the
+complete updated list Mpk, subject to a capacity constraint |Mpk| ≤m. This constraint encouragesdraft consolidation and evidence-based revision: rather than simply appending new memories, the
+3
+maintainer must keep the memory list concise and nonredundant by preserving, revising, merging,
+splitting, creating, or removing memories based on new drafts and evidence from the latest block.
+Each maintained memory unit follows </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>B.
+TRAJECT-Bench primarily evaluates LLMs through one-shot prediction, with all tool schemas
+supplied in the prompt. Since this does not reflect the task environment faced by modern agents, we
+construct a more realistic, single-agent agent runtime with provider-native tool provision, parallel tool
+calling, and ReAct-style [Yao et al., 2023] agent-tool interaction. During task execution, a tool would
+replay its gold response recorded in the ground-truth dataset if the agent calls it using the correct
+parameter combination for required parameters. Tool calls to either non-gold tools or gold tools but
+with incorrect parameters, however, would receive a general failure message that instructs the agent
+to reconsider its tool or parameter selection. This replay-based procedure would naturally result in
+multiple trials and errors until the agent makes a correct tool call, while ensuring that </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>tool_search. A
+higher discovery recall indicates better discovery coverage.
+• Selection recall: The proportion of ground-truth tool APIs invoked by the agent. A higher selection
+recall indicates better selection coverage. This metric is identical to TRAJECT-Bench&#x27;sInclusion.
+4
+• Usage recall: The proportion of ground-truth tool calls matched by tool calls invoked by the agent.
+A higher usage recall indicates better tool execution coverage and overall task progress. This metric
+is revised from TRAJECT-Bench&#x27;susage, which is conditional on selecting a ground-truth tool.
+• Usage precision: The proportion of the agent&#x27;s task-relevant tool calls that match ground-truth calls.
+Any incorrect, malformed, or redundant calls would reduce precision.
+• Total turns: The number of agent interaction turns until it produces the final answer. Fewer turns
+indicate higher trajectory efficiency. This metric </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>is also a proxy for task latency, as each turn
+corresponds to an LLM call.
+• Final answer accuracy: Binary final answer correctness judged by an LLM against the reference
+answer in TRAJECT-Bench, complementary to the deterministicusage recall. This metric is
+inherited from TRAJECT-Bench. Only answers successfully addressing all subtasks in the user
+requests would be considered correct; partially correct answers are considered incorrect.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The main experiment examines the independent and joint effects of success- and failure-derived
+procedural memory. We adopt a2×2 factorial design involving four memory conditions: no memory,
+failure memory only, success memory only, and both on. During the task phase, the agent receives
+the complete, active memory list permitted by its assigned condition, appended to the system or
+developer prompt as memory context (see prompt template in Appendix A.2). We use GPT-5.5 as the
+backbone model for both the task agent and the DualPM memory workflow, and DeepSeek-V3.2 as
+the judge for final answer accuracy to avoid evaluation with the same model. Details of model setup
+are available in Appendix D.
+The experiment evaluates task agent performance in an online, prequential manner. Under DualPM&#x27;s
+periodic memory update workflow (Section 2.1), tasks in each block are first used for testing and
+then </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>settings. Statistical comparisons of the memory conditions are based on paired differences
+by task within each user sequence. Details of statistical methods are available in Appendix D.
+5
+Table 2: Performance of memory polarities averaged across all four users. Recalls, usage precision,
+and final answer accuracy are reported in percentages.Boldand underline mark the best and second-
+best values, respectively.
+Memory
+Setting
+Recall Efficiency Answer
+AccuracyDiscovery Selection Usage Usage Precision Turns
+No memory 75.2 68.0 66.0 50.5 6.1 68.1
+Failure only 81.0 73.9 71.9 49.0 6.3 71.0
+Success only 78.7 72.2 70.556.2 5.472.2
+Both on81.1 74.5 72.453.7 5.5 73.2
+Failure memory primarily broadens coverage, success memory primarily streamlines execution,
+and their combination integrates both benefits.Table 2 shows that all three memory-on settings
+improved tool utilization coverage and final </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>answer accuracy over the no memory setting. The
+improvements are statistically significant across all three recall measures (all p≤.001 ) and final
+answer accuracy (p≤.015 ) in paired comparisons across all four users. The two memory polarities
+exhibit distinct utility profiles. Failure-only memory achieved significantly higher discovery and
+selection recall than success-only (p=.002 and p=.018 , respectively). This pattern indicates that
+failure lessons primarily broaden the set of relevant capabilities considered and selected by the agent.
+Success-only memory instead produced the highest tool usage precision and completed the tasks in
+fewest turns (bothp &lt; .001compared to failure-only).
+Combining both polarities integrated these complementary effects and achieved the best performance
+overall. Relative to success-only memory, the combined condition significantly improves </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>moderate
+performance gains, with improvements in all recall measures and final accuracy. Enabling memory
+adaptation led to continual update of the transferred memory and yielded comparable performance to
+building memory from scratch.
+Table 3: Cross-user memory transfer effects, averaged across U1→ U4 and U4 → U1. Recalls, usage
+precision, and final answer accuracy are reported in percentages.Boldand underline mark the best
+and second-best displayed values of memory-on settings, respectively; ties are marked equally.
+Memory
+Setting
+Recall Efficiency Answer
+AccuracyDiscovery Selection Usage Usage Precision Turns
+No memory 79.0 71.9 69.6 49.1 6.2 72.0
+Own memory82.1 76.2 73.8 50.6 5.678.0
+Transferred, frozen 79.3 73.7 71.5 48.2 6.4 75.0
+Transferred, adaptive82.175.3 73.5 50.0 5.6 78.5
+Figure 2: Memory operations in user 4&#x27;s own memory and adapted user 1 memory.
+Case study 2: memory lineage </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>For evaluation of DualPM as a portable long-term memory method, we took EvoMemBench [Wang
+et al., 2026], a recent benchmark designed to evaluate agent memory methods from a self-evolving
+perspective. Its cross-episode tool using (CrossEp-Tool) subset matches closely with our target
+application scenario of agent tool use in a multi-session setting, providing multi-turn tasks in four new
+domains—file system operation, vehicle control, trading bots, and travel booking [Wang et al., 2026].
+EvoMemBench offers a unified evaluation environment, including an agent runtime, tool execution,
+and memory interfaces, to enable benchmarking of diverse memory methods using an online learning
+paradigm [Wang et al., 2026]. This benchmark design effectively measures the general performance
+of DualPM in an environment-independent, domain-independent, and model-independent manner.
+Each domain in </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>making our evaluation results
+comparable to benchmarking results reported by EvoMemBench. We first verified the performance
+of DeepSeek-V3.2 in the no memory setting and obtained consistent results with those reported by
+EvoMemBench. Subsequent evaluation of DualPM reused the exact same agent loop implementation,
+tool environment, task order, and official result checker provided by EvoMemBench [Wang et al.,
+Table 4: Success rate (%) on EvoMemBench-CrossEp-Tool. Best and second-best results are shown
+inboldand underlined, respectively. DualPM results are averaged from three independent runs; other
+results are taken from Table 6 of EvoMemBench. Overall is the average of all four domains.
+Method File System Vehicle Control Trading Bots Travel Booking Overall
+No memory 64.0 36.0 54.0 26.0 45.0
+General long-term memory
+Mem076.058.0 48.0 30.0 53.0
+A-MEM 68.0 62.0 70.0 26.0 56.5
+MemOS 72.0 </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>60.0 36.0 28.0 49.0
+MemoryOS 72.0 72.0 56.0 36.0 59.0
+Procedural long-term memory
+AWM 64.0 56.0 74.0 24.0 54.5
+SkillWeaver 66.0 48.0 44.0 28.0 46.5
+AgentKB 62.0 71.4 74.0 30.0 59.4
+ACE 68.0 56.0 14.0 34.0 43.0
+ReasoningBank 64.0 82.0 86.042.0 68.5
+DualPM (ours) 67.384.080.7 47.3 69.8
+8
+2026]. To reduce sensitivity to run-to-run variation, we report average results of DualPM from three
+independent runs for each task domain.
+As shown in Table 4, DualPM exhibits competitive performance with other long-term memory meth-
+ods evaluated by EvoMemBench. On three of four domains, DualPM outperforms ReasoningBank
+[Ouyang et al., 2026], the overall best-performing method on EvoMemBench-CrossEp-Tool [Wang
+et al., 2026]. DualPM achieves this despite two design-level disadvantages. First, DualPM performs
+no task-specific memory retrieval. It applies a fixed memory context across all tasks in the </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>be lazy
+loading, in which only lightweight memory metadata (e.g., the title and applicability fields of
+DualPM) is loaded in the beginning context, while the agent could retrieve the full content of specific
+memories at its own discretion.
+LimitationsFirst, because this work builds on TRAJECT-Bench, it inherits limitations of the
+benchmark. For example, multiple trajectories may plausibly solve a given task, yet TRAJECT-
+Bench provides only one as the ground truth, penalizing valid alternative strategies. Second, our
+TRAJECT-Bench task sequences maintain a consistent domain composition across blocks, whereas
+real-world task streams may undergo temporal distribution shifts. Third, the polarity of a source
+trajectory and the procedural guidance derived from it are coupled in our design; we did not isolate
+their respective contributions. Last, we fixed DualPM&#x27;s design parameters in the </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>experiments and did
+not systematically study their effects. Our objective is to examine the utilities of memory polarities
+in a realistic setting with a simple, application-oriented memory method, rather than to optimize
+DualPM towards a state-of-the-art memory architecture.
+9</blockquote></details></li><li><strong>Contribution clarity — pages 14–15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reflection call
+System:You are a helpful assistant reflecting on how an agent handled a completed multi-turn tool-use
+task.
+14
+Developer:Feedback signals: Regard tool call responses as granular success/failure signals in the task
+agent&#x27;s setting. A successful tool call receives a valid tool response, regardless of the response&#x27;s actual
+content. A failed tool call receives an explicit failure message. Therefore, treat a valid tool response as
+evidence that the selected tool/API and parameter combination was correct in this task setting, and treat a
+failure message as evidence that the attempted tool/API and parameter combination did not succeed. Do
+not relabel a successful call as failed because its returned content is sparse, ambiguous, incorrect, or low
+quality; response-content limitations are not the task agent&#x27;s fault. Conversely, do not count a call with a
+failure message as </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Benchmark / evaluation</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd>Abstract-level signal: benchmark or evaluation evidence is mentioned in title, abstract, tags, or screening metadata.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Relation to agentic memory</dt>
+              <dd>Evaluates memory behavior, safety, or retrieval in LLM agents</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 100/100</li>
+              <li>Screening category: Memory benchmark/evaluation</li>
+              <li>Tags: llm-agents, memory-types, memory-policy, evaluation, agent-memory, memory-systems</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv, semantic_scholar</li><li>Latest revision / source update: 2026-11-27</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-26 13:31:06</li><li>Last seen by Paper Scout: 2026-11-27 13:27:47</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2611.33612</li><li>arXiv: 2611.33612</li><li>Semantic Scholar: 5f3084938159ff67265cd2fbf3ff234fbb2f480d</li><li>OpenAlex: W7240101448</li><li>OpenAlex IDs: W7240101448</li><li>arXiv IDs: 2611.33612</li><li>Semantic Scholar IDs: 5f3084938159ff67265cd2fbf3ff234fbb2f480d</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="failure-broadens-success-sharpens-continual-adaptation-of-tool-use-agents-across-div-3c6d59e3.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Failure Broadens, Success Sharpens: Continual Adaptation of Tool-Use Agents Across Diverse Tasks with Dual-Polarity Memory. Tianmai M. Zhang, Hoda Shajari, Amr Hendy, Xiaohu Liu, Piyush Behre, Omar Zia Khan, Ankur Gupta. 2026-11-25. https://doi.org/10.48550/arxiv.2611.33612</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

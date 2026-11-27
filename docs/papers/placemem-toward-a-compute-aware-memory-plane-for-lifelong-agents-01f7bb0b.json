@@ -26,7 +26,7 @@
   "last_seen_date": "2026-07-15",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-07-07 10:08:35",
   "notified_date": "2026-07-07",
@@ -37,7 +37,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-07 10:02:32",
-    "generated_at": "2026-11-26 13:36:24",
+    "generated_at": "2026-11-27 13:32:26",
     "last_seen_at": "2026-07-15 08:38:02",
     "metadata_sources": [
       "openalex",
@@ -105,36 +105,881 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-27T13:30:46.488514+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.9,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript offers a clean, well-bounded systems contribution addressing the mismatch between lifelong agent semantic memory updates and serving-engine runtime cache staleness, supported by reproducible architecture details and transparent pilot benchmarks.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 19588,
+      "assessment_input_sha256": "45653f475a0a01be0c3cf7d1f6663ec1fd6acfb697011db52e6fe796d8b5d446",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7167748045",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 19144,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 18838,
+      "evidence_block_count": 27,
+      "evidence_context_characters": 22239,
+      "evidence_context_id": "556feee5428f7d11cdcbee306eed32db8506d14efeaaeff13f606ec01e304c9c",
+      "evidence_context_sha256": "df47827b7ac70d4fcf3698d41b9f37d4540d7eca329743122a112d42094b98d8",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 19154,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "extracted_pages": 6,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "a41f70b85b4a3e6cdd5b22f73d83b23f94fb73753c503f6cb4d60a7ffe0b32e9",
+        "source_url": "https://arxiv.org/pdf/2607.04089",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 19144,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "section_roles_detected": [
+        "body",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 131,
+          "supplied_characters": 131
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1303,
+          "supplied_characters": 1303
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2154,
+          "supplied_characters": 2154
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 1323,
+          "supplied_characters": 1323
+        },
+        {
+          "heading": "Why Lifelong-Agent Memory Needs A Systems Layer",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 1445,
+          "supplied_characters": 1445
+        },
+        {
+          "heading": "The Placememarchitecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 5,
+          "source_characters": 191,
+          "supplied_characters": 191
+        },
+        {
+          "heading": "The Placememarchitecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 6,
+          "source_characters": 320,
+          "supplied_characters": 320
+        },
+        {
+          "heading": "Memory Capsules",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 792,
+          "supplied_characters": 792
+        },
+        {
+          "heading": "Replay Policy And Placement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1106,
+          "supplied_characters": 1106
+        },
+        {
+          "heading": "Invalidation As A Correctness Primitive",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 9,
+          "source_characters": 719,
+          "supplied_characters": 719
+        },
+        {
+          "heading": "A Vllm-First Prototype",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 172,
+          "supplied_characters": 172
+        },
+        {
+          "heading": "A Vllm-First Prototype",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1084,
+          "supplied_characters": 1084
+        },
+        {
+          "heading": "Pilot Evaluation On Lifelong-Agent Workloads",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 12,
+          "source_characters": 2583,
+          "supplied_characters": 2583
+        },
+        {
+          "heading": "Pilot Evaluation On Lifelong-Agent Workloads",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 13,
+          "source_characters": 2007,
+          "supplied_characters": 2007
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "related",
+          "section_index": 14,
+          "source_characters": 1551,
+          "supplied_characters": 1551
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "related",
+          "section_index": 15,
+          "source_characters": 23,
+          "supplied_characters": 23
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1934,
+          "supplied_characters": 1934
+        }
+      ],
+      "selected_characters": 18838,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "selected_sections": [
+        {
+          "characters": 131,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1303,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2154,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1323,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1445,
+          "heading": "Why Lifelong-Agent Memory Needs A Systems Layer",
+          "page": 2
+        },
+        {
+          "characters": 191,
+          "heading": "The Placememarchitecture",
+          "page": 2
+        },
+        {
+          "characters": 320,
+          "heading": "The Placememarchitecture",
+          "page": 3
+        },
+        {
+          "characters": 792,
+          "heading": "Memory Capsules",
+          "page": 3
+        },
+        {
+          "characters": 1106,
+          "heading": "Replay Policy And Placement",
+          "page": 3
+        },
+        {
+          "characters": 719,
+          "heading": "Invalidation As A Correctness Primitive",
+          "page": 3
+        },
+        {
+          "characters": 172,
+          "heading": "A Vllm-First Prototype",
+          "page": 3
+        },
+        {
+          "characters": 1084,
+          "heading": "A Vllm-First Prototype",
+          "page": 4
+        },
+        {
+          "characters": 2583,
+          "heading": "Pilot Evaluation On Lifelong-Agent Workloads",
+          "page": 4
+        },
+        {
+          "characters": 2007,
+          "heading": "Pilot Evaluation On Lifelong-Agent Workloads",
+          "page": 5
+        },
+        {
+          "characters": 1551,
+          "heading": "Related Work",
+          "page": 5
+        },
+        {
+          "characters": 23,
+          "heading": "Related Work",
+          "page": 6
+        },
+        {
+          "characters": 1934,
+          "heading": "Unclassified body after references",
+          "page": 6
+        }
+      ],
+      "selected_text_sha256": "45653f475a0a01be0c3cf7d1f6663ec1fd6acfb697011db52e6fe796d8b5d446",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "a41f70b85b4a3e6cdd5b22f73d83b23f94fb73753c503f6cb4d60a7ffe0b32e9",
+      "source_pages": 6,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "556feee5428f7d11cdcbee306eed32db8506d14efeaaeff13f606ec01e304c9c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E556feee5428f7d11-B0002"
+        ],
+        "excerpt": "Lifelong agents need more than larger context windows and better retrieval.\nThey need memories that can persist, evolve, and be corrected without\nforcing the serving stack to recompute the same history on every turn or\nsilently reuse stale runtime state. We present PLACEMEMas a systems posi-\ntion on lifelong-agent memory, instantiated by an executable control-plane\nprototype. The central claim is that agent memory should be represented as\nversionedcapsulesthat unify semantics, provenance, validity, and reusable\nruntime state under one correction-aware identity. In the current prototype,\ncapsules drive prompt-level text retrieval, KV-aware routing, and cascading\ninvalidation over live streamed backends; prospective layer-frontier replay\nis intentionally framed as a deeper integration agenda rather than a claimed\nengine feature. We describe a vLLM-first prototype with persistent ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "12e860066f55879c649eb5f3aa35422ffc191778795facd304fa200c32a4c351",
+            "evidence_id": "E556feee5428f7d11-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 890,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Lifelong agents need more than larger context windows and better retrieval.\nThey need memories that can persist, evolve, and be corrected without\nforcing the serving stack to recompute the same history on every turn or\nsilently reuse stale runtime state. We present PLACEMEMas a systems posi-\ntion on lifelong-agent memory, instantiated by an executable control-plane\nprototype. The central claim is that agent memory should be represented as\nversionedcapsulesthat unify semantics, provenance, validity, and reusable\nruntime state under one correction-aware identity. In the current prototype,\ncapsules drive prompt-level text retrieval, KV-aware routing, and cascading\ninvalidation over live streamed backends; prospective layer-frontier replay\nis intentionally framed as a deeper integration agenda rather than a claimed\nengine feature. We describe a vLLM-first prototype with persistent "
+              }
+            ],
+            "text": "Lifelong agents need more than larger context windows and better retrieval.\nThey need memories that can persist, evolve, and be corrected without\nforcing the serving stack to recompute the same history on every turn or\nsilently reuse stale runtime state. We present PLACEMEMas a systems posi-\ntion on lifelong-agent memory, instantiated by an executable control-plane\nprototype. The central claim is that agent memory should be represented as\nversionedcapsulesthat unify semantics, provenance, validity, and reusable\nruntime state under one correction-aware identity. In the current prototype,\ncapsules drive prompt-level text retrieval, KV-aware routing, and cascading\ninvalidation over live streamed backends; prospective layer-frontier replay\nis intentionally framed as a deeper integration agenda rather than a claimed\nengine feature. We describe a vLLM-first prototype with persistent "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "556feee5428f7d11cdcbee306eed32db8506d14efeaaeff13f606ec01e304c9c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E556feee5428f7d11-B0007"
+        ],
+        "excerpt": "that result.\nContributions.We make three contributions.\n\u2022 We argue for a compute-aware memory plane as a missing systems abstraction for\nlifelong agents, and define memory capsules as its correction-aware core unit.\n\u2022 We present an executable vLLM-first prototype that already demonstrates\ncorrection-aware control-plane behavior through persistent capsule state,\nconcurrency-safe invalidation, an OpenAI-compatible sidecar, a typed serving\ncontract, and a live benchmark harness.\n\u2022 We define a replay-and-placement policy, together with an explicit systems agenda\nfor deeper integration, that trades off semantic value, latency, staleness risk, and\nlocality across text retrieval and KV replay while leaving layer replay as future\nengine work rather than a claimed implementation result.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b6173f221386b1de44495f029a30b43da80211ee9cd803c95d9db431942fb622",
+            "evidence_id": "E556feee5428f7d11-B0007",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1323,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 535,
+                "text": "that result.\nContributions.We make three contributions.\n\u2022 We argue for a compute-aware memory plane as a missing systems abstraction for\nlifelong agents, and define memory capsules as its correction-aware core unit.\n\u2022 We present an executable vLLM-first prototype that already demonstrates\ncorrection-aware control-plane behavior through persistent capsule state,\nconcurrency-safe invalidation, an OpenAI-compatible sidecar, a typed serving\ncontract, and a live benchmark harness.\n\u2022 We define a replay-and-placement policy, together with an explicit systems agenda\nfor deeper integration, that trades off semantic value, latency, staleness risk, and\nlocality across text retrieval and KV replay while leaving layer replay as future\nengine work rather than a claimed implementation result."
+              }
+            ],
+            "text": "that result.\nContributions.We make three contributions.\n\u2022 We argue for a compute-aware memory plane as a missing systems abstraction for\nlifelong agents, and define memory capsules as its correction-aware core unit.\n\u2022 We present an executable vLLM-first prototype that already demonstrates\ncorrection-aware control-plane behavior through persistent capsule state,\nconcurrency-safe invalidation, an OpenAI-compatible sidecar, a typed serving\ncontract, and a live benchmark harness.\n\u2022 We define a replay-and-placement policy, together with an explicit systems agenda\nfor deeper integration, that trades off semantic value, latency, staleness risk, and\nlocality across text retrieval and KV replay while leaving layer replay as future\nengine work rather than a claimed implementation result."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "556feee5428f7d11cdcbee306eed32db8506d14efeaaeff13f606ec01e304c9c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E556feee5428f7d11-B0011"
+        ],
+        "excerpt": "A memory capsule is a versioned record with required semantic fields such as tenant identity,\nsurface text, timestamps, and validity windows, together with optional enrichment such as\nsummaries, provenance, entities, facts, dependencies, and artifact locators. The crucial step\nis that a capsule can also name reusable runtime artifacts such as embeddings, KV cache\nsegments, and optional layer-frontier checkpoints.\nThis design gives one identifier for meaning and compute. A retriever can therefore answer\nnot onlywhich memory is relevant, but alsowhich reusable state is compatible and cheap to consume\non a specific node. In the current prototype, text and KV-aware routing are fully wired end to\nend, while layer-frontier replay remains an explicit contract for future engine extensions.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Memory Capsules",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7061cc21f82b874c417966cfb338a925f397db2c4b160777523bd48be4deb06f",
+            "evidence_id": "E556feee5428f7d11-B0011",
+            "pages": [
+              3
+            ],
+            "section": "Memory Capsules",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 792,
+                "page": 3,
+                "section": "Memory Capsules",
+                "section_index": 7,
+                "start": 0,
+                "text": "A memory capsule is a versioned record with required semantic fields such as tenant identity,\nsurface text, timestamps, and validity windows, together with optional enrichment such as\nsummaries, provenance, entities, facts, dependencies, and artifact locators. The crucial step\nis that a capsule can also name reusable runtime artifacts such as embeddings, KV cache\nsegments, and optional layer-frontier checkpoints.\nThis design gives one identifier for meaning and compute. A retriever can therefore answer\nnot onlywhich memory is relevant, but alsowhich reusable state is compatible and cheap to consume\non a specific node. In the current prototype, text and KV-aware routing are fully wired end to\nend, while layer-frontier replay remains an explicit contract for future engine extensions."
+              }
+            ],
+            "text": "A memory capsule is a versioned record with required semantic fields such as tenant identity,\nsurface text, timestamps, and validity windows, together with optional enrichment such as\nsummaries, provenance, entities, facts, dependencies, and artifact locators. The crucial step\nis that a capsule can also name reusable runtime artifacts such as embeddings, KV cache\nsegments, and optional layer-frontier checkpoints.\nThis design gives one identifier for meaning and compute. A retriever can therefore answer\nnot onlywhich memory is relevant, but alsowhich reusable state is compatible and cheap to consume\non a specific node. In the current prototype, text and KV-aware routing are fully wired end to\nend, while layer-frontier replay remains an explicit contract for future engine extensions."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "556feee5428f7d11cdcbee306eed32db8506d14efeaaeff13f606ec01e304c9c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E556feee5428f7d11-B0012"
+        ],
+        "excerpt": "For each request, PLACEMEMranks replay options across prompt-level text retrieval, KV\nreplay, and prospective layer replay. The policy evaluates a capsule c on target t under\nreplay moderwith a utility function of the form\nU(c,t,r) =w 1Preuse +w 2Csaved +w 3Vsem \u2212w 4Rstale \u2212w 5Bremote \u2212w 6Ltarget. (1)\nHere, Preuse estimates near-term reuse, Csaved measures avoided prefill work, Vsem captures\ntask relevance, Rstale captures freshness risk, Bremote estimates transfer cost, and Ltarget\npenalizes latency-sensitive targets. The selected decision is then turned into backend\nmetadata for the serving layer.\nThis differs from a local prefix cache in two ways. First, the decision is made in a control\nplane rather than inside a single worker. Second, the decision is conditioned on semantic\nvalidity and locality, not only on byte reuse. In other words, PLACEMEMtreats memory\nreuse as a policy ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Replay Policy And Placement",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5a8d8bc3677365234fe0e4fa0a46113bf7ae715d04c63c9e6048ab54721ab537",
+            "evidence_id": "E556feee5428f7d11-B0012",
+            "pages": [
+              3
+            ],
+            "section": "Replay Policy And Placement",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 3,
+                "section": "Replay Policy And Placement",
+                "section_index": 8,
+                "start": 0,
+                "text": "For each request, PLACEMEMranks replay options across prompt-level text retrieval, KV\nreplay, and prospective layer replay. The policy evaluates a capsule c on target t under\nreplay moderwith a utility function of the form\nU(c,t,r) =w 1Preuse +w 2Csaved +w 3Vsem \u2212w 4Rstale \u2212w 5Bremote \u2212w 6Ltarget. (1)\nHere, Preuse estimates near-term reuse, Csaved measures avoided prefill work, Vsem captures\ntask relevance, Rstale captures freshness risk, Bremote estimates transfer cost, and Ltarget\npenalizes latency-sensitive targets. The selected decision is then turned into backend\nmetadata for the serving layer.\nThis differs from a local prefix cache in two ways. First, the decision is made in a control\nplane rather than inside a single worker. Second, the decision is conditioned on semantic\nvalidity and locality, not only on byte reuse. In other words, PLACEMEMtreats memory\nreuse as a policy "
+              }
+            ],
+            "text": "For each request, PLACEMEMranks replay options across prompt-level text retrieval, KV\nreplay, and prospective layer replay. The policy evaluates a capsule c on target t under\nreplay moderwith a utility function of the form\nU(c,t,r) =w 1Preuse +w 2Csaved +w 3Vsem \u2212w 4Rstale \u2212w 5Bremote \u2212w 6Ltarget. (1)\nHere, Preuse estimates near-term reuse, Csaved measures avoided prefill work, Vsem captures\ntask relevance, Rstale captures freshness risk, Bremote estimates transfer cost, and Ltarget\npenalizes latency-sensitive targets. The selected decision is then turned into backend\nmetadata for the serving layer.\nThis differs from a local prefix cache in two ways. First, the decision is made in a control\nplane rather than inside a single worker. Second, the decision is conditioned on semantic\nvalidity and locality, not only on byte reuse. In other words, PLACEMEMtreats memory\nreuse as a policy "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "556feee5428f7d11cdcbee306eed32db8506d14efeaaeff13f606ec01e304c9c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E556feee5428f7d11-B0015"
+        ],
+        "excerpt": "We implement PLACEMEMas a concrete control-plane prototype anchored on vLLM, in-\ntended as executable evidence for the systems position above rather than a claim that all\n3\nPreprint. Under review.\nreplay paths are native to the serving engine. The implementation includes: a capsule\nschema, a catalog, a dependency graph, persistent state snapshots, concurrency-safe invali-\ndation, a placement RPC contract, an HTTP control plane, a vLLM-facing admission shim, a\nmulti-node OpenAI-compatible sidecar, and a benchmark harness with repeated-run JSON\nand CSV exports.\nThe sidecar provides an immediately deployable integration surface with existing vLLM-\ncompatible endpoints and establishes a stable typed-header contract for deeper engine\nintegration, keeping the control-plane behavior deployable today while exposing the exact\nseam where replay-aware integration can be added later.\nThe present ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "A Vllm-First Prototype",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b45768d89cb58cc41b42c304340b51a84a5e277532998e1d9b438ff81baf43c0",
+            "evidence_id": "E556feee5428f7d11-B0015",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "A Vllm-First Prototype",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 172,
+                "page": 3,
+                "section": "A Vllm-First Prototype",
+                "section_index": 10,
+                "start": 0,
+                "text": "We implement PLACEMEMas a concrete control-plane prototype anchored on vLLM, in-\ntended as executable evidence for the systems position above rather than a claim that all\n3"
+              },
+              {
+                "end": 724,
+                "page": 4,
+                "section": "A Vllm-First Prototype",
+                "section_index": 11,
+                "start": 0,
+                "text": "Preprint. Under review.\nreplay paths are native to the serving engine. The implementation includes: a capsule\nschema, a catalog, a dependency graph, persistent state snapshots, concurrency-safe invali-\ndation, a placement RPC contract, an HTTP control plane, a vLLM-facing admission shim, a\nmulti-node OpenAI-compatible sidecar, and a benchmark harness with repeated-run JSON\nand CSV exports.\nThe sidecar provides an immediately deployable integration surface with existing vLLM-\ncompatible endpoints and establishes a stable typed-header contract for deeper engine\nintegration, keeping the control-plane behavior deployable today while exposing the exact\nseam where replay-aware integration can be added later.\nThe present "
+              }
+            ],
+            "text": "We implement PLACEMEMas a concrete control-plane prototype anchored on vLLM, in-\ntended as executable evidence for the systems position above rather than a claim that all\n3\nPreprint. Under review.\nreplay paths are native to the serving engine. The implementation includes: a capsule\nschema, a catalog, a dependency graph, persistent state snapshots, concurrency-safe invali-\ndation, a placement RPC contract, an HTTP control plane, a vLLM-facing admission shim, a\nmulti-node OpenAI-compatible sidecar, and a benchmark harness with repeated-run JSON\nand CSV exports.\nThe sidecar provides an immediately deployable integration surface with existing vLLM-\ncompatible endpoints and establishes a stable typed-header contract for deeper engine\nintegration, keeping the control-plane behavior deployable today while exposing the exact\nseam where replay-aware integration can be added later.\nThe present "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "556feee5428f7d11cdcbee306eed32db8506d14efeaaeff13f606ec01e304c9c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E556feee5428f7d11-B0018"
+        ],
+        "excerpt": "but\nreplaces the final token generator with a replay-mode-sensitive streaming mock (a fixed\nSSE payload with a configurable inter-token delay, so TTFT reflects only control-plane\ncapsule lookup and sidecar routing overhead) to isolate cross-layer reuse and invalidation\nbehavior before full cluster-scale vLLM evaluation. We therefore use this pilot to test the\ncorrection-aware control-plane thesis directly, while treating deeper replay-aware engine\nintegration as subsequent work.\nIn the current pilot, we report mean time-to-first-token, replay reuse rate, post-correction\nstale-hit counts, and invalidation overhead, because those are fully executable end to\nend today and directly test whether correction-aware control-plane behavior changes the\ncorrectness\u2013latency trade-off of reuse.\nBaseline Mean TTFT\u2206TTFT Reuse Stale hits\nPrompt-only 18.25 \u2014 0.00 0\nText-only 18.31 +0.3% 0.00 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Pilot Evaluation On Lifelong-Agent Workloads",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "959a410c34adfc0393d2a58a9d4baa3e39b1385e11e75cec5d7424916332a4eb",
+            "evidence_id": "E556feee5428f7d11-B0018",
+            "pages": [
+              4
+            ],
+            "section": "Pilot Evaluation On Lifelong-Agent Workloads",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1780,
+                "page": 4,
+                "section": "Pilot Evaluation On Lifelong-Agent Workloads",
+                "section_index": 12,
+                "start": 893,
+                "text": "but\nreplaces the final token generator with a replay-mode-sensitive streaming mock (a fixed\nSSE payload with a configurable inter-token delay, so TTFT reflects only control-plane\ncapsule lookup and sidecar routing overhead) to isolate cross-layer reuse and invalidation\nbehavior before full cluster-scale vLLM evaluation. We therefore use this pilot to test the\ncorrection-aware control-plane thesis directly, while treating deeper replay-aware engine\nintegration as subsequent work.\nIn the current pilot, we report mean time-to-first-token, replay reuse rate, post-correction\nstale-hit counts, and invalidation overhead, because those are fully executable end to\nend today and directly test whether correction-aware control-plane behavior changes the\ncorrectness\u2013latency trade-off of reuse.\nBaseline Mean TTFT\u2206TTFT Reuse Stale hits\nPrompt-only 18.25 \u2014 0.00 0\nText-only 18.31 +0.3% 0.00 "
+              }
+            ],
+            "text": "but\nreplaces the final token generator with a replay-mode-sensitive streaming mock (a fixed\nSSE payload with a configurable inter-token delay, so TTFT reflects only control-plane\ncapsule lookup and sidecar routing overhead) to isolate cross-layer reuse and invalidation\nbehavior before full cluster-scale vLLM evaluation. We therefore use this pilot to test the\ncorrection-aware control-plane thesis directly, while treating deeper replay-aware engine\nintegration as subsequent work.\nIn the current pilot, we report mean time-to-first-token, replay reuse rate, post-correction\nstale-hit counts, and invalidation overhead, because those are fully executable end to\nend today and directly test whether correction-aware control-plane behavior changes the\ncorrectness\u2013latency trade-off of reuse.\nBaseline Mean TTFT\u2206TTFT Reuse Stale hits\nPrompt-only 18.25 \u2014 0.00 0\nText-only 18.31 +0.3% 0.00 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "556feee5428f7d11cdcbee306eed32db8506d14efeaaeff13f606ec01e304c9c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E556feee5428f7d11-B0019"
+        ],
+        "excerpt": "0\nRuntime-only 6.72 -63.2% 1.00 17\nFull PLACEMEM7.17 -60.7% 1.00 0\nTable 2: Aggregate pilot comparison over 48 turns spanning support, coding, and fact-\nrevision traces using the live control plane, routing sidecar, and a replay-mode-sensitive\nmock backend.\nTable 2 sharpens the main systems claim. Relative to prompt-only execution, both runtime-\nonly reuse and full PLACEMEMreduce mean time-to-first-token by about 61\u201363% on this\ncontrolled backend. The crucial distinction is correction handling: disabling invalidation\npreserves the latency win but yields 17 stale post-correction reuses, whereas full PLACEMEM\nretains the latency benefit while eliminating stale hits entirely. Mean invalidation overhead\nin the full system is 1.09 ms over three correction events.Note: TTFT here measures control-\n4\nPreprint. Under review.\nplane and sidecar routing latency against the streaming mock; values do ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Pilot Evaluation On Lifelong-Agent Workloads",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9797bca5b0276dcbc598cc5c45671fa059679c16ac3b00f7815f476dc21a64aa",
+            "evidence_id": "E556feee5428f7d11-B0019",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Pilot Evaluation On Lifelong-Agent Workloads",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2583,
+                "page": 4,
+                "section": "Pilot Evaluation On Lifelong-Agent Workloads",
+                "section_index": 12,
+                "start": 1780,
+                "text": "0\nRuntime-only 6.72 -63.2% 1.00 17\nFull PLACEMEM7.17 -60.7% 1.00 0\nTable 2: Aggregate pilot comparison over 48 turns spanning support, coding, and fact-\nrevision traces using the live control plane, routing sidecar, and a replay-mode-sensitive\nmock backend.\nTable 2 sharpens the main systems claim. Relative to prompt-only execution, both runtime-\nonly reuse and full PLACEMEMreduce mean time-to-first-token by about 61\u201363% on this\ncontrolled backend. The crucial distinction is correction handling: disabling invalidation\npreserves the latency win but yields 17 stale post-correction reuses, whereas full PLACEMEM\nretains the latency benefit while eliminating stale hits entirely. Mean invalidation overhead\nin the full system is 1.09 ms over three correction events.Note: TTFT here measures control-\n4"
+              },
+              {
+                "end": 96,
+                "page": 5,
+                "section": "Pilot Evaluation On Lifelong-Agent Workloads",
+                "section_index": 13,
+                "start": 0,
+                "text": "Preprint. Under review.\nplane and sidecar routing latency against the streaming mock; values do "
+              }
+            ],
+            "text": "0\nRuntime-only 6.72 -63.2% 1.00 17\nFull PLACEMEM7.17 -60.7% 1.00 0\nTable 2: Aggregate pilot comparison over 48 turns spanning support, coding, and fact-\nrevision traces using the live control plane, routing sidecar, and a replay-mode-sensitive\nmock backend.\nTable 2 sharpens the main systems claim. Relative to prompt-only execution, both runtime-\nonly reuse and full PLACEMEMreduce mean time-to-first-token by about 61\u201363% on this\ncontrolled backend. The crucial distinction is correction handling: disabling invalidation\npreserves the latency win but yields 17 stale post-correction reuses, whereas full PLACEMEM\nretains the latency benefit while eliminating stale hits entirely. Mean invalidation overhead\nin the full system is 1.09 ms over three correction events.Note: TTFT here measures control-\n4\nPreprint. Under review.\nplane and sidecar routing latency against the streaming mock; values do "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "556feee5428f7d11cdcbee306eed32db8506d14efeaaeff13f606ec01e304c9c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E556feee5428f7d11-B0020"
+        ],
+        "excerpt": "not reflect real prefill savings\non a production GPU.\nCondition Mean TTFT (ms) KV reuse Post-corr. acc. Stale sel.\nText-summary baseline 36.08 0.00 1.00 \u2014\nReuse w/o invalidation 20.73 1.00 0.00 1.00\nFull PLACEMEM20.54 1.00 1.00 0.00\nDeployment throughput (340-turn batch, 3 repeats)\nFullPLACEMEM22.42 1.00 \u2014 \u2014\nTable 3: Real-backend comparison on LiquidAI/LFM2.5-230M. Top three rows: live\ncorrection-follow probe (9 post-correction queries per condition \u00d7 3 workload families\n= 27 post-correction turns per condition). Bottom row: deployment-throughput validation\nacross 3 repeats of the full 340-turn benchmark. Post-correction accuracy measures whether\nthe live model returns the corrected answer; stale selection measures whether the control\nplane selects an invalidated capsule.\nTable 3 integrates both the latency and behavioral stories on the real vLLM backend. The\ncorrection-follow probe ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Pilot Evaluation On Lifelong-Agent Workloads",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bc00ba92cc58375e30529d2b5d7b7ccfdcaebb0ad73c621bd583c76f17867110",
+            "evidence_id": "E556feee5428f7d11-B0020",
+            "pages": [
+              5
+            ],
+            "section": "Pilot Evaluation On Lifelong-Agent Workloads",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 992,
+                "page": 5,
+                "section": "Pilot Evaluation On Lifelong-Agent Workloads",
+                "section_index": 13,
+                "start": 96,
+                "text": "not reflect real prefill savings\non a production GPU.\nCondition Mean TTFT (ms) KV reuse Post-corr. acc. Stale sel.\nText-summary baseline 36.08 0.00 1.00 \u2014\nReuse w/o invalidation 20.73 1.00 0.00 1.00\nFull PLACEMEM20.54 1.00 1.00 0.00\nDeployment throughput (340-turn batch, 3 repeats)\nFullPLACEMEM22.42 1.00 \u2014 \u2014\nTable 3: Real-backend comparison on LiquidAI/LFM2.5-230M. Top three rows: live\ncorrection-follow probe (9 post-correction queries per condition \u00d7 3 workload families\n= 27 post-correction turns per condition). Bottom row: deployment-throughput validation\nacross 3 repeats of the full 340-turn benchmark. Post-correction accuracy measures whether\nthe live model returns the corrected answer; stale selection measures whether the control\nplane selects an invalidated capsule.\nTable 3 integrates both the latency and behavioral stories on the real vLLM backend. The\ncorrection-follow probe "
+              }
+            ],
+            "text": "not reflect real prefill savings\non a production GPU.\nCondition Mean TTFT (ms) KV reuse Post-corr. acc. Stale sel.\nText-summary baseline 36.08 0.00 1.00 \u2014\nReuse w/o invalidation 20.73 1.00 0.00 1.00\nFull PLACEMEM20.54 1.00 1.00 0.00\nDeployment throughput (340-turn batch, 3 repeats)\nFullPLACEMEM22.42 1.00 \u2014 \u2014\nTable 3: Real-backend comparison on LiquidAI/LFM2.5-230M. Top three rows: live\ncorrection-follow probe (9 post-correction queries per condition \u00d7 3 workload families\n= 27 post-correction turns per condition). Bottom row: deployment-throughput validation\nacross 3 repeats of the full 340-turn benchmark. Post-correction accuracy measures whether\nthe live model returns the corrected answer; stale selection measures whether the control\nplane selects an invalidated capsule.\nTable 3 integrates both the latency and behavioral stories on the real vLLM backend. The\ncorrection-follow probe "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "556feee5428f7d11cdcbee306eed32db8506d14efeaaeff13f606ec01e304c9c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E556feee5428f7d11-B0021"
+        ],
+        "excerpt": "uses a controlled task: each scenario has a structured canonical\nidentifier injected into the active capsule summary, and accuracy measures whether the live\nmodel's response contains the post-correction identifier rather than the stale one, isolating\nwhether the control plane forwards the right summary rather than testing open-ended gen-\neration quality. The three-condition comparison shows why invalidation matters: without it\nthe control plane selects the stale capsule after a correction event, the model receives the\noutdated summary, and post-correction accuracy drops to zero. Full PLACEMEMeliminates\nstale selection while matching the TTFT of the reuse-without-invalidation condition (20.54\nms versus 20.73 ms), confirming that correction-aware control adds faithfulness at no la-\ntency cost. The text-summary baseline reaches full accuracy but at 36.08 ms mean TTFT, a\n75% overhead ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Pilot Evaluation On Lifelong-Agent Workloads",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "415eee2199bdd630914c723f1449992d14162d972801625eb907209ae33562e7",
+            "evidence_id": "E556feee5428f7d11-B0021",
+            "pages": [
+              5
+            ],
+            "section": "Pilot Evaluation On Lifelong-Agent Workloads",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1885,
+                "page": 5,
+                "section": "Pilot Evaluation On Lifelong-Agent Workloads",
+                "section_index": 13,
+                "start": 992,
+                "text": "uses a controlled task: each scenario has a structured canonical\nidentifier injected into the active capsule summary, and accuracy measures whether the live\nmodel's response contains the post-correction identifier rather than the stale one, isolating\nwhether the control plane forwards the right summary rather than testing open-ended gen-\neration quality. The three-condition comparison shows why invalidation matters: without it\nthe control plane selects the stale capsule after a correction event, the model receives the\noutdated summary, and post-correction accuracy drops to zero. Full PLACEMEMeliminates\nstale selection while matching the TTFT of the reuse-without-invalidation condition (20.54\nms versus 20.73 ms), confirming that correction-aware control adds faithfulness at no la-\ntency cost. The text-summary baseline reaches full accuracy but at 36.08 ms mean TTFT, a\n75% overhead "
+              }
+            ],
+            "text": "uses a controlled task: each scenario has a structured canonical\nidentifier injected into the active capsule summary, and accuracy measures whether the live\nmodel's response contains the post-correction identifier rather than the stale one, isolating\nwhether the control plane forwards the right summary rather than testing open-ended gen-\neration quality. The three-condition comparison shows why invalidation matters: without it\nthe control plane selects the stale capsule after a correction event, the model receives the\noutdated summary, and post-correction accuracy drops to zero. Full PLACEMEMeliminates\nstale selection while matching the TTFT of the reuse-without-invalidation condition (20.54\nms versus 20.73 ms), confirming that correction-aware control adds faithfulness at no la-\ntency cost. The text-summary baseline reaches full accuracy but at 36.08 ms mean TTFT, a\n75% overhead "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2607.04089",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7167748045",
+        "context_id": "556feee5428f7d11cdcbee306eed32db8506d14efeaaeff13f606ec01e304c9c",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The headline outcomes are established by objective system measurements (TTFT, KV reuse rate, invalidation overhead) and exact-match canonical identifier checks on a live vLLM backend, which do not depend on the rule-based routing and invalidation policies under study.",
+          "final_evaluation_signal": "Objective runtime metrics (mean TTFT, KV reuse rate, invalidation latency) and exact-match post-correction identifier accuracy from live model outputs.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Rule-based replay utility scoring and deterministic dependency-graph invalidation mechanisms in the control plane.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E556feee5428f7d11-B0002",
+          "E556feee5428f7d11-B0007",
+          "E556feee5428f7d11-B0011",
+          "E556feee5428f7d11-B0012",
+          "E556feee5428f7d11-B0015",
+          "E556feee5428f7d11-B0018",
+          "E556feee5428f7d11-B0019",
+          "E556feee5428f7d11-B0020",
+          "E556feee5428f7d11-B0021"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "a41f70b85b4a3e6cdd5b22f73d83b23f94fb73753c503f6cb4d60a7ffe0b32e9"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7167748045",
+        "claim_evidence_alignment": "The claims are well calibrated: the paper explicitly frames layer-frontier replay and multi-node heterogeneous placement as future agenda items while presenting empirical results strictly for the control plane and KV routing/invalidation prototype.",
+        "context_id": "556feee5428f7d11cdcbee306eed32db8506d14efeaaeff13f606ec01e304c9c",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation carefully scopes claims by assessing control-plane routing, latency (TTFT), KV reuse, and post-correction accuracy across a 48-turn mock streaming trace and a live vLLM backend using a small model (LFM2.5-230M) across 27 post-correction queries and a 340-turn benchmark.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluations rely on objective system runtime measurements (TTFT in milliseconds) and objective substring verification of canonical identifiers on a live vLLM serving backend.",
+          "final_evaluation_signal": "System metrics (mean TTFT, KV reuse rate, invalidation latency) and exact-match post-correction identifier accuracy from model outputs.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Rule-based routing policies and deterministic dependency-graph invalidation mechanisms designed into the control plane.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E556feee5428f7d11-B0002",
+          "E556feee5428f7d11-B0007",
+          "E556feee5428f7d11-B0011",
+          "E556feee5428f7d11-B0012",
+          "E556feee5428f7d11-B0015",
+          "E556feee5428f7d11-B0018",
+          "E556feee5428f7d11-B0019",
+          "E556feee5428f7d11-B0020",
+          "E556feee5428f7d11-B0021"
+        ],
+        "limitations": "The prototype relies on a sidecar rather than deep engine modifications, and testing is limited to small-scale pilot traces and a 230M-parameter model rather than full production clusters.",
+        "method_assessment": "The architecture introduces a capsule schema, catalog, dependency graph, admission shim, and an OpenAI-compatible routing sidecar interacting with vLLM backends, supported by an explicit replay utility formulation.",
+        "quality_rationale": "The manuscript offers a clean, well-bounded systems contribution addressing the mismatch between lifelong agent semantic memory updates and serving-engine runtime cache staleness, supported by reproducible architecture details and transparent pilot benchmarks.",
+        "scoped_contribution": "The paper contributes a systems architecture and executable control-plane prototype (PLACEMEM) for lifelong LLM agents, introducing 'memory capsules' that bind semantic memory records to reusable runtime compute state (KV caches) with dependency-tracked cascading invalidation.",
+        "source_content_hash": "a41f70b85b4a3e6cdd5b22f73d83b23f94fb73753c503f6cb4d60a7ffe0b32e9"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript offers a clean, well-bounded systems contribution addressing the mismatch between lifelong agent semantic memory updates and serving-engine runtime cache staleness, supported by reproducible architecture details and transparent pilot benchmarks.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "a41f70b85b4a3e6cdd5b22f73d83b23f94fb73753c503f6cb4d60a7ffe0b32e9",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The prototype relies on a sidecar rather than deep engine modifications, and testing is limited to small-scale pilot traces and a 230M-parameter model rather than full production clusters."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -168,7 +1013,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

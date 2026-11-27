@@ -59,16 +59,193 @@
             <p>Recent advances in foundation models have enabled AI scientists to automate increasingly complete research workflows, from hypothesis generation and code execution to manuscript preparation. Yet workflow coverage alone does not provide access to the full evidence on which scientific discovery depends. Existing syste...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not been assessed under the manuscript evidence gate.</p>
-      <p>Legacy assessment retained; manuscript review is required before promotion.</p>
+      <h2>Quality reviewed</h2>
+      <p>OmniScientist presents a substantial, well-formulated, and thoroughly evaluated architecture for autonomous scientific research. The integration of deterministic, programmatic verification gates effectively addresses common pitfalls in LLM-based science (such as p-hacking, hallucinated metrics, and lack of raw data grounding), backed by solid empirical validation across 36 distinct real-world datasets.</p>
+      <p>The work notes that open-weight smaller models degrade significantly in sound hypothesis generation and factual accuracy, while the pipeline requires bounded step budgets and relies on external LLM judges for rubric-based scoring.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: title_and_abstract.</p>
-        <p>Assessor: deterministic. Assessment version: quality-v1. Gate: not assessed.</p>
-        <p>Assessed: 2026-08-16T07:04:16+00:00.</p>
-
-        <ul><li>The contribution is stated explicitly.</li><li>No suitable baseline comparison was detected in the available text.</li><li>No quantitative, user, expert, or operational evaluation was detected in the available text.</li><li>Comparative claims were detected without a suitable baseline in the available text.</li></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-27T13:31:18.080751+00:00.</p>
+        <p>Coverage: 119214 of 119214 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>research directly from heterogeneous raw evidence. A
+perception layer and 3 autonomous agents for ideation, experiment, and writeup operate within a deterministic
+pipeline, allowing observations to shape research questions, experimental decisions, and final claims throughout
+the research lifecycle. By running idea, rigour, and claim checks in code, the system enforces novelty screening,
+statistical validity, execution provenance, and numerical traceability. We evaluate OmniScientist on 36 real-data
+casesspanning5disciplinefamilies,4familiesofscientificevidence,andmodalitiesincludingimages,signals,audio,
+video, 3-D structures, trajectories, tables, formulae, and graphs. The system completes the full path from raw data to
+a compiled manuscript in all 36 cases and achieves a mean overall paper score of6.3 with the reference reasoning
+backbone. In paired comparisons against a blind variant </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>multidisciplinary discovery. A task is specified by a dataset, a scientific subject, and a target property,
+together with the raw artifacts referenced by that specification. OmniScientist coordinates a perception layer
+with 3 autonomous agents for ideation, experiment, and writeup (Figure 3). Within each stage, a ReAct loop
+interleaves observation, reasoning, and action (Yao et al., 2023; Shinn et al., 2023; Schick et al., 2023), allowing
+evidence to shape question formation, experimental design, result inspection, and scientific argumentation.
+Around these open-ended agents, a thin deterministic pipeline controls stage transitions, returns to ideation
+when an experiment collapses or yields a null result, and admits each stage output only after a check enforced
+in code. The idea, rigour, and claim checks examine novelty evidence and falsifiability, leakage and </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>effective
+samplesize,executionprovenanceandmultiplecomparisons,anti-HARKingconstraints,numericaltraceability,
+and claim support. We further organise scientific evidence into 4 discipline-independent families, namely
+perceptual, symbolic, quantitative-statistical, and procedural evidence (cf. Table 2). The same engine can
+consequently operate on a seismogram, a CAD mesh, or a knowledge graph. Adding a discipline requires a
+new specification file, with no change to the core pipeline and no domain-specific research code.
+We evaluate OmniScientist on a 36-case demonstration suite spanning 5 discipline families, all 4 evidence
+families, and modalities ranging from images and waveforms to audio, video, 3-D structures, trajectories,
+tables, formulae, and graphs (Table 1). The system completes the full path from raw data to a compiled paper
+in all 36 cases. With the reference reasoning </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>dataset.Ev-
+idence–👁perceptual,/codesymbolic,/char◎-barquantitative-statistical,/streamprocedural.Modality–⊷image,/wave-squaresignal,/char◎-areaspectrum,/volume-upaudio,
+/videovideo,/cube3-D,♂routetrajectory,/tabletable,/superscriptformula,/dnasequence,/border-allfield,♂project-diagra¶graph.
+Discipline Representative dataset Evidence Modality𝑁
+Physical sciences 5 cases
+Condensed matter / nano NFFA-EUROPE (Aversa et al., 2018)👁 ⊷2,655
+Vibrational spectroscopy RRUFF (Lafuente et al., 2015) 👁 /char◎-area 2,000
+Materials informatics UCI superconductor (Hamidieh, 2018)/char◎-bar/table21,263
+Molecular chemistry PubChem (Kim et al., 2025) 👁 ⊷ 30
+Symbolic regression Feynman (Udrescu and Tegmark, 2020)/code/superscript12
+Earth &amp; space 9 cases
+Remote sensing EuroSAT (Helber et al., 2019)👁 ⊷5,000
+Galaxy morphology Galaxy Zoo (Lintott et al., 2008) 👁 ⊷ 1,000
+Galaxy cross-survey GZ DECaLS (Walmsley </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>statistical
+validity (Algorithm 1). The check grounds the experiment in reality by confirming that the agent genuinely
+accessed the requested dataset and generated figures matching the raw execution trace. To prevent statistical
+manipulation,thesystemenforcesastrictmultiple-comparisoncorrectionthataccountsforeverytestattempted
+duringthedebuggingloop, whichpreventsartificialreductionsinthecorrectiondenominator. Italsoappliesa
+post-hoc rescue guard to ensure headline findings originate from primary tests, runs an independence check to
+eliminate circular predictions, and relegates any unsupported analyses to the execution trace. Figure 5 places
+this check and the later claim check in sequence, both auditing against the same execution record rather than
+against the text the agent wrote.</blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>decisive numbers reach the results section, and a section cannot introduce detail it was
+never given. The abstract is written last from the same records, so its numbers agree with the main text. The
+remaining machinery is deterministic. A thesis planner selects the headline claim from the supported analyses
+andassignstheotherresultstosupportingevidence,controls,orrobustnesschecks,withtheremainderkeptin
+10 Li et al.
+Algorithm 1Code-enforced exit check on result provenance, anti-fabrication, and anti-HARKing.
+Require:reported result𝑅, set of real stdout strings𝑂
+1:if𝑅.metric=∅then reject
+2:ifno run in𝑂succeededthen reject⊲must actually execute code
+3:for allnumber𝑛reported in𝑅do
+4:if𝑛∉𝑂then reject⊲every number traces to real output
+5:end for
+6:ifdataset was not loaded from diskthen reject
+7:if𝑅reports≥2𝑝-valuesthen
+8:correct overalltests run, including demoted ones
+9:end </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>if
+10:ifheadline∉supported analysesthen reject⊲anti-HARKing
+11:keep unsupported non-headline analyses in the trace
+12:return accept
+Table 3. Detailed review scores across reasoning backbones. Per-dimension means (0–10) are derived from a 2-judge cross-family
+panel (deepseek-v4-flash and gemini-2.5-flash-lite) over the entire case suite. For these evaluations, the framework and perception
+models are held fixed, with only the reasoning backbone swapped. Failed runs are excluded; thus, means are computed exclusively
+over successfully scored papers. The highest value in each column is highlighted, and coverage per backbone is detailed in Table 4.
+Notably, clarity exhibits the least degradation, whereas factual accuracy and soundness most closely track the underlying backbone
+strength.
+Standard peer-review </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>MM-mandatory
+BackboneNovelty↑Sound.↑Clarity↑Signif.↑Reprod.↑MM-grnd↑Factual↑Overall↑
+Sonnet 5 (Anthropic, 2026)6.37.07.06.36.15.1 7.7 6.3
+GPT-5.6 (OpenAI, 2026) 5.2 6.3 6.3 5.0 5.2 4.2 7.7 5.6
+GLM-5.2 (Zhipu, 2026) 6.2 7.1 6.86.45.96.67.56.5
+Kimi K2.7 (Kimi, 2025) 6.2 7.2 6.7 6.2 5.5 5.8 8.0 6.2
+Qwen3.5-122B (Qwen Team, 2026) 4.7 5.5 6.2 4.8 4.8 4.8 6.5 5.1
+Qwen3.5-27B (Qwen Team, 2026) 5.0 5.6 5.9 4.9 4.6 4.9 6.4 5.1
+Qwen3.5-9B (Qwen Team, 2026) 4.0 4.1 4.8 3.7 3.7 3.9 4.8 4.0
+Gemma-4-31B (Google, 2026) 4.7 5.0 5.6 4.5 4.4 4.6 6.5 4.8
+Gemma-4-26B (Google, 2026) 4.4 4.4 5.0 4.0 3.7 3.8 5.1 4.2
+the run&#x27;s trace. References are retrieved through the OpenAlex API, an output pass filters the drafted sections
+and rolls back if it would prune too much, and a final meta-audit checks the generated claims against the
+experimental record (Figure 5) before the stage compiles the PDF. Section G </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Models.Three roles run on separate models, and keeping them apart is what makes the comparison
+interpretable. Thereasoning backbonedrives all 3 stages and is the only component we swap. We use Claude
+Sonnet5(Anthropic,2026)fortheprimaryrunsandcompareagainstGPT-5.6(OpenAI,2026),GLM-5.2(Zhipu,
+2026), Kimi K2.7 (Kimi, 2025), and the open-weight Qwen3.5 (Qwen Team, 2026) (9B, 27B, 122B) and Gemma-
+4 (Google, 2026) (26B, 31B) families. The closed models are called through their official APIs, and the
+open-weight models are served locally. Theperception modelis pinned to Claude Sonnet 5 (Anthropic, 2026) in
+every run and never follows the backbone, so every look at a raw observation is served by the same model
+and a change in score is attributable to reasoning alone.Scoringis done by 2 judges from families outside the
+systems under test,deepseek-v4-flash and gemini-2.5-flash-lite. Table 4 </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To evaluate the contribution of direct observation to the research process, we compare our framework against
+ablindbaseline. This baseline receives only precomputed scalar features, simulating the interface of a
+conventional text-only system. A cross-family panel of judges evaluates the two manuscripts head-to-head. To
+ensure a more sensitive assessment than isolated scoring, we randomise the presentation order to eliminate
+positional bias. Across the 5 cases featuring a scalar-blind counterpart, the perception-enabled framework
+consistently outperforms, winning85%of the comparisons averaged over cases.
+A dimensional analysis reveals how multimodal perception elevates manuscript quality. When scored by the
+judge common to both conditions, the perception module yields the most substantial gains in multimodal
+grounding (+2.8) and significance (+1.8), while factual accuracy is equally high </blockquote></details></li><li><strong>Contribution clarity — pages 14–15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>performance gap between
+the largest and smallest models (Figure 10). In contrast, multimodal grounding is the least sensitive metric,
+shifting by only1.2 points across the identical model range. Consequently, a stronger reasoning backbone does
+OmniScientist: An Omni-Modal Omni-Discipline AI Scientist 15
+MM-grnd Signif. Novelty Clarity Reprod. Sound. Factual
+0
+2
+4
+6
+8
+10Score (0–10), 5 paired cases
++2.8
++1.8 +1.6
++1.6
++1.2
++0.8
+w/o Perception OmniScientist
+Figure 7.Dimension-wise perception gain. For the 5 cases
+evaluated under both conditions, the chart shows the mean
+scores with perception removed (pink) and for the full
+OmniScientist (teal), scored by the same judge across both
+settings. The 2 panels of this row share one colour key. The
+largest gain is observed in multimodal grounding, while
+factual accuracy remains identical since both conditions
+undergo the same provenance </blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>pre-registered hypothesis concerning instrument types, the system objectively
+headlined the prevalence finding and relegated the instrument question to a boundary result. Throughout
+this derivation, the provenance check ensured that every reported threshold and statistical claim originated
+directly from executable code output. This estimate remained stable across alternative false-alarm rates, null
+models, windowing choices, and a station-cluster bootstrap over 417 distinct stations.</blockquote></details></li><li><strong>Contribution clarity — pages 18–19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>px𝑑=1.63/1.50/1.36
+Region-of-interest sweep𝑑=1.18to1.35
+OmniScientist: An Omni-Modal Omni-Discipline AI Scientist 19</blockquote></details></li><li><strong>Contribution clarity — page 23</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>difference in
+panel scores (original scale:0–10) between the perception-enabled system and the blind baseline. Positive values indicate that visual
+perception improves performance.† Cardiology uses the weaker vision-off run.
+Standard peer-review MM-mandatory
+Case (Δ= on−baseline)Novelty↑Sound.↑Clarity↑Signif.↑Reprod.↑MM-gr.↑Factual↑Overall↑
+Galaxy cross-survey +2.5 +1.2 +1.0 +2.3 +0.7 +1.3 +2.0 +1.7
+Seismology +1.0 +1.5 -1.0 +1.5 +0.5 +1.5 +0.5 +1.5
+Pathology +1.5 +1.0 +0.5 +1.0 +0.5 +3.0 -0.5 +1.5
+Mechanical CAD +0.5 +0.5 +3.5 +2.5 +2.5 +1.0 +2.0 +3.0
+Plant phenotyping +1.0 +0.0 +0.0 +0.5 +0.7 +4.0 +0.3 +0.3
+Cardiology† +0.3 +0.3 +0.3 +0.0 +1.3 -1.7 +0.0 +0.3
+Macro-averageΔ+1.14 +0.75 +0.72 +1.31 +1.03 +1.53 +0.72 +1.39
+Table 13.Validating the judge before it is trusted; the target column lists the pre-set acceptance thresholds.
+Validity check Statistic Target Measured
+Inter-judge </blockquote></details></li><li><strong>Contribution clarity — page 23</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>agreement Krippendorff𝛼 &gt;0.60.66
+Self-preference bias own−others≈00 †
+Verbosity bias score vs. length𝜌≈00.16
+Listing1reproducestherubricbothjudgesreceive. Itisthewholeofwhattheyaretold,besidesthemanuscript
+source, its figure captions, and the authors&#x27; result ledger, and the same text is used for every case and every
+backbone.
+Review rubric: the whole of what each judge is told
+You are an expert, critical peer reviewer for a top venue, reviewing ONE paper produced by an
+automated multimodal research system. Judge ONLY what is written in the paper and shown in its
+figures. Do NOT inflate scores.
+Score theseSEVEN dimensions, each an INTEGER 1-10 (1=very poor, 10=excellent), and be strict --
+an incremental or workshop-level paper must be scored as such, never rubber-stamped:
+1. novelty -- originality against real prior art.
+2. soundness -- method and statistics correct (controls, </blockquote></details></li><li><strong>Contribution clarity — page 24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the accumulated loop state, returning either acceptance or a reason
+string. A rejection is appended to the conversation as a new observation and the agent continues; the stage
+cannot end until the predicate accepts or the step budget runs out. Algorithm 2 details the loop, Table 14 lists
+every condition, and Table 15 reports what those conditions rejected over the 36 primary runs.
+The distribution in Table 15 indicates where an autonomous researcher most often goes wrong. Two thirds of
+all rejections concern result selection rather than arithmetic: the agent had run a broad battery, one analysis
+came out non-significant, and the draft still treated it as a finding. Outright fabrication is rare, with a single
+provenance rejection across 36 runs; this is expected if reported numbers are normally copied from real
+standardoutput. </blockquote></details></li><li><strong>Contribution clarity — page 27</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>through the rigour check 35 97%
+Manuscripts scored by the full 2-judge panel 36 100%
+Analyses per run
+Analyses carried into the manuscript 265 7.4 / run
+Analyses demoted to the trace 67 1.9 / run
+only occasionally because the observation that shaped the question has already been made. Table 17 reports
+what those runs concluded.
+Two of these numbers deserve comment. The 2 refuted and 17 mixed verdicts are not system failures but the
+intended behaviour of the rigour check, which admits an honest negative as a valid exit and forbids promoting
+a weak result to the headline. The 67 demoted analyses reflect this same mechanism, since roughly a fifth of
+everything the system computed was run, found wanting, and deliberately kept out of the paper.
+D The perception layer
+Table 18liststheperceptiontoolsthissuiteexposedand howheavilyeach wasused acrossthe36 primaryruns.
+The table reveals two </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +284,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

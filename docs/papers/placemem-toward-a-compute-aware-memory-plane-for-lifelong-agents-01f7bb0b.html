@@ -59,16 +59,122 @@
             <p>Lifelong agents need more than larger context windows and better retrieval. They need memories that can persist, evolve, and be corrected without forcing the serving stack to recompute the same history on every turn or silently reuse stale runtime state. We present PLACEMEM as a systems position on lifelong-agent me...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript offers a clean, well-bounded systems contribution addressing the mismatch between lifelong agent semantic memory updates and serving-engine runtime cache staleness, supported by reproducible architecture details and transparent pilot benchmarks.</p>
+      <p>The prototype relies on a sidecar rather than deep engine modifications, and testing is limited to small-scale pilot traces and a 230M-parameter model rather than full production clusters.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-27T13:30:46.488514+00:00.</p>
+        <p>Coverage: 18838 of 18838 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Lifelong agents need more than larger context windows and better retrieval.
+They need memories that can persist, evolve, and be corrected without
+forcing the serving stack to recompute the same history on every turn or
+silently reuse stale runtime state. We present PLACEMEMas a systems posi-
+tion on lifelong-agent memory, instantiated by an executable control-plane
+prototype. The central claim is that agent memory should be represented as
+versionedcapsulesthat unify semantics, provenance, validity, and reusable
+runtime state under one correction-aware identity. In the current prototype,
+capsules drive prompt-level text retrieval, KV-aware routing, and cascading
+invalidation over live streamed backends; prospective layer-frontier replay
+is intentionally framed as a deeper integration agenda rather than a claimed
+engine feature. We describe a vLLM-first prototype with persistent </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>that result.
+Contributions.We make three contributions.
+• We argue for a compute-aware memory plane as a missing systems abstraction for
+lifelong agents, and define memory capsules as its correction-aware core unit.
+• We present an executable vLLM-first prototype that already demonstrates
+correction-aware control-plane behavior through persistent capsule state,
+concurrency-safe invalidation, an OpenAI-compatible sidecar, a typed serving
+contract, and a live benchmark harness.
+• We define a replay-and-placement policy, together with an explicit systems agenda
+for deeper integration, that trades off semantic value, latency, staleness risk, and
+locality across text retrieval and KV replay while leaving layer replay as future
+engine work rather than a claimed implementation result.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A memory capsule is a versioned record with required semantic fields such as tenant identity,
+surface text, timestamps, and validity windows, together with optional enrichment such as
+summaries, provenance, entities, facts, dependencies, and artifact locators. The crucial step
+is that a capsule can also name reusable runtime artifacts such as embeddings, KV cache
+segments, and optional layer-frontier checkpoints.
+This design gives one identifier for meaning and compute. A retriever can therefore answer
+not onlywhich memory is relevant, but alsowhich reusable state is compatible and cheap to consume
+on a specific node. In the current prototype, text and KV-aware routing are fully wired end to
+end, while layer-frontier replay remains an explicit contract for future engine extensions.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>For each request, PLACEMEMranks replay options across prompt-level text retrieval, KV
+replay, and prospective layer replay. The policy evaluates a capsule c on target t under
+replay moderwith a utility function of the form
+U(c,t,r) =w 1Preuse +w 2Csaved +w 3Vsem −w 4Rstale −w 5Bremote −w 6Ltarget. (1)
+Here, Preuse estimates near-term reuse, Csaved measures avoided prefill work, Vsem captures
+task relevance, Rstale captures freshness risk, Bremote estimates transfer cost, and Ltarget
+penalizes latency-sensitive targets. The selected decision is then turned into backend
+metadata for the serving layer.
+This differs from a local prefix cache in two ways. First, the decision is made in a control
+plane rather than inside a single worker. Second, the decision is conditioned on semantic
+validity and locality, not only on byte reuse. In other words, PLACEMEMtreats memory
+reuse as a policy </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We implement PLACEMEMas a concrete control-plane prototype anchored on vLLM, in-
+tended as executable evidence for the systems position above rather than a claim that all
+3
+Preprint. Under review.
+replay paths are native to the serving engine. The implementation includes: a capsule
+schema, a catalog, a dependency graph, persistent state snapshots, concurrency-safe invali-
+dation, a placement RPC contract, an HTTP control plane, a vLLM-facing admission shim, a
+multi-node OpenAI-compatible sidecar, and a benchmark harness with repeated-run JSON
+and CSV exports.
+The sidecar provides an immediately deployable integration surface with existing vLLM-
+compatible endpoints and establishes a stable typed-header contract for deeper engine
+integration, keeping the control-plane behavior deployable today while exposing the exact
+seam where replay-aware integration can be added later.
+The present </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>but
+replaces the final token generator with a replay-mode-sensitive streaming mock (a fixed
+SSE payload with a configurable inter-token delay, so TTFT reflects only control-plane
+capsule lookup and sidecar routing overhead) to isolate cross-layer reuse and invalidation
+behavior before full cluster-scale vLLM evaluation. We therefore use this pilot to test the
+correction-aware control-plane thesis directly, while treating deeper replay-aware engine
+integration as subsequent work.
+In the current pilot, we report mean time-to-first-token, replay reuse rate, post-correction
+stale-hit counts, and invalidation overhead, because those are fully executable end to
+end today and directly test whether correction-aware control-plane behavior changes the
+correctness–latency trade-off of reuse.
+Baseline Mean TTFT∆TTFT Reuse Stale hits
+Prompt-only 18.25 — 0.00 0
+Text-only 18.31 +0.3% 0.00 </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0
+Runtime-only 6.72 -63.2% 1.00 17
+Full PLACEMEM7.17 -60.7% 1.00 0
+Table 2: Aggregate pilot comparison over 48 turns spanning support, coding, and fact-
+revision traces using the live control plane, routing sidecar, and a replay-mode-sensitive
+mock backend.
+Table 2 sharpens the main systems claim. Relative to prompt-only execution, both runtime-
+only reuse and full PLACEMEMreduce mean time-to-first-token by about 61–63% on this
+controlled backend. The crucial distinction is correction handling: disabling invalidation
+preserves the latency win but yields 17 stale post-correction reuses, whereas full PLACEMEM
+retains the latency benefit while eliminating stale hits entirely. Mean invalidation overhead
+in the full system is 1.09 ms over three correction events.Note: TTFT here measures control-
+4
+Preprint. Under review.
+plane and sidecar routing latency against the streaming mock; values do </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>not reflect real prefill savings
+on a production GPU.
+Condition Mean TTFT (ms) KV reuse Post-corr. acc. Stale sel.
+Text-summary baseline 36.08 0.00 1.00 —
+Reuse w/o invalidation 20.73 1.00 0.00 1.00
+Full PLACEMEM20.54 1.00 1.00 0.00
+Deployment throughput (340-turn batch, 3 repeats)
+FullPLACEMEM22.42 1.00 — —
+Table 3: Real-backend comparison on LiquidAI/LFM2.5-230M. Top three rows: live
+correction-follow probe (9 post-correction queries per condition × 3 workload families
+= 27 post-correction turns per condition). Bottom row: deployment-throughput validation
+across 3 repeats of the full 340-turn benchmark. Post-correction accuracy measures whether
+the live model returns the corrected answer; stale selection measures whether the control
+plane selects an invalidated capsule.
+Table 3 integrates both the latency and behavioral stories on the real vLLM backend. The
+correction-follow probe </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>uses a controlled task: each scenario has a structured canonical
+identifier injected into the active capsule summary, and accuracy measures whether the live
+model&#x27;s response contains the post-correction identifier rather than the stale one, isolating
+whether the control plane forwards the right summary rather than testing open-ended gen-
+eration quality. The three-condition comparison shows why invalidation matters: without it
+the control plane selects the stale capsule after a correction event, the model receives the
+outdated summary, and post-correction accuracy drops to zero. Full PLACEMEMeliminates
+stale selection while matching the TTFT of the reuse-without-invalidation condition (20.54
+ms versus 20.73 ms), confirming that correction-aware control adds faithfulness at no la-
+tency cost. The text-summary baseline reaches full accuracy but at 36.08 ms mean TTFT, a
+75% overhead </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +213,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

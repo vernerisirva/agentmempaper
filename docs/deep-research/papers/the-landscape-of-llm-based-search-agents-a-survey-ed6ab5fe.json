@@ -48,7 +48,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-13 07:57:14",
-    "generated_at": "2026-11-26 13:36:49",
+    "generated_at": "2026-11-27 13:32:52",
     "last_seen_at": "2026-08-17 07:19:48",
     "metadata_sources": [
       "openalex"
@@ -109,85 +109,63 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-08-13T07:57:30+00:00",
+    "assessed_at": "2026-11-27T13:31:15.673543+00:00",
     "assessment_scope": "title_and_abstract",
-    "assessment_version": "quality-v1",
+    "assessment_version": "quality-promotion-v2",
     "assessor_model": null,
     "assessor_type": "deterministic",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 43/100, low confidence, based on title and abstract.",
+    "concise_summary": "Manuscript unavailable; no scientific decision.",
     "confidence": "low",
-    "coverage": {},
-    "curation_note": null,
-    "dimension_scores": {
-      "contribution_clarity": 2,
-      "evaluation_or_validation_strength": null,
-      "evidence_to_claim_alignment": null,
-      "limitations_and_uncertainty_handling": null,
-      "methodological_rigor": null,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": null,
-      "reproducibility_and_transparency": null,
-      "scholarly_novelty_or_value": null
+    "coverage": {
+      "assessment_input_characters": 2084,
+      "extraction_complete": false,
+      "version": "coverage-v1"
     },
+    "curation_note": null,
+    "dimension_scores": {},
     "downranked": false,
-    "evidence": [
-      {
-        "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": "e-versus-frozen reproducibility, leakage control, cost, and artifact reporting. By synthesizing more than 400 works, this survey provides a reference map and a methodological found",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": "Abstract",
-        "signal_type": "positive",
-        "source_blocks": [],
-        "statement_kind": null,
-        "support_status": null,
-        "support_verification": {}
-      },
-      {
-        "claim_role": null,
-        "context_id": null,
-        "dimension": "methodological_rigor",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "No reproducible review or selection methodology was detected.",
-        "section": null,
-        "signal_type": "missing",
-        "source_blocks": [],
-        "statement_kind": null,
-        "support_status": null,
-        "support_verification": {}
-      }
-    ],
+    "evidence": [],
     "full_text_assessed": false,
     "full_text_url": null,
-    "gate_version": null,
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [
-      "No reproducible review or selection methodology was detected."
+      "No reproducible review or selection methodology was detected.",
+      "No extractable manuscript text was available."
     ],
-    "overall_quality_score": 43,
+    "overall_quality_score": null,
     "paper_type": "survey_or_review",
-    "positive_signals": [
-      "Quantitative evaluation signals were detected."
-    ],
-    "promotion": {},
-    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
-    "recommendation": "uncertain",
-    "rubric_version": "scholarly-rubric-v1",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "manuscript_unavailable",
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google"
+    },
+    "rationale": "Manuscript unavailable; no scientific decision.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
     "source_content_hash": "41a860b4644ac263ba4e776a4dca609d39b81fdcceb34fdc0357cfc1a907c8dc",
-    "status": "not_assessed",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
+    "uncertainty": "No promotion; review candidates may remain pending indefinitely."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
